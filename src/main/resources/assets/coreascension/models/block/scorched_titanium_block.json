@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/scorched_titanium_block",
+    "particle": "coreascension:block/scorched_titanium_block"
+  }
+}
