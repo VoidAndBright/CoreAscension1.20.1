@@ -127,7 +127,7 @@ public class CoreAscensionBlocks {
 	public static final Block STRIPPED_CEDAR_WOOD = RegisterBlockItem("stripped_cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
 	// end cedar grove stuff
 	// tropics stuff
-	public static final Block TROPICS_LOG = RegisterBlockItem("tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+	public static final Block TROPICS_LOG = RegisterBlockItem("tropics_log.json", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
 	public static final Block TROPICS_WOOD = RegisterBlockItem("tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 	public static final Block TROPICS_PLANKS = RegisterBlockItem("tropics_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block TROPICS_SLAB = RegisterBlockItem("tropics_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
