@@ -35,7 +35,7 @@ public class CoreAscensionBlocks {
 
 	public static final Block AMETHYST_WALL = RegisterBlockItem("amethyst_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
-	public static final Block AMETHYST_BLOCK = RegisterBlockItem("amethyst_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_TILES = RegisterBlockItem("amethyst_tiles", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
 	public static final Block ANDESITE_TILE = RegisterBlockItem("andesite_tile", new Block(FabricBlockSettings.copyOf(Blocks.ANDESITE)));
 

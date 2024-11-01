@@ -23,7 +23,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.AMETHYST_GEM_LOG);
         entries.add(CoreAscensionBlocks.AMETHYST_SLAB);
         entries.add(CoreAscensionBlocks.AMETHYST_STAIRS);
-        entries.add(CoreAscensionBlocks.AMETHYST_BLOCK);
+        entries.add(CoreAscensionBlocks.AMETHYST_TILES);
         entries.add(CoreAscensionBlocks.AMETHYST_WALL);
         entries.add(CoreAscensionBlocks.ANDESITE_TILE);
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_BLOCK);
@@ -124,6 +124,7 @@ public class CoreAscensionGroups {
         // -- END DREAD --
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
+        entries.add(CoreAscensionItems.THE_TOOL);
         entries.add(CoreAscensionItems.RUBY);
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
     });

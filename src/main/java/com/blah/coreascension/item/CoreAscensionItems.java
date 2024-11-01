@@ -2,6 +2,7 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.item.toolmaterials.TheToolToolMaterial;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -14,7 +15,7 @@ public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
-
+    public static final Item THE_TOOL = registerItem("the_tool", new TheToolItem(4, 1.2F, TheToolToolMaterial.INSTANCE, new FabricItemSettings()));
     public static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), item);
 	}
