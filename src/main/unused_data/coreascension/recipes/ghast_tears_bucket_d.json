@@ -1,0 +1,13 @@
+{
+  "group": "blahmod",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascension:ghast_tears_bucket"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ghast_tear",
+    "count": 8
+  }
+}

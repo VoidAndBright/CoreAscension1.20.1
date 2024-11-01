@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "coreascension:lightly_singed_titanium_block",
+    "coreascension:slightly_burnt_titanium_block",
+    "coreascension:titanium_block",
+    "coreascension:burnt_titanium_block",
+    "coreascension:singed_titanium_block"
+  ]
+}

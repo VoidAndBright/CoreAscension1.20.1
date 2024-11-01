@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "coreascension:magnetite"
+  },
+  "result": "coreascension:magnetite_wall"
+}

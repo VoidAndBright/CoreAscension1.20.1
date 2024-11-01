@@ -3,9 +3,11 @@ package com.blah.coreascension.block;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.particles.CoreAscensionParticles;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -19,27 +21,29 @@ public class CoreAscensionBlocks {
 
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.LANTERN)));
 
-	public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new MushroomBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM_BLOCK)));
+	public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
 
-	public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new MushroomBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
+	public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
 
 	public static final Block AMETHYST_GEM_LOG = RegisterBlockItem("amethyst_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)));
 
-	public static final Block AMETHYST_GEM_LEAVES = RegisterBlockItem("amethyst_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+	public static final Block AMETHYST_GEM_LEAVES = RegisterBlockItem("amethyst_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 
 	public static final Block AMETHYST_SLAB = RegisterBlockItem("amethyst_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
-	public static final Block AMETHYST_STAIR = RegisterBlockItem("amethyst_stair", new StairsBlock(Blocks.AMETHYST_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_STAIRS = RegisterBlockItem("amethyst_stairs", new StairsBlock(Blocks.AMETHYST_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
 	public static final Block AMETHYST_WALL = RegisterBlockItem("amethyst_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
-	public static final Block AMETHYST_TILE = RegisterBlockItem("amethyst_tile", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_BLOCK = RegisterBlockItem("amethyst_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+
+	public static final Block ANDESITE_TILE = RegisterBlockItem("andesite_tile", new Block(FabricBlockSettings.copyOf(Blocks.ANDESITE)));
 
 	public static final Block ARGON_CRYSTAL_BLOCK = RegisterBlockItem("argon_crystal_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
 	public static final Block ARGON_CRYSTAL_CLUSTER = RegisterBlockItem("argon_crystal_cluster", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
-	public static final Block ARGON_CRYSTAL_ORE = RegisterBlockItem("argon_crystal_ore_block", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block ARGON_CRYSTAL_ORE = RegisterBlockItem("argon_crystal_ore", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 
 	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(Anodizable.AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
 
@@ -107,7 +111,7 @@ public class CoreAscensionBlocks {
 
 	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick",new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
 
-	public static final Block SAFE = RegisterBlock("safe", new GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     private static Block RegisterBlockItem(String name, Block block) {
         RegisterItem(name,block);
@@ -119,8 +123,11 @@ public class CoreAscensionBlocks {
     private static void RegisterItem(String name, Block block){
 		Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID,name),new BlockItem(block,new FabricItemSettings()));
 	}
-
     public static void RegisterBlocks(){
-		CoreAscension.LOGGER.info("Registering ModBlocks for " + CoreAscension.MOD_ID);
+		CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);
     }
+	public static void ClientRegisterBlocks(){
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
+	}
 }

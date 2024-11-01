@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 45",
+    "678"
+  ],
+  "key": {
+    "2": {
+      "item": "coreascension:netherfrost_brick"
+    },
+    "4": {
+      "item": "coreascension:netherfrost_brick"
+    },
+    "5": {
+      "item": "coreascension:netherfrost_brick"
+    },
+    "6": {
+      "item": "coreascension:netherfrost_brick"
+    },
+    "7": {
+      "item": "coreascension:netherfrost_brick"
+    },
+    "8": {
+      "item": "coreascension:netherfrost_brick"
+    }
+  },
+  "result": {
+    "item": "coreascension:netherfrost_brick_stairs",
+    "count": 4
+  }
+}

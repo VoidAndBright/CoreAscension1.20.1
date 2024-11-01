@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "coreascension:tadanite_armor_helmet"
+  },
+  "addition": {
+    "item": "coreascension:lumite_construct"
+  },
+  "result": {
+    "item": "coreascension:lumite_armor_helmet"
+  }
+}

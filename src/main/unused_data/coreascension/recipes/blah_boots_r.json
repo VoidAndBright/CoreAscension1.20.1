@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "coreascension:lumite_armor_boots"
+  },
+  "addition": {
+    "item": "coreascension:blahr"
+  },
+  "result": {
+    "item": "coreascension:blah_armor_boots"
+  }
+}

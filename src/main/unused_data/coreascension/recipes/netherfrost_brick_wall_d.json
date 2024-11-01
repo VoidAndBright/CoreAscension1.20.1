@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "coreascension:netherfrost_brick_wall"
+    }
+  },
+  "result": {
+    "item": "coreascension:netherfrost_brick",
+    "count": 1
+  }
+}

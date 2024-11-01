@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascension:lightly_singed_titanium_block"
+    }
+  ],
+  "result": {
+    "item": "coreascension:titanium_ingot",
+    "count": 4
+  }
+}

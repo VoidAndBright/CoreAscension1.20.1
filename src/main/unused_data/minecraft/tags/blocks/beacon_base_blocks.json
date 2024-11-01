@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "coreascension:lightly_singed_titanium_block",
+    "coreascension:frozen_lightly_singed_titanium_block",
+    "coreascension:lumite_block",
+    "coreascension:amethyst_block",
+    "coreascension:burnt_titanium_block",
+    "coreascension:topaz_block",
+    "coreascension:citrine_block",
+    "coreascension:slightly_burnt_titanium_block",
+    "coreascension:frozen_slightly_burnt_titanium_block",
+    "coreascension:sapphire_block",
+    "coreascension:compressed_obsidian",
+    "coreascension:uranium_block",
+    "coreascension:titanium_block",
+    "coreascension:frozen_titanium_block",
+    "coreascension:frozen_singed_titanium_block",
+    "coreascension:singed_titanium_block",
+    "coreascension:tadanite_block",
+    "coreascension:sulphur_block",
+    "coreascension:frozen_burnt_titanium_block",
+    "coreascension:ruby_block"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "coreascension:frost_sandstone"
+  },
+  "result": "coreascension:frost_sandstone_stairs"
+}

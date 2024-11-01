@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "coreascension:tadanite_armor_chestplate"
+  },
+  "addition": {
+    "item": "coreascension:lumite_construct"
+  },
+  "result": {
+    "item": "coreascension:lumite_armor_chestplate"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "coreascension:bonesandstone"
+  },
+  "result": "coreascension:bonesandstone_slab"
+}

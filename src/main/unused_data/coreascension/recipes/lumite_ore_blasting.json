@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 3,
+  "cookingtime": 50,
+  "ingredient": {
+    "item": "coreascension:lumite_ore"
+  },
+  "result": {
+    "item": "coreascension:lumite_ingot"
+  }
+}

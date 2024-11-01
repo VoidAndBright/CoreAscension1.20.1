@@ -2,9 +2,10 @@ package com.blah.coreascension;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
-import com.blah.coreascension.item.CoreAscensionItemGroups;
+import com.blah.coreascension.group.CoreAscensionGroups;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.particles.CoreAscensionParticles;
+import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,7 +20,8 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionBlocks.RegisterBlocks();
 		CoreAscensionItems.RegisterItems();
 		CoreAscensionParticles.RegisterParticles();
-		CoreAscensionBlockEntities.registerBlockEntities();
-		CoreAscensionItemGroups.registerItemGroups();
+		CoreAscensionBlockEntities.RegisterBlockEntities();
+		CoreAscensionGroups.RegisterGroups();
+		CoreAscensionScreenHandlers.RegisterScreenHandlers();
 	}
 }

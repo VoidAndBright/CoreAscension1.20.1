@@ -32,6 +32,8 @@ public class UnderwaterTorchBlock extends TorchBlock implements Waterloggable {
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext) {
         BlockPos blockPos = itemPlacementContext.getBlockPos();
         FluidState fluidState = itemPlacementContext.getWorld().getFluidState(blockPos);
-        return this.getDefaultState().with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        BlockState blockState = this.getDefaultState();
+        blockState = blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        return blockState;
     }
 }

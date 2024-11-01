@@ -1,7 +1,7 @@
 package com.blah.coreascension.block.blocks;
 
 import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
-import com.blah.coreascension.blockentity.GemPolishingStationBlockEntity;
+import com.blah.coreascension.blockentity.blockentities.GemPolishingStationBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;

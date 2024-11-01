@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "coreascension:dread_log"
+    },
+    {
+      "item": "coreascension:dread_log"
+    }
+  ],
+  "result": {
+    "item": "coreascension:dread_sapling",
+    "count": 2
+  }
+}

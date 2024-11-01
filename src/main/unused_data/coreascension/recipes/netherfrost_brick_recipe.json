@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "coreascension:netherfrost"
+    },
+    "1": {
+      "item": "coreascension:netherfrost"
+    },
+    "2": {
+      "item": "coreascension:netherfrost"
+    },
+    "3": {
+      "item": "coreascension:netherfrost"
+    }
+  },
+  "result": {
+    "item": "coreascension:netherfrost_brick",
+    "count": 1
+  }
+}

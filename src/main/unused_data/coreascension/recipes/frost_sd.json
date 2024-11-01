@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "coreascension:frost_wood_stairs"
+    },
+    "1": {
+      "item": "coreascension:frost_wood_stairs"
+    },
+    "2": {
+      "item": "coreascension:frost_wood_stairs"
+    },
+    "3": {
+      "item": "coreascension:frost_wood_stairs"
+    }
+  },
+  "result": {
+    "item": "coreascension:frost_wood_planks",
+    "count": 6
+  }
+}

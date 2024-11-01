@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "coreascension:tropics_leaves",
+    "coreascension:frost_wood_leaves",
+    "coreascension:dark_matter_leaves",
+    "coreascension:dread_leaves",
+    "coreascension:whitewood_leaves",
+    "coreascension:cedar_leaves",
+    "coreascension:ethereal_leaves",
+    "coreascension:mangrove_leaves"
+  ]
+}
