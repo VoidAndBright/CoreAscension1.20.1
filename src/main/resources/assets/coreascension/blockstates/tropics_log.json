@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "coreascension:block/tropics_log"
+    },
+    "facing=north": {
+      "model": "coreascension:block/tropics_log"
+    },
+    "facing=east": {
+      "model": "coreascension:block/tropics_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "coreascension:block/tropics_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "coreascension:block/tropics_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "coreascension:block/tropics_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

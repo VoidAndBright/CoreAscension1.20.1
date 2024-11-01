@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "coreascension:block/blacksandstone_bottom",
+    "top": "coreascension:block/blacksandstone_top",
+    "side": "coreascension:block/blacksandstone",
+    "particle": "coreascension:block/blacksandstone_bottom"
+  }
+}

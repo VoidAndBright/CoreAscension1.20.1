@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "coreascension:block/dread_pressure_plate"
+    },
+    "powered=true": {
+      "model": "coreascension:block/dread_pressure_plate_down"
+    }
+  }
+}

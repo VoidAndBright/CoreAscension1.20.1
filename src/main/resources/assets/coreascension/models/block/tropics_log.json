@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "coreascension:block/tropics_log_top",
+    "side": "coreascension:block/tropics_log"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "coreascension:block/dread_log"
+    },
+    "facing=north": {
+      "model": "coreascension:block/dread_log"
+    },
+    "facing=east": {
+      "model": "coreascension:block/dread_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "coreascension:block/dread_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "coreascension:block/dread_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "coreascension:block/dread_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

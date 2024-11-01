@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "coreascension:block/cedarplanks",
+    "particle": "coreascension:block/cedarplanks"
+  }
+}

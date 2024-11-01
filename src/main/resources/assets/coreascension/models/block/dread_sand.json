@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "all": "coreascension:block/dreadsand",
+    "particle": "coreascension:block/dreadsand"
+  }
+}

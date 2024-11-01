@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "coreascension:block/tropicsplanks",
+    "particle": "coreascension:block/tropicsplanks"
+  }
+}

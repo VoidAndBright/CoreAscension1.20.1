@@ -61,6 +61,67 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.SINGED_TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.BLAZE_BRICK);
         entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
+        // -- CEDAR --
+        entries.add(CoreAscensionBlocks.CEDAR_LOG);
+        entries.add(CoreAscensionBlocks.CEDAR_WOOD);
+        entries.add(CoreAscensionBlocks.CEDAR_PLANKS);
+        entries.add(CoreAscensionBlocks.CEDAR_SLAB);
+        entries.add(CoreAscensionBlocks.CEDAR_STAIRS);
+        entries.add(CoreAscensionBlocks.CEDAR_FENCE);
+        entries.add(CoreAscensionBlocks.CEDAR_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.CEDAR_BUTTON);
+        entries.add(CoreAscensionBlocks.CEDAR_LEAVES);
+        entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
+        // -- END CEDAR --
+        // -- TROPICS --
+        entries.add(CoreAscensionBlocks.TROPICS_LOG);
+        entries.add(CoreAscensionBlocks.TROPICS_WOOD);
+        entries.add(CoreAscensionBlocks.TROPICS_PLANKS);
+        entries.add(CoreAscensionBlocks.TROPICS_SLAB);
+        entries.add(CoreAscensionBlocks.TROPICS_STAIRS);
+        entries.add(CoreAscensionBlocks.TROPICS_FENCE);
+        entries.add(CoreAscensionBlocks.TROPICS_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.TROPICS_BUTTON);
+        entries.add(CoreAscensionBlocks.TROPICS_LEAVES);
+        entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
+        entries.add(CoreAscensionBlocks.BLACK_SAND);
+        entries.add(CoreAscensionBlocks.BLACK_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB);
+        entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_STAIRS);
+        entries.add(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CHISELED_BLACK_SANDSTONE);
+        entries.add(CoreAscensionBlocks.REINFORCED_GLASS);
+        entries.add(CoreAscensionBlocks.TROPICS_MUD);
+        entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICKS);
+        entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB);
+        entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_STAIRS);
+        entries.add(CoreAscensionBlocks.LOAM);
+        // -- END TROPICS --
+        // -- DREAD --
+        entries.add(CoreAscensionBlocks.DREAD_LOG);
+        entries.add(CoreAscensionBlocks.DREAD_WOOD);
+        entries.add(CoreAscensionBlocks.DREAD_PLANKS);
+        entries.add(CoreAscensionBlocks.DREAD_SLAB);
+        entries.add(CoreAscensionBlocks.DREAD_STAIRS);
+        entries.add(CoreAscensionBlocks.DREAD_FENCE);
+        entries.add(CoreAscensionBlocks.DREAD_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.DREAD_BUTTON);
+        entries.add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_DREAD_WOOD);
+        entries.add(CoreAscensionBlocks.DREAD_SAND);
+        entries.add(CoreAscensionBlocks.DREAD_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB);
+        entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_STAIRS);
+        entries.add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE);
+        entries.add(CoreAscensionBlocks.CHISELED_DREAD_SANDSTONE);
+        entries.add(CoreAscensionBlocks.BORDERLESS_GLASS);
+        entries.add(CoreAscensionBlocks.DREAD_ROCK);
+        entries.add(CoreAscensionBlocks.DREAD_ROCK_BRICKS);
+        // -- END DREAD --
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.RUBY);

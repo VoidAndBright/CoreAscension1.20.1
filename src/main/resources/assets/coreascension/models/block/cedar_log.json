@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "coreascension:block/cedarlog_top",
+    "side": "coreascension:block/cedarlog"
+  }
+}
