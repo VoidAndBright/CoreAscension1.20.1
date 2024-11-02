@@ -29,36 +29,41 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_BLOCK);
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_ORE);
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER);
+        // -- TITANIUM --
+        entries.add(CoreAscensionBlocks.TITANIUM_ORE);
+        entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.TITANIUM_STAIRS);
+        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_STAIRS);
+        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_STAIRS);
+        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_STAIRS);
         entries.add(CoreAscensionBlocks.BURNT_TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.BURNT_TITANIUM_SLAB);
         entries.add(CoreAscensionBlocks.BURNT_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_STAIRS);
+        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_STAIRS);
         entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_SLAB);
         entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_STAIRS);
         entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_SLAB);
         entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.SEARED_TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_BLOCK);
-        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_SLAB);
-        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_STAIRS);
-        entries.add(CoreAscensionBlocks.SINGED_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_STAIRS);
+        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
+        entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
+        // -- END TITANIUM --
+        entries.add(CoreAscensionBlocks.SAPPHIRE_ORE);
+        entries.add(CoreAscensionBlocks.SAPPHIRE_BLOCK);
         entries.add(CoreAscensionBlocks.BLAZE_BRICK);
         entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
         // -- CEDAR --
@@ -122,11 +127,41 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.DREAD_ROCK);
         entries.add(CoreAscensionBlocks.DREAD_ROCK_BRICKS);
         // -- END DREAD --
+
+        entries.add(CoreAscensionBlocks.HARDENED_LAVA);
+        entries.add(CoreAscensionBlocks.CEMENT);
+        entries.add(CoreAscensionBlocks.IMPERVIOUS_BRICK);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
         entries.add(CoreAscensionItems.RUBY);
+        entries.add(CoreAscensionItems.CITRINE);
+        entries.add(CoreAscensionItems.TOPAZ);
+        entries.add(CoreAscensionItems.SAPPHIRE);
+        entries.add(CoreAscensionItems.TADANITE_DIAMOND);
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
+        entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
+        entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
+        entries.add(CoreAscensionItems.GILDED_OBSIDIAN_LEGGINGS);
+        entries.add(CoreAscensionItems.GILDED_OBSIDIAN_BOOTS);
+        entries.add(CoreAscensionItems.SAPPHIRE_HELMET);
+        entries.add(CoreAscensionItems.SAPPHIRE_CHESTPLATE);
+        entries.add(CoreAscensionItems.SAPPHIRE_LEGGINGS);
+        entries.add(CoreAscensionItems.SAPPHIRE_BOOTS);
+        entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
+        entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
+        entries.add(CoreAscensionItems.SAPPHIRE_AXE);
+        entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
+        entries.add(CoreAscensionItems.SAPPHIRE_HOE);
+        entries.add(CoreAscensionItems.TADANITE_HELMET);
+        entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
+        entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
+        entries.add(CoreAscensionItems.TADANITE_BOOTS);
+        entries.add(CoreAscensionItems.TADANITE_SWORD);
+        entries.add(CoreAscensionItems.TADANITE_PICKAXE);
+        entries.add(CoreAscensionItems.TADANITE_AXE);
+        entries.add(CoreAscensionItems.TADANITE_SHOVEL);
+        entries.add(CoreAscensionItems.TADANITE_HOE);
     });
     public static ItemGroup registerItemGroup(String name, Item item, ItemGroup.EntryCollector entries){
         return Registry.register(Registries.ITEM_GROUP, new Identifier(CoreAscension.MOD_ID, name), FabricItemGroup.builder().

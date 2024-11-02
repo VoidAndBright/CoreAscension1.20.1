@@ -16,7 +16,8 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": ["com.blah.coreascension.CoreAscension"],
-		"client": ["com.blah.coreascension.CoreAscensionClient"]
+		"client": ["com.blah.coreascension.CoreAscensionClient"],
+		"fabric-datagen": ["com.blah.coreascension.CoreAscensionDataGenerator"]
 	},
 	"mixins": [
 		"coreascension.mixins.json"
