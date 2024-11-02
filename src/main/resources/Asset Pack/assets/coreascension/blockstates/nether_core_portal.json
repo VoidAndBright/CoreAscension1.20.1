@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "coreascension:block/nether_core_portal_ew"
+    },
+    "axis=x": {
+      "model": "coreascension:block/nether_core_portal_ns"
+    }
+  }
+}

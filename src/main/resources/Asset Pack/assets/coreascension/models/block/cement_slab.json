@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/cement",
+    "top": "coreascension:block/cement",
+    "side": "coreascension:block/cement"
+  }
+}

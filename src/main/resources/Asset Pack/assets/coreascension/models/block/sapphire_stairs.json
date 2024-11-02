@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/sapphireblock",
+    "top": "coreascension:block/sapphireblock",
+    "side": "coreascension:block/sapphireblock"
+  }
+}

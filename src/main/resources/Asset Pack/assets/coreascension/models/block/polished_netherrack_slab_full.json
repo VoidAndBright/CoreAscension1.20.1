@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "coreascension:block/polishednetherrack",
+    "top": "coreascension:block/polishednetherrack",
+    "side": "coreascension:block/polishednetherrack"
+  }
+}

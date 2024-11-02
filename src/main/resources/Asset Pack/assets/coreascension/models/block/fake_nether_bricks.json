@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/nether_bricks",
+    "particle": "coreascension:block/nether_bricks"
+  }
+}

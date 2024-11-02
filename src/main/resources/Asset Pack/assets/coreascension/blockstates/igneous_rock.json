@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+    {
+      "model": "coreascension:block/igneous_rock"
+    },
+    {
+      "model": "coreascension:block/igneous_rock",
+      "y" : 90
+    },
+    {
+      "model": "coreascension:block/igneous_rock",
+      "y" : 180
+    },
+    {
+      "model": "coreascension:block/igneous_rock",
+      "y" : 270
+    }
+    ]
+  }
+}

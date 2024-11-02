@@ -1,0 +1,9 @@
+{
+  "parent": "coreascension:custom/dread_post",
+  "textures": {
+    "all": "coreascension:block/dreadlog",
+    "particle": "coreascension:block/dreadlog",
+    "0": "coreascension:block/dreadlog",
+    "1": "coreascension:block/dread_post"
+  }
+}

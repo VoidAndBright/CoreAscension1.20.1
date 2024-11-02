@@ -1,0 +1,6 @@
+{
+  "parent": "coreascension:block/template_torch",
+  "textures": {
+    "torch": "coreascension:block/ethereal_torch_base"
+  }
+}

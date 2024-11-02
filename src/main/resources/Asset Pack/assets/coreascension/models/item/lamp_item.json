@@ -1,0 +1,7 @@
+{
+  "parent": "coreascension:custom/lamp",
+  "textures": {
+    "0": "coreascension:block/lamp",
+    "particle": "minecraft:glowstone"
+  }
+}

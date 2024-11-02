@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top_rh",
+  "textures": {
+    "bottom": "coreascension:block/golddoor_lower",
+    "top": "coreascension:block/golddoor_upper"
+  }
+}

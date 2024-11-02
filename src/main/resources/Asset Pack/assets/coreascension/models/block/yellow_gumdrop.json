@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/yellow_gumdrop",
+    "particle": "coreascension:block/yellow_gumdrop"
+  }
+}

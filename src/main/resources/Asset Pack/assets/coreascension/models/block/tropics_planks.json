@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/tropicsplanks",
+    "particle": "coreascension:block/tropicsplanks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "coreascension:block/potato_sprouts",
+    "particle": "coreascension:block/potato_sprouts"
+  }
+}

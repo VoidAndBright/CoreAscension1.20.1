@@ -1,0 +1,9 @@
+{
+  "parent": "coreascension:custom/horizontal_glass_pane",
+  "textures": {
+    "all": "coreascension:block/frosted_glass",
+    "particle": "coreascension:block/frosted_glass",
+    "0": "coreascension:block/horizontal_frosted_glass_pane_side",
+    "1": "coreascension:block/frosted_glass"
+  }
+}

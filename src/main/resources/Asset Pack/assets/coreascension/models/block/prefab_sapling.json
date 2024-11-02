@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "coreascension:block/prefabsapling",
+    "particle": "coreascension:block/prefabsapling"
+  }
+}

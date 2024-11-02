@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:amethyst_block"
+      "item": "coreascension:amethyst_tiles"
     }
   ],
   "result": {

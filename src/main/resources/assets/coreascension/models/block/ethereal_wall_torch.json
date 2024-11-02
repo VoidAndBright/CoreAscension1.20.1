@@ -1,6 +1,6 @@
 {
-  "parent": "coreascension:block/template_wall_torch",
+  "parent": "coreascension:block/template_stone_wall_torch",
   "textures": {
-    "torch": "coreascension:block/ethereal_torch"
+    "torch": "coreascension:block/ethereal_torch_base"
   }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/emerald_ore_scoria",
+    "particle": "coreascension:block/emerald_ore_scoria"
+  }
+}

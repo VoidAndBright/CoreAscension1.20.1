@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "coreascension:block/xenon_crystal_block"
+    }
+  }
+}

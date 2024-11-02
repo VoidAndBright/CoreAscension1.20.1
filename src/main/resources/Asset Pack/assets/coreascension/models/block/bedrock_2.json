@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/bedrock",
+    "up": "coreascension:block/bedrock",
+    "north": "coreascension:block/bedrock",
+    "east": "coreascension:block/bedrock",
+    "south": "coreascension:block/bedrock",
+    "west": "coreascension:block/bedrock",
+    "particle": "coreascension:block/bedrock"
+  }
+}

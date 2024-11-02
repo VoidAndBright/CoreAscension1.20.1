@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/nethericebrick",
+    "top": "coreascension:block/nethericebrick",
+    "side": "coreascension:block/nethericebrick"
+  }
+}

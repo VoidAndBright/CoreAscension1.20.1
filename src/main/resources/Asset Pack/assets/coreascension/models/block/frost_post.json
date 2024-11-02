@@ -1,0 +1,9 @@
+{
+  "parent": "coreascension:custom/frost_post",
+  "textures": {
+    "all": "coreascension:block/frostlog",
+    "particle": "coreascension:block/frostlog",
+    "0": "coreascension:block/frostlog",
+    "1": "coreascension:block/frost_post"
+  }
+}

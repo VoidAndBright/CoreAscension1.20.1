@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "coreascension:block/core_wart_block"
+    }
+  }
+}

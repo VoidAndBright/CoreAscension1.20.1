@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "coreascension:block/bamboo_slab"
+    },
+    "type=top": {
+      "model": "coreascension:block/bamboo_slab_top"
+    },
+    "type=double": {
+      "model": "coreascension:block/bamboo_slab_full"
+    }
+  }
+}

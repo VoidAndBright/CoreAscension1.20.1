@@ -111,7 +111,7 @@ public class CoreAscensionBlocks {
 
 	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick",new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
 
-	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new GemPolishingStationBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
 	// cedar grove stuff
 	public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
@@ -194,5 +194,6 @@ public class CoreAscensionBlocks {
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_CHEST, RenderLayer.getCutout());
 	}
 }

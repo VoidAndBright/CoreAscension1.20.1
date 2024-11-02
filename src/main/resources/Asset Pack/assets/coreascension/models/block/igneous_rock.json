@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/igneousrock",
+    "up": "coreascension:block/igneousrock",
+    "north": "coreascension:block/igneousrock",
+    "east": "coreascension:block/igneousrock",
+    "south": "coreascension:block/igneousrock",
+    "west": "coreascension:block/igneousrock",
+    "particle": "coreascension:block/igneousrock"
+  }
+}

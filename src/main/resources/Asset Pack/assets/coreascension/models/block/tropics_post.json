@@ -1,0 +1,9 @@
+{
+  "parent": "coreascension:custom/tropics_post",
+  "textures": {
+    "all": "coreascension:block/palmlog",
+    "particle": "coreascension:block/palmlog",
+    "0": "coreascension:block/palmlog",
+    "1": "coreascension:block/tropics_post"
+  }
+}

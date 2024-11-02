@@ -1,0 +1,78 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "coreascension:block/netherfrost"
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "x": 90
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "x": 180
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "x": 270
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 90
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 90,
+        "x": 90
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 90,
+        "x": 180
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 90,
+        "x": 270
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 180
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 180,
+        "x": 90
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 180,
+        "x": 180
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 180,
+        "x": 270
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 270
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 270,
+        "x": 90
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 270,
+        "x": 180
+      },
+      {
+        "model": "coreascension:block/netherfrost",
+        "y": 270,
+        "x": 270
+      }
+    ]
+  }
+}

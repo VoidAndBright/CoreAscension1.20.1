@@ -18,9 +18,9 @@ public class PostBlock extends PillarBlock {
     }
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(AXIS)){
-            case X -> VoxelShapes.union(SHAPE_X);
-            case Y -> VoxelShapes.union(SHAPE_Y);
-            case Z -> VoxelShapes.union(SHAPE_Z);
+            case X -> SHAPE_X;
+            case Y -> SHAPE_Y;
+            case Z -> SHAPE_Z;
         };
     }
 }

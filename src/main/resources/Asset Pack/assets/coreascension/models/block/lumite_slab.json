@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/lumiteblock",
+    "top": "coreascension:block/lumiteblock",
+    "side": "coreascension:block/lumiteblock"
+  }
+}

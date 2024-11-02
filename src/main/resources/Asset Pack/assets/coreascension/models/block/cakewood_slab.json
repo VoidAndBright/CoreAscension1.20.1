@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/cakewood_planks",
+    "top": "coreascension:block/cakewood_planks",
+    "side": "coreascension:block/cakewood_planks"
+  }
+}

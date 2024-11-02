@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/tropicstonebrick",
+    "top": "coreascension:block/tropicstonebrick",
+    "side": "coreascension:block/tropicstonebrick"
+  }
+}

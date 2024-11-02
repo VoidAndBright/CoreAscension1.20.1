@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/polishednetherrack",
+    "top": "coreascension:block/polishednetherrack",
+    "side": "coreascension:block/polishednetherrack"
+  }
+}

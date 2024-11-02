@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "coreascension:block/cactus_door_bottom",
+    "top": "coreascension:block/cactus_door_top"
+  }
+}

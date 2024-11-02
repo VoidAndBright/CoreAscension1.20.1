@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/frostsandstone_top",
+    "up": "coreascension:block/frostsandstone_top",
+    "north": "coreascension:block/frostsandstone_smooth",
+    "east": "coreascension:block/frostsandstone_smooth",
+    "south": "coreascension:block/frostsandstone_smooth",
+    "west": "coreascension:block/frostsandstone_smooth",
+    "particle": "coreascension:block/frostsandstone_top"
+  }
+}

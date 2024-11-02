@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/mud_bricks",
+    "particle": "coreascension:block/mud_bricks"
+  }
+}

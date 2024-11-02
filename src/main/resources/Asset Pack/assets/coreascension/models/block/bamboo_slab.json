@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/bamboo_planks",
+    "top": "coreascension:block/bamboo_planks",
+    "side": "coreascension:block/bamboo_planks"
+  }
+}

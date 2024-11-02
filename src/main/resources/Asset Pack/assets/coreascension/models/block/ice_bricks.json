@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/ice_bricks",
+    "particle": "coreascension:block/ice_bricks"
+  }
+}

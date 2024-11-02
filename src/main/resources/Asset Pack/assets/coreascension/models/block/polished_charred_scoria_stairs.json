@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/polishedcharredscoria",
+    "top": "coreascension:block/polishedcharredscoria",
+    "side": "coreascension:block/polishedcharredscoria"
+  }
+}

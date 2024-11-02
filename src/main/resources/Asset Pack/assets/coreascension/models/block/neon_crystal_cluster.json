@@ -1,0 +1,8 @@
+{
+  "parent": "coreascension:custom/crystalthing",
+  "textures": {
+    "all": "coreascension:block/neoncrystal",
+    "particle": "coreascension:block/neoncrystal",
+    "crystal": "coreascension:block/neoncrystal"
+  }
+}

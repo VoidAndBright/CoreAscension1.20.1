@@ -1,0 +1,9 @@
+{
+  "parent": "coreascension:custom/warped_post",
+  "textures": {
+    "all": "coreascension:block/warped_stem",
+    "particle": "coreascension:block/warped_stem",
+    "0": "coreascension:block/warped_stem",
+    "1": "coreascension:block/warped_post"
+  }
+}

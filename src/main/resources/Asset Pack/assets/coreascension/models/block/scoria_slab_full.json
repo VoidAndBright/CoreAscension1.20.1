@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "coreascension:block/scoria",
+    "top": "coreascension:block/scoria",
+    "side": "coreascension:block/scoria"
+  }
+}

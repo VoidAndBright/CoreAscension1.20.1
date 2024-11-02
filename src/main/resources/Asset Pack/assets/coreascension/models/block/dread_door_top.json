@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top",
+  "textures": {
+    "bottom": "coreascension:block/dreaddoor_lower",
+    "top": "coreascension:block/dreaddoor_upper"
+  }
+}

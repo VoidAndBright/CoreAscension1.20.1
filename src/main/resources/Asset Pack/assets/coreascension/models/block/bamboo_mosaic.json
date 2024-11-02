@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/bamboo_mosaic",
+    "up": "coreascension:block/bamboo_mosaic",
+    "north": "coreascension:block/bamboo_mosaic",
+    "east": "coreascension:block/bamboo_mosaic",
+    "south": "coreascension:block/bamboo_mosaic",
+    "west": "coreascension:block/bamboo_mosaic",
+    "particle": "coreascension:block/bamboo_mosaic"
+  }
+}

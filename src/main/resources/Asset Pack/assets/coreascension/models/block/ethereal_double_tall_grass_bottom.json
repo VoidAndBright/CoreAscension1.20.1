@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "coreascension:block/ethereal_tall_grass_bottom",
+    "particle": "coreascension:block/ethereal_tall_grass_bottom"
+  }
+}

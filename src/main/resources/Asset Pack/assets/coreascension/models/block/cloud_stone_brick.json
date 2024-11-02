@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/tropicstonebrick",
+    "up": "coreascension:block/tropicstonebrick",
+    "north": "coreascension:block/tropicstonebrick",
+    "east": "coreascension:block/tropicstonebrick",
+    "south": "coreascension:block/tropicstonebrick",
+    "west": "coreascension:block/tropicstonebrick",
+    "particle": "coreascension:block/tropicstonebrick"
+  }
+}

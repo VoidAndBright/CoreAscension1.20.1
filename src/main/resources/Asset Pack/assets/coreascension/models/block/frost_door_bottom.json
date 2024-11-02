@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "coreascension:block/frostdoor_lower",
+    "top": "coreascension:block/frostdoor_upper"
+  }
+}

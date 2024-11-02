@@ -1,0 +1,8 @@
+{
+  "parent": "coreascension:custom/lamp",
+  "textures": {
+    "all": "coreascension:block/lamp",
+    "particle": "coreascension:block/lamp",
+    "0": "coreascension:block/lamp"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/polished_moonstone",
+    "top": "coreascension:block/polished_moonstone",
+    "side": "coreascension:block/polished_moonstone"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "coreascension:block/dreadsandstone_top",
+    "up": "coreascension:block/dreadsandstone_top",
+    "north": "coreascension:block/dreadsandstone_smooth",
+    "east": "coreascension:block/dreadsandstone_smooth",
+    "south": "coreascension:block/dreadsandstone_smooth",
+    "west": "coreascension:block/dreadsandstone_smooth",
+    "particle": "coreascension:block/dreadsandstone_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "coreascension:custom/eggsac",
+  "textures": {
+    "all": "coreascension:block/eggsac",
+    "particle": "coreascension:block/eggsac",
+    "0": "coreascension:block/eggsac"
+  }
+}

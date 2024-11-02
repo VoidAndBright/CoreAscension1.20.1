@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/polishedscoria",
+    "top": "coreascension:block/polishedscoria",
+    "side": "coreascension:block/polishedscoria"
+  }
+}

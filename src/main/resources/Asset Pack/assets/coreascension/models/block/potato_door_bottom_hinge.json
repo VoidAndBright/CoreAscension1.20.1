@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom_rh",
+  "textures": {
+    "bottom": "coreascension:block/potato_door_bottom",
+    "top": "coreascension:block/potato_door_top"
+  }
+}

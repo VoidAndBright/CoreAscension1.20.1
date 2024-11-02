@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/dead_planks",
+    "particle": "coreascension:block/dead_planks"
+  }
+}

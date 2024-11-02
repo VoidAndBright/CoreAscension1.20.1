@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/moonstone",
+    "top": "coreascension:block/moonstone",
+    "side": "coreascension:block/moonstone"
+  }
+}

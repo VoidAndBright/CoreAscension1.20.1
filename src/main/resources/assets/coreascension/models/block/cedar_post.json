@@ -1,9 +1,7 @@
 {
-  "parent": "coreascension:custom/cedar_post",
+  "parent": "coreascension:custom/post",
   "textures": {
-    "all": "coreascension:block/cedarlog",
-    "particle": "coreascension:block/cedarlog",
-    "0": "coreascension:block/cedarlog",
-    "1": "coreascension:block/cedar_post"
+    "side": "coreascension:block/cedarlog",
+    "end": "coreascension:block/cedar_post"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "coreascension:block/frostsandstone_bottom",
+    "top": "coreascension:block/frostsandstone_top",
+    "side": "coreascension:block/frostsandstone"
+  }
+}

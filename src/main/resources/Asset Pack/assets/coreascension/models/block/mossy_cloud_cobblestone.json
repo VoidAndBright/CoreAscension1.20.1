@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/mossy_cloud_cobblestone",
+    "particle": "coreascension:block/mossy_cloud_cobblestone"
+  }
+}

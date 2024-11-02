@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/dark_matter_leaves",
+    "particle": "coreascension:block/dark_matter_leaves"
+  }
+}

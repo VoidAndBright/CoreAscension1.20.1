@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_bottom",
+  "textures": {
+    "bottom": "coreascension:block/cedardoor_lower",
+    "top": "coreascension:block/cedardoor_upper"
+  }
+}

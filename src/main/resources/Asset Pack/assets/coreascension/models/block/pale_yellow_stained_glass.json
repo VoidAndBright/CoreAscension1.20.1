@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/pale_yellow_stained_glass",
+    "particle": "coreascension:block/pale_yellow_stained_glass"
+  }
+}

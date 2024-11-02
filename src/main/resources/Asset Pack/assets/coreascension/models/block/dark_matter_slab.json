@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "coreascension:block/dark_matter_planks",
+    "top": "coreascension:block/dark_matter_planks",
+    "side": "coreascension:block/dark_matter_planks"
+  }
+}

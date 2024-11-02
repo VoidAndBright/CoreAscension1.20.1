@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:block/blahck",
+    "particle": "coreascension:block/blahck"
+  }
+}

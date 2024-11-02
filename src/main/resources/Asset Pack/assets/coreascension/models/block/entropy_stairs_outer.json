@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "coreascension:block/entropy_planks",
+    "top": "coreascension:block/entropy_planks",
+    "side": "coreascension:block/entropy_planks"
+  }
+}

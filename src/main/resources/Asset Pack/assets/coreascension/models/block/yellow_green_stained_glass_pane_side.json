@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_side",
+  "textures": {
+    "edge": "coreascension:block/yellow_green_stained_glass_pane_top",
+    "pane": "coreascension:block/yellow_green_stained_glass"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "coreascension:block/potato_leaves",
+    "particle": "coreascension:block/potato_leaves"
+  }
+}
