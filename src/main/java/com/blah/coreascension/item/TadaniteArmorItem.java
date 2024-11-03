@@ -21,7 +21,9 @@ public class TadaniteArmorItem extends ArmorItem {
         super(material, type, settings);
         ImmutableMultimap.Builder<ArmorMaterial, StatusEffectInstance> builder = ImmutableMultimap.builder();
         builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 0, false, false, true)).build();
-        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.WATER_BREATHING, 60, 0, false, false, true)).build();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.SPEED, 60, 1, false, false, true)).build();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60, 1, false, false, true)).build();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 1, false, false, true)).build();
         this.ArmourSetEffects = builder.build();
     }
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
