@@ -52,7 +52,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_STAIRS)
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK)
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB)
-                .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
+                .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS)
+                .add(CoreAscensionBlocks.URANIUM_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(CoreAscensionBlocks.URANIUM_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
@@ -119,6 +123,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.HARDENED_LAVA)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
+                .add(CoreAscensionBlocks.URANIUM_ORE)
+                .add(CoreAscensionBlocks.URANIUM_BLOCK)
                 .add(CoreAscensionBlocks.CEMENT);
 //                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)
 //                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)
@@ -182,6 +188,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(CoreAscensionBlocks.STRIPPED_DREAD_WOOD)
                 .add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG)
                 .add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG)
+                .add(CoreAscensionBlocks.COCONUT)
                 .add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
     }
 }

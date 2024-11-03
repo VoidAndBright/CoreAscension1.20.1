@@ -131,6 +131,9 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.HARDENED_LAVA);
         entries.add(CoreAscensionBlocks.CEMENT);
         entries.add(CoreAscensionBlocks.IMPERVIOUS_BRICK);
+        entries.add(CoreAscensionBlocks.COCONUT);
+        entries.add(CoreAscensionBlocks.URANIUM_ORE);
+        entries.add(CoreAscensionBlocks.URANIUM_BLOCK);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -138,8 +141,18 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.CITRINE);
         entries.add(CoreAscensionItems.TOPAZ);
         entries.add(CoreAscensionItems.SAPPHIRE);
+        entries.add(CoreAscensionItems.RUBY_SHARD);
+        entries.add(CoreAscensionItems.CITRINE_SHARD);
+        entries.add(CoreAscensionItems.TOPAZ_SHARD);
+        entries.add(CoreAscensionItems.EMERALD_SHARD);
+        entries.add(CoreAscensionItems.DIAMOND_SHARD);
+        entries.add(CoreAscensionItems.SAPPHIRE_SHARD);
+        entries.add(CoreAscensionItems.TADANITE_CRYSTAL);
         entries.add(CoreAscensionItems.TADANITE_DIAMOND);
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
+        entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
+        entries.add(CoreAscensionItems.URANIUM_INGOT);
+        // -- ARMOR --
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_LEGGINGS);
@@ -148,20 +161,31 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.SAPPHIRE_CHESTPLATE);
         entries.add(CoreAscensionItems.SAPPHIRE_LEGGINGS);
         entries.add(CoreAscensionItems.SAPPHIRE_BOOTS);
+        entries.add(CoreAscensionItems.TADANITE_HELMET);
+        entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
+        entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
+        entries.add(CoreAscensionItems.TADANITE_BOOTS);
+        // -- END ARMOR --
+
+        // -- TOOLS --
         entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
         entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
         entries.add(CoreAscensionItems.SAPPHIRE_AXE);
         entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
         entries.add(CoreAscensionItems.SAPPHIRE_HOE);
-        entries.add(CoreAscensionItems.TADANITE_HELMET);
-        entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
-        entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
-        entries.add(CoreAscensionItems.TADANITE_BOOTS);
         entries.add(CoreAscensionItems.TADANITE_SWORD);
         entries.add(CoreAscensionItems.TADANITE_PICKAXE);
         entries.add(CoreAscensionItems.TADANITE_AXE);
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
+        entries.add(CoreAscensionItems.URANIUM_PICKAXE);
+        // -- END TOOLS --
+
+        // -- FOOD --
+        entries.add(CoreAscensionItems.CALAMARI);
+        entries.add(CoreAscensionItems.COOKED_CALAMARI);
+        entries.add(CoreAscensionItems.COCONUT_FOOD);
+        // -- END FOOD --
     });
     public static ItemGroup registerItemGroup(String name, Item item, ItemGroup.EntryCollector entries){
         return Registry.register(Registries.ITEM_GROUP, new Identifier(CoreAscension.MOD_ID, name), FabricItemGroup.builder().

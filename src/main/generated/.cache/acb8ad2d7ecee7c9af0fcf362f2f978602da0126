@@ -1,0 +1,9 @@
+// 1.20.1	2024-11-03T08:30:33.513901	CoreAscension/Tags for minecraft:block
+35d3e36ca981c274c0f571541448c193d8ca5998 data\minecraft\tags\blocks\walls.json
+b3bb024d76c3f56e72a653162500152e57ad460a data\minecraft\tags\blocks\mineable\axe.json
+c1cdf8f57e32e8cffe240f42f19954e2ee5164b1 data\minecraft\tags\blocks\fence_gates.json
+a155b5f7f81681623d0cc721b96088b20949b830 data\minecraft\tags\blocks\mineable\shovel.json
+5325a4bcc8e822030aeeeddbf50b1f62c219e261 data\minecraft\tags\blocks\needs_iron_tool.json
+1e5e7b201f2f62005a8b145de48affa4227fc0c2 data\minecraft\tags\blocks\fences.json
+4cc56ac70838cfb8dd0daba969bfdc375730d153 data\minecraft\tags\blocks\mineable\pickaxe.json
+d47e9745f152f2570be94409b05d0f0545f81ebb data\minecraft\tags\blocks\needs_stone_tool.json

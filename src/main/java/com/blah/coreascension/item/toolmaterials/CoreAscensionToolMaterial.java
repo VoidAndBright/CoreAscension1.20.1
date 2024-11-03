@@ -12,7 +12,9 @@ public enum CoreAscensionToolMaterial implements ToolMaterial {
     SAPPHIRE(3, 1203, 10f, 4f, 15,
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), ""),
     TADANITE(5, 4000, 14f, 8f, 20,
-            () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL), "Efficient");
+            () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL), "Efficient"),
+    URANIUM(3, 2031, 10f, 4f, 0,
+                     () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT), "");
 
     private final int miningLevel;
     private final int itemDurability;

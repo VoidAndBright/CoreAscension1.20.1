@@ -116,6 +116,12 @@ public class CoreAscensionBlocks {
 
 	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
+	// uranium
+	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new Block(FabricBlockSettings.copyOf(Blocks.BASALT)));
+	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	// end uranium
+
+
 	// cedar grove stuff
 	public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
 	public static final Block CEDAR_WOOD = RegisterBlockItem("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
@@ -183,6 +189,7 @@ public class CoreAscensionBlocks {
 	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)));
 	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 
 	// end misc blocks
 
