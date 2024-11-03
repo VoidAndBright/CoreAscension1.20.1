@@ -6,7 +6,9 @@ import net.minecraft.recipe.Ingredient;
 
 import java.util.function.Supplier;
 
-public enum ModToolMaterial implements ToolMaterial {
+public enum CoreascensionToolMaterial implements ToolMaterial {
+    TOOL(1, 0, 13f, 4f, 0,
+            null, ""),
     SAPPHIRE(3, 1203, 10f, 4f, 15,
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), ""),
     TADANITE(5, 4000, 14f, 8f, 20,
@@ -20,7 +22,7 @@ public enum ModToolMaterial implements ToolMaterial {
     private final String tooltip;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attckDamage, int enchantability, Supplier<Ingredient> repairIngredient, String toolTip) {
+    CoreascensionToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attckDamage, int enchantability, Supplier<Ingredient> repairIngredient, String toolTip) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

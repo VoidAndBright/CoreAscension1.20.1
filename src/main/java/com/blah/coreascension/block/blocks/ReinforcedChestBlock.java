@@ -1,11 +1,8 @@
 package com.blah.coreascension.block.blocks;
 
-import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
 import com.blah.coreascension.blockentity.blockentities.ReinforcedChestBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
@@ -21,11 +18,9 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 public class ReinforcedChestBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    public static final DirectionProperty DIRECTIONS = Properties.FACING;
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 12, 16);
 
@@ -69,9 +64,5 @@ public class ReinforcedChestBlock extends BlockWithEntity implements BlockEntity
             }
         }
         return ActionResult.SUCCESS;
-    }
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, CoreAscensionBlockEntities.GEM_POLISHING_STATION_BLOCK_ENTITY,
-                (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }

@@ -8,53 +8,34 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
-import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
 public class ReinforcedChestScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    private final PropertyDelegate propertyDelegate;
     public final ReinforcedChestBlockEntity blockEntity;
 
     public ReinforcedChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
-                new ArrayPropertyDelegate(2));
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
 
-    public ReinforcedChestScreenHandler(int syncId, PlayerInventory playerInventory,
-                                        BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
+    public ReinforcedChestScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
         super(CoreAscensionScreenHandlers.REINFORCED_CHEST_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 2);
+        checkSize(((Inventory) blockEntity), 78);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
-        this.propertyDelegate = arrayPropertyDelegate;
         this.blockEntity = ((ReinforcedChestBlockEntity) blockEntity);
 
-        this.addSlot(new Slot(inventory, 0, 80, 11));
-        this.addSlot(new Slot(inventory, 1, 80, 59));
-
+        addChestInventory(inventory);
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
-
-        addProperties(arrayPropertyDelegate);
     }
 
-    public boolean isCrafting() {
-        return propertyDelegate.get(0) > 0;
+    public Inventory getInventory() {
+        return inventory;
     }
 
-    public int getScaledProgress() {
-        int progress = this.propertyDelegate.get(0);
-        int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the width in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
-    }
-
-    @Override
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
@@ -79,22 +60,27 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
         return newStack;
     }
 
-    @Override
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
-    }
 
-    private void addPlayerInventory(PlayerInventory playerInventory) {
-        for (int i = 0; i < 3; ++i) {
-            for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
+    private void addChestInventory(Inventory Inventory) {
+        for (int iterate_x = 0; iterate_x < 13; ++iterate_x) {
+            for (int iterate_y = 0; iterate_y < 6; ++iterate_y) {
+                this.addSlot(new Slot(Inventory,iterate_y*13+iterate_x, iterate_x*18-28, iterate_y*18-10));
             }
         }
     }
-
+    public boolean canUse(PlayerEntity player) {
+        return this.inventory.canPlayerUse(player);
+    }
+    private void addPlayerInventory(PlayerInventory playerInventory) {
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
+            for (int iterate_y = 0; iterate_y < 3; ++iterate_y) {
+                this.addSlot(new Slot(playerInventory, iterate_x+iterate_y*9+9, 8 + iterate_x*18, iterate_y*18+112));
+            }
+        }
+    }
     private void addPlayerHotbar(PlayerInventory playerInventory) {
-        for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
+            this.addSlot(new Slot(playerInventory,iterate_x,8+iterate_x*18,170));
         }
     }
 }

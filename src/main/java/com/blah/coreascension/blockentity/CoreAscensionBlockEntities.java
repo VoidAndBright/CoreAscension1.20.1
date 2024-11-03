@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 
 
 public class CoreAscensionBlockEntities {
-    public static final BlockEntityType<ReinforcedChestBlockEntity> GEM_POLISHING_STATION_BLOCK_ENTITY = registerBlockEntity("reinforced_chest", FabricBlockEntityTypeBuilder.create(ReinforcedChestBlockEntity::new, CoreAscensionBlocks.REINFORCED_CHEST));
+    public static final BlockEntityType<ReinforcedChestBlockEntity> REINFORCED_CHEST_BLOCK_ENTITY = registerBlockEntity("reinforced_chest", FabricBlockEntityTypeBuilder.create(ReinforcedChestBlockEntity::new, CoreAscensionBlocks.REINFORCED_CHEST));
 
     public static BlockEntityType registerBlockEntity(String name, FabricBlockEntityTypeBuilder blockEntityType){
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(CoreAscension.MOD_ID, name), blockEntityType.build());

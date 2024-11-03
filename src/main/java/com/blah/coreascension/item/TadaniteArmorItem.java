@@ -1,8 +1,8 @@
 package com.blah.coreascension.item;
 
-import com.blah.coreascension.item.armormaterials.ModArmorMaterials;
-import com.google.common.collect.ImmutableMap;
+import com.blah.coreascension.item.armormaterials.CoreAscensionArmorMaterials;
 import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -14,89 +14,60 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class TadaniteArmorItem extends ArmorItem
-{
+public class TadaniteArmorItem extends ArmorItem {
+    private final Multimap<ArmorMaterial, StatusEffectInstance> ArmourSetEffects;
 
-
-    private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 0,
-                            false, false, true)).build();
-//                    .put(ModArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.SPEED, 60, 1,
-//                            false, false, true))
-//                    .put(ModArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60, 1,
-//                            false, false, true))
-//                    .put(ModArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 1,
-//                            false, false, true)).build();
-
-    public TadaniteArmorItem(ArmorMaterial material, Type type, Settings settings)
-    {
+    public TadaniteArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
+        ImmutableMultimap.Builder<ArmorMaterial, StatusEffectInstance> builder = ImmutableMultimap.builder();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 0, false, false, true)).build();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.WATER_BREATHING, 60, 0, false, false, true)).build();
+        this.ArmourSetEffects = builder.build();
     }
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected)
-    {
-        if(!world.isClient())
-        {
-            if(entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player))
-            {
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        if(!world.isClient()) {
+            if(entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player)) {
                 evaluateArmorEffects(player);
             }
         }
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    private void evaluateArmorEffects(PlayerEntity player)
-    {
-        for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet())
-        {
+    private void evaluateArmorEffects(PlayerEntity player) {
+        for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry : ArmourSetEffects.entries()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
             StatusEffectInstance mapStatusEffect = entry.getValue();
 
-            if(hasCorrectArmorOn(mapArmorMaterial, player))
-            {
+            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
             }
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect)
-    {
+    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
-
-        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect)
-        {
+        if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
         }
     }
 
-    private boolean hasFullSuitOfArmorOn(PlayerEntity player)
-    {
-        ItemStack boots = player.getInventory().getArmorStack(0);
-        ItemStack leggings = player.getInventory().getArmorStack(1);
-        ItemStack breastplate = player.getInventory().getArmorStack(2);
-        ItemStack helmet = player.getInventory().getArmorStack(3);
-
-        return !helmet.isEmpty() && !breastplate.isEmpty()
-                && !leggings.isEmpty() && !boots.isEmpty();
-    }
-
-    private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player)
-    {
-        for (ItemStack armorStack: player.getInventory().armor)
-        {
-            if(!(armorStack.getItem() instanceof ArmorItem))
-            {
+    private boolean hasFullSuitOfArmorOn(PlayerEntity player) {
+        for (ItemStack armorStack: player.getInventory().armor) {
+            if(!(armorStack.getItem() instanceof ArmorItem)) {
                 return false;
             }
         }
 
-        ArmorItem boots = ((ArmorItem)player.getInventory().getArmorStack(0).getItem());
-        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmorStack(1).getItem());
-        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmorStack(2).getItem());
-        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmorStack(3).getItem());
+        return true;
+    }
 
-        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
-                leggings.getMaterial() == material && boots.getMaterial() == material;
+    private boolean hasCorrectArmorOn(ArmorMaterial material, PlayerEntity player) {
+        if(!hasFullSuitOfArmorOn(player)){return false;}
+        for (int iterate = 0;iterate < 4;iterate++){
+            if(((ArmorItem)player.getInventory().getArmorStack(iterate).getItem()).getMaterial()!=material){
+                return false;
+            }
+        }
+        return true;
     }
 }

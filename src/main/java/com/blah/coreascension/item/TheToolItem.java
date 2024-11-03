@@ -1,5 +1,6 @@
 package com.blah.coreascension.item;
 
+import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
@@ -24,6 +25,6 @@ public class TheToolItem extends MiningToolItem
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
     {
         super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier("coreascension.tooltip.the_tool"))).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.the_tool"))).formatted(Formatting.GRAY));
     }
 }

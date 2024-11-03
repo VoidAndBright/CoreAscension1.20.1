@@ -1,5 +1,6 @@
 package com.blah.coreascension.item.tooltypes;
 
+import com.blah.coreascension.CoreAscension;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
@@ -19,10 +20,9 @@ public class TadaniteHoeItem extends HoeItem
     {
         super(material, attackDamage, attackSpeed, settings);
     }
-    @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
     {
         super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier("coreascension.tooltip.tadanite"))).formatted(Formatting.YELLOW));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.tadanite"))).formatted(Formatting.YELLOW));
     }
 }

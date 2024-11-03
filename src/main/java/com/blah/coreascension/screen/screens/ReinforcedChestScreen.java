@@ -8,46 +8,37 @@ import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
 
 public class ReinforcedChestScreen extends HandledScreen<ReinforcedChestScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/gem_polishing_station_gui.png");
-
+    private static final Identifier TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/reinforced_chest_gui.png");
     public ReinforcedChestScreen(ReinforcedChestScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
-
-    @Override
     protected void init() {
         super.init();
-        titleY = 1000;
-        playerInventoryTitleY = 1000;
+        this.titleX = -28;
+        this.titleY = -22;
+        this.playerInventoryTitleY = 100;
     }
-
-    @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
+        backgroundWidth = 248;
+        backgroundHeight = 222;
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
-
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-
-        renderProgressArrow(context, x, y);
     }
-
-    private void renderProgressArrow(DrawContext context, int x, int y) {
-        if(handler.isCrafting()) {
-            context.drawTexture(TEXTURE, x + 85, y + 30, 176, 0, 8, handler.getScaledProgress());
-        }
+    protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
+        int x = (width - backgroundWidth) / 2;
+        int y = (height - backgroundHeight) / 2;
+        return mouseX < (double)x || mouseX >= (double)x+backgroundWidth || mouseY < (double)y || mouseY >= (double)y+backgroundHeight;
     }
-
-    @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
-        context.drawText(textRenderer, Text.translatable(Util.createTranslationKey("item", new Identifier("coreascension.tooltip.the_tool"))), width / 2, height / 2,0xffffff,false);
+        context.drawText(textRenderer,title, 0, titleY,0xffffff,false);
     }
 }

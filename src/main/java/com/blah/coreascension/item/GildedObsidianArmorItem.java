@@ -1,6 +1,6 @@
 package com.blah.coreascension.item;
 
-import com.blah.coreascension.item.armormaterials.ModArmorMaterials;
+import com.blah.coreascension.item.armormaterials.CoreAscensionArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -17,7 +17,7 @@ public class GildedObsidianArmorItem extends ArmorItem
 {
     private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.GILDED_OBSIDIAN, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 1,
+                    .put(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 1,
                             false, false, true)).build();
 
     public GildedObsidianArmorItem(ArmorMaterial material, Type type, Settings settings)
