@@ -33,7 +33,8 @@ public class ReinforcedChestBlockEntityRenderer implements BlockEntityRenderer<R
         double offset = Math.sin((blockEntity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
         matrices.translate(0.5, 1.25 + offset, 0.5);
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-30));
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-Rotation));
+        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(Rotation));
+        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(Rotation));
         itemRenderer.renderItem(Base, ModelTransformationMode.GUI, getLightLevel(blockEntity.getWorld(),blockEntity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, blockEntity.getWorld(), 1);
         matrices.pop();
     }

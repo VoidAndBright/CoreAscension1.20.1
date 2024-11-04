@@ -2,10 +2,10 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.item.armormaterials.CoreAscensionArmorMaterials;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
-import com.blah.coreascension.item.toolmaterials.CoreAscensionToolMaterial;
-import com.blah.coreascension.item.tooltypes.*;
+import com.blah.coreascension.item.items.AdvancedArmorItem;
+import com.blah.coreascension.item.tools.TheToolItem;
+import com.blah.coreascension.item.tools.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -18,6 +18,7 @@ public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
+    public static final Item RAW_TITANIUM = registerItem("titanium",new Item(new FabricItemSettings()));
     public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
     public static final Item CITRINE = registerItem("citrine",new Item(new FabricItemSettings()));
     public static final Item CITRINE_SHARD = registerItem("citrine_shard",new Item(new FabricItemSettings()));
@@ -35,22 +36,22 @@ public class CoreAscensionItems {
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod",new Item(new FabricItemSettings()));
 
     public static final Item GILDED_OBSIDIAN_HELMET = registerItem("gilded_obsidian_helmet",
-            new GildedObsidianArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item GILDED_OBSIDIAN_CHESTPLATE = registerItem("gilded_obsidian_chestplate",
-            new GildedObsidianArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item GILDED_OBSIDIAN_LEGGINGS = registerItem("gilded_obsidian_leggings",
-            new GildedObsidianArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GILDED_OBSIDIAN_BOOTS = registerItem("gilded_obsidian_boots",
-            new GildedObsidianArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
-            new TadaniteArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_CHESTPLATE = registerItem("tadanite_chestplate",
-            new TadaniteArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_LEGGINGS = registerItem("tadanite_leggings",
-            new TadaniteArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_BOOTS = registerItem("tadanite_boots",
-            new TadaniteArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_PICKAXE = registerItem("tadanite_pickaxe",
             new TadanitePickaxeItem(CoreAscensionToolMaterial.TADANITE, 6, -2.8f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_SWORD = registerItem("tadanite_sword",
@@ -91,7 +92,7 @@ public class CoreAscensionItems {
     public static final Item URANIUM_BOOTS = registerItem("uranium_boots",
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_PICKAXE = registerItem("uranium_pickaxe",
-            new UraniumPickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
+            new VeinMinePickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
 //    public static final Item URANIUM_SWORD = registerItem("sapphire_sword",
 //            new SwordItem(CoreAscensionToolMaterial.TOOL, 4, -2.4f, new FabricItemSettings()));
 //    public static final Item URANIUM_AXE = registerItem("sapphire_axe",

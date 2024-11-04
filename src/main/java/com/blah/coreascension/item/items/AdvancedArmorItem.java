@@ -1,6 +1,6 @@
-package com.blah.coreascension.item;
+package com.blah.coreascension.item.items;
 
-import com.blah.coreascension.item.armormaterials.CoreAscensionArmorMaterials;
+import com.blah.coreascension.item.CoreAscensionArmorMaterials;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.Entity;
@@ -14,17 +14,18 @@ import net.minecraft.world.World;
 
 import java.util.Map;
 
-public class TadaniteArmorItem extends ArmorItem {
+public class AdvancedArmorItem extends ArmorItem {
     private final Multimap<ArmorMaterial, StatusEffectInstance> ArmourSetEffects;
 
-    public TadaniteArmorItem(ArmorMaterial material, Type type, Settings settings) {
+    public AdvancedArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
         ImmutableMultimap.Builder<ArmorMaterial, StatusEffectInstance> builder = ImmutableMultimap.builder();
-        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 0, false, false, true)).build();
-        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.SPEED, 60, 1, false, false, true)).build();
-        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60, 1, false, false, true)).build();
-        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 1, false, false, true)).build();
-        this.ArmourSetEffects = builder.build();
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 0, false, false));
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.SPEED, 60, 1, false, false));
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60, 1, false, false));
+        builder.put(CoreAscensionArmorMaterials.TADANITE, new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 1, false, false));
+        builder.put(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 60, 1,false,false));
+                this.ArmourSetEffects = builder.build();
     }
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         if(!world.isClient()) {

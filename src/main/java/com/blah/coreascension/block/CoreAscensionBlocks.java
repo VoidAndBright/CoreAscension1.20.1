@@ -190,6 +190,7 @@ public class CoreAscensionBlocks {
 	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+	public static final Block PRISMAERION_FURNACE = RegisterBlockItem("prismaerion_furnace", new PrismaerionFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIRT)));
 
 	// end misc blocks
 

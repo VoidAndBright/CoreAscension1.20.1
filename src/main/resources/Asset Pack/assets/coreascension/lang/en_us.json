@@ -1292,5 +1292,6 @@
   "block.coreascension.tropics_leaves": "Tropics Leaves",
   "block.coreascension.scoria_stairs": "Scoria Stairs",
   "block.coreascension.red_popsicle_leaves": "Red Popsicle",
-  "item.coreascension.potato_hammer": "§dPotato Hammer"
+  "item.coreascension.potato_hammer": "§dPotato Hammer",
+  "container.prismaerion_furnace": "Prismearion Furnace"
 }

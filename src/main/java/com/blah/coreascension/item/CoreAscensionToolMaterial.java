@@ -1,6 +1,5 @@
-package com.blah.coreascension.item.toolmaterials;
+package com.blah.coreascension.item;
 
-import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 

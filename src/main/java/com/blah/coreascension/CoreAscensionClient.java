@@ -1,6 +1,7 @@
 package com.blah.coreascension;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import net.fabricmc.api.ClientModInitializer;
@@ -12,5 +13,6 @@ public class CoreAscensionClient implements ClientModInitializer {
 		CoreAscensionParticles.ClientRegisterParticles();
 		CoreAscensionBlocks.ClientRegisterBlocks();
 		CoreAscensionScreenHandlers.ClientRegisterScreens();
+		CoreAscensionBlockEntities.ClientBlockEntitiesRenderer();
 	}
 }

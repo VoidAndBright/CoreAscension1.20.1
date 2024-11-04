@@ -21,7 +21,6 @@ import net.minecraft.util.math.BlockPos;
 
 public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(78, ItemStack.EMPTY);
-    private int viewers=0;
     public ReinforcedChestBlockEntity(BlockPos pos, BlockState state) {
         super(CoreAscensionBlockEntities.REINFORCED_CHEST_BLOCK_ENTITY, pos, state);
     }
@@ -44,19 +43,12 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
     }
     public void onOpen(PlayerEntity player) {
         player.getWorld().playSound(null, pos, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        viewers+=1;
-        System.out.println(viewers);
     }
 
     public void onClose(PlayerEntity player) {
         player.getWorld().playSound(null, pos, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        viewers-=1;
-        System.out.println(viewers);
     }
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new ReinforcedChestScreenHandler(syncId, playerInventory, this);
-    }
-    public int getViewers() {
-        return viewers;
     }
 }

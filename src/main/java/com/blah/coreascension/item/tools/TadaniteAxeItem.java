@@ -1,9 +1,9 @@
-package com.blah.coreascension.item.tooltypes;
+package com.blah.coreascension.item.tools;
 
 import com.blah.coreascension.CoreAscension;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShovelItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -14,9 +14,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TadaniteShovelItem extends ShovelItem
+public class TadaniteAxeItem extends AxeItem
 {
-    public TadaniteShovelItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
+    public TadaniteAxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
     {
         super(material, attackDamage, attackSpeed, settings);
     }

@@ -1,7 +1,6 @@
-package com.blah.coreascension.item.armormaterials;
+package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ArmorItem;
