@@ -8,8 +8,8 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShovelItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -19,9 +19,9 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class VeinMineHoeItem extends HoeItem
+public class UraniumHoeItem extends HoeItem
 {
-    public VeinMineHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
+    public UraniumHoeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
     {
         super(material, attackDamage, attackSpeed, settings);
     }
@@ -29,7 +29,7 @@ public class VeinMineHoeItem extends HoeItem
     {
         super.postMine(stack,world,state,pos,miner);
         if(miner.isSneaking())
-            if(state.isIn(ConventionalBlockTags.ORES))
+            if(state.isIn(BlockTags.HOE_MINEABLE))
                 BreakNextBlock(state.getBlock(),world,pos,0);
         return true;
     }
@@ -46,6 +46,6 @@ public class VeinMineHoeItem extends HoeItem
     }
     public void appendTooltip(ItemStack stack,World world,List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium"))).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium_hoe"))).formatted(Formatting.GRAY));
     }
 }

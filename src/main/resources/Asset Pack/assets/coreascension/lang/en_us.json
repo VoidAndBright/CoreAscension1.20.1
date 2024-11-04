@@ -1293,5 +1293,9 @@
   "block.coreascension.scoria_stairs": "Scoria Stairs",
   "block.coreascension.red_popsicle_leaves": "Red Popsicle",
   "item.coreascension.potato_hammer": "§dPotato Hammer",
-  "container.prismaerion_furnace": "Prismearion Furnace"
+  "container.prismaerion_furnace": "Prismaerion Furnace",
+  "tooltip.uranium_pickaxe": "Hold sneak when mining an ore to vein mine it",
+  "tooltip.uranium_axe": "Treecapitator",
+  "tooltip.uranium_shovel": "Fortune",
+  "tooltip.uranium_hoe": "Hold sneak when harvesting hoeable blocks to veinmine them"
 }

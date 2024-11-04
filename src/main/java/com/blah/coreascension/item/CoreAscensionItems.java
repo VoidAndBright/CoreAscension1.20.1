@@ -18,7 +18,6 @@ public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
-    public static final Item RAW_TITANIUM = registerItem("titanium",new Item(new FabricItemSettings()));
     public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
     public static final Item CITRINE = registerItem("citrine",new Item(new FabricItemSettings()));
     public static final Item CITRINE_SHARD = registerItem("citrine_shard",new Item(new FabricItemSettings()));
@@ -30,8 +29,10 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE_SHARD = registerItem("sapphire_shard",new Item(new FabricItemSettings()));
     public static final Item TADANITE_DIAMOND = registerItem("tadanite_diamond",new Item(new FabricItemSettings().fireproof()));
     public static final Item TADANITE_CRYSTAL = registerItem("tadanite_crystal",new Item(new FabricItemSettings().fireproof()));
+    public static final Item RAW_TITANIUM = registerItem("raw_titanium",new Item(new FabricItemSettings()));
+    public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
-    public static final Item THE_TOOL = registerItem("the_tool", new TheToolItem(4, 1.2F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
+    public static final Item THE_TOOL = registerItem("the_tool", new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric",new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod",new Item(new FabricItemSettings()));
 
@@ -92,15 +93,15 @@ public class CoreAscensionItems {
     public static final Item URANIUM_BOOTS = registerItem("uranium_boots",
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_PICKAXE = registerItem("uranium_pickaxe",
-            new VeinMinePickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
+            new UraniumPickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
 //    public static final Item URANIUM_SWORD = registerItem("sapphire_sword",
 //            new SwordItem(CoreAscensionToolMaterial.TOOL, 4, -2.4f, new FabricItemSettings()));
-//    public static final Item URANIUM_AXE = registerItem("sapphire_axe",
-//            new AxeItem(CoreAscensionToolMaterial.TOOL, 8, -3.1f, new FabricItemSettings()));
-//    public static final Item URANIUM_SHOVEL = registerItem("sapphire_shovel",
-//            new ShovelItem(CoreAscensionToolMaterial.TOOL, 1, -3f, new FabricItemSettings()));
-//    public static final Item URANIUM_HOE = registerItem("sapphire_hoe",
-//            new HoeItem(CoreAscensionToolMaterial.TOOL, 0, -3f, new FabricItemSettings()));
+    public static final Item URANIUM_AXE = registerItem("sapphire_axe",
+            new UraniumAxeItem(CoreAscensionToolMaterial.URANIUM, 8, -3.1f, new FabricItemSettings().fireproof()));
+    public static final Item URANIUM_SHOVEL = registerItem("sapphire_shovel",
+            new UraniumShovelItem(CoreAscensionToolMaterial.URANIUM, 1, -3f, new FabricItemSettings().fireproof()));
+    public static final Item URANIUM_HOE = registerItem("sapphire_hoe",
+            new UraniumHoeItem(CoreAscensionToolMaterial.URANIUM, 0, -3f, new FabricItemSettings().fireproof()));
 
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));

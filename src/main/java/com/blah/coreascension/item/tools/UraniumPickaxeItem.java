@@ -18,9 +18,9 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class VeinMinePickaxeItem extends PickaxeItem
+public class UraniumPickaxeItem extends PickaxeItem
 {
-    public VeinMinePickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
+    public UraniumPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
     {
         super(material, attackDamage, attackSpeed, settings);
     }
@@ -45,6 +45,6 @@ public class VeinMinePickaxeItem extends PickaxeItem
     }
     public void appendTooltip(ItemStack stack,World world,List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium"))).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium_pickaxe"))).formatted(Formatting.GRAY));
     }
 }

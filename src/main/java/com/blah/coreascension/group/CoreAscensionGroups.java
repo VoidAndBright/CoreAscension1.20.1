@@ -151,6 +151,9 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_DIAMOND);
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
         entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
+        entries.add(CoreAscensionItems.RAW_TITANIUM);
+
+        entries.add(CoreAscensionItems.RAW_URANIUM);
         entries.add(CoreAscensionItems.URANIUM_INGOT);
         // -- ARMOR --
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
@@ -179,6 +182,9 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
+        entries.add(CoreAscensionItems.URANIUM_AXE);
+        entries.add(CoreAscensionItems.URANIUM_SHOVEL);
+        entries.add(CoreAscensionItems.URANIUM_HOE);
         // -- END TOOLS --
 
         // -- FOOD --
