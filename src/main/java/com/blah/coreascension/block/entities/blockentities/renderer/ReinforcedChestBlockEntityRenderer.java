@@ -1,7 +1,7 @@
-package com.blah.coreascension.blockentity.blockentities.renderer;
+package com.blah.coreascension.block.entities.blockentities.renderer;
 
 import com.blah.coreascension.block.blocks.ReinforcedChestBlock;
-import com.blah.coreascension.blockentity.blockentities.ReinforcedChestBlockEntity;
+import com.blah.coreascension.block.entities.blockentities.ReinforcedChestBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;

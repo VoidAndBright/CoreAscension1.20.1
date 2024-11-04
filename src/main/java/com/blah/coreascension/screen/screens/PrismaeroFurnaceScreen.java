@@ -10,9 +10,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 
-public class PrismaerionFurnaceScreen extends HandledScreen<PrismaerionFurnaceScreenHandler> {
+public class PrismaeroFurnaceScreen extends HandledScreen<PrismaeroFurnaceScreenHandler> {
     private static final Identifier TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/prismaerion_furnace_gui.png");
-    public PrismaerionFurnaceScreen(PrismaerionFurnaceScreenHandler handler, PlayerInventory inventory, Text title) {
+    public PrismaeroFurnaceScreen(PrismaeroFurnaceScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 

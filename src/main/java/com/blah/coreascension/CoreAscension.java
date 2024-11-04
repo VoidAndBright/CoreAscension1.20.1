@@ -1,7 +1,7 @@
 package com.blah.coreascension;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
+import com.blah.coreascension.block.entities.CoreAscensionBlockEntities;
 import com.blah.coreascension.group.CoreAscensionGroups;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.particles.CoreAscensionParticles;

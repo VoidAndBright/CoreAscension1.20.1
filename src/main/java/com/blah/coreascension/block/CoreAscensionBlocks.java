@@ -183,14 +183,11 @@ public class CoreAscensionBlocks {
 	public static final Block CUT_DREAD_SANDSTONE_SLAB = RegisterBlockItem("cut_dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
 	public static final Block CUT_DREAD_SANDSTONE_STAIRS = RegisterBlockItem("cut_dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
 	public static final Block DREAD_ROCK_BRICKS = RegisterBlockItem("dread_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
-	// end dread stuff
-
-	// misc blocks
 	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)));
 	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
-	public static final Block PRISMAERION_FURNACE = RegisterBlockItem("prismaerion_furnace", new PrismaerionFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIRT)));
+	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIRT)));
 
 	// end misc blocks
 

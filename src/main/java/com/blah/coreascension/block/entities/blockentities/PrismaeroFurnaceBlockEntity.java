@@ -1,7 +1,7 @@
-package com.blah.coreascension.blockentity.blockentities;
+package com.blah.coreascension.block.entities.blockentities;
 
-import com.blah.coreascension.blockentity.CoreAscensionBlockEntities;
-import com.blah.coreascension.screen.screens.PrismaerionFurnaceScreenHandler;
+import com.blah.coreascension.block.entities.CoreAscensionBlockEntities;
+import com.blah.coreascension.screen.screens.PrismaeroFurnaceScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -11,6 +11,7 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.RecipeType;
@@ -22,18 +23,19 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.Objects;
 import java.util.Optional;
 
 
-public class PrismaerionFurnaceBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class PrismaeroFurnaceBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
-	private static final int OUTPUT_SLOT = 0;
-    private static final int INPUT_SLOT = 1;
-    private static final int FUEL_SLOT = 2;
+    private static final int INPUT_SLOT = 0;
+    private static final int FUEL_SLOT = 1;
+    private static final int OUTPUT_SLOT = 2;
 
-    public PrismaerionFurnaceBlockEntity(BlockPos pos, BlockState state) {
-        super(CoreAscensionBlockEntities.PRISMAERION_FURNACE_ENTITY, pos, state);
+    public PrismaeroFurnaceBlockEntity(BlockPos pos, BlockState state) {
+        super(CoreAscensionBlockEntities.PRISMAERO_FURNACE_BLOCK_ENTITY, pos, state);
     }
 
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
@@ -59,25 +61,18 @@ public class PrismaerionFurnaceBlockEntity extends BlockEntity implements Extend
     }
 
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new PrismaerionFurnaceScreenHandler(syncId, playerInventory, this);
+        return new PrismaeroFurnaceScreenHandler(syncId, playerInventory, this);
     }
     public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient()) {
-            return;
-        }
-        if(isOutputSlotEmptyOrReceivable()) {
-            if(this.hasRecipe()) {
-                    this.craftItem();
-            }
-        } else {
-            markDirty(world, pos, state);
-        }
+        if(world.isClient()) return;
+        if(isOutputSlotReceivable())
+            if(hasRecipe()) craftItem();
+        else markDirty(world, pos, state);
     }
 	private boolean hasRecipe() {
 		Optional<SmeltingRecipe> recipe = getCurrentRecipe();
 
-		return recipe.get().matches(,getWorld()) && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null))
-			&& canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem());
+		return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null)) && canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem())&& hasFuel();
 	}
 	private void craftItem() {
 		Optional<SmeltingRecipe> recipe = getCurrentRecipe();
@@ -87,20 +82,21 @@ public class PrismaerionFurnaceBlockEntity extends BlockEntity implements Extend
 	}
 	private Optional<SmeltingRecipe> getCurrentRecipe() {
 		SimpleInventory inventory = new SimpleInventory(this.size());
-		for(int iterate = 0; iterate < this.size(); iterate++) {
-			inventory.setStack(iterate, this.getStack(iterate));
-		}
-		return getWorld().getRecipeManager().getFirstMatch(RecipeType.SMELTING, inventory, getWorld());
+		for(int iterate = 0; iterate < this.size(); iterate++) inventory.setStack(iterate, this.getStack(iterate));
+		return Objects.requireNonNull(getWorld()).getRecipeManager().getFirstMatch(RecipeType.SMELTING, inventory, getWorld());
 	}
 	private boolean canInsertItemIntoOutputSlot(Item item) {
-		return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
+		return getStack(OUTPUT_SLOT).getItem() == item || getStack(OUTPUT_SLOT).isEmpty();
 	}
 
 	private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-		return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
-	}
+		return getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
+    }
 
-	private boolean isOutputSlotEmptyOrReceivable() {
-		return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
-	}
+	private boolean isOutputSlotReceivable() {
+		return getStack(OUTPUT_SLOT).getCount() < getStack(OUTPUT_SLOT).getMaxCount();
+    }
+    private boolean hasFuel(){
+        return getStack(FUEL_SLOT).getItem()== Items.COAL;
+    }
 }

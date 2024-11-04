@@ -1,7 +1,7 @@
 package com.blah.coreascension.screen.screens;
 
 
-import com.blah.coreascension.blockentity.blockentities.PrismaerionFurnaceBlockEntity;
+import com.blah.coreascension.block.entities.blockentities.PrismaeroFurnaceBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import com.blah.coreascension.screen.OutputSlot;
 import net.minecraft.block.entity.BlockEntity;
@@ -13,24 +13,24 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
-public class PrismaerionFurnaceScreenHandler extends ScreenHandler {
+public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    public final PrismaerionFurnaceBlockEntity blockEntity;
+    public final PrismaeroFurnaceBlockEntity blockEntity;
 
-    public PrismaerionFurnaceScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+    public PrismaeroFurnaceScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
 
-    public PrismaerionFurnaceScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+    public PrismaeroFurnaceScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
         super(CoreAscensionScreenHandlers.PRISMAERION_FURNACE_SCREEN_HANDLER, syncId);
         checkSize(((Inventory) blockEntity), 3);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
-        this.blockEntity = ((PrismaerionFurnaceBlockEntity) blockEntity);
+        this.blockEntity = ((PrismaeroFurnaceBlockEntity) blockEntity);
 
-		this.addSlot(new Slot(inventory, 2, 56, 17));
+		this.addSlot(new Slot(inventory, 0, 56, 17));
 		this.addSlot(new Slot(inventory, 1, 56, 53));
-		this.addSlot(new Slot(inventory, 0, 116, 35));
+		this.addSlot(new OutputSlot(inventory, 2, 116, 35));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

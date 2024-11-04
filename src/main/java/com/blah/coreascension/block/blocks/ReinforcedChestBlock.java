@@ -1,6 +1,6 @@
 package com.blah.coreascension.block.blocks;
 
-import com.blah.coreascension.blockentity.blockentities.ReinforcedChestBlockEntity;
+import com.blah.coreascension.block.entities.blockentities.ReinforcedChestBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;

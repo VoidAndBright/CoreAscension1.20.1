@@ -1,4 +1,4 @@
-package com.blah.coreascension.blockentity.blockentities;
+package com.blah.coreascension.block.entities.blockentities;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;

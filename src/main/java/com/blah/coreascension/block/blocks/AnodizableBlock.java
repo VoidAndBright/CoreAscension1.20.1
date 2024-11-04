@@ -8,8 +8,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 
 public class AnodizableBlock extends Block implements Anodizable{
-    private final Anodizable.AnodizationLevel anodationLevel;
-    public AnodizableBlock(Anodizable.AnodizationLevel anodationLevel, AbstractBlock.Settings settings) {
+    private final AnodizationLevel anodationLevel;
+    public AnodizableBlock(AnodizationLevel anodationLevel, AbstractBlock.Settings settings) {
         super(settings);
         this.anodationLevel = anodationLevel;
     }
@@ -20,7 +20,7 @@ public class AnodizableBlock extends Block implements Anodizable{
     public boolean hasRandomTicks(BlockState state) {
         return Anodizable.getIncreasedAnodizationBlock(state.getBlock()).isPresent();
     }
-    public Anodizable.AnodizationLevel getDegradationLevel() {
+    public AnodizationLevel getDegradationLevel() {
         return this.anodationLevel;
     }
 }
