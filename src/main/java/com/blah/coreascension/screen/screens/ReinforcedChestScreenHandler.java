@@ -1,6 +1,6 @@
 package com.blah.coreascension.screen.screens;
 
-import com.blah.coreascension.block.entities.blockentities.ReinforcedChestBlockEntity;
+import com.blah.coreascension.block.entities.ReinforcedChestBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;

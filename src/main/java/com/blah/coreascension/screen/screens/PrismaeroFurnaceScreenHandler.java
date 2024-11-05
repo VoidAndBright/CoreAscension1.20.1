@@ -1,7 +1,7 @@
 package com.blah.coreascension.screen.screens;
 
 
-import com.blah.coreascension.block.entities.blockentities.PrismaeroFurnaceBlockEntity;
+import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import com.blah.coreascension.screen.OutputSlot;
 import net.minecraft.block.entity.BlockEntity;
