@@ -95,8 +95,8 @@ public class CoreAscensionItems {
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_PICKAXE = registerItem("uranium_pickaxe",
             new UraniumPickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
-//    public static final Item URANIUM_SWORD = registerItem("uranium_sword",
-//            new SwordItem(CoreAscensionToolMaterial.TOOL, 4, -2.4f, new FabricItemSettings()));
+    public static final Item URANIUM_SWORD = registerItem("uranium_sword",
+            new UraniumSwordItem(CoreAscensionToolMaterial.URANIUM, 4, -2.4f, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_AXE = registerItem("uranium_axe",
             new UraniumAxeItem(CoreAscensionToolMaterial.URANIUM, 8, -3.1f, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_SHOVEL = registerItem("uranium_shovel",

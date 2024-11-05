@@ -125,7 +125,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
                 .add(CoreAscensionBlocks.URANIUM_ORE)
                 .add(CoreAscensionBlocks.URANIUM_BLOCK)
-                .add(CoreAscensionBlocks.CEMENT);
+                .add(CoreAscensionBlocks.CEMENT)
+                .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 //                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)
 //                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)
 //                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)

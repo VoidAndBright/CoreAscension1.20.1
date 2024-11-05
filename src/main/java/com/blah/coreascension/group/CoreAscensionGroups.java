@@ -75,6 +75,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.CEDAR_FENCE);
         entries.add(CoreAscensionBlocks.CEDAR_FENCE_GATE);
         entries.add(CoreAscensionBlocks.CEDAR_BUTTON);
+        entries.add(CoreAscensionBlocks.CEDAR_DOOR);
+        entries.add(CoreAscensionBlocks.CEDAR_TRAPDOOR);
         entries.add(CoreAscensionBlocks.CEDAR_LEAVES);
         entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
@@ -88,6 +90,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.TROPICS_FENCE);
         entries.add(CoreAscensionBlocks.TROPICS_FENCE_GATE);
         entries.add(CoreAscensionBlocks.TROPICS_BUTTON);
+        entries.add(CoreAscensionBlocks.TROPICS_DOOR);
+        entries.add(CoreAscensionBlocks.TROPICS_TRAPDOOR);
         entries.add(CoreAscensionBlocks.TROPICS_LEAVES);
         entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
@@ -114,6 +118,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.DREAD_FENCE);
         entries.add(CoreAscensionBlocks.DREAD_FENCE_GATE);
         entries.add(CoreAscensionBlocks.DREAD_BUTTON);
+        entries.add(CoreAscensionBlocks.DREAD_DOOR);
+        entries.add(CoreAscensionBlocks.DREAD_TRAPDOOR);
         entries.add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_DREAD_WOOD);
         entries.add(CoreAscensionBlocks.DREAD_SAND);
@@ -181,6 +187,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_AXE);
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
+        entries.add(CoreAscensionItems.URANIUM_SWORD);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
         entries.add(CoreAscensionItems.URANIUM_AXE);
         entries.add(CoreAscensionItems.URANIUM_SHOVEL);

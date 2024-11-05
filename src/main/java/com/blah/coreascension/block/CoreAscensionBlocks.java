@@ -15,202 +15,222 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-public class CoreAscensionBlocks {
-	public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE)));
+public class CoreAscensionBlocks
+{
+	public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE)), false);
 
-	public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS)));
+	public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS)), false);
 
-    public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.LANTERN)));
+    public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.LANTERN)), false);
 
-	public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)));
+	public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK)), false);
 
-	public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)));
+	public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM)), false);
 
-	public static final Block AMETHYST_GEM_LOG = RegisterBlockItem("amethyst_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)));
+	public static final Block AMETHYST_GEM_LOG = RegisterBlockItem("amethyst_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)), false);
 
-	public static final Block AMETHYST_GEM_LEAVES = RegisterBlockItem("amethyst_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
+	public static final Block AMETHYST_GEM_LEAVES = RegisterBlockItem("amethyst_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), false);
 
-	public static final Block AMETHYST_SLAB = RegisterBlockItem("amethyst_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
+	public static final Block AMETHYST_SLAB = RegisterBlockItem("amethyst_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)), false);
 
-	public static final Block AMETHYST_STAIRS = RegisterBlockItem("amethyst_stairs", new StairsBlock(Blocks.AMETHYST_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_STAIRS = RegisterBlockItem("amethyst_stairs", new StairsBlock(Blocks.AMETHYST_BLOCK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block AMETHYST_WALL = RegisterBlockItem("amethyst_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_WALL = RegisterBlockItem("amethyst_wall", new WallBlock(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block AMETHYST_TILES = RegisterBlockItem("amethyst_tiles", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block AMETHYST_TILES = RegisterBlockItem("amethyst_tiles", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block ANDESITE_TILE = RegisterBlockItem("andesite_tile", new Block(FabricBlockSettings.copyOf(Blocks.ANDESITE)));
+	public static final Block ANDESITE_TILE = RegisterBlockItem("andesite_tile", new Block(FabricBlockSettings.copyOf(Blocks.ANDESITE)), false);
 
-	public static final Block ARGON_CRYSTAL_BLOCK = RegisterBlockItem("argon_crystal_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block ARGON_CRYSTAL_BLOCK = RegisterBlockItem("argon_crystal_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block ARGON_CRYSTAL_CLUSTER = RegisterBlockItem("argon_crystal_cluster", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block ARGON_CRYSTAL_CLUSTER = RegisterBlockItem("argon_crystal_cluster", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block ARGON_CRYSTAL_ORE = RegisterBlockItem("argon_crystal_ore", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
+	public static final Block ARGON_CRYSTAL_ORE = RegisterBlockItem("argon_crystal_ore", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)), false);
 
-	public static final Block SAPPHIRE_ORE = RegisterBlockItem("sapphire_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
-	public static final Block SAPPHIRE_BLOCK = RegisterBlockItem("sapphire_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
-	public static final Block TITANIUM_ORE = RegisterBlockItem("titanium_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
-	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block SAPPHIRE_ORE = RegisterBlockItem("sapphire_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)), false);
+	public static final Block SAPPHIRE_BLOCK = RegisterBlockItem("sapphire_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)), false);
+	public static final Block TITANIUM_ORE = RegisterBlockItem("titanium_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)), false);
+	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block SEARED_TITANIUM_BLOCK = RegisterBlockItem("seared_titanium_block", new AnodizableBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SEARED_TITANIUM_BLOCK = RegisterBlockItem("seared_titanium_block", new AnodizableBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SINGED_TITANIUM_BLOCK = RegisterBlockItem("singed_titanium_block", new AnodizableBlock(AnodizationLevel.SINGED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SINGED_TITANIUM_BLOCK = RegisterBlockItem("singed_titanium_block", new AnodizableBlock(AnodizationLevel.SINGED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SCORCHED_TITANIUM_BLOCK = RegisterBlockItem("scorched_titanium_block", new AnodizableBlock(AnodizationLevel.SCORCHED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SCORCHED_TITANIUM_BLOCK = RegisterBlockItem("scorched_titanium_block", new AnodizableBlock(AnodizationLevel.SCORCHED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block BURNT_TITANIUM_BLOCK = RegisterBlockItem("burnt_titanium_block", new AnodizableBlock(AnodizationLevel.BURNT,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block BURNT_TITANIUM_BLOCK = RegisterBlockItem("burnt_titanium_block", new AnodizableBlock(AnodizationLevel.BURNT,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block TITANIUM_SLAB = RegisterBlockItem("titanium_slab", new AnodizableSlabBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block TITANIUM_SLAB = RegisterBlockItem("titanium_slab", new AnodizableSlabBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block SEARED_TITANIUM_SLAB = RegisterBlockItem("seared_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SEARED_TITANIUM_SLAB = RegisterBlockItem("seared_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SINGED_TITANIUM_SLAB = RegisterBlockItem("singed_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SINGED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SINGED_TITANIUM_SLAB = RegisterBlockItem("singed_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SINGED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SCORCHED_TITANIUM_SLAB = RegisterBlockItem("scorched_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SCORCHED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SCORCHED_TITANIUM_SLAB = RegisterBlockItem("scorched_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SCORCHED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block BURNT_TITANIUM_SLAB = RegisterBlockItem("burnt_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.BURNT,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block BURNT_TITANIUM_SLAB = RegisterBlockItem("burnt_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.BURNT,FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block TITANIUM_STAIRS = RegisterBlockItem("titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.UNAFFECTED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block TITANIUM_STAIRS = RegisterBlockItem("titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.UNAFFECTED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block SEARED_TITANIUM_STAIRS = RegisterBlockItem("seared_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SEARED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SEARED_TITANIUM_STAIRS = RegisterBlockItem("seared_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SEARED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SINGED_TITANIUM_STAIRS = RegisterBlockItem("singed_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SINGED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SINGED_TITANIUM_STAIRS = RegisterBlockItem("singed_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SINGED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block SCORCHED_TITANIUM_STAIRS = RegisterBlockItem("scorched_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SCORCHED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block SCORCHED_TITANIUM_STAIRS = RegisterBlockItem("scorched_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SCORCHED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block BURNT_TITANIUM_STAIRS = RegisterBlockItem("burnt_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.BURNT,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block BURNT_TITANIUM_STAIRS = RegisterBlockItem("burnt_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.BURNT,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_TITANIUM_BLOCK = RegisterBlockItem("frozen_titanium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block FROZEN_TITANIUM_BLOCK = RegisterBlockItem("frozen_titanium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block FROZEN_SEARED_TITANIUM_BLOCK = RegisterBlockItem("frozen_seared_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SEARED_TITANIUM_BLOCK = RegisterBlockItem("frozen_seared_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SINGED_TITANIUM_BLOCK = RegisterBlockItem("frozen_singed_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SINGED_TITANIUM_BLOCK = RegisterBlockItem("frozen_singed_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SCORCHED_TITANIUM_BLOCK = RegisterBlockItem("frozen_scorched_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SCORCHED_TITANIUM_BLOCK = RegisterBlockItem("frozen_scorched_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_BURNT_TITANIUM_BLOCK = RegisterBlockItem("frozen_burnt_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_BURNT_TITANIUM_BLOCK = RegisterBlockItem("frozen_burnt_titanium_block", new Block(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_TITANIUM_SLAB = RegisterBlockItem("frozen_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block FROZEN_TITANIUM_SLAB = RegisterBlockItem("frozen_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block FROZEN_SEARED_TITANIUM_SLAB = RegisterBlockItem("frozen_seared_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SEARED_TITANIUM_SLAB = RegisterBlockItem("frozen_seared_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SINGED_TITANIUM_SLAB = RegisterBlockItem("frozen_singed_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SINGED_TITANIUM_SLAB = RegisterBlockItem("frozen_singed_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SCORCHED_TITANIUM_SLAB = RegisterBlockItem("frozen_scorched_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SCORCHED_TITANIUM_SLAB = RegisterBlockItem("frozen_scorched_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_BURNT_TITANIUM_SLAB = RegisterBlockItem("frozen_burnt_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_BURNT_TITANIUM_SLAB = RegisterBlockItem("frozen_burnt_titanium_slab", new SlabBlock(FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_TITANIUM_STAIRS = RegisterBlockItem("frozen_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+	public static final Block FROZEN_TITANIUM_STAIRS = RegisterBlockItem("frozen_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)), false);
 
-	public static final Block FROZEN_SEARED_TITANIUM_STAIRS = RegisterBlockItem("frozen_seared_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SEARED_TITANIUM_STAIRS = RegisterBlockItem("frozen_seared_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SINGED_TITANIUM_STAIRS = RegisterBlockItem("frozen_singed_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SINGED_TITANIUM_STAIRS = RegisterBlockItem("frozen_singed_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_SCORCHED_TITANIUM_STAIRS = RegisterBlockItem("frozen_scorched_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_SCORCHED_TITANIUM_STAIRS = RegisterBlockItem("frozen_scorched_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
-	public static final Block FROZEN_BURNT_TITANIUM_STAIRS = RegisterBlockItem("frozen_burnt_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
+	public static final Block FROZEN_BURNT_TITANIUM_STAIRS = RegisterBlockItem("frozen_burnt_titanium_stairs", new StairsBlock(TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
 
 	public static final Block ETHEREAL_TORCH = RegisterBlock("ethereal_torch", new UnderwaterTorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
 
 	public static final Block ETHEREAL_WALL_TORCH = RegisterBlock("ethereal_wall_torch", new UnderwaterWallTorchBlock(FabricBlockSettings.copyOf(ETHEREAL_TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
 
-	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick",new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
+	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick",new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)), false);
 
-	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)), false);
 
 	// uranium
-	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new Block(FabricBlockSettings.copyOf(Blocks.BASALT)));
-	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)), true);
+	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)), true);
 	// end uranium
 
 
 	// cedar grove stuff
-	public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
-	public static final Block CEDAR_WOOD = RegisterBlockItem("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
-	public static final Block CEDAR_PLANKS = RegisterBlockItem("cedar_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-	public static final Block CEDAR_SLAB = RegisterBlockItem("cedar_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
-	public static final Block CEDAR_STAIRS = RegisterBlockItem("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
-	public static final Block CEDAR_FENCE = RegisterBlockItem("cedar_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
-	public static final Block CEDAR_FENCE_GATE = RegisterBlockItem("cedar_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block CEDAR_BUTTON = RegisterBlockItem("cedar_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-	public static final Block CEDAR_LEAVES = RegisterBlockItem("cedar_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
-	public static final Block STRIPPED_CEDAR_LOG = RegisterBlockItem("stripped_cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
-	public static final Block STRIPPED_CEDAR_WOOD = RegisterBlockItem("stripped_cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+	public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)), false);
+	public static final Block CEDAR_WOOD = RegisterBlockItem("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)), false);
+	public static final Block CEDAR_PLANKS = RegisterBlockItem("cedar_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), false);
+	public static final Block CEDAR_SLAB = RegisterBlockItem("cedar_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)), false);
+	public static final Block CEDAR_STAIRS = RegisterBlockItem("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)), false);
+	public static final Block CEDAR_FENCE = RegisterBlockItem("cedar_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)), false);
+	public static final Block CEDAR_FENCE_GATE = RegisterBlockItem("cedar_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK), false);
+	public static final Block CEDAR_BUTTON = RegisterBlockItem("cedar_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK), false);
+	public static final Block CEDAR_LEAVES = RegisterBlockItem("cedar_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), false);
+	public static final Block STRIPPED_CEDAR_LOG = RegisterBlockItem("stripped_cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)), false);
+	public static final Block STRIPPED_CEDAR_WOOD = RegisterBlockItem("stripped_cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)), false);
+	public static final Block CEDAR_DOOR = RegisterBlockItem("cedar_door", new DoorBlock(FabricBlockSettings.copyOf(CEDAR_PLANKS).nonOpaque(), BlockSetType.OAK), false);
+	public static final Block CEDAR_TRAPDOOR = RegisterBlockItem("cedar_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CEDAR_PLANKS).nonOpaque(), BlockSetType.OAK), false);
 	// end cedar grove stuff
 	// tropics stuff
-	public static final Block TROPICS_LOG = RegisterBlockItem("tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
-	public static final Block TROPICS_WOOD = RegisterBlockItem("tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
-	public static final Block TROPICS_PLANKS = RegisterBlockItem("tropics_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-	public static final Block TROPICS_SLAB = RegisterBlockItem("tropics_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
-	public static final Block TROPICS_STAIRS = RegisterBlockItem("tropics_stairs", new StairsBlock(TROPICS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-	public static final Block TROPICS_FENCE = RegisterBlockItem("tropics_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
-	public static final Block TROPICS_FENCE_GATE = RegisterBlockItem("tropics_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block TROPICS_BUTTON = RegisterBlockItem("tropics_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-	public static final Block TROPICS_LEAVES = RegisterBlockItem("tropics_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
-	public static final Block STRIPPED_TROPICS_LOG = RegisterBlockItem("stripped_tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
-	public static final Block STRIPPED_TROPICS_WOOD = RegisterBlockItem("stripped_tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
-	public static final Block BLACK_SAND = RegisterBlockItem("black_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
-	public static final Block BLACK_SANDSTONE = RegisterBlockItem("black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
-	public static final Block REINFORCED_GLASS = RegisterBlockItem("reinforced_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
-	public static final Block TROPICS_MUD = RegisterBlockItem("tropics_mud", new Block(FabricBlockSettings.copyOf(Blocks.MUD)));
-	public static final Block CHISELED_BLACK_SANDSTONE = RegisterBlockItem("chiseled_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE)));
-	public static final Block SMOOTH_BLACK_SANDSTONE = RegisterBlockItem("smooth_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)));
-	public static final Block CUT_BLACK_SANDSTONE = RegisterBlockItem("cut_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
-	public static final Block LOAM = RegisterBlockItem("loam", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
-	public static final Block CUT_BLACK_SANDSTONE_SLAB = RegisterBlockItem("cut_black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
-	public static final Block CUT_BLACK_SANDSTONE_STAIRS = RegisterBlockItem("cut_black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
-	public static final Block TROPICS_MUD_BRICKS = RegisterBlockItem("tropics_mud_bricks", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-	public static final Block TROPICS_MUD_BRICK_SLAB = RegisterBlockItem("tropics_mud_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
-	public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
+	public static final Block TROPICS_LOG = RegisterBlockItem("tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)), false);
+	public static final Block TROPICS_WOOD = RegisterBlockItem("tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)), false);
+	public static final Block TROPICS_PLANKS = RegisterBlockItem("tropics_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), false);
+	public static final Block TROPICS_SLAB = RegisterBlockItem("tropics_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)), false);
+	public static final Block TROPICS_STAIRS = RegisterBlockItem("tropics_stairs", new StairsBlock(TROPICS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), false);
+	public static final Block TROPICS_FENCE = RegisterBlockItem("tropics_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)), false);
+	public static final Block TROPICS_FENCE_GATE = RegisterBlockItem("tropics_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK), false);
+	public static final Block TROPICS_BUTTON = RegisterBlockItem("tropics_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK), false);
+	public static final Block TROPICS_LEAVES = RegisterBlockItem("tropics_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)), false);
+	public static final Block STRIPPED_TROPICS_LOG = RegisterBlockItem("stripped_tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)), false);
+	public static final Block STRIPPED_TROPICS_WOOD = RegisterBlockItem("stripped_tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)), false);
+	public static final Block BLACK_SAND = RegisterBlockItem("black_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)), false);
+	public static final Block BLACK_SANDSTONE = RegisterBlockItem("black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)), false);
+	public static final Block REINFORCED_GLASS = RegisterBlockItem("reinforced_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)), false);
+	public static final Block TROPICS_MUD = RegisterBlockItem("tropics_mud", new Block(FabricBlockSettings.copyOf(Blocks.MUD)), false);
+	public static final Block CHISELED_BLACK_SANDSTONE = RegisterBlockItem("chiseled_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE)), false);
+	public static final Block SMOOTH_BLACK_SANDSTONE = RegisterBlockItem("smooth_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)), false);
+	public static final Block CUT_BLACK_SANDSTONE = RegisterBlockItem("cut_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)), false);
+	public static final Block LOAM = RegisterBlockItem("loam", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)), false);
+	public static final Block CUT_BLACK_SANDSTONE_SLAB = RegisterBlockItem("cut_black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)), false);
+	public static final Block CUT_BLACK_SANDSTONE_STAIRS = RegisterBlockItem("cut_black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)), false);
+	public static final Block TROPICS_MUD_BRICKS = RegisterBlockItem("tropics_mud_bricks", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)), false);
+	public static final Block TROPICS_MUD_BRICK_SLAB = RegisterBlockItem("tropics_mud_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)), false);
+	public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)), false);
+	public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK), false);
+	public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK), false);
 	// end tropics stuff
 
 	// dread stuff
-	public static final Block DREAD_LOG = RegisterBlockItem("dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
-	public static final Block DREAD_WOOD = RegisterBlockItem("dread_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
-	public static final Block DREAD_PLANKS = RegisterBlockItem("dread_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-	public static final Block DREAD_SLAB = RegisterBlockItem("dread_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
-	public static final Block DREAD_STAIRS = RegisterBlockItem("dread_stairs", new StairsBlock(DREAD_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
-	public static final Block DREAD_FENCE = RegisterBlockItem("dread_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
-	public static final Block DREAD_FENCE_GATE = RegisterBlockItem("dread_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block DREAD_BUTTON = RegisterBlockItem("dread_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-	public static final Block STRIPPED_DREAD_LOG = RegisterBlockItem("stripped_dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
-	public static final Block STRIPPED_DREAD_WOOD = RegisterBlockItem("stripped_dread_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
-	public static final Block DREAD_SAND = RegisterBlockItem("dread_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
-	public static final Block DREAD_SANDSTONE = RegisterBlockItem("dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
-	public static final Block BORDERLESS_GLASS = RegisterBlockItem("borderless_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
-	public static final Block DREAD_ROCK = RegisterBlockItem("dread_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CHISELED_DREAD_SANDSTONE = RegisterBlockItem("chiseled_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE)));
-	public static final Block SMOOTH_DREAD_SANDSTONE = RegisterBlockItem("smooth_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)));
-	public static final Block CUT_DREAD_SANDSTONE = RegisterBlockItem("cut_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
-	public static final Block CUT_DREAD_SANDSTONE_SLAB = RegisterBlockItem("cut_dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
-	public static final Block CUT_DREAD_SANDSTONE_STAIRS = RegisterBlockItem("cut_dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
-	public static final Block DREAD_ROCK_BRICKS = RegisterBlockItem("dread_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
-	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)));
-	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
-	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+	public static final Block DREAD_LOG = RegisterBlockItem("dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)), false);
+	public static final Block DREAD_WOOD = RegisterBlockItem("dread_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)), false);
+	public static final Block DREAD_PLANKS = RegisterBlockItem("dread_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), false);
+	public static final Block DREAD_SLAB = RegisterBlockItem("dread_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)), false);
+	public static final Block DREAD_STAIRS = RegisterBlockItem("dread_stairs", new StairsBlock(DREAD_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), false);
+	public static final Block DREAD_FENCE = RegisterBlockItem("dread_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)), false);
+	public static final Block DREAD_FENCE_GATE = RegisterBlockItem("dread_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK), false);
+	public static final Block DREAD_BUTTON = RegisterBlockItem("dread_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK), false);
+	public static final Block STRIPPED_DREAD_LOG = RegisterBlockItem("stripped_dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)), false);
+	public static final Block STRIPPED_DREAD_WOOD = RegisterBlockItem("stripped_dread_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)), false);
+	public static final Block DREAD_SAND = RegisterBlockItem("dread_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)), false);
+	public static final Block DREAD_SANDSTONE = RegisterBlockItem("dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE)), false);
+	public static final Block BORDERLESS_GLASS = RegisterBlockItem("borderless_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)), false);
+	public static final Block DREAD_ROCK = RegisterBlockItem("dread_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), false);
+	public static final Block CHISELED_DREAD_SANDSTONE = RegisterBlockItem("chiseled_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE)), false);
+	public static final Block SMOOTH_DREAD_SANDSTONE = RegisterBlockItem("smooth_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)), false);
+	public static final Block CUT_DREAD_SANDSTONE = RegisterBlockItem("cut_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)), false);
+	public static final Block CUT_DREAD_SANDSTONE_SLAB = RegisterBlockItem("cut_dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)), false);
+	public static final Block CUT_DREAD_SANDSTONE_STAIRS = RegisterBlockItem("cut_dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)), false);
+	public static final Block DREAD_ROCK_BRICKS = RegisterBlockItem("dread_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)), false);
+	public static final Block DREAD_DOOR = RegisterBlockItem("dread_door", new DoorBlock(FabricBlockSettings.copyOf(DREAD_PLANKS).nonOpaque(), BlockSetType.OAK), false);
+	public static final Block DREAD_TRAPDOOR = RegisterBlockItem("dread_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(DREAD_PLANKS).nonOpaque(), BlockSetType.OAK), false);
+	// end dread
 
+	// misc blocks
+	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)), false);
+	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), false);
+	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)), false);
+	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)), false);
+	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)), false);
 	// end misc blocks
 
-    private static Block RegisterBlockItem(String name, Block block) {
-        RegisterItem(name,block);
-        return RegisterBlock(name,block);
+    private static Block RegisterBlockItem(String name, Block block, boolean fireproof)
+	{
+        RegisterItem(name, block, fireproof);
+        return RegisterBlock(name, block);
     }
-	private static Block RegisterBlock(String name, Block block) {
-        return Registry.register(Registries.BLOCK,new Identifier(CoreAscension.MOD_ID,name),block);
+	private static Block RegisterBlock(String name, Block block)
+	{
+        return Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, name), block);
     }
-    private static void RegisterItem(String name, Block block){
-		Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID,name),new BlockItem(block,new FabricItemSettings()));
+    private static void RegisterItem(String name, Block block, boolean fireproof)
+	{
+		if (fireproof)
+			Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, new FabricItemSettings().fireproof()));
+		else
+			Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, new FabricItemSettings()));
 	}
-    public static void RegisterBlocks(){
+    public static void RegisterBlocks()
+	{
 		CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);
     }
-	public static void ClientRegisterBlocks(){
+	public static void ClientRegisterBlocks()
+	{
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BORDERLESS_GLASS, RenderLayer.getTranslucent());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_CHEST, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_TRAPDOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_TRAPDOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
 	}
 }
