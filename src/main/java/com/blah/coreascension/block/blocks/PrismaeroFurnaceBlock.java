@@ -24,7 +24,7 @@ import net.minecraft.world.World;
 
 
 public class PrismaeroFurnaceBlock extends BlockWithEntity {
-	DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public PrismaeroFurnaceBlock(Settings settings) {
         super(settings);
     }

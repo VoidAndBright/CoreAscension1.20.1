@@ -18,6 +18,7 @@ public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
+    public static final Item AERO_FUEL = registerItem("aerofuel",new Item(new FabricItemSettings()));
     public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
     public static final Item CITRINE = registerItem("citrine",new Item(new FabricItemSettings()));
     public static final Item CITRINE_SHARD = registerItem("citrine_shard",new Item(new FabricItemSettings()));
@@ -94,13 +95,13 @@ public class CoreAscensionItems {
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_PICKAXE = registerItem("uranium_pickaxe",
             new UraniumPickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
-//    public static final Item URANIUM_SWORD = registerItem("sapphire_sword",
+//    public static final Item URANIUM_SWORD = registerItem("uranium_sword",
 //            new SwordItem(CoreAscensionToolMaterial.TOOL, 4, -2.4f, new FabricItemSettings()));
-    public static final Item URANIUM_AXE = registerItem("sapphire_axe",
+    public static final Item URANIUM_AXE = registerItem("uranium_axe",
             new UraniumAxeItem(CoreAscensionToolMaterial.URANIUM, 8, -3.1f, new FabricItemSettings().fireproof()));
-    public static final Item URANIUM_SHOVEL = registerItem("sapphire_shovel",
+    public static final Item URANIUM_SHOVEL = registerItem("uranium_shovel",
             new UraniumShovelItem(CoreAscensionToolMaterial.URANIUM, 1, -3f, new FabricItemSettings().fireproof()));
-    public static final Item URANIUM_HOE = registerItem("sapphire_hoe",
+    public static final Item URANIUM_HOE = registerItem("uranium_hoe",
             new UraniumHoeItem(CoreAscensionToolMaterial.URANIUM, 0, -3f, new FabricItemSettings().fireproof()));
 
 

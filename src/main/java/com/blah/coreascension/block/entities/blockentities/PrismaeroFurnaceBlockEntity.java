@@ -1,6 +1,7 @@
 package com.blah.coreascension.block.entities.blockentities;
 
 import com.blah.coreascension.block.entities.CoreAscensionBlockEntities;
+import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.screen.screens.PrismaeroFurnaceScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
@@ -97,6 +98,6 @@ public class PrismaeroFurnaceBlockEntity extends BlockEntity implements Extended
 		return getStack(OUTPUT_SLOT).getCount() < getStack(OUTPUT_SLOT).getMaxCount();
     }
     private boolean hasFuel(){
-        return getStack(FUEL_SLOT).getItem()== Items.COAL;
+        return getStack(FUEL_SLOT).getItem()== CoreAscensionItems.AERO_FUEL;
     }
 }
