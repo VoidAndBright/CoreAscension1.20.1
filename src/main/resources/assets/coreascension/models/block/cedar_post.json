@@ -1,7 +1,0 @@
-{
-  "parent": "coreascension:custom/post",
-  "textures": {
-    "side": "coreascension:block/cedarlog",
-    "end": "coreascension:block/cedar_post"
-  }
-}
