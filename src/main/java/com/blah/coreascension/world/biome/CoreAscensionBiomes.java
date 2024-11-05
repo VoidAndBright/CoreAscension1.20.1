@@ -1,6 +1,7 @@
 package com.blah.coreascension.world.biome;
 
 import com.blah.coreascension.CoreAscension;
+import com.blah.coreascension.world.CoreAscensionPlacedFeatures;
 import net.minecraft.client.sound.MusicType;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -17,6 +18,7 @@ import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.MiscPlacedFeatures;
 import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import org.lwjgl.system.Pointer;
 
@@ -38,6 +40,7 @@ public class CoreAscensionBiomes
         DefaultBiomeFeatures.addMineables(builder);
         DefaultBiomeFeatures.addSprings(builder);
         DefaultBiomeFeatures.addFrozenTopLayer(builder);
+        builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, CoreAscensionPlacedFeatures.MUD_DISK);
     }
 
     public static Biome tropicsBiome(Registerable<Biome> context)
@@ -53,8 +56,7 @@ public class CoreAscensionBiomes
         spawnBuilder.spawn(SpawnGroup.WATER_CREATURE, new SpawnSettings.SpawnEntry(EntityType.SALMON, 10, 4, 4));
         spawnBuilder.spawn(SpawnGroup.WATER_CREATURE, new SpawnSettings.SpawnEntry(EntityType.SQUID, 10, 4, 4));
 
-        //DefaultBiomeFeatures.addFarmAnimals(spawnBuilder);
-        //DefaultBiomeFeatures.addBatsAndMonsters(spawnBuilder);
+
 
         GenerationSettings.LookupBackedBuilder biomeBuilder =
                 new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
@@ -70,11 +72,11 @@ public class CoreAscensionBiomes
                 .generationSettings(biomeBuilder.build())
                 .spawnSettings(spawnBuilder.build())
                 .effects((new BiomeEffects.Builder())
-                        .waterColor(-12705602)
-                        .waterFogColor(329011)
+                        .waterColor(4071614)
+                        .waterFogColor(4071614)
                         .skyColor(7972607)
-                        .grassColor(8651008)
-                        .foliageColor(8651008)
+                        .grassColor(8126208)
+                        .foliageColor(8126208)
                         .fogColor(12638463)
                         .moodSound(BiomeMoodSound.CAVE).build())
                 .build();

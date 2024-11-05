@@ -11,14 +11,22 @@ import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
+import net.minecraft.world.gen.blockpredicate.BlockPredicate;
 import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.stateprovider.PredicatedStateProvider;
 
 import java.util.List;
 
 public class CoreAscensionConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> URANIUM_ORE_KEY = registerKey("uranium_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MUD_DISK = registerKey("mud_disk");
 
-    public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
+
+    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context)
+    {
+        ConfiguredFeatures.register(context, MUD_DISK, Feature.DISK, new DiskFeatureConfig(PredicatedStateProvider.of(CoreAscensionBlocks.TROPICS_MUD), BlockPredicate.matchingBlocks(List.of(Blocks.DIRT, CoreAscensionBlocks.TROPICS_MUD)), UniformIntProvider.create(2, 3), 1));
+
         RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplacables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         RuleTest netherReplacables = new BlockMatchRuleTest(Blocks.BASALT);

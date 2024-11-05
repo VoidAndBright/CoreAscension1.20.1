@@ -16,9 +16,9 @@ public class CoreAscensionDataGenerator implements DataGeneratorEntrypoint {
 	}
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
-		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, CoreAscensionConfiguredFeatures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, CoreAscensionPlacedFeatures::boostrap);
-		//registryBuilder.addRegistry(RegistryKeys.BIOME, CoreAscensionBiomes::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, CoreAscensionConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, CoreAscensionPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, CoreAscensionBiomes::bootstrap);
 //		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }
