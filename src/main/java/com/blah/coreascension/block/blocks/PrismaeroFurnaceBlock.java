@@ -2,7 +2,7 @@ package com.blah.coreascension.block.blocks;
 
 
 import com.blah.coreascension.block.entities.CoreAscensionBlockEntities;
-import com.blah.coreascension.block.entities.blockentities.PrismaeroFurnaceBlockEntity;
+import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;

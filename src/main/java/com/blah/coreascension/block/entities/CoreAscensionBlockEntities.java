@@ -2,9 +2,7 @@ package com.blah.coreascension.block.entities;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.block.entities.blockentities.PrismaeroFurnaceBlockEntity;
-import com.blah.coreascension.block.entities.blockentities.ReinforcedChestBlockEntity;
-import com.blah.coreascension.block.entities.blockentities.renderer.ReinforcedChestBlockEntityRenderer;
+import com.blah.coreascension.block.entities.renderer.ReinforcedChestBlockEntityRenderer;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
