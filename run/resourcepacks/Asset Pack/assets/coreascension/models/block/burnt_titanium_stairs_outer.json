@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "coreascension:block/burnt_titanium_stairs",
+    "top": "coreascension:block/burnt_titanium_stairs",
+    "side": "coreascension:block/burnt_titanium_stairs"
+  }
+}

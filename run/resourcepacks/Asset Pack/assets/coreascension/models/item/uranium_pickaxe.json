@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "coreascension:item/uraniumpickaxe"
+    "layer0": "coreascension:item/uranium_pickaxe"
   }
 }

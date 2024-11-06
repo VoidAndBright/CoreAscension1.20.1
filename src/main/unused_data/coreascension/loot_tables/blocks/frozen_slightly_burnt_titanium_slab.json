@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coreascension:frozen_slightly_burnt_titanium_slab",
+          "name": "coreascension:frozen_scorched_titanium_slab",
           "weight": 1,
           "conditions": [
             {
@@ -35,7 +35,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "coreascension:slightly_burnt_titanium_slab",
+          "name": "coreascension:scorched_titanium_slab",
           "weight": 1,
           "conditions": [
             {

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coreascension:frozen_lightly_singed_titanium_stairs",
+          "name": "coreascension:frozen_seared_titanium_stairs",
           "weight": 1,
           "conditions": [
             {
@@ -35,7 +35,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "coreascension:lightly_singed_titanium_stairs",
+          "name": "coreascension:seared_titanium_stairs",
           "weight": 1,
           "conditions": [
             {

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascension:item/dreaddoor_item"
+    "layer0": "coreascension:item/dread_door_item"
   }
 }

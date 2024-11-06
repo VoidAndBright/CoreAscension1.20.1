@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coreascension:frozen_lightly_singed_titanium_block",
+          "name": "coreascension:frozen_seared_titanium_block",
           "weight": 1,
           "conditions": [
             {
@@ -35,7 +35,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "coreascension:lightly_singed_titanium_block",
+          "name": "coreascension:seared_titanium_block",
           "weight": 1,
           "conditions": [
             {

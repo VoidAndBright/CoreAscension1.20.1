@@ -7,26 +7,26 @@
   ],
   "key": {
     "0": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     },
     "3": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     },
     "4": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     },
     "6": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     },
     "7": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     },
     "8": {
-      "item": "coreascension:frozen_slightly_burnt_titanium_block"
+      "item": "coreascension:frozen_scorched_titanium_block"
     }
   },
   "result": {
-    "item": "coreascension:frozen_slightly_burnt_titanium_stairs",
+    "item": "coreascension:frozen_scorched_titanium_stairs",
     "count": 4
   }
 }

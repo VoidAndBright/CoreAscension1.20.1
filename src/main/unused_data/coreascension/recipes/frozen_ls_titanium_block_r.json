@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:lightly_singed_titanium_block"
+      "item": "coreascension:seared_titanium_block"
     },
     {
       "item": "minecraft:ice"
     }
   ],
   "result": {
-    "item": "coreascension:frozen_lightly_singed_titanium_block",
+    "item": "coreascension:frozen_seared_titanium_block",
     "count": 1
   }
 }

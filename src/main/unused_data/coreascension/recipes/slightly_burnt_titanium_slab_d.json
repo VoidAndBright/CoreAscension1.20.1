@@ -6,26 +6,26 @@
   ],
   "key": {
     "0": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     },
     "1": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     },
     "2": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     },
     "3": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     },
     "4": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     },
     "5": {
-      "item": "coreascension:slightly_burnt_titanium_slab"
+      "item": "coreascension:scorched_titanium_slab"
     }
   },
   "result": {
-    "item": "coreascension:slightly_burnt_titanium_block",
+    "item": "coreascension:scorched_titanium_block",
     "count": 3
   }
 }

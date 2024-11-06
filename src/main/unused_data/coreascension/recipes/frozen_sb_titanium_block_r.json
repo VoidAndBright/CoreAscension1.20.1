@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:slightly_burnt_titanium_block"
+      "item": "coreascension:scorched_titanium_block"
     },
     {
       "item": "minecraft:ice"
     }
   ],
   "result": {
-    "item": "coreascension:frozen_slightly_burnt_titanium_block",
+    "item": "coreascension:frozen_scorched_titanium_block",
     "count": 1
   }
 }

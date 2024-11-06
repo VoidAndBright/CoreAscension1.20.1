@@ -23,9 +23,9 @@
     "coreascension:uranium_block",
     "coreascension:neon_crystal_block",
     "coreascension:titanium_block",
-    "coreascension:lightly_singed_titanium_block",
+    "coreascension:seared_titanium_block",
     "coreascension:singed_titanium_block",
-    "coreascension:slightly_burnt_titanium_block",
+    "coreascension:scorched_titanium_block",
     "coreascension:burnt_titanium_block"
   ]
 }

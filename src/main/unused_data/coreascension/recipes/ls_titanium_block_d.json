@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:lightly_singed_titanium_block"
+      "item": "coreascension:seared_titanium_block"
     }
   ],
   "result": {
