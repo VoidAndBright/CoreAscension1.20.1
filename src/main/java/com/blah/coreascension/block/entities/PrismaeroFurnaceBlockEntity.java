@@ -42,7 +42,7 @@ public class PrismaeroFurnaceBlockEntity extends BlockEntity implements Extended
     }
 
     public Text getDisplayName() {
-        return Text.translatable("container.prismaerion_furnace");
+        return Text.translatable("container.prismaero_furnace");
     }
 
     public DefaultedList<ItemStack> getItems() {
