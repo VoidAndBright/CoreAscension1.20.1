@@ -11,7 +11,7 @@ import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 public class CoreAscensionSurfaceRules {
     public static MaterialRules.MaterialRule TROPICS_SURFACE =
-        MaterialRules.condition(MaterialRules.biome(BiomeKeys.PLAINS),
+        MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomeKeys.TROPICS),
             MaterialRules.sequence(
                 MaterialRules.condition(MaterialRules.stoneDepth(2, true, VerticalSurfaceType.FLOOR), block(CoreAscensionBlocks.BLACK_SAND)),
                 block(CoreAscensionBlocks.BLACK_SANDSTONE)
