@@ -35,11 +35,9 @@ public class UraniumSwordItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-        boolean retval = super.postHit(stack, target, attacker);
-        if (attacker instanceof PlayerEntity player)
-        {
-            Box box = player.getBoundingBox().expand(8, 3, 8);
-            List<Entity> entities = player.getWorld().getOtherEntities(player, box);
+        boolean retrieval = super.postHit(stack, target, attacker);
+            Box box = attacker.getBoundingBox().expand(8, 3, 8);
+            List<Entity> entities = attacker.getWorld().getOtherEntities(attacker, box);
             for (Entity entity : entities)
             {
                 if (entity instanceof MobEntity && !(entity instanceof CatEntity) && !(entity instanceof WolfEntity))
@@ -47,7 +45,6 @@ public class UraniumSwordItem extends SwordItem {
                     entity.damage(entity.getDamageSources().generic(), 6);
                 }
             }
-        }
-        return retval;
+        return retrieval;
     }
 }

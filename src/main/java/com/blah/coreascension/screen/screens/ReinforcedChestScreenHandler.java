@@ -31,7 +31,10 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
     }
-
+    public void onClosed(PlayerEntity player) {
+        super.onClosed(player);
+        this.inventory.onClose(player);
+    }
     public Inventory getInventory() {
         return inventory;
     }

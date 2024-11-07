@@ -1,49 +1,60 @@
 package com.blah.coreascension.screen.screens;
 
 
-import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
-import com.blah.coreascension.item.CoreAscensionItems;
+import com.blah.coreascension.block.entities.CatalyzerBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.util.Identifier;
 
-public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
+public class DimensionalSurgingScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    public final PrismaeroFurnaceBlockEntity blockEntity;
+    private final PropertyDelegate propertyDelegate;
+    public final CatalyzerBlockEntity blockEntity;
 
-    public PrismaeroFurnaceScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
+    public DimensionalSurgingScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
+                new ArrayPropertyDelegate(2));
     }
 
-    public PrismaeroFurnaceScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
-        super(CoreAscensionScreenHandlers.PRISMAERION_FURNACE_SCREEN_HANDLER, syncId);
-        checkSize(((Inventory) blockEntity), 3);
+    public DimensionalSurgingScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
+        super(CoreAscensionScreenHandlers.CATALYZER_SCREEN_HANDLER, syncId);
+        checkSize(((Inventory) blockEntity), 5);
         this.inventory = ((Inventory) blockEntity);
         inventory.onOpen(playerInventory.player);
-        this.blockEntity = ((PrismaeroFurnaceBlockEntity) blockEntity);
+        this.propertyDelegate = arrayPropertyDelegate;
+        this.blockEntity = ((CatalyzerBlockEntity) blockEntity);
 
-		this.addSlot(new Slot(inventory, 0, 56, 17){
-            public boolean canInsert(ItemStack stack) {return stack.isOf(CoreAscensionItems.AERO_FUEL);}
-            public Pair<Identifier, Identifier> getBackgroundSprite() {return null;}
-        });
-		this.addSlot(new Slot(inventory, 1, 56, 53));
-		this.addSlot(new Slot(inventory, 2, 116, 35){
-            public boolean canInsert(ItemStack stack) {
-                return false;
-            }
-        });
+
+		this.addSlot(new Slot(inventory, 4, 120,24));
+		this.addSlot(new Slot(inventory, 3, 95, 12));
+		this.addSlot(new Slot(inventory, 2, 67, 18));
+		this.addSlot(new Slot(inventory, 1, 37, 14));
+		this.addSlot(new Slot(inventory, 0, 80, 59));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        addProperties(arrayPropertyDelegate);
+    }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public int getScaledProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);  // Max Progress
+        int progressArrowSize = 27; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
@@ -70,7 +81,6 @@ public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
         return newStack;
     }
 
-    @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
     }

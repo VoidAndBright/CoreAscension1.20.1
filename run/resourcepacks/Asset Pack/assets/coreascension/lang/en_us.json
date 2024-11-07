@@ -839,6 +839,7 @@
   "block.coreascension.zircon_stairs": "Zircon Stairs",
   "block.coreascension.zircon_wall": "Zircon Wall",
   "container.reinforced_chest": "Reinforced Chest",
+  "container.prismaero_furnace": "Prismaero Furnace",
   "death.attack.blah_blade": "%1$s was vaporized by %1$s's Blah's Energy Blade",
   "death.attack.blah_blade.player": "%1$s was vaporized by %2$s's Blah's Energy Blade",
   "death.attack.freezing": "%1$s became a popsicle",

@@ -16,7 +16,8 @@ import net.minecraft.util.math.Direction;
 
 public class CoreAscensionItems {
 
-    public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
+    public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",
+            new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
     public static final Item AERO_FUEL = registerItem("aerofuel",new Item(new FabricItemSettings()));
     public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
@@ -33,7 +34,8 @@ public class CoreAscensionItems {
     public static final Item RAW_TITANIUM = registerItem("raw_titanium",new Item(new FabricItemSettings()));
     public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
-    public static final Item THE_TOOL = registerItem("the_tool", new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
+    public static final Item THE_TOOL = registerItem("the_tool",
+            new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric",new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod",new Item(new FabricItemSettings()));
 
@@ -86,13 +88,13 @@ public class CoreAscensionItems {
 
 
     public static final Item URANIUM_HELMET = registerItem("uranium_helmet",
-            new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+            new ArmorItem(CoreAscensionArmorMaterials.URANIUM, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_CHESTPLATE = registerItem("uranium_chestplate",
-            new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+            new ArmorItem(CoreAscensionArmorMaterials.URANIUM, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_LEGGINGS = registerItem("uranium_leggings",
-            new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+            new ArmorItem(CoreAscensionArmorMaterials.URANIUM, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_BOOTS = registerItem("uranium_boots",
-            new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+            new ArmorItem(CoreAscensionArmorMaterials.URANIUM, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_PICKAXE = registerItem("uranium_pickaxe",
             new UraniumPickaxeItem(CoreAscensionToolMaterial.URANIUM, 3, -2.8f, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_SWORD = registerItem("uranium_sword",

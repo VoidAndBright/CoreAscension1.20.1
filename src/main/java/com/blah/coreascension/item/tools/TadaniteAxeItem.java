@@ -20,9 +20,8 @@ public class TadaniteAxeItem extends AxeItem
     {
         super(material, attackDamage, attackSpeed, settings);
     }
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+    public void appendTooltip(ItemStack stack,World world, List<Text> tooltip, TooltipContext context)
     {
-        super.appendTooltip(stack, world, tooltip, context);
         tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.tadanite"))).formatted(Formatting.YELLOW));
     }
 }

@@ -16,10 +16,10 @@
       "y": 270
     },
     "facing=east,half=lower,hinge=right,open=false": {
-      "model": "coreascension:block/dark_matter_door_bottom_hinge"
+      "model": "coreascension:block/dark_matter_door_bottom_open"
     },
     "facing=south,half=lower,hinge=right,open=false": {
-      "model": "coreascension:block/dark_matter_door_bottom_hinge",
+      "model": "coreascension:block/dark_matter_door_bottom_open",
       "y": 90
     },
     "facing=west,half=lower,hinge=right,open=false": {

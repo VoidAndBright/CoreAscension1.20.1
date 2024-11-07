@@ -140,6 +140,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.COCONUT);
         entries.add(CoreAscensionBlocks.URANIUM_ORE);
         entries.add(CoreAscensionBlocks.URANIUM_BLOCK);
+        entries.add(CoreAscensionBlocks.PRISMAERO_FURNACE);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -187,6 +188,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_AXE);
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
+        entries.add(CoreAscensionItems.URANIUM_HELMET);
+        entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
+        entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
+        entries.add(CoreAscensionItems.URANIUM_BOOTS);
         entries.add(CoreAscensionItems.URANIUM_SWORD);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
         entries.add(CoreAscensionItems.URANIUM_AXE);
@@ -198,6 +203,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.CALAMARI);
         entries.add(CoreAscensionItems.COOKED_CALAMARI);
         entries.add(CoreAscensionItems.COCONUT_FOOD);
+        entries.add(CoreAscensionItems.AERO_FUEL);
         // -- END FOOD --
     });
     public static ItemGroup registerItemGroup(String name, Item item, ItemGroup.EntryCollector entries){

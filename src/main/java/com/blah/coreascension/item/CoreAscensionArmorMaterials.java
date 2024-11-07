@@ -14,7 +14,8 @@ import java.util.function.Supplier;
 public enum CoreAscensionArmorMaterials implements ArmorMaterial {
     GILDED_OBSIDIAN("gilded_obsidian", 25, new int[] { 2, 5, 4, 2 },null,10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.OBSIDIAN_FABRIC)),
     TADANITE("tadanite", 200, new int[] { 6, 11, 10, 6 }, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE),9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.2f, 0.115f, () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_DIAMOND)),
-    SAPPHIRE("sapphire", 25, new int[] { 2, 4, 4, 3 }, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE),9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE));
+    SAPPHIRE("sapphire", 25, new int[] { 2, 4, 4, 3 }, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE),9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
+    URANIUM("uranium", 25, new int[] { 2, 4, 4, 3 }, new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE),9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;

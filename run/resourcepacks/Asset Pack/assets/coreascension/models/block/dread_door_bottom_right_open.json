@@ -1,5 +1,5 @@
 {
-  "parent": "block/door_top",
+  "parent": "block/door_bottom_right_open",
   "textures": {
     "bottom": "coreascension:block/dread_door_lower",
     "top": "coreascension:block/dread_door_upper"

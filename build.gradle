@@ -20,6 +20,9 @@ repositories {
         name = 'TerraformersMC'
         url = 'https://maven.terraformersmc.com/'
     }
+    maven {
+        url = 'https://maven.minecraftforge.net/'
+    }
 }
 
 fabricApi {
@@ -35,7 +38,7 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    modImplementation("com.terraformersmc:biolith:${project.biolith_version}")
+    modImplementation "com.terraformersmc:biolith:${biolith_version}"
 }
 
 processResources {
