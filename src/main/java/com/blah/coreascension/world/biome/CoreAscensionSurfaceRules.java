@@ -9,7 +9,8 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 
-public class CoreAscensionSurfaceRules {
+public class CoreAscensionSurfaceRules
+{
     public static MaterialRules.MaterialRule TROPICS_SURFACE =
         MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomeKeys.TROPICS),
             MaterialRules.sequence(
@@ -17,10 +18,12 @@ public class CoreAscensionSurfaceRules {
                 block(CoreAscensionBlocks.BLACK_SANDSTONE)
             )
         );
-    private static MaterialRules.MaterialRule block(Block block) {
+    private static MaterialRules.MaterialRule block(Block block)
+    {
         return MaterialRules.block(block.getDefaultState());
     }
-    public static void GenerateSurfaceRules(){
+    public static void GenerateSurfaceRules()
+    {
         SurfaceGeneration.addOverworldSurfaceRules(new Identifier("coreascension","rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(TROPICS_SURFACE)));
     }

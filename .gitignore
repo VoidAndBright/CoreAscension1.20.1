@@ -48,3 +48,5 @@ replay_*.log
 *.hprof
 *.jfr
 /src/main/generated
+src/main/generated/.cache/acb8ad2d7ecee7c9af0fcf362f2f978602da0126
+src/main/generated/.cache

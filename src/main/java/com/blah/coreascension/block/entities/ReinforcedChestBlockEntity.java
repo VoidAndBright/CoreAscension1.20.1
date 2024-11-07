@@ -45,7 +45,7 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
     }
 
     public void onClose(PlayerEntity player) {
-        player.getWorld().playSound(null, pos, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+        player.getWorld().playSound(null, pos, SoundEvents.BLOCK_CHEST_CLOSE, SoundCategory.BLOCKS, 1.0F, 1.0F);
     }
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new ReinforcedChestScreenHandler(syncId, playerInventory, this);

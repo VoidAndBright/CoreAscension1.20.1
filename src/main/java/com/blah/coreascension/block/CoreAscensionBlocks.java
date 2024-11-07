@@ -114,13 +114,13 @@ public class CoreAscensionBlocks
 
 	public static final Block ETHEREAL_WALL_TORCH = RegisterBlock("ethereal_wall_torch", new UnderwaterWallTorchBlock(FabricBlockSettings.copyOf(ETHEREAL_TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
 
-	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick",new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
+	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
 
 	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
 	// uranium
-	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)),new FabricItemSettings().fireproof());
-	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)),new FabricItemSettings().fireproof());
+	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)), new FabricItemSettings().fireproof());
+	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)), new FabricItemSettings().fireproof());
 	// end uranium
 
 
@@ -202,6 +202,45 @@ public class CoreAscensionBlocks
 	public static final Block CATALYZER = RegisterBlockItem("catalyzer", new CatalyzerBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 	// end misc blocks
 
+	// stone variants
+	public static final Block IGNEOUS_ROCK = RegisterBlockItem("igneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block SALTROCK = RegisterBlockItem("saltrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MAGNETITE = RegisterBlockItem("magnetite", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block LIMESTONE = RegisterBlockItem("limestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block POLISHED_IGNEOUS_ROCK = RegisterBlockItem("polished_igneous_rock", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block POLISHED_SALTROCK = RegisterBlockItem("polished_saltrock", new Block(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block POLISHED_MAGNETITE = RegisterBlockItem("polished_magnetite", new Block(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block POLISHED_LIMESTONE = RegisterBlockItem("polished_limestone", new Block(FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block IGNEOUS_ROCK_TILES = RegisterBlockItem("igneous_rock_tiles", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block SALTROCK_TILES = RegisterBlockItem("saltrock_tiles", new Block(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block MAGNETITE_TILES = RegisterBlockItem("magnetite_tiles", new Block(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block LIMESTONE_TILES = RegisterBlockItem("limestone_tiles", new Block(FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block IGNEOUS_ROCK_SLAB = RegisterBlockItem("igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block SALTROCK_SLAB = RegisterBlockItem("saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block MAGNETITE_SLAB = RegisterBlockItem("magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block LIMESTONE_SLAB = RegisterBlockItem("limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block IGNEOUS_ROCK_STAIRS = RegisterBlockItem("igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(),FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block SALTROCK_STAIRS = RegisterBlockItem("saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(),FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block MAGNETITE_STAIRS = RegisterBlockItem("magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(),FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block LIMESTONE_STAIRS = RegisterBlockItem("limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(),FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block IGNEOUS_ROCK_WALL = RegisterBlockItem("igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block SALTROCK_WALL = RegisterBlockItem("saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block MAGNETITE_WALL = RegisterBlockItem("magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block LIMESTONE_WALL = RegisterBlockItem("limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block POLISHED_IGNEOUS_ROCK_SLAB = RegisterBlockItem("polished_igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block POLISHED_SALTROCK_SLAB = RegisterBlockItem("polished_saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block POLISHED_MAGNETITE_SLAB = RegisterBlockItem("polished_magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block POLISHED_LIMESTONE_SLAB = RegisterBlockItem("polished_limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block POLISHED_IGNEOUS_ROCK_STAIRS = RegisterBlockItem("polished_igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(),FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block POLISHED_SALTROCK_STAIRS = RegisterBlockItem("polished_saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(),FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block POLISHED_MAGNETITE_STAIRS = RegisterBlockItem("polished_magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(),FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block POLISHED_LIMESTONE_STAIRS = RegisterBlockItem("polished_limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(),FabricBlockSettings.copyOf(LIMESTONE)));
+	public static final Block POLISHED_IGNEOUS_ROCK_WALL = RegisterBlockItem("polished_igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK)));
+	public static final Block POLISHED_SALTROCK_WALL = RegisterBlockItem("polished_saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK)));
+	public static final Block POLISHED_MAGNETITE_WALL = RegisterBlockItem("polished_magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE)));
+	public static final Block POLISHED_LIMESTONE_WALL = RegisterBlockItem("polished_limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE)));
+	// end stone variants
+
     private static Block RegisterBlockItem(String name, Block block)
 	{
         RegisterItem(name, block);
@@ -241,6 +280,7 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BORDERLESS_GLASS, RenderLayer.getTranslucent());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_CHEST, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.COCONUT, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
