@@ -12,20 +12,25 @@ import net.minecraft.world.gen.feature.PlacedFeature;
 
 public class CoreAscensionOreGeneration
 {
-	public static void GenerateOres()
-	{
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_MINERAL_DEBRIS_LARGE_PLACED_KEY);
-		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_MINERAL_DEBRIS_SMALL_PLACED_KEY);
-		BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PURPUR_DEBRIS_LARGE_PLACED_KEY);
-		BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_PURPUR_DEBRIS_SMALL_PLACED_KEY);
-	}
-	public static final RegistryKey<PlacedFeature> ORE_MINERAL_DEBRIS_LARGE_PLACED_KEY = RegisterKey("ore_mineral_debris_large_placed");
-	public static final RegistryKey<PlacedFeature> ORE_MINERAL_DEBRIS_SMALL_PLACED_KEY = RegisterKey("ore_mineral_debris_small_placed");
-	public static final RegistryKey<PlacedFeature> ORE_PURPUR_DEBRIS_LARGE_PLACED_KEY = RegisterKey("ore_purpur_debris_large_placed");
-	public static final RegistryKey<PlacedFeature> ORE_PURPUR_DEBRIS_SMALL_PLACED_KEY = RegisterKey("ore_purpur_debris_small_placed");
+	public static final RegistryKey<PlacedFeature> ORE_MAGNETITE_LOWER_PLACED_KEY = RegisterKey("ore_magnetite_lower");
+	public static final RegistryKey<PlacedFeature> ORE_MAGNETITE_UPPER_PLACED_KEY = RegisterKey("ore_magnetite_upper");
+	public static final RegistryKey<PlacedFeature> ORE_SALTROCK_LOWER_PLACED_KEY = RegisterKey("ore_saltrock_lower");
+	public static final RegistryKey<PlacedFeature> ORE_SALTROCK_UPPER_PLACED_KEY = RegisterKey("ore_saltrock_upper");
+	public static final RegistryKey<PlacedFeature> ORE_IGNEOUS_ROCK_LOWER_PLACED_KEY = RegisterKey("ore_igneous_rock_lower");
+	public static final RegistryKey<PlacedFeature> ORE_IGNEOUS_ROCK_UPPER_PLACED_KEY = RegisterKey("ore_igneous_rock_upper");
 
 	public static RegistryKey<PlacedFeature> RegisterKey(String name)
 	{
 		return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(CoreAscension.MOD_ID, name));
+	}
+	public static void GenerateOres()
+	{
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_MAGNETITE_LOWER_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_MAGNETITE_UPPER_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_SALTROCK_LOWER_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_SALTROCK_UPPER_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_IGNEOUS_ROCK_LOWER_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, ORE_IGNEOUS_ROCK_UPPER_PLACED_KEY);
+
 	}
 }

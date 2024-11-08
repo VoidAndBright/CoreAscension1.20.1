@@ -16,6 +16,8 @@ public class ReinforcedChestScreen extends HandledScreen<ReinforcedChestScreenHa
     }
     protected void init() {
         super.init();
+        this.backgroundHeight=222;
+        this.backgroundWidth=248;
         this.titleX = -28;
         this.titleY = -22;
         this.playerInventoryTitleY = 100;
@@ -24,17 +26,13 @@ public class ReinforcedChestScreen extends HandledScreen<ReinforcedChestScreenHa
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        backgroundWidth = 248;
-        backgroundHeight = 222;
-        int x = (width - backgroundWidth) / 2;
-        int y = (height - backgroundHeight) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
-    protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
-        int x = (width - backgroundWidth) / 2;
-        int y = (height - backgroundHeight) / 2;
-        return mouseX < (double)x || mouseX >= (double)x+backgroundWidth || mouseY < (double)y || mouseY >= (double)y+backgroundHeight;
-    }
+    //protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
+    //    int x = (width - backgroundWidth) / 2;
+    //    int y = (height - backgroundHeight) / 2;
+    //    return mouseX < (double)x || mouseX >= (double)x+backgroundWidth || mouseY < (double)y || mouseY >= (double)y+backgroundHeight;
+    //}
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         renderBackground(context);
         super.render(context, mouseX, mouseY, delta);

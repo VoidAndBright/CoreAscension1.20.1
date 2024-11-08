@@ -35,16 +35,15 @@ public class UraniumSwordItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
-        boolean retrieval = super.postHit(stack, target, attacker);
-            Box box = attacker.getBoundingBox().expand(8, 3, 8);
-            List<Entity> entities = attacker.getWorld().getOtherEntities(attacker, box);
-            for (Entity entity : entities)
+        Box box = target.getBoundingBox().expand(8, 3, 8);
+        List<Entity> entities = target.getWorld().getOtherEntities(target, box);
+        for (Entity entity : entities)
+        {
+            if (entity instanceof MobEntity && entity!=attacker && !(entity instanceof CatEntity || entity instanceof WolfEntity))
             {
-                if (entity instanceof MobEntity && !(entity instanceof CatEntity) && !(entity instanceof WolfEntity))
-                {
-                    entity.damage(entity.getDamageSources().generic(), 6);
-                }
+                entity.damage(entity.getDamageSources().playerAttack((PlayerEntity) attacker), 6);
             }
-        return retrieval;
+        }
+        return super.postHit(stack, target, attacker);
     }
 }

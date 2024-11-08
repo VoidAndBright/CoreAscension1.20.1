@@ -4,17 +4,14 @@ package com.blah.coreascension.screen.screens;
 import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.util.Identifier;
 
 public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
     private final Inventory inventory;
@@ -31,15 +28,14 @@ public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.blockEntity = ((PrismaeroFurnaceBlockEntity) blockEntity);
 
-		this.addSlot(new Slot(inventory, 0, 56, 17){
-            public boolean canInsert(ItemStack stack) {return stack.isOf(CoreAscensionItems.AERO_FUEL);}
-            public Pair<Identifier, Identifier> getBackgroundSprite() {return null;}
+		this.addSlot(new Slot(inventory, 0, 56, 17));
+
+		this.addSlot(new Slot(inventory, 1, 56, 53){
+            public boolean canInsert(ItemStack itemStack) {return itemStack.isOf(CoreAscensionItems.AERO_FUEL);}
         });
-		this.addSlot(new Slot(inventory, 1, 56, 53));
+
 		this.addSlot(new Slot(inventory, 2, 116, 35){
-            public boolean canInsert(ItemStack stack) {
-                return false;
-            }
+            public boolean canInsert(ItemStack stack) {return false;}
         });
 
         addPlayerInventory(playerInventory);
