@@ -18,6 +18,13 @@ public class CoreAscensionSurfaceRules
                 block(CoreAscensionBlocks.BLACK_SANDSTONE)
             )
         );
+    public static MaterialRules.MaterialRule DREAD_SURFACE =
+            MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomeKeys.VALLEY_OF_THE_DAMNED),
+                    MaterialRules.sequence(
+                            MaterialRules.condition(MaterialRules.stoneDepth(2, true, VerticalSurfaceType.FLOOR), block(CoreAscensionBlocks.DREAD_SAND)),
+                            block(CoreAscensionBlocks.DREAD_ROCK)
+                    )
+            );
     private static MaterialRules.MaterialRule block(Block block)
     {
         return MaterialRules.block(block.getDefaultState());
@@ -26,5 +33,7 @@ public class CoreAscensionSurfaceRules
     {
         SurfaceGeneration.addOverworldSurfaceRules(new Identifier("coreascension","rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(TROPICS_SURFACE)));
+        SurfaceGeneration.addOverworldSurfaceRules(new Identifier("coreascension","rules/overworld"),
+                MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(DREAD_SURFACE)));
     }
 }

@@ -101,6 +101,14 @@
     "coreascension:polished_magnetite_wall",
     "coreascension:limestone_wall",
     "coreascension:polished_limestone_wall",
+    "coreascension:diorite_tile",
+    "coreascension:granite_tile",
+    "coreascension:bonesandstone",
+    "coreascension:chiseled_bonesandstone",
+    "coreascension:smooth_bonesandstone",
+    "coreascension:cut_bonesandstone",
+    "coreascension:cut_bonesandstone_stairs",
+    "coreascension:cut_bonesandstone_slab",
     "coreascension:sapphire_ore"
   ]
 }

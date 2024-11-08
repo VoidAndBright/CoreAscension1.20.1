@@ -160,6 +160,14 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.POLISHED_MAGNETITE_WALL)
                 .add(CoreAscensionBlocks.LIMESTONE_WALL)
                 .add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL)
+                .add(CoreAscensionBlocks.DIORITE_TILE)
+                .add(CoreAscensionBlocks.GRANITE_TILE)
+                .add(CoreAscensionBlocks.BONESANDSTONE)
+                .add(CoreAscensionBlocks.CHISELED_BONESANDSTONE)
+                .add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE)
+                .add(CoreAscensionBlocks.CUT_BONESANDSTONE)
+                .add(CoreAscensionBlocks.CUT_BONESANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
@@ -179,6 +187,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.BLACK_SAND)
                 .add(CoreAscensionBlocks.DREAD_SAND)
                 .add(CoreAscensionBlocks.LOAM)
+                .add(CoreAscensionBlocks.ETHEREAL_DIRT)
                 .add(CoreAscensionBlocks.TROPICS_MUD);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
@@ -212,6 +221,30 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG)
                 .add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG)
                 .add(CoreAscensionBlocks.COCONUT)
-                .add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
+                .add(CoreAscensionBlocks.ETHEREAL_LOG)
+                .add(CoreAscensionBlocks.ETHEREAL_WOOD)
+                .add(CoreAscensionBlocks.ETHEREAL_PLANKS)
+                .add(CoreAscensionBlocks.ETHEREAL_SLAB)
+                .add(CoreAscensionBlocks.ETHEREAL_STAIRS)
+                .add(CoreAscensionBlocks.ETHEREAL_FENCE)
+                .add(CoreAscensionBlocks.ETHEREAL_FENCE_GATE)
+                .add(CoreAscensionBlocks.ETHEREAL_BUTTON)
+                .add(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD)
+                .add(CoreAscensionBlocks.ETHEREAL_DOOR)
+                .add(CoreAscensionBlocks.ETHEREAL_TRAPDOOR)
+                .add(CoreAscensionBlocks.STRIPPED_DREAD_LOG)
+                .add(CoreAscensionBlocks.WHITEWOOD_LOG)
+                .add(CoreAscensionBlocks.WHITEWOOD_WOOD)
+                .add(CoreAscensionBlocks.WHITEWOOD_PLANKS)
+                .add(CoreAscensionBlocks.WHITEWOOD_SLAB)
+                .add(CoreAscensionBlocks.WHITEWOOD_STAIRS)
+                .add(CoreAscensionBlocks.WHITEWOOD_FENCE)
+                .add(CoreAscensionBlocks.WHITEWOOD_FENCE_GATE)
+                .add(CoreAscensionBlocks.WHITEWOOD_BUTTON)
+                .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD)
+                .add(CoreAscensionBlocks.WHITEWOOD_DOOR)
+                .add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
     }
 }

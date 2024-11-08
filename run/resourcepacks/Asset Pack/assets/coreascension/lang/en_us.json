@@ -1295,5 +1295,12 @@
   "subtitles.dark_matter_wood_hit_2": "",
   "subtitles.dark_matter_wood_hit_3": "",
   "subtitles.dread_wind": "dread_wind",
-  "subtitles.ender_teleporter_open": ""
+  "subtitles.ender_teleporter_open": "",
+  "item.coreascension.tooltip.the_tool": "Ultimate",
+  "item.coreascension.tooltip.tadanite": "Efficient",
+  "item.coreascension.tooltip.uranium_sword": "Expanding",
+  "item.coreascension.tooltip.uranium_pickaxe": "Hold sneak when mining an ore to veinmine it",
+  "item.coreascension.tooltip.uranium_shovel": "Fortune",
+  "item.coreascension.tooltip.uranium_axe": "Treecapitator",
+  "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoeable blocks to veinmine them"
 }
