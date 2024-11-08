@@ -184,7 +184,6 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.URANIUM_ORE);
         entries.add(CoreAscensionBlocks.URANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.PRISMAERO_FURNACE);
-<<<<<<< Updated upstream
         entries.add(CoreAscensionBlocks.IGNEOUS_ROCK);
         entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_SLAB);
         entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_STAIRS);
@@ -221,9 +220,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_SLAB);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_STAIRS);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL);
-=======
         entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
->>>>>>> Stashed changes
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);

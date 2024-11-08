@@ -17,5 +17,4 @@ public class CoreAscensionDataGenerator implements DataGeneratorEntrypoint
 		pack.addProvider(CoreAscensionBlockTagProvider::new);
 		pack.addProvider(CoreAscensionLootTableProvider::new);
 	}
-	//ores aren't that bad to add ITS THE LOOT TABLES and recipes Yes RECIPES THERE DIFFERNT IN 1.19 so they are in older sorry for the news
 }

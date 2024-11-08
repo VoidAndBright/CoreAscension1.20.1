@@ -1,11 +1,11 @@
 package com.blah.coreascension.world;
 
-import com.blah.coreascension.world.biome.CoreAscensionBiomeGeneration;
-import com.blah.coreascension.world.ore.CoreAscensionOreGeneration;
+import com.blah.coreascension.world.biome.CoreAscensionBiomes;
+import com.blah.coreascension.world.ore.CoreAscensionOres;
 
 public class CoreAscensionWorldGeneration {
     public static void GenerateWorldGeneration(){
-        CoreAscensionBiomeGeneration.GenerateBiomes();
-        CoreAscensionOreGeneration.GenerateOres();
+        CoreAscensionBiomes.GenerateBiomes();
+        CoreAscensionOres.GenerateOres();
     }
 }

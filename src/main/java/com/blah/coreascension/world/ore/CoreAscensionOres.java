@@ -10,7 +10,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.PlacedFeature;
 
 
-public class CoreAscensionOreGeneration
+public class CoreAscensionOres
 {
 	public static final RegistryKey<PlacedFeature> ORE_MAGNETITE_LOWER_PLACED_KEY = RegisterKey("ore_magnetite_lower");
 	public static final RegistryKey<PlacedFeature> ORE_MAGNETITE_UPPER_PLACED_KEY = RegisterKey("ore_magnetite_upper");
