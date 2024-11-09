@@ -1,30 +1,26 @@
 package com.blah.coreascension.screen.screens;
 
 
-import com.blah.coreascension.block.entities.CatalyzerTableBlockEntity;
-import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.text.Text;
+import net.minecraft.util.collection.DefaultedList;
 
-public class CatalyzerScreenHandler extends ScreenHandler {
+public class NormalCatalyzerScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    public final CatalyzerTableBlockEntity blockEntity;
-    public CatalyzerScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf PacketByteBuf) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(PacketByteBuf.readBlockPos()));
+    public NormalCatalyzerScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory,ScreenHandlerContext.EMPTY);
     }
-
-    public CatalyzerScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+    public NormalCatalyzerScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
         super(CoreAscensionScreenHandlers.CATALYZER_SCREEN_HANDLER,syncId);
-        this.blockEntity = ((CatalyzerTableBlockEntity) blockEntity);
-        this.inventory = ((Inventory) blockEntity);
-        inventory.onOpen(playerInventory.player);
+        this.inventory = (Inventory) DefaultedList.ofSize(5, ItemStack.EMPTY);
         this.addSlot(new Slot(inventory, 0, 30, 18));
         this.addSlot(new Slot(inventory, 1, 66, 18));
         this.addSlot(new Slot(inventory, 2, 48, 52));
@@ -73,6 +69,9 @@ public class CatalyzerScreenHandler extends ScreenHandler {
                 this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
+    }
+    public static Text getDisplayName(){
+        return Text.translatable("container.catalyzer");
     }
     private void addPlayerHotbar(PlayerInventory playerInventory) {
         for (int i = 0; i < 9; ++i) {

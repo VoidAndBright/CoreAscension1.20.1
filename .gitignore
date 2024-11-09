@@ -30,21 +30,23 @@ bin/
 
 # fabric
 
-run/.fabric
-run/config
-run/crash-reports
-run/data
-run/logs
-run/mods
-run/resources
-run/saves
-run/options.txt
-run/usercache.json
+run/
+*.fabric
+*config
+*crash-reports
+*data
+*logs
+*mods
+*resources
+*saves
+*options.txt
+*usercache.json
+*screenshots
 
+src/main/generated
 # java
 
 hs_err_*.log
 replay_*.log
 *.hprof
 *.jfr
-src/main/generated

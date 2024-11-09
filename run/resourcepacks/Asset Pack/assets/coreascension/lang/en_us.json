@@ -1284,7 +1284,6 @@
   "itemgroup.item": "Core Ascension Items",
   "key.categories.core_ascension": "Core Ascension",
   "key.coreascension.crystal_helmet_night_vision_toggle": "Night Vision Toggle",
-<<<<<<< Updated upstream
   "subtitles.dark_matter_stone_break": "",
   "subtitles.dark_matter_stone_break_1": "",
   "subtitles.dark_matter_stone_break_2": "",
@@ -1296,16 +1295,13 @@
   "subtitles.dark_matter_wood_hit_1": "",
   "subtitles.dark_matter_wood_hit_2": "",
   "subtitles.dark_matter_wood_hit_3": "",
-  "subtitles.dread_wind": "dread_wind",
   "subtitles.ender_teleporter_open": "",
   "item.coreascension.tooltip.the_tool": "Ultimate",
   "item.coreascension.tooltip.tadanite": "Efficient",
   "item.coreascension.tooltip.uranium_sword": "Expanding",
-  "item.coreascension.tooltip.uranium_pickaxe": "Hold sneak when mining an ore to veinmine it",
+  "item.coreascension.tooltip.uranium_pickaxe": "Hold sneak when mining an ore to vein-mine it",
   "item.coreascension.tooltip.uranium_shovel": "Fortune",
   "item.coreascension.tooltip.uranium_axe": "Treecapitator",
-  "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoeable blocks to veinmine them"
-=======
+  "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoe-able blocks to vein-mine them",
   "subtitles.dread_wind": "dread_wind"
->>>>>>> Stashed changes
 }

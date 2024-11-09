@@ -54,7 +54,7 @@ public interface Anodizable extends Degradable<Anodizable.AnodizationLevel> {
         if(heated)this.tickDegradation(state, world, pos, random);
     }
     static Optional<BlockState> getDecreasedAnodizationState(BlockState state) {
-        return getDecreasedOxidationBlock(state.getBlock()).map((block) -> block.getStateWithProperties(state));
+        return getDecreasedOxidationBlock(state.getBlock()).map(block -> block.getStateWithProperties(state));
     }
 
     static Optional<Block> getIncreasedAnodizationBlock(Block block) {
@@ -66,7 +66,7 @@ public interface Anodizable extends Degradable<Anodizable.AnodizationLevel> {
     }
 
     default Optional<BlockState> getDegradationResult(BlockState state) {
-        return getIncreasedAnodizationBlock(state.getBlock()).map((block) -> block.getStateWithProperties(state));
+        return getIncreasedAnodizationBlock(state.getBlock()).map(block -> block.getStateWithProperties(state));
     }
 
     default float getDegradationChanceMultiplier() {
