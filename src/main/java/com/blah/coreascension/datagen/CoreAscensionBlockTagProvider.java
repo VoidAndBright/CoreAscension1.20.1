@@ -17,6 +17,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
+        getOrCreateTagBuilder(BlockTags.SAND)
+                .add(CoreAscensionBlocks.BLACK_SAND);
+
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(CoreAscensionBlocks.LOAM);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(CoreAscensionBlocks.HARDENED_LAVA)
                 .add(CoreAscensionBlocks.SAPPHIRE_BLOCK)
@@ -187,7 +193,9 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.BLACK_SAND)
                 .add(CoreAscensionBlocks.DREAD_SAND)
                 .add(CoreAscensionBlocks.LOAM)
+                .add(CoreAscensionBlocks.TROPICAL_GRASS)
                 .add(CoreAscensionBlocks.ETHEREAL_DIRT)
+                .add(CoreAscensionBlocks.ETHEREAL_GRASS)
                 .add(CoreAscensionBlocks.TROPICS_MUD);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)

@@ -6,6 +6,7 @@ import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.world.tree.CoreAscensionSaplingGenerators;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
@@ -15,8 +16,14 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
+import net.minecraft.client.color.world.BiomeColors;
 
 public class CoreAscensionBlocks
 {
@@ -118,7 +125,16 @@ public class CoreAscensionBlocks
 	public static final Block CHISELED_BLACK_SANDSTONE = RegisterBlockItem("chiseled_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE)));
 	public static final Block SMOOTH_BLACK_SANDSTONE = RegisterBlockItem("smooth_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)));
 	public static final Block CUT_BLACK_SANDSTONE = RegisterBlockItem("cut_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
-	public static final Block LOAM = RegisterBlockItem("loam", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+	public static final Block LOAM = RegisterBlockItem("loam", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).ticksRandomly())
+	{
+		public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+		{
+			if (world.isAir(pos.up()) && isNearbyGrassBlock(TROPICAL_GRASS.getDefaultState(), pos, world))
+			{
+				world.setBlockState(pos, TROPICAL_GRASS.getDefaultState(), 3);
+			}
+		}
+	});
 	public static final Block CUT_BLACK_SANDSTONE_SLAB = RegisterBlockItem("cut_black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
 	public static final Block CUT_BLACK_SANDSTONE_STAIRS = RegisterBlockItem("cut_black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
 	public static final Block TROPICS_MUD_BRICKS = RegisterBlockItem("tropics_mud_bricks", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
@@ -126,8 +142,17 @@ public class CoreAscensionBlocks
 	public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
 	public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
-	public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling",
-			new SaplingBlock(CoreAscensionSaplingGenerators.TROPICS, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+	public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling", new SaplingBlock(CoreAscensionSaplingGenerators.TROPICS, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+	public static final Block TROPICAL_GRASS = RegisterBlockItem("tropical_grass", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly())
+	{
+		public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+		{
+			if (shouldBlockRevertToDirt(pos, world))
+			{
+				world.setBlockState(pos, LOAM.getDefaultState(), 3);
+			}
+		}
+	});
 
 	// whitewood
 	public static final Block WHITEWOOD_LOG = RegisterBlockItem("whitewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
@@ -143,7 +168,6 @@ public class CoreAscensionBlocks
 	public static final Block STRIPPED_WHITEWOOD_WOOD = RegisterBlockItem("stripped_whitewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
 	public static final Block WHITEWOOD_DOOR = RegisterBlockItem("whitewood_door", new DoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block WHITEWOOD_TRAPDOOR = RegisterBlockItem("whitewood_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
-	public static final Block SEA_SHELL = RegisterBlockItem("bob", new SeashellBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque()));
 	// end whitewood
 	public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
 	public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
@@ -190,7 +214,16 @@ public class CoreAscensionBlocks
 	// ethereal glade
 	public static final Block ETHEREAL_TORCH = RegisterBlock("ethereal_torch", new UnderwaterTorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
 	public static final Block ETHEREAL_WALL_TORCH = RegisterBlock("ethereal_wall_torch", new UnderwaterWallTorchBlock(FabricBlockSettings.copyOf(ETHEREAL_TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
-	public static final Block ETHEREAL_DIRT = RegisterBlockItem("ethereal_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+	public static final Block ETHEREAL_DIRT = RegisterBlockItem("ethereal_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).ticksRandomly())
+	{
+		public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+		{
+			if (world.isAir(pos.up()) && isNearbyGrassBlock(ETHEREAL_GRASS.getDefaultState(), pos, world))
+			{
+				world.setBlockState(pos, ETHEREAL_GRASS.getDefaultState(), 3);
+			}
+		}
+	});
 	public static final Block ETHEREAL_LOG = RegisterBlockItem("ethereal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
 	public static final Block ETHEREAL_WOOD = RegisterBlockItem("ethereal_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 	public static final Block ETHEREAL_PLANKS = RegisterBlockItem("ethereal_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
@@ -205,6 +238,16 @@ public class CoreAscensionBlocks
 	public static final Block ETHEREAL_DOOR = RegisterBlockItem("ethereal_door", new DoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block ETHEREAL_TRAPDOOR = RegisterBlockItem("ethereal_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block ETHEREAL_MEMBRANE = RegisterBlockItem("ethereal_membrane", new SlimeBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK)));
+	public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new Block(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly())
+	{
+		public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random)
+		{
+			if (shouldBlockRevertToDirt(pos, world))
+			{
+				world.setBlockState(pos, ETHEREAL_DIRT.getDefaultState(), 3);
+			}
+		}
+	});
 	// end ethereal glade
 	// end skylands
 
@@ -212,7 +255,14 @@ public class CoreAscensionBlocks
 	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)));
 	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque()));
+	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque())
+	{
+		@Override
+		public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+		{
+			return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
+		}
+	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 	public static final Block CATALYZER_TABLE = RegisterBlockItem("catalyzer", new CatalyzerTableBlock(FabricBlockSettings.copyOf(Blocks.SCAFFOLDING)));
 	// end misc blocks
@@ -290,6 +340,8 @@ public class CoreAscensionBlocks
 		StrippableBlockRegistry.register(CoreAscensionBlocks.DREAD_WOOD, CoreAscensionBlocks.STRIPPED_DREAD_WOOD);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.TROPICS_LOG, CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.TROPICS_WOOD, CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.WHITEWOOD_LOG, CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.WHITEWOOD_WOOD, CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD);
 	}
 	private static void RegisterFlammableBlocks()
 	{
@@ -317,5 +369,36 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_DOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
+
+		ColorProviderRegistry.BLOCK.register((bs, world, pos, index) -> world != null && pos != null ? BiomeColors.getGrassColor(world, pos) : 0, TROPICAL_GRASS);
+	}
+
+	public static boolean isNearbyGrassBlock(BlockState blockState, BlockPos pos, ServerWorld world)
+	{
+		return world.getBlockState(pos.east()) == blockState ||
+			world.getBlockState(pos.west()) == blockState ||
+			world.getBlockState(pos.north()) == blockState ||
+			world.getBlockState(pos.south()) == blockState ||
+			world.getBlockState(pos.up().north()) == blockState ||
+			world.getBlockState(pos.up().south()) == blockState ||
+			world.getBlockState(pos.down().north()) == blockState ||
+			world.getBlockState(pos.down().south()) == blockState ||
+			world.getBlockState(pos.west().up()) == blockState ||
+			world.getBlockState(pos.west().down()) == blockState ||
+			world.getBlockState(pos.east().up()) == blockState ||
+			world.getBlockState(pos.east().down()) == blockState;
+	}
+	public static boolean shouldBlockRevertToDirt(BlockPos pos, ServerWorld world)
+	{
+		boolean ret = !(world.getBlockState(pos.up()).getBlock() instanceof Waterloggable) &&
+                !world.getBlockState(pos.up()).isAir() &&
+                !(world.getBlockState(pos.up()).getBlock() instanceof LeavesBlock) &&
+                !(world.getBlockState(pos.up()).getBlock() instanceof PlantBlock) &&
+                !(world.getBlockState(pos.up()).getBlock() instanceof TallPlantBlock);
+        if (world.getBlockState(pos.up()).getBlock() == Blocks.WATER)
+			ret = true;
+		return ret;
 	}
 }

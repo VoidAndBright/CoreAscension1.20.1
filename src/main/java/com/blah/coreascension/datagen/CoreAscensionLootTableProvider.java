@@ -23,6 +23,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.GRANITE_TILE);
         addDropWithSilkTouch(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS);
+        addDropWithSilkTouch(CoreAscensionBlocks.ETHEREAL_GRASS, CoreAscensionBlocks.ETHEREAL_DIRT);
+        addDropWithSilkTouch(CoreAscensionBlocks.TROPICAL_GRASS, CoreAscensionBlocks.LOAM);
         addDrop(CoreAscensionBlocks.TITANIUM_ORE, oreDrops(CoreAscensionBlocks.TITANIUM_ORE, CoreAscensionItems.RAW_TITANIUM));
         addDrop(CoreAscensionBlocks.TITANIUM_STAIRS);
         addDrop(CoreAscensionBlocks.TITANIUM_SLAB, slabDrops(CoreAscensionBlocks.TITANIUM_SLAB));

@@ -16,7 +16,7 @@ import java.util.List;
 
 public class CoreAscensionPlacedFeatureKeys {
     public static final RegistryKey<PlacedFeature> UNIQUE_PLACED_FEATURE_KEY = RegisterPlacedKey("unique");
-    public static final RegistryKey<PlacedFeature> TROPICS_SAPLING_PLACED_KEY = RegisterPlacedKey("tropics_sapling_placed");
+    public static final RegistryKey<PlacedFeature> TROPICS_SAPLING_PLACED_KEY = RegisterPlacedKey("tropics_tree");
     public static RegistryKey<PlacedFeature> RegisterPlacedKey(String name) {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(CoreAscension.MOD_ID, name));
     }

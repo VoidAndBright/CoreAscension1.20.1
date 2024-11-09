@@ -18,7 +18,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 
 public class CoreAscensionConfiguredFeatureKeys {
     public static final RegistryKey<ConfiguredFeature<?, ?>> UNIQUE_CONFIGURED_FEATURE_KEY = RegisterConfiguredKey("unique");
-    public static final RegistryKey<ConfiguredFeature<?, ?>> TROPICS_SAPLING_KEY = RegisterConfiguredKey("tropics_sapling");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TROPICS_SAPLING_KEY = RegisterConfiguredKey("tropics_tree");
     public static RegistryKey<ConfiguredFeature<?, ?>> RegisterConfiguredKey(String name) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(CoreAscension.MOD_ID, name));
     }
