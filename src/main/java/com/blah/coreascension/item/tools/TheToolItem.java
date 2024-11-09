@@ -19,7 +19,7 @@ public class TheToolItem extends MiningToolItem
 {
     public TheToolItem(float attackDamage, float attackSpeed, ToolMaterial material, Settings settings)
     {
-        super(attackDamage, attackSpeed, material, CoreAscensionTags.Blocks.TOOL_MINEABLE, settings);
+        super(attackDamage, attackSpeed, material, CoreAscensionTags.TOOL_MINEABLE, settings);
     }
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)

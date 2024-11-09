@@ -1,5 +1,6 @@
 package com.blah.coreascension.block.entities;
 
+import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.screen.screens.ReinforcedChestScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;

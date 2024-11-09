@@ -47,7 +47,7 @@ public interface Anodizable extends Degradable<Anodizable.AnodizationLevel> {
         for (int x=-3; x<=3; x++) {
             for (int y = -3; y <= 3; y++) {
                 for (int z = -3; z <= 3; z++) {
-                    if (world.getBlockState(pos.add(x,y,z)).isIn(CoreAscensionTags.Blocks.HEAT_SOURCES)) heated = true;
+                    if (world.getBlockState(pos.add(x,y,z)).isIn(CoreAscensionTags.HEAT_SOURCES)) heated = true;
                 }
             }
         }

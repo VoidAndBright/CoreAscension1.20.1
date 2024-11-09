@@ -26,15 +26,15 @@ import net.minecraft.world.World;
 import java.util.Optional;
 
 
-public class PrismaeroFurnaceBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
     private static final int INPUT_SLOT = 0;
     private static final int FUEL_SLOT = 1;
     private static final int OUTPUT_SLOT = 2;
 
-    public PrismaeroFurnaceBlockEntity(BlockPos pos, BlockState state) {
-        super(CoreAscensionBlockEntities.PRISMAERO_FURNACE_BLOCK_ENTITY, pos, state);
+    public CatalyzerTableBlockEntity(BlockPos pos, BlockState state) {
+        super(CoreAscensionBlockEntities.CATALYZER_TABLE_BLOCK_ENTITY, pos, state);
     }
 
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
@@ -42,7 +42,7 @@ public class PrismaeroFurnaceBlockEntity extends BlockEntity implements Extended
     }
 
     public Text getDisplayName() {
-        return Text.translatable("container.prismaero_furnace");
+        return Text.translatable("container.catalyzer");
     }
 
     public DefaultedList<ItemStack> getItems() {

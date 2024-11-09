@@ -7,6 +7,8 @@ import com.blah.coreascension.particles.CoreAscensionParticles;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
@@ -43,6 +45,7 @@ public class CoreAscensionBlocks
 	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
 	public static final Block TITANIUM_SLAB = RegisterBlockItem("titanium_slab", new AnodizableSlabBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
 	public static final Block TITANIUM_STAIRS = RegisterBlockItem("titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.UNAFFECTED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
+
 	public static final Block SEARED_TITANIUM_BLOCK = RegisterBlockItem("seared_titanium_block", new AnodizableBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
 	public static final Block SEARED_TITANIUM_SLAB = RegisterBlockItem("seared_titanium_slab", new AnodizableSlabBlock(AnodizationLevel.SEARED,FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
 	public static final Block SEARED_TITANIUM_STAIRS = RegisterBlockItem("seared_titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.SEARED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
@@ -206,7 +209,7 @@ public class CoreAscensionBlocks
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
-	public static final Block CATALYZER = RegisterBlockItem("catalyzer", new CatalyzerBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+	public static final Block CATALYZER_TABLE = RegisterBlockItem("catalyzer", new CatalyzerTableBlock(FabricBlockSettings.copyOf(Blocks.SCAFFOLDING)));
 	// end misc blocks
 
 	// stone variants
@@ -274,11 +277,27 @@ public class CoreAscensionBlocks
 	{
 		Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, settings));
 	}
-
+	private static void RegisterStrippableBlocks()
+	{
+		StrippableBlockRegistry.register(CoreAscensionBlocks.CEDAR_LOG, CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.CEDAR_WOOD, CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.DREAD_LOG, CoreAscensionBlocks.STRIPPED_DREAD_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.DREAD_WOOD, CoreAscensionBlocks.STRIPPED_DREAD_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.TROPICS_LOG, CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.TROPICS_WOOD, CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
+	}
+	private static void RegisterFlammableBlocks()
+	{
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_LOG,5,5);
+	}
     public static void RegisterBlocks()
 	{
+		RegisterFlammableBlocks();
+		RegisterStrippableBlocks();
 		CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);
     }
+
 	public static void ClientRegisterBlocks()
 	{
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());

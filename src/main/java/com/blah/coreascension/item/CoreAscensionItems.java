@@ -7,6 +7,7 @@ import com.blah.coreascension.item.items.AdvancedArmorItem;
 import com.blah.coreascension.item.tools.TheToolItem;
 import com.blah.coreascension.item.tools.*;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -110,7 +111,10 @@ public class CoreAscensionItems {
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));
     public static final Item COOKED_CALAMARI = registerItem("cooked_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COOKED_CALAMARI)));
-
+    private static void RegisterFuelItems()
+    {
+        FuelRegistry.INSTANCE.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR.asItem(),1);
+    }
     public static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), item);
 	}

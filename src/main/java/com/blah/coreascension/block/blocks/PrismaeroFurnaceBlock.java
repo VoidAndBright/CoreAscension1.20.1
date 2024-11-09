@@ -1,7 +1,7 @@
 package com.blah.coreascension.block.blocks;
 
 
-import com.blah.coreascension.block.entities.CoreAscensionBlockEntities;
+import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -25,9 +25,7 @@ import net.minecraft.world.World;
 
 public class PrismaeroFurnaceBlock extends BlockWithEntity {
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    public PrismaeroFurnaceBlock(Settings settings) {
-        super(settings);
-    }
+    public PrismaeroFurnaceBlock(Settings settings) {super(settings);}
 
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
@@ -43,14 +41,14 @@ public class PrismaeroFurnaceBlock extends BlockWithEntity {
 		Direction direction = itemPlacementContext.getHorizontalPlayerFacing();
 		return this.getDefaultState().with(FACING,direction.getOpposite());
 	}
-	public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-		if (!state.isOf(newState.getBlock())) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
+	public void onStateReplaced(BlockState blockState, World world, BlockPos blockPos, BlockState newBlockState, boolean moved) {
+		if (!blockState.isOf(newBlockState.getBlock())) {
+			BlockEntity blockEntity = world.getBlockEntity(blockPos);
 			if (blockEntity instanceof Inventory) {
-				ItemScatterer.spawn(world, pos, (Inventory)blockEntity);
-				world.updateComparators(pos, this);
+				ItemScatterer.spawn(world, blockPos, (Inventory)blockEntity);
+				world.updateComparators(blockPos, this);
 			}
-			super.onStateReplaced(state, world, pos, newState, moved);
+			super.onStateReplaced(blockState, world, blockPos, newBlockState, moved);
 		}
 	}
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
@@ -58,9 +56,7 @@ public class PrismaeroFurnaceBlock extends BlockWithEntity {
 			return ActionResult.SUCCESS;
 		} else {
 			NamedScreenHandlerFactory namedScreenHandlerFactory = this.createScreenHandlerFactory(state, world, pos);
-			if (namedScreenHandlerFactory != null) {
-				player.openHandledScreen(namedScreenHandlerFactory);
-			}
+			if (namedScreenHandlerFactory != null) player.openHandledScreen(namedScreenHandlerFactory);
 			return ActionResult.CONSUME;
 		}
 	}

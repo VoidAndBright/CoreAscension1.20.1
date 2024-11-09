@@ -25,12 +25,12 @@ public class UraniumShovelItem extends ShovelItem
     {
         super(material, attackDamage, attackSpeed, settings);
     }
-    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner)
+    public boolean postMine(ItemStack stack, World world, BlockState blockState, BlockPos blockPos, LivingEntity miner)
     {
-        super.postMine(stack, world, state, pos, miner);
+        super.postMine(stack, world, blockState, blockPos, miner);
         if (miner.isSneaking())
-            if (state.isIn(BlockTags.SHOVEL_MINEABLE))
-                Block.dropStack(world, pos, state.getBlock().asItem().getDefaultStack());
+            if (blockState.isIn(BlockTags.SHOVEL_MINEABLE))
+                Block.dropStack(world, blockPos, blockState.getBlock().asItem().getDefaultStack());
         return true;
     }
     public void appendTooltip(ItemStack stack,World world,List<Text> tooltip, TooltipContext context)

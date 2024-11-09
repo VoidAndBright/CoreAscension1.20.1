@@ -1,12 +1,11 @@
 package com.blah.coreascension.world;
 
-import com.blah.coreascension.world.biome.CoreAscensionBiomeGeneration;
-import com.blah.coreascension.world.biome.CoreAscensionSurfaceRules;
+import com.blah.coreascension.world.biome.CoreAscensionBiomes;
+import com.blah.coreascension.world.ore.CoreAscensionOres;
 
 public class CoreAscensionWorldGeneration {
     public static void GenerateWorldGeneration(){
-        CoreAscensionBiomeGeneration.GenerateBiomes();
-        CoreAscensionSurfaceRules.GenerateSurfaceRules();
+        CoreAscensionBiomes.GenerateBiomes();
+        CoreAscensionOres.GenerateOres();
     }
-    // don't remove anything here as it for future features such as ore, trees and geodes
 }

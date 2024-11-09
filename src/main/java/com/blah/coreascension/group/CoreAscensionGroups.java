@@ -13,7 +13,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class CoreAscensionGroups {
-    public static final ItemGroup BLOCK_ITEM_GROUP = registerItemGroup("block",CoreAscensionBlocks.BLAZE_BRICK.asItem(),(displayContext, entries) -> {
+    public static final ItemGroup BLOCK_ITEM_GROUP = registerItemGroup("block_item",CoreAscensionBlocks.BLAZE_BRICK.asItem(),(displayContext, entries) -> {
         entries.add(CoreAscensionBlocks.ACACIA_POST);
         entries.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR);
         entries.add(CoreAscensionBlocks.AERO_LANTERN);
@@ -222,6 +222,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_SLAB);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_STAIRS);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL);
+        entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
