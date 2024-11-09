@@ -147,7 +147,8 @@
       "minecraft:underwater_magma",
       "coreascension:disk_mud",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "coreascension:patch_seashells"
     ],
     [],
     [

@@ -195,5 +195,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.WHITEWOOD_DOOR, doorDrops(CoreAscensionBlocks.WHITEWOOD_DOOR));
         addDrop(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
         //addDrop(CoreAscensionBlocks.WHITEWOOD_LEAVES, leavesDrops(CoreAscensionBlocks.WHITEWOOD_LEAVES, CoreAscensionBlocks.WHITEWOOD_SAPLING, 0.0025f));
+        addDrop(CoreAscensionBlocks.SEASHELL);
+        addDrop(CoreAscensionBlocks.CONCH_SHELL);
     }
 }

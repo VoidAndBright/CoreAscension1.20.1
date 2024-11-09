@@ -124,6 +124,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD);
         entries.add(CoreAscensionBlocks.WHITEWOOD_DOOR);
         entries.add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
+        entries.add(CoreAscensionBlocks.SEASHELL);
+        entries.add(CoreAscensionBlocks.CONCH_SHELL);
         // -- END TROPICS --
         // -- DREAD --
         entries.add(CoreAscensionBlocks.DREAD_LOG);
