@@ -9,19 +9,24 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
 import java.util.Random;
 
-public class SeaShellBlock extends HorizontalFacingBlock implements Waterloggable {
+public class SeashellBlock extends HorizontalFacingBlock implements Waterloggable {
     public static BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    public SeaShellBlock(Settings settings) {
+    public SeashellBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, RandomFacing(new Random())).with(WATERLOGGED, false));
     }
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return Block.createCuboidShape(3, 0, 3, 13, 2, 13);
+    }
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext) {
         Direction direction = itemPlacementContext.getHorizontalPlayerFacing();
-        return this.getDefaultState().with(FACING,direction.getOpposite());
+        return this.getDefaultState().with(FACING, direction);
     }
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));

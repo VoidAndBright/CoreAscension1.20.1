@@ -1299,9 +1299,9 @@
   "item.coreascension.tooltip.the_tool": "Ultimate",
   "item.coreascension.tooltip.tadanite": "Efficient",
   "item.coreascension.tooltip.uranium_sword": "Expanding",
-  "item.coreascension.tooltip.uranium_pickaxe": "Hold sneak when mining an ore to vein-mine it",
+  "item.coreascension.tooltip.uranium_pickaxe": "Hold sneak when mining an ore to veinmine it",
   "item.coreascension.tooltip.uranium_shovel": "Fortune",
   "item.coreascension.tooltip.uranium_axe": "Treecapitator",
-  "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoe-able blocks to vein-mine them",
+  "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoe-able blocks to veinmine them",
   "subtitles.dread_wind": "dread_wind"
 }

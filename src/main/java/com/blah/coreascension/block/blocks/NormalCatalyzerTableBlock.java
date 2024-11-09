@@ -38,8 +38,8 @@ public class NormalCatalyzerTableBlock extends HorizontalFacingBlock {
 			return ActionResult.CONSUME;
 		}
 	}
-	public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-		return (NamedScreenHandlerFactory) CoreAscensionScreenHandlers.NORMAL_CATALYZER_SCREEN_HANDLER;
-	}
+//	public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
+//		return (NamedScreenHandlerFactory) CoreAscensionScreenHandlers.NORMAL_CATALYZER_SCREEN_HANDLER;
+//	}
 	//the reason I made this is to make a block with only a screen and no entity so, I learn more
 }

@@ -4,6 +4,7 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.particles.CoreAscensionParticles;
+import com.blah.coreascension.world.tree.CoreAscensionSaplingGenerators;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -125,6 +126,9 @@ public class CoreAscensionBlocks
 	public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
 	public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling",
+			new SaplingBlock(CoreAscensionSaplingGenerators.TROPICS, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+
 	// whitewood
 	public static final Block WHITEWOOD_LOG = RegisterBlockItem("whitewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
 	public static final Block WHITEWOOD_WOOD = RegisterBlockItem("whitewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
@@ -139,10 +143,10 @@ public class CoreAscensionBlocks
 	public static final Block STRIPPED_WHITEWOOD_WOOD = RegisterBlockItem("stripped_whitewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
 	public static final Block WHITEWOOD_DOOR = RegisterBlockItem("whitewood_door", new DoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block WHITEWOOD_TRAPDOOR = RegisterBlockItem("whitewood_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
-	public static final Block SEA_SHELL = RegisterBlockItem("bob", new SeaShellBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque()));
+	public static final Block SEA_SHELL = RegisterBlockItem("bob", new SeashellBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque()));
 	// end whitewood
-	public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK)));
-	public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK)));
+	public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
+	public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
 
 
 	// end tropics stuff
@@ -180,7 +184,7 @@ public class CoreAscensionBlocks
 	public static final Block SMOOTH_BONESANDSTONE = RegisterBlockItem("smooth_bonesandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE)));
 	public static final Block CUT_BONESANDSTONE = RegisterBlockItem("cut_bonesandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE)));
 	public static final Block CUT_BONESANDSTONE_SLAB = RegisterBlockItem("cut_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB)));
-	public static final Block CUT_BONESANDSTONE_STAIRS = RegisterBlockItem("cut_bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(),FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
+	public static final Block CUT_BONESANDSTONE_STAIRS = RegisterBlockItem("cut_bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE)));
 	// end ancient
 
 	// ethereal glade
@@ -208,7 +212,7 @@ public class CoreAscensionBlocks
 	public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(6)));
 	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque()));
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 	public static final Block CATALYZER_TABLE = RegisterBlockItem("catalyzer", new CatalyzerTableBlock(FabricBlockSettings.copyOf(Blocks.SCAFFOLDING)));
 	// end misc blocks
