@@ -13,7 +13,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
 
 public class UnderwaterTorchBlock extends TorchBlock implements Waterloggable {
-    public static BooleanProperty WATERLOGGED = Properties.WATERLOGGED;;
+    public static BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
     public UnderwaterTorchBlock(Settings settings, ParticleEffect particle) {
         super(settings, particle);
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, false));

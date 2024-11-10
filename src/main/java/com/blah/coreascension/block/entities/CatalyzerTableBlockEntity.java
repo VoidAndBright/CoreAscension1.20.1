@@ -1,12 +1,7 @@
 package com.blah.coreascension.block.entities;
 
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
-<<<<<<< Updated upstream
-import com.blah.coreascension.screen.screens.CatalyzerScreenHandler;
-import com.blah.coreascension.screen.screens.PrismaeroFurnaceScreenHandler;
-=======
 import com.blah.coreascension.screen.screens.CatalyzerTableScreenHandler;
->>>>>>> Stashed changes
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -53,10 +48,6 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-<<<<<<< Updated upstream
-        return new CatalyzerScreenHandler(syncId, playerInventory, this);
-=======
         return new CatalyzerTableScreenHandler(syncId, playerInventory, this);
->>>>>>> Stashed changes
     }
 }

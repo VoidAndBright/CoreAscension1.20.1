@@ -11,16 +11,9 @@ import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
 public class CoreAscensionScreenHandlers {
-<<<<<<< Updated upstream
-    public static final ScreenHandlerType<ReinforcedChestScreenHandler> REINFORCED_CHEST_SCREEN_HANDLER = RegisterExtendedScreenHandler("reinforced_chest", ReinforcedChestScreenHandler::new);
-    public static final ScreenHandlerType<PrismaeroFurnaceScreenHandler> PRISMAERION_FURNACE_SCREEN_HANDLER = RegisterExtendedScreenHandler("prismaerion_furnace", PrismaeroFurnaceScreenHandler::new);
-    public static final ScreenHandlerType<CatalyzerScreenHandler> CATALYZER_SCREEN_HANDLER = RegisterExtendedScreenHandler("catalyzer", CatalyzerScreenHandler::new);
-    //public static final ScreenHandlerType<CatalyzerScreenHandler> NORMAL_CATALYZER_SCREEN_HANDLER = RegisterExtendedScreenHandler("catalyzer", CatalyzerScreenHandler::new);
-=======
     public static final ScreenHandlerType<ReinforcedChestScreenHandler> REINFORCED_CHEST_SCREEN_HANDLER = RegisterScreenHandler("reinforced_chest", ReinforcedChestScreenHandler::new);
     public static final ScreenHandlerType<PrismaeroFurnaceScreenHandler> PRISMAERION_FURNACE_SCREEN_HANDLER = RegisterScreenHandler("prismaerion_furnace", PrismaeroFurnaceScreenHandler::new);
     public static final ScreenHandlerType<CatalyzerTableScreenHandler> CATALYZER_TABLE_SCREEN_HANDLER = RegisterScreenHandler("catalyzer", CatalyzerTableScreenHandler::new);
->>>>>>> Stashed changes
 
     public static <T extends ScreenHandler> ScreenHandlerType<T> RegisterScreenHandler(String name, ExtendedScreenHandlerType.ExtendedFactory<T> extendedScreenHandlerType){
         return Registry.register(Registries.SCREEN_HANDLER, new Identifier(CoreAscension.MOD_ID, name),new ExtendedScreenHandlerType<>(extendedScreenHandlerType));
