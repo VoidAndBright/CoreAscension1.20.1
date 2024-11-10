@@ -12,13 +12,13 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class CatalyzingRecipe implements Recipe<SimpleInventory> {
+public class CatalyzerRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack result;
     private final DefaultedList<Ingredient> ingredients;
     private static final int size=3;
 
-    public CatalyzingRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
+    public CatalyzerRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
         this.id = id;
         this.result = output;
         this.ingredients = inputs;
@@ -52,9 +52,9 @@ public class CatalyzingRecipe implements Recipe<SimpleInventory> {
 
     public RecipeType<?> getType() {return new Type();}
 
-    public static class Type implements RecipeType<CatalyzingRecipe>{}
-    public static class Serializer implements RecipeSerializer<CatalyzingRecipe> {
-        public CatalyzingRecipe read(Identifier id, JsonObject json)
+    public static class Type implements RecipeType<CatalyzerRecipe>{}
+    public static class Serializer implements RecipeSerializer<CatalyzerRecipe> {
+        public CatalyzerRecipe read(Identifier id, JsonObject json)
         {
             ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
 
@@ -65,16 +65,16 @@ public class CatalyzingRecipe implements Recipe<SimpleInventory> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new CatalyzingRecipe(id, result, inputs);
+            return new CatalyzerRecipe(id, result, inputs);
         }
-        public CatalyzingRecipe read(Identifier id, PacketByteBuf buf)
+        public CatalyzerRecipe read(Identifier id, PacketByteBuf buf)
         {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 			inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
             ItemStack output = buf.readItemStack();
-            return new CatalyzingRecipe(id, output, inputs);
+            return new CatalyzerRecipe(id, output, inputs);
         }
-        public void write(PacketByteBuf buf, CatalyzingRecipe recipe)
+        public void write(PacketByteBuf buf, CatalyzerRecipe recipe)
         {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ingredient : recipe.getIngredients()) {
