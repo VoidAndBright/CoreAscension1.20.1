@@ -1,7 +1,9 @@
 package com.blah.coreascension.screen.screens;
 
 
+import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.entities.CatalyzerTableBlockEntity;
+import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,15 +29,19 @@ public class CatalyzerTableScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.blockEntity = ((CatalyzerTableBlockEntity) blockEntity);
 
-		this.addSlot(new Slot(inventory, 0, 56, 17));
+		this.addSlot(new Slot(inventory, 0, 30, 18));
 
-		this.addSlot(new Slot(inventory, 1, 56, 53));
+		this.addSlot(new Slot(inventory, 1, 66, 18));
 
-		this.addSlot(new Slot(inventory, 2, 56, 57));
+		this.addSlot(new Slot(inventory, 2, 48, 52));
+//        {
+//            public boolean canInsert(ItemStack stack) {return stack.getItem() == CoreAscensionItems.SULPHUR || stack.getItem() == CoreAscensionBlocks.SULPHUR_BLOCK.asItem();}
+//        });
 
-		this.addSlot(new Slot(inventory, 3, 124, 35){
-            public boolean canInsert(ItemStack stack) {return false;}
-        });
+		this.addSlot(new Slot(inventory, 3, 124, 35));
+//        {
+//            public boolean canInsert(ItemStack stack) {return false;}
+//        });
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);

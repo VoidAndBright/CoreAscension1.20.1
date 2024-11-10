@@ -16,7 +16,7 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack result;
     private final DefaultedList<Ingredient> ingredients;
-    private static final int size=3;
+    private static final int size = 3;
 
     public CatalyzerRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
         this.id = id;
@@ -29,7 +29,9 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         if(world.isClient()) {
             return false;
         }
-        return ingredients.get(0).test(inventory.getStack(0))&&ingredients.get(1).test(inventory.getStack(1))&&ingredients.get(2).test(inventory.getStack(2));
+        return ingredients.get(0).test(inventory.getStack(0)) &&
+               ingredients.get(1).test(inventory.getStack(1)) &&
+               ingredients.get(2).test(inventory.getStack(2));
     }
 
 	public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
@@ -52,8 +54,11 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
 
     public RecipeType<?> getType() {return new Type();}
 
-    public static class Type implements RecipeType<CatalyzerRecipe>{}
+    public static class Type implements RecipeType<CatalyzerRecipe>{
+        public static final Type INSTANCE = new Type();
+    }
     public static class Serializer implements RecipeSerializer<CatalyzerRecipe> {
+        public static final Serializer INSTANCE = new Serializer();
         public CatalyzerRecipe read(Identifier id, JsonObject json)
         {
             ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));

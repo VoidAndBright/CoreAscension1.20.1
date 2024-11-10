@@ -64,7 +64,6 @@
     "coreascension:uranium_ore",
     "coreascension:uranium_block",
     "coreascension:cement",
-    "coreascension:catalyzer",
     "coreascension:igneous_rock",
     "coreascension:igneous_rock_stairs",
     "coreascension:igneous_rock_slab",
@@ -109,6 +108,8 @@
     "coreascension:cut_bonesandstone",
     "coreascension:cut_bonesandstone_stairs",
     "coreascension:cut_bonesandstone_slab",
+    "coreascension:catalyzer",
+    "coreascension:sulphur_block",
     "coreascension:sapphire_ore"
   ]
 }

@@ -48,6 +48,8 @@ public class CoreAscensionBlocks
 	public static final Block SAPPHIRE_ORE = RegisterBlockItem("sapphire_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
 	public static final Block SAPPHIRE_BLOCK = RegisterBlockItem("sapphire_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
+	public static final Block SULPHUR_BLOCK = RegisterBlockItem("sulphur_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
 	// titanium blocks
 	public static final Block TITANIUM_ORE = RegisterBlockItem("titanium_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
 	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.NETHERITE)));
@@ -85,7 +87,7 @@ public class CoreAscensionBlocks
 
 	public static final Block BLAZE_BRICK = RegisterBlockItem("blaze_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(15)));
 	public static final Block REINFORCED_CHEST = RegisterBlockItem("reinforced_chest", new ReinforcedChestBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
-	public static final Block CATALYZER_TABLE = RegisterBlockItem("catalyzer_table", new CatalyzerTableBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+	public static final Block CATALYZER_TABLE = RegisterBlockItem("catalyzer", new CatalyzerTableBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
 	// uranium
 	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)), new FabricItemSettings().fireproof());
@@ -366,6 +368,8 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_TRAPDOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());

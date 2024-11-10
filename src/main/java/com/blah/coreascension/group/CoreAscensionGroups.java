@@ -225,6 +225,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_SLAB);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_STAIRS);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL);
+        entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
+        entries.add(CoreAscensionBlocks.SULPHUR_BLOCK);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -245,8 +247,18 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.RAW_TITANIUM);
         entries.add(CoreAscensionItems.SPAWN_EGG);
 
+        entries.add(CoreAscensionItems.WOODEN_HAMMER);
+        entries.add(CoreAscensionItems.STONE_HAMMER);
+        entries.add(CoreAscensionItems.GOLDEN_HAMMER);
+        entries.add(CoreAscensionItems.IRON_HAMMER);
+        entries.add(CoreAscensionItems.DIAMOND_HAMMER);
+        entries.add(CoreAscensionItems.NETHERITE_HAMMER);
+
+        entries.add(CoreAscensionItems.SULPHUR);
+
         entries.add(CoreAscensionItems.RAW_URANIUM);
         entries.add(CoreAscensionItems.URANIUM_INGOT);
+        entries.add(CoreAscensionItems.LUMITE_INGOT);
         // -- ARMOR --
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
@@ -260,6 +272,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
         entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
         entries.add(CoreAscensionItems.TADANITE_BOOTS);
+        entries.add(CoreAscensionItems.URANIUM_HELMET);
+        entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
+        entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
+        entries.add(CoreAscensionItems.URANIUM_BOOTS);
         // -- END ARMOR --
 
         // -- TOOLS --
@@ -268,15 +284,14 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.SAPPHIRE_AXE);
         entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
         entries.add(CoreAscensionItems.SAPPHIRE_HOE);
+        entries.add(CoreAscensionItems.SAPPHIRE_HAMMER);
         entries.add(CoreAscensionItems.TADANITE_SWORD);
         entries.add(CoreAscensionItems.TADANITE_PICKAXE);
         entries.add(CoreAscensionItems.TADANITE_AXE);
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
-        entries.add(CoreAscensionItems.URANIUM_HELMET);
-        entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
-        entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
-        entries.add(CoreAscensionItems.URANIUM_BOOTS);
+        entries.add(CoreAscensionItems.TADANITE_HAMMER);
+        entries.add(CoreAscensionItems.LUMITE_HAMMER);
         entries.add(CoreAscensionItems.URANIUM_SWORD);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
         entries.add(CoreAscensionItems.URANIUM_AXE);

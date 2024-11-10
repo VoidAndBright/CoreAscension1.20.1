@@ -34,13 +34,33 @@ public class CoreAscensionItems {
     public static final Item TADANITE_DIAMOND = registerItem("tadanite_diamond",new Item(new FabricItemSettings().fireproof()));
     public static final Item TADANITE_CRYSTAL = registerItem("tadanite_crystal",new Item(new FabricItemSettings().fireproof()));
     public static final Item RAW_TITANIUM = registerItem("raw_titanium",new Item(new FabricItemSettings()));
+    public static final Item SULPHUR = registerItem("sulphur",new Item(new FabricItemSettings()));
     public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
     public static final Item SPAWN_EGG = registerItem("poor",new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
     public static final Item THE_TOOL = registerItem("the_tool",
             new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
-    public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric",new Item(new FabricItemSettings()));
-    public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod",new Item(new FabricItemSettings()));
+    public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
+    public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
+    public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));
+
+
+    public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterial.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings()));
+    public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterial.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings()));
+    public static final Item IRON_HAMMER = registerItem("iron_hammer",
+            new HammerItem(CoreAscensionToolMaterial.IRON_SPECIAL, 5, 0.4f, new FabricItemSettings()));
+    public static final Item GOLDEN_HAMMER = registerItem("golden_hammer",
+            new HammerItem(CoreAscensionToolMaterial.GOLD_SPECIAL, 3, 0.4f, new FabricItemSettings()));
+    public static final Item DIAMOND_HAMMER = registerItem("diamond_hammer",
+            new HammerItem(CoreAscensionToolMaterial.DIAMOND_SPECIAL, 6, 0.4f, new FabricItemSettings()));
+    public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
+            new HammerItem(CoreAscensionToolMaterial.NETHERITE_SPECIAL, 7, 0.4f, new FabricItemSettings().fireproof()));
+    public static final Item TADANITE_HAMMER = registerItem("tadanite_hammer",
+            new HammerItem(CoreAscensionToolMaterial.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof()));
+    public static final Item LUMITE_HAMMER = registerItem("lumite_hammer",
+            new HammerItem(CoreAscensionToolMaterial.LUMITE_SPECIAL, 14, 0.4f, new FabricItemSettings().fireproof()));
+    public static final Item SAPPHIRE_HAMMER = registerItem("sapphire_hammer",
+            new HammerItem(CoreAscensionToolMaterial.SAPPHIRE_SPECIAL, 7, 0.4f, new FabricItemSettings()));
 
     public static final Item GILDED_OBSIDIAN_HELMET = registerItem("gilded_obsidian_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));

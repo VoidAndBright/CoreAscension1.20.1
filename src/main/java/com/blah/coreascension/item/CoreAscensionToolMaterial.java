@@ -1,7 +1,9 @@
 package com.blah.coreascension.item;
 
+import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.function.Supplier;
 
@@ -12,8 +14,28 @@ public enum CoreAscensionToolMaterial implements ToolMaterial {
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), ""),
     TADANITE(5, 4000, 14f, 8f, 20,
             () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL), "Efficient"),
+    LUMITE(7, 4500, 15f, 8f, 25,
+            () -> Ingredient.ofItems(CoreAscensionItems.LUMITE_INGOT), ""),
     URANIUM(3, 2031, 10f, 4f, 0,
-                     () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT), "");
+                     () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT), ""),
+    WOOD_SPECIAL(0, 35, 1f, 4.5f, 2,
+            () -> Ingredient.fromTag(ItemTags.PLANKS), ""),
+    STONE_SPECIAL(1, 78, 2f, 4.5f, 5,
+            () -> Ingredient.fromTag(ItemTags.STONE_CRAFTING_MATERIALS), ""),
+    IRON_SPECIAL(2, 150, 3f, 4.5f, 14,
+            () -> Ingredient.ofItems(Items.IRON_INGOT), ""),
+    GOLD_SPECIAL(0, 19, 6f, 4.5f, 22,
+            () -> Ingredient.ofItems(Items.GOLD_INGOT), ""),
+    DIAMOND_SPECIAL(3, 936, 4f, 4.5f, 10,
+            () -> Ingredient.ofItems(Items.DIAMOND), ""),
+    NETHERITE_SPECIAL(4, 1218, 5f, 4.5f, 15,
+            () -> Ingredient.ofItems(Items.NETHERITE_INGOT), ""),
+    TADANITE_SPECIAL(5, 2400, 7f, 4.5f, 20,
+            () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL), ""),
+    LUMITE_SPECIAL(6, 2700, 8f, 4.5f, 25,
+            () -> Ingredient.ofItems(CoreAscensionItems.LUMITE_INGOT), ""),
+    SAPPHIRE_SPECIAL(3, 721, 5f, 4.5f, 15,
+            () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), "");
 
     private final int miningLevel;
     private final int itemDurability;

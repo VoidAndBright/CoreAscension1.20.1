@@ -173,6 +173,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CUT_BONESANDSTONE)
                 .add(CoreAscensionBlocks.CUT_BONESANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB)
+                .add(CoreAscensionBlocks.CATALYZER_TABLE)
+                .add(CoreAscensionBlocks.SULPHUR_BLOCK)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
