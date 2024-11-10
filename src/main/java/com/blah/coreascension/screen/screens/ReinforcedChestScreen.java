@@ -18,9 +18,12 @@ public class ReinforcedChestScreen extends HandledScreen<ReinforcedChestScreenHa
         super.init();
         this.backgroundHeight=222;
         this.backgroundWidth=248;
-        this.titleX = -28;
-        this.titleY = -22;
-        this.playerInventoryTitleY = 100;
+
+        this.x=(width-backgroundWidth)/2;
+        this.y=(height-backgroundHeight)/2;
+
+        this.playerInventoryTitleX = playerInventoryTitleX + 36;
+        this.playerInventoryTitleY = backgroundHeight - 94;
     }
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
@@ -28,15 +31,9 @@ public class ReinforcedChestScreen extends HandledScreen<ReinforcedChestScreenHa
         RenderSystem.setShaderTexture(0, TEXTURE);
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
-    //protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
-    //    int x = (width - backgroundWidth) / 2;
-    //    int y = (height - backgroundHeight) / 2;
-    //    return mouseX < (double)x || mouseX >= (double)x+backgroundWidth || mouseY < (double)y || mouseY >= (double)y+backgroundHeight;
-    //}
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         renderBackground(context);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
-        context.drawText(textRenderer,title, 0, titleY,0xffffff,false);
     }
 }

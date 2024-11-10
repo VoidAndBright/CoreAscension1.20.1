@@ -126,7 +126,6 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.IMPERVIOUS_BRICK);
         addDrop(CoreAscensionBlocks.COCONUT);
         addDrop(CoreAscensionBlocks.PRISMAERO_FURNACE);
-        addDrop(CoreAscensionBlocks.CATALYZER_TABLE);
         addDrop(CoreAscensionBlocks.IGNEOUS_ROCK_WALL);
         addDrop(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_WALL);
         addDrop(CoreAscensionBlocks.SALTROCK_WALL);

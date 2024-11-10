@@ -2,6 +2,7 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.AdvancedArmorItem;
 import com.blah.coreascension.item.tools.TheToolItem;
@@ -35,6 +36,7 @@ public class CoreAscensionItems {
     public static final Item RAW_TITANIUM = registerItem("raw_titanium",new Item(new FabricItemSettings()));
     public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
+    public static final Item SPAWN_EGG = registerItem("poor",new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
     public static final Item THE_TOOL = registerItem("the_tool",
             new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric",new Item(new FabricItemSettings()));

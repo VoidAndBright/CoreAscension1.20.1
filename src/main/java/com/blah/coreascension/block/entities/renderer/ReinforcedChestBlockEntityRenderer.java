@@ -28,14 +28,13 @@ public class ReinforcedChestBlockEntityRenderer implements BlockEntityRenderer<R
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         BlockState blockState = blockEntity.getCachedState();
         float Rotation = blockState.get(ReinforcedChestBlock.FACING).asRotation();
-        ItemStack Base = new ItemStack(Blocks.OAK_LOG);
+        ItemStack Base = new ItemStack(Blocks.BAMBOO_BLOCK);
         matrices.push();
         double offset = Math.sin((blockEntity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
         matrices.translate(0.5, 1.25 + offset, 0.5);
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-30));
-        matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(Rotation));
-        matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(Rotation));
-        itemRenderer.renderItem(Base, ModelTransformationMode.GUI, getLightLevel(blockEntity.getWorld(),blockEntity.getPos()), OverlayTexture.DEFAULT_UV, matrices, vertexConsumers, blockEntity.getWorld(), 1);
+        matrices.scale(4,4,4);
+        matrices.multiply(RotationAxis.NEGATIVE_Y.rotationDegrees(Rotation));
+        itemRenderer.renderItem(Base, ModelTransformationMode.GROUND,light,overlay, matrices, vertexConsumers, blockEntity.getWorld(), 1);
         matrices.pop();
     }
     private int getLightLevel(World world, BlockPos pos) {

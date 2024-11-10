@@ -225,7 +225,6 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_SLAB);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_STAIRS);
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL);
-        entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -244,6 +243,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
         entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
         entries.add(CoreAscensionItems.RAW_TITANIUM);
+        entries.add(CoreAscensionItems.SPAWN_EGG);
 
         entries.add(CoreAscensionItems.RAW_URANIUM);
         entries.add(CoreAscensionItems.URANIUM_INGOT);

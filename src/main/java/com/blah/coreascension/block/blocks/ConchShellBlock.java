@@ -23,6 +23,7 @@ public class ConchShellBlock extends HorizontalFacingBlock implements Waterlogga
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, RandomFacing(new Random())).with(WATERLOGGED, false));
     }
+<<<<<<< Updated upstream
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
@@ -32,6 +33,15 @@ public class ConchShellBlock extends HorizontalFacingBlock implements Waterlogga
             case EAST -> Block.createCuboidShape(3, 0, 5, 15, 9, 13);
             case WEST -> Block.createCuboidShape(1, 0, 3, 13, 9, 11);
             default -> Block.createCuboidShape(3, 0, 3, 11, 9, 15);
+=======
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context)
+    {
+        return switch (state.get(FACING)) {
+            case NORTH -> VoxelShapes.cuboid(3, 0, 3, 11, 9, 15);
+            case EAST -> VoxelShapes.cuboid(1, 0, 3, 13, 9, 11);
+            case WEST -> VoxelShapes.cuboid(3, 0, 5, 15, 9, 13);
+            default -> VoxelShapes.cuboid(5, 0, 1, 13, 9, 13);
+>>>>>>> Stashed changes
         };
     }
     public BlockState getPlacementState(ItemPlacementContext itemPlacementContext)

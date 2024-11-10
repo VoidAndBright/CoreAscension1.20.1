@@ -18,7 +18,9 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
     public ReinforcedChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
-
+    public boolean canUse(PlayerEntity player) {
+        return this.inventory.canPlayerUse(player);
+    }
     public ReinforcedChestScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
         super(CoreAscensionScreenHandlers.REINFORCED_CHEST_SCREEN_HANDLER, syncId);
         checkSize(((Inventory) blockEntity), 78);
@@ -39,6 +41,9 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
         return inventory;
     }
 
+    public ItemStack getFirstItem() {
+        return this.inventory.getStack(0);
+    }
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
@@ -67,23 +72,20 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
     private void addChestInventory(Inventory Inventory) {
         for (int iterate_x = 0; iterate_x < 13; ++iterate_x) {
             for (int iterate_y = 0; iterate_y < 6; ++iterate_y) {
-                this.addSlot(new Slot(Inventory,iterate_y*13+iterate_x, iterate_x*18-28, iterate_y*18-10));
+                this.addSlot(new Slot(Inventory,iterate_y*13+iterate_x, iterate_x*18+8, iterate_y*18+18));
             }
         }
-    }
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
     }
     private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
             for (int iterate_y = 0; iterate_y < 3; ++iterate_y) {
-                this.addSlot(new Slot(playerInventory, iterate_x+iterate_y*9+9, 8 + iterate_x*18, iterate_y*18+112));
+                this.addSlot(new Slot(playerInventory, iterate_x+iterate_y*9+9, iterate_x*18+44, iterate_y*18+140));
             }
         }
     }
     private void addPlayerHotbar(PlayerInventory playerInventory) {
         for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
-            this.addSlot(new Slot(playerInventory,iterate_x,8+iterate_x*18,170));
+            this.addSlot(new Slot(playerInventory,iterate_x,iterate_x*18+44,3*18+144));
         }
     }
 }

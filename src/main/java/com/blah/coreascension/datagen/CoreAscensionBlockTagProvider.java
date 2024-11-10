@@ -129,7 +129,6 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.URANIUM_ORE)
                 .add(CoreAscensionBlocks.URANIUM_BLOCK)
                 .add(CoreAscensionBlocks.CEMENT)
-                .add(CoreAscensionBlocks.CATALYZER_TABLE)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK_STAIRS)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK_SLAB)

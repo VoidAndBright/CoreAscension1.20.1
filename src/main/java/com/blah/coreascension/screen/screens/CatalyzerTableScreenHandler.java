@@ -1,40 +1,46 @@
 package com.blah.coreascension.screen.screens;
 
 
+import com.blah.coreascension.block.entities.CatalyzerTableBlockEntity;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
 
-public class NormalCatalyzerScreenHandler extends ScreenHandler {
+public class CatalyzerTableScreenHandler extends ScreenHandler {
     private final Inventory inventory;
-    public NormalCatalyzerScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory,ScreenHandlerContext.EMPTY);
-    }
-    public NormalCatalyzerScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
-        super(CoreAscensionScreenHandlers.CATALYZER_SCREEN_HANDLER,syncId);
-        this.inventory = (Inventory) DefaultedList.ofSize(5, ItemStack.EMPTY);
-        this.addSlot(new Slot(inventory, 0, 30, 18));
-        this.addSlot(new Slot(inventory, 1, 66, 18));
-        this.addSlot(new Slot(inventory, 2, 48, 52));
-        this.addSlot(new Slot(inventory, 3, 124, 35));
+    public final CatalyzerTableBlockEntity blockEntity;
 
+    public CatalyzerTableScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
+    }
+
+    public CatalyzerTableScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+        super(CoreAscensionScreenHandlers.CATALYZER_TABLE_SCREEN_HANDLER, syncId);
+        checkSize(((Inventory) blockEntity), 4);
+        this.inventory = ((Inventory) blockEntity);
+        inventory.onOpen(playerInventory.player);
+        this.blockEntity = ((CatalyzerTableBlockEntity) blockEntity);
+
+		this.addSlot(new Slot(inventory, 0, 56, 17));
+
+		this.addSlot(new Slot(inventory, 1, 56, 53));
+
+		this.addSlot(new Slot(inventory, 2, 56, 57));
+
+		this.addSlot(new Slot(inventory, 3, 124, 35){
+            public boolean canInsert(ItemStack stack) {return false;}
+        });
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
     }
 
-    public void onClosed(PlayerEntity player) {
-        super.onClosed(player);
-        this.dropInventory(player, this.inventory);
-    }
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
@@ -59,6 +65,7 @@ public class NormalCatalyzerScreenHandler extends ScreenHandler {
         return newStack;
     }
 
+    @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
     }
@@ -70,9 +77,7 @@ public class NormalCatalyzerScreenHandler extends ScreenHandler {
             }
         }
     }
-    public static Text getDisplayName(){
-        return Text.translatable("container.catalyzer");
-    }
+
     private void addPlayerHotbar(PlayerInventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));

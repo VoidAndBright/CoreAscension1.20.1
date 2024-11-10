@@ -10,22 +10,17 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 
-public class CatalyzerScreen extends HandledScreen<CatalyzerScreenHandler> {
+public class CatalyzerTableScreen extends HandledScreen<CatalyzerTableScreenHandler> {
     private static final Identifier TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/catalyzing_gui.png");
-    public CatalyzerScreen(CatalyzerScreenHandler handler, PlayerInventory inventory, Text title) {
+    public CatalyzerTableScreen(CatalyzerTableScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 
-    protected void init() {
-        super.init();
-    }
-
-    @Override
-    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexColorProgram);
+    protected void drawBackground(DrawContext graphics, float delta, int mouseX, int mouseY) {
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        context.drawTexture(TEXTURE, x-50, y-50, 0, 0, backgroundWidth, backgroundHeight);
+		graphics.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
     }
 
     public void render(DrawContext graphics, int mouseX, int mouseY, float delta) {

@@ -12,12 +12,13 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class DimensionalSurgingRecipe implements Recipe<SimpleInventory> {
+public class CatalyzingRecipe implements Recipe<SimpleInventory> {
     private final Identifier id;
     private final ItemStack result;
     private final DefaultedList<Ingredient> ingredients;
+    private static final int size=3;
 
-    public DimensionalSurgingRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
+    public CatalyzingRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
         this.id = id;
         this.result = output;
         this.ingredients = inputs;
@@ -28,7 +29,7 @@ public class DimensionalSurgingRecipe implements Recipe<SimpleInventory> {
         if(world.isClient()) {
             return false;
         }
-        return ingredients.get(0).test(inventory.getStack(1))&&ingredients.get(1).test(inventory.getStack(2))&&ingredients.get(2).test(inventory.getStack(3))&&ingredients.get(3).test(inventory.getStack(4));
+        return ingredients.get(0).test(inventory.getStack(0))&&ingredients.get(1).test(inventory.getStack(1))&&ingredients.get(2).test(inventory.getStack(2));
     }
 
 	public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
@@ -51,29 +52,29 @@ public class DimensionalSurgingRecipe implements Recipe<SimpleInventory> {
 
     public RecipeType<?> getType() {return new Type();}
 
-    public static class Type implements RecipeType<DimensionalSurgingRecipe>{}
-    public static class Serializer implements RecipeSerializer<DimensionalSurgingRecipe> {
-        public DimensionalSurgingRecipe read(Identifier id, JsonObject json)
+    public static class Type implements RecipeType<CatalyzingRecipe>{}
+    public static class Serializer implements RecipeSerializer<CatalyzingRecipe> {
+        public CatalyzingRecipe read(Identifier id, JsonObject json)
         {
             ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
 
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
-            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(4, Ingredient.EMPTY);
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new DimensionalSurgingRecipe(id, result, inputs);
+            return new CatalyzingRecipe(id, result, inputs);
         }
-        public DimensionalSurgingRecipe read(Identifier id, PacketByteBuf buf)
+        public CatalyzingRecipe read(Identifier id, PacketByteBuf buf)
         {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 			inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
             ItemStack output = buf.readItemStack();
-            return new DimensionalSurgingRecipe(id, output, inputs);
+            return new CatalyzingRecipe(id, output, inputs);
         }
-        public void write(PacketByteBuf buf, DimensionalSurgingRecipe recipe)
+        public void write(PacketByteBuf buf, CatalyzingRecipe recipe)
         {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ingredient : recipe.getIngredients()) {
