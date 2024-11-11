@@ -33,15 +33,15 @@ public class CatalyzerTableScreenHandler extends ScreenHandler {
 
 		this.addSlot(new Slot(inventory, 1, 66, 18));
 
-		this.addSlot(new Slot(inventory, 2, 48, 52));
-//        {
-//            public boolean canInsert(ItemStack stack) {return stack.getItem() == CoreAscensionItems.SULPHUR || stack.getItem() == CoreAscensionBlocks.SULPHUR_BLOCK.asItem();}
-//        });
+		this.addSlot(new Slot(inventory, 2, 48, 52)
+        {
+            public boolean canInsert(ItemStack stack) {return stack.getItem() == CoreAscensionItems.SULPHUR || stack.getItem() == CoreAscensionBlocks.SULPHUR_BLOCK.asItem();}
+        });
 
-		this.addSlot(new Slot(inventory, 3, 124, 35));
-//        {
-//            public boolean canInsert(ItemStack stack) {return false;}
-//        });
+		this.addSlot(new Slot(inventory, 3, 124, 35)
+        {
+            public boolean canInsert(ItemStack stack) {return false;}
+        });
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
