@@ -7,11 +7,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.*;
 
 public class CoreAscensionPlacedFeatureKeys {
-    public static final RegistryKey<PlacedFeature> UNIQUE_PLACED_FEATURE_KEY = RegisterPlacedKey("unique");
-    public static final RegistryKey<PlacedFeature> TROPICS_SAPLING_PLACED_KEY = RegisterPlacedKey("tropics_tree");
-    public static final RegistryKey<PlacedFeature> CHESTNUT_PLACED_KEY = RegisterPlacedKey("chestnut_placed");
+    public static final RegistryKey<PlacedFeature> UNIQUE_PLACED_FEATURE_KEY = RegisterPlacedKey("unique_placed");
     public static RegistryKey<PlacedFeature> RegisterPlacedKey(String name) {
         return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(CoreAscension.MOD_ID, name));
     }
-    // by the way Ores are also placed features just put in their own class that all
 }

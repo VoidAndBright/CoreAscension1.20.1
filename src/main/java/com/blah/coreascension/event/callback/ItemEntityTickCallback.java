@@ -1,4 +1,4 @@
-package com.blah.coreascension.event;
+package com.blah.coreascension.event.callback;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;

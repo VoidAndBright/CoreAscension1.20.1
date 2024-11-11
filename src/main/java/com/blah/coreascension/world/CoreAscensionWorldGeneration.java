@@ -4,7 +4,7 @@ import com.blah.coreascension.world.biome.CoreAscensionBiomes;
 import com.blah.coreascension.world.ore.CoreAscensionOres;
 
 public class CoreAscensionWorldGeneration {
-    public static void GenerateWorldGeneration(){
+    public static void GenerateWorldAdditions(){
         CoreAscensionBiomes.GenerateBiomes();
         CoreAscensionOres.GenerateOres();
     }

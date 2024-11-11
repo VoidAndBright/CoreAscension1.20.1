@@ -17,6 +17,16 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(CoreAscensionBlocks.TROPICS_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_TROPICS_WOOD)
+                .add(CoreAscensionBlocks.ETHEREAL_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD)
+                .add(CoreAscensionBlocks.CEDAR_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(CoreAscensionBlocks.BLACK_SAND);
 

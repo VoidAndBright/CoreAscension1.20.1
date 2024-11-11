@@ -21,24 +21,20 @@ public class ChestnutFoliagePlacer extends FoliagePlacer {
         this.height = height;
     }
 
-    @Override
     protected FoliagePlacerType<?> getType() {
         return CoreAscensionFoliagePlacerTypes.CHESTNUT_FOLIAGE_PLACER;
     }
 
-    @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight,
                             TreeNode treeNode, int foliageHeight, int radius, int offset) {
         generateSquare(world, placer, random, config, treeNode.getCenter().up(0), 1, 1, treeNode.isGiantTrunk());
         generateSquare(world, placer, random, config, treeNode.getCenter().up(1), 1, 1, treeNode.isGiantTrunk());
     }
 
-    @Override
     public int getRandomHeight(Random random, int trunkHeight, TreeFeatureConfig config) {
         return this.height;
     }
 
-    @Override
     protected boolean isInvalidForLeaves(Random random, int dx, int y, int dz, int radius, boolean giantTrunk) {
         return false;
     }

@@ -3,6 +3,7 @@ package com.blah.coreascension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.entity.CoreAscensionEntities;
+import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.group.CoreAscensionGroups;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.particles.CoreAscensionParticles;
@@ -12,7 +13,6 @@ import com.blah.coreascension.world.CoreAscensionWorldGeneration;
 import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;
 import com.blah.coreascension.world.tree.CoreAscensionTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,9 +30,9 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionScreenHandlers.RegisterScreenHandlers();
 		CoreAscensionRecipes.RegisterRecipes();
 		CoreAscensionEntities.RegisterEntities();
-		CoreAscensionWorldGeneration.GenerateWorldGeneration();
+		CoreAscensionWorldGeneration.GenerateWorldAdditions();
 		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
-		CoreAscensionEventHandler.RegisterEvents();
+		CoreAscensionEvents.RegisterEvents();
 	}
 }
