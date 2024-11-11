@@ -23,13 +23,20 @@ import java.util.Optional;
 
 public class MagicMirrorItem extends Item
 {
-    public MagicMirrorItem(Settings settings) {
+    public MagicMirrorItem(Settings settings)
+    {
         super(settings);
     }
 
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
     {
         tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.magic_mirror"))).formatted(Formatting.GRAY));
+    }
+
+    @Override
+    public boolean hasGlint(ItemStack stack)
+    {
+        return true;
     }
 
     public int getMaxUseTime(ItemStack stack)

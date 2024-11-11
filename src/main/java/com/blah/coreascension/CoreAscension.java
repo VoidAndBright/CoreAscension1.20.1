@@ -33,7 +33,6 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionWorldGeneration.GenerateWorldGeneration();
 		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
-
-		//CoreAscensionEventHandler.RegisterEvents();
+		CoreAscensionEventHandler.RegisterEvents();
 	}
 }

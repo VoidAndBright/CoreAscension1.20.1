@@ -5,7 +5,8 @@
   "mixins": [
     "ExampleMixin",
     "FoliagePlacerTypeInvoker",
-    "TrunkPlacerTypeInvoker"
+    "TrunkPlacerTypeInvoker",
+    "ItemEntityTickMixin"
   ],
   "injectors": {
     "defaultRequire": 1
