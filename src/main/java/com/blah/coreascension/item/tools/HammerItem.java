@@ -68,7 +68,7 @@ public class HammerItem extends PickaxeItem
                     world.breakBlock(pos.north(), true);
                 }
             }
-            if (player.getHorizontalFacing() == Direction.NORTH || player.getHorizontalFacing() == Direction.SOUTH)
+            else if (player.getHorizontalFacing() == Direction.NORTH || player.getHorizontalFacing() == Direction.SOUTH)
             {
                 if (world.getBlockState(pos.east()).isIn(BlockTags.PICKAXE_MINEABLE) &&
                         player.getMainHandStack().getItem().canMine(world.getBlockState(pos.east()), world, pos.east(), player))
@@ -111,7 +111,7 @@ public class HammerItem extends PickaxeItem
                     world.breakBlock(pos.down(), true);
                 }
             }
-            if (player.getHorizontalFacing() == Direction.EAST || player.getHorizontalFacing() == Direction.WEST)
+            else if (player.getHorizontalFacing() == Direction.EAST || player.getHorizontalFacing() == Direction.WEST)
             {
                 if (world.getBlockState(pos.south()).isIn(BlockTags.PICKAXE_MINEABLE) &&
                         player.getMainHandStack().getItem().canMine(world.getBlockState(pos.south()), world, pos.south(), player))

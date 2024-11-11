@@ -200,5 +200,21 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         //addDrop(CoreAscensionBlocks.WHITEWOOD_LEAVES, leavesDrops(CoreAscensionBlocks.WHITEWOOD_LEAVES, CoreAscensionBlocks.WHITEWOOD_SAPLING, 0.0025f));
         addDrop(CoreAscensionBlocks.SEASHELL);
         addDrop(CoreAscensionBlocks.CONCH_SHELL);
+        addDrop(CoreAscensionBlocks.PRISMAERO);
+        addDrop(CoreAscensionBlocks.GOLD_PRISMAERO);
+        addDrop(CoreAscensionBlocks.CHISELED_PRISMAERO);
+        addDrop(CoreAscensionBlocks.POLISHED_PRISMAERO);
+        addDrop(CoreAscensionBlocks.PRISMAERO_BRICKS);
+        addDrop(CoreAscensionBlocks.PRISMAERO_PILLAR);
+        addDrop(CoreAscensionBlocks.PRISMAERO_SLAB, slabDrops(CoreAscensionBlocks.PRISMAERO_SLAB));
+        addDrop(CoreAscensionBlocks.GOLDEN_PRISMAERO_SLAB, slabDrops(CoreAscensionBlocks.GOLDEN_PRISMAERO_SLAB));
+        addDrop(CoreAscensionBlocks.PRISMAERO_BRICKS_SLAB, slabDrops(CoreAscensionBlocks.PRISMAERO_BRICKS_SLAB));
+        addDrop(CoreAscensionBlocks.POLISHED_PRISMAERO_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_PRISMAERO_SLAB));
+        addDrop(CoreAscensionBlocks.PRISMAERO_STAIRS);
+        addDrop(CoreAscensionBlocks.GOLDEN_PRISMAERO_STAIRS);
+        addDrop(CoreAscensionBlocks.POLISHED_PRISMAERO_STAIRS);
+        addDrop(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
+        addDrop(CoreAscensionBlocks.PRISMAERO_WALL);
+        addDrop(CoreAscensionBlocks.PRISMAERO_SPAWNER, CoreAscensionBlocks.PRISMAERO_BRICKS.asItem());
     }
 }

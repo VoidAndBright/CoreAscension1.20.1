@@ -228,6 +228,20 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE_WALL);
         entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
         entries.add(CoreAscensionBlocks.SULPHUR_BLOCK);
+        entries.add(CoreAscensionBlocks.GOLD_PRISMAERO);
+        entries.add(CoreAscensionBlocks.CHISELED_PRISMAERO);
+        entries.add(CoreAscensionBlocks.POLISHED_PRISMAERO);
+        entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS);
+        entries.add(CoreAscensionBlocks.PRISMAERO_PILLAR);
+        entries.add(CoreAscensionBlocks.PRISMAERO_SLAB);
+        entries.add(CoreAscensionBlocks.GOLDEN_PRISMAERO_SLAB);
+        entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS_SLAB);
+        entries.add(CoreAscensionBlocks.POLISHED_PRISMAERO_SLAB);
+        entries.add(CoreAscensionBlocks.PRISMAERO_STAIRS);
+        entries.add(CoreAscensionBlocks.GOLDEN_PRISMAERO_STAIRS);
+        entries.add(CoreAscensionBlocks.POLISHED_PRISMAERO_STAIRS);
+        entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
+        entries.add(CoreAscensionBlocks.PRISMAERO_WALL);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -300,6 +314,9 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.URANIUM_SHOVEL);
         entries.add(CoreAscensionItems.URANIUM_HOE);
         // -- END TOOLS --
+
+        entries.add(CoreAscensionItems.PRISMAERO_SHARD);
+        entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
 
         // -- FOOD --
         entries.add(CoreAscensionItems.CALAMARI);

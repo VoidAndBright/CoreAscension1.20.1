@@ -27,7 +27,6 @@ public class CoreAscensionEventHandler
                         Vec3d ppos = randomOffset(pos, w.random, .5f);
                         w.addParticle(ParticleTypes.ELECTRIC_SPARK, ppos.x, pos.y, ppos.z, 0, -0.1f, 0);
                     }
-
                 }
                 item.setVelocity(item.getVelocity().add(0, .1f, 0).multiply(0.92f, 0.4f, 0.92f));
                 return ActionResult.SUCCESS;

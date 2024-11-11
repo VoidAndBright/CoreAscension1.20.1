@@ -47,6 +47,9 @@ public class CoreAscensionItems {
     public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));
     public static final Item MAGIC_MIRROR = registerItem("magic_mirror", new MagicMirrorItem(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
 
+    public static final Item PRISMAERO_SHARD = registerItem("prismaero_shard", new Item(new FabricItemSettings()));
+    public static final Item PRISMAERO_CRYSTALS = registerItem("prismaero_crystals", new Item(new FabricItemSettings()));
+
     public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterial.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterial.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",

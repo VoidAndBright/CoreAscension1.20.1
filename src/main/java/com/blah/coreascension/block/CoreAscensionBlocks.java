@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -23,6 +24,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.client.color.world.BiomeColors;
+import net.minecraft.world.World;
 
 public class CoreAscensionBlocks
 {
@@ -216,6 +218,34 @@ public class CoreAscensionBlocks
 	public static final Block ETHEREAL_MEMBRANE = RegisterBlockItem("ethereal_membrane", new SlimeBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK)));
 	public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),ETHEREAL_DIRT));
 	// end ethereal glade
+
+	// prismaero
+	public static final Block PRISMAERO = RegisterBlockItem("prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
+	public static final Block POLISHED_PRISMAERO = RegisterBlockItem("polished_prismaero", new Block(FabricBlockSettings.copyOf(PRISMAERO)));
+	public static final Block GOLD_PRISMAERO = RegisterBlockItem("gold_prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
+	public static final Block PRISMAERO_BRICKS = RegisterBlockItem("prismaero_bricks", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
+	public static final Block PRISMAERO_PILLAR = RegisterBlockItem("prismaero_pillar", new PillarBlock(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
+	public static final Block PRISMAERO_SLAB = RegisterBlockItem("prismaero_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.PRISMARINE_SLAB)));
+	public static final Block GOLDEN_PRISMAERO_SLAB = RegisterBlockItem("golden_prismaero_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.PRISMARINE_SLAB)));
+	public static final Block PRISMAERO_BRICKS_SLAB = RegisterBlockItem("prismaero_bricks_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.PRISMARINE_SLAB)));
+	public static final Block POLISHED_PRISMAERO_SLAB = RegisterBlockItem("polished_prismaero_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.PRISMARINE_SLAB)));
+	public static final Block PRISMAERO_STAIRS = RegisterBlockItem("prismaero_stairs", new StairsBlock(PRISMAERO.getDefaultState(),FabricBlockSettings.copyOf(Blocks.PRISMARINE_STAIRS)));
+	public static final Block GOLDEN_PRISMAERO_STAIRS = RegisterBlockItem("golden_prismaero_stairs", new StairsBlock(PRISMAERO.getDefaultState(),FabricBlockSettings.copyOf(Blocks.PRISMARINE_STAIRS)));
+	public static final Block PRISMAERO_BRICKS_STAIRS = RegisterBlockItem("prismaero_bricks_stairs", new StairsBlock(PRISMAERO.getDefaultState(),FabricBlockSettings.copyOf(Blocks.PRISMARINE_STAIRS)));
+	public static final Block POLISHED_PRISMAERO_STAIRS = RegisterBlockItem("polished_prismaero_stairs", new StairsBlock(PRISMAERO.getDefaultState(),FabricBlockSettings.copyOf(Blocks.PRISMARINE_STAIRS)));
+	public static final Block PRISMAERO_WALL = RegisterBlockItem("prismaero_wall", new WallBlock(FabricBlockSettings.copyOf(PRISMAERO)));
+	public static final Block CHISELED_PRISMAERO = RegisterBlockItem("chiseled_prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
+	public static final Block PRISMAERO_SPAWNER = RegisterBlockItem("prismaero_spawner", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE))
+	{
+		@Override
+		public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
+		{
+			// ADD PROTECTOR SPAWNING (for later)
+			super.onSteppedOn(world, pos, state, entity);
+		}
+	});
+
+	// end prismaero
 	// end skylands
 
 	// misc blocks
@@ -352,6 +382,9 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_DOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_DOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.WHITEWOOD_DOOR, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
