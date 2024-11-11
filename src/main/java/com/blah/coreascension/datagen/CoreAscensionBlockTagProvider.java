@@ -190,6 +190,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS)
                 .add(CoreAscensionBlocks.PRISMAERO_WALL)
                 .add(CoreAscensionBlocks.PRISMAERO_SPAWNER)
+                .add(CoreAscensionBlocks.PETRIFIED_WOOD)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)

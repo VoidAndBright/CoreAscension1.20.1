@@ -110,6 +110,22 @@
     "coreascension:cut_bonesandstone_slab",
     "coreascension:catalyzer",
     "coreascension:sulphur_block",
+    "coreascension:gold_prismaero",
+    "coreascension:chiseled_prismaero",
+    "coreascension:polished_prismaero",
+    "coreascension:prismaero_bricks",
+    "coreascension:prismaero_pillar",
+    "coreascension:prismaero_slab",
+    "coreascension:golden_prismaero_slab",
+    "coreascension:prismaero_bricks_slab",
+    "coreascension:polished_prismaero_slab",
+    "coreascension:prismaero_stairs",
+    "coreascension:golden_prismaero_stairs",
+    "coreascension:polished_prismaero_stairs",
+    "coreascension:prismaero_bricks_stairs",
+    "coreascension:prismaero_wall",
+    "coreascension:prismaero_spawner",
+    "coreascension:petrified_wood",
     "coreascension:sapphire_ore"
   ]
 }

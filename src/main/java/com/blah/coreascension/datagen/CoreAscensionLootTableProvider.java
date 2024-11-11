@@ -216,5 +216,6 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
         addDrop(CoreAscensionBlocks.PRISMAERO_WALL);
         addDrop(CoreAscensionBlocks.PRISMAERO_SPAWNER, CoreAscensionBlocks.PRISMAERO_BRICKS.asItem());
+        addDrop(CoreAscensionBlocks.PETRIFIED_WOOD);
     }
 }

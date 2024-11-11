@@ -261,6 +261,7 @@ public class CoreAscensionBlocks
 		}
 	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
+	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	// end misc blocks
 
 	// stone variants

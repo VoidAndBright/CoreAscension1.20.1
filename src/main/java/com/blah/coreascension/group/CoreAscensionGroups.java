@@ -242,6 +242,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.POLISHED_PRISMAERO_STAIRS);
         entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
         entries.add(CoreAscensionBlocks.PRISMAERO_WALL);
+        entries.add(CoreAscensionBlocks.PETRIFIED_WOOD);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
