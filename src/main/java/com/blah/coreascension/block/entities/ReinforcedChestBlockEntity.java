@@ -19,7 +19,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 
-public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory, LidOpenable {
     private DefaultedList<ItemStack> inventory;
 
     public ReinforcedChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
@@ -75,5 +75,10 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
 
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
         return new ReinforcedChestScreenHandler(syncId, playerInventory, this);
+    }
+
+    @Override
+    public float getAnimationProgress(float tickDelta) {
+        return 0;
     }
 }

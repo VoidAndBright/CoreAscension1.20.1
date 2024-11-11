@@ -111,6 +111,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICKS);
         entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB);
         entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_STAIRS);
+        entries.add(CoreAscensionBlocks.TROPICS_SAPLING);
         entries.add(CoreAscensionBlocks.LOAM);
         entries.add(CoreAscensionBlocks.TROPICAL_GRASS);
         entries.add(CoreAscensionBlocks.WHITEWOOD_LOG);

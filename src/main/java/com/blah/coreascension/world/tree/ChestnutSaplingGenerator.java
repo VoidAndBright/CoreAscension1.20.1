@@ -7,10 +7,8 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import org.jetbrains.annotations.Nullable;
 
-public class TropicsSaplingGenerator extends SaplingGenerator {
-    @Nullable
-    @Override
+public class ChestnutSaplingGenerator extends SaplingGenerator {
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
-        return CoreAscensionConfiguredFeatureKeys.TROPICS_SAPLING_KEY;
+        return CoreAscensionConfiguredFeatureKeys.CHESTNUT_KEY;
     }
 }

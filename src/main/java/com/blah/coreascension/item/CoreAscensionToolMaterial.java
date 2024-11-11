@@ -8,7 +8,7 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.function.Supplier;
 
 public enum CoreAscensionToolMaterial implements ToolMaterial {
-    TOOL(1, 0, 13f, 4f, 0,
+    TOOL(1, 0, 10.2f, 4f, 0,
             null, ""),
     SAPPHIRE(3, 1203, 10f, 4f, 15,
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), ""),

@@ -50,9 +50,9 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         return id;
     }
 
-    public RecipeSerializer<?> getSerializer() {return new Serializer();}
+    public RecipeSerializer<?> getSerializer() {return Serializer.INSTANCE;}
 
-    public RecipeType<?> getType() {return new Type();}
+    public RecipeType<?> getType() {return Type.INSTANCE ;}
 
     public static class Type implements RecipeType<CatalyzerRecipe>{
         public static final Type INSTANCE = new Type();

@@ -39,7 +39,7 @@ public class CoreAscensionItems {
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
     public static final Item SPAWN_EGG = registerItem("poor",new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
     public static final Item THE_TOOL = registerItem("the_tool",
-            new TheToolItem(0, -2.8F, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
+            new TheToolItem(0, 0, CoreAscensionToolMaterial.TOOL, new FabricItemSettings().fireproof()));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
     public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));

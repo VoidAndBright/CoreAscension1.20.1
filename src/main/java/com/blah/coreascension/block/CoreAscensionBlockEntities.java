@@ -4,6 +4,7 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.entities.CatalyzerTableBlockEntity;
 import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
 import com.blah.coreascension.block.entities.ReinforcedChestBlockEntity;
+import com.blah.coreascension.block.entities.renderer.ReinforcedChest;
 import com.blah.coreascension.block.entities.renderer.ReinforcedChestBlockEntityRenderer;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntity;
@@ -26,6 +27,6 @@ public class CoreAscensionBlockEntities {
         CoreAscension.LOGGER.info("Registering Block Entities for " + CoreAscension.MOD_ID);
     }
     public static void ClientRegisterBlockEntitiesRenderer(){
-        BlockEntityRendererFactories.register(REINFORCED_CHEST_BLOCK_ENTITY, ReinforcedChestBlockEntityRenderer::new);
+        BlockEntityRendererFactories.register(REINFORCED_CHEST_BLOCK_ENTITY, ReinforcedChest::new);
     }
 }

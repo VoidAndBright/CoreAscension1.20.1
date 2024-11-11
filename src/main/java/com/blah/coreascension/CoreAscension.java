@@ -9,6 +9,8 @@ import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.recipe.CoreAscensionRecipes;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
 import com.blah.coreascension.world.CoreAscensionWorldGeneration;
+import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;
+import com.blah.coreascension.world.tree.CoreAscensionTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,5 +30,7 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionRecipes.RegisterRecipes();
 		CoreAscensionEntities.RegisterEntities();
 		CoreAscensionWorldGeneration.GenerateWorldGeneration();
+		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
+		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
 	}
 }

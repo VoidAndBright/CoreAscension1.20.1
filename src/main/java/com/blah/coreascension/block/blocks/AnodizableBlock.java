@@ -17,9 +17,6 @@ public class AnodizableBlock extends Block implements Anodizable{
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         this.tickAnodization(state,world,pos,random);
     }
-    public boolean hasRandomTicks(BlockState state) {
-        return Anodizable.getIncreasedAnodizationBlock(state.getBlock()).isPresent();
-    }
     public AnodizationLevel getDegradationLevel() {
         return this.anodationLevel;
     }
