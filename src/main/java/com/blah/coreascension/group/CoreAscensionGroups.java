@@ -33,8 +33,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_BLOCK);
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_ORE);
         entries.add(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER);
+
         // -- TITANIUM --
         entries.add(CoreAscensionBlocks.TITANIUM_ORE);
+        entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.TITANIUM_SLAB);
         entries.add(CoreAscensionBlocks.TITANIUM_STAIRS);
@@ -188,6 +190,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.IMPERVIOUS_BRICK);
         entries.add(CoreAscensionBlocks.COCONUT);
         entries.add(CoreAscensionBlocks.URANIUM_ORE);
+        entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.URANIUM_BLOCK);
         entries.add(CoreAscensionBlocks.PRISMAERO_FURNACE);
         entries.add(CoreAscensionBlocks.IGNEOUS_ROCK);
@@ -243,6 +246,14 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
         entries.add(CoreAscensionBlocks.PRISMAERO_WALL);
         entries.add(CoreAscensionBlocks.PETRIFIED_WOOD);
+        entries.add(CoreAscensionBlocks.CACTUS_PLANKS);
+        entries.add(CoreAscensionBlocks.CACTUS_SLAB);
+        entries.add(CoreAscensionBlocks.CACTUS_STAIRS);
+        entries.add(CoreAscensionBlocks.CACTUS_FENCE);
+        entries.add(CoreAscensionBlocks.CACTUS_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.CACTUS_BUTTON);
+        entries.add(CoreAscensionBlocks.CACTUS_DOOR);
+        entries.add(CoreAscensionBlocks.CACTUS_TRAPDOOR);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
@@ -251,6 +262,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.CITRINE);
         entries.add(CoreAscensionItems.TOPAZ);
         entries.add(CoreAscensionItems.SAPPHIRE);
+        entries.add(CoreAscensionItems.AMETHYST);
+        entries.add(CoreAscensionItems.CRYSTALLINE_ARTIFACT);
         entries.add(CoreAscensionItems.RUBY_SHARD);
         entries.add(CoreAscensionItems.CITRINE_SHARD);
         entries.add(CoreAscensionItems.TOPAZ_SHARD);
@@ -262,7 +275,12 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.ETHEREAL_TORCH);
         entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
         entries.add(CoreAscensionItems.RAW_TITANIUM);
+        entries.add(CoreAscensionItems.TITANIUM_INGOT);
         entries.add(CoreAscensionItems.SPAWN_EGG);
+
+        entries.add(CoreAscensionItems.CRIMSON_EDGE);
+        entries.add(CoreAscensionItems.TITAN_BLADE);
+        entries.add(CoreAscensionItems.VERTEX);
 
         entries.add(CoreAscensionItems.WOODEN_HAMMER);
         entries.add(CoreAscensionItems.STONE_HAMMER);
@@ -270,8 +288,15 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.IRON_HAMMER);
         entries.add(CoreAscensionItems.DIAMOND_HAMMER);
         entries.add(CoreAscensionItems.NETHERITE_HAMMER);
+        entries.add(CoreAscensionItems.WOODEN_EXCAVATOR);
+        entries.add(CoreAscensionItems.STONE_EXCAVATOR);
+        entries.add(CoreAscensionItems.GOLDEN_EXCAVATOR);
+        entries.add(CoreAscensionItems.IRON_EXCAVATOR);
+        entries.add(CoreAscensionItems.DIAMOND_EXCAVATOR);
+        entries.add(CoreAscensionItems.NETHERITE_EXCAVATOR);
 
         entries.add(CoreAscensionItems.SULPHUR);
+        entries.add(CoreAscensionItems.IRON_ROD);
 
         entries.add(CoreAscensionItems.RAW_URANIUM);
         entries.add(CoreAscensionItems.URANIUM_INGOT);
@@ -296,19 +321,29 @@ public class CoreAscensionGroups {
         // -- END ARMOR --
 
         // -- TOOLS --
+        entries.add(CoreAscensionItems.POTATO_SWORD);
+        entries.add(CoreAscensionItems.POTATO_PICKAXE);
+        entries.add(CoreAscensionItems.POTATO_AXE);
+        entries.add(CoreAscensionItems.POTATO_SHOVEL);
+        entries.add(CoreAscensionItems.POTATO_HOE);
+        entries.add(CoreAscensionItems.POTATO_HAMMER);
+        entries.add(CoreAscensionItems.POTATO_EXCAVATOR);
         entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
         entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
         entries.add(CoreAscensionItems.SAPPHIRE_AXE);
         entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
         entries.add(CoreAscensionItems.SAPPHIRE_HOE);
         entries.add(CoreAscensionItems.SAPPHIRE_HAMMER);
+        entries.add(CoreAscensionItems.SAPPHIRE_EXCAVATOR);
         entries.add(CoreAscensionItems.TADANITE_SWORD);
         entries.add(CoreAscensionItems.TADANITE_PICKAXE);
         entries.add(CoreAscensionItems.TADANITE_AXE);
         entries.add(CoreAscensionItems.TADANITE_SHOVEL);
         entries.add(CoreAscensionItems.TADANITE_HOE);
         entries.add(CoreAscensionItems.TADANITE_HAMMER);
+        entries.add(CoreAscensionItems.TADANITE_EXCAVATOR);
         entries.add(CoreAscensionItems.LUMITE_HAMMER);
+        entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
         entries.add(CoreAscensionItems.URANIUM_SWORD);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
         entries.add(CoreAscensionItems.URANIUM_AXE);
@@ -318,12 +353,14 @@ public class CoreAscensionGroups {
 
         entries.add(CoreAscensionItems.PRISMAERO_SHARD);
         entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
+        entries.add(CoreAscensionItems.AERO_FUEL);
 
         // -- FOOD --
         entries.add(CoreAscensionItems.CALAMARI);
         entries.add(CoreAscensionItems.COOKED_CALAMARI);
         entries.add(CoreAscensionItems.COCONUT_FOOD);
-        entries.add(CoreAscensionItems.AERO_FUEL);
+        entries.add(CoreAscensionItems.MEGA_BERRY);
+        entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
         // -- END FOOD --
     });
     public static ItemGroup registerItemGroup(String name, Item item, ItemGroup.EntryCollector entries){

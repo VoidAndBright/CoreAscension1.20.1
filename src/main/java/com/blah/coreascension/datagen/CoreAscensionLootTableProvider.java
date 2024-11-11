@@ -87,7 +87,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
         addDrop(CoreAscensionBlocks.TROPICS_DOOR, doorDrops(CoreAscensionBlocks.TROPICS_DOOR));
         addDrop(CoreAscensionBlocks.TROPICS_TRAPDOOR);
-        //addDrop(CoreAscensionBlocks.TROPICS_LEAVES, leavesDrops(CoreAscensionBlocks.TROPICS_LEAVES, CoreAscensionBlocks.TROPICS_SAPLING, 0.0025f));
+        addDrop(CoreAscensionBlocks.TROPICS_LEAVES, leavesDrops(CoreAscensionBlocks.TROPICS_LEAVES, CoreAscensionBlocks.TROPICS_SAPLING, 0.0025f));
         addDrop(CoreAscensionBlocks.DREAD_LOG);
         addDrop(CoreAscensionBlocks.DREAD_WOOD);
         addDrop(CoreAscensionBlocks.DREAD_PLANKS);
@@ -217,5 +217,14 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.PRISMAERO_WALL);
         addDrop(CoreAscensionBlocks.PRISMAERO_SPAWNER, CoreAscensionBlocks.PRISMAERO_BRICKS.asItem());
         addDrop(CoreAscensionBlocks.PETRIFIED_WOOD);
+        addDrop(CoreAscensionBlocks.CACTUS_PLANKS);
+        addDrop(CoreAscensionBlocks.CACTUS_SLAB, slabDrops(CoreAscensionBlocks.CACTUS_SLAB));
+        addDrop(CoreAscensionBlocks.CACTUS_STAIRS);
+        addDrop(CoreAscensionBlocks.CACTUS_FENCE);
+        addDrop(CoreAscensionBlocks.CACTUS_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.CACTUS_BUTTON);
+        addDrop(CoreAscensionBlocks.CACTUS_DOOR, doorDrops(CoreAscensionBlocks.CACTUS_DOOR));
+        addDrop(CoreAscensionBlocks.CACTUS_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
     }
 }

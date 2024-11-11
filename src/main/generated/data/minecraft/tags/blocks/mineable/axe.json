@@ -55,6 +55,12 @@
     "coreascension:stripped_whitewood_log",
     "coreascension:stripped_whitewood_wood",
     "coreascension:whitewood_door",
+    "coreascension:cactus_planks",
+    "coreascension:cactus_slab",
+    "coreascension:cactus_stairs",
+    "coreascension:cactus_fence",
+    "coreascension:cactus_fence_gate",
+    "coreascension:cactus_button",
     "coreascension:whitewood_trapdoor"
   ]
 }

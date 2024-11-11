@@ -201,6 +201,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.PRISMAERO_WALL)
                 .add(CoreAscensionBlocks.PRISMAERO_SPAWNER)
                 .add(CoreAscensionBlocks.PETRIFIED_WOOD)
+                .add(CoreAscensionBlocks.ENDER_PEARL_BRICKS)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.FENCES)
@@ -280,6 +281,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG)
                 .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD)
                 .add(CoreAscensionBlocks.WHITEWOOD_DOOR)
+                .add(CoreAscensionBlocks.CACTUS_PLANKS)
+                .add(CoreAscensionBlocks.CACTUS_SLAB)
+                .add(CoreAscensionBlocks.CACTUS_STAIRS)
+                .add(CoreAscensionBlocks.CACTUS_FENCE)
+                .add(CoreAscensionBlocks.CACTUS_FENCE_GATE)
+                .add(CoreAscensionBlocks.CACTUS_BUTTON)
                 .add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
     }
 }

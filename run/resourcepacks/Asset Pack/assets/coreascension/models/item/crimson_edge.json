@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "coreascension:item/lifesteal_sword"
+    "layer0": "coreascension:item/crimson_edge"
   }
 }
