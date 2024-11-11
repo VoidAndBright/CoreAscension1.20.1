@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "00",
+    "00"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "coreascension:amethyst",
+    "count": 1
+  }
+}

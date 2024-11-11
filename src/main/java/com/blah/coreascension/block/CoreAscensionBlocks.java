@@ -53,6 +53,7 @@ public class CoreAscensionBlocks
 
 	// titanium blocks
 	public static final Block TITANIUM_ORE = RegisterBlockItem("titanium_ore", new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+	public static final Block RAW_TITANIUM_BLOCK = RegisterBlockItem("raw_titanium_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
 	public static final Block TITANIUM_BLOCK = RegisterBlockItem("titanium_block", new AnodizableBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).sounds(BlockSoundGroup.NETHERITE).ticksRandomly()));
 	public static final Block TITANIUM_SLAB = RegisterBlockItem("titanium_slab", new AnodizableSlabBlock(AnodizationLevel.UNAFFECTED,FabricBlockSettings.copyOf(Blocks.CUT_COPPER_SLAB).sounds(BlockSoundGroup.NETHERITE).ticksRandomly()));
 	public static final Block TITANIUM_STAIRS = RegisterBlockItem("titanium_stairs", new AnodizableStairsBlock(AnodizationLevel.UNAFFECTED,TITANIUM_BLOCK.getDefaultState(),FabricBlockSettings.copyOf(Blocks.CUT_COPPER_STAIRS).sounds(BlockSoundGroup.NETHERITE).ticksRandomly()));
@@ -92,6 +93,7 @@ public class CoreAscensionBlocks
 
 	// uranium
 	public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT)), new FabricItemSettings().fireproof());
+	public static final Block RAW_URANIUM_BLOCK = RegisterBlockItem("raw_uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)), new FabricItemSettings().fireproof());
 	public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)), new FabricItemSettings().fireproof());
 	// end uranium
 
@@ -161,6 +163,17 @@ public class CoreAscensionBlocks
 	public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
 
 	// end tropics stuff
+
+	// cactus wood
+	public static final Block CACTUS_PLANKS = RegisterBlockItem("cactus_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block CACTUS_SLAB = RegisterBlockItem("cactus_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
+	public static final Block CACTUS_STAIRS = RegisterBlockItem("cactus_stairs", new StairsBlock(CACTUS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block CACTUS_FENCE = RegisterBlockItem("cactus_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+	public static final Block CACTUS_FENCE_GATE = RegisterBlockItem("cactus_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+	public static final Block CACTUS_BUTTON = RegisterBlockItem("cactus_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block CACTUS_DOOR = RegisterBlockItem("cactus_door", new DoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block CACTUS_TRAPDOOR = RegisterBlockItem("cactus_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
+	// end cactus
 
 	// dread stuff
 	public static final Block DREAD_LOG = RegisterBlockItem("dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
@@ -262,6 +275,7 @@ public class CoreAscensionBlocks
 	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	// end misc blocks
 
 	// stone variants
