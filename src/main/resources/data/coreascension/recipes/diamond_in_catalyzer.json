@@ -1,0 +1,12 @@
+{
+  "type": "coreascension:catalyzer",
+  "ingredients": [
+    {"item": "minecraft:coal_block"},
+    {"item": "minecraft:lava_bucket"},
+    {"item": "coreascension:sulphur"}
+  ],
+  "result": {
+    "item": "minecraft:diamond",
+    "count": 1
+  }
+}

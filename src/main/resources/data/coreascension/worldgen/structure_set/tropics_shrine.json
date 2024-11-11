@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 240629698,
+    "separation": 4,
+    "spacing": 32
+  },
+  "structures": [
+    {
+      "structure": "coreascension:tropics_shrine",
+      "weight": 5
+    }
+  ]
+}
