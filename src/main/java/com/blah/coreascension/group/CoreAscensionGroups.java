@@ -231,6 +231,7 @@ public class CoreAscensionGroups {
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
+        entries.add(CoreAscensionItems.MAGIC_MIRROR);
         entries.add(CoreAscensionItems.RUBY);
         entries.add(CoreAscensionItems.CITRINE);
         entries.add(CoreAscensionItems.TOPAZ);

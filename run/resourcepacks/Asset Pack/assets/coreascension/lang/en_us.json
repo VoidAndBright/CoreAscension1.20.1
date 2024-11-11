@@ -1303,5 +1303,6 @@
   "item.coreascension.tooltip.uranium_shovel": "Fortune",
   "item.coreascension.tooltip.uranium_axe": "Treecapitator",
   "item.coreascension.tooltip.uranium_hoe": "Hold sneak when harvesting hoe-able blocks to veinmine them",
-  "subtitles.dread_wind": "dread_wind"
+  "item.coreascension.tooltip.magic_mirror": "Right-click to return to your spawnpoint",
+  "subtitles.dread_wind": "Dreadful wind"
 }

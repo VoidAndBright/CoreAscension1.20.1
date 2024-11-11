@@ -12,6 +12,7 @@ import com.blah.coreascension.world.CoreAscensionWorldGeneration;
 import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;
 import com.blah.coreascension.world.tree.CoreAscensionTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,5 +33,7 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionWorldGeneration.GenerateWorldGeneration();
 		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
+
+		//CoreAscensionEventHandler.RegisterEvents();
 	}
 }
