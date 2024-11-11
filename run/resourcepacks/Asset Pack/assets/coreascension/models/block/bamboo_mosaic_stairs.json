@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "coreascension:block/bamboo_mosaic",
-    "top": "coreascension:block/bamboo_mosaic",
-    "side": "coreascension:block/bamboo_mosaic"
-  }
-}
