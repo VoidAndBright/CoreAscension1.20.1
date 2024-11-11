@@ -79,23 +79,9 @@ public class MagicMirrorItem extends Item
                 {
                     RegistryKey<World> destinationType = World.OVERWORLD;
                     ServerWorld nextWorld = serverPlayer.getServer().getWorld(destinationType);
-                    //if (nextWorld != null)
-                    {
-                        world.playSound(null, new BlockPos((int)player.getPos().getX(), (int)player.getPos().getY(), (int)player.getPos().getZ()), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.NEUTRAL, 1, 1);
-                        serverPlayer.teleport(nextWorld, nextWorld.getSpawnPos().getX(), nextWorld.getSpawnPos().getY() + 1, nextWorld.getSpawnPos().getZ(), player.getYaw(), player.getPitch());
-                        serverPlayer.fallDistance = 0F;
-                    }
-//                    RegistryKey<World> destinationType = World.OVERWORLD;
-//                    ServerWorld nextWorld = player.getServer().getWorld(destinationType);
-//                    assert nextWorld != null;
-//                    spawnpoint = nextWorld.getSpawnPos();
-//                    serverPlayer.teleport(nextWorld, spawnpoint.getX(), spawnpoint.getY(), spawnpoint.getZ(), serverPlayer.getSpawnAngle(), serverPlayer.getPitch());
-//                    while (!serverWorld.isSpaceEmpty(serverPlayer))
-//                    {
-//                        serverPlayer.teleport(serverPlayer.getX(), serverPlayer.getY() + 1, serverPlayer.getZ());
-//                        player.fallDistance = 0F;
-//                    }
-//                    serverWorld.playSound(null, spawnpoint, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4f, 1f);
+                    world.playSound(null, new BlockPos((int)player.getPos().getX(), (int)player.getPos().getY(), (int)player.getPos().getZ()), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.NEUTRAL, 1, 1);
+                    serverPlayer.teleport(nextWorld, nextWorld.getSpawnPos().getX(), nextWorld.getSpawnPos().getY() + 1, nextWorld.getSpawnPos().getZ(), player.getYaw(), player.getPitch());
+                    serverPlayer.fallDistance = 0F;
                 }
             }
             else
@@ -110,42 +96,5 @@ public class MagicMirrorItem extends Item
         }
         player.getItemCooldownManager().set(this, 60);
         return stack;
-        /*if (user.getWorld().isClient())
-        {
-            ItemStack magicMirror = new ItemStack(this, 1);
-            if (user.getMainHandStack().getItem() == magicMirror.getItem())// && user instanceof ServerPlayerEntity player)
-            {
-                ServerPlayerEntity player = (ServerPlayerEntity)user;
-                ServerWorld respawnWorld = player.server.getWorld(player.getSpawnPointDimension());
-                BlockPos spawn = player.getSpawnPointPosition();
-                float spawnAngle = player.getSpawnAngle();
-                boolean forcedSpawn = false;
-                boolean preserveAnchorCharges = true;
-                try
-                {
-                    Optional<Vec3d> maybeSpawn = PlayerEntity.findRespawnPosition(respawnWorld, spawn, spawnAngle,
-                            forcedSpawn, preserveAnchorCharges);
-                    if (maybeSpawn.isPresent())
-                    {
-                        world.playSound(null, new BlockPos((int)player.getPos().getX(), (int)player.getPos().getY(), (int)player.getPos().getZ()), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.NEUTRAL, 1, 1);
-                        player.teleport(respawnWorld, maybeSpawn.get().getX(), maybeSpawn.get().getY(), maybeSpawn.get().getZ(), player.getYaw(), player.getPitch());
-                        player.fallDistance = 0F;
-                        player.getItemCooldownManager().set(magicMirror.getItem(), 60);
-                    }
-                }
-                catch (Exception e)
-                {
-                    RegistryKey<World> destinationType = World.OVERWORLD;
-                    ServerWorld nextWorld = player.getServer().getWorld(destinationType);
-                    if (nextWorld != null)
-                    {
-                        world.playSound(null, new BlockPos((int)player.getPos().getX(), (int)player.getPos().getY(), (int)player.getPos().getZ()), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.NEUTRAL, 1, 1);
-                        player.teleport(nextWorld, nextWorld.getSpawnPos().getX(), nextWorld.getSpawnPos().getY() + 1,
-                                nextWorld.getSpawnPos().getZ(), player.getYaw(), player.getPitch());
-                    }
-                }
-            }
-        }
-        return stack;*/
     }
 }
