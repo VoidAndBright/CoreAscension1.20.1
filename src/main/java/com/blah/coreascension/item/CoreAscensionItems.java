@@ -65,6 +65,18 @@ public class CoreAscensionItems {
     public static final Item PRISMAERO_SHARD = registerItem("prismaero_shard", new Item(new FabricItemSettings()));
     public static final Item PRISMAERO_CRYSTALS = registerItem("prismaero_crystals", new Item(new FabricItemSettings()));
 
+    public static final Item WOODEN_SCYTHE = registerItem("wood_scythe", new ScytheItem(ToolMaterials.WOOD, 0, -3f, new FabricItemSettings()));
+    public static final Item STONE_SCYTHE = registerItem("stone_scythe", new ScytheItem(ToolMaterials.STONE, 0, -3f, new FabricItemSettings()));
+    public static final Item GOLDEN_SCYTHE = registerItem("gold_scythe", new ScytheItem(ToolMaterials.GOLD, 0, -3f, new FabricItemSettings()));
+    public static final Item IRON_SCYTHE = registerItem("iron_scythe", new ScytheItem(ToolMaterials.IRON, 0, -3f, new FabricItemSettings()));
+    public static final Item DIAMOND_SCYTHE = registerItem("diamond_scythe", new ScytheItem(ToolMaterials.DIAMOND, 0, -3f, new FabricItemSettings()));
+    public static final Item NETHERITE_SCYTHE = registerItem("netherite_scythe", new ScytheItem(ToolMaterials.NETHERITE, 0, -3f, new FabricItemSettings().fireproof()));
+    public static final Item TADANITE_SCYTHE = registerItem("tadanite_scythe", new ScytheItem(CoreAscensionToolMaterial.TADANITE, 0, -3f, new FabricItemSettings().fireproof()));
+    public static final Item LUMITE_SCYTHE = registerItem("lumite_scythe", new ScytheItem(CoreAscensionToolMaterial.LUMITE, 0, -3f, new FabricItemSettings().fireproof()));
+    public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new ScytheItem(CoreAscensionToolMaterial.SAPPHIRE, 0, -3f, new FabricItemSettings()));
+    public static final Item POTATO_SCYTHE = registerItem("potato_scythe", new ScytheItem(CoreAscensionToolMaterial.POTATO, 0, -3f, new FabricItemSettings()));
+
+
     public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterial.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterial.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
@@ -76,7 +88,13 @@ public class CoreAscensionItems {
     public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
             new HammerItem(CoreAscensionToolMaterial.NETHERITE_SPECIAL, 7, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_HAMMER = registerItem("tadanite_hammer",
-            new HammerItem(CoreAscensionToolMaterial.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof()));
+            new HammerItem(CoreAscensionToolMaterial.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof())
+            {
+                @Override
+                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+                    tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.tadanite"))).formatted(Formatting.YELLOW));
+                }
+            });
     public static final Item LUMITE_HAMMER = registerItem("lumite_hammer",
             new HammerItem(CoreAscensionToolMaterial.LUMITE_SPECIAL, 14, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item SAPPHIRE_HAMMER = registerItem("sapphire_hammer",
@@ -95,7 +113,13 @@ public class CoreAscensionItems {
     public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator",
             new ExcavatorItem(CoreAscensionToolMaterial.NETHERITE_SPECIAL, 2f, 1f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_EXCAVATOR = registerItem("tadanite_excavator",
-            new ExcavatorItem(CoreAscensionToolMaterial.TADANITE_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof()));
+            new ExcavatorItem(CoreAscensionToolMaterial.TADANITE_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof())
+            {
+                @Override
+                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+                    tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.tadanite"))).formatted(Formatting.YELLOW));
+                }
+            });
     public static final Item LUMITE_EXCAVATOR = registerItem("lumite_excavator",
             new ExcavatorItem(CoreAscensionToolMaterial.LUMITE_SPECIAL, 6f, 1f, new FabricItemSettings().fireproof()));
     public static final Item SAPPHIRE_EXCAVATOR = registerItem("sapphire_excavator",
