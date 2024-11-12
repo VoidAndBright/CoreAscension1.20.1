@@ -15,6 +15,7 @@ import net.minecraft.util.Identifier;
 public class CoreAscensionGroups {
     public static final ItemGroup BLOCK_ITEM_GROUP = registerItemGroup("block_item",CoreAscensionBlocks.BLAZE_BRICK.asItem(),(displayContext, entries) -> {
         entries.add(CoreAscensionBlocks.ACACIA_POST);
+        entries.add(CoreAscensionBlocks.DREAD_POST);
         entries.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR);
         entries.add(CoreAscensionBlocks.AERO_LANTERN);
         entries.add(CoreAscensionBlocks.AMANITA_CAP);

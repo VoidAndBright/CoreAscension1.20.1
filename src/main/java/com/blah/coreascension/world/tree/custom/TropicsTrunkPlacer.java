@@ -19,17 +19,17 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-public class ChestnutTrunkPlacer extends TrunkPlacer {
-    public static final Codec<ChestnutTrunkPlacer> CODEC = RecordCodecBuilder.create(objectInstance ->
-            fillTrunkPlacerFields(objectInstance).apply(objectInstance, ChestnutTrunkPlacer::new));
+public class TropicsTrunkPlacer extends TrunkPlacer {
+    public static final Codec<TropicsTrunkPlacer> CODEC = RecordCodecBuilder.create(objectInstance ->
+            fillTrunkPlacerFields(objectInstance).apply(objectInstance, TropicsTrunkPlacer::new));
 
-    public ChestnutTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
+    public TropicsTrunkPlacer(int baseHeight, int firstRandomHeight, int secondRandomHeight) {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
 
     @Override
     protected TrunkPlacerType<?> getType() {
-        return CoreAscensionTrunkPlacerTypes.CHESTNUT_TRUNK_PLACER;
+        return CoreAscensionTrunkPlacerTypes.TROPICS_TRUNK_PLACER;
     }
 
     @Override

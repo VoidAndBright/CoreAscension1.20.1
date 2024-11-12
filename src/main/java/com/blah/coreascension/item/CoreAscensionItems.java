@@ -222,7 +222,6 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE_HOE = registerItem("sapphire_hoe",
             new HoeItem(CoreAscensionToolMaterial.SAPPHIRE, 0, -3f, new FabricItemSettings()));
 
-
     public static final Item URANIUM_HELMET = registerItem("uranium_helmet",
             new ArmorItem(CoreAscensionArmorMaterials.URANIUM, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item URANIUM_CHESTPLATE = registerItem("uranium_chestplate",

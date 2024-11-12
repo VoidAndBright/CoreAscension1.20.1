@@ -9,7 +9,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:chestnut_foliage_placer",
+      "type": "minecraft:tropics_foliage_placer",
       "height": 2,
       "offset": 1,
       "radius": 2
@@ -34,7 +34,7 @@
       "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:chestnut_trunk_placer",
+      "type": "minecraft:tropics_trunk_placer",
       "base_height": 2,
       "height_rand_a": 2,
       "height_rand_b": 1

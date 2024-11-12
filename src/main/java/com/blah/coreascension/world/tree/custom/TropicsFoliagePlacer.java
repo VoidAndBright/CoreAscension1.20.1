@@ -10,19 +10,19 @@ import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
-public class ChestnutFoliagePlacer extends FoliagePlacer {
-    public static final Codec<ChestnutFoliagePlacer> CODEC = RecordCodecBuilder.create(chestnutFoliagePlacerInstance ->
-            fillFoliagePlacerFields(chestnutFoliagePlacerInstance).and(Codec.intRange(0, 12).fieldOf("height")
-                    .forGetter(instance -> instance.height)).apply(chestnutFoliagePlacerInstance, ChestnutFoliagePlacer::new));
+public class TropicsFoliagePlacer extends FoliagePlacer {
+    public static final Codec<TropicsFoliagePlacer> CODEC = RecordCodecBuilder.create(tropicsFoliagePlacerInstance ->
+            fillFoliagePlacerFields(tropicsFoliagePlacerInstance).and(Codec.intRange(0, 12).fieldOf("height")
+                    .forGetter(instance -> instance.height)).apply(tropicsFoliagePlacerInstance, TropicsFoliagePlacer::new));
     private final int height;
 
-    public ChestnutFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
+    public TropicsFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
         super(radius, offset);
         this.height = height;
     }
 
     protected FoliagePlacerType<?> getType() {
-        return CoreAscensionFoliagePlacerTypes.CHESTNUT_FOLIAGE_PLACER;
+        return CoreAscensionFoliagePlacerTypes.TROPICS_FOLIAGE_PLACER;
     }
 
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight,

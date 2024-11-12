@@ -6,7 +6,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
-public class ChestnutSaplingGenerator extends SaplingGenerator {
+public class TropicsSaplingGenerator extends SaplingGenerator {
     protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
         return CoreAscensionConfiguredFeatureKeys.TROPICS_TREE_KEY;
     }
