@@ -27,6 +27,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CEDAR_LOG)
                 .add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG)
                 .add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
+        
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(CoreAscensionBlocks.BLACK_SAND);
 

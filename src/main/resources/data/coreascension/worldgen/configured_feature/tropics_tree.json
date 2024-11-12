@@ -19,7 +19,7 @@
       "state": {
         "Name": "coreascension:tropics_leaves",
         "Properties": {
-          "distance": "7",
+          "distance": "6",
           "persistent": "false",
           "waterlogged": "false"
         }

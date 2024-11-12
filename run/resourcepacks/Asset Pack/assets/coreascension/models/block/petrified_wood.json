@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "coreascension:block/petrifiedwood",
-    "up": "coreascension:block/petrifiedwood",
-    "north": "coreascension:block/petrifiedwood",
-    "east": "coreascension:block/petrifiedwood",
-    "south": "coreascension:block/petrifiedwood",
-    "west": "coreascension:block/petrifiedwood",
-    "particle": "coreascension:block/petrifiedwood"
+    "down": "coreascension:block/petrified_wood",
+    "up": "coreascension:block/petrified_wood",
+    "north": "coreascension:block/petrified_wood",
+    "east": "coreascension:block/petrified_wood",
+    "south": "coreascension:block/petrified_wood",
+    "west": "coreascension:block/petrified_wood",
+    "particle": "coreascension:block/petrified_wood"
   }
 }
