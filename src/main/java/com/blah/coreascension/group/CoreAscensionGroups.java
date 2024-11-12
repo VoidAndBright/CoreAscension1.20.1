@@ -365,6 +365,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.PRISMAERO_SHARD);
         entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
         entries.add(CoreAscensionItems.AERO_FUEL);
+        entries.add(CoreAscensionItems.ICE_CREAM);
+        entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
 
         // -- FOOD --
         entries.add(CoreAscensionItems.CALAMARI);

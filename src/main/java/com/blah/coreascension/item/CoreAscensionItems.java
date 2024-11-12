@@ -34,6 +34,8 @@ public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",
             new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
+    public static final Item ICE_CREAM = registerItem("ice_cream",new Item(new FabricItemSettings()));
+    public static final Item TERRESTRIAL_CONSTRUCT = registerItem("terrestrial_construct",new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
     public static final Item AERO_FUEL = registerItem("aerofuel",new Item(new FabricItemSettings()));
     public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
