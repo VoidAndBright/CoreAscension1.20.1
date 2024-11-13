@@ -129,6 +129,13 @@
     "coreascension:ender_pearl_bricks",
     "coreascension:dark_matter_stone",
     "coreascension:mossy_dark_matter_stone",
+    "coreascension:cloud_stone",
+    "coreascension:cloud_coal_ore",
+    "coreascension:cloud_iron_ore",
+    "coreascension:cloud_gold_ore",
+    "coreascension:cloud_diamond_ore",
+    "coreascension:cloud_emerald_ore",
+    "coreascension:moonstone",
     "coreascension:sapphire_ore"
   ]
 }

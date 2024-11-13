@@ -134,7 +134,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
-                .add(CoreAscensionBlocks.SAPPHIRE_ORE);
+                .add(CoreAscensionBlocks.SAPPHIRE_ORE)
+                .add(CoreAscensionBlocks.SULPHUR_ORE);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(CoreAscensionBlocks.AERO_LANTERN)
@@ -265,6 +266,14 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.ENDER_PEARL_BRICKS)
                 .add(CoreAscensionBlocks.DARK_MATTER_STONE)
                 .add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE)
+                .add(CoreAscensionBlocks.CLOUD_STONE)
+                .add(CoreAscensionBlocks.CLOUD_COAL_ORE)
+                .add(CoreAscensionBlocks.CLOUD_IRON_ORE)
+                .add(CoreAscensionBlocks.CLOUD_GOLD_ORE)
+                .add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE)
+                .add(CoreAscensionBlocks.CLOUD_EMERALD_ORE)
+                .add(CoreAscensionBlocks.MOONSTONE)
+                .add(CoreAscensionBlocks.SULPHUR_ORE)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

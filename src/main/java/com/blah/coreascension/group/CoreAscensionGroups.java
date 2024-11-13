@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -70,6 +71,17 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
         // -- END TITANIUM --
         entries.add(CoreAscensionBlocks.SAPPHIRE_ORE);
+
+        entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_IRON_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_GOLD_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_EMERALD_ORE);
+        entries.add(CoreAscensionBlocks.MOONSTONE);
+        entries.add(CoreAscensionBlocks.CLOUD_STONE);
+
+        entries.add(CoreAscensionBlocks.SULPHUR_ORE);
+
         entries.add(CoreAscensionBlocks.SAPPHIRE_BLOCK);
         entries.add(CoreAscensionBlocks.BLAZE_BRICK);
         entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
@@ -297,6 +309,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.CACTUS_BUTTON);
         entries.add(CoreAscensionBlocks.CACTUS_DOOR);
         entries.add(CoreAscensionBlocks.CACTUS_TRAPDOOR);
+
+        entries.add(CoreAscensionBlocks.RAINBOW_MUSHROOM);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);

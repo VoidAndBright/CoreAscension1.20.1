@@ -23,6 +23,9 @@ repositories {
     maven {
         url = 'https://maven.minecraftforge.net/'
     }
+    maven {
+        url = "https://maven.kyrptonaught.dev"
+    }
 }
 
 fabricApi {
@@ -39,6 +42,9 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation "com.terraformersmc:biolith:${biolith_version}"
+
+    modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta65-1.20'
+    include 'net.kyrptonaught:customportalapi:0.0.1-beta65-1.20'
 }
 
 processResources {

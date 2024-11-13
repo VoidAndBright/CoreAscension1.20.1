@@ -21,6 +21,9 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.intprovider.IntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.client.color.world.BiomeColors;
@@ -46,9 +49,10 @@ public class CoreAscensionBlocks
 	public static final Block ARGON_CRYSTAL_BLOCK = RegisterBlockItem("argon_crystal_block", new Block(FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 	public static final Block ARGON_CRYSTAL_CLUSTER = RegisterBlockItem("argon_crystal_cluster", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
 	public static final Block ARGON_CRYSTAL_ORE = RegisterBlockItem("argon_crystal_ore", new AmethystClusterBlock(7,3,FabricBlockSettings.copyOf(Blocks.AMETHYST_BLOCK)));
-	public static final Block SAPPHIRE_ORE = RegisterBlockItem("sapphire_ore", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE)));
+	public static final Block SAPPHIRE_ORE = RegisterBlockItem("sapphire_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE), UniformIntProvider.create(4, 8)));
 	public static final Block SAPPHIRE_BLOCK = RegisterBlockItem("sapphire_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
 
+	public static final Block SULPHUR_ORE = RegisterBlockItem("sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE), UniformIntProvider.create(17, 23)));
 	public static final Block SULPHUR_BLOCK = RegisterBlockItem("sulphur_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
 	// titanium blocks
@@ -232,6 +236,8 @@ public class CoreAscensionBlocks
 	public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),ETHEREAL_DIRT));
 	// end ethereal glade
 
+	public static final Block RAINBOW_MUSHROOM = RegisterBlockItem("rainbow_mushroom", new PlantBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM)));
+
 	// cakewood
 	public static final Block CAKESOIL = RegisterBlockItem("cakesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
 	public static final Block CAKEWOOD_LOG = RegisterBlockItem("cakewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
@@ -250,9 +256,30 @@ public class CoreAscensionBlocks
 	public static final Block CAKEWOOD_DOOR = RegisterBlockItem("cakewood_door", new DoorBlock(FabricBlockSettings.copyOf(CAKEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block CAKEWOOD_TRAPDOOR = RegisterBlockItem("cakewood_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CAKEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block FROSTING_GRASS = RegisterBlockItem("frosting_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(), CAKESOIL));
-	public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
-	public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
-	public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
+	public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK))
+	{
+		@Override
+		public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction)
+		{
+			return stateFrom.getBlock() == this || super.isSideInvisible(state, stateFrom, direction);
+		}
+	});
+	public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK))
+	{
+		@Override
+		public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction)
+		{
+			return stateFrom.getBlock() == this || super.isSideInvisible(state, stateFrom, direction);
+		}
+	});
+	public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK))
+	{
+		@Override
+		public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction)
+		{
+			return stateFrom.getBlock() == this || super.isSideInvisible(state, stateFrom, direction);
+		}
+	});
 	// end cakewood
 
 	// dark matter
@@ -272,6 +299,16 @@ public class CoreAscensionBlocks
 	public static final Block DARK_MATTER_TRAPDOOR = RegisterBlockItem("dark_matter_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(DARK_MATTER_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block MOSSY_DARK_MATTER_STONE = RegisterBlockItem("mossy_dark_matter_stone", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(), DARK_MATTER_STONE));
 	// end dark matter
+
+	// ores and stone
+	public static final Block CLOUD_STONE = RegisterBlockItem("cloud_stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CLOUD_COAL_ORE = RegisterBlockItem("cloud_coal_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.COAL_ORE), UniformIntProvider.create(0, 2)));
+	public static final Block CLOUD_IRON_ORE = RegisterBlockItem("cloud_iron_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
+	public static final Block CLOUD_GOLD_ORE = RegisterBlockItem("cloud_gold_ore", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE)));
+	public static final Block CLOUD_DIAMOND_ORE = RegisterBlockItem("cloud_diamond_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE), UniformIntProvider.create(3, 7)));
+	public static final Block CLOUD_EMERALD_ORE = RegisterBlockItem("cloud_emerald_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE), UniformIntProvider.create(3, 7)));
+	public static final Block MOONSTONE = RegisterBlockItem("moonstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	// end ores and stone
 
 	// prismaero
 	public static final Block PRISMAERO = RegisterBlockItem("prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));

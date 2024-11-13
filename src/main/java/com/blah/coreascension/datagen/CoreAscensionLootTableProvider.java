@@ -4,6 +4,7 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.item.Items;
 
 public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider {
     public CoreAscensionLootTableProvider(FabricDataOutput dataOutput) {
@@ -264,5 +265,15 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CACTUS_DOOR, doorDrops(CoreAscensionBlocks.CACTUS_DOOR));
         addDrop(CoreAscensionBlocks.CACTUS_TRAPDOOR);
         addDrop(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
+
+        addDrop(CoreAscensionBlocks.CLOUD_COAL_ORE, oreDrops(CoreAscensionBlocks.CLOUD_COAL_ORE, Items.COAL));
+        addDrop(CoreAscensionBlocks.CLOUD_IRON_ORE, oreDrops(CoreAscensionBlocks.CLOUD_IRON_ORE, Items.RAW_IRON));
+        addDrop(CoreAscensionBlocks.CLOUD_GOLD_ORE, oreDrops(CoreAscensionBlocks.CLOUD_GOLD_ORE, Items.RAW_GOLD));
+        addDrop(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, oreDrops(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, Items.DIAMOND));
+        addDrop(CoreAscensionBlocks.CLOUD_EMERALD_ORE, oreDrops(CoreAscensionBlocks.CLOUD_EMERALD_ORE, Items.EMERALD));
+        addDrop(CoreAscensionBlocks.MOONSTONE);
+        addDrop(CoreAscensionBlocks.CLOUD_STONE);
+
+        addDrop(CoreAscensionBlocks.SULPHUR_ORE, oreDrops(CoreAscensionBlocks.SULPHUR_ORE, CoreAscensionItems.SULPHUR));
     }
 }

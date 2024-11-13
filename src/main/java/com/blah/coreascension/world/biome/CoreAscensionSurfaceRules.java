@@ -2,6 +2,7 @@ package com.blah.coreascension.world.biome;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.terraformersmc.biolith.api.surface.BiolithSurfaceBuilder;
 import com.terraformersmc.biolith.api.surface.SurfaceGeneration;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.VerticalSurfaceType;
@@ -22,11 +23,12 @@ public class CoreAscensionSurfaceRules
                             MaterialRules.block(CoreAscensionBlocks.DREAD_ROCK.getDefaultState())
                     )
             );
+
     public static void GenerateSurfaceRules()
     {
         SurfaceGeneration.addOverworldSurfaceRules(Identifier.of(CoreAscension.MOD_ID,"rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(TROPICS_SURFACE)));
-        SurfaceGeneration.addOverworldSurfaceRules(new Identifier("coreascension","rules/overworld"),
+        SurfaceGeneration.addOverworldSurfaceRules(new Identifier(CoreAscension.MOD_ID,"rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(DREAD_SURFACE)));
     }
 }
