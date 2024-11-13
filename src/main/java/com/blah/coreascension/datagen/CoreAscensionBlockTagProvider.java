@@ -84,7 +84,11 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.WHITEWOOD_LOG)
                 .add(CoreAscensionBlocks.WHITEWOOD_WOOD)
                 .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG)
-                .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD);
+                .add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD)
+                .add(CoreAscensionBlocks.DARK_MATTER_LOG)
+                .add(CoreAscensionBlocks.DARK_MATTER_WOOD)
+                .add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_LOG)
+                .add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_WOOD);
         
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(CoreAscensionBlocks.BLACK_SAND)

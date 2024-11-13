@@ -2,12 +2,14 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.AdvancedArmorItem;
 import com.blah.coreascension.item.items.MagicMirrorItem;
 import com.blah.coreascension.item.tools.TheToolItem;
 import com.blah.coreascension.item.tools.*;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.client.item.TooltipContext;
@@ -83,6 +85,56 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new ScytheItem(CoreAscensionToolMaterial.SAPPHIRE, 0, -3f, new FabricItemSettings()));
     public static final Item POTATO_SCYTHE = registerItem("potato_scythe", new ScytheItem(CoreAscensionToolMaterial.POTATO, 0, -3f, new FabricItemSettings()));
 
+    public static final Item CEDAR_SIGN = registerItem("cedar_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_CEDAR_SIGN, CoreAscensionBlocks.WALL_CEDAR_SIGN));
+    public static final Item HANGING_CEDAR_SIGN = registerItem("cedar_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_CEDAR_SIGN, CoreAscensionBlocks.WALL_HANGING_CEDAR_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item TROPICS_SIGN = registerItem("tropics_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_TROPICS_SIGN, CoreAscensionBlocks.WALL_TROPICS_SIGN));
+    public static final Item HANGING_TROPICS_SIGN = registerItem("tropics_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_TROPICS_SIGN, CoreAscensionBlocks.WALL_HANGING_TROPICS_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item WHITEWOOD_SIGN = registerItem("whitewood_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_WHITEWOOD_SIGN, CoreAscensionBlocks.WALL_WHITEWOOD_SIGN));
+    public static final Item HANGING_WHITEWOOD_SIGN = registerItem("whitewood_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_WHITEWOOD_SIGN, CoreAscensionBlocks.WALL_HANGING_WHITEWOOD_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item DREAD_SIGN = registerItem("dread_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_DREAD_SIGN, CoreAscensionBlocks.WALL_DREAD_SIGN));
+    public static final Item HANGING_DREAD_SIGN = registerItem("dread_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_DREAD_SIGN, CoreAscensionBlocks.WALL_HANGING_DREAD_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item CACTUS_SIGN = registerItem("cactus_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_CACTUS_SIGN, CoreAscensionBlocks.WALL_CACTUS_SIGN));
+    public static final Item HANGING_CACTUS_SIGN = registerItem("cactus_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_CACTUS_SIGN, CoreAscensionBlocks.WALL_HANGING_CACTUS_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item ETHEREAL_SIGN = registerItem("ethereal_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_ETHEREAL_SIGN, CoreAscensionBlocks.WALL_ETHEREAL_SIGN));
+    public static final Item HANGING_ETHEREAL_SIGN = registerItem("ethereal_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_ETHEREAL_SIGN, CoreAscensionBlocks.WALL_HANGING_ETHEREAL_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item CAKEWOOD_SIGN = registerItem("cakewood_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_CAKEWOOD_SIGN, CoreAscensionBlocks.WALL_CAKEWOOD_SIGN));
+    public static final Item HANGING_CAKEWOOD_SIGN = registerItem("cakewood_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_CAKEWOOD_SIGN, CoreAscensionBlocks.WALL_HANGING_CAKEWOOD_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item DARK_MATTER_SIGN = registerItem("dark_matter_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_DARK_MATTER_SIGN, CoreAscensionBlocks.WALL_DARK_MATTER_SIGN));
+    public static final Item HANGING_DARK_MATTER_SIGN = registerItem("dark_matter_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_DARK_MATTER_SIGN, CoreAscensionBlocks.WALL_HANGING_DARK_MATTER_SIGN, new FabricItemSettings().maxCount(16)));
+
+
+    public static final Item CEDAR_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CEDAR_BOAT_ID, CoreAscensionBoats.CEDAR_BOAT_KEY, false);
+    public static final Item CEDAR_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CEDAR_CHEST_BOAT_ID, CoreAscensionBoats.CEDAR_BOAT_KEY, true);
+    public static final Item TROPICS_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.TROPICS_BOAT_ID, CoreAscensionBoats.TROPICS_BOAT_KEY, false);
+    public static final Item TROPICS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.TROPICS_CHEST_BOAT_ID, CoreAscensionBoats.TROPICS_BOAT_KEY, true);
+    public static final Item WHITEWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.WHITEWOOD_BOAT_ID, CoreAscensionBoats.WHITEWOOD_BOAT_KEY, false);
+    public static final Item WHITEWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.WHITEWOOD_CHEST_BOAT_ID, CoreAscensionBoats.WHITEWOOD_BOAT_KEY, true);
+    public static final Item ETHEREAL_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.ETHEREAL_BOAT_ID, CoreAscensionBoats.ETHEREAL_BOAT_KEY, false);
+    public static final Item ETHEREAL_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.ETHEREAL_CHEST_BOAT_ID, CoreAscensionBoats.ETHEREAL_BOAT_KEY, true);
+    public static final Item DARK_MATTER_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.DARK_MATTER_BOAT_ID, CoreAscensionBoats.DARK_MATTER_BOAT_KEY, false);
+    public static final Item DARK_MATTER_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.DARK_MATTER_CHEST_BOAT_ID, CoreAscensionBoats.DARK_MATTER_BOAT_KEY, true);
+    public static final Item CACTUS_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CACTUS_BOAT_ID, CoreAscensionBoats.CACTUS_BOAT_KEY, false);
+    public static final Item CACTUS_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CACTUS_CHEST_BOAT_ID, CoreAscensionBoats.CACTUS_BOAT_KEY, true);
+    public static final Item DREAD_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.DREAD_BOAT_ID, CoreAscensionBoats.DREAD_BOAT_KEY, false);
+    public static final Item DREAD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.DREAD_CHEST_BOAT_ID, CoreAscensionBoats.DREAD_BOAT_KEY, true);
+    public static final Item CAKEWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CAKEWOOD_BOAT_ID, CoreAscensionBoats.CAKEWOOD_BOAT_KEY, false);
+    public static final Item CAKEWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CAKEWOOD_CHEST_BOAT_ID, CoreAscensionBoats.CAKEWOOD_BOAT_KEY, true);
 
     public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterial.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterial.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings()));

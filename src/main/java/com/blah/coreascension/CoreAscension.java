@@ -2,6 +2,7 @@ package com.blah.coreascension;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
+import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.group.CoreAscensionGroups;
@@ -39,6 +40,8 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
 		CoreAscensionEvents.RegisterEvents();
 		CoreAscensionPotions.registerPotionsRecipes();
+
+		CoreAscensionBoats.registerBoats();
 
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(Blocks.GLOWSTONE)
