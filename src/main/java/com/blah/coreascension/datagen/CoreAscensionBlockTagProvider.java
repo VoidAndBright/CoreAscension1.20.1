@@ -29,7 +29,9 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
         
         getOrCreateTagBuilder(BlockTags.SAND)
-                .add(CoreAscensionBlocks.BLACK_SAND);
+                .add(CoreAscensionBlocks.BLACK_SAND)
+                .add(CoreAscensionBlocks.BONESAND)
+                .add(CoreAscensionBlocks.DREAD_SAND);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(CoreAscensionBlocks.LOAM);

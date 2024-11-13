@@ -2,7 +2,7 @@ package com.blah.coreascension.world.tree;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.mixin.FoliagePlacerTypeInvoker;
-import com.blah.coreascension.world.tree.custom.TropicsFoliagePlacer;
+import com.blah.coreascension.world.tree.placers.TropicsFoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 
 public class CoreAscensionFoliagePlacerTypes {

@@ -1,7 +1,7 @@
 package com.blah.coreascension.entity.renderers;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.entity.model.CoreAscensionModelLayers;
+import com.blah.coreascension.entity.CoreAscensionModelLayers;
 import com.blah.coreascension.entity.model.PorcupineModel;
 import com.blah.coreascension.entity.entities.PorcupineEntity;
 import net.minecraft.client.render.VertexConsumerProvider;

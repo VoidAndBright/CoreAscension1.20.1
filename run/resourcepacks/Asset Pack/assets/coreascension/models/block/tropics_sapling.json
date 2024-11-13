@@ -1,7 +1,7 @@
 {
   "parent": "block/cross",
   "textures": {
-    "cross": "coreascension:block/palmsapling",
-    "particle": "coreascension:block/palmsapling"
+    "cross": "coreascension:block/tropics_sapling",
+    "particle": "coreascension:block/tropics_sapling"
   }
 }

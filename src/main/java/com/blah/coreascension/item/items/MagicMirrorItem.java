@@ -10,18 +10,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.network.SpawnLocating;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
-import org.apache.logging.log4j.core.jmx.Server;
 
 import java.util.List;
 import java.util.Optional;
@@ -67,16 +63,15 @@ public class MagicMirrorItem extends Item
                 ServerWorld TargetDimension = server.getWorld(serverPlayer.getSpawnPointDimension());
                 Optional<Vec3d> SpawnVec = PlayerEntity.findRespawnPosition(TargetDimension, serverPlayer.getSpawnPointPosition(), serverPlayer.getSpawnAngle(), false, false);
                 serverPlayer.fallDistance = 0F;
+                world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4f, 1f);
                 if (SpawnVec.isPresent()){
-                    world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4f, 1f);
                     TeleportTarget teleportTarget = new TeleportTarget(SpawnVec.get(),player.getVelocity(),player.getYaw(),player.getPitch());
                     FabricDimensions.teleport(user,TargetDimension,teleportTarget);
                 }
                 else {
-                    ServerWorld Overworld = server.getWorld(World.OVERWORLD);
-                    world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4f, 1f);
-                    TeleportTarget teleportTarget = new TeleportTarget(Overworld.getSpawnPos().toCenterPos(),player.getVelocity(),player.getYaw(),player.getPitch());
-                    FabricDimensions.teleport(user,Overworld,teleportTarget);
+                    TargetDimension = server.getWorld(World.OVERWORLD);
+                    TeleportTarget teleportTarget = new TeleportTarget(TargetDimension.getSpawnPos().toCenterPos(),player.getVelocity(),player.getYaw(),player.getPitch());
+                    FabricDimensions.teleport(user,TargetDimension,teleportTarget);
                 }
             }
             player.getItemCooldownManager().set(this, 60);

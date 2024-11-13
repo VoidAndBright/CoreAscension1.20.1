@@ -2,7 +2,7 @@ package com.blah.coreascension.world.tree;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.mixin.TrunkPlacerTypeInvoker;
-import com.blah.coreascension.world.tree.custom.TropicsTrunkPlacer;
+import com.blah.coreascension.world.tree.placers.TropicsTrunkPlacer;
 import net.minecraft.world.gen.trunk.TrunkPlacerType;
 
 public class CoreAscensionTrunkPlacerTypes {

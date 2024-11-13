@@ -10,8 +10,8 @@
     },
     "foliage_placer": {
       "type": "minecraft:tropics_foliage_placer",
-      "height": 2,
-      "offset": 1,
+      "height": 0,
+      "offset": 0,
       "radius": 2
     },
     "foliage_provider": {
@@ -19,7 +19,7 @@
       "state": {
         "Name": "coreascension:tropics_leaves",
         "Properties": {
-          "distance": "6",
+          "distance": "5",
           "persistent": "false",
           "waterlogged": "false"
         }

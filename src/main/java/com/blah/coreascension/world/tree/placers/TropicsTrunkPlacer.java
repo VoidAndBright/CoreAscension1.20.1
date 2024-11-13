@@ -1,4 +1,4 @@
-package com.blah.coreascension.world.tree.custom;
+package com.blah.coreascension.world.tree.placers;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
