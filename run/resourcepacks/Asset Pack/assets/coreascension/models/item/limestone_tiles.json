@@ -1,5 +1,5 @@
 {
-  "parent": "coreascension:block/limestone",
+  "parent": "coreascension:block/limestone_tiles",
   "display": {
     "thirdperson": {
       "rotation": [

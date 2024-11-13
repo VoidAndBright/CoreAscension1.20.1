@@ -1,0 +1,9 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "coreascension:blocks/limestone",
+    "top": "coreascension:blocks/limestone",
+    "side": "coreascension:blocks/limestone"
+  },
+  "render_type": "solid"
+}

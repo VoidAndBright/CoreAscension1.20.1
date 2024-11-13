@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "coreascension:blocks/limestone",
+    "particle": "coreascension:blocks/limestone"
+  },
+  "render_type": "solid"
+}
