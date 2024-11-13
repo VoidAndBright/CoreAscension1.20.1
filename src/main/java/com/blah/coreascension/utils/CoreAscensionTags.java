@@ -11,6 +11,8 @@ public class CoreAscensionTags {
     public static final TagKey<Block> HEAT_SOURCES = RegisterBlockTag("heat_sources");
     public static final TagKey<Block> COOL_SOURCES = RegisterBlockTag("cool_sources");
     public static final TagKey<Block> TOOL_MINEABLE = RegisterBlockTag("tool_mineable");
+    public static final TagKey<Block> SCYTHE_MINEABLE = RegisterBlockTag("scythe_mineable");
+
 
     private static TagKey<Block> RegisterBlockTag(String name) {
         return TagKey.of(RegistryKeys.BLOCK, new Identifier(CoreAscension.MOD_ID, name));

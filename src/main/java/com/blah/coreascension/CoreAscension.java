@@ -6,6 +6,7 @@ import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.group.CoreAscensionGroups;
 import com.blah.coreascension.item.CoreAscensionItems;
+import com.blah.coreascension.item.potion.CoreAscensionPotions;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.recipe.CoreAscensionRecipes;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
@@ -34,5 +35,6 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
 		CoreAscensionEvents.RegisterEvents();
+		CoreAscensionPotions.registerPotionsRecipes();
 	}
 }

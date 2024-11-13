@@ -295,13 +295,19 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.IRON_EXCAVATOR);
         entries.add(CoreAscensionItems.DIAMOND_EXCAVATOR);
         entries.add(CoreAscensionItems.NETHERITE_EXCAVATOR);
+        entries.add(CoreAscensionItems.WOODEN_SCYTHE);
+        entries.add(CoreAscensionItems.STONE_SCYTHE);
+        entries.add(CoreAscensionItems.GOLDEN_SCYTHE);
+        entries.add(CoreAscensionItems.IRON_SCYTHE);
+        entries.add(CoreAscensionItems.DIAMOND_SCYTHE);
+        entries.add(CoreAscensionItems.NETHERITE_SCYTHE);
 
         entries.add(CoreAscensionItems.SULPHUR);
         entries.add(CoreAscensionItems.IRON_ROD);
-
         entries.add(CoreAscensionItems.RAW_URANIUM);
         entries.add(CoreAscensionItems.URANIUM_INGOT);
         entries.add(CoreAscensionItems.LUMITE_INGOT);
+
         // -- ARMOR --
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
         entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
@@ -329,6 +335,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.POTATO_HOE);
         entries.add(CoreAscensionItems.POTATO_HAMMER);
         entries.add(CoreAscensionItems.POTATO_EXCAVATOR);
+        entries.add(CoreAscensionItems.POTATO_SCYTHE);
         entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
         entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
         entries.add(CoreAscensionItems.SAPPHIRE_AXE);
@@ -336,6 +343,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.SAPPHIRE_HOE);
         entries.add(CoreAscensionItems.SAPPHIRE_HAMMER);
         entries.add(CoreAscensionItems.SAPPHIRE_EXCAVATOR);
+        entries.add(CoreAscensionItems.SAPPHIRE_SCYTHE);
         entries.add(CoreAscensionItems.TADANITE_SWORD);
         entries.add(CoreAscensionItems.TADANITE_PICKAXE);
         entries.add(CoreAscensionItems.TADANITE_AXE);
@@ -343,8 +351,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.TADANITE_HOE);
         entries.add(CoreAscensionItems.TADANITE_HAMMER);
         entries.add(CoreAscensionItems.TADANITE_EXCAVATOR);
+        entries.add(CoreAscensionItems.TADANITE_SCYTHE);
         entries.add(CoreAscensionItems.LUMITE_HAMMER);
         entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
+        entries.add(CoreAscensionItems.LUMITE_SCYTHE);
         entries.add(CoreAscensionItems.URANIUM_SWORD);
         entries.add(CoreAscensionItems.URANIUM_PICKAXE);
         entries.add(CoreAscensionItems.URANIUM_AXE);
@@ -355,6 +365,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.PRISMAERO_SHARD);
         entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
         entries.add(CoreAscensionItems.AERO_FUEL);
+        entries.add(CoreAscensionItems.ICE_CREAM);
+        entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
 
         // -- FOOD --
         entries.add(CoreAscensionItems.CALAMARI);
