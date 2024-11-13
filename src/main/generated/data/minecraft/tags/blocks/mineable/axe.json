@@ -1,6 +1,18 @@
 {
   "replace": false,
   "values": [
+    "coreascension:cakewood_log",
+    "coreascension:cakewood_wood",
+    "coreascension:cakewood_planks",
+    "coreascension:cakewood_slab",
+    "coreascension:cakewood_stairs",
+    "coreascension:cakewood_fence",
+    "coreascension:cakewood_fence_gate",
+    "coreascension:cakewood_button",
+    "coreascension:stripped_cakewood_log",
+    "coreascension:stripped_cakewood_wood",
+    "coreascension:cakewood_door",
+    "coreascension:cakewood_trapdoor",
     "coreascension:tropics_log",
     "coreascension:cedar_log",
     "coreascension:dread_log",
@@ -61,6 +73,18 @@
     "coreascension:cactus_fence",
     "coreascension:cactus_fence_gate",
     "coreascension:cactus_button",
+    "coreascension:dark_matter_log",
+    "coreascension:dark_matter_wood",
+    "coreascension:dark_matter_planks",
+    "coreascension:dark_matter_slab",
+    "coreascension:dark_matter_stairs",
+    "coreascension:dark_matter_fence",
+    "coreascension:dark_matter_fence_gate",
+    "coreascension:dark_matter_button",
+    "coreascension:stripped_dark_matter_log",
+    "coreascension:stripped_dark_matter_wood",
+    "coreascension:dark_matter_door",
+    "coreascension:dark_matter_trapdoor",
     "coreascension:whitewood_trapdoor"
   ]
 }

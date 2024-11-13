@@ -159,9 +159,9 @@ public class CoreAscensionBlocks
 	public static final Block WHITEWOOD_DOOR = RegisterBlockItem("whitewood_door", new DoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block WHITEWOOD_TRAPDOOR = RegisterBlockItem("whitewood_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(WHITEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
 	// end whitewood
+
 	public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
 	public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque()));
-
 	// end tropics stuff
 
 	// cactus wood
@@ -232,6 +232,47 @@ public class CoreAscensionBlocks
 	public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),ETHEREAL_DIRT));
 	// end ethereal glade
 
+	// cakewood
+	public static final Block CAKESOIL = RegisterBlockItem("cakesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+	public static final Block CAKEWOOD_LOG = RegisterBlockItem("cakewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+	public static final Block CAKEWOOD_WOOD = RegisterBlockItem("cakewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+	public static final Block CAKEWOOD_PLANKS = RegisterBlockItem("cakewood_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block CAKEWOOD_SLAB = RegisterBlockItem("cakewood_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
+	public static final Block CAKEWOOD_STAIRS = RegisterBlockItem("cakewood_stairs", new StairsBlock(CAKEWOOD_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block CAKEWOOD_FENCE = RegisterBlockItem("cakewood_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+	public static final Block CAKEWOOD_FENCE_GATE = RegisterBlockItem("cakewood_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+	public static final Block CAKEWOOD_BUTTON = RegisterBlockItem("cakewood_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block RED_POPSICLE_LEAVES = RegisterBlockItem("red_popsicle_leaves", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+	public static final Block BLUE_POPSICLE_LEAVES = RegisterBlockItem("blue_popsicle_leaves", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+	public static final Block WHITE_POPSICLE_LEAVES = RegisterBlockItem("white_popsicle_leaves", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)));
+	public static final Block STRIPPED_CAKEWOOD_LOG = RegisterBlockItem("stripped_cakewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
+	public static final Block STRIPPED_CAKEWOOD_WOOD = RegisterBlockItem("stripped_cakewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+	public static final Block CAKEWOOD_DOOR = RegisterBlockItem("cakewood_door", new DoorBlock(FabricBlockSettings.copyOf(CAKEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block CAKEWOOD_TRAPDOOR = RegisterBlockItem("cakewood_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CAKEWOOD_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block FROSTING_GRASS = RegisterBlockItem("frosting_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(), CAKESOIL));
+	public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
+	public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
+	public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new Block(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK)));
+	// end cakewood
+
+	// dark matter
+	public static final Block DARK_MATTER_STONE = RegisterBlockItem("dark_matter_stone", new Block(FabricBlockSettings.copyOf(Blocks.DIRT)));
+	public static final Block DARK_MATTER_LOG = RegisterBlockItem("dark_matter_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+	public static final Block DARK_MATTER_WOOD = RegisterBlockItem("dark_matter_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
+	public static final Block DARK_MATTER_PLANKS = RegisterBlockItem("dark_matter_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block DARK_MATTER_SLAB = RegisterBlockItem("dark_matter_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
+	public static final Block DARK_MATTER_STAIRS = RegisterBlockItem("dark_matter_stairs", new StairsBlock(DARK_MATTER_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
+	public static final Block DARK_MATTER_FENCE = RegisterBlockItem("dark_matter_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+	public static final Block DARK_MATTER_FENCE_GATE = RegisterBlockItem("dark_matter_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+	public static final Block DARK_MATTER_BUTTON = RegisterBlockItem("dark_matter_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block DARK_MATTER_LEAVES = RegisterBlockItem("dark_matter_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
+	public static final Block STRIPPED_DARK_MATTER_LOG = RegisterBlockItem("stripped_dark_matter_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
+	public static final Block STRIPPED_DARK_MATTER_WOOD = RegisterBlockItem("stripped_dark_matter_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+	public static final Block DARK_MATTER_DOOR = RegisterBlockItem("dark_matter_door", new DoorBlock(FabricBlockSettings.copyOf(DARK_MATTER_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block DARK_MATTER_TRAPDOOR = RegisterBlockItem("dark_matter_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(DARK_MATTER_PLANKS).nonOpaque(), BlockSetType.OAK));
+	public static final Block MOSSY_DARK_MATTER_STONE = RegisterBlockItem("mossy_dark_matter_stone", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(), DARK_MATTER_STONE));
+	// end dark matter
+
 	// prismaero
 	public static final Block PRISMAERO = RegisterBlockItem("prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
 	public static final Block POLISHED_PRISMAERO = RegisterBlockItem("polished_prismaero", new Block(FabricBlockSettings.copyOf(PRISMAERO)));
@@ -274,7 +315,7 @@ public class CoreAscensionBlocks
 		}
 	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
-	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	// end misc blocks
 
@@ -353,22 +394,91 @@ public class CoreAscensionBlocks
 		StrippableBlockRegistry.register(CoreAscensionBlocks.TROPICS_WOOD, CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.WHITEWOOD_LOG, CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.WHITEWOOD_WOOD, CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.CAKEWOOD_LOG, CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.CAKEWOOD_WOOD, CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.ETHEREAL_LOG, CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.ETHEREAL_WOOD, CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
 	}
 	private static void RegisterFlammableBlocks()
 	{
 		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_LEAVES, 30, 60);
 		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_CEDAR_LOG,5,5);
 		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_CEDAR_WOOD,5,5);
-		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_PLANKS,5,20);
-		FlammableBlockRegistry.getDefaultInstance().add(CEDAR_LEAVES, 30, 60);
-		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_LOG, 5,5);
-		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_PLANKS, 5,20);
-		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_LOG, 5,5);
-		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_TROPICS_LOG, 5,5);
-		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_TROPICS_WOOD, 5,5);
-		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_PLANKS, 5,20);
-		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_LEAVES, 30, 60);
 
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(TROPICS_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_TROPICS_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_TROPICS_WOOD,5,5);
+
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(DREAD_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_DREAD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_DREAD_WOOD,5,5);
+
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(CAKEWOOD_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(RED_POPSICLE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(BLUE_POPSICLE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITE_POPSICLE_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_CAKEWOOD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_CAKEWOOD_WOOD,5,5);
+
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(WHITEWOOD_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_WHITEWOOD_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_WHITEWOOD_WOOD,5,5);
+
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_WOOD,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_PLANKS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_SLAB,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_STAIRS,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_FENCE_GATE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_FENCE,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_DOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_TRAPDOOR,5,20);
+		FlammableBlockRegistry.getDefaultInstance().add(ETHEREAL_LEAVES, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_ETHEREAL_LOG,5,5);
+		FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_ETHEREAL_WOOD,5,5);
 	}
     public static void RegisterBlocks()
 	{
@@ -382,12 +492,16 @@ public class CoreAscensionBlocks
 		ClientRegisterRenderLayeredBlocks();
 		ClientRegisterColouredBlocks();
 	}
-	public static void ClientRegisterRenderLayeredBlocks(){
+	public static void ClientRegisterRenderLayeredBlocks()
+	{
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_LEAVES, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BORDERLESS_GLASS, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RED_GUMDROP, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.YELLOW_GUMDROP, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GREEN_GUMDROP, RenderLayer.getTranslucent());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_CHEST, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.COCONUT, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_TRAPDOOR, RenderLayer.getCutout());
@@ -402,9 +516,12 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTING_GRASS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
 	}
-	public static void ClientRegisterColouredBlocks() {
+	public static void ClientRegisterColouredBlocks()
+	{
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS);
 		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICS_LEAVES);

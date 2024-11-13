@@ -198,6 +198,44 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.WHITEWOOD_DOOR, doorDrops(CoreAscensionBlocks.WHITEWOOD_DOOR));
         addDrop(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
         //addDrop(CoreAscensionBlocks.WHITEWOOD_LEAVES, leavesDrops(CoreAscensionBlocks.WHITEWOOD_LEAVES, CoreAscensionBlocks.WHITEWOOD_SAPLING, 0.0025f));
+
+        addDrop(CoreAscensionBlocks.CAKEWOOD_LOG);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_WOOD);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_PLANKS);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_SLAB, slabDrops(CoreAscensionBlocks.CAKEWOOD_SLAB));
+        addDrop(CoreAscensionBlocks.CAKEWOOD_STAIRS);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_FENCE);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_BUTTON);
+        addDrop(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
+        addDrop(CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_DOOR, doorDrops(CoreAscensionBlocks.CAKEWOOD_DOOR));
+        addDrop(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.CAKESOIL);
+        addDrop(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
+        addDrop(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
+        addDrop(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.FROSTING_GRASS, CoreAscensionBlocks.CAKESOIL);
+        addDrop(CoreAscensionBlocks.RED_GUMDROP);
+        addDrop(CoreAscensionBlocks.YELLOW_GUMDROP);
+        addDrop(CoreAscensionBlocks.GREEN_GUMDROP);
+
+        addDrop(CoreAscensionBlocks.DARK_MATTER_LOG);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_WOOD);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_PLANKS);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_SLAB, slabDrops(CoreAscensionBlocks.DARK_MATTER_SLAB));
+        addDrop(CoreAscensionBlocks.DARK_MATTER_STAIRS);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_FENCE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_BUTTON);
+        addDrop(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
+        addDrop(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_DOOR, doorDrops(CoreAscensionBlocks.DARK_MATTER_DOOR));
+        addDrop(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
+        //addDrop(CoreAscensionBlocks.DARK_MATTER_LEAVES, leavesDrops(CoreAscensionBlocks.DARK_MATTER_LEAVES, CoreAscensionBlocks.DARK_MATTER_SAPLING, 0.0025f));
+        addDropWithSilkTouch(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, CoreAscensionBlocks.DARK_MATTER_STONE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_STONE);
+
         addDrop(CoreAscensionBlocks.SEASHELL);
         addDrop(CoreAscensionBlocks.CONCH_SHELL);
         addDrop(CoreAscensionBlocks.PRISMAERO);

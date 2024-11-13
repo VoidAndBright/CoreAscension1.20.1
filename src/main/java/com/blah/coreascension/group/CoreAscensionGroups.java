@@ -132,6 +132,48 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.SEASHELL);
         entries.add(CoreAscensionBlocks.CONCH_SHELL);
         // -- END TROPICS --
+
+        // -- DARK MATTER --
+        entries.add(CoreAscensionBlocks.DARK_MATTER_LOG);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_WOOD);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_PLANKS);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_SLAB);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_STAIRS);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_FENCE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_BUTTON);
+        entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_WOOD);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_DOOR);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_STONE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_LEAVES);
+        entries.add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE);
+        // -- END DARK MATTER --
+
+        // -- CANDYLAND --
+        entries.add(CoreAscensionBlocks.CAKEWOOD_LOG);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_WOOD);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_PLANKS);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_SLAB);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_STAIRS);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_FENCE);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_BUTTON);
+        entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_DOOR);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
+        entries.add(CoreAscensionBlocks.CAKESOIL);
+        entries.add(CoreAscensionBlocks.FROSTING_GRASS);
+        entries.add(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.RED_GUMDROP);
+        entries.add(CoreAscensionBlocks.YELLOW_GUMDROP);
+        entries.add(CoreAscensionBlocks.GREEN_GUMDROP);
+        // -- END CANDYLAND
+
         // -- DREAD --
         entries.add(CoreAscensionBlocks.DREAD_LOG);
         entries.add(CoreAscensionBlocks.DREAD_WOOD);

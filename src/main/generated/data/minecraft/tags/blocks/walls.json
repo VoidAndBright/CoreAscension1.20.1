@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
-    "coreascension:amethyst_wall"
+    "coreascension:amethyst_wall",
+    "coreascension:igneous_rock_wall",
+    "coreascension:limestone_wall",
+    "coreascension:magnetite_wall",
+    "coreascension:polished_igneous_rock_wall",
+    "coreascension:polished_limestone_wall",
+    "coreascension:polished_saltrock_wall",
+    "coreascension:saltrock_wall",
+    "coreascension:prismaero_wall",
+    "coreascension:polished_magnetite_wall"
   ]
 }
