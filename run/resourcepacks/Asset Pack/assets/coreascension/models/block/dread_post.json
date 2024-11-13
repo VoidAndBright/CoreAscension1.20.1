@@ -1,5 +1,5 @@
 {
-  "parent": "coreascension:custom/dread_post",
+  "parent": "coreascension:custom/post",
   "textures": {
     "all": "coreascension:block/dread_log",
     "particle": "coreascension:block/dread_log",
