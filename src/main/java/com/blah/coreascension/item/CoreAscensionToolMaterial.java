@@ -1,5 +1,6 @@
 package com.blah.coreascension.item;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -14,6 +15,8 @@ public enum CoreAscensionToolMaterial implements ToolMaterial {
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE), ""),
     TADANITE(5, 4000, 14f, 8f, 20,
             () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL), "Efficient"),
+    BEDROCK(8, 5500, 15f, 8f, 20,
+            () -> Ingredient.ofItems(Blocks.BEDROCK), ""),
     LUMITE(7, 4500, 15f, 8f, 25,
             () -> Ingredient.ofItems(CoreAscensionItems.LUMITE_INGOT), ""),
     URANIUM(3, 2031, 10f, 4f, 0,
