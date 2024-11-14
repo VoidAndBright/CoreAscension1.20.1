@@ -8,7 +8,6 @@ import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
 import com.blah.coreascension.world.tree.MegaTreeSaplingGenerator;
 import com.blah.coreascension.world.tree.TreeSaplingGenerator;
 import com.blah.coreascension.sound.CoreAscensionSounds;
-import com.blah.coreascension.world.tree.TropicsSaplingGenerator;
 import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
@@ -27,7 +26,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -227,14 +225,6 @@ public class CoreAscensionBlocks
 	public static final Block CACTUS_BUTTON = RegisterBlockItem("cactus_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block CACTUS_DOOR = RegisterBlockItem("cactus_door", new DoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block CACTUS_TRAPDOOR = RegisterBlockItem("cactus_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
-	public static final Block CACTUS_PLANKS = RegisterBlockItem("cactus_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS)));
-	public static final Block CACTUS_SLAB = RegisterBlockItem("cactus_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS)));
-	public static final Block CACTUS_STAIRS = RegisterBlockItem("cactus_stairs", new StairsBlock(CACTUS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS)));
-	public static final Block CACTUS_FENCE = RegisterBlockItem("cactus_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS)));
-	public static final Block CACTUS_FENCE_GATE = RegisterBlockItem("cactus_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS), WoodType.OAK));
-	public static final Block CACTUS_BUTTON = RegisterBlockItem("cactus_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-	public static final Block CACTUS_DOOR = RegisterBlockItem("cactus_door", new DoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque().sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS), BlockSetType.OAK));
-	public static final Block CACTUS_TRAPDOOR = RegisterBlockItem("cactus_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque().sounds(CoreAscensionSounds.CACTUS_PLANKS_SOUNDS), BlockSetType.OAK));
 
 	public static final Identifier CACTUS_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/cactus");
 	public static final Identifier CACTUS_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/cactus");
@@ -676,20 +666,14 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS_BLOCK, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS_BLOCK, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
-	}
-	public static void ClientRegisterColouredBlocks() {
-		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS_BLOCK);
-		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS_BLOCK);
-		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTING_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
 	}
 	public static void ClientRegisterColouredBlocks()
 	{
-		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS);
-		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS);
+		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS_BLOCK);
+		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS_BLOCK);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICS_LEAVES);
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 8126208, TROPICS_LEAVES);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), CEDAR_LEAVES);
