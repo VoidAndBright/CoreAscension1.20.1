@@ -38,7 +38,6 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
     public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
         buf.writeBlockPos(this.pos);
     }
-
     public Text getDisplayName() {
         return Text.translatable("container.catalyzer");
     }
@@ -76,9 +75,9 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
     }
     private void craftItem() {
         Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
-        this.removeStack(INPUT_SLOT, 1);
-        this.removeStack(CATALYST_SLOT, 1);
-        this.removeStack(SULPHUR_SLOT, 1);
+        //this.removeStack(INPUT_SLOT, 1);
+        //this.removeStack(CATALYST_SLOT, 1);
+        //this.removeStack(SULPHUR_SLOT, 1);
         this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), getStack(OUTPUT_SLOT).getCount() + recipe.get().getOutput(null).getCount()));
     }
     public Optional<CatalyzerRecipe> getCurrentRecipe() {

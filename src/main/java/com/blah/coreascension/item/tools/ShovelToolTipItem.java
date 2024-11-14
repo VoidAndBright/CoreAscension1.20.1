@@ -14,14 +14,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class TadaniteShovelItem extends ShovelItem
+public class ShovelToolTipItem extends ShovelItem
 {
-    public TadaniteShovelItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
+    public String[] tooltip;
+    public ShovelToolTipItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings,String... tooltip)
     {
         super(material, attackDamage, attackSpeed, settings);
+        this.tooltip=tooltip;
     }
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.tadanite"))).formatted(Formatting.YELLOW));
+        for(String tooltipLine:this.tooltip)
+            tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,tooltipLine))).formatted(Formatting.YELLOW));
     }
 }

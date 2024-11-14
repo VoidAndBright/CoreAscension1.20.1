@@ -668,7 +668,6 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTING_GRASS, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
 	}
 	public static void ClientRegisterColouredBlocks()
 	{
