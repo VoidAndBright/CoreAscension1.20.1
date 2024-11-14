@@ -1,28 +1,16 @@
 {
   "variants": {
-    "facing=south": {
-      "model": "coreascension:block/whitewood_log"
-    },
-    "facing=north": {
-      "model": "coreascension:block/whitewood_log"
-    },
-    "facing=east": {
-      "model": "coreascension:block/whitewood_log",
-      "x": 90
-    },
-    "facing=west": {
-      "model": "coreascension:block/whitewood_log",
-      "x": 90
-    },
-    "facing=up": {
+    "axis=x": {
       "model": "coreascension:block/whitewood_log",
       "x": 90,
       "y": 90
     },
-    "facing=down": {
+    "axis=y": {
+      "model": "coreascension:block/whitewood_log"
+    },
+    "axis=z": {
       "model": "coreascension:block/whitewood_log",
-      "x": 90,
-      "y": 90
+      "x": 90
     }
   }
 }

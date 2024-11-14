@@ -140,13 +140,10 @@ public class CoreAscensionItems {
 
     public static final Item CRIMSON_EDGE = registerItem("crimson_edge", new SwordItem(CoreAscensionToolMaterial.SKYLANDS_SWORD, 4, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE))
     {
-        @Override
         public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
         {
             tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.crimson_edge"))).formatted(Formatting.GRAY));
         }
-
-        @Override
         public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
         {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 1));

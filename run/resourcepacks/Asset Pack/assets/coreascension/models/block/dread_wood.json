@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "coreascension:block/dreadlog",
-    "particle": "coreascension:block/dreadlog"
+    "all": "coreascension:block/dread_log",
+    "particle": "coreascension:block/dread_log"
   }
 }

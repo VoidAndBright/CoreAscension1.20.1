@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_column",
   "textures": {
-    "down": "coreascension:block/whitewood_log_top",
-    "up": "coreascension:block/whitewood_log_top",
-    "north": "coreascension:block/whitewood_log",
-    "east": "coreascension:block/whitewood_log",
-    "south": "coreascension:block/whitewood_log",
-    "west": "coreascension:block/whitewood_log",
-    "particle": "coreascension:block/whitewood_log_top"
+    "end": "coreascension:block/whitewood_log_top",
+    "side": "coreascension:block/whitewood_log"
   }
 }

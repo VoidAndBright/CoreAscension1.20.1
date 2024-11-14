@@ -4,7 +4,9 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.particles.CoreAscensionParticles;
-import com.blah.coreascension.world.tree.TropicsSaplingGenerator;
+import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
+import com.blah.coreascension.world.tree.MegaTreeSaplingGenerator;
+import com.blah.coreascension.world.tree.TreeSaplingGenerator;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -99,13 +101,14 @@ public class CoreAscensionBlocks
 
 	// cedar grove stuff
 	public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
+	public static final Block CEDAR_SAPLING = RegisterBlockItem("cedar_sapling", new SaplingBlock(new MegaTreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.CEDAR_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
 	public static final Block CEDAR_WOOD = RegisterBlockItem("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD)));
 	public static final Block CEDAR_PLANKS = RegisterBlockItem("cedar_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block CEDAR_SLAB = RegisterBlockItem("cedar_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB)));
 	public static final Block CEDAR_STAIRS = RegisterBlockItem("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(TITANIUM_BLOCK)));
 	public static final Block CEDAR_FENCE = RegisterBlockItem("cedar_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block CEDAR_FENCE_GATE = RegisterBlockItem("cedar_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block CEDAR_BUTTON = RegisterBlockItem("cedar_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block CEDAR_BUTTON = RegisterBlockItem("cedar_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block CEDAR_LEAVES = RegisterBlockItem("cedar_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 	public static final Block STRIPPED_CEDAR_LOG = RegisterBlockItem("stripped_cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
 	public static final Block STRIPPED_CEDAR_WOOD = RegisterBlockItem("stripped_cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
@@ -120,7 +123,7 @@ public class CoreAscensionBlocks
 	public static final Block TROPICS_STAIRS = RegisterBlockItem("tropics_stairs", new StairsBlock(TROPICS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block TROPICS_FENCE = RegisterBlockItem("tropics_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block TROPICS_FENCE_GATE = RegisterBlockItem("tropics_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block TROPICS_BUTTON = RegisterBlockItem("tropics_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block TROPICS_BUTTON = RegisterBlockItem("tropics_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block TROPICS_LEAVES = RegisterBlockItem("tropics_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 	public static final Block STRIPPED_TROPICS_LOG = RegisterBlockItem("stripped_tropics_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
 	public static final Block STRIPPED_TROPICS_WOOD = RegisterBlockItem("stripped_tropics_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
@@ -139,10 +142,12 @@ public class CoreAscensionBlocks
 	public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.MUD_BRICKS)));
 	public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque(), BlockSetType.OAK));
-	public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling", new SaplingBlock(new TropicsSaplingGenerator(), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)){
+
+	public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling",new SaplingBlock( new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.TROPICS_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)){
 		protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {return floor.isIn(BlockTags.SAND);}
 	});
-	public static final Block TROPICAL_GRASS = RegisterBlockItem("tropical_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),LOAM));
+
+	public static final Block TROPICAL_GRASS_BLOCK = RegisterBlockItem("tropical_grass_block", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),LOAM));
 
 	// whitewood
 	public static final Block WHITEWOOD_LOG = RegisterBlockItem("whitewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG)));
@@ -152,7 +157,7 @@ public class CoreAscensionBlocks
 	public static final Block WHITEWOOD_STAIRS = RegisterBlockItem("whitewood_stairs", new StairsBlock(WHITEWOOD_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block WHITEWOOD_FENCE = RegisterBlockItem("whitewood_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block WHITEWOOD_FENCE_GATE = RegisterBlockItem("whitewood_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block WHITEWOOD_BUTTON = RegisterBlockItem("whitewood_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block WHITEWOOD_BUTTON = RegisterBlockItem("whitewood_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block WHITEWOOD_LEAVES = RegisterBlockItem("whitewood_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 	public static final Block STRIPPED_WHITEWOOD_LOG = RegisterBlockItem("stripped_whitewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
 	public static final Block STRIPPED_WHITEWOOD_WOOD = RegisterBlockItem("stripped_whitewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
@@ -170,7 +175,7 @@ public class CoreAscensionBlocks
 	public static final Block CACTUS_STAIRS = RegisterBlockItem("cactus_stairs", new StairsBlock(CACTUS_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block CACTUS_FENCE = RegisterBlockItem("cactus_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block CACTUS_FENCE_GATE = RegisterBlockItem("cactus_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block CACTUS_BUTTON = RegisterBlockItem("cactus_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block CACTUS_BUTTON = RegisterBlockItem("cactus_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block CACTUS_DOOR = RegisterBlockItem("cactus_door", new DoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block CACTUS_TRAPDOOR = RegisterBlockItem("cactus_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(CACTUS_PLANKS).nonOpaque(), BlockSetType.OAK));
 	// end cactus
@@ -183,7 +188,7 @@ public class CoreAscensionBlocks
 	public static final Block DREAD_STAIRS = RegisterBlockItem("dread_stairs", new StairsBlock(DREAD_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block DREAD_FENCE = RegisterBlockItem("dread_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block DREAD_FENCE_GATE = RegisterBlockItem("dread_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block DREAD_BUTTON = RegisterBlockItem("dread_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block DREAD_BUTTON = RegisterBlockItem("dread_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block STRIPPED_DREAD_LOG = RegisterBlockItem("stripped_dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
 	public static final Block STRIPPED_DREAD_WOOD = RegisterBlockItem("stripped_dread_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
 	public static final Block DREAD_SAND = RegisterBlockItem("dread_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
@@ -222,14 +227,14 @@ public class CoreAscensionBlocks
 	public static final Block ETHEREAL_STAIRS = RegisterBlockItem("ethereal_stairs", new StairsBlock(ETHEREAL_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
 	public static final Block ETHEREAL_FENCE = RegisterBlockItem("ethereal_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
 	public static final Block ETHEREAL_FENCE_GATE = RegisterBlockItem("ethereal_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
-	public static final Block ETHEREAL_BUTTON = RegisterBlockItem("ethereal_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+	public static final Block ETHEREAL_BUTTON = RegisterBlockItem("ethereal_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON), BlockSetType.OAK, 30, true));
 	public static final Block ETHEREAL_LEAVES = RegisterBlockItem("ethereal_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES)));
 	public static final Block STRIPPED_ETHEREAL_LOG = RegisterBlockItem("stripped_ethereal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG)));
 	public static final Block STRIPPED_ETHEREAL_WOOD = RegisterBlockItem("stripped_ethereal_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
 	public static final Block ETHEREAL_DOOR = RegisterBlockItem("ethereal_door", new DoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block ETHEREAL_TRAPDOOR = RegisterBlockItem("ethereal_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque(), BlockSetType.OAK));
 	public static final Block ETHEREAL_MEMBRANE = RegisterBlockItem("ethereal_membrane", new SlimeBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK)));
-	public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),ETHEREAL_DIRT));
+	public static final Block ETHEREAL_GRASS_BLOCK = RegisterBlockItem("ethereal_grass_block", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).ticksRandomly(),ETHEREAL_DIRT));
 	// end ethereal glade
 
 	// prismaero
@@ -250,7 +255,6 @@ public class CoreAscensionBlocks
 	public static final Block CHISELED_PRISMAERO = RegisterBlockItem("chiseled_prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE)));
 	public static final Block PRISMAERO_SPAWNER = RegisterBlockItem("prismaero_spawner", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE))
 	{
-		@Override
 		public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
 		{
 			// ADD PROTECTOR SPAWNING (for later)
@@ -267,14 +271,13 @@ public class CoreAscensionBlocks
 	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque())
 	{
-		@Override
 		public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
 		{
 			return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
 		}
 	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK)));
-	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	// end misc blocks
 
@@ -400,13 +403,13 @@ public class CoreAscensionBlocks
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.WHITEWOOD_DOOR, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
-		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS_BLOCK, RenderLayer.getCutoutMipped());
+		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS_BLOCK, RenderLayer.getCutoutMipped());
 		BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
 	}
 	public static void ClientRegisterColouredBlocks() {
-		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS);
-		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS);
+		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICAL_GRASS_BLOCK);
+		ColorProviderRegistry.ITEM.register((state,tintIndex) -> 8126208, TROPICAL_GRASS_BLOCK);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), TROPICS_LEAVES);
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 8126208, TROPICS_LEAVES);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), CEDAR_LEAVES);

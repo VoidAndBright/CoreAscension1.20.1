@@ -267,9 +267,9 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.BLACK_SAND)
                 .add(CoreAscensionBlocks.DREAD_SAND)
                 .add(CoreAscensionBlocks.LOAM)
-                .add(CoreAscensionBlocks.TROPICAL_GRASS)
+                .add(CoreAscensionBlocks.TROPICAL_GRASS_BLOCK)
                 .add(CoreAscensionBlocks.ETHEREAL_DIRT)
-                .add(CoreAscensionBlocks.ETHEREAL_GRASS)
+                .add(CoreAscensionBlocks.ETHEREAL_GRASS_BLOCK)
                 .add(CoreAscensionBlocks.TROPICS_MUD);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)

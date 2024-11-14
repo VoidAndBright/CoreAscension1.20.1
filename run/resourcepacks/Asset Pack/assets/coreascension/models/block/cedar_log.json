@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_column",
   "textures": {
-    "down": "coreascension:block/cedarlog_top",
-    "up": "coreascension:block/cedarlog_top",
-    "north": "coreascension:block/cedarlog",
-    "east": "coreascension:block/cedarlog",
-    "south": "coreascension:block/cedarlog",
-    "west": "coreascension:block/cedarlog",
-    "particle": "coreascension:block/cedarlog_top"
+    "end": "coreascension:block/cedar_log_top",
+    "side": "coreascension:block/cedar_log"
   }
 }

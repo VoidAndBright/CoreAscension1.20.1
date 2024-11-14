@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "coreascension:block/palmlog",
-    "particle": "coreascension:block/palmlog"
+    "all": "coreascension:block/tropics_log",
+    "particle": "coreascension:block/tropics_log"
   }
 }

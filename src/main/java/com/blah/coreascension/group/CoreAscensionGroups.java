@@ -76,6 +76,7 @@ public class CoreAscensionGroups {
         // -- CEDAR --
         entries.add(CoreAscensionBlocks.CEDAR_LOG);
         entries.add(CoreAscensionBlocks.CEDAR_WOOD);
+        entries.add(CoreAscensionBlocks.CEDAR_SAPLING);
         entries.add(CoreAscensionBlocks.CEDAR_PLANKS);
         entries.add(CoreAscensionBlocks.CEDAR_SLAB);
         entries.add(CoreAscensionBlocks.CEDAR_STAIRS);
@@ -116,7 +117,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_STAIRS);
         entries.add(CoreAscensionBlocks.TROPICS_SAPLING);
         entries.add(CoreAscensionBlocks.LOAM);
-        entries.add(CoreAscensionBlocks.TROPICAL_GRASS);
+        entries.add(CoreAscensionBlocks.TROPICAL_GRASS_BLOCK);
         entries.add(CoreAscensionBlocks.WHITEWOOD_LOG);
         entries.add(CoreAscensionBlocks.WHITEWOOD_WOOD);
         entries.add(CoreAscensionBlocks.WHITEWOOD_PLANKS);
@@ -183,7 +184,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
         entries.add(CoreAscensionBlocks.ETHEREAL_MEMBRANE);
         entries.add(CoreAscensionBlocks.ETHEREAL_DIRT);
-        entries.add(CoreAscensionBlocks.ETHEREAL_GRASS);
+        entries.add(CoreAscensionBlocks.ETHEREAL_GRASS_BLOCK);
         // -- END ETHEREAL --
 
         entries.add(CoreAscensionBlocks.HARDENED_LAVA);

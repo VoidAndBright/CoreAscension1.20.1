@@ -1,0 +1,7 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "coreascension:block/polished_limestone",
+    "particle": "coreascension:block/polished_limestone"
+  }
+}

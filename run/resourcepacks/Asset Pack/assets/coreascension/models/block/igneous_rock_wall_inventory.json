@@ -1,7 +1,7 @@
 {
   "parent": "block/wall_inventory",
   "textures": {
-    "wall": "coreascension:block/igneousrock",
-    "particle": "coreascension:block/igneousrock"
+    "wall": "coreascension:block/igneous_rock",
+    "particle": "coreascension:block/igneous_rock"
   }
 }

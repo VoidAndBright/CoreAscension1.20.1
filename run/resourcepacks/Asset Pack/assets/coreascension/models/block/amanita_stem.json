@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "block/cube_column",
   "textures": {
     "end": "coreascension:block/amanita_stem_inside",
     "side": "coreascension:block/amanita_stem_side"

@@ -1,28 +1,16 @@
 {
   "variants": {
-    "facing=south": {
-      "model": "coreascension:block/cedar_wood"
-    },
-    "facing=north": {
-      "model": "coreascension:block/cedar_wood"
-    },
-    "facing=east": {
-      "model": "coreascension:block/cedar_wood",
-      "x": 90
-    },
-    "facing=west": {
-      "model": "coreascension:block/cedar_wood",
-      "x": 90
-    },
-    "facing=up": {
+    "axis=x": {
       "model": "coreascension:block/cedar_wood",
       "x": 90,
       "y": 90
     },
-    "facing=down": {
+    "axis=y": {
+      "model": "coreascension:block/cedar_wood"
+    },
+    "axis=z": {
       "model": "coreascension:block/cedar_wood",
-      "x": 90,
-      "y": 90
+      "x": 90
     }
   }
 }

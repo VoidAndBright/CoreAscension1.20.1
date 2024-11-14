@@ -1,12 +1,6 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "coreascension:block/petrified_wood",
-    "up": "coreascension:block/petrified_wood",
-    "north": "coreascension:block/petrified_wood",
-    "east": "coreascension:block/petrified_wood",
-    "south": "coreascension:block/petrified_wood",
-    "west": "coreascension:block/petrified_wood",
-    "particle": "coreascension:block/petrified_wood"
+    "all": "coreascension:block/petrified_wood"
   }
 }

@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_column",
   "textures": {
-    "down": "coreascension:block/tropicslog",
-    "up": "coreascension:block/tropicslog",
-    "north": "coreascension:block/palmlog",
-    "east": "coreascension:block/palmlog",
-    "south": "coreascension:block/palmlog",
-    "west": "coreascension:block/palmlog",
-    "particle": "coreascension:block/tropicslog"
+    "end": "coreascension:block/tropics_log_top",
+    "side": "coreascension:block/tropics_log"
   }
 }

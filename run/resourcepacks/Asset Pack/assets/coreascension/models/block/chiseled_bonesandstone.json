@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "coreascension:block/bonesandstone_top",
+    "side": "coreascension:block/chiseled_bonesandstone"
+  }
+}

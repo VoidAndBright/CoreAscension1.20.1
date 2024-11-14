@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "coreascension:block/dreadlog_top",
-    "side": "coreascension:block/dreadlog"
+    "end": "coreascension:block/dread_log_top",
+    "side": "coreascension:block/dread_log"
   }
 }
