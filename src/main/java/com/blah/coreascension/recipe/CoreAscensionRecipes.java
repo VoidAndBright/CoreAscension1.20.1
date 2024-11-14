@@ -16,6 +16,7 @@ public class CoreAscensionRecipes {
     }
     public static void RegisterRecipes() {
         CoreAscension.LOGGER.info("Registering Recipes for " + CoreAscension.MOD_ID);
+        CoreAscensionPotionsRecipes.registerPotionsRecipes();
         RegisterRecipe("catalyzer", CatalyzerRecipe.Type.INSTANCE, CatalyzerRecipe.Serializer.INSTANCE);
     }
 }

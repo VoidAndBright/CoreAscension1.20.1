@@ -1,4 +1,4 @@
-package com.blah.coreascension.item.potion.effects;
+package com.blah.coreascension.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;

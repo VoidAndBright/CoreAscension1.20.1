@@ -1,10 +1,8 @@
-package com.blah.coreascension.item.potion;
+package com.blah.coreascension.recipe;
 
 import com.blah.coreascension.item.CoreAscensionItems;
-import com.blah.coreascension.item.potion.effects.*;
-import com.blah.coreascension.mixin.PotionMixin;
+import com.blah.coreascension.effects.*;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
@@ -13,7 +11,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class CoreAscensionPotions
+public class CoreAscensionPotionsRecipes
 {
     public static final Potion WARMTH_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "warmth_potion"),
@@ -30,11 +28,6 @@ public class CoreAscensionPotions
     public static final Potion LONG_REPAIRING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "long_repairing_potion"),
                     new Potion(new StatusEffectInstance(new LongRepairingPotionEffect(), 9600, 0)));
-
-    public static void registerPotions()
-    {
-
-    }
 
     public static void registerPotionsRecipes()
     {
