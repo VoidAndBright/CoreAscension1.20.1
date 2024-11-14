@@ -4,6 +4,7 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.item.Items;
 
 public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider {
     public CoreAscensionLootTableProvider(FabricDataOutput dataOutput) {
@@ -198,6 +199,44 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.WHITEWOOD_DOOR, doorDrops(CoreAscensionBlocks.WHITEWOOD_DOOR));
         addDrop(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
         //addDrop(CoreAscensionBlocks.WHITEWOOD_LEAVES, leavesDrops(CoreAscensionBlocks.WHITEWOOD_LEAVES, CoreAscensionBlocks.WHITEWOOD_SAPLING, 0.0025f));
+
+        addDrop(CoreAscensionBlocks.CAKEWOOD_LOG);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_WOOD);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_PLANKS);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_SLAB, slabDrops(CoreAscensionBlocks.CAKEWOOD_SLAB));
+        addDrop(CoreAscensionBlocks.CAKEWOOD_STAIRS);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_FENCE);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_BUTTON);
+        addDrop(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
+        addDrop(CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
+        addDrop(CoreAscensionBlocks.CAKEWOOD_DOOR, doorDrops(CoreAscensionBlocks.CAKEWOOD_DOOR));
+        addDrop(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.CAKESOIL);
+        addDrop(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
+        addDrop(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
+        addDrop(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.FROSTING_GRASS, CoreAscensionBlocks.CAKESOIL);
+        addDrop(CoreAscensionBlocks.RED_GUMDROP);
+        addDrop(CoreAscensionBlocks.YELLOW_GUMDROP);
+        addDrop(CoreAscensionBlocks.GREEN_GUMDROP);
+
+        addDrop(CoreAscensionBlocks.DARK_MATTER_LOG);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_WOOD);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_PLANKS);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_SLAB, slabDrops(CoreAscensionBlocks.DARK_MATTER_SLAB));
+        addDrop(CoreAscensionBlocks.DARK_MATTER_STAIRS);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_FENCE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_BUTTON);
+        addDrop(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
+        addDrop(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_DOOR, doorDrops(CoreAscensionBlocks.DARK_MATTER_DOOR));
+        addDrop(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
+        //addDrop(CoreAscensionBlocks.DARK_MATTER_LEAVES, leavesDrops(CoreAscensionBlocks.DARK_MATTER_LEAVES, CoreAscensionBlocks.DARK_MATTER_SAPLING, 0.0025f));
+        addDropWithSilkTouch(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, CoreAscensionBlocks.DARK_MATTER_STONE);
+        addDrop(CoreAscensionBlocks.DARK_MATTER_STONE);
+
         addDrop(CoreAscensionBlocks.SEASHELL);
         addDrop(CoreAscensionBlocks.CONCH_SHELL);
         addDrop(CoreAscensionBlocks.PRISMAERO);
@@ -226,5 +265,15 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CACTUS_DOOR, doorDrops(CoreAscensionBlocks.CACTUS_DOOR));
         addDrop(CoreAscensionBlocks.CACTUS_TRAPDOOR);
         addDrop(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
+
+        addDrop(CoreAscensionBlocks.CLOUD_COAL_ORE, oreDrops(CoreAscensionBlocks.CLOUD_COAL_ORE, Items.COAL));
+        addDrop(CoreAscensionBlocks.CLOUD_IRON_ORE, oreDrops(CoreAscensionBlocks.CLOUD_IRON_ORE, Items.RAW_IRON));
+        addDrop(CoreAscensionBlocks.CLOUD_GOLD_ORE, oreDrops(CoreAscensionBlocks.CLOUD_GOLD_ORE, Items.RAW_GOLD));
+        addDrop(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, oreDrops(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, Items.DIAMOND));
+        addDrop(CoreAscensionBlocks.CLOUD_EMERALD_ORE, oreDrops(CoreAscensionBlocks.CLOUD_EMERALD_ORE, Items.EMERALD));
+        addDrop(CoreAscensionBlocks.MOONSTONE);
+        addDrop(CoreAscensionBlocks.CLOUD_STONE);
+
+        addDrop(CoreAscensionBlocks.SULPHUR_ORE, oreDrops(CoreAscensionBlocks.SULPHUR_ORE, CoreAscensionItems.SULPHUR));
     }
 }

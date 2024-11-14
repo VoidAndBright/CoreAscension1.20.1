@@ -1,8 +1,13 @@
 {
   "replace": false,
   "values": [
-    "coreascension:cedar_fence_gate",
+    "coreascension:tropics_fence_gate",
     "coreascension:dread_fence_gate",
-    "coreascension:tropics_fence_gate"
+    "coreascension:cedar_fence_gate",
+    "coreascension:cakewood_fence_gate",
+    "coreascension:cactus_fence_gate",
+    "coreascension:ethereal_fence_gate",
+    "coreascension:dark_matter_fence_gate",
+    "coreascension:whitewood_fence_gate"
   ]
 }

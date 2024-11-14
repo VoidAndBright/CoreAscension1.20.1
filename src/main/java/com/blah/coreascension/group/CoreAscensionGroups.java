@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -70,6 +71,17 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
         // -- END TITANIUM --
         entries.add(CoreAscensionBlocks.SAPPHIRE_ORE);
+
+        entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_IRON_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_GOLD_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE);
+        entries.add(CoreAscensionBlocks.CLOUD_EMERALD_ORE);
+        entries.add(CoreAscensionBlocks.MOONSTONE);
+        entries.add(CoreAscensionBlocks.CLOUD_STONE);
+
+        entries.add(CoreAscensionBlocks.SULPHUR_ORE);
+
         entries.add(CoreAscensionBlocks.SAPPHIRE_BLOCK);
         entries.add(CoreAscensionBlocks.BLAZE_BRICK);
         entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
@@ -85,6 +97,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.CEDAR_BUTTON);
         entries.add(CoreAscensionBlocks.CEDAR_DOOR);
         entries.add(CoreAscensionBlocks.CEDAR_TRAPDOOR);
+        entries.add(CoreAscensionItems.CEDAR_SIGN);
+        entries.add(CoreAscensionItems.HANGING_CEDAR_SIGN);
         entries.add(CoreAscensionBlocks.CEDAR_LEAVES);
         entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_WOOD);
@@ -100,6 +114,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.TROPICS_BUTTON);
         entries.add(CoreAscensionBlocks.TROPICS_DOOR);
         entries.add(CoreAscensionBlocks.TROPICS_TRAPDOOR);
+        entries.add(CoreAscensionItems.TROPICS_SIGN);
+        entries.add(CoreAscensionItems.HANGING_TROPICS_SIGN);
         entries.add(CoreAscensionBlocks.TROPICS_LEAVES);
         entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_WOOD);
@@ -130,9 +146,57 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_WOOD);
         entries.add(CoreAscensionBlocks.WHITEWOOD_DOOR);
         entries.add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
+        entries.add(CoreAscensionItems.WHITEWOOD_SIGN);
+        entries.add(CoreAscensionItems.HANGING_WHITEWOOD_SIGN);
         entries.add(CoreAscensionBlocks.SEASHELL);
         entries.add(CoreAscensionBlocks.CONCH_SHELL);
         // -- END TROPICS --
+
+        // -- DARK MATTER --
+        entries.add(CoreAscensionBlocks.DARK_MATTER_LOG);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_WOOD);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_PLANKS);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_SLAB);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_STAIRS);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_FENCE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_BUTTON);
+        entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_WOOD);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_DOOR);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
+        entries.add(CoreAscensionItems.DARK_MATTER_SIGN);
+        entries.add(CoreAscensionItems.HANGING_DARK_MATTER_SIGN);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_STONE);
+        entries.add(CoreAscensionBlocks.DARK_MATTER_LEAVES);
+        entries.add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE);
+        // -- END DARK MATTER --
+
+        // -- CANDYLAND --
+        entries.add(CoreAscensionBlocks.CAKEWOOD_LOG);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_WOOD);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_PLANKS);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_SLAB);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_STAIRS);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_FENCE);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_FENCE_GATE);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_BUTTON);
+        entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
+        entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_DOOR);
+        entries.add(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
+        entries.add(CoreAscensionItems.CAKEWOOD_SIGN);
+        entries.add(CoreAscensionItems.HANGING_CAKEWOOD_SIGN);
+        entries.add(CoreAscensionBlocks.CAKESOIL);
+        entries.add(CoreAscensionBlocks.FROSTING_GRASS);
+        entries.add(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
+        entries.add(CoreAscensionBlocks.RED_GUMDROP);
+        entries.add(CoreAscensionBlocks.YELLOW_GUMDROP);
+        entries.add(CoreAscensionBlocks.GREEN_GUMDROP);
+        // -- END CANDYLAND
+
         // -- DREAD --
         entries.add(CoreAscensionBlocks.DREAD_LOG);
         entries.add(CoreAscensionBlocks.DREAD_WOOD);
@@ -144,6 +208,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.DREAD_BUTTON);
         entries.add(CoreAscensionBlocks.DREAD_DOOR);
         entries.add(CoreAscensionBlocks.DREAD_TRAPDOOR);
+        entries.add(CoreAscensionItems.DREAD_SIGN);
+        entries.add(CoreAscensionItems.HANGING_DREAD_SIGN);
         entries.add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_DREAD_WOOD);
         entries.add(CoreAscensionBlocks.DREAD_SAND);
@@ -179,6 +245,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.ETHEREAL_BUTTON);
         entries.add(CoreAscensionBlocks.ETHEREAL_DOOR);
         entries.add(CoreAscensionBlocks.ETHEREAL_TRAPDOOR);
+        entries.add(CoreAscensionItems.ETHEREAL_SIGN);
+        entries.add(CoreAscensionItems.HANGING_ETHEREAL_SIGN);
         entries.add(CoreAscensionBlocks.ETHEREAL_LEAVES);
         entries.add(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
         entries.add(CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
@@ -256,6 +324,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.CACTUS_BUTTON);
         entries.add(CoreAscensionBlocks.CACTUS_DOOR);
         entries.add(CoreAscensionBlocks.CACTUS_TRAPDOOR);
+        entries.add(CoreAscensionItems.CACTUS_SIGN);
+        entries.add(CoreAscensionItems.HANGING_CACTUS_SIGN);
+
+        entries.add(CoreAscensionBlocks.RAINBOW_MUSHROOM);
     });
     public static final ItemGroup ITEM_GROUP = registerItemGroup("item", CoreAscensionItems.RUBY,(displayContext, entries) -> {
         entries.add(CoreAscensionItems.THE_TOOL);
