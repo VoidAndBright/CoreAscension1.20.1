@@ -24,8 +24,9 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.GRANITE_TILE);
         addDropWithSilkTouch(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS);
-        addDropWithSilkTouch(CoreAscensionBlocks.ETHEREAL_GRASS_BLOCK, CoreAscensionBlocks.ETHEREAL_DIRT);
-        addDropWithSilkTouch(CoreAscensionBlocks.TROPICAL_GRASS_BLOCK, CoreAscensionBlocks.LOAM);
+        addDrop(CoreAscensionBlocks.BORDERLESS_GLASS_PANE);
+        addDropWithSilkTouch(CoreAscensionBlocks.ETHEREAL_GRASS, CoreAscensionBlocks.ETHEREAL_DIRT);
+        addDropWithSilkTouch(CoreAscensionBlocks.TROPICAL_GRASS, CoreAscensionBlocks.LOAM);
         addDrop(CoreAscensionBlocks.TITANIUM_ORE, oreDrops(CoreAscensionBlocks.TITANIUM_ORE, CoreAscensionItems.RAW_TITANIUM));
         addDrop(CoreAscensionBlocks.TITANIUM_STAIRS);
         addDrop(CoreAscensionBlocks.TITANIUM_SLAB, slabDrops(CoreAscensionBlocks.TITANIUM_SLAB));
@@ -61,6 +62,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.BLAZE_BRICK);
         addDrop(CoreAscensionBlocks.REINFORCED_CHEST);
         addDrop(CoreAscensionBlocks.REINFORCED_GLASS);
+        addDrop(CoreAscensionBlocks.REINFORCED_GLASS_PANE);
         addDrop(CoreAscensionBlocks.URANIUM_BLOCK);
         addDrop(CoreAscensionBlocks.URANIUM_ORE, oreDrops(CoreAscensionBlocks.URANIUM_ORE, CoreAscensionItems.RAW_URANIUM));
         addDrop(CoreAscensionBlocks.CEDAR_LOG);
@@ -275,5 +277,60 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CLOUD_STONE);
 
         addDrop(CoreAscensionBlocks.SULPHUR_ORE, oreDrops(CoreAscensionBlocks.SULPHUR_ORE, CoreAscensionItems.SULPHUR));
+
+
+        // nether core
+        addDrop(CoreAscensionBlocks.NETHERFROST);
+        addDrop(CoreAscensionBlocks.CORELIGHT);
+        addDrop(CoreAscensionBlocks.PERMA_ICE);
+        addDrop(CoreAscensionBlocks.NETHER_ICE);
+
+        addDrop(CoreAscensionBlocks.FROST_STEM);
+        addDrop(CoreAscensionBlocks.FROST_HYPHAE);
+        addDrop(CoreAscensionBlocks.FROST_PLANKS);
+        addDrop(CoreAscensionBlocks.FROST_SLAB, slabDrops(CoreAscensionBlocks.FROST_SLAB));
+        addDrop(CoreAscensionBlocks.FROST_STAIRS);
+        addDrop(CoreAscensionBlocks.FROST_FENCE);
+        addDrop(CoreAscensionBlocks.FROST_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.FROST_BUTTON);
+        addDrop(CoreAscensionBlocks.STRIPPED_FROST_STEM);
+        addDrop(CoreAscensionBlocks.STRIPPED_FROST_HYPHAE);
+        addDrop(CoreAscensionBlocks.FROST_DOOR, doorDrops(CoreAscensionBlocks.FROST_DOOR));
+        addDrop(CoreAscensionBlocks.FROST_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.CORE_VINES);
+        addDrop(CoreAscensionBlocks.CORE_ROOTS);
+        addDrop(CoreAscensionBlocks.CORE_FUNGUS);
+        addDrop(CoreAscensionBlocks.CORE_WART_BLOCK);
+        addDropWithSilkTouch(CoreAscensionBlocks.CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST);
+
+        addDrop(CoreAscensionBlocks.ENTROPY_STEM);
+        addDrop(CoreAscensionBlocks.ENTROPY_HYPHAE);
+        addDrop(CoreAscensionBlocks.ENTROPY_PLANKS);
+        addDrop(CoreAscensionBlocks.ENTROPY_SLAB, slabDrops(CoreAscensionBlocks.ENTROPY_SLAB));
+        addDrop(CoreAscensionBlocks.ENTROPY_STAIRS);
+        addDrop(CoreAscensionBlocks.ENTROPY_FENCE);
+        addDrop(CoreAscensionBlocks.ENTROPY_FENCE_GATE);
+        addDrop(CoreAscensionBlocks.ENTROPY_BUTTON);
+//        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
+//        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
+//        addDrop(CoreAscensionBlocks.ENTROPY_DOOR, doorDrops(CoreAscensionBlocks.ENTROPY_DOOR));
+//        addDrop(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.ENTROPIC_VINES);
+        addDrop(CoreAscensionBlocks.ENTROPIC_ICE);
+        addDrop(CoreAscensionBlocks.ENTROPY_WEEDS);
+        addDrop(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
+        addDropWithSilkTouch(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST);
+
+        addDrop(CoreAscensionBlocks.ROCK_SALT);
+
+        addDrop(CoreAscensionBlocks.FROST_SAND);
+        addDrop(CoreAscensionBlocks.FROST_SANDSTONE);
+        addDrop(CoreAscensionBlocks.CHISELED_FROST_SANDSTONE);
+        addDrop(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE);
+        addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE);
+        addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB, slabDrops(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB));
+        addDrop(CoreAscensionBlocks.FROSTED_GLASS);
+        addDrop(CoreAscensionBlocks.FROSTED_GLASS_PANE);
     }
 }

@@ -6,7 +6,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
-import org.apache.logging.log4j.core.Core;
 
 public class CoreAscensionSounds
 {

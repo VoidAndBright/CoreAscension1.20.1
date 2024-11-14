@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "coreascension:block/frostplanks",
-    "top": "coreascension:block/frostplanks",
-    "side": "coreascension:block/frostplanks"
-  }
-}

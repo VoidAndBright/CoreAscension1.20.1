@@ -137,6 +137,21 @@
     "coreascension:cloud_emerald_ore",
     "coreascension:moonstone",
     "coreascension:sulphur_ore",
+    "coreascension:netherfrost",
+    "coreascension:core_nylium",
+    "coreascension:entropic_core_nylium",
+    "coreascension:entropic_ice",
+    "coreascension:rock_salt",
+    "coreascension:frost_sandstone",
+    "coreascension:chiseled_frost_sandstone",
+    "coreascension:smooth_frost_sandstone",
+    "coreascension:cut_frost_sandstone",
+    "coreascension:cut_frost_sandstone_stairs",
+    "coreascension:cut_frost_sandstone_slab",
+    "coreascension:frosted_glass",
+    "coreascension:frosted_glass_pane",
+    "coreascension:perma_ice",
+    "coreascension:nether_ice",
     "coreascension:sapphire_ore"
   ]
 }

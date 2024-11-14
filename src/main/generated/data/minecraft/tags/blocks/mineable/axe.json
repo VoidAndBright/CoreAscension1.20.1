@@ -85,6 +85,26 @@
     "coreascension:stripped_dark_matter_wood",
     "coreascension:dark_matter_door",
     "coreascension:dark_matter_trapdoor",
-    "coreascension:whitewood_trapdoor"
+    "coreascension:whitewood_trapdoor",
+    "coreascension:entropy_stem",
+    "coreascension:entropy_hyphae",
+    "coreascension:entropy_planks",
+    "coreascension:entropy_slab",
+    "coreascension:entropy_stairs",
+    "coreascension:entropy_fence",
+    "coreascension:entropy_fence_gate",
+    "coreascension:entropy_button",
+    "coreascension:frost_stem",
+    "coreascension:frost_hyphae",
+    "coreascension:frost_planks",
+    "coreascension:frost_slab",
+    "coreascension:frost_stairs",
+    "coreascension:frost_fence",
+    "coreascension:frost_fence_gate",
+    "coreascension:frost_button",
+    "coreascension:stripped_frost_stem",
+    "coreascension:stripped_frost_hyphae",
+    "coreascension:frost_door",
+    "coreascension:frost_trapdoor"
   ]
 }

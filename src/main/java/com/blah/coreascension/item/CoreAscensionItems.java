@@ -12,9 +12,12 @@ import com.blah.coreascension.utils.CoreAscensionTags;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -27,7 +30,8 @@ public class CoreAscensionItems {
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",
             new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
     public static final Item ICE_CREAM = registerItem("ice_cream",new Item(new FabricItemSettings()));
-    public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode",new ToolItem(CoreAscensionToolMaterials.SKYLANDS_SWORD,new FabricItemSettings()));
+    public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode",new ToolItem(new FabricItemSettings()));
+    public static final Item NETHER_CORE_KEY = registerItem("nether_core_key",new ToolItem(new FabricItemSettings()));
     public static final Item TERRESTRIAL_CONSTRUCT = registerItem("terrestrial_construct",new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
     public static final Item AERO_FUEL = registerItem("aerofuel",new Item(new FabricItemSettings()));
@@ -187,6 +191,17 @@ public class CoreAscensionItems {
     });
 
     public static final Item VERTEX = registerItem("vertex", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 2, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE),"tooltip.vertex"));
+
+    public static final Item BEDROCK_PICKAXE = registerItem("bedrock_pickaxe",
+            new PickaxeItem(CoreAscensionToolMaterial.BEDROCK, 6, -2.8f, new FabricItemSettings().fireproof())
+            {
+                @Override
+                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+                {
+                    tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.bedrock_pickaxe"))).formatted(Formatting.RED));
+                }
+            });
+
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
