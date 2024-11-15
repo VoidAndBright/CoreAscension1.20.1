@@ -18,6 +18,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.kyrptonaught.customportalapi.CustomPortalBlock;
 import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
@@ -278,6 +279,7 @@ public class CoreAscensionBlocks
 	public static final Block WALL_HANGING_DREAD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dread_wall_hanging_sign"),
 			new TerraformWallHangingSignBlock(DREAD_HANGING_SIGN_TEXTURE, DREAD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
 	// skylands
+	public static final Block SKYLANDS_PORTAL = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL)));
 	// ancient biome
 	public static final Block BONESAND = RegisterBlockItem("bonesand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND).mapColor(MapColor.PALE_YELLOW)));
 	public static final Block BONESANDSTONE = RegisterBlockItem("bonesandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.PALE_YELLOW)));

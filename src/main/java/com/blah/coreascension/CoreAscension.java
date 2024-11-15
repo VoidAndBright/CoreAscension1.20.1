@@ -15,6 +15,7 @@ import com.blah.coreascension.world.CoreAscensionWorldGeneration;
 import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;
 import com.blah.coreascension.world.tree.CoreAscensionTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
+import net.kyrptonaught.customportalapi.CustomPortalBlock;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
@@ -46,6 +47,7 @@ public class CoreAscension implements ModInitializer {
 		CustomPortalBuilder.beginPortal()
 				.frameBlock(Blocks.GLOWSTONE)
 				.lightWithItem(CoreAscensionItems.SKYLANDS_WAYNODE)
+				.customPortalBlock((CustomPortalBlock)CoreAscensionBlocks.SKYLANDS_PORTAL)
 				.destDimID(Identifier.of("coreascension", "skylands"))
 				.tintColor(192, 224,60)
 				.registerPortal();
