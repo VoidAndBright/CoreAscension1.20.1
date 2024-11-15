@@ -19,7 +19,7 @@ public class FreezingEffect extends StatusEffect
     {
         super(StatusEffectCategory.HARMFUL, // whether beneficial or harmful for entities
                 0x00FFFF); // color in RGB
-        Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "freezing"), this);
+        //Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "freezing"), this);
     }
 
     // This method is called every tick to check whether it should apply the status effect or not
@@ -35,9 +35,9 @@ public class FreezingEffect extends StatusEffect
     public void applyUpdateEffect(LivingEntity entity, int amplifier)
     {
         everySecond++;
-        if (everySecond % 60 == 0)
+        if (everySecond % 2 == 0)
         {
-            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2);
+            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * amplifier);
         }
     }
 }

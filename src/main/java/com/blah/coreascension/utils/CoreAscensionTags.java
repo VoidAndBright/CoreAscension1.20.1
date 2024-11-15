@@ -12,6 +12,7 @@ public class CoreAscensionTags {
     public static final TagKey<Block> COOL_SOURCES = RegisterBlockTag("cool_sources");
     public static final TagKey<Block> TOOL_MINEABLE = RegisterBlockTag("tool_mineable");
     public static final TagKey<Block> SCYTHE_MINEABLE = RegisterBlockTag("scythe_mineable");
+    public static final TagKey<Item> GILDED_ARMOR = RegisterItemTag("gilded_armor");
 
 
     private static TagKey<Block> RegisterBlockTag(String name) {

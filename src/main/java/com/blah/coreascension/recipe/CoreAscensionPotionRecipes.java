@@ -17,26 +17,30 @@ public class CoreAscensionPotionRecipes
 {
     public static final Potion WARMTH_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "warmth_potion"),
-                    new Potion(new StatusEffectInstance(new WarmthPotionEffect(), 3600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.WARMTH, 3600, 0)));
     public static final Potion BUILDERS_CURSE_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "builders_curse_potion"),
-                    new Potion(new StatusEffectInstance(new BuildersCurseEffect(), 3600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.BUILDERS_CURSE, 3600, 0)));
     public static final Potion TERRESTRIAL_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "terrestrial_potion"),
-                    new Potion(new StatusEffectInstance(new TerrestrialPotionEffect(), 3600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.TERRESTRIAL, 3600, 0)));
     public static final Potion REPAIRING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "repairing_potion"),
-                    new Potion(new StatusEffectInstance(new RepairingPotionEffect(), 3600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.REPAIRING, 3600, 0)));
     public static final Potion LONG_REPAIRING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "long_repairing_potion"),
-                    new Potion(new StatusEffectInstance(new LongRepairingPotionEffect(), 9600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.LONG_REPAIRING, 9600, 0)));
     public static final Potion JUMP_BOOST_3_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "jump_boost_3_potion"),
                     new Potion(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 3600, 2)));
 
     public static final Potion FREEZING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "freezing_potion"),
-                    new Potion(new StatusEffectInstance(new FreezingEffect(), 3600, 2)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 0)));
+    public static final Potion STRONG_FREEZING_POTION =
+            Registry.register(Registries.POTION, new Identifier("coreascension", "strong_freezing_potion"),
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 2)));
+
 
     public static void registerPotionRecipes()
     {

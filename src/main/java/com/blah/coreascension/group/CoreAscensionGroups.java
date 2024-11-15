@@ -482,6 +482,8 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.URANIUM_AXE);
         entries.add(CoreAscensionItems.URANIUM_SHOVEL);
         entries.add(CoreAscensionItems.URANIUM_HOE);
+
+        entries.add(CoreAscensionItems.BEDROCK_PICKAXE);
         // -- END TOOLS --
 
         entries.add(CoreAscensionItems.PRISMAERO_SHARD);

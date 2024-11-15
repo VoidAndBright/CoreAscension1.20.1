@@ -5,10 +5,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.util.Formatting;
 
 public class VertexSword extends SwordTooltipItem{
     public VertexSword(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, String... tooltip) {
-        super(material, attackDamage, attackSpeed, settings, tooltip);
+        super(material, attackDamage, attackSpeed, settings, Formatting.GRAY, tooltip);
     }
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {

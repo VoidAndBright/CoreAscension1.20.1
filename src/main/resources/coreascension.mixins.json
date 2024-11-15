@@ -6,6 +6,7 @@
     "ExampleMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
+    "PiglinBrainMixin",
     "PotionMixin",
     "TrunkPlacerTypeInvoker"
   ],

@@ -16,7 +16,7 @@ public class LongRepairingPotionEffect extends StatusEffect
     {
         super(StatusEffectCategory.BENEFICIAL, // whether beneficial or harmful for entities
                 0xCC00CC); // color in RGB
-        Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "long_repairing"), this);
+        //Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "long_repairing"), this);
     }
 
     // This method is called every tick to check whether it should apply the status effect or not

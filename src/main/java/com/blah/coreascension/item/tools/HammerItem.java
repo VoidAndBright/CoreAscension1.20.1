@@ -6,6 +6,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -13,8 +14,14 @@ import net.minecraft.world.World;
 public class HammerItem extends PickaxeToolTipItem
 {
 
-    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, String... tooltip) {
-        super(material, attackDamage, attackSpeed, settings,tooltip);
+    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, Formatting color, String... tooltip)
+    {
+        super(material, attackDamage, attackSpeed, settings, color, tooltip);
+    }
+
+    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, String... tooltip)
+    {
+        super(material, attackDamage, attackSpeed, settings, Formatting.WHITE, tooltip);
     }
 
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entity)

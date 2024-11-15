@@ -649,6 +649,8 @@ public class CoreAscensionBlocks
 		StrippableBlockRegistry.register(CoreAscensionBlocks.CAKEWOOD_WOOD, CoreAscensionBlocks.STRIPPED_CAKEWOOD_WOOD);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.ETHEREAL_LOG, CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
 		StrippableBlockRegistry.register(CoreAscensionBlocks.ETHEREAL_WOOD, CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.FROST_STEM, CoreAscensionBlocks.STRIPPED_FROST_STEM);
+		StrippableBlockRegistry.register(CoreAscensionBlocks.FROST_HYPHAE, CoreAscensionBlocks.STRIPPED_FROST_HYPHAE);
 	}
 	private static void RegisterFlammableBlocks()
 	{
