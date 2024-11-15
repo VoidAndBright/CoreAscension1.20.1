@@ -386,6 +386,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.MAGIC_MIRROR);
         entries.add(CoreAscensionItems.SKYLANDS_WAYNODE);
         entries.add(CoreAscensionItems.NETHER_CORE_KEY);
+        entries.add(CoreAscensionItems.OSBORGNEN_FUEL);
         entries.add(CoreAscensionItems.RUBY);
         entries.add(CoreAscensionItems.CITRINE);
         entries.add(CoreAscensionItems.TOPAZ);
@@ -452,6 +453,10 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
         entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
         entries.add(CoreAscensionItems.URANIUM_BOOTS);
+        entries.add(CoreAscensionItems.CRYSTAL_HELMET);
+        entries.add(CoreAscensionItems.CRYSTAL_CHESTPLATE);
+        entries.add(CoreAscensionItems.CRYSTAL_LEGGINGS);
+        entries.add(CoreAscensionItems.CRYSTAL_BOOTS);
         // -- END ARMOR --
 
         // -- TOOLS --

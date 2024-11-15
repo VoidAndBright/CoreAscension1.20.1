@@ -2,6 +2,7 @@ package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.utils.CoreAscensionTags;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -59,6 +60,19 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.ETHEREAL_LEAVES)
                 .add(CoreAscensionBlocks.TROPICS_LEAVES)
                 .add(CoreAscensionBlocks.WHITEWOOD_LEAVES);
+
+        getOrCreateTagBuilder(ConventionalBlockTags.ORES)
+                .add(CoreAscensionBlocks.SULPHUR_ORE)
+                .add(CoreAscensionBlocks.URANIUM_ORE)
+                .add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE)
+                .add(CoreAscensionBlocks.CLOUD_EMERALD_ORE)
+                .add(CoreAscensionBlocks.CLOUD_GOLD_ORE)
+                .add(CoreAscensionBlocks.CLOUD_IRON_ORE)
+                .add(CoreAscensionBlocks.CLOUD_COAL_ORE)
+                .add(CoreAscensionBlocks.SAPPHIRE_ORE)
+                .add(CoreAscensionBlocks.TITANIUM_ORE)
+                .add(CoreAscensionBlocks.ARGON_CRYSTAL_ORE);
+
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(CoreAscensionBlocks.TROPICS_LOG)

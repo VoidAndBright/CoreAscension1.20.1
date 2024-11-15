@@ -5,8 +5,12 @@ import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.event.callback.ItemEntityTickCallback;
 import com.blah.coreascension.event.events.AerofuelFloatEvent;
 import com.blah.coreascension.event.events.EntityItemDropEvent;
+import com.blah.coreascension.event.events.LivingAttackEvent;
+import com.blah.coreascension.event.events.StepUp;
 import com.blah.coreascension.item.CoreAscensionItems;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -27,6 +31,7 @@ public class CoreAscensionEvents
     static int timer = 0;
     public static void RegisterEvents()
     {
+        LivingAttackEvent.EVENT.register(new LivingAttackEvent());
         ItemEntityTickCallback.EVENT.register(new AerofuelFloatEvent());
         PlayerBlockBreakEvents.BEFORE.register((world, playerEntity, blockPos, blockState, blockEntity) ->
         {
@@ -35,6 +40,7 @@ public class CoreAscensionEvents
             //&&
                   //  playerEntity.getMainHandStack().getItem() != CoreAscensionItems.LUMITE_PICKAXE)
         });
+        ClientTickEvents.END_CLIENT_TICK.register(new StepUp());
         AttackBlockCallback.EVENT.register((playerEntity, world, hand, blockPos, direction) ->
         {
            if (playerEntity.getMainHandStack().getItem() == CoreAscensionItems.BEDROCK_PICKAXE &&

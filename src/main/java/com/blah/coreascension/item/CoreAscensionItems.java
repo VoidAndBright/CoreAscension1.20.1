@@ -165,13 +165,23 @@ public class CoreAscensionItems {
             new ExcavatorItem(CoreAscensionToolMaterials.SAPPHIRE_SPECIAL, 7, 1f, new FabricItemSettings()));
 
     public static final Item GILDED_OBSIDIAN_HELMET = registerItem("gilded_obsidian_helmet",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
     public static final Item GILDED_OBSIDIAN_CHESTPLATE = registerItem("gilded_obsidian_chestplate",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
     public static final Item GILDED_OBSIDIAN_LEGGINGS = registerItem("gilded_obsidian_leggings",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
     public static final Item GILDED_OBSIDIAN_BOOTS = registerItem("gilded_obsidian_boots",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+
+    public static final Item CRYSTAL_HELMET = registerItem("crystal_helmet",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.HELMET, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));
+    public static final Item CRYSTAL_CHESTPLATE = registerItem("crystal_chestplate",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));
+    public static final Item CRYSTAL_LEGGINGS = registerItem("crystal_leggings",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));
+    public static final Item CRYSTAL_BOOTS = registerItem("crystal_boots",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.BOOTS, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));
+
 
     public static final Item HEAVENLY_FRAGMENT = registerItem("heavenly_fragment", new Item(new FabricItemSettings().fireproof()));
 
@@ -207,13 +217,17 @@ public class CoreAscensionItems {
 
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof(),
+                    0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_CHESTPLATE = registerItem("tadanite_chestplate",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof(),
+                    0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_LEGGINGS = registerItem("tadanite_leggings",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof(),
+                    0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_BOOTS = registerItem("tadanite_boots",
-            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof(),
+                    0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_PICKAXE = registerItem("tadanite_pickaxe",
             new PickaxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW,"tooltip.tadanite"));
     public static final Item TADANITE_SWORD = registerItem("tadanite_sword",
@@ -289,7 +303,8 @@ public class CoreAscensionItems {
     public static final Item NETHER_MUSHROOM_STEW = registerItem("nether_mushroom_stew", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.NETHER_MUSHROOM_STEW)));
     private static void RegisterFuelItems()
     {
-        FuelRegistry.INSTANCE.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR.asItem(),1);
+        FuelRegistry.INSTANCE.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR.asItem(), 1);
+        FuelRegistry.INSTANCE.add(OSBORGNEN_FUEL, 24);
     }
     public static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), item);
@@ -297,6 +312,6 @@ public class CoreAscensionItems {
 
     public static void RegisterItems() {
         RegisterFuelItems();
-		CoreAscension.LOGGER.info("Registering Items for "+CoreAscension.MOD_ID);
+		CoreAscension.LOGGER.info("Registering Items for " + CoreAscension.MOD_ID);
     }
 }

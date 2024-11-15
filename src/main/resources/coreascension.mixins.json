@@ -3,11 +3,13 @@
   "package": "com.blah.coreascension.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ArrowHitMixin",
+    "BlockBreakMixin",
     "ExampleMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
     "LivingDropsMixin",
-    "MoltenTouchMixin",
+    "LivingEntityAttackMixin",
     "PiglinBrainMixin",
     "PotionMixin",
     "TrunkPlacerTypeInvoker"
