@@ -316,6 +316,11 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionBlocks.PRISMAERO_BRICKS_STAIRS);
         entries.add(CoreAscensionBlocks.PRISMAERO_WALL);
         entries.add(CoreAscensionBlocks.PETRIFIED_WOOD);
+        entries.add(CoreAscensionBlocks.PETRIFIED_WOOD_WALL);
+        entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS);
+        entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_SLAB);
+        entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_STAIRS);
+        entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_WALL);
         entries.add(CoreAscensionBlocks.CACTUS_PLANKS);
         entries.add(CoreAscensionBlocks.CACTUS_SLAB);
         entries.add(CoreAscensionBlocks.CACTUS_STAIRS);
@@ -491,6 +496,7 @@ public class CoreAscensionGroups {
         entries.add(CoreAscensionItems.AERO_FUEL);
         entries.add(CoreAscensionItems.ICE_CREAM);
         entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
+        entries.add(CoreAscensionItems.FOUR_LEAF_CLOVER);
 
         // -- FOOD --
         entries.add(CoreAscensionItems.CALAMARI);

@@ -13,6 +13,7 @@ public class CoreAscensionStatusEffects
     public static final StatusEffect LONG_REPAIRING = new LongRepairingPotionEffect();
     public static final StatusEffect REPAIRING = new RepairingPotionEffect();
     public static final StatusEffect TERRESTRIAL = new TerrestrialPotionEffect();
+    public static final StatusEffect ICY = new IcyEffect();
 
     public static void RegisterStatusEffects()
     {
@@ -22,5 +23,6 @@ public class CoreAscensionStatusEffects
         Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "long_repairing"), LONG_REPAIRING);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "repairing"), REPAIRING);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "terrestrial"), TERRESTRIAL);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "icy"), ICY);
     }
 }

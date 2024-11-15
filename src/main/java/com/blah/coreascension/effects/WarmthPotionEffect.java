@@ -16,7 +16,6 @@ public class WarmthPotionEffect extends StatusEffect
     public WarmthPotionEffect() {
         super(StatusEffectCategory.BENEFICIAL, // whether beneficial or harmful for entities
                 0xFF6600); // color in RGB
-        //Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "ice_resistance"), this);
     }
 
     // This method is called every tick to check whether it should apply the status effect or not

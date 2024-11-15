@@ -6,6 +6,8 @@
     "ExampleMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
+    "LivingDropsMixin",
+    "MoltenTouchMixin",
     "PiglinBrainMixin",
     "PotionMixin",
     "TrunkPlacerTypeInvoker"

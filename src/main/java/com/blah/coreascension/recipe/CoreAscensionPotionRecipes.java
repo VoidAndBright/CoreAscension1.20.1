@@ -33,14 +33,15 @@ public class CoreAscensionPotionRecipes
     public static final Potion JUMP_BOOST_3_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "jump_boost_3_potion"),
                     new Potion(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 3600, 2)));
-
     public static final Potion FREEZING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "freezing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 0)));
     public static final Potion STRONG_FREEZING_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "strong_freezing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 2)));
-
+    public static final Potion ICY_POTION =
+            Registry.register(Registries.POTION, new Identifier("coreascension", "icy_potion"),
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.ICY, 3600, 0)));
 
     public static void registerPotionRecipes()
     {
@@ -50,5 +51,9 @@ public class CoreAscensionPotionRecipes
         BrewingRecipeRegistry.registerPotionRecipe(TERRESTRIAL_POTION, CoreAscensionItems.CRYSTALLINE_ARTIFACT, REPAIRING_POTION);
         BrewingRecipeRegistry.registerPotionRecipe(REPAIRING_POTION, Items.REDSTONE, LONG_REPAIRING_POTION);
         BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, CoreAscensionBlocks.ETHEREAL_MEMBRANE.asItem(), JUMP_BOOST_3_POTION);
+        BrewingRecipeRegistry.registerPotionRecipe(TERRESTRIAL_POTION, CoreAscensionItems.ICE_CREAM, ICY_POTION);
+        BrewingRecipeRegistry.registerPotionRecipe(ICY_POTION, CoreAscensionItems.SULPHUR, FREEZING_POTION);
+        BrewingRecipeRegistry.registerPotionRecipe(FREEZING_POTION, Items.GLOWSTONE, STRONG_FREEZING_POTION);
+        BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, CoreAscensionItems.FOUR_LEAF_CLOVER, Potions.LUCK);
     }
 }

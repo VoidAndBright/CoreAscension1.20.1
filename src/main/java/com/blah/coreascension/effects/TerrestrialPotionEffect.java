@@ -10,9 +10,8 @@ public class TerrestrialPotionEffect extends StatusEffect
 {
     public TerrestrialPotionEffect()
     {
-        super(StatusEffectCategory.BENEFICIAL, // whether beneficial or harmful for entities
+        super(StatusEffectCategory.NEUTRAL, // whether beneficial or harmful for entities
                 0xCCCCCC); // color in RGB
-       // Registry.register(Registries.STATUS_EFFECT, new Identifier("coreascension", "terrestrial"), this);
     }
 
     @Override

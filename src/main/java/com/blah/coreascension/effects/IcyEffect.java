@@ -11,13 +11,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class FreezingEffect extends StatusEffect
+public class IcyEffect extends StatusEffect
 {
-    int everySecond = 0;
-
-    public FreezingEffect()
+    public IcyEffect()
     {
-        super(StatusEffectCategory.HARMFUL, // whether beneficial or harmful for entities
+        super(StatusEffectCategory.NEUTRAL, // whether beneficial or harmful for entities
                 0x00FFFF); // color in RGB
     }
 
@@ -27,16 +25,5 @@ public class FreezingEffect extends StatusEffect
     {
         // In our case, we just make it return true so that it applies the status effect every tick.
         return true;
-    }
-
-    // This method is called when it applies the status effect. We implement custom functionality here.
-    @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier)
-    {
-        everySecond++;
-        if (everySecond % 2 == 0)
-        {
-            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * amplifier);
-        }
     }
 }

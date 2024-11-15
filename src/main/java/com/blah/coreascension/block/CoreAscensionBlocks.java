@@ -322,7 +322,13 @@ public class CoreAscensionBlocks
 			new TerraformWallHangingSignBlock(ETHEREAL_HANGING_SIGN_TEXTURE, ETHEREAL_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
 	// end ethereal glade
 
-	public static final Block RAINBOW_MUSHROOM = RegisterBlockItem("rainbow_mushroom", new PlantBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM).mapColor(MapColor.WHITE)));
+	public static final Block RAINBOW_MUSHROOM = RegisterBlockItem("rainbow_mushroom", new PlantBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM).mapColor(MapColor.WHITE))
+	{
+		public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+		{
+			return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
+		}
+	});
 
 	// cakewood
 	public static final Block CAKESOIL = RegisterBlockItem("cakesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.ORANGE)));
@@ -464,6 +470,12 @@ public class CoreAscensionBlocks
 	});
 	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.PALE_YELLOW)));
 	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
+	public static final Block PETRIFIED_WOOD_WALL = RegisterBlockItem("petrified_wood_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.STONE_GRAY)));
+	public static final Block PETRIFIED_PLANKS = RegisterBlockItem("petrified_planks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
+	public static final Block PETRIFIED_PLANKS_WALL = RegisterBlockItem("petrified_planks_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.LIGHT_GRAY)));
+	public static final Block PETRIFIED_PLANKS_SLAB = RegisterBlockItem("petrified_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
+	public static final Block PETRIFIED_PLANKS_STAIRS = RegisterBlockItem("petrified_planks_stairs", new StairsBlock(PETRIFIED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
+
 	public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_AQUA)));
 	// end misc blocks
 

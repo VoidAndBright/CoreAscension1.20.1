@@ -3,6 +3,7 @@ package com.blah.coreascension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.group.CoreAscensionGroups;
@@ -38,7 +39,7 @@ public class CoreAscension implements ModInitializer {
 		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
 		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
 		CoreAscensionEvents.RegisterEvents();
-
+		CoreAscensionEnchantments.RegisterEnchantments();
 		CoreAscensionStatusEffects.RegisterStatusEffects();
 		//CoreAscensionBoats.registerBoats();
 

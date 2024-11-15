@@ -258,6 +258,11 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.PRISMAERO_WALL);
         addDrop(CoreAscensionBlocks.PRISMAERO_SPAWNER, CoreAscensionBlocks.PRISMAERO_BRICKS.asItem());
         addDrop(CoreAscensionBlocks.PETRIFIED_WOOD);
+        addDrop(CoreAscensionBlocks.PETRIFIED_WOOD_WALL);
+        addDrop(CoreAscensionBlocks.PETRIFIED_PLANKS);
+        addDrop(CoreAscensionBlocks.PETRIFIED_PLANKS_SLAB, slabDrops(CoreAscensionBlocks.PETRIFIED_PLANKS_SLAB));
+        addDrop(CoreAscensionBlocks.PETRIFIED_PLANKS_STAIRS);
+        addDrop(CoreAscensionBlocks.PETRIFIED_PLANKS_WALL);
         addDrop(CoreAscensionBlocks.CACTUS_PLANKS);
         addDrop(CoreAscensionBlocks.CACTUS_SLAB, slabDrops(CoreAscensionBlocks.CACTUS_SLAB));
         addDrop(CoreAscensionBlocks.CACTUS_STAIRS);

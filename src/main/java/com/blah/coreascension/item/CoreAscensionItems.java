@@ -56,7 +56,7 @@ public class CoreAscensionItems {
     public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
     public static final Item SPAWN_EGG = registerItem("poor",new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
-    public static final Item THE_TOOL = registerItem("the_tool", new MiningToolToolTipItem(CoreAscensionToolMaterials.TOOL,0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
+    public static final Item THE_TOOL = registerItem("the_tool", new TheToolToolTipItem(CoreAscensionToolMaterials.TOOL,0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
     public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));
@@ -278,6 +278,9 @@ public class CoreAscensionItems {
     public static final Item POTATO_EXCAVATOR = registerItem("potato_excavator", new ExcavatorItem(CoreAscensionToolMaterials.POTATO, 4, 0.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.potato_tools_1","tooltip.potato_tools_2"));
 
     public static final Item IRON_ROD = registerItem("iron_rod", new Item(new FabricItemSettings()));
+    public static final Item FOUR_LEAF_CLOVER = registerItem("four_leaf_clover", new Item(new FabricItemSettings()));
+    public static final Item ULTIMATE_GAUNTLET = registerItem("ultimate_gauntlet", new Item(new FabricItemSettings().fireproof()));
+    public static final Item OSBORGNEN_FUEL = registerItem("osborgnen_fuel", new Item(new FabricItemSettings().fireproof()));
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));
