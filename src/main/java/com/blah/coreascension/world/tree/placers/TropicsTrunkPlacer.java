@@ -40,7 +40,8 @@ public class TropicsTrunkPlacer extends TrunkPlacer {
         setToDirt(world, replacer, random, startPos.down(), config);
         int TreeHeight = height + random.nextBetween(firstRandomHeight, firstRandomHeight + 2) + random.nextBetween(secondRandomHeight - 1, secondRandomHeight + 1);
 
-        for (int IterateHeight = 0; IterateHeight <= TreeHeight; IterateHeight++) {
+        for (int IterateHeight = 0; IterateHeight <= TreeHeight; IterateHeight++)
+        {
             getAndSetState(world, replacer, random, startPos.up(IterateHeight), config);
         }
         replacer.accept(startPos.up(TreeHeight).offset(Direction.NORTH, 1), (BlockState) Function.identity().apply(config.trunkProvider

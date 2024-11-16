@@ -28,7 +28,8 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
 
     public boolean matches(SimpleInventory inventory, World world)
     {
-        if (world.isClient()) {
+        if (world.isClient())
+        {
             return false;
         }
         return ingredients.get(0).test(inventory.getStack(0)) &&
@@ -80,7 +81,8 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < inputs.size(); i++)
+            {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
@@ -98,7 +100,8 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         public void write(PacketByteBuf buf, CatalyzerRecipe recipe)
         {
             buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ingredient : recipe.getIngredients()) {
+            for (Ingredient ingredient : recipe.getIngredients())
+            {
                 ingredient.write(buf);
             }
             buf.writeItemStack(recipe.getOutput(null));

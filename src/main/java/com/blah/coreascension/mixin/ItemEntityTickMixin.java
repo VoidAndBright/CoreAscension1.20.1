@@ -15,7 +15,8 @@ public abstract class ItemEntityTickMixin {
     {
         ActionResult result = ItemEntityTickCallback.EVENT.invoker().interact((ItemEntity) (Object) this);
 
-        if (result == ActionResult.FAIL) {
+        if (result == ActionResult.FAIL)
+        {
             ci.cancel();
         }
     }

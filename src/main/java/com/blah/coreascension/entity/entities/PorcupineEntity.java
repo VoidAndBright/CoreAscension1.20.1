@@ -63,17 +63,20 @@ public class PorcupineEntity extends AnimalEntity {
     public void tick()
     {
         super.tick();
-        if (this.getWorld().isClient()) {
+        if (this.getWorld().isClient())
+        {
             setupAnimationStates();
         }
     }
 
     private void setupAnimationStates()
     {
-        if (this.idleAnimationTimeout <= 0) {
+        if (this.idleAnimationTimeout <= 0)
+        {
             this.idleAnimationTimeout = this.random.nextInt(40) + 80;
             this.idleAnimationState.start(this.age);
-        } else {
+        } else
+        {
             --this.idleAnimationTimeout;
         }
     }

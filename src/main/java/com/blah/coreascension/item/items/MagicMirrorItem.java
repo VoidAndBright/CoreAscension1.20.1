@@ -35,18 +35,22 @@ public class MagicMirrorItem extends Item {
 
     public ItemStack finishUsing(ItemStack itemStack, World world, LivingEntity user)
     {
-        if (user instanceof PlayerEntity player) {
-            if (world instanceof ServerWorld) {
+        if (user instanceof PlayerEntity player)
+        {
+            if (world instanceof ServerWorld)
+            {
                 MinecraftServer server = player.getServer();
                 ServerPlayerEntity serverPlayer = (ServerPlayerEntity) user;
                 ServerWorld TargetDimension = server.getWorld(serverPlayer.getSpawnPointDimension());
                 Optional<Vec3d> SpawnVec = PlayerEntity.findRespawnPosition(TargetDimension, serverPlayer.getSpawnPointPosition(), serverPlayer.getSpawnAngle(), false, false);
                 serverPlayer.fallDistance = 0F;
                 world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.4f, 1f);
-                if (SpawnVec.isPresent()) {
+                if (SpawnVec.isPresent())
+                {
                     TeleportTarget teleportTarget = new TeleportTarget(SpawnVec.get(), player.getVelocity(), player.getYaw(), player.getPitch());
                     FabricDimensions.teleport(user, TargetDimension, teleportTarget);
-                } else {
+                } else
+                {
                     TargetDimension = server.getWorld(World.OVERWORLD);
                     TeleportTarget teleportTarget = new TeleportTarget(TargetDimension.getSpawnPos().toCenterPos(), player.getVelocity(), player.getYaw(), player.getPitch());
                     FabricDimensions.teleport(user, TargetDimension, teleportTarget);

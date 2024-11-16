@@ -18,21 +18,29 @@ public class LongRepairingPotionEffect extends StatusEffect {
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier)
     {
-        if (entity instanceof PlayerEntity player) {
+        if (entity instanceof PlayerEntity player)
+        {
             everySecond++;
-            if (everySecond >= 60) {
-                for (int i = 0; i < player.getInventory().main.size(); i++) {
-                    if (player.getInventory().main.get(i).getDamage() > 0) {
+            if (everySecond >= 60)
+            {
+                for (int i = 0; i < player.getInventory().main.size(); i++)
+                {
+                    if (player.getInventory().main.get(i).getDamage() > 0)
+                    {
                         player.getInventory().main.get(i).setDamage(player.getInventory().main.get(i).getDamage() - 1);
                     }
                 }
-                for (int i = 0; i < player.getInventory().armor.size(); i++) {
-                    if (player.getInventory().armor.get(i).getDamage() > 0) {
+                for (int i = 0; i < player.getInventory().armor.size(); i++)
+                {
+                    if (player.getInventory().armor.get(i).getDamage() > 0)
+                    {
                         player.getInventory().armor.get(i).setDamage(player.getInventory().armor.get(i).getDamage() - 1);
                     }
                 }
-                for (int i = 0; i < player.getInventory().offHand.size(); i++) {
-                    if (player.getInventory().offHand.get(i).getDamage() > 0) {
+                for (int i = 0; i < player.getInventory().offHand.size(); i++)
+                {
+                    if (player.getInventory().offHand.get(i).getDamage() > 0)
+                    {
                         player.getInventory().offHand.get(i).setDamage(player.getInventory().offHand.get(i).getDamage() - 1);
                     }
                 }

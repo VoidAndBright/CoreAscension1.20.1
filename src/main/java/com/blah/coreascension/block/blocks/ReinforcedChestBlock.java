@@ -48,9 +48,11 @@ public class ReinforcedChestBlock extends BlockWithEntity implements BlockEntity
 
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
     {
-        if (state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock())
+        {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof ReinforcedChestBlockEntity) {
+            if (blockEntity instanceof ReinforcedChestBlockEntity)
+            {
                 ItemScatterer.spawn(world, pos, (ReinforcedChestBlockEntity) blockEntity);
                 world.updateComparators(pos, this);
             }
@@ -60,9 +62,11 @@ public class ReinforcedChestBlock extends BlockWithEntity implements BlockEntity
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
-        if (!world.isClient) {
+        if (!world.isClient)
+        {
             NamedScreenHandlerFactory screenHandlerFactory = (ReinforcedChestBlockEntity) world.getBlockEntity(pos);
-            if (screenHandlerFactory != null) {
+            if (screenHandlerFactory != null)
+            {
                 player.openHandledScreen(screenHandlerFactory);
             }
         }

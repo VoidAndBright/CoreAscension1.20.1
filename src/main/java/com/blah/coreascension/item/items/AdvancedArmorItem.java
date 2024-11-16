@@ -33,7 +33,8 @@ public class AdvancedArmorItem extends ArmorItem {
         super(material, type, settings);
         this.tooltip = tooltips;
         ImmutableMultimap.Builder<CoreAscensionArmorMaterials, StatusEffectInstance> builder = ImmutableMultimap.builder();
-        for (StatusEffect effect : material.getStatusEffects()) {
+        for (StatusEffect effect : material.getStatusEffects())
+        {
             builder.put(material, new StatusEffectInstance(effect, 60, amplifier, false, false));
         }
         this.ArmorSetEffects = builder.build();
@@ -41,23 +42,31 @@ public class AdvancedArmorItem extends ArmorItem {
 
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected)
     {
-        if (!world.isClient()) {
-            if (entity instanceof PlayerEntity player) {
-                if (hasFullSuitOfArmorOn(player)) {
+        if (!world.isClient())
+        {
+            if (entity instanceof PlayerEntity player)
+            {
+                if (hasFullSuitOfArmorOn(player))
+                {
                     evaluateArmorEffects(player);
                 }
-                if (player.getInventory().armor.get(0).getItem() == CoreAscensionItems.CRYSTAL_BOOTS) {
+                if (player.getInventory().armor.get(0).getItem() == CoreAscensionItems.CRYSTAL_BOOTS)
+                {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 60, 0, false, false));
                 }
-                if (player.getInventory().armor.get(1).getItem() == CoreAscensionItems.CRYSTAL_LEGGINGS) {
+                if (player.getInventory().armor.get(1).getItem() == CoreAscensionItems.CRYSTAL_LEGGINGS)
+                {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60, 0, false, false));
                 }
-                if (player.getInventory().armor.get(2).getItem() == CoreAscensionItems.CRYSTAL_CHESTPLATE) {
+                if (player.getInventory().armor.get(2).getItem() == CoreAscensionItems.CRYSTAL_CHESTPLATE)
+                {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 60, 0, false, false));
                 }
-                if (player.getInventory().armor.get(3).getItem() == CoreAscensionItems.CRYSTAL_HELMET) {
+                if (player.getInventory().armor.get(3).getItem() == CoreAscensionItems.CRYSTAL_HELMET)
+                {
                     player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, -1, 0, false, false));
-                } else {
+                } else
+                {
                     player.removeStatusEffect(StatusEffects.NIGHT_VISION);
                 }
             }
@@ -68,7 +77,8 @@ public class AdvancedArmorItem extends ArmorItem {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
     {
-        if (this.tooltip != null) {
+        if (this.tooltip != null)
+        {
             tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.setbonus.armor_set"))).formatted(Formatting.GRAY));
             for (String tooltipLine : this.tooltip)
                 tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, tooltipLine))).formatted(Formatting.BLUE));
@@ -77,8 +87,10 @@ public class AdvancedArmorItem extends ArmorItem {
 
     private boolean hasFullSuitOfArmorOn(PlayerEntity player)
     {
-        for (ItemStack armorStack : player.getInventory().armor) {
-            if (!(armorStack.getItem() instanceof ArmorItem)) {
+        for (ItemStack armorStack : player.getInventory().armor)
+        {
+            if (!(armorStack.getItem() instanceof ArmorItem))
+            {
                 return false;
             }
         }
@@ -88,11 +100,13 @@ public class AdvancedArmorItem extends ArmorItem {
 
     private void evaluateArmorEffects(PlayerEntity player)
     {
-        for (Map.Entry<CoreAscensionArmorMaterials, StatusEffectInstance> entry : ArmorSetEffects.entries()) {
+        for (Map.Entry<CoreAscensionArmorMaterials, StatusEffectInstance> entry : ArmorSetEffects.entries())
+        {
             CoreAscensionArmorMaterials mapArmorMaterial = entry.getKey();
             StatusEffectInstance mapStatusEffect = entry.getValue();
 
-            if (hasCorrectArmorOn(mapArmorMaterial, player)) {
+            if (hasCorrectArmorOn(mapArmorMaterial, player))
+            {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
             }
         }
@@ -100,7 +114,8 @@ public class AdvancedArmorItem extends ArmorItem {
 
     private boolean hasCorrectArmorOn(CoreAscensionArmorMaterials material, PlayerEntity player)
     {
-        if (!hasFullSuitOfArmorOn(player)) {
+        if (!hasFullSuitOfArmorOn(player))
+        {
             return false;
         }
         if (material == CoreAscensionArmorMaterials.TADANITE || material == CoreAscensionArmorMaterials.GILDED_OBSIDIAN) // ||
@@ -108,8 +123,10 @@ public class AdvancedArmorItem extends ArmorItem {
         {
             player.extinguish();
         }
-        for (int iterate = 0; iterate < 4; iterate++) {
-            if (((ArmorItem) player.getInventory().getArmorStack(iterate).getItem()).getMaterial() != material) {
+        for (int iterate = 0; iterate < 4; iterate++)
+        {
+            if (((ArmorItem) player.getInventory().getArmorStack(iterate).getItem()).getMaterial() != material)
+            {
                 return false;
             }
         }
@@ -119,7 +136,8 @@ public class AdvancedArmorItem extends ArmorItem {
     private void addStatusEffectForMaterial(PlayerEntity player, CoreAscensionArmorMaterials mapArmorMaterial, StatusEffectInstance mapStatusEffect)
     {
         boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
-        if (hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
+        if (hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect)
+        {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
         }
     }

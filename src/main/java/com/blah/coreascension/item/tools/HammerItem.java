@@ -24,10 +24,12 @@ public class HammerItem extends PickaxeToolTipItem {
 
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entity)
     {
-        if (entity instanceof PlayerEntity player) {
+        if (entity instanceof PlayerEntity player)
+        {
             for (int xy = -1; xy <= 1; xy++)
                 for (int yz = -1; yz <= 1; yz++)
-                    switch (getLookDirection(player)) {
+                    switch (getLookDirection(player))
+                    {
                         case X -> BreakCorrectBlock(pos.add(0, xy, yz), player, world);
                         case Y -> BreakCorrectBlock(pos.add(xy, 0, yz), player, world);
                         case Z -> BreakCorrectBlock(pos.add(xy, yz, 0), player, world);

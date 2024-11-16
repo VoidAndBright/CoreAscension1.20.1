@@ -36,31 +36,38 @@ public class TropicsFoliagePlacer extends FoliagePlacer {
         // adds leaves
         generateSquare(world, placer, random, config, treeNode.getCenter(), 1 + radius, 1, 1, treeNode.isGiantTrunk());
         generateSquare(world, placer, random, config, treeNode.getCenter(), 1, 1, 1 + radius, treeNode.isGiantTrunk());
-        for (int xz = -radius - 2; xz <= radius + 2; xz += radius * 2 + 4) {
+        for (int xz = -radius - 2; xz <= radius + 2; xz += radius * 2 + 4)
+        {
             // adds tips of first layer of leaves
             placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(xz, 1, 0));
             placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(0, 1, xz));
             // adds second layer of leaves
-            for (int pl = -1; pl <= 1; pl++) {
+            for (int pl = -1; pl <= 1; pl++)
+            {
                 placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(xz, 0, pl));
                 placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(pl, 0, xz));
             }
         }
         // adds tips of leaves
-        for (int xz = -radius - 3; xz <= radius + 3; xz += radius * 2 + 6) {
+        for (int xz = -radius - 3; xz <= radius + 3; xz += radius * 2 + 6)
+        {
             placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(xz, 0, 0));
             placeFoliageBlock(world, placer, random, config, treeNode.getCenter().add(0, 0, xz));
         }
         // place coconuts
-        for (int x = -1; x <= 1; x += 2) {
-            for (int z = -1; z <= 1; z += 2) {
+        for (int x = -1; x <= 1; x += 2)
+        {
+            for (int z = -1; z <= 1; z += 2)
+            {
                 // inner coconuts, higher chance
-                if (random.nextFloat() < 0.33) {
+                if (random.nextFloat() < 0.33)
+                {
                     placer.placeBlock(treeNode.getCenter().add(x, 0, z), CoreAscensionBlocks.COCONUT.getDefaultState());
                 }
             }
             // outer coconuts, lower chance
-            if (random.nextFloat() < 0.2) {
+            if (random.nextFloat() < 0.2)
+            {
                 placer.placeBlock(treeNode.getCenter().add(x * 2, 0, 0), CoreAscensionBlocks.COCONUT.getDefaultState());
                 placer.placeBlock(treeNode.getCenter().add(0, 0, x * 2), CoreAscensionBlocks.COCONUT.getDefaultState());
             }
@@ -70,9 +77,12 @@ public class TropicsFoliagePlacer extends FoliagePlacer {
     protected void generateSquare(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, BlockPos centerPos, int x, int y, int z, boolean giantTrunk)
     {
         int giant = giantTrunk ? 1 : 0;
-        for (int X = -x; X <= x + giant; ++X) {
-            for (int Z = -z; Z <= z + giant; ++Z) {
-                if (!this.isPositionInvalid(random, X, y, Z, (x + z) / 2, giantTrunk)) {
+        for (int X = -x; X <= x + giant; ++X)
+        {
+            for (int Z = -z; Z <= z + giant; ++Z)
+            {
+                if (!this.isPositionInvalid(random, X, y, Z, (x + z) / 2, giantTrunk))
+                {
                     placeFoliageBlock(world, placer, random, config, centerPos.add(X, y, Z));
                 }
             }

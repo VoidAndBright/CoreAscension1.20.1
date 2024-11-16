@@ -33,29 +33,38 @@ public class BlockBreakMixin {
         List<ItemStack> items = new ArrayList<>();
         List<ItemStack> returnValue = cir.getReturnValue();
 
-        if (EnchantmentHelper.getLevel(CoreAscensionEnchantments.MOLTEN_TOUCH, stack) > 0) {
-            for (ItemStack itemStack : returnValue) {
+        if (EnchantmentHelper.getLevel(CoreAscensionEnchantments.MOLTEN_TOUCH, stack) > 0)
+        {
+            for (ItemStack itemStack : returnValue)
+            {
                 var recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(itemStack), world);
-                if (recipe.isPresent()) {
+                if (recipe.isPresent())
+                {
                     ItemStack smelted = recipe.get().getOutput(world.getRegistryManager()).copy();
                     smelted.setCount(itemStack.getCount());
-                    for (int level = 0; level <= EnchantmentHelper.getLevel(Enchantments.FORTUNE, stack); level++) {
+                    for (int level = 0; level <= EnchantmentHelper.getLevel(Enchantments.FORTUNE, stack); level++)
+                    {
                         items.add(smelted);
                         world.spawnEntity(new ExperienceOrbEntity(world, pos.getX(), pos.getY(), pos.getZ(), 3));
                     }
-                } else {
+                } else
+                {
                     items.add(itemStack);
                 }
             }
             cir.setReturnValue(items);
         }
-        if (EnchantmentHelper.getLevel(CoreAscensionEnchantments.EXPERIENCE_BOOST_TOOL, stack) > 0) {
-            for (ItemStack itemStack : returnValue) {
+        if (EnchantmentHelper.getLevel(CoreAscensionEnchantments.EXPERIENCE_BOOST_TOOL, stack) > 0)
+        {
+            for (ItemStack itemStack : returnValue)
+            {
                 // TODO: make this not drop XP for ALL smeltable blocks
                 // TODO: just the ones that smelt into ingots or are things like diamond, emerald, redstone, etc.
                 var recipe = world.getRecipeManager().getFirstMatch(RecipeType.SMELTING, new SimpleInventory(itemStack), world);
-                if (recipe.isPresent()) {
-                    for (int level = 0; level < EnchantmentHelper.getLevel(CoreAscensionEnchantments.EXPERIENCE_BOOST_TOOL, stack); level++) {
+                if (recipe.isPresent())
+                {
+                    for (int level = 0; level < EnchantmentHelper.getLevel(CoreAscensionEnchantments.EXPERIENCE_BOOST_TOOL, stack); level++)
+                    {
                         world.spawnEntity(new ExperienceOrbEntity(world, pos.getX(), pos.getY(), pos.getZ(), 2));
                     }
                 }

@@ -400,124 +400,122 @@ public class CoreAscensionBlocks {
     public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.TERRACOTTA_ORANGE).luminance(6)));
 
 
-	public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
-	public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
-	public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque())
-	{
-		public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
-		{
-			return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
-		}
-	});
-	public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
-	public static final Block PETRIFIED_WOOD_WALL = RegisterBlockItem("petrified_wood_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.STONE_GRAY)));
-	public static final Block PETRIFIED_PLANKS = RegisterBlockItem("petrified_planks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
-	public static final Block PETRIFIED_PLANKS_WALL = RegisterBlockItem("petrified_planks_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.LIGHT_GRAY)));
-	public static final Block PETRIFIED_PLANKS_SLAB = RegisterBlockItem("petrified_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
-	public static final Block PETRIFIED_PLANKS_STAIRS = RegisterBlockItem("petrified_planks_stairs", new StairsBlock(PETRIFIED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
+    public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
+    public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque()) {
+        public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+        {
+            return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
+        }
+    });
+    public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
+    public static final Block PETRIFIED_WOOD_WALL = RegisterBlockItem("petrified_wood_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.STONE_GRAY)));
+    public static final Block PETRIFIED_PLANKS = RegisterBlockItem("petrified_planks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block PETRIFIED_PLANKS_WALL = RegisterBlockItem("petrified_planks_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block PETRIFIED_PLANKS_SLAB = RegisterBlockItem("petrified_planks_slab", new SlabBlock(FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block PETRIFIED_PLANKS_STAIRS = RegisterBlockItem("petrified_planks_stairs", new StairsBlock(PETRIFIED_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(PETRIFIED_PLANKS).mapColor(MapColor.LIGHT_GRAY)));
 
-	public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_AQUA)));
-	// end misc blocks
+    public static final Block ENDER_PEARL_BRICKS = RegisterBlockItem("ender_pearl_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_AQUA)));
+    // end misc blocks
 
-	// stone variants
-	public static final Block IGNEOUS_ROCK = RegisterBlockItem("igneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block SALTROCK = RegisterBlockItem("saltrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block MAGNETITE = RegisterBlockItem("magnetite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block LIMESTONE = RegisterBlockItem("limestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block POLISHED_IGNEOUS_ROCK = RegisterBlockItem("polished_igneous_rock", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block POLISHED_SALTROCK = RegisterBlockItem("polished_saltrock", new Block(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block POLISHED_MAGNETITE = RegisterBlockItem("polished_magnetite", new Block(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block POLISHED_LIMESTONE = RegisterBlockItem("polished_limestone", new Block(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block IGNEOUS_ROCK_TILES = RegisterBlockItem("igneous_rock_tiles", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block SALTROCK_TILES = RegisterBlockItem("saltrock_tiles", new Block(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block MAGNETITE_TILES = RegisterBlockItem("magnetite_tiles", new Block(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block LIMESTONE_TILES = RegisterBlockItem("limestone_tiles", new Block(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block IGNEOUS_ROCK_SLAB = RegisterBlockItem("igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block SALTROCK_SLAB = RegisterBlockItem("saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block MAGNETITE_SLAB = RegisterBlockItem("magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block LIMESTONE_SLAB = RegisterBlockItem("limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block IGNEOUS_ROCK_STAIRS = RegisterBlockItem("igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(),FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block SALTROCK_STAIRS = RegisterBlockItem("saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(),FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block MAGNETITE_STAIRS = RegisterBlockItem("magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(),FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block LIMESTONE_STAIRS = RegisterBlockItem("limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(),FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block IGNEOUS_ROCK_WALL = RegisterBlockItem("igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block SALTROCK_WALL = RegisterBlockItem("saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block MAGNETITE_WALL = RegisterBlockItem("magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block LIMESTONE_WALL = RegisterBlockItem("limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block POLISHED_IGNEOUS_ROCK_SLAB = RegisterBlockItem("polished_igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block POLISHED_SALTROCK_SLAB = RegisterBlockItem("polished_saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block POLISHED_MAGNETITE_SLAB = RegisterBlockItem("polished_magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block POLISHED_LIMESTONE_SLAB = RegisterBlockItem("polished_limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block POLISHED_IGNEOUS_ROCK_STAIRS = RegisterBlockItem("polished_igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(),FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block POLISHED_SALTROCK_STAIRS = RegisterBlockItem("polished_saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(),FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block POLISHED_MAGNETITE_STAIRS = RegisterBlockItem("polished_magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(),FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block POLISHED_LIMESTONE_STAIRS = RegisterBlockItem("polished_limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(),FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	public static final Block POLISHED_IGNEOUS_ROCK_WALL = RegisterBlockItem("polished_igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
-	public static final Block POLISHED_SALTROCK_WALL = RegisterBlockItem("polished_saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
-	public static final Block POLISHED_MAGNETITE_WALL = RegisterBlockItem("polished_magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block POLISHED_LIMESTONE_WALL = RegisterBlockItem("polished_limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
-	// end stone variants
+    // stone variants
+    public static final Block IGNEOUS_ROCK = RegisterBlockItem("igneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block SALTROCK = RegisterBlockItem("saltrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGNETITE = RegisterBlockItem("magnetite", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIMESTONE = RegisterBlockItem("limestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block POLISHED_IGNEOUS_ROCK = RegisterBlockItem("polished_igneous_rock", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block POLISHED_SALTROCK = RegisterBlockItem("polished_saltrock", new Block(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block POLISHED_MAGNETITE = RegisterBlockItem("polished_magnetite", new Block(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POLISHED_LIMESTONE = RegisterBlockItem("polished_limestone", new Block(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block IGNEOUS_ROCK_TILES = RegisterBlockItem("igneous_rock_tiles", new Block(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block SALTROCK_TILES = RegisterBlockItem("saltrock_tiles", new Block(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGNETITE_TILES = RegisterBlockItem("magnetite_tiles", new Block(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIMESTONE_TILES = RegisterBlockItem("limestone_tiles", new Block(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block IGNEOUS_ROCK_SLAB = RegisterBlockItem("igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block SALTROCK_SLAB = RegisterBlockItem("saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGNETITE_SLAB = RegisterBlockItem("magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIMESTONE_SLAB = RegisterBlockItem("limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block IGNEOUS_ROCK_STAIRS = RegisterBlockItem("igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(), FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block SALTROCK_STAIRS = RegisterBlockItem("saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(), FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGNETITE_STAIRS = RegisterBlockItem("magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(), FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIMESTONE_STAIRS = RegisterBlockItem("limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(), FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block IGNEOUS_ROCK_WALL = RegisterBlockItem("igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block SALTROCK_WALL = RegisterBlockItem("saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGNETITE_WALL = RegisterBlockItem("magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LIMESTONE_WALL = RegisterBlockItem("limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block POLISHED_IGNEOUS_ROCK_SLAB = RegisterBlockItem("polished_igneous_rock_slab", new SlabBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block POLISHED_SALTROCK_SLAB = RegisterBlockItem("polished_saltrock_slab", new SlabBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block POLISHED_MAGNETITE_SLAB = RegisterBlockItem("polished_magnetite_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POLISHED_LIMESTONE_SLAB = RegisterBlockItem("polished_limestone_slab", new SlabBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block POLISHED_IGNEOUS_ROCK_STAIRS = RegisterBlockItem("polished_igneous_rock_stairs", new StairsBlock(IGNEOUS_ROCK.getDefaultState(), FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block POLISHED_SALTROCK_STAIRS = RegisterBlockItem("polished_saltrock_stairs", new StairsBlock(SALTROCK.getDefaultState(), FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block POLISHED_MAGNETITE_STAIRS = RegisterBlockItem("polished_magnetite_stairs", new StairsBlock(MAGNETITE.getDefaultState(), FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POLISHED_LIMESTONE_STAIRS = RegisterBlockItem("polished_limestone_stairs", new StairsBlock(LIMESTONE.getDefaultState(), FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    public static final Block POLISHED_IGNEOUS_ROCK_WALL = RegisterBlockItem("polished_igneous_rock_wall", new WallBlock(FabricBlockSettings.copyOf(IGNEOUS_ROCK).mapColor(MapColor.DARK_CRIMSON)));
+    public static final Block POLISHED_SALTROCK_WALL = RegisterBlockItem("polished_saltrock_wall", new WallBlock(FabricBlockSettings.copyOf(SALTROCK).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block POLISHED_MAGNETITE_WALL = RegisterBlockItem("polished_magnetite_wall", new WallBlock(FabricBlockSettings.copyOf(MAGNETITE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block POLISHED_LIMESTONE_WALL = RegisterBlockItem("polished_limestone_wall", new WallBlock(FabricBlockSettings.copyOf(LIMESTONE).mapColor(MapColor.PALE_GREEN)));
+    // end stone variants
 
-	// nether core
-	public static final Block NETHERFROST = RegisterBlockItem("netherfrost", new Block(FabricBlockSettings.copyOf(Blocks.NETHERRACK).mapColor(MapColor.CYAN)));
-	public static final Block CORELIGHT = RegisterBlockItem("corelight", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.BLUE)));
-	public static final Block PERMA_ICE = RegisterBlockItem("perma_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
-	public static final Block NETHER_ICE = RegisterBlockItem("nether_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
+    // nether core
+    public static final Block NETHERFROST = RegisterBlockItem("netherfrost", new Block(FabricBlockSettings.copyOf(Blocks.NETHERRACK).mapColor(MapColor.CYAN)));
+    public static final Block CORELIGHT = RegisterBlockItem("corelight", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.BLUE)));
+    public static final Block PERMA_ICE = RegisterBlockItem("perma_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block NETHER_ICE = RegisterBlockItem("nether_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
 
-	public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
-	public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
-	public static final Block LUMITE_ORE = RegisterBlockItem("lumite_ore", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
+    public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
+    public static final Block LUMITE_ORE = RegisterBlockItem("lumite_ore", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
 
 
-	// core grove
-	public static final Block FROST_STEM = RegisterBlockItem("frost_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_STEM).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block FROST_HYPHAE = RegisterBlockItem("frost_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block FROST_PLANKS = RegisterBlockItem("frost_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.CYAN)));
-	public static final Block FROST_SLAB = RegisterBlockItem("frost_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).mapColor(MapColor.CYAN)));
-	public static final Block FROST_STAIRS = RegisterBlockItem("frost_stairs", new StairsBlock(FROST_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.CYAN)));
-	public static final Block FROST_FENCE = RegisterBlockItem("frost_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).mapColor(MapColor.CYAN)));
-	public static final Block FROST_FENCE_GATE = RegisterBlockItem("frost_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.CYAN), WoodType.OAK));
-	public static final Block FROST_BUTTON = RegisterBlockItem("frost_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-	public static final Block STRIPPED_FROST_STEM= RegisterBlockItem("stripped_frost_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block STRIPPED_FROST_HYPHAE = RegisterBlockItem("stripped_frost_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_HYPHAE).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block FROST_DOOR = RegisterBlockItem("frost_door", new DoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
-	public static final Block FROST_TRAPDOOR = RegisterBlockItem("frost_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
-	public static final Block CORE_NYLIUM = RegisterBlockItem("core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block CORE_VINES = RegisterBlockItem("core_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.PALE_PURPLE)));
-	public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE))
-	{
-		@Override
-		protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
-		{
-			return floor.isOf(CORE_NYLIUM);
-		}
-	});
-	public static final Block CORE_FUNGUS = RegisterBlockItem("core_fungus", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS).mapColor(MapColor.WHITE))
-	{
-		public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
-		{
-			return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
-		}
-		@Override
-		protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
-		{
-			return floor.isOf(CORE_NYLIUM);
-		}
-	});
-	// end core grove
+    // core grove
+    public static final Block FROST_STEM = RegisterBlockItem("frost_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_STEM).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block FROST_HYPHAE = RegisterBlockItem("frost_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block FROST_PLANKS = RegisterBlockItem("frost_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.CYAN)));
+    public static final Block FROST_SLAB = RegisterBlockItem("frost_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).mapColor(MapColor.CYAN)));
+    public static final Block FROST_STAIRS = RegisterBlockItem("frost_stairs", new StairsBlock(FROST_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.CYAN)));
+    public static final Block FROST_FENCE = RegisterBlockItem("frost_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).mapColor(MapColor.CYAN)));
+    public static final Block FROST_FENCE_GATE = RegisterBlockItem("frost_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.CYAN), WoodType.OAK));
+    public static final Block FROST_BUTTON = RegisterBlockItem("frost_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+    public static final Block STRIPPED_FROST_STEM = RegisterBlockItem("stripped_frost_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block STRIPPED_FROST_HYPHAE = RegisterBlockItem("stripped_frost_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_HYPHAE).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block FROST_DOOR = RegisterBlockItem("frost_door", new DoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
+    public static final Block FROST_TRAPDOOR = RegisterBlockItem("frost_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
+    public static final Block CORE_NYLIUM = RegisterBlockItem("core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CORE_VINES = RegisterBlockItem("core_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE)) {
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.isOf(CORE_NYLIUM);
+        }
+    });
+    public static final Block CORE_FUNGUS = RegisterBlockItem("core_fungus", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS).mapColor(MapColor.WHITE)) {
+        public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+        {
+            return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
+        }
 
-	// entropy
-	public static final Block ENTROPY_STEM = RegisterBlockItem("entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_STEM).mapColor(MapColor.WHITE)));
-	public static final Block ENTROPY_HYPHAE = RegisterBlockItem("entropy_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.WHITE)));
-	public static final Block ENTROPY_PLANKS = RegisterBlockItem("entropy_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLACK)));
-	public static final Block ENTROPY_SLAB = RegisterBlockItem("entropy_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).mapColor(MapColor.BLACK)));
-	public static final Block ENTROPY_STAIRS = RegisterBlockItem("entropy_stairs", new StairsBlock(ENTROPY_PLANKS.getDefaultState(),FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLACK)));
-	public static final Block ENTROPY_FENCE = RegisterBlockItem("entropy_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).mapColor(MapColor.BLACK)));
-	public static final Block ENTROPY_FENCE_GATE = RegisterBlockItem("entropy_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.BLACK), WoodType.OAK));
-	public static final Block ENTROPY_BUTTON = RegisterBlockItem("entropy_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
-//	public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.isOf(CORE_NYLIUM);
+        }
+    });
+    // end core grove
+
+    // entropy
+    public static final Block ENTROPY_STEM = RegisterBlockItem("entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_STEM).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPY_HYPHAE = RegisterBlockItem("entropy_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_HYPHAE).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPY_PLANKS = RegisterBlockItem("entropy_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLACK)));
+    public static final Block ENTROPY_SLAB = RegisterBlockItem("entropy_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).mapColor(MapColor.BLACK)));
+    public static final Block ENTROPY_STAIRS = RegisterBlockItem("entropy_stairs", new StairsBlock(ENTROPY_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLACK)));
+    public static final Block ENTROPY_FENCE = RegisterBlockItem("entropy_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).mapColor(MapColor.BLACK)));
+    public static final Block ENTROPY_FENCE_GATE = RegisterBlockItem("entropy_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.BLACK), WoodType.OAK));
+    public static final Block ENTROPY_BUTTON = RegisterBlockItem("entropy_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
+    //	public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
     // end prismaero
     // end skylands
     //	public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
@@ -570,10 +568,9 @@ public class CoreAscensionBlocks {
         return RegisterBlock(name, block);
     }
 
-    private static Block RegisterBlockItem(String name, Block block, FabricItemSettings settings)
+    private static void RegisterItem(String name, Block block)
     {
-        RegisterItem(name, block, settings);
-        return RegisterBlock(name, block);
+        Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, new FabricItemSettings()));
     }
 
     private static Block RegisterBlock(String name, Block block)
@@ -581,9 +578,10 @@ public class CoreAscensionBlocks {
         return Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, name), block);
     }
 
-    private static void RegisterItem(String name, Block block)
+    private static Block RegisterBlockItem(String name, Block block, FabricItemSettings settings)
     {
-        Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, new FabricItemSettings()));
+        RegisterItem(name, block, settings);
+        return RegisterBlock(name, block);
     }
 
     private static void RegisterItem(String name, Block block, FabricItemSettings settings)
@@ -594,7 +592,7 @@ public class CoreAscensionBlocks {
     private static Block OverrideBlockItem(Block OverriddenBlock, Block NewBlock)
     {
         OverrideItem((BlockItem) OverriddenBlock.asItem(), new BlockItem(NewBlock, new FabricItemSettings()));
-        return OverrideBlock(OverriddenBlock,NewBlock);
+        return OverrideBlock(OverriddenBlock, NewBlock);
     }
 
     private static Item OverrideItem(BlockItem OverriddenItem, BlockItem NewItem)

@@ -33,11 +33,14 @@ public class UnderwaterWallTorchBlock extends WallTorchBlock implements Waterlog
         WorldView world = itemPlacementContext.getWorld();
         BlockPos blockPos = itemPlacementContext.getBlockPos();
         Direction[] directions = itemPlacementContext.getPlacementDirections();
-        for (Direction value : directions) {
+        for (Direction value : directions)
+        {
             Direction direction = value.getOpposite();
-            if (direction.getAxis().isHorizontal()) {
+            if (direction.getAxis().isHorizontal())
+            {
                 blockState = blockState.with(FACING, direction);
-                if (blockState.canPlaceAt(world, blockPos)) {
+                if (blockState.canPlaceAt(world, blockPos))
+                {
                     FluidState fluidState = itemPlacementContext.getWorld().getFluidState(blockPos);
                     blockState = blockState.with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
                     return blockState;

@@ -15,7 +15,8 @@ public class ConchShellBlock extends SeashellBlock {
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return switch (state.get(FACING)) {
+        return switch (state.get(FACING))
+        {
             case NORTH -> Block.createCuboidShape(5, 0, 1, 13, 9, 13);
             case EAST -> Block.createCuboidShape(3, 0, 5, 15, 9, 13);
             case WEST -> Block.createCuboidShape(1, 0, 3, 13, 9, 11);

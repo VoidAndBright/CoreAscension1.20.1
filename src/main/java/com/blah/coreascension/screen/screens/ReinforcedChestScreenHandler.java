@@ -36,8 +36,10 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
 
     private void addChestInventory(Inventory Inventory)
     {
-        for (int iterate_x = 0; iterate_x < 13; ++iterate_x) {
-            for (int iterate_y = 0; iterate_y < 6; ++iterate_y) {
+        for (int iterate_x = 0; iterate_x < 13; ++iterate_x)
+        {
+            for (int iterate_y = 0; iterate_y < 6; ++iterate_y)
+            {
                 this.addSlot(new Slot(Inventory, iterate_y * 13 + iterate_x, iterate_x * 18 + 8, iterate_y * 18 + 18));
             }
         }
@@ -45,8 +47,10 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
 
     private void addPlayerInventory(PlayerInventory playerInventory)
     {
-        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
-            for (int iterate_y = 0; iterate_y < 3; ++iterate_y) {
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x)
+        {
+            for (int iterate_y = 0; iterate_y < 3; ++iterate_y)
+            {
                 this.addSlot(new Slot(playerInventory, iterate_x + iterate_y * 9 + 9, iterate_x * 18 + 44, iterate_y * 18 + 140));
             }
         }
@@ -54,7 +58,8 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
 
     private void addPlayerHotbar(PlayerInventory playerInventory)
     {
-        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x)
+        {
             this.addSlot(new Slot(playerInventory, iterate_x, iterate_x * 18 + 44, 3 * 18 + 144));
         }
     }
@@ -73,20 +78,26 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
     {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot.hasStack()) {
+        if (slot.hasStack())
+        {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
-            if (invSlot < this.inventory.size()) {
-                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
+            if (invSlot < this.inventory.size())
+            {
+                if (!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true))
+                {
                     return ItemStack.EMPTY;
                 }
-            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
+            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false))
+            {
                 return ItemStack.EMPTY;
             }
 
-            if (originalStack.isEmpty()) {
+            if (originalStack.isEmpty())
+            {
                 slot.setStack(ItemStack.EMPTY);
-            } else {
+            } else
+            {
                 slot.markDirty();
             }
         }

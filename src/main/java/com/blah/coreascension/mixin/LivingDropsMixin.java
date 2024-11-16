@@ -26,7 +26,8 @@ public abstract class LivingDropsMixin extends Entity {
     private void generateEntityItemDropEvent(DamageSource damageSource, boolean causedByPlayer, CallbackInfo ci, Identifier identifier, LootTable lootTable, LootContextParameterSet.Builder builder, LootContextParameterSet lootContextParameterSet)
     {
         boolean shouldDrop = EntityItemDropCallback.EVENT.invoker().onEntityItemDrop(damageSource, causedByPlayer, lootTable, builder, super.getWorld(), super::dropStack);
-        if (!shouldDrop) {
+        if (!shouldDrop)
+        {
             ci.cancel();
         }
     }

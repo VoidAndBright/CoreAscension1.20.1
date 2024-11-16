@@ -37,8 +37,10 @@ public class UraniumSwordItem extends SwordItem {
     {
         Box box = target.getBoundingBox().expand(8, 3, 8);
         List<Entity> entities = target.getWorld().getOtherEntities(target, box);
-        for (Entity entity : entities) {
-            if (entity instanceof MobEntity && entity != attacker && !(entity instanceof CatEntity || entity instanceof WolfEntity)) {
+        for (Entity entity : entities)
+        {
+            if (entity instanceof MobEntity && entity != attacker && !(entity instanceof CatEntity || entity instanceof WolfEntity))
+            {
                 entity.damage(entity.getDamageSources().playerAttack((PlayerEntity) attacker), 6);
             }
         }

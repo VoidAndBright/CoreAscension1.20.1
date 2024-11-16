@@ -62,9 +62,11 @@ public class PrismaeroFurnaceBlock extends BlockWithEntity {
 
     public void onStateReplaced(BlockState blockState, World world, BlockPos blockPos, BlockState newBlockState, boolean moved)
     {
-        if (!blockState.isOf(newBlockState.getBlock())) {
+        if (!blockState.isOf(newBlockState.getBlock()))
+        {
             BlockEntity blockEntity = world.getBlockEntity(blockPos);
-            if (blockEntity instanceof Inventory) {
+            if (blockEntity instanceof Inventory)
+            {
                 ItemScatterer.spawn(world, blockPos, (Inventory) blockEntity);
                 world.updateComparators(blockPos, this);
             }
@@ -74,9 +76,11 @@ public class PrismaeroFurnaceBlock extends BlockWithEntity {
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
     {
-        if (world.isClient) {
+        if (world.isClient)
+        {
             return ActionResult.SUCCESS;
-        } else {
+        } else
+        {
             NamedScreenHandlerFactory namedScreenHandlerFactory = this.createScreenHandlerFactory(state, world, pos);
             if (namedScreenHandlerFactory != null) player.openHandledScreen(namedScreenHandlerFactory);
             return ActionResult.CONSUME;

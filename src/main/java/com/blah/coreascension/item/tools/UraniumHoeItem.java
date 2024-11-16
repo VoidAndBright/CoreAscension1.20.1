@@ -35,7 +35,8 @@ public class UraniumHoeItem extends HoeTooltipItem {
             for (int x = -1; x < 3; x++)
                 for (int y = -1; y < 3; y++)
                     for (int z = -1; z < 3; z++)
-                        if (world.getBlockState(blockPos.add(x, y, z)).getBlock() == block) {
+                        if (world.getBlockState(blockPos.add(x, y, z)).getBlock() == block)
+                        {
                             world.breakBlock(blockPos.add(x, y, z), true);
                             this.BlocksBroken++;
                             BreakNextBlock(block, world, blockPos.add(x, y, z), Distance + 1);

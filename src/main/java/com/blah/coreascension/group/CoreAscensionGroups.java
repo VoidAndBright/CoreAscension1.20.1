@@ -15,7 +15,8 @@ import net.minecraft.util.Identifier;
 public class CoreAscensionGroups {
     public static void RegisterGroups()
     {
-        registerItemGroup("block_item", CoreAscensionBlocks.BLAZE_BRICK.asItem(), (displayContext, entries) -> {
+        registerItemGroup("block_item", CoreAscensionBlocks.BLAZE_BRICK.asItem(), (displayContext, entries) ->
+        {
             entries.add(CoreAscensionBlocks.ACACIA_POST);
             entries.add(CoreAscensionBlocks.DREAD_POST);
             entries.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR);
@@ -384,7 +385,8 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.FROSTED_GLASS);
             entries.add(CoreAscensionBlocks.FROSTED_GLASS_PANE);
         });
-        registerItemGroup("item",CoreAscensionItems.RUBY, (displayContext, entries) -> {
+        registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
+        {
             entries.add(CoreAscensionItems.THE_TOOL);
             entries.add(CoreAscensionItems.MAGIC_MIRROR);
             entries.add(CoreAscensionItems.SKYLANDS_WAYNODE);
@@ -516,6 +518,7 @@ public class CoreAscensionGroups {
         });
         CoreAscension.LOGGER.info("Registering Item Groups for " + CoreAscension.MOD_ID);
     }
+
     public static void registerItemGroup(String name, Item item, ItemGroup.EntryCollector entries)
     {
         Registry.register(Registries.ITEM_GROUP, new Identifier(CoreAscension.MOD_ID, name), FabricItemGroup.builder().

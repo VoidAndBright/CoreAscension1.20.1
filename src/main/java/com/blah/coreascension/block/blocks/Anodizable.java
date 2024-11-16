@@ -52,7 +52,8 @@ public interface Anodizable extends Degradable<Anodizable.AnodizationLevel> {
     {
         for (Block block_2 = (Block) ANODATION_LEVEL_DECREASES.get().get(block);
              block_2 != null;
-             block_2 = (Block) ANODATION_LEVEL_DECREASES.get().get(block)) {
+             block_2 = (Block) ANODATION_LEVEL_DECREASES.get().get(block))
+        {
             block = block_2;
         }
         return block;
@@ -61,9 +62,12 @@ public interface Anodizable extends Degradable<Anodizable.AnodizationLevel> {
     default void tickAnodization(BlockState state, ServerWorld world, BlockPos pos, Random random)
     {
         boolean heated = false;
-        for (int x = -3; x <= 3; x++) {
-            for (int y = -3; y <= 3; y++) {
-                for (int z = -3; z <= 3; z++) {
+        for (int x = -3; x <= 3; x++)
+        {
+            for (int y = -3; y <= 3; y++)
+            {
+                for (int z = -3; z <= 3; z++)
+                {
                     if (world.getBlockState(pos.add(x, y, z)).isIn(CoreAscensionTags.HEAT_SOURCES)) heated = true;
                 }
             }
