@@ -10,12 +10,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LivingEntity.class)
-public abstract class LivingEntityAttackMixin {
+public abstract class LivingEntityAttackMixin
+{
     @Inject(at = @At(value = "TAIL"), method = "onAttacking", cancellable = true)
     private void onAttacking(Entity target, CallbackInfo ci)
     {
-        ActionResult result = LivingEntityAttackCallback.EVENT.invoker().interact((LivingEntity) target, ((LivingEntity) target).getAttacker());
-        if (result == ActionResult.FAIL)
-            ci.cancel();
+        if (target instanceof LivingEntity entity)
+        {
+            ActionResult result = LivingEntityAttackCallback.EVENT.invoker().interact(entity, entity.getAttacker());
+            if (result == ActionResult.FAIL)
+                ci.cancel();
+        }
     }
 }

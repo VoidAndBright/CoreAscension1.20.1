@@ -31,6 +31,7 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.AMETHYST_WALL);
             entries.add(CoreAscensionBlocks.CORE_SULPHUR_ORE);
             entries.add(CoreAscensionBlocks.TADANITE_ORE);
+            entries.add(CoreAscensionBlocks.LUMITE_ORE);
 
             entries.add(CoreAscensionBlocks.ANDESITE_TILE);
             entries.add(CoreAscensionBlocks.DIORITE_TILE);
@@ -515,6 +516,25 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.MEGA_BERRY);
             entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
             // -- END FOOD --
+
+            // -- BOATS --
+            entries.add(CoreAscensionItems.CACTUS_BOAT);
+            entries.add(CoreAscensionItems.CAKEWOOD_BOAT);
+            entries.add(CoreAscensionItems.CEDAR_BOAT);
+            entries.add(CoreAscensionItems.DARK_MATTER_BOAT);
+            entries.add(CoreAscensionItems.DREAD_BOAT);
+            entries.add(CoreAscensionItems.ETHEREAL_BOAT);
+            entries.add(CoreAscensionItems.TROPICS_BOAT);
+            entries.add(CoreAscensionItems.WHITEWOOD_BOAT);
+            entries.add(CoreAscensionItems.CACTUS_CHEST_BOAT);
+            entries.add(CoreAscensionItems.CAKEWOOD_CHEST_BOAT);
+            entries.add(CoreAscensionItems.CEDAR_CHEST_BOAT);
+            entries.add(CoreAscensionItems.DARK_MATTER_CHEST_BOAT);
+            entries.add(CoreAscensionItems.DREAD_CHEST_BOAT);
+            entries.add(CoreAscensionItems.ETHEREAL_CHEST_BOAT);
+            entries.add(CoreAscensionItems.TROPICS_CHEST_BOAT);
+            entries.add(CoreAscensionItems.WHITEWOOD_CHEST_BOAT);
+            // -- END BOATS --
         });
         CoreAscension.LOGGER.info("Registering Item Groups for " + CoreAscension.MOD_ID);
     }
