@@ -2,6 +2,7 @@ package com.blah.coreascension.event.events;
 
 import com.blah.coreascension.event.callback.ItemEntityTickCallback;
 import com.blah.coreascension.item.CoreAscensionItems;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.ActionResult;
@@ -10,7 +11,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-public class AerofuelFloatEvent implements ItemEntityTickCallback {
+public class AerofuelFloatEvent implements ItemEntityTickCallback, PlayerBlockBreakEvents.Canceled {
     public ActionResult interact(ItemEntity item)
     {
         if (item.getStack().getItem() == CoreAscensionItems.AERO_FUEL)

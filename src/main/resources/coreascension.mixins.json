@@ -5,19 +5,14 @@
   "mixins": [
     "ArrowHitMixin",
     "BlockBreakMixin",
-    "ExampleMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
     "LivingDropsMixin",
-    "LivingEntityAttackMixin",
+    "AttackedEntityMixin",
     "PiglinBrainMixin",
-    "PotionMixin",
     "TrunkPlacerTypeInvoker"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "OnMineMixin"
-  ]
+  }
 }

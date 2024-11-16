@@ -43,7 +43,7 @@ public class CoreAscensionBoats {
     public static final Identifier CACTUS_CHEST_BOAT_ID = new Identifier(CoreAscension.MOD_ID, "cactus_chest_boat");
     public static final RegistryKey<TerraformBoatType> CACTUS_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_BOAT_ID);
 
-    public static void RegisterClientSideBoats()
+    public static void ClientRegisterBoats()
     {
         TerraformBoatClientHelper.registerModelLayers(TROPICS_BOAT_ID, false);
         TerraformBoatClientHelper.registerModelLayers(CEDAR_BOAT_ID, false);
@@ -55,7 +55,7 @@ public class CoreAscensionBoats {
         TerraformBoatClientHelper.registerModelLayers(DARK_MATTER_BOAT_ID, false);
     }
 
-    public static void registerBoats()
+    public static void RegisterBoats()
     {
         TerraformBoatType cedarBoat = new TerraformBoatType.Builder()
                 .item(CoreAscensionItems.CEDAR_BOAT)

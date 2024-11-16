@@ -15,16 +15,19 @@ import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.kyrptonaught.customportalapi.CustomPortalBlock;
 import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
@@ -607,10 +610,13 @@ public class CoreAscensionBlocks
     {
         return Registry.register(Registries.BLOCK, Registries.BLOCK.getRawId(OverriddenBlock), Registries.BLOCK.getId(OverriddenBlock).getPath(), NewBlock);
     }
-
-
+    private static void NaturalTab(FabricItemGroupEntries entries){
+        entries.addAfter(Items.BEDROCK,BEDROCK);
+        entries.addAfter(Items.BEDROCK,CoreAscensionBlocks.BEDROCK);
+    }
     public static void RegisterBlocks()
     {
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(CoreAscensionBlocks::NaturalTab);
         RegisterFlammableBlocks();
         RegisterStrippableBlocks();
         CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);

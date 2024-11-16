@@ -2,16 +2,13 @@ package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.utils.CoreAscensionTags;
+import com.blah.coreascension.utils.FabricTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Blocks;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
-
 import java.util.concurrent.CompletableFuture;
 
 public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagProvider {
@@ -23,43 +20,18 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_8")))
+        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
                 .add(CoreAscensionBlocks.BEDROCK);
 
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
-                .add(Blocks.ACACIA_LEAVES)
-                .add(Blocks.AZALEA_LEAVES)
-                .add(Blocks.BIRCH_LEAVES)
-                .add(Blocks.CHERRY_LEAVES)
-                .add(Blocks.JUNGLE_LEAVES)
-                .add(Blocks.DARK_OAK_LEAVES)
-                .add(Blocks.FLOWERING_AZALEA_LEAVES)
-                .add(Blocks.MANGROVE_LEAVES)
-                .add(Blocks.DARK_OAK_LEAVES)
-                .add(Blocks.SPRUCE_LEAVES)
+                .addTag(BlockTags.LEAVES)
+                .addTag(BlockTags.FLOWERS)
                 .add(Blocks.FERN)
                 .add(Blocks.LARGE_FERN)
                 .add(Blocks.TALL_GRASS)
                 .add(Blocks.TALL_SEAGRASS)
                 .add(Blocks.SEAGRASS)
-                .add(Blocks.CORNFLOWER)
-                .add(Blocks.SUNFLOWER)
-                .add(Blocks.ROSE_BUSH)
-                .add(Blocks.WITHER_ROSE)
-                .add(Blocks.POPPY)
-                .add(Blocks.OXEYE_DAISY)
-                .add(Blocks.DANDELION)
-                .add(Blocks.ALLIUM)
-                .add(Blocks.AZURE_BLUET)
-                .add(Blocks.ORANGE_TULIP)
-                .add(Blocks.PINK_TULIP)
-                .add(Blocks.RED_TULIP)
-                .add(Blocks.WHITE_TULIP)
-                .add(Blocks.BLUE_ORCHID)
-                .add(Blocks.LILY_OF_THE_VALLEY)
                 .add(Blocks.LILY_PAD)
-                .add(Blocks.LILAC)
-                .add(Blocks.PEONY)
                 .add(Blocks.DEAD_BUSH)
                 .add(CoreAscensionBlocks.AMETHYST_GEM_LEAVES)
                 .add(CoreAscensionBlocks.CEDAR_LEAVES)

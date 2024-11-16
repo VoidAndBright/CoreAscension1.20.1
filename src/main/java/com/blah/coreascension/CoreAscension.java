@@ -44,7 +44,7 @@ public class CoreAscension implements ModInitializer {
         CoreAscensionEvents.RegisterEvents();
         CoreAscensionEnchantments.RegisterEnchantments();
         CoreAscensionStatusEffects.RegisterStatusEffects();
-        CoreAscensionBoats.registerBoats();
+        CoreAscensionBoats.RegisterBoats();
 
         CustomPortalBuilder.beginPortal()
                 .frameBlock(Blocks.GLOWSTONE)

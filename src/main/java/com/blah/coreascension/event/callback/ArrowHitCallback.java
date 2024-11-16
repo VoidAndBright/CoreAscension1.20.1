@@ -3,16 +3,16 @@ package com.blah.coreascension.event.callback;
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.EntityHitResult;
 
-public interface LivingEntityAttackCallback {
-    Event<LivingEntityAttackCallback> EVENT = EventFactory.createArrayBacked(LivingEntityAttackCallback.class,
-            (listeners) -> (target, attacker) ->
+public interface ArrowHitCallback {
+    Event<ArrowHitCallback> EVENT = EventFactory.createArrayBacked(ArrowHitCallback.class,
+            (listeners) -> (target,Arrow) ->
             {
-                for (LivingEntityAttackCallback listener : listeners)
+                for (ArrowHitCallback listener : listeners)
                 {
-                    ActionResult result = listener.interact(target, attacker);
+                    ActionResult result = listener.interact(target,Arrow);
                     if (result != ActionResult.PASS)
                     {
                         return result;
@@ -21,5 +21,5 @@ public interface LivingEntityAttackCallback {
                 return ActionResult.PASS;
             });
 
-    ActionResult interact(LivingEntity entity, Entity entity2);
+    ActionResult interact(Entity Arrow, EntityHitResult hit);
 }

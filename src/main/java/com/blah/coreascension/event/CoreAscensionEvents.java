@@ -1,12 +1,10 @@
 package com.blah.coreascension.event;
 
-import com.blah.coreascension.event.events.TeleportDroppedItemsEvent;
 import com.blah.coreascension.event.callback.EntityItemDropCallback;
 import com.blah.coreascension.event.callback.ItemEntityTickCallback;
-import com.blah.coreascension.event.events.AerofuelFloatEvent;
-import com.blah.coreascension.event.events.LivingAttackEvent;
-import com.blah.coreascension.event.events.StepUpEvent;
+import com.blah.coreascension.event.events.*;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 
 public class CoreAscensionEvents {
     public static void RegisterClientEvents()
@@ -16,8 +14,10 @@ public class CoreAscensionEvents {
 
     public static void RegisterEvents()
     {
-        LivingAttackEvent.EVENT.register(new LivingAttackEvent());
+        FlingPuncherEvent.EVENT.register(new FlingPuncherEvent());
         ItemEntityTickCallback.EVENT.register(new AerofuelFloatEvent());
         EntityItemDropCallback.EVENT.register(new TeleportDroppedItemsEvent());
+        AttackBlockCallback.EVENT.register(new PreventBlockBreakingEvent());
+        FlingShooterEvent.EVENT.register(new FlingShooterEvent());
     }
 }
