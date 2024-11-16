@@ -39,7 +39,7 @@ public class SkylandsPortalBlock extends CustomPortalBlock {
                 j = random.nextFloat() * 2.0F * k;
             }
 
-            world.addParticle(ParticleTypes.CRIT, -d, -e, -f, -g, -h, -j);
+            world.addParticle(ParticleTypes.CRIT, d, e, f, g, h, j);
         }
     }
 }

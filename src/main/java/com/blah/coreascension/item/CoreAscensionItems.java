@@ -201,8 +201,7 @@ public class CoreAscensionItems {
     public static final Item VERTEX = registerItem("vertex", new VertexSword(CoreAscensionToolMaterials.SKYLANDS_SWORD, 2, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), "tooltip.vertex"));
 
     public static final Item BEDROCK_PICKAXE = registerItem("bedrock_pickaxe",
-            new PickaxeToolTipItem(CoreAscensionToolMaterials.BEDROCK, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.bedrock_pickaxe"));
-
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.BEDROCK, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.RED, "tooltip.bedrock_pickaxe"));
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof(),

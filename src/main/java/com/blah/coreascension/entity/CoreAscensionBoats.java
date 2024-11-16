@@ -5,6 +5,7 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
@@ -42,6 +43,17 @@ public class CoreAscensionBoats {
     public static final Identifier CACTUS_CHEST_BOAT_ID = new Identifier(CoreAscension.MOD_ID, "cactus_chest_boat");
     public static final RegistryKey<TerraformBoatType> CACTUS_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_BOAT_ID);
 
+    public static void RegisterClientSideBoats()
+    {
+        TerraformBoatClientHelper.registerModelLayers(TROPICS_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(CEDAR_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(WHITEWOOD_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(CACTUS_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(DREAD_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(CAKEWOOD_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(ETHEREAL_BOAT_ID, false);
+        TerraformBoatClientHelper.registerModelLayers(DARK_MATTER_BOAT_ID, false);
+    }
 
     public static void registerBoats()
     {

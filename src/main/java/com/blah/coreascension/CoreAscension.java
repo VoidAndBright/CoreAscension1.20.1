@@ -4,6 +4,7 @@ import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
 import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
+import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.group.CoreAscensionGroups;
@@ -43,7 +44,7 @@ public class CoreAscension implements ModInitializer {
         CoreAscensionEvents.RegisterEvents();
         CoreAscensionEnchantments.RegisterEnchantments();
         CoreAscensionStatusEffects.RegisterStatusEffects();
-        //CoreAscensionBoats.registerBoats();
+        CoreAscensionBoats.registerBoats();
 
         CustomPortalBuilder.beginPortal()
                 .frameBlock(Blocks.GLOWSTONE)

@@ -3,6 +3,7 @@ package com.blah.coreascension;
 import com.blah.coreascension.datagen.CoreAscensionBlockTagProvider;
 import com.blah.coreascension.datagen.CoreAscensionItemTagProvider;
 import com.blah.coreascension.datagen.CoreAscensionLootTableProvider;
+import com.blah.coreascension.datagen.CoreAscensionModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
@@ -13,5 +14,6 @@ public class CoreAscensionDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(CoreAscensionBlockTagProvider::new);
         pack.addProvider(CoreAscensionLootTableProvider::new);
         pack.addProvider(CoreAscensionItemTagProvider::new);
+        pack.addProvider(CoreAscensionModelProvider::new);
     }
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "block/door_bottom_rh",
+  "parent": "minecraft:block/door_bottom_left",
   "textures": {
     "bottom": "coreascension:block/cakewood_door_bottom",
     "top": "coreascension:block/cakewood_door_top"

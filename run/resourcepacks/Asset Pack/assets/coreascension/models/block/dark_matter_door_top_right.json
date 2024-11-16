@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "bottom": "coreascension:block/dark_matter_door_bottom",
+    "top": "coreascension:block/dark_matter_door_top"
+  }
+}

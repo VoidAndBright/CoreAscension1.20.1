@@ -36,10 +36,10 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class CoreAscensionBlocks {
-
+public class CoreAscensionBlocks
+{
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
-    public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal_block", new CustomPortalBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
+    public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE)));
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.LANTERN).mapColor(MapColor.PALE_YELLOW)));
     public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.BRIGHT_RED)));
@@ -303,6 +303,7 @@ public class CoreAscensionBlocks {
             new TerraformWallHangingSignBlock(ETHEREAL_HANGING_SIGN_TEXTURE, ETHEREAL_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final Block RAINBOW_MUSHROOM = RegisterBlockItem("rainbow_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM).mapColor(MapColor.WHITE), null));
     // end ethereal glade
+
     // cakewood
     public static final Block CAKESOIL = RegisterBlockItem("cakesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.ORANGE)));
     public static final Block CAKEWOOD_LOG = RegisterBlockItem("cakewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.WHITE)));
@@ -335,9 +336,10 @@ public class CoreAscensionBlocks {
     public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.RED)));
     public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.YELLOW)));
     public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.GREEN)));
+    // end cakewood
+
     // dark matter
     public static final Block DARK_MATTER_STONE = RegisterBlockItem("dark_matter_stone", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.BLACK).sounds(CoreAscensionSounds.DARK_MATTER_STONE_SOUNDS)));
-    // end cakewood
     public static final Block DARK_MATTER_LOG = RegisterBlockItem("dark_matter_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_PURPLE).sounds(CoreAscensionSounds.DARK_MATTER_WOOD_SOUNDS)));
     public static final Block DARK_MATTER_WOOD = RegisterBlockItem("dark_matter_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_PURPLE).sounds(CoreAscensionSounds.DARK_MATTER_WOOD_SOUNDS)));
     public static final Block DARK_MATTER_PLANKS = RegisterBlockItem("dark_matter_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PURPLE)));
@@ -363,18 +365,20 @@ public class CoreAscensionBlocks {
             new TerraformHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
     public static final Block WALL_HANGING_DARK_MATTER_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dark_matter_wall_hanging_sign"),
             new TerraformWallHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+    // end dark matter
+
     // ores and stone
     public static final Block CLOUD_STONE = RegisterBlockItem("cloud_stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
-    // end dark matter
     public static final Block CLOUD_COAL_ORE = RegisterBlockItem("cloud_coal_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.COAL_ORE).mapColor(MapColor.BLACK), UniformIntProvider.create(0, 2)));
     public static final Block CLOUD_IRON_ORE = RegisterBlockItem("cloud_iron_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).mapColor(MapColor.RAW_IRON_PINK)));
     public static final Block CLOUD_GOLD_ORE = RegisterBlockItem("cloud_gold_ore", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.YELLOW)));
     public static final Block CLOUD_DIAMOND_ORE = RegisterBlockItem("cloud_diamond_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).mapColor(MapColor.DIAMOND_BLUE), UniformIntProvider.create(3, 7)));
     public static final Block CLOUD_EMERALD_ORE = RegisterBlockItem("cloud_emerald_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).mapColor(MapColor.EMERALD_GREEN), UniformIntProvider.create(3, 7)));
     public static final Block MOONSTONE = RegisterBlockItem("moonstone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
+    // end ores and stone
+
     // prismaero
     public static final Block PRISMAERO = RegisterBlockItem("prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE).mapColor(MapColor.PALE_YELLOW)));
-    // end ores and stone
     public static final Block POLISHED_PRISMAERO = RegisterBlockItem("polished_prismaero", new Block(FabricBlockSettings.copyOf(PRISMAERO).mapColor(MapColor.PALE_YELLOW)));
     public static final Block GOLD_PRISMAERO = RegisterBlockItem("gold_prismaero", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE).mapColor(MapColor.YELLOW)));
     public static final Block PRISMAERO_BRICKS = RegisterBlockItem("prismaero_bricks", new Block(FabricBlockSettings.copyOf(Blocks.PRISMARINE).mapColor(MapColor.PALE_YELLOW)));
@@ -396,6 +400,9 @@ public class CoreAscensionBlocks {
             super.onSteppedOn(world, pos, state, entity);
         }
     });
+    // end prismaero
+    // end skylands
+
     // misc blocks
     public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.TERRACOTTA_ORANGE).luminance(6)));
 
@@ -466,7 +473,7 @@ public class CoreAscensionBlocks {
 
     public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
     public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
-    public static final Block LUMITE_ORE = RegisterBlockItem("lumite_ore", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block LUMITE_ORE = RegisterBlockItem("lumite_ore", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).sounds(BlockSoundGroup.NETHER_ORE).mapColor(MapColor.LIGHT_BLUE)));
 
 
     // core grove
@@ -516,9 +523,6 @@ public class CoreAscensionBlocks {
     public static final Block ENTROPY_FENCE_GATE = RegisterBlockItem("entropy_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.BLACK), WoodType.OAK));
     public static final Block ENTROPY_BUTTON = RegisterBlockItem("entropy_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
     //	public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
-    // end prismaero
-    // end skylands
-    //	public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
 //	public static final Block STRIPPED_ENTROPY_HYPHAE = RegisterBlockItem("stripped_entropy_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_HYPHAE).mapColor(MapColor.WHITE)));
 //	public static final Block ENTROPY_DOOR = RegisterBlockItem("entropy_door", new DoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
 //	public static final Block ENTROPY_TRAPDOOR = RegisterBlockItem("entropy_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
@@ -558,7 +562,6 @@ public class CoreAscensionBlocks {
     public static final Block FROSTED_GLASS = RegisterBlockItem("frosted_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
     public static final Block FROSTED_GLASS_PANE = RegisterBlockItem("frosted_glass_pane", new PaneBlock(FabricBlockSettings.copyOf(FROSTED_GLASS)));
     public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(10).mapColor(MapColor.STONE_GRAY)));
-
     // end desert
     // end nether core
 
@@ -755,6 +758,9 @@ public class CoreAscensionBlocks {
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_ICE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());
     }
 
     public static void ClientRegisterColouredBlocks()
