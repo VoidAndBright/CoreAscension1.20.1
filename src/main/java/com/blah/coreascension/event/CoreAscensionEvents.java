@@ -3,10 +3,7 @@ package com.blah.coreascension.event;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.event.callback.ItemEntityTickCallback;
-import com.blah.coreascension.event.events.AerofuelFloatEvent;
-import com.blah.coreascension.event.events.EntityItemDropEvent;
-import com.blah.coreascension.event.events.LivingAttackEvent;
-import com.blah.coreascension.event.events.StepUp;
+import com.blah.coreascension.event.events.*;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
@@ -35,6 +32,7 @@ public class CoreAscensionEvents
     }
     public static void RegisterEvents()
     {
+        //PlayerBlockBreakEvents.BEFORE.register(new OnMineEvent());
         LivingAttackEvent.EVENT.register(new LivingAttackEvent());
         ItemEntityTickCallback.EVENT.register(new AerofuelFloatEvent());
         PlayerBlockBreakEvents.BEFORE.register((world, playerEntity, blockPos, blockState, blockEntity) ->
