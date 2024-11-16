@@ -7,10 +7,14 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 public class TreeSaplingGenerator extends SaplingGenerator {
     RegistryKey<ConfiguredFeature<?, ?>> TREE;
-    public TreeSaplingGenerator(RegistryKey<ConfiguredFeature<?, ?>> tree) {
+
+    public TreeSaplingGenerator(RegistryKey<ConfiguredFeature<?, ?>> tree)
+    {
         this.TREE = tree;
     }
-    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees) {
+
+    protected RegistryKey<ConfiguredFeature<?, ?>> getTreeFeature(Random random, boolean bees)
+    {
         return TREE;
     }
 }

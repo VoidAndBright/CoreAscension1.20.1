@@ -15,11 +15,13 @@ public class CoreAscensionTags {
     public static final TagKey<Item> GILDED_ARMOR = RegisterItemTag("gilded_armor");
 
 
-    private static TagKey<Block> RegisterBlockTag(String name) {
+    private static TagKey<Block> RegisterBlockTag(String name)
+    {
         return TagKey.of(RegistryKeys.BLOCK, new Identifier(CoreAscension.MOD_ID, name));
     }
 
-    private static TagKey<Item> RegisterItemTag(String name) {
+    private static TagKey<Item> RegisterItemTag(String name)
+    {
         return TagKey.of(RegistryKeys.ITEM, new Identifier(CoreAscension.MOD_ID, name));
     }
 }

@@ -8,7 +8,8 @@ import net.minecraft.world.gen.trunk.TrunkPlacerType;
 public class CoreAscensionTrunkPlacerTypes {
     public static final TrunkPlacerType<?> TROPICS_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("tropics_trunk_placer", TropicsTrunkPlacer.CODEC);
 
-    public static void RegisterTrunkPlacers() {
+    public static void RegisterTrunkPlacers()
+    {
         CoreAscension.LOGGER.info("Registering Trunk Placers for " + CoreAscension.MOD_ID);
     }
 }

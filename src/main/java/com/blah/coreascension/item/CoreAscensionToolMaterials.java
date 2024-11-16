@@ -9,14 +9,13 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.function.Supplier;
 
 public enum CoreAscensionToolMaterials implements ToolMaterial {
-    TOOL(1, 0, 10.2f, 4f, 0,
-            null),
+    TOOL(1, 0, 10.2f, 4f, 0, null),
+    BEDROCK(8, 5500, 15f, 8f, 20,
+            () -> Ingredient.ofItems(Blocks.BEDROCK)),
     SAPPHIRE(3, 1203, 10f, 4f, 15,
             () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
     TADANITE(5, 4000, 14f, 3f, 20,
             () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_CRYSTAL)),
-    BEDROCK(8, 5500, 15f, 8f, 20,
-            () -> Ingredient.ofItems(Blocks.BEDROCK)),
     LUMITE(7, 4500, 15f, 8f, 25,
             () -> Ingredient.ofItems(CoreAscensionItems.LUMITE_INGOT)),
     URANIUM(3, 2031, 10f, 4f, 0,
@@ -51,7 +50,8 @@ public enum CoreAscensionToolMaterials implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    CoreAscensionToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attckDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    CoreAscensionToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attckDamage, int enchantability, Supplier<Ingredient> repairIngredient)
+    {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
@@ -61,32 +61,38 @@ public enum CoreAscensionToolMaterials implements ToolMaterial {
     }
 
     @Override
-    public int getDurability() {
+    public int getDurability()
+    {
         return this.itemDurability;
     }
 
     @Override
-    public float getMiningSpeedMultiplier() {
+    public float getMiningSpeedMultiplier()
+    {
         return this.miningSpeed;
     }
 
     @Override
-    public float getAttackDamage() {
+    public float getAttackDamage()
+    {
         return this.attackDamage;
     }
 
     @Override
-    public int getMiningLevel() {
+    public int getMiningLevel()
+    {
         return this.miningLevel;
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantability()
+    {
         return this.enchantability;
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public Ingredient getRepairIngredient()
+    {
         return this.repairIngredient.get();
     }
 }

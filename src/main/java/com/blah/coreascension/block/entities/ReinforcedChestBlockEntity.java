@@ -4,7 +4,9 @@ import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.screen.screens.ReinforcedChestScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.LidOpenable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
@@ -22,63 +24,75 @@ import net.minecraft.util.math.BlockPos;
 public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory, LidOpenable {
     private DefaultedList<ItemStack> inventory;
 
-    public ReinforcedChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
+    public ReinforcedChestBlockEntity(BlockPos pos, BlockState state)
+    {
+        this(CoreAscensionBlockEntities.REINFORCED_CHEST_BLOCK_ENTITY, pos, state);
+    }
+
+    public ReinforcedChestBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState)
+    {
         super(blockEntityType, blockPos, blockState);
         this.inventory = DefaultedList.ofSize(78, ItemStack.EMPTY);
     }
 
-    public ReinforcedChestBlockEntity(BlockPos pos, BlockState state) {
-        this(CoreAscensionBlockEntities.REINFORCED_CHEST_BLOCK_ENTITY, pos, state);
-    }
-
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItems()
+    {
         return inventory;
     }
 
-    public int size() {
+    public int size()
+    {
         return inventory.size();
     }
 
-    public void readNbt(NbtCompound nbt) {
+    public void readNbt(NbtCompound nbt)
+    {
         super.readNbt(nbt);
         this.inventory = DefaultedList.ofSize(this.size(), ItemStack.EMPTY);
         Inventories.readNbt(nbt, this.inventory);
     }
 
-    protected void writeNbt(NbtCompound nbt) {
+    protected void writeNbt(NbtCompound nbt)
+    {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, this.inventory);
     }
 
-    public void onOpen(PlayerEntity player) {
+    public void onOpen(PlayerEntity player)
+    {
         if (!this.removed && !player.isSpectator()) {
             world.playSound(null, pos, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
         }
 
     }
 
-    public void onClose(PlayerEntity player) {
+    public void onClose(PlayerEntity player)
+    {
         if (!this.removed && !player.isSpectator()) {
             world.playSound(null, pos, SoundEvents.BLOCK_CHEST_CLOSE, SoundCategory.BLOCKS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
         }
     }
 
-    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf)
+    {
         buf.writeBlockPos(this.pos);
     }
 
 
-    public Text getDisplayName() {
+    public Text getDisplayName()
+    {
         return Text.translatable("container.reinforced_chest");
     }
 
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
+    {
         return new ReinforcedChestScreenHandler(syncId, playerInventory, this);
     }
 
     @Override
-    public float getAnimationProgress(float tickDelta) {
+    public float getAnimationProgress(float tickDelta)
+    {
         return 0;
     }
 }

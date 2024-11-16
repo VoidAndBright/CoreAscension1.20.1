@@ -4,8 +4,6 @@ import com.blah.coreascension.CoreAscension;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.CatEntity;
 import net.minecraft.entity.passive.WolfEntity;
@@ -28,19 +26,19 @@ public class UraniumSwordItem extends SwordItem {
     {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
+
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium_sword"))).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.uranium_sword"))).formatted(Formatting.GRAY));
     }
+
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
         Box box = target.getBoundingBox().expand(8, 3, 8);
         List<Entity> entities = target.getWorld().getOtherEntities(target, box);
-        for (Entity entity : entities)
-        {
-            if (entity instanceof MobEntity && entity!=attacker && !(entity instanceof CatEntity || entity instanceof WolfEntity))
-            {
+        for (Entity entity : entities) {
+            if (entity instanceof MobEntity && entity != attacker && !(entity instanceof CatEntity || entity instanceof WolfEntity)) {
                 entity.damage(entity.getDamageSources().playerAttack((PlayerEntity) attacker), 6);
             }
         }

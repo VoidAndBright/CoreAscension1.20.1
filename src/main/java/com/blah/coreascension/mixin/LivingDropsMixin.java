@@ -1,6 +1,6 @@
 package com.blah.coreascension.mixin;
 
-import com.blah.coreascension.event.events.EntityItemDropEvent;
+import com.blah.coreascension.event.callback.EntityItemDropCallback;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,15 +17,17 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingDropsMixin extends Entity {
+    public LivingDropsMixin(EntityType<?> type, World world)
+    {
+        super(type, world);
+    }
+
     @Inject(method = "dropLoot", at = @At(value = "INVOKE", target = "Lnet/minecraft/loot/LootTable;generateLoot(Lnet/minecraft/loot/context/LootContextParameterSet;JLjava/util/function/Consumer;)V"), locals = LocalCapture.CAPTURE_FAILSOFT, cancellable = true)
-    private void generateEntityItemDropEvent(DamageSource damageSource, boolean causedByPlayer, CallbackInfo ci, Identifier identifier, LootTable lootTable, LootContextParameterSet.Builder builder, LootContextParameterSet lootContextParameterSet) {
-        boolean shouldDrop = EntityItemDropEvent.EVENT.invoker().onEntityItemDrop(damageSource, causedByPlayer, lootTable, builder, super.getWorld(), super::dropStack);
+    private void generateEntityItemDropEvent(DamageSource damageSource, boolean causedByPlayer, CallbackInfo ci, Identifier identifier, LootTable lootTable, LootContextParameterSet.Builder builder, LootContextParameterSet lootContextParameterSet)
+    {
+        boolean shouldDrop = EntityItemDropCallback.EVENT.invoker().onEntityItemDrop(damageSource, causedByPlayer, lootTable, builder, super.getWorld(), super::dropStack);
         if (!shouldDrop) {
             ci.cancel();
         }
-    }
-
-    public LivingDropsMixin(EntityType<?> type, World world) {
-        super(type, world);
     }
 }

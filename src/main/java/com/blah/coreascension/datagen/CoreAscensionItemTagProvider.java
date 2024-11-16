@@ -10,12 +10,14 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.concurrent.CompletableFuture;
 
 public class CoreAscensionItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public CoreAscensionItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+    public CoreAscensionItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture)
+    {
         super(output, completableFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup arg) {
+    protected void configure(RegistryWrapper.WrapperLookup arg)
+    {
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(CoreAscensionBlocks.CEDAR_PLANKS.asItem())
                 .add(CoreAscensionBlocks.CACTUS_PLANKS.asItem())

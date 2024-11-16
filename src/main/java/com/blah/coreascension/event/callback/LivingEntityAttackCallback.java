@@ -6,15 +6,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ActionResult;
 
-public interface LivingEntityAttackCallback
-{
+public interface LivingEntityAttackCallback {
     Event<LivingEntityAttackCallback> EVENT = EventFactory.createArrayBacked(LivingEntityAttackCallback.class,
             (listeners) -> (target, attacker) ->
             {
                 for (LivingEntityAttackCallback listener : listeners)
                 {
                     ActionResult result = listener.interact(target, attacker);
-                    if(result != ActionResult.PASS)
+                    if (result != ActionResult.PASS)
                     {
                         return result;
                     }

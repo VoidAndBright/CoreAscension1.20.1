@@ -6,57 +6,54 @@ import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.AdvancedArmorItem;
+import com.blah.coreascension.item.items.LighterItem;
 import com.blah.coreascension.item.items.MagicMirrorItem;
 import com.blah.coreascension.item.tools.*;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.*;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Direction;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 
 public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",
             new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
-    public static final Item ICE_CREAM = registerItem("ice_cream",new Item(new FabricItemSettings()));
-    public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode", new Item(new FabricItemSettings().maxDamage(64)));
-    public static final Item NETHER_CORE_KEY = registerItem("nether_core_key", new Item(new FabricItemSettings().maxDamage(64)));
-    public static final Item TERRESTRIAL_CONSTRUCT = registerItem("terrestrial_construct",new Item(new FabricItemSettings()));
-    public static final Item RUBY = registerItem("ruby",new Item(new FabricItemSettings()));
-    public static final Item AERO_FUEL = registerItem("aerofuel",new Item(new FabricItemSettings()));
-    public static final Item RUBY_SHARD = registerItem("ruby_shard",new Item(new FabricItemSettings()));
-    public static final Item CITRINE = registerItem("citrine",new Item(new FabricItemSettings()));
-    public static final Item CITRINE_SHARD = registerItem("citrine_shard",new Item(new FabricItemSettings()));
-    public static final Item TOPAZ = registerItem("topaz",new Item(new FabricItemSettings()));
-    public static final Item TOPAZ_SHARD = registerItem("topaz_shard",new Item(new FabricItemSettings()));
-    public static final Item EMERALD_SHARD = registerItem("emerald_shard",new Item(new FabricItemSettings()));
-    public static final Item DIAMOND_SHARD = registerItem("diamond_shard",new Item(new FabricItemSettings()));
-    public static final Item SAPPHIRE = registerItem("sapphire",new Item(new FabricItemSettings()));
-    public static final Item SAPPHIRE_SHARD = registerItem("sapphire_shard",new Item(new FabricItemSettings()));
-    public static final Item AMETHYST = registerItem("amethyst",new Item(new FabricItemSettings()));
-    public static final Item TADANITE_DIAMOND = registerItem("tadanite_diamond",new Item(new FabricItemSettings().fireproof()));
-    public static final Item TADANITE_CRYSTAL = registerItem("tadanite_crystal",new Item(new FabricItemSettings().fireproof()));
-    public static final Item RAW_TITANIUM = registerItem("raw_titanium",new Item(new FabricItemSettings()));
-    public static final Item TITANIUM_INGOT = registerItem("titanium_ingot",new Item(new FabricItemSettings()));
-    public static final Item SULPHUR = registerItem("sulphur",new Item(new FabricItemSettings()));
-    public static final Item RAW_URANIUM = registerItem("raw_uranium",new Item(new FabricItemSettings().fireproof()));
-    public static final Item URANIUM_INGOT = registerItem("uranium_ingot",new Item(new FabricItemSettings().fireproof()));
-    public static final Item SPAWN_EGG = registerItem("poor",new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
-    public static final Item THE_TOOL = registerItem("the_tool", new TheToolToolTipItem(CoreAscensionToolMaterials.TOOL,0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
+    public static final Item ICE_CREAM = registerItem("ice_cream", new Item(new FabricItemSettings()));
+    public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode", new LighterItem(new FabricItemSettings().maxDamage(5)));
+    public static final Item NETHER_CORE_KEY = registerItem("nether_core_key", new LighterItem(new FabricItemSettings().maxDamage(5)));
+    public static final Item TERRESTRIAL_CONSTRUCT = registerItem("terrestrial_construct", new Item(new FabricItemSettings()));
+    public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
+    public static final Item AERO_FUEL = registerItem("aerofuel", new Item(new FabricItemSettings()));
+    public static final Item RUBY_SHARD = registerItem("ruby_shard", new Item(new FabricItemSettings()));
+    public static final Item CITRINE = registerItem("citrine", new Item(new FabricItemSettings()));
+    public static final Item CITRINE_SHARD = registerItem("citrine_shard", new Item(new FabricItemSettings()));
+    public static final Item TOPAZ = registerItem("topaz", new Item(new FabricItemSettings()));
+    public static final Item TOPAZ_SHARD = registerItem("topaz_shard", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_SHARD = registerItem("emerald_shard", new Item(new FabricItemSettings()));
+    public static final Item DIAMOND_SHARD = registerItem("diamond_shard", new Item(new FabricItemSettings()));
+    public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
+    public static final Item SAPPHIRE_SHARD = registerItem("sapphire_shard", new Item(new FabricItemSettings()));
+    public static final Item AMETHYST = registerItem("amethyst", new Item(new FabricItemSettings()));
+    public static final Item TADANITE_DIAMOND = registerItem("tadanite_diamond", new Item(new FabricItemSettings().fireproof()));
+    public static final Item TADANITE_CRYSTAL = registerItem("tadanite_crystal", new Item(new FabricItemSettings().fireproof()));
+    public static final Item RAW_TITANIUM = registerItem("raw_titanium", new Item(new FabricItemSettings()));
+    public static final Item TITANIUM_INGOT = registerItem("titanium_ingot", new Item(new FabricItemSettings()));
+    public static final Item SULPHUR = registerItem("sulphur", new Item(new FabricItemSettings()));
+    public static final Item RAW_URANIUM = registerItem("raw_uranium", new Item(new FabricItemSettings().fireproof()));
+    public static final Item URANIUM_INGOT = registerItem("uranium_ingot", new Item(new FabricItemSettings().fireproof()));
+    public static final Item SPAWN_EGG = registerItem("poor", new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
+    public static final Item THE_TOOL = registerItem("the_tool", new MiningToolTipItem(CoreAscensionToolMaterials.TOOL, 0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
     public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));
@@ -128,8 +125,8 @@ public class CoreAscensionItems {
     public static final Item CAKEWOOD_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CAKEWOOD_BOAT_ID, CoreAscensionBoats.CAKEWOOD_BOAT_KEY, false);
     public static final Item CAKEWOOD_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(CoreAscensionBoats.CAKEWOOD_CHEST_BOAT_ID, CoreAscensionBoats.CAKEWOOD_BOAT_KEY, true);
 
-    public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterials.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings(), Formatting.WHITE));
-    public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterials.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings(), Formatting.WHITE));
+    public static final Item WOODEN_HAMMER = registerItem("wooden_hammer", new HammerItem(CoreAscensionToolMaterials.WOOD_SPECIAL, 1, 0.4f, new FabricItemSettings()));
+    public static final Item STONE_HAMMER = registerItem("stone_hammer", new HammerItem(CoreAscensionToolMaterials.STONE_SPECIAL, 1, 0.4f, new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
             new HammerItem(CoreAscensionToolMaterials.IRON_SPECIAL, 5, 0.4f, new FabricItemSettings()));
     public static final Item GOLDEN_HAMMER = registerItem("golden_hammer",
@@ -139,7 +136,7 @@ public class CoreAscensionItems {
     public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
             new HammerItem(CoreAscensionToolMaterials.NETHERITE_SPECIAL, 7, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_HAMMER = registerItem("tadanite_hammer",
-            new HammerItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
+            new HammerItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), "tooltip.tadanite"));
     public static final Item LUMITE_HAMMER = registerItem("lumite_hammer",
             new HammerItem(CoreAscensionToolMaterials.LUMITE_SPECIAL, 14, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item SAPPHIRE_HAMMER = registerItem("sapphire_hammer",
@@ -158,7 +155,7 @@ public class CoreAscensionItems {
     public static final Item NETHERITE_EXCAVATOR = registerItem("netherite_excavator",
             new ExcavatorItem(CoreAscensionToolMaterials.NETHERITE_SPECIAL, 2f, 1f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_EXCAVATOR = registerItem("tadanite_excavator",
-            new ExcavatorItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof(), Formatting.YELLOW,"tooltip.tadanite"));
+            new ExcavatorItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item LUMITE_EXCAVATOR = registerItem("lumite_excavator",
             new ExcavatorItem(CoreAscensionToolMaterials.LUMITE_SPECIAL, 6f, 1f, new FabricItemSettings().fireproof()));
     public static final Item SAPPHIRE_EXCAVATOR = registerItem("sapphire_excavator",
@@ -185,8 +182,7 @@ public class CoreAscensionItems {
 
     public static final Item HEAVENLY_FRAGMENT = registerItem("heavenly_fragment", new Item(new FabricItemSettings().fireproof()));
 
-    public static final Item CRIMSON_EDGE = registerItem("crimson_edge", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 4, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), Formatting.GRAY,"tooltip.crimson_edge")
-    {
+    public static final Item CRIMSON_EDGE = registerItem("crimson_edge", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 4, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), Formatting.GRAY, "tooltip.crimson_edge") {
         public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
         {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 60, 1));
@@ -194,8 +190,7 @@ public class CoreAscensionItems {
         }
     });
 
-    public static final Item TITAN_BLADE = registerItem("titan_blade", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 3, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), Formatting.GRAY,"tooltip.titan_blade")
-    {
+    public static final Item TITAN_BLADE = registerItem("titan_blade", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 3, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), Formatting.GRAY, "tooltip.titan_blade") {
         public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
         {
             attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 120, 1));
@@ -203,17 +198,10 @@ public class CoreAscensionItems {
         }
     });
 
-    public static final Item VERTEX = registerItem("vertex", new VertexSword(CoreAscensionToolMaterials.SKYLANDS_SWORD, 2, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE),  "tooltip.vertex"));
+    public static final Item VERTEX = registerItem("vertex", new VertexSword(CoreAscensionToolMaterials.SKYLANDS_SWORD, 2, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), "tooltip.vertex"));
 
     public static final Item BEDROCK_PICKAXE = registerItem("bedrock_pickaxe",
-            new PickaxeItem(CoreAscensionToolMaterials.BEDROCK, -2, -2.8f, new FabricItemSettings().fireproof())
-            {
-                @Override
-                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
-                {
-                    tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.bedrock_pickaxe"))).formatted(Formatting.RED));
-                }
-            });
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.BEDROCK, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.bedrock_pickaxe"));
 
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
@@ -229,15 +217,15 @@ public class CoreAscensionItems {
             new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof(),
                     0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_PICKAXE = registerItem("tadanite_pickaxe",
-            new PickaxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW,"tooltip.tadanite"));
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_SWORD = registerItem("tadanite_sword",
             new SwordItem(CoreAscensionToolMaterials.TADANITE, 8, -2.4f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_AXE = registerItem("tadanite_axe",
-            new AxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 11, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW,"tooltip.tadanite"));
+            new AxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 11, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_SHOVEL = registerItem("tadanite_shovel",
-            new ShovelToolTipItem(CoreAscensionToolMaterials.TADANITE, 4, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW,"tooltip.tadanite"));
+            new ShovelToolTipItem(CoreAscensionToolMaterials.TADANITE, 4, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_HOE = registerItem("tadanite_hoe",
-            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, 2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite","tooltip.tadanite"));
+            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, 2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite", "tooltip.tadanite"));
 
     public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet",
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -288,8 +276,8 @@ public class CoreAscensionItems {
     public static final Item POTATO_HOE = registerItem("potato_hoe",
             new HoeTooltipItem(CoreAscensionToolMaterials.POTATO, 0, -3f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.potato_tools_1", "tooltip.potato_tools_2"));
     public static final Item POTATO_HAMMER = registerItem("potato_hammer",
-            new HammerItem(CoreAscensionToolMaterials.POTATO, 4, 0.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY,"tooltip.potato_tools_1","tooltip.potato_tools_2"));
-    public static final Item POTATO_EXCAVATOR = registerItem("potato_excavator", new ExcavatorItem(CoreAscensionToolMaterials.POTATO, 4, 0.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.potato_tools_1","tooltip.potato_tools_2"));
+            new HammerItem(CoreAscensionToolMaterials.POTATO, 4, 0.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.potato_tools_1", "tooltip.potato_tools_2"));
+    public static final Item POTATO_EXCAVATOR = registerItem("potato_excavator", new ExcavatorItem(CoreAscensionToolMaterials.POTATO, 4, 0.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.potato_tools_1", "tooltip.potato_tools_2"));
 
     public static final Item IRON_ROD = registerItem("iron_rod", new Item(new FabricItemSettings()));
     public static final Item FOUR_LEAF_CLOVER = registerItem("four_leaf_clover", new Item(new FabricItemSettings()));
@@ -301,17 +289,21 @@ public class CoreAscensionItems {
     public static final Item COOKED_CALAMARI = registerItem("cooked_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COOKED_CALAMARI)));
     public static final Item MEGA_BERRY = registerItem("mega_berry", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.MEGA_BERRY)));
     public static final Item NETHER_MUSHROOM_STEW = registerItem("nether_mushroom_stew", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.NETHER_MUSHROOM_STEW)));
+
+    public static Item registerItem(String name, Item item)
+    {
+        return Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), item);
+    }
+
+    public static void RegisterItems()
+    {
+        RegisterFuelItems();
+        CoreAscension.LOGGER.info("Registering Items for " + CoreAscension.MOD_ID);
+    }
+
     private static void RegisterFuelItems()
     {
         FuelRegistry.INSTANCE.add(CoreAscensionBlocks.ACACIA_SECRET_DOOR.asItem(), 1);
         FuelRegistry.INSTANCE.add(OSBORGNEN_FUEL, 24);
-    }
-    public static Item registerItem(String name, Item item) {
-		return Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), item);
-	}
-
-    public static void RegisterItems() {
-        RegisterFuelItems();
-		CoreAscension.LOGGER.info("Registering Items for " + CoreAscension.MOD_ID);
     }
 }

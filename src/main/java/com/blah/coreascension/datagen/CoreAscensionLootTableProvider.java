@@ -8,9 +8,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 
 public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider {
-    public CoreAscensionLootTableProvider(FabricDataOutput dataOutput) {
+    public CoreAscensionLootTableProvider(FabricDataOutput dataOutput)
+    {
         super(dataOutput);
     }
+
     @Override
     public void generate()
     {

@@ -23,25 +23,22 @@ classes/
 bin/
 .classpath
 .project
-
 # macos
 
 *.DS_Store
-
+run/resources
+run/.fabric
+run/emi.json
+run/options.txt
+run/usercache.json
+run/mods
+run/saves
+run/screenshots
+run/config
+run/crash-reports
+run/data
+run/logs
 # fabric
-
-run/
-*.fabric
-*config
-*crash-reports
-*data
-*logs
-*mods
-*resources
-*saves
-*options.txt
-*usercache.json
-*screenshots
 
 src/main/generated
 # java

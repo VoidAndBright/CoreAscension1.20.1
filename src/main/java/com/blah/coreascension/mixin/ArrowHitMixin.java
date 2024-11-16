@@ -11,12 +11,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ProjectileEntity.class)
-public abstract class ArrowHitMixin
-{
+public abstract class ArrowHitMixin {
     @Inject(at = @At(value = "HEAD"), method = "onEntityHit", cancellable = true)
     private void onHit(EntityHitResult entityHitResult, CallbackInfo ci)
     {
-        ActionResult result = LivingEntityAttackCallback.EVENT.invoker().interact((LivingEntity)entityHitResult.getEntity(), entityHitResult.getEntity());
+        ActionResult result = LivingEntityAttackCallback.EVENT.invoker().interact((LivingEntity) entityHitResult.getEntity(), entityHitResult.getEntity());
         if (result == ActionResult.FAIL)
             ci.cancel();
     }

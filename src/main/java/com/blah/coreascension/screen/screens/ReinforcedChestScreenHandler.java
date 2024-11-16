@@ -12,16 +12,16 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 
 public class ReinforcedChestScreenHandler extends ScreenHandler {
-    private final Inventory inventory;
     public final ReinforcedChestBlockEntity blockEntity;
+    private final Inventory inventory;
 
-    public ReinforcedChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+    public ReinforcedChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf)
+    {
         this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
     }
-    public boolean canUse(PlayerEntity player) {
-        return this.inventory.canPlayerUse(player);
-    }
-    public ReinforcedChestScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+
+    public ReinforcedChestScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity)
+    {
         super(CoreAscensionScreenHandlers.REINFORCED_CHEST_SCREEN_HANDLER, syncId);
         checkSize(((Inventory) blockEntity), 78);
         this.inventory = ((Inventory) blockEntity);
@@ -33,18 +33,44 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
     }
-    public void onClosed(PlayerEntity player) {
-        super.onClosed(player);
-        this.inventory.onClose(player);
+
+    private void addChestInventory(Inventory Inventory)
+    {
+        for (int iterate_x = 0; iterate_x < 13; ++iterate_x) {
+            for (int iterate_y = 0; iterate_y < 6; ++iterate_y) {
+                this.addSlot(new Slot(Inventory, iterate_y * 13 + iterate_x, iterate_x * 18 + 8, iterate_y * 18 + 18));
+            }
+        }
     }
-    public Inventory getInventory() {
+
+    private void addPlayerInventory(PlayerInventory playerInventory)
+    {
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
+            for (int iterate_y = 0; iterate_y < 3; ++iterate_y) {
+                this.addSlot(new Slot(playerInventory, iterate_x + iterate_y * 9 + 9, iterate_x * 18 + 44, iterate_y * 18 + 140));
+            }
+        }
+    }
+
+    private void addPlayerHotbar(PlayerInventory playerInventory)
+    {
+        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
+            this.addSlot(new Slot(playerInventory, iterate_x, iterate_x * 18 + 44, 3 * 18 + 144));
+        }
+    }
+
+    public Inventory getInventory()
+    {
         return inventory;
     }
 
-    public ItemStack getFirstItem() {
+    public ItemStack getFirstItem()
+    {
         return this.inventory.getStack(0);
     }
-    public ItemStack quickMove(PlayerEntity player, int invSlot) {
+
+    public ItemStack quickMove(PlayerEntity player, int invSlot)
+    {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
         if (slot.hasStack()) {
@@ -68,24 +94,14 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
         return newStack;
     }
 
+    public void onClosed(PlayerEntity player)
+    {
+        super.onClosed(player);
+        this.inventory.onClose(player);
+    }
 
-    private void addChestInventory(Inventory Inventory) {
-        for (int iterate_x = 0; iterate_x < 13; ++iterate_x) {
-            for (int iterate_y = 0; iterate_y < 6; ++iterate_y) {
-                this.addSlot(new Slot(Inventory,iterate_y*13+iterate_x, iterate_x*18+8, iterate_y*18+18));
-            }
-        }
-    }
-    private void addPlayerInventory(PlayerInventory playerInventory) {
-        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
-            for (int iterate_y = 0; iterate_y < 3; ++iterate_y) {
-                this.addSlot(new Slot(playerInventory, iterate_x+iterate_y*9+9, iterate_x*18+44, iterate_y*18+140));
-            }
-        }
-    }
-    private void addPlayerHotbar(PlayerInventory playerInventory) {
-        for (int iterate_x = 0; iterate_x < 9; ++iterate_x) {
-            this.addSlot(new Slot(playerInventory,iterate_x,iterate_x*18+44,3*18+144));
-        }
+    public boolean canUse(PlayerEntity player)
+    {
+        return this.inventory.canPlayerUse(player);
     }
 }

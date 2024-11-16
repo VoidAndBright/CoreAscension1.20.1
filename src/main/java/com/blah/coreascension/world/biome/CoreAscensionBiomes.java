@@ -19,37 +19,40 @@ public class CoreAscensionBiomes {
     public static final RegistryKey<Biome> CLOUD_MOUNTAINS = RegisterKey("cloud_mountains");
     public static final RegistryKey<Biome> PSYCHEDELIC_FIELDS = RegisterKey("psychedelic_fields");
 
-    public static RegistryKey<Biome> RegisterKey(String name) {
+    public static RegistryKey<Biome> RegisterKey(String name)
+    {
         return RegistryKey.of(RegistryKeys.BIOME, new Identifier(CoreAscension.MOD_ID, name));
     }
-    public static void GenerateBiomes(){
+
+    public static void GenerateBiomes()
+    {
         CoreAscensionSurfaceRules.GenerateSurfaceRules();
         BiomePlacement.addOverworld(TROPICS,
                 new MultiNoiseUtil.NoiseHypercube(
-                        MultiNoiseUtil.ParameterRange.of(0.2f,0.55f),
-                        MultiNoiseUtil.ParameterRange.of(0.3f,1.0f),
-                        MultiNoiseUtil.ParameterRange.of(-0.19f,0.55f),
+                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
+                        MultiNoiseUtil.ParameterRange.of(0.3f, 1.0f),
+                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.55f),
                         MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
                         MultiNoiseUtil.ParameterRange.of(0.0f),
-                        MultiNoiseUtil.ParameterRange.of(-1.0f,1.0f),
+                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
         BiomePlacement.addOverworld(VALLEY_OF_THE_DAMNED,
                 new MultiNoiseUtil.NoiseHypercube(
-                        MultiNoiseUtil.ParameterRange.of(0.2f,0.55f),
-                        MultiNoiseUtil.ParameterRange.of(0.1f,0.3f),
-                        MultiNoiseUtil.ParameterRange.of(-0.19f,0.03f),
+                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
+                        MultiNoiseUtil.ParameterRange.of(0.1f, 0.3f),
+                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.03f),
                         MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
                         MultiNoiseUtil.ParameterRange.of(0.0f),
-                        MultiNoiseUtil.ParameterRange.of(-1.0f,1.0f),
+                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
         BiomePlacement.addOverworld(CEDAR_GROVE,
                 new MultiNoiseUtil.NoiseHypercube(
-                        MultiNoiseUtil.ParameterRange.of(0.2f,0.55f),
-                        MultiNoiseUtil.ParameterRange.of(0.1f,0.3f),
-                        MultiNoiseUtil.ParameterRange.of(-0.19f,0.03f),
+                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
+                        MultiNoiseUtil.ParameterRange.of(0.1f, 0.3f),
+                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.03f),
                         MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
                         MultiNoiseUtil.ParameterRange.of(0.0f),
-                        MultiNoiseUtil.ParameterRange.of(-1.0f,1.0f),
+                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
     }
 }

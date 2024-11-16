@@ -18,19 +18,23 @@ import java.util.List;
  * <h2>Reading and writing to tags</h2>
  * Use {@link Inventories#writeNbt(NbtCompound, DefaultedList)} and {@link Inventories#readNbt(NbtCompound, DefaultedList)}
  * on {@linkplain #getItems() the item list}.
- *
+ * <p>
  * License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
+ *
  * @author Juuz
  */
 @FunctionalInterface
 public interface ImplementedInventory extends SidedInventory {
     /**
-     * Gets the item list of this inventory.
-     * Must return the same instance every time it's called.
+     * Creates a new inventory with the size.
      *
-     * @return the item list
+     * @param size the inventory size
+     * @return a new inventory
      */
-    DefaultedList<ItemStack> getItems();
+    static ImplementedInventory ofSize(int size)
+    {
+        return of(DefaultedList.ofSize(size, ItemStack.EMPTY));
+    }
 
     /**
      * Creates an inventory from the item list.
@@ -38,21 +42,10 @@ public interface ImplementedInventory extends SidedInventory {
      * @param items the item list
      * @return a new inventory
      */
-    static ImplementedInventory of(DefaultedList<ItemStack> items) {
+    static ImplementedInventory of(DefaultedList<ItemStack> items)
+    {
         return () -> items;
     }
-
-    /**
-     * Creates a new inventory with the size.
-     *
-     * @param size the inventory size
-     * @return a new inventory
-     */
-    static ImplementedInventory ofSize(int size) {
-        return of(DefaultedList.ofSize(size, ItemStack.EMPTY));
-    }
-
-    // SidedInventory
 
     /**
      * Gets the available slots to automation on the side.
@@ -63,7 +56,8 @@ public interface ImplementedInventory extends SidedInventory {
      * @return the available slots
      */
     @Override
-    default int[] getAvailableSlots(Direction side) {
+    default int[] getAvailableSlots(Direction side)
+    {
         int[] result = new int[getItems().size()];
         for (int i = 0; i < result.length; i++) {
             result[i] = i;
@@ -72,18 +66,29 @@ public interface ImplementedInventory extends SidedInventory {
         return result;
     }
 
+    // SidedInventory
+
+    /**
+     * Gets the item list of this inventory.
+     * Must return the same instance every time it's called.
+     *
+     * @return the item list
+     */
+    DefaultedList<ItemStack> getItems();
+
     /**
      * Returns true if the stack can be inserted in the slot at the side.
      *
      * <p>The default implementation returns true.
      *
-     * @param slot the slot
+     * @param slot  the slot
      * @param stack the stack
-     * @param side the side
+     * @param side  the side
      * @return true if the stack can be inserted
      */
     @Override
-    default boolean canInsert(int slot, ItemStack stack, @Nullable Direction side) {
+    default boolean canInsert(int slot, ItemStack stack, @Nullable Direction side)
+    {
         return true;
     }
 
@@ -92,17 +97,27 @@ public interface ImplementedInventory extends SidedInventory {
      *
      * <p>The default implementation returns true.
      *
-     * @param slot the slot
+     * @param slot  the slot
      * @param stack the stack
-     * @param side the side
+     * @param side  the side
      * @return true if the stack can be extracted
      */
     @Override
-    default boolean canExtract(int slot, ItemStack stack, Direction side) {
+    default boolean canExtract(int slot, ItemStack stack, Direction side)
+    {
         return true;
     }
 
     // Inventory
+
+    /**
+     * Clears {@linkplain #getItems() the item list}}.
+     */
+    @Override
+    default void clear()
+    {
+        getItems().clear();
+    }
 
     /**
      * Returns the inventory size.
@@ -112,7 +127,8 @@ public interface ImplementedInventory extends SidedInventory {
      * @return the inventory size
      */
     @Override
-    default int size() {
+    default int size()
+    {
         return getItems().size();
     }
 
@@ -120,7 +136,8 @@ public interface ImplementedInventory extends SidedInventory {
      * @return true if this inventory has only empty stacks, false otherwise
      */
     @Override
-    default boolean isEmpty() {
+    default boolean isEmpty()
+    {
         for (int i = 0; i < size(); i++) {
             ItemStack stack = getStack(i);
             if (!stack.isEmpty()) {
@@ -138,7 +155,8 @@ public interface ImplementedInventory extends SidedInventory {
      * @return the item in the slot
      */
     @Override
-    default ItemStack getStack(int slot) {
+    default ItemStack getStack(int slot)
+    {
         return getItems().get(slot);
     }
 
@@ -148,12 +166,13 @@ public interface ImplementedInventory extends SidedInventory {
      * <p>(default implementation) If there are less items in the slot than what are requested,
      * takes all items in that slot.
      *
-     * @param slot the slot
+     * @param slot  the slot
      * @param count the item count
      * @return a stack
      */
     @Override
-    default ItemStack removeStack(int slot, int count) {
+    default ItemStack removeStack(int slot, int count)
+    {
         ItemStack result = Inventories.splitStack(getItems(), slot, count);
         if (!result.isEmpty()) {
             markDirty();
@@ -171,7 +190,8 @@ public interface ImplementedInventory extends SidedInventory {
      * @return the removed stack
      */
     @Override
-    default ItemStack removeStack(int slot) {
+    default ItemStack removeStack(int slot)
+    {
         return Inventories.removeStack(getItems(), slot);
     }
 
@@ -181,11 +201,12 @@ public interface ImplementedInventory extends SidedInventory {
      * <p>If the stack is too big for this inventory ({@link Inventory#getMaxCountPerStack()}),
      * it gets resized to this inventory's maximum amount.
      *
-     * @param slot the slot
+     * @param slot  the slot
      * @param stack the stack
      */
     @Override
-    default void setStack(int slot, ItemStack stack) {
+    default void setStack(int slot, ItemStack stack)
+    {
         getItems().set(slot, stack);
         if (stack.getCount() > getMaxCountPerStack()) {
             stack.setCount(getMaxCountPerStack());
@@ -193,21 +214,16 @@ public interface ImplementedInventory extends SidedInventory {
         markDirty();
     }
 
-    /**
-     * Clears {@linkplain #getItems() the item list}}.
-     */
-    @Override
-    default void clear() {
-        getItems().clear();
-    }
 
     @Override
-    default void markDirty() {
+    default void markDirty()
+    {
         // Override if you want behavior.
     }
 
     @Override
-    default boolean canPlayerUse(PlayerEntity player) {
+    default boolean canPlayerUse(PlayerEntity player)
+    {
         return true;
     }
 }

@@ -11,8 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
-public class HammerItem extends PickaxeToolTipItem
-{
+public class HammerItem extends PickaxeToolTipItem {
     public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings, Formatting color, String... tooltip)
     {
         super(material, attackDamage, attackSpeed, settings, color, tooltip);
@@ -25,25 +24,26 @@ public class HammerItem extends PickaxeToolTipItem
 
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity entity)
     {
-        if (entity instanceof PlayerEntity player)
-        {
-            for (int xy = -1; xy <= 1; xy++) for (int yz = -1; yz <= 1; yz++)
-            switch (getLookDirection(player))
-            {
-                case X -> BreakCorrectBlock(pos.add(0,xy,yz), player, world);
-                case Y -> BreakCorrectBlock(pos.add(xy,0,yz), player, world);
-                case Z -> BreakCorrectBlock(pos.add(xy,yz,0), player, world);
-            }
+        if (entity instanceof PlayerEntity player) {
+            for (int xy = -1; xy <= 1; xy++)
+                for (int yz = -1; yz <= 1; yz++)
+                    switch (getLookDirection(player)) {
+                        case X -> BreakCorrectBlock(pos.add(0, xy, yz), player, world);
+                        case Y -> BreakCorrectBlock(pos.add(xy, 0, yz), player, world);
+                        case Z -> BreakCorrectBlock(pos.add(xy, yz, 0), player, world);
+                    }
         }
         return super.postMine(stack, world, state, pos, entity);
     }
+
     public Direction.Axis getLookDirection(PlayerEntity player)
     {
         if (player.getPitch() > 40 || player.getPitch() < -40)
             return Direction.Axis.Y;
         return player.getHorizontalFacing().getAxis();
     }
-    public void BreakCorrectBlock(BlockPos blockPos,PlayerEntity player,World world)
+
+    public void BreakCorrectBlock(BlockPos blockPos, PlayerEntity player, World world)
     {
         BlockState Block = world.getBlockState(blockPos);
         if (Block.isIn(BlockTags.PICKAXE_MINEABLE) && this.canMine(Block, world, blockPos, player))
