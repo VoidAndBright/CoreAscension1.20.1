@@ -19,6 +19,7 @@ public class LivingAttackEvent implements LivingEntityAttackCallback {
             if (player.getInventory().armor.get(2).hasEnchantments() &&
                     enchantLevel > 0)
             {
+                assert attacker != null;
                 if (attacker instanceof ProjectileEntity proj)
                 {
                     if (proj.getOwner() != null && !(proj.getOwner() instanceof PlayerEntity))
