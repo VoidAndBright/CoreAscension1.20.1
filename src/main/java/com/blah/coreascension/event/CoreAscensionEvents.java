@@ -29,6 +29,10 @@ import net.minecraft.util.ActionResult;
 public class CoreAscensionEvents
 {
     static int timer = 0;
+    public static void RegisterClientEvents()
+    {
+        ClientTickEvents.END_CLIENT_TICK.register(new StepUp());
+    }
     public static void RegisterEvents()
     {
         LivingAttackEvent.EVENT.register(new LivingAttackEvent());
@@ -40,8 +44,7 @@ public class CoreAscensionEvents
             //&&
                   //  playerEntity.getMainHandStack().getItem() != CoreAscensionItems.LUMITE_PICKAXE)
         });
-        ClientTickEvents.END_CLIENT_TICK.register(new StepUp());
-        AttackBlockCallback.EVENT.register((playerEntity, world, hand, blockPos, direction) ->
+        /*AttackBlockCallback.EVENT.register((playerEntity, world, hand, blockPos, direction) ->
         {
            if (playerEntity.getMainHandStack().getItem() == CoreAscensionItems.BEDROCK_PICKAXE &&
                    world.getBlockState(blockPos).getBlock() == Blocks.BEDROCK)
@@ -63,7 +66,7 @@ public class CoreAscensionEvents
                return ActionResult.SUCCESS;
            }
            return ActionResult.PASS;
-        });
+        });*/
 
         EntityItemDropEvent.EVENT.register((source, causedByPlayer, lootTable, builder, world, dropStack) ->
         {

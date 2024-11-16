@@ -2,12 +2,16 @@ package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.utils.CoreAscensionTags;
+import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Blocks;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,6 +24,9 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_8")))
+                .add(CoreAscensionBlocks.BEDROCK);
+
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
                 .add(Blocks.ACACIA_LEAVES)
                 .add(Blocks.AZALEA_LEAVES)
@@ -156,6 +163,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.SULPHUR_ORE);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(Blocks.BEDROCK)
                 .add(CoreAscensionBlocks.AERO_LANTERN)
                 .add(CoreAscensionBlocks.BLACK_SANDSTONE)
                 .add(CoreAscensionBlocks.DREAD_SANDSTONE)

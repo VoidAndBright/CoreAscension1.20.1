@@ -23,6 +23,7 @@ import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
@@ -623,6 +624,8 @@ public class CoreAscensionBlocks
 	// end desert
 	// end nether core
 
+	public static final Block BEDROCK = overrideBlock(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(10).mapColor(MapColor.STONE_GRAY)));
+
     private static Block RegisterBlockItem(String name, Block block)
 	{
         RegisterItem(name, block);
@@ -803,5 +806,15 @@ public class CoreAscensionBlocks
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 8126208, TROPICS_LEAVES);
 		ColorProviderRegistry.BLOCK.register((state, view, pos, tintIndex) -> BiomeColors.getFoliageColor(view, pos), CEDAR_LEAVES);
 		ColorProviderRegistry.ITEM.register((stack, tintIndex) -> 3368448, CEDAR_LEAVES);
+	}
+	private static Item overrideBlockItem(BlockItem toOverride, BlockItem newItem)
+	{
+		return Registry.register(Registries.ITEM, Registries.ITEM.getRawId(toOverride), Registries.ITEM.getId(toOverride).getPath(), newItem);
+	}
+	private static Block overrideBlock (Block toOverride, Block newBlock)
+	{
+		BlockItem newBlockItem = new BlockItem(newBlock, new FabricItemSettings());
+		overrideBlockItem((BlockItem) toOverride.asItem(), newBlockItem);
+		return Registry.register(Registries.BLOCK, Registries.BLOCK.getRawId(toOverride), Registries.BLOCK.getId(toOverride).getPath(), newBlock);
 	}
 }

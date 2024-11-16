@@ -4,6 +4,7 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 
 public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider {
@@ -13,6 +14,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
     @Override
     public void generate()
     {
+        addDrop(CoreAscensionBlocks.BEDROCK, Blocks.BEDROCK.asItem());
         addDrop(CoreAscensionBlocks.AMETHYST_SLAB, slabDrops(CoreAscensionBlocks.TITANIUM_SLAB));
         addDrop(CoreAscensionBlocks.ACACIA_POST);
         addDrop(CoreAscensionBlocks.ACACIA_SECRET_DOOR);

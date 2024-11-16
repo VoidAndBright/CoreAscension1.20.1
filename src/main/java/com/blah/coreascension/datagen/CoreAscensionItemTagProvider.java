@@ -1,6 +1,7 @@
 package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -24,6 +25,11 @@ public class CoreAscensionItemTagProvider extends FabricTagProvider.ItemTagProvi
                 .add(CoreAscensionBlocks.DARK_MATTER_PLANKS.asItem())
                 .add(CoreAscensionBlocks.CAKEWOOD_PLANKS.asItem())
                 .add(CoreAscensionBlocks.WHITEWOOD_PLANKS.asItem());
+
+        getOrCreateTagBuilder(ItemTags.PICKAXES)
+                .add(CoreAscensionItems.BEDROCK_PICKAXE)
+                .add(CoreAscensionItems.TADANITE_PICKAXE)
+                .add(CoreAscensionItems.SAPPHIRE_PICKAXE);
 
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
                 .add(CoreAscensionBlocks.TROPICS_LOG.asItem())

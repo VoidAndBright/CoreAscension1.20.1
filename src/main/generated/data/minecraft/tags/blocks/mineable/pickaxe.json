@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "minecraft:bedrock",
     "coreascension:aero_lantern",
     "coreascension:black_sandstone",
     "coreascension:dread_sandstone",
@@ -126,6 +127,11 @@
     "coreascension:prismaero_wall",
     "coreascension:prismaero_spawner",
     "coreascension:petrified_wood",
+    "coreascension:petrified_wood_wall",
+    "coreascension:petrified_planks",
+    "coreascension:petrified_planks_slab",
+    "coreascension:petrified_planks_stairs",
+    "coreascension:petrified_planks_wall",
     "coreascension:ender_pearl_bricks",
     "coreascension:dark_matter_stone",
     "coreascension:mossy_dark_matter_stone",
