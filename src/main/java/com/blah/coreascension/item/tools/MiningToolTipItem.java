@@ -40,11 +40,15 @@ public class MiningToolTipItem extends MiningToolItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner)
     {
-        if (miner instanceof PlayerEntity player) {
-            if (player.getInventory().contains(new ItemStack(CoreAscensionItems.ULTIMATE_GAUNTLET))) {
+        if (miner instanceof PlayerEntity player)
+        {
+            if (player.getInventory().contains(new ItemStack(CoreAscensionItems.ULTIMATE_GAUNTLET)))
+            {
                 for (int xy = -1; xy <= 1; xy++)
-                    for (int yz = -1; yz <= 1; yz++) {
-                        switch (getLookDirection(player)) {
+                    for (int yz = -1; yz <= 1; yz++)
+                    {
+                        switch (getLookDirection(player))
+                        {
                             case X -> BreakCorrectBlock(pos.add(0, xy, yz), player, world);
                             case Y -> BreakCorrectBlock(pos.add(xy, 0, yz), player, world);
                             case Z -> BreakCorrectBlock(pos.add(xy, yz, 0), player, world);

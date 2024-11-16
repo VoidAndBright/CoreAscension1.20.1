@@ -28,8 +28,9 @@ public class CoreAscensionBlockEntities {
     public static void ClientRegisterBlockEntitiesRenderer()
     {
         BlockEntityRendererFactories.register(REINFORCED_CHEST_BLOCK_ENTITY, ReinforcedChest::new);
-    }    public static final BlockEntityType<ReinforcedChestBlockEntity> REINFORCED_CHEST_BLOCK_ENTITY = registerBlockEntity("reinforced_chest", FabricBlockEntityTypeBuilder.create(ReinforcedChestBlockEntity::new, CoreAscensionBlocks.REINFORCED_CHEST));
+    }
 
+    public static final BlockEntityType<ReinforcedChestBlockEntity> REINFORCED_CHEST_BLOCK_ENTITY = registerBlockEntity("reinforced_chest", FabricBlockEntityTypeBuilder.create(ReinforcedChestBlockEntity::new, CoreAscensionBlocks.REINFORCED_CHEST));
 
 
     public static final BlockEntityType<PrismaeroFurnaceBlockEntity> PRISMAERO_FURNACE_BLOCK_ENTITY = registerBlockEntity("prismaero_furnace", FabricBlockEntityTypeBuilder.create(PrismaeroFurnaceBlockEntity::new, CoreAscensionBlocks.PRISMAERO_FURNACE));

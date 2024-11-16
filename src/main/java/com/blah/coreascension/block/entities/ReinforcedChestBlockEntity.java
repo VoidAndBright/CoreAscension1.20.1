@@ -61,7 +61,8 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
 
     public void onOpen(PlayerEntity player)
     {
-        if (!this.removed && !player.isSpectator()) {
+        if (!this.removed && !player.isSpectator())
+        {
             world.playSound(null, pos, SoundEvents.BLOCK_CHEST_OPEN, SoundCategory.BLOCKS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
         }
 
@@ -69,7 +70,8 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
 
     public void onClose(PlayerEntity player)
     {
-        if (!this.removed && !player.isSpectator()) {
+        if (!this.removed && !player.isSpectator())
+        {
             world.playSound(null, pos, SoundEvents.BLOCK_CHEST_CLOSE, SoundCategory.BLOCKS, 0.5F, world.random.nextFloat() * 0.1F + 0.9F);
         }
     }
