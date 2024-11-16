@@ -3,7 +3,6 @@ package com.blah.coreascension.item;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
@@ -14,12 +13,13 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum CoreAscensionArmorMaterials implements ArmorMaterial {
-    GILDED_OBSIDIAN("gilded_obsidian", 25, new int[] { 2, 5, 4, 2 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE },10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.OBSIDIAN_FABRIC)),
-    TADANITE("tadanite", 200, new int[] { 6, 11, 10, 6 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE, StatusEffects.SPEED, StatusEffects.RESISTANCE, StatusEffects.JUMP_BOOST, CoreAscensionStatusEffects.WARMTH },9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.2f, 0.115f, () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_DIAMOND)),
-    SAPPHIRE("sapphire", 25, new int[] { 2, 4, 4, 3 }, null,9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
-    CRYSTAL("crystal", 30, new int[] { 3, 5, 5, 4 }, new StatusEffect[] { StatusEffects.HASTE },9, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 3f, 0.1f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
-    URANIUM("uranium", 25, new int[] { 2, 4, 4, 3 }, null,9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT));
+    GILDED_OBSIDIAN("gilded_obsidian", 25, new int[]{2, 5, 4, 2}, new StatusEffect[]{StatusEffects.FIRE_RESISTANCE}, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.OBSIDIAN_FABRIC)),
+    TADANITE("tadanite", 200, new int[]{6, 11, 10, 6}, new StatusEffect[]{StatusEffects.FIRE_RESISTANCE, StatusEffects.SPEED, StatusEffects.RESISTANCE, StatusEffects.JUMP_BOOST, CoreAscensionStatusEffects.WARMTH}, 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.2f, 0.115f, () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_DIAMOND)),
+    SAPPHIRE("sapphire", 25, new int[]{2, 4, 4, 3}, null, 9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
+    CRYSTAL("crystal", 30, new int[]{3, 5, 5, 4}, new StatusEffect[]{StatusEffects.HASTE}, 9, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 3f, 0.1f, () -> Ingredient.ofItems(CoreAscensionItems.SAPPHIRE)),
+    URANIUM("uranium", 25, new int[]{2, 4, 4, 3}, null, 9, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.URANIUM_INGOT));
 
+    private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectionAmounts;
@@ -30,10 +30,9 @@ public enum CoreAscensionArmorMaterials implements ArmorMaterial {
     private final StatusEffect[] statusEffects;
     private final Supplier<Ingredient> repairIngredient;
 
-    private static final int[] BASE_DURABILITY = { 11, 16, 15, 13 };
-
     CoreAscensionArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, StatusEffect[] statusEffects, int enchantability, SoundEvent equipSound,
-                                float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+                                float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient)
+    {
         this.name = name;
         this.durabilityMultiplier = durabilityMultiplier;
         this.protectionAmounts = protectionAmounts;
@@ -46,37 +45,55 @@ public enum CoreAscensionArmorMaterials implements ArmorMaterial {
     }
 
     @Override
-    public int getDurability(ArmorItem.Type type) {
+    public int getDurability(ArmorItem.Type type)
+    {
         return BASE_DURABILITY[type.ordinal()] * this.durabilityMultiplier;
     }
 
     @Override
-    public int getProtection(ArmorItem.Type type) {
+    public int getProtection(ArmorItem.Type type)
+    {
         return protectionAmounts[type.ordinal()];
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantability()
+    {
         return this.enchantability;
     }
 
     @Override
-    public SoundEvent getEquipSound() {
+    public SoundEvent getEquipSound()
+    {
         return this.equipSound;
     }
 
     @Override
-    public Ingredient getRepairIngredient() {
+    public Ingredient getRepairIngredient()
+    {
         return this.repairIngredient.get();
     }
 
     @Override
-    public String getName() {return CoreAscension.MOD_ID + ":" + this.name;}
+    public String getName()
+    {
+        return CoreAscension.MOD_ID + ":" + this.name;
+    }
 
     @Override
-    public float getToughness() {return this.toughness;}
+    public float getToughness()
+    {
+        return this.toughness;
+    }
 
     @Override
-    public float getKnockbackResistance() {return this.knockbackResistance;}
-    public StatusEffect[] getStatusEffects(){return this.statusEffects;}
+    public float getKnockbackResistance()
+    {
+        return this.knockbackResistance;
+    }
+
+    public StatusEffect[] getStatusEffects()
+    {
+        return this.statusEffects;
+    }
 }

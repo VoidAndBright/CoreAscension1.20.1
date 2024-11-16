@@ -43,7 +43,8 @@ public class CoreAscensionBoats {
     public static final RegistryKey<TerraformBoatType> CACTUS_BOAT_KEY = TerraformBoatTypeRegistry.createKey(CACTUS_BOAT_ID);
 
 
-    public static void registerBoats() {
+    public static void registerBoats()
+    {
         TerraformBoatType cedarBoat = new TerraformBoatType.Builder()
                 .item(CoreAscensionItems.CEDAR_BOAT)
                 .chestItem(CoreAscensionItems.CEDAR_CHEST_BOAT)

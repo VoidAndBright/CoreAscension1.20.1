@@ -1,7 +1,6 @@
 package com.blah.coreascension.item.tools;
 
 import com.blah.coreascension.CoreAscension;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
@@ -19,12 +18,12 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class UraniumShovelItem extends ShovelItem
-{
+public class UraniumShovelItem extends ShovelItem {
     public UraniumShovelItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings)
     {
         super(material, attackDamage, attackSpeed, settings);
     }
+
     public boolean postMine(ItemStack stack, World world, BlockState blockState, BlockPos blockPos, LivingEntity miner)
     {
         super.postMine(stack, world, blockState, blockPos, miner);
@@ -33,8 +32,9 @@ public class UraniumShovelItem extends ShovelItem
                 Block.dropStack(world, blockPos, blockState.getBlock().asItem().getDefaultStack());
         return true;
     }
-    public void appendTooltip(ItemStack stack,World world,List<Text> tooltip, TooltipContext context)
+
+    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
     {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,"tooltip.uranium_shovel"))).formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.uranium_shovel"))).formatted(Formatting.GRAY));
     }
 }

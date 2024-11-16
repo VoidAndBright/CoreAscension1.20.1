@@ -8,17 +8,16 @@ import net.minecraft.item.RangedWeaponItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.TridentItem;
 
-public class TelekinesisEnchantment extends Enchantment
-{
+public class TelekinesisEnchantment extends Enchantment {
     public TelekinesisEnchantment()
     {
-        super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
+        super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
-    public boolean isAcceptableItem(ItemStack stack)
+    public int getMaxLevel()
     {
-        return stack.getItem() instanceof SwordItem || stack.getItem() instanceof TridentItem || stack.getItem() instanceof RangedWeaponItem;
+        return 1;
     }
 
     @Override
@@ -28,8 +27,8 @@ public class TelekinesisEnchantment extends Enchantment
     }
 
     @Override
-    public int getMaxLevel()
+    public boolean isAcceptableItem(ItemStack stack)
     {
-        return 1;
+        return stack.getItem() instanceof SwordItem || stack.getItem() instanceof TridentItem || stack.getItem() instanceof RangedWeaponItem;
     }
 }

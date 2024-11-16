@@ -13,52 +13,67 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 public class CatalyzerRecipe implements Recipe<SimpleInventory> {
+    private static final int size = 3;
     private final Identifier id;
     private final ItemStack result;
     private final DefaultedList<Ingredient> ingredients;
-    private static final int size = 3;
 
-    public CatalyzerRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs) {
+    public CatalyzerRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> inputs)
+    {
         this.id = id;
         this.result = output;
         this.ingredients = inputs;
     }
 
 
-    public boolean matches(SimpleInventory inventory, World world) {
-        if(world.isClient()) {
+    public boolean matches(SimpleInventory inventory, World world)
+    {
+        if (world.isClient())
+        {
             return false;
         }
         return ingredients.get(0).test(inventory.getStack(0)) &&
-               ingredients.get(1).test(inventory.getStack(1)) &&
-               ingredients.get(2).test(inventory.getStack(2));
+                ingredients.get(1).test(inventory.getStack(1)) &&
+                ingredients.get(2).test(inventory.getStack(2));
     }
 
-	public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-		return result;
-	}
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager)
+    {
+        return result;
+    }
 
-    public boolean fits(int width, int height) {
+    public boolean fits(int width, int height)
+    {
         return true;
     }
 
-    public ItemStack getOutput(DynamicRegistryManager registryManager) {
-		return result;
-	}
+    public ItemStack getOutput(DynamicRegistryManager registryManager)
+    {
+        return result;
+    }
 
-    public Identifier getId() {
+    public Identifier getId()
+    {
         return id;
     }
 
-    public RecipeSerializer<?> getSerializer() {return Serializer.INSTANCE;}
+    public RecipeSerializer<?> getSerializer()
+    {
+        return Serializer.INSTANCE;
+    }
 
-    public RecipeType<?> getType() {return Type.INSTANCE ;}
+    public RecipeType<?> getType()
+    {
+        return Type.INSTANCE;
+    }
 
-    public static class Type implements RecipeType<CatalyzerRecipe>{
+    public static class Type implements RecipeType<CatalyzerRecipe> {
         public static final Type INSTANCE = new Type();
     }
+
     public static class Serializer implements RecipeSerializer<CatalyzerRecipe> {
         public static final Serializer INSTANCE = new Serializer();
+
         public CatalyzerRecipe read(Identifier id, JsonObject json)
         {
             ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "result"));
@@ -66,26 +81,30 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
             JsonArray ingredients = JsonHelper.getArray(json, "ingredients");
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(size, Ingredient.EMPTY);
 
-            for (int i = 0; i < inputs.size(); i++) {
+            for (int i = 0; i < inputs.size(); i++)
+            {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
             return new CatalyzerRecipe(id, result, inputs);
         }
+
         public CatalyzerRecipe read(Identifier id, PacketByteBuf buf)
         {
             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
-			inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
+            inputs.replaceAll(ignored -> Ingredient.fromPacket(buf));
             ItemStack output = buf.readItemStack();
             return new CatalyzerRecipe(id, output, inputs);
         }
+
         public void write(PacketByteBuf buf, CatalyzerRecipe recipe)
         {
             buf.writeInt(recipe.getIngredients().size());
-            for (Ingredient ingredient : recipe.getIngredients()) {
-				ingredient.write(buf);
+            for (Ingredient ingredient : recipe.getIngredients())
+            {
+                ingredient.write(buf);
             }
-			buf.writeItemStack(recipe.getOutput(null));
+            buf.writeItemStack(recipe.getOutput(null));
         }
-	}
+    }
 }

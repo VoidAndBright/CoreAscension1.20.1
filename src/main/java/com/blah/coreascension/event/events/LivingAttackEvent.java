@@ -9,8 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.ActionResult;
 
-public class LivingAttackEvent implements LivingEntityAttackCallback
-{
+public class LivingAttackEvent implements LivingEntityAttackCallback {
     @Override
     public ActionResult interact(LivingEntity target, Entity attacker)
     {

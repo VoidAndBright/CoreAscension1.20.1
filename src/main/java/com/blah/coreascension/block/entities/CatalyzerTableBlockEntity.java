@@ -25,72 +25,89 @@ import java.util.Optional;
 
 
 public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private static final int INPUT_SLOT = 0;
     private static final int CATALYST_SLOT = 1;
     private static final int SULPHUR_SLOT = 2;
     private static final int OUTPUT_SLOT = 3;
+    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
-    public CatalyzerTableBlockEntity(BlockPos pos, BlockState state) {
+    public CatalyzerTableBlockEntity(BlockPos pos, BlockState state)
+    {
         super(CoreAscensionBlockEntities.CATALYZER_TABLE_BLOCK_ENTITY, pos, state);
     }
 
-    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf)
+    {
         buf.writeBlockPos(this.pos);
     }
-    public Text getDisplayName() {
+
+    public Text getDisplayName()
+    {
         return Text.translatable("container.catalyzer");
     }
 
-    public DefaultedList<ItemStack> getItems() {
+    public DefaultedList<ItemStack> getItems()
+    {
         return inventory;
     }
 
-    protected void writeNbt(NbtCompound nbt) {
-        super.writeNbt(nbt);
-        Inventories.writeNbt(nbt, inventory);
-    }
-
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient()) return;
-        if(isOutputSlotReceivable())
-            if(hasRecipe()) craftItem();
+    public void tick(World world, BlockPos pos, BlockState state)
+    {
+        if (world.isClient()) return;
+        if (isOutputSlotReceivable())
+            if (hasRecipe()) craftItem();
             else markDirty(world, pos, state);
     }
-    public boolean hasRecipe() {
+
+    private boolean isOutputSlotReceivable()
+    {
+        return getStack(OUTPUT_SLOT).getCount() < getStack(OUTPUT_SLOT).getMaxCount();
+    }
+
+    public boolean hasRecipe()
+    {
         Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null)) && canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem());
     }
-    private boolean canInsertItemIntoOutputSlot(Item item) {
-        return getStack(OUTPUT_SLOT).getItem() == item || getStack(OUTPUT_SLOT).isEmpty();
+
+    private void craftItem()
+    {
+        Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), recipe.get().getOutput(null).getCount()));
     }
 
-    private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
+    public Optional<CatalyzerRecipe> getCurrentRecipe()
+    {
+        SimpleInventory inventory = new SimpleInventory(this.size());
+        for (int iterate = 0; iterate < this.size(); iterate++) inventory.setStack(iterate, this.getStack(iterate));
+        return getWorld().getRecipeManager().getFirstMatch(CatalyzerRecipe.Type.INSTANCE, inventory, getWorld());
+    }
+
+    private boolean canInsertAmountIntoOutputSlot(ItemStack result)
+    {
         return getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
     }
 
-    private boolean isOutputSlotReceivable() {
-        return getStack(OUTPUT_SLOT).getCount() < getStack(OUTPUT_SLOT).getMaxCount();
+    private boolean canInsertItemIntoOutputSlot(Item item)
+    {
+        return getStack(OUTPUT_SLOT).getItem() == item || getStack(OUTPUT_SLOT).isEmpty();
     }
-    private void craftItem() {
-        Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
-        //this.removeStack(INPUT_SLOT, 1);
-        //this.removeStack(CATALYST_SLOT, 1);
-        //this.removeStack(SULPHUR_SLOT, 1);
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), getStack(OUTPUT_SLOT).getCount() + recipe.get().getOutput(null).getCount()));
-    }
-    public Optional<CatalyzerRecipe> getCurrentRecipe() {
-        SimpleInventory inventory = new SimpleInventory(this.size());
-        for(int iterate = 0; iterate < this.size(); iterate++) inventory.setStack(iterate, this.getStack(iterate));
-        return getWorld().getRecipeManager().getFirstMatch(CatalyzerRecipe.Type.INSTANCE, inventory, getWorld());
-    }
-    public void readNbt(NbtCompound nbt) {
+
+    public void readNbt(NbtCompound nbt)
+    {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, inventory);
     }
 
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+    protected void writeNbt(NbtCompound nbt)
+    {
+        super.writeNbt(nbt);
+        Inventories.writeNbt(nbt, inventory);
+    }
+
+    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player)
+    {
         return new CatalyzerTableScreenHandler(syncId, playerInventory, this);
     }
 }

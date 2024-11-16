@@ -1,18 +1,9 @@
 package com.blah.coreascension.effects;
 
-import com.blah.coreascension.damagetype.CoreAscensionDamageTypes;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
 
-public class IcyEffect extends StatusEffect
-{
+public class IcyEffect extends StatusEffect {
     public IcyEffect()
     {
         super(StatusEffectCategory.NEUTRAL, // whether beneficial or harmful for entities

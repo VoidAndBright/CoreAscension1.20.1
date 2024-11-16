@@ -17,14 +17,20 @@ import net.minecraft.util.Identifier;
 
 public class CoreAscensionEntities {
     public static final EntityType<PorcupineEntity> PORCUPINE = RegisterEntity("porcupine", FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new).dimensions(PorcupineEntity.getEntityDimensions()));
-    public static <T extends MobEntity> EntityType<T> RegisterEntity(String name, FabricEntityTypeBuilder<T> EntityType){
+
+    public static <T extends MobEntity> EntityType<T> RegisterEntity(String name, FabricEntityTypeBuilder<T> EntityType)
+    {
         return Registry.register(Registries.ENTITY_TYPE, new Identifier(CoreAscension.MOD_ID, name), EntityType.build());
     }
-    public static void ClientRegisterEntities(){
+
+    public static void ClientRegisterEntities()
+    {
         EntityRendererRegistry.register(PORCUPINE, PorcupineRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(CoreAscensionModelLayers.PORCUPINE, PorcupineModel::getTexturedModelData);
     }
-    public static void RegisterEntities(){
+
+    public static void RegisterEntities()
+    {
         FabricDefaultAttributeRegistry.register(PORCUPINE, PorcupineEntity.createPorcupineAttributes());
         CoreAscension.LOGGER.info("Registering Entities for " + CoreAscension.MOD_ID);
     }

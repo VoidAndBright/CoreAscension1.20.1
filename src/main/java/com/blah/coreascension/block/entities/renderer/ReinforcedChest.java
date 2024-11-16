@@ -5,7 +5,8 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
 import net.minecraft.client.render.block.entity.ChestBlockEntityRenderer;
 
 public class ReinforcedChest extends ChestBlockEntityRenderer<ReinforcedChestBlockEntity> {
-	public ReinforcedChest(BlockEntityRendererFactory.Context context) {
+    public ReinforcedChest(BlockEntityRendererFactory.Context context)
+    {
         super(context);
-	}
+    }
 }

@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
@@ -20,11 +19,13 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 public class ReinforcedChestBlockEntityRenderer implements BlockEntityRenderer<ReinforcedChestBlockEntity> {
-    public ReinforcedChestBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
+    public ReinforcedChestBlockEntityRenderer(BlockEntityRendererFactory.Context context)
+    {
 
     }
 
-    public void render(ReinforcedChestBlockEntity blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(ReinforcedChestBlockEntity blockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay)
+    {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         BlockState blockState = blockEntity.getCachedState();
         float Rotation = blockState.get(ReinforcedChestBlock.FACING).asRotation();
@@ -32,12 +33,14 @@ public class ReinforcedChestBlockEntityRenderer implements BlockEntityRenderer<R
         matrices.push();
         double offset = Math.sin((blockEntity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
         matrices.translate(0.5, 1.25 + offset, 0.5);
-        matrices.scale(4,4,4);
+        matrices.scale(4, 4, 4);
         matrices.multiply(RotationAxis.NEGATIVE_Y.rotationDegrees(Rotation));
-        itemRenderer.renderItem(Base, ModelTransformationMode.GROUND,light,overlay, matrices, vertexConsumers, blockEntity.getWorld(), 1);
+        itemRenderer.renderItem(Base, ModelTransformationMode.GROUND, light, overlay, matrices, vertexConsumers, blockEntity.getWorld(), 1);
         matrices.pop();
     }
-    private int getLightLevel(World world, BlockPos pos) {
+
+    private int getLightLevel(World world, BlockPos pos)
+    {
         int OtherLights = world.getLightLevel(LightType.BLOCK, pos);
         int SkyLight = world.getLightLevel(LightType.SKY, pos);
         return LightmapTextureManager.pack(OtherLights, SkyLight);

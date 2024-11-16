@@ -5,8 +5,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class CoreAscensionStatusEffects
-{
+public class CoreAscensionStatusEffects {
     public static final StatusEffect WARMTH = new WarmthPotionEffect();
     public static final StatusEffect BUILDERS_CURSE = new BuildersCurseEffect();
     public static final StatusEffect FREEZING = new FreezingEffect();

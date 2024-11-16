@@ -20,39 +20,53 @@ import net.minecraft.world.World;
 public class ReinforcedChestBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-
-    public ReinforcedChestBlock(Settings settings) {
+    public ReinforcedChestBlock(Settings settings)
+    {
         super(settings);
     }
 
-    public BlockState getPlacementState(ItemPlacementContext itemPlacementContext) {
+    public BlockState getPlacementState(ItemPlacementContext itemPlacementContext)
+    {
         Direction direction = itemPlacementContext.getHorizontalPlayerFacing();
-        return this.getDefaultState().with(FACING,direction.getOpposite());
+        return this.getDefaultState().with(FACING, direction.getOpposite());
     }
 
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
+    {
         super.appendProperties(builder.add(FACING));
     }
-    public BlockRenderType getRenderType(BlockState state) {
+
+    public BlockRenderType getRenderType(BlockState state)
+    {
         return BlockRenderType.MODEL;
     }
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state)
+    {
         return new ReinforcedChestBlockEntity(pos, state);
     }
-    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()) {
+
+    public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
+    {
+        if (state.getBlock() != newState.getBlock())
+        {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof ReinforcedChestBlockEntity) {
-                ItemScatterer.spawn(world, pos, (ReinforcedChestBlockEntity)blockEntity);
-                world.updateComparators(pos,this);
+            if (blockEntity instanceof ReinforcedChestBlockEntity)
+            {
+                ItemScatterer.spawn(world, pos, (ReinforcedChestBlockEntity) blockEntity);
+                world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = (ReinforcedChestBlockEntity)world.getBlockEntity(pos);
-            if (screenHandlerFactory != null) {
+
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
+    {
+        if (!world.isClient)
+        {
+            NamedScreenHandlerFactory screenHandlerFactory = (ReinforcedChestBlockEntity) world.getBlockEntity(pos);
+            if (screenHandlerFactory != null)
+            {
                 player.openHandledScreen(screenHandlerFactory);
             }
         }

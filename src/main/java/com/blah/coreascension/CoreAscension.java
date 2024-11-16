@@ -1,7 +1,7 @@
 package com.blah.coreascension;
 
-import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
+import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
 import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.entity.CoreAscensionEntities;
@@ -23,33 +23,34 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CoreAscension implements ModInitializer {
-	public static final String MOD_ID = "coreascension";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-	@Override
-	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
-		CoreAscensionBlocks.RegisterBlocks();
-		CoreAscensionItems.RegisterItems();
-		CoreAscensionParticles.RegisterParticles();
-		CoreAscensionBlockEntities.RegisterBlockEntities();
-		CoreAscensionGroups.RegisterGroups();
-		CoreAscensionScreenHandlers.RegisterScreenHandlers();
-		CoreAscensionRecipes.RegisterRecipes();
-		CoreAscensionEntities.RegisterEntities();
-		CoreAscensionWorldGeneration.GenerateWorldAdditions();
-		CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
-		CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
-		CoreAscensionEvents.RegisterEvents();
-		CoreAscensionEnchantments.RegisterEnchantments();
-		CoreAscensionStatusEffects.RegisterStatusEffects();
-		//CoreAscensionBoats.registerBoats();
+    public static final String MOD_ID = "coreascension";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-		CustomPortalBuilder.beginPortal()
-				.frameBlock(Blocks.GLOWSTONE)
-				.lightWithItem(CoreAscensionItems.SKYLANDS_WAYNODE)
-				.customPortalBlock((CustomPortalBlock)CoreAscensionBlocks.SKYLANDS_PORTAL)
-				.destDimID(Identifier.of("coreascension", "skylands"))
-				.tintColor(192, 224,60)
-				.registerPortal();
-	}
+    public void onInitialize()
+    {
+        LOGGER.info("Hello Fabric world!");
+        CoreAscensionBlocks.RegisterBlocks();
+        CoreAscensionItems.RegisterItems();
+        CoreAscensionParticles.RegisterParticles();
+        CoreAscensionBlockEntities.RegisterBlockEntities();
+        CoreAscensionGroups.RegisterGroups();
+        CoreAscensionScreenHandlers.RegisterScreenHandlers();
+        CoreAscensionRecipes.RegisterRecipes();
+        CoreAscensionEntities.RegisterEntities();
+        CoreAscensionWorldGeneration.GenerateWorldAdditions();
+        CoreAscensionTrunkPlacerTypes.RegisterTrunkPlacers();
+        CoreAscensionFoliagePlacerTypes.RegisterFoliagePlacers();
+        CoreAscensionEvents.RegisterEvents();
+        CoreAscensionEnchantments.RegisterEnchantments();
+        CoreAscensionStatusEffects.RegisterStatusEffects();
+        //CoreAscensionBoats.registerBoats();
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(Blocks.GLOWSTONE)
+                .lightWithItem(CoreAscensionItems.SKYLANDS_WAYNODE)
+                .customPortalBlock((CustomPortalBlock) CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK)
+                .destDimID(Identifier.of("coreascension", "skylands"))
+                .tintColor(192, 224, 60)
+                .registerPortal();
+    }
 }

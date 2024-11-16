@@ -1,16 +1,18 @@
 package com.blah.coreascension.block.blocks;
 
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class ConchShellBlock extends SeashellBlock
-{
+public class ConchShellBlock extends SeashellBlock {
     public ConchShellBlock(Settings settings)
     {
         super(settings);
     }
+
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
         return switch (state.get(FACING))

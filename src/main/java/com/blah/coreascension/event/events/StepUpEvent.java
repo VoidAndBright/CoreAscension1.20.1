@@ -11,8 +11,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
-public class StepUp implements ClientTickEvents.EndTick
-{
+public class StepUpEvent implements ClientTickEvents.EndTick {
     @Override
     public void onEndTick(MinecraftClient minecraftClient)
     {

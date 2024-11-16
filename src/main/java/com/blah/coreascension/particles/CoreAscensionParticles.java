@@ -12,15 +12,18 @@ import net.minecraft.util.Identifier;
 public class CoreAscensionParticles {
     public static final DefaultParticleType ETHEREAL_FLAME = registerParticle("ethereal_flame", FabricParticleTypes.simple());
 
-    public static DefaultParticleType registerParticle(String name, DefaultParticleType particle) {
+    public static DefaultParticleType registerParticle(String name, DefaultParticleType particle)
+    {
         return Registry.register(Registries.PARTICLE_TYPE, new Identifier(CoreAscension.MOD_ID, name), particle);
     }
 
-    public static void RegisterParticles() {
+    public static void RegisterParticles()
+    {
         CoreAscension.LOGGER.info("Registering Particles for " + CoreAscension.MOD_ID);
     }
 
-    public static void ClientRegisterParticles() {
+    public static void ClientRegisterParticles()
+    {
         ParticleFactoryRegistry.getInstance().register(CoreAscensionParticles.ETHEREAL_FLAME, FlameParticle.Factory::new);
     }
 }

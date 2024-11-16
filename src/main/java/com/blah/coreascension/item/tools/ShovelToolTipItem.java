@@ -10,23 +10,23 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ShovelToolTipItem extends ShovelItem
-{
+public class ShovelToolTipItem extends ShovelItem {
     public String[] tooltip;
     public Formatting tooltipColor;
+
     public ShovelToolTipItem(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings, Formatting color, String... tooltip)
     {
         super(material, attackDamage, attackSpeed, settings);
         this.tooltip = tooltip;
         this.tooltipColor = color;
     }
+
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
     {
         for (String tooltipLine : this.tooltip)
-            tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID,tooltipLine))).formatted(this.tooltipColor));
+            tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, tooltipLine))).formatted(this.tooltipColor));
     }
 }
