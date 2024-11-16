@@ -2,24 +2,15 @@ package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.utils.CoreAscensionTags;
-<<<<<<< Updated upstream
-import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
-=======
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
->>>>>>> Stashed changes
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
-<<<<<<< Updated upstream
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-=======
->>>>>>> Stashed changes
 
 import java.util.concurrent.CompletableFuture;
 

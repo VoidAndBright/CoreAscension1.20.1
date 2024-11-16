@@ -26,17 +26,6 @@ public class CoreAscension implements ModInitializer {
     public static final String MOD_ID = "coreascension";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-<<<<<<< Updated upstream
-		CustomPortalBuilder.beginPortal()
-				.frameBlock(Blocks.GLOWSTONE)
-				.lightWithItem(CoreAscensionItems.SKYLANDS_WAYNODE)
-				.customPortalBlock((CustomPortalBlock)CoreAscensionBlocks.SKYLANDS_PORTAL)
-				.destDimID(Identifier.of("coreascension", "skylands"))
-				.tintColor(192, 224,60)
-				.registerPortal();
-	}
-=======
-    @Override
     public void onInitialize()
     {
         LOGGER.info("Hello Fabric world!");
@@ -64,5 +53,4 @@ public class CoreAscension implements ModInitializer {
                 .tintColor(192, 224, 60)
                 .registerPortal();
     }
->>>>>>> Stashed changes
 }
