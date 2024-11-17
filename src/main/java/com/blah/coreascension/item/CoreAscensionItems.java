@@ -286,12 +286,15 @@ public class CoreAscensionItems {
     public static final Item OSBORGNEN_FUEL = registerItem("osborgnen_fuel", new Item(new FabricItemSettings().fireproof()));
     public static final Item FROZEN_ROD = registerItem("frozen_rod", new Item(new FabricItemSettings()));
     public static final Item FROZEN_ARTIFACT = registerItem("frozen_artifact", new Item(new FabricItemSettings()));
+    public static final Item DARK_MATTER_GEL = registerItem("dark_matter_gel", new Item(new FabricItemSettings()));
+
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));
     public static final Item COOKED_CALAMARI = registerItem("cooked_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COOKED_CALAMARI)));
     public static final Item MEGA_BERRY = registerItem("mega_berry", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.MEGA_BERRY)));
     public static final Item NETHER_MUSHROOM_STEW = registerItem("nether_mushroom_stew", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.NETHER_MUSHROOM_STEW)));
+
 
     public static Item registerItem(String name, Item item)
     {

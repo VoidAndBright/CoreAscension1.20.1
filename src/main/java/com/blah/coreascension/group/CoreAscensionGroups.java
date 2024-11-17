@@ -366,10 +366,10 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.ENTROPY_FENCE);
             entries.add(CoreAscensionBlocks.ENTROPY_FENCE_GATE);
             entries.add(CoreAscensionBlocks.ENTROPY_BUTTON);
-//        entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
-//        entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
-//        entries.add(CoreAscensionBlocks.ENTROPY_DOOR);
-//        entries.add(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
+            entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
+            entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
+            entries.add(CoreAscensionBlocks.ENTROPY_DOOR);
+            entries.add(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
             entries.add(CoreAscensionBlocks.ENTROPIC_VINES);
             entries.add(CoreAscensionBlocks.ENTROPIC_ICE);
             entries.add(CoreAscensionBlocks.ENTROPY_WEEDS);
@@ -385,6 +385,7 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.FROSTED_GLASS);
             entries.add(CoreAscensionBlocks.FROSTED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_GEL_BLOCK);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {
@@ -508,6 +509,9 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.ICE_CREAM);
             entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
             entries.add(CoreAscensionItems.FOUR_LEAF_CLOVER);
+            entries.add(CoreAscensionItems.DARK_MATTER_GEL);
+            entries.add(CoreAscensionItems.FROZEN_ROD);
+            entries.add(CoreAscensionItems.FROZEN_ARTIFACT);
 
             // -- FOOD --
             entries.add(CoreAscensionItems.CALAMARI);

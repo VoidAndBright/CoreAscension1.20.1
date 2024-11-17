@@ -412,6 +412,8 @@ public class CoreAscensionBlocks
 
     // misc blocks
     public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.TERRACOTTA_ORANGE).luminance(6)));
+    public static final Block PLAYER_LAUNCHER = RegisterBlockItem("player_launcher", new PlayerLauncherBlock(FabricBlockSettings.copyOf(Blocks.DIRT).sounds(BlockSoundGroup.STONE).mapColor(MapColor.TERRACOTTA_PURPLE)));
+    public static final Block DARK_MATTER_GEL_BLOCK = RegisterBlockItem("dark_matter_gel_block", new Block(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE)));
 
 
     public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));

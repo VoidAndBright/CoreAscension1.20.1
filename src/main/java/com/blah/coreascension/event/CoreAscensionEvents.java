@@ -11,6 +11,7 @@ public class CoreAscensionEvents
     public static void RegisterClientEvents()
     {
         ClientTickEvents.END_CLIENT_TICK.register(new StepUpEvent());
+        ClientTickEvents.END_CLIENT_TICK.register(new PlayerLauncherEvent());
     }
 
     public static void RegisterEvents()
