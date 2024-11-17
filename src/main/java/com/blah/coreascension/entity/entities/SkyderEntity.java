@@ -1,6 +1,5 @@
 package com.blah.coreascension.entity.entities;
 
-import com.blah.coreascension.entity.CoreAscensionEntities;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityPose;
@@ -9,23 +8,20 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
-public class PorcupineEntity extends AnimalEntity {
+public class SkyderEntity extends HostileEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
 
-    public PorcupineEntity(EntityType<? extends AnimalEntity> entityType, World world)
+    public SkyderEntity(EntityType<? extends HostileEntity> entityType, World world)
     {
         super(entityType, world);
     }
@@ -49,10 +45,7 @@ public class PorcupineEntity extends AnimalEntity {
     {
         this.goalSelector.add(0, new SwimGoal(this));
 
-        this.goalSelector.add(1, new AnimalMateGoal(this, 1.15D));
         this.goalSelector.add(2, new TemptGoal(this, 1.25D, Ingredient.ofItems(Items.BEETROOT), false));
-
-        this.goalSelector.add(3, new FollowParentGoal(this, 1.15D));
 
         this.goalSelector.add(4, new WanderAroundFarGoal(this, 1D));
         this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 4f));
@@ -83,27 +76,17 @@ public class PorcupineEntity extends AnimalEntity {
 
     protected SoundEvent getAmbientSound()
     {
-        return SoundEvents.ENTITY_FOX_AMBIENT;
-    }
-
-    public boolean isBreedingItem(ItemStack stack)
-    {
-        return stack.isOf(Items.BEETROOT);
-    }
-
-    public PassiveEntity createChild(ServerWorld world, PassiveEntity entity)
-    {
-        return CoreAscensionEntities.PORCUPINE.create(world);
+        return SoundEvents.ENTITY_SPIDER_AMBIENT;
     }
 
     protected SoundEvent getHurtSound(DamageSource source)
     {
-        return SoundEvents.ENTITY_CAT_HURT;
+        return SoundEvents.ENTITY_SPIDER_HURT;
     }
 
     protected SoundEvent getDeathSound()
     {
-        return SoundEvents.ENTITY_DOLPHIN_DEATH;
+        return SoundEvents.ENTITY_SPIDER_DEATH;
     }
 
     @Override

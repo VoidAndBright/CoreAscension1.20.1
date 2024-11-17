@@ -16,7 +16,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class CoreAscensionEntities {
-    public static final EntityType<PorcupineEntity> PORCUPINE = RegisterEntity("porcupine", FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new).dimensions(PorcupineEntity.getEntityDimensions()));
+    public static final EntityType<PorcupineEntity> PORCUPINE = RegisterEntity("porcupine", FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PorcupineEntity::new).dimensions(PorcupineEntity.getDimensions()));
 
     public static <T extends MobEntity> EntityType<T> RegisterEntity(String name, FabricEntityTypeBuilder<T> EntityType)
     {
@@ -31,7 +31,7 @@ public class CoreAscensionEntities {
 
     public static void RegisterEntities()
     {
-        FabricDefaultAttributeRegistry.register(PORCUPINE, PorcupineEntity.createPorcupineAttributes());
+        FabricDefaultAttributeRegistry.register(PORCUPINE, PorcupineEntity.createAttributes());
         CoreAscension.LOGGER.info("Registering Entities for " + CoreAscension.MOD_ID);
     }
 }

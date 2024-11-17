@@ -3,6 +3,7 @@ package com.blah.coreascension;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.entity.CoreAscensionBoats;
+import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.event.CoreAscensionEvents;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.screen.CoreAscensionScreenHandlers;
@@ -18,5 +19,6 @@ public class CoreAscensionClient implements ClientModInitializer
         CoreAscensionBlockEntities.ClientRegisterBlockEntitiesRenderer();
         CoreAscensionEvents.RegisterClientEvents();
         CoreAscensionBoats.ClientRegisterBoats();
+        CoreAscensionEntities.ClientRegisterEntities();
     }
 }

@@ -11,7 +11,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 
-public class AerofuelFloatEvent implements ItemEntityTickCallback, PlayerBlockBreakEvents.Canceled {
+public class AerofuelFloatEvent implements ItemEntityTickCallback{
     public ActionResult interact(ItemEntity item)
     {
         if (item.getStack().getItem() == CoreAscensionItems.AERO_FUEL)
