@@ -414,11 +414,13 @@ public class CoreAscensionBlocks
     public static final Block HARDENED_LAVA = RegisterBlockItem("hardened_lava", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.TERRACOTTA_ORANGE).luminance(6)));
     public static final Block PLAYER_LAUNCHER = RegisterBlockItem("player_launcher", new PlayerLauncherBlock(FabricBlockSettings.copyOf(Blocks.DIRT).sounds(BlockSoundGroup.STONE).mapColor(MapColor.TERRACOTTA_PURPLE)));
     public static final Block DARK_MATTER_GEL_BLOCK = RegisterBlockItem("dark_matter_gel_block", new Block(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE)));
-
+    public static final Block DIAMOND_DOOR = RegisterBlockItem("diamond_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.STONE));
+    public static final Block DIAMOND_TRAPDOOR = RegisterBlockItem("diamond_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.STONE));
 
     public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
     public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
-    public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque()) {
+    public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque())
+    {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
         {
             return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
@@ -773,6 +775,8 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_ICE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_MUSHROOM, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());

@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_top_rh",
-  "textures": {
-    "bottom": "coreascension:block/diamonddoor_lower",
-    "top": "coreascension:block/diamonddoor_upper"
-  }
-}

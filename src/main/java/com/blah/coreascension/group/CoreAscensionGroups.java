@@ -386,6 +386,8 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.FROSTED_GLASS);
             entries.add(CoreAscensionBlocks.FROSTED_GLASS_PANE);
             entries.add(CoreAscensionBlocks.DARK_MATTER_GEL_BLOCK);
+            entries.add(CoreAscensionBlocks.DIAMOND_DOOR);
+            entries.add(CoreAscensionBlocks.DIAMOND_TRAPDOOR);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

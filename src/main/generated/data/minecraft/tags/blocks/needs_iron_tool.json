@@ -3,6 +3,8 @@
   "values": [
     "coreascension:titanium_ore",
     "coreascension:sapphire_ore",
+    "coreascension:diamond_door",
+    "coreascension:diamond_trapdoor",
     "coreascension:sulphur_ore"
   ]
 }

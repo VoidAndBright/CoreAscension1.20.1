@@ -18,6 +18,7 @@ public class CoreAscensionModelProvider extends FabricModelProvider
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
+        blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DIAMOND_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.FROST_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.CAKEWOOD_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.CACTUS_DOOR);

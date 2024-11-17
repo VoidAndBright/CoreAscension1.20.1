@@ -327,9 +327,9 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.ENTROPY_WEEDS);
         addDrop(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
         addDropWithSilkTouch(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST);
-
+        addDrop(CoreAscensionBlocks.PLAYER_LAUNCHER);
         addDrop(CoreAscensionBlocks.ROCK_SALT);
-
+        addDrop(CoreAscensionBlocks.DIAMOND_DOOR, doorDrops(CoreAscensionBlocks.DIAMOND_DOOR));
         addDrop(CoreAscensionBlocks.FROST_SAND);
         addDrop(CoreAscensionBlocks.FROST_SANDSTONE);
         addDrop(CoreAscensionBlocks.CHISELED_FROST_SANDSTONE);

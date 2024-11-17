@@ -86,7 +86,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
         getOrCreateTagBuilder(BlockTags.SAND)
                 .add(CoreAscensionBlocks.BLACK_SAND)
                 .add(CoreAscensionBlocks.BONESAND)
-                .add(CoreAscensionBlocks.DREAD_SAND);
+                .add(CoreAscensionBlocks.DREAD_SAND)
+                .add(CoreAscensionBlocks.FROST_SAND);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(CoreAscensionBlocks.LOAM);
@@ -134,10 +135,14 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE)
+                .add(CoreAscensionBlocks.DIAMOND_DOOR)
+                .add(CoreAscensionBlocks.DIAMOND_TRAPDOOR)
                 .add(CoreAscensionBlocks.SULPHUR_ORE);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(Blocks.BEDROCK)
+                .add(CoreAscensionBlocks.DIAMOND_DOOR)
+                .add(CoreAscensionBlocks.DIAMOND_TRAPDOOR)
                 .add(CoreAscensionBlocks.AERO_LANTERN)
                 .add(CoreAscensionBlocks.BLACK_SANDSTONE)
                 .add(CoreAscensionBlocks.DREAD_SANDSTONE)

@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "minecraft:bedrock",
+    "coreascension:diamond_door",
+    "coreascension:diamond_trapdoor",
     "coreascension:aero_lantern",
     "coreascension:black_sandstone",
     "coreascension:dread_sandstone",
