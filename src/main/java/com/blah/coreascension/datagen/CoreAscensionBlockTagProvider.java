@@ -24,8 +24,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.BEDROCK);
 
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
-                .addTag(BlockTags.LEAVES)
-                .addTag(BlockTags.FLOWERS)
+                //.addTag(BlockTags.LEAVES)
+                //.addTag(BlockTags.FLOWERS)
                 .add(Blocks.FERN)
                 .add(Blocks.LARGE_FERN)
                 .add(Blocks.TALL_GRASS)
