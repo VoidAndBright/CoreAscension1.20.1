@@ -13,17 +13,18 @@ import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.world.World;
 
-public class TeleportDroppedItemsEvent implements EntityItemDropCallback {
+public class TeleportDroppedItemsEvent implements EntityItemDropCallback
+{
     public boolean onEntityItemDrop(DamageSource source, boolean causedByPlayer, LootTable lootTable, LootContextParameterSet.Builder builder, World world, EntityDropStackCallback dropStack)
     {
         if (causedByPlayer)
         {
             Entity attacker = source.getAttacker();
+            assert attacker != null;
             if (attacker instanceof Entity)
             {
                 return true;
             }
-
             PlayerEntity player = world.getPlayerByUuid(attacker.getUuid());
             if (player instanceof PlayerEntity)
             {

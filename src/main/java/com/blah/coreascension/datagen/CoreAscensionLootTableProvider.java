@@ -29,8 +29,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDropWithSilkTouch(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS_PANE);
-        addDropWithSilkTouch(CoreAscensionBlocks.ETHEREAL_GRASS, CoreAscensionBlocks.ETHEREAL_DIRT);
-        addDropWithSilkTouch(CoreAscensionBlocks.TROPICAL_GRASS, CoreAscensionBlocks.LOAM);
+//        addDropWithSilkTouch(CoreAscensionBlocks.ETHEREAL_GRASS, CoreAscensionBlocks.ETHEREAL_DIRT);
+//        addDropWithSilkTouch(CoreAscensionBlocks.TROPICAL_GRASS, CoreAscensionBlocks.LOAM);
         addDrop(CoreAscensionBlocks.TITANIUM_ORE, oreDrops(CoreAscensionBlocks.TITANIUM_ORE, CoreAscensionItems.RAW_TITANIUM));
         addDrop(CoreAscensionBlocks.TITANIUM_STAIRS);
         addDrop(CoreAscensionBlocks.TITANIUM_SLAB, slabDrops(CoreAscensionBlocks.TITANIUM_SLAB));
@@ -240,7 +240,6 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.DARK_MATTER_DOOR, doorDrops(CoreAscensionBlocks.DARK_MATTER_DOOR));
         addDrop(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
         //addDrop(CoreAscensionBlocks.DARK_MATTER_LEAVES, leavesDrops(CoreAscensionBlocks.DARK_MATTER_LEAVES, CoreAscensionBlocks.DARK_MATTER_SAPLING, 0.0025f));
-        addDropWithSilkTouch(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, CoreAscensionBlocks.DARK_MATTER_STONE);
         addDrop(CoreAscensionBlocks.DARK_MATTER_STONE);
 
         addDrop(CoreAscensionBlocks.SEASHELL);
@@ -311,7 +310,6 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CORE_FUNGUS);
         addDrop(CoreAscensionBlocks.CORE_WART_BLOCK);
         addDropWithSilkTouch(CoreAscensionBlocks.CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST);
-
         addDrop(CoreAscensionBlocks.ENTROPY_STEM);
         addDrop(CoreAscensionBlocks.ENTROPY_HYPHAE);
         addDrop(CoreAscensionBlocks.ENTROPY_PLANKS);
@@ -320,10 +318,10 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.ENTROPY_FENCE);
         addDrop(CoreAscensionBlocks.ENTROPY_FENCE_GATE);
         addDrop(CoreAscensionBlocks.ENTROPY_BUTTON);
-//        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
-//        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
-//        addDrop(CoreAscensionBlocks.ENTROPY_DOOR, doorDrops(CoreAscensionBlocks.ENTROPY_DOOR));
-//        addDrop(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
+        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
+        addDrop(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
+        addDrop(CoreAscensionBlocks.ENTROPY_DOOR, doorDrops(CoreAscensionBlocks.ENTROPY_DOOR));
+        addDrop(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
         addDrop(CoreAscensionBlocks.ENTROPIC_VINES);
         addDrop(CoreAscensionBlocks.ENTROPIC_ICE);
         addDrop(CoreAscensionBlocks.ENTROPY_WEEDS);
