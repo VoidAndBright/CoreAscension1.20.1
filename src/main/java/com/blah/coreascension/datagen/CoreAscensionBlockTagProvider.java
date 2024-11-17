@@ -77,6 +77,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CLOUD_COAL_ORE)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
+                .add(CoreAscensionBlocks.ZIRCON_ORE)
                 .add(CoreAscensionBlocks.ARGON_CRYSTAL_ORE);
 
 
@@ -151,10 +152,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK)
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB)
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS)
+                .add(CoreAscensionBlocks.ZIRCON_BLOCK)
                 .add(CoreAscensionBlocks.URANIUM_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(CoreAscensionBlocks.URANIUM_ORE);
+                .add(CoreAscensionBlocks.URANIUM_ORE)
+                .add(CoreAscensionBlocks.ZIRCON_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
