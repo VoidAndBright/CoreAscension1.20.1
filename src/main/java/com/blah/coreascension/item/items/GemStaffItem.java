@@ -3,7 +3,6 @@ package com.blah.coreascension.item.items;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.entity.entities.*;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
@@ -47,22 +46,29 @@ public class GemStaffItem extends Item
     {
         if (!world.isClient())
         {
-            ThrownItemEntity proj;
-            switch (this.toShoot)
-            {
-                case RUBY -> proj = new RubyBoltEntity(user, world);
-                case CITRINE -> proj = new CitrineBoltEntity(user, world);
-                case TOPAZ -> proj = new TopazBoltEntity(user, world);
-                case EMERALD -> proj = new EmeraldBoltEntity(user, world);
-                case DIAMOND -> proj = new DiamondBoltEntity(user, world);
-                case SAPPHIRE -> proj = new SapphireBoltEntity(user, world);
-                default -> proj = new AmethystBoltEntity(user, world);
-            }
+            ThrownItemEntity proj = getThrownItemEntity(world, user);
             proj.setVelocity(user, user.getPitch(), user.getYaw(), 0, 2.5f, 1.0f);
             world.spawnEntity(proj);
         }
         world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 0.4f, 1f);
         user.getItemCooldownManager().set(this, 10);
+        user.getMainHandStack().damage(1, user, p -> p.sendToolBreakStatus(user.getActiveHand()));
         return TypedActionResult.success(new ItemStack(this));
+    }
+
+    private ThrownItemEntity getThrownItemEntity(World world, PlayerEntity user)
+    {
+        ThrownItemEntity proj;
+        switch (this.toShoot)
+        {
+            case RUBY -> proj = new RubyBoltEntity(user, world);
+            case CITRINE -> proj = new CitrineBoltEntity(user, world);
+            case TOPAZ -> proj = new TopazBoltEntity(user, world);
+            case EMERALD -> proj = new EmeraldBoltEntity(user, world);
+            case DIAMOND -> proj = new DiamondBoltEntity(user, world);
+            case SAPPHIRE -> proj = new SapphireBoltEntity(user, world);
+            default -> proj = new AmethystBoltEntity(user, world);
+        }
+        return proj;
     }
 }

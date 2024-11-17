@@ -70,6 +70,12 @@ public class CoreAscensionEntities {
     {
         EntityRendererRegistry.register(RUBY_BOLT, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(CITRINE_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TOPAZ_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(EMERALD_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(DIAMOND_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(SAPPHIRE_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(AMETHYST_BOLT, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(BLAH_BOLT, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(PORCUPINE, PorcupineRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(CoreAscensionModelLayers.PORCUPINE, PorcupineModel::getTexturedModelData);
     }
