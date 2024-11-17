@@ -9,7 +9,8 @@ import net.minecraft.registry.tag.ItemTags;
 import java.util.function.Supplier;
 
 public enum CoreAscensionToolMaterials implements ToolMaterial {
-    TOOL(1, 0, 10.2f, 4f, 0, null),
+    TOOL(1, 0, 13f, 4f, 0, null),
+    BLAH(8, 0, 15f, 18f, 50, null),
     BEDROCK(8, 5500, 15f, 8f, 20,
             () -> Ingredient.ofItems(Blocks.BEDROCK)),
     SAPPHIRE(3, 1203, 10f, 4f, 15,

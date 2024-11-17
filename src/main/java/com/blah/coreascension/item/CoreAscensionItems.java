@@ -4,8 +4,10 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
+import com.blah.coreascension.entity.entities.BlahBoltEntity;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.AdvancedArmorItem;
+import com.blah.coreascension.item.items.GemStaffItem;
 import com.blah.coreascension.item.items.LighterItem;
 import com.blah.coreascension.item.items.MagicMirrorItem;
 import com.blah.coreascension.item.tools.*;
@@ -16,14 +18,15 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.*;
 import net.minecraft.util.math.Direction;
-
+import net.minecraft.world.World;
 
 public class CoreAscensionItems {
 
@@ -288,6 +291,43 @@ public class CoreAscensionItems {
     public static final Item FROZEN_ARTIFACT = registerItem("frozen_artifact", new Item(new FabricItemSettings()));
     public static final Item DARK_MATTER_GEL = registerItem("dark_matter_gel", new Item(new FabricItemSettings()));
 
+    public static final Item BLAH_BOLT = registerItem("blah_beam_blast", new Item(new FabricItemSettings()));
+    public static final Item BLAHS_ENERGY_BLADE = registerItem("blahs_energy_blade", new SwordTooltipItem(CoreAscensionToolMaterials.BLAH, 2, -2.4f, new FabricItemSettings().fireproof(), Formatting.BLUE, "tooltip.unbreakable")
+    {
+        @Override
+        public UseAction getUseAction(ItemStack stack)
+        {
+            return UseAction.BOW;
+        }
+
+        @Override
+        public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
+        {
+            if (!world.isClient())
+            {
+                BlahBoltEntity proj = new BlahBoltEntity(user, world);
+                proj.setVelocity(user, user.getPitch(), user.getYaw(), 0, 2.5f, 1.0f);
+                world.spawnEntity(proj);
+            }
+            world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 0.4f, 1f);
+            return TypedActionResult.success(new ItemStack(this));
+        }
+    });
+
+    public static final Item RUBY_BOLT = registerItem("ruby_blast", new Item(new FabricItemSettings()));
+    public static final Item CITRINE_BOLT = registerItem("citrine_blast", new Item(new FabricItemSettings()));
+    public static final Item TOPAZ_BOLT = registerItem("topaz_blast", new Item(new FabricItemSettings()));
+    public static final Item EMERALD_BOLT = registerItem("emerald_blast", new Item(new FabricItemSettings()));
+    public static final Item DIAMOND_BOLT = registerItem("diamond_blast", new Item(new FabricItemSettings()));
+    public static final Item SAPPHIRE_BOLT = registerItem("sapphire_blast", new Item(new FabricItemSettings()));
+    public static final Item AMETHYST_BOLT = registerItem("amethyst_blast", new Item(new FabricItemSettings()));
+    public static final Item RUBY_STAFF = registerItem("ruby_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.RUBY, "tooltip.staff.ruby"));
+    public static final Item CITRINE_STAFF = registerItem("citrine_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.CITRINE, "tooltip.staff.citrine"));
+    public static final Item TOPAZ_STAFF = registerItem("topaz_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.TOPAZ, "tooltip.staff.topaz"));
+    public static final Item EMERALD_STAFF = registerItem("emerald_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.EMERALD, "tooltip.staff.emerald"));
+    public static final Item DIAMOND_STAFF = registerItem("diamond_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.DIAMOND, "tooltip.staff.diamond"));
+    public static final Item SAPPHIRE_STAFF = registerItem("sapphire_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.SAPPHIRE, "tooltip.staff.sapphire"));
+    public static final Item AMETHYST_STAFF = registerItem("amethyst_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.AMETHYST, "tooltip.staff.amethyst"));
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));

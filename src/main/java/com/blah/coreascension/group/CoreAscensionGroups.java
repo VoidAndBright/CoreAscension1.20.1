@@ -401,6 +401,13 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.TOPAZ);
             entries.add(CoreAscensionItems.SAPPHIRE);
             entries.add(CoreAscensionItems.AMETHYST);
+            entries.add(CoreAscensionItems.RUBY_STAFF);
+            entries.add(CoreAscensionItems.CITRINE_STAFF);
+            entries.add(CoreAscensionItems.TOPAZ_STAFF);
+            entries.add(CoreAscensionItems.EMERALD_STAFF);
+            entries.add(CoreAscensionItems.DIAMOND_STAFF);
+            entries.add(CoreAscensionItems.SAPPHIRE_STAFF);
+            entries.add(CoreAscensionItems.AMETHYST_STAFF);
             entries.add(CoreAscensionItems.CRYSTALLINE_ARTIFACT);
             entries.add(CoreAscensionItems.RUBY_SHARD);
             entries.add(CoreAscensionItems.CITRINE_SHARD);
