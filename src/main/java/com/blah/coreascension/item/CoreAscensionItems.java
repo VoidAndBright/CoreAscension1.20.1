@@ -45,6 +45,7 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE = registerItem("sapphire", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE_SHARD = registerItem("sapphire_shard", new Item(new FabricItemSettings()));
     public static final Item AMETHYST = registerItem("amethyst", new Item(new FabricItemSettings()));
+    public static final Item ZIRCON = registerItem("zircon", new Item(new FabricItemSettings()));
     public static final Item TADANITE_DIAMOND = registerItem("tadanite_diamond", new Item(new FabricItemSettings().fireproof()));
     public static final Item TADANITE_CRYSTAL = registerItem("tadanite_crystal", new Item(new FabricItemSettings().fireproof()));
     public static final Item RAW_TITANIUM = registerItem("raw_titanium", new Item(new FabricItemSettings()));
@@ -56,6 +57,7 @@ public class CoreAscensionItems {
     public static final Item THE_TOOL = registerItem("the_tool", new MiningToolTipItem(CoreAscensionToolMaterials.TOOL, 0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
+    public static final Item RAW_LUMITE = registerItem("raw_lumite", new Item(new FabricItemSettings().fireproof()));
     public static final Item LUMITE_INGOT = registerItem("lumite_ingot", new Item(new FabricItemSettings().fireproof()));
     public static final Item MAGIC_MIRROR = registerItem("magic_mirror", new MagicMirrorItem(new FabricItemSettings().fireproof().rarity(Rarity.EPIC)));
     public static final Item CRYSTALLINE_ARTIFACT = registerItem("crystalline_artifact", new Item(new FabricItemSettings().fireproof()));
@@ -282,6 +284,8 @@ public class CoreAscensionItems {
     public static final Item FOUR_LEAF_CLOVER = registerItem("four_leaf_clover", new Item(new FabricItemSettings()));
     public static final Item ULTIMATE_GAUNTLET = registerItem("ultimate_gauntlet", new Item(new FabricItemSettings().fireproof()));
     public static final Item OSBORGNEN_FUEL = registerItem("osborgnen_fuel", new Item(new FabricItemSettings().fireproof()));
+    public static final Item FROZEN_ROD = registerItem("frozen_rod", new Item(new FabricItemSettings()));
+    public static final Item FROZEN_ARTIFACT = registerItem("frozen_artifact", new Item(new FabricItemSettings()));
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));

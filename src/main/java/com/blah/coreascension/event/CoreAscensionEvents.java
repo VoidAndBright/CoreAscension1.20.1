@@ -6,7 +6,8 @@ import com.blah.coreascension.event.events.*;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 
-public class CoreAscensionEvents {
+public class CoreAscensionEvents
+{
     public static void RegisterClientEvents()
     {
         ClientTickEvents.END_CLIENT_TICK.register(new StepUpEvent());

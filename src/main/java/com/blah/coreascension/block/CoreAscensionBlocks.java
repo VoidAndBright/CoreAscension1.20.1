@@ -104,6 +104,10 @@ public class CoreAscensionBlocks
     public static final Block URANIUM_ORE = RegisterBlockItem("uranium_ore", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.LIME)), new FabricItemSettings().fireproof());
     public static final Block RAW_URANIUM_BLOCK = RegisterBlockItem("raw_uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.LIME)), new FabricItemSettings().fireproof());
     public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.LIME)), new FabricItemSettings().fireproof());
+
+    public static final Block RAW_LUMITE_BLOCK = RegisterBlockItem("raw_lumite_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.PURPLE)), new FabricItemSettings().fireproof());
+    public static final Block LUMITE_BLOCK = RegisterBlockItem("lumite_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.PURPLE)), new FabricItemSettings().fireproof());
+
     // cedar grove stuff
     public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.DULL_RED)));
     // end uranium
@@ -567,6 +571,9 @@ public class CoreAscensionBlocks
     public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(10).mapColor(MapColor.STONE_GRAY)));
     // end desert
     // end nether core
+
+    public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
 
     private static Block RegisterBlockItem(String name, Block block)
     {
