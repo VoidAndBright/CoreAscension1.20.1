@@ -221,15 +221,39 @@ public class CoreAscensionItems {
             new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof(),
                     0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item TADANITE_PICKAXE = registerItem("tadanite_pickaxe",
-            new PickaxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 2, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_SWORD = registerItem("tadanite_sword",
-            new SwordItem(CoreAscensionToolMaterials.TADANITE, 8, -2.4f, new FabricItemSettings().fireproof()));
+            new SwordItem(CoreAscensionToolMaterials.TADANITE, 4, -2.4f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_AXE = registerItem("tadanite_axe",
-            new AxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 11, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
+            new AxeToolTipItem(CoreAscensionToolMaterials.TADANITE, 7, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_SHOVEL = registerItem("tadanite_shovel",
-            new ShovelToolTipItem(CoreAscensionToolMaterials.TADANITE, 4, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
+            new ShovelToolTipItem(CoreAscensionToolMaterials.TADANITE, 0, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_HOE = registerItem("tadanite_hoe",
-            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, 2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite", "tooltip.tadanite"));
+            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, -2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite", "tooltip.tadanite"));
+
+    public static final Item LUMITE_HELMET = registerItem("lumite_helmet",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.LUMITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof(),
+                    1, "tooltip.setbonus.lumite_1", "tooltip.setbonus.lumite_2", "tooltip.setbonus.lumite_3", "tooltip.setbonus.lumite_4", "tooltip.setbonus.lumite_5", "tooltip.setbonus.lumite_6"));
+    public static final Item LUMITE_CHESTPLATE = registerItem("lumite_chestplate",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.LUMITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof(),
+                    1, "tooltip.setbonus.lumite_1", "tooltip.setbonus.lumite_2", "tooltip.setbonus.lumite_3", "tooltip.setbonus.lumite_4", "tooltip.setbonus.lumite_5", "tooltip.setbonus.lumite_6"));
+    public static final Item LUMITE_LEGGINGS = registerItem("lumite_leggings",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.LUMITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof(),
+                    1, "tooltip.setbonus.lumite_1", "tooltip.setbonus.lumite_2", "tooltip.setbonus.lumite_3", "tooltip.setbonus.lumite_4", "tooltip.setbonus.lumite_5", "tooltip.setbonus.lumite_6"));
+    public static final Item LUMITE_BOOTS = registerItem("lumite_boots",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.LUMITE, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof(),
+                    1, "tooltip.setbonus.lumite_1", "tooltip.setbonus.lumite_2", "tooltip.setbonus.lumite_3", "tooltip.setbonus.lumite_4", "tooltip.setbonus.lumite_5", "tooltip.setbonus.lumite_6"));
+    public static final Item LUMITE_PICKAXE = registerItem("lumite_pickaxe",
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.LUMITE, 4, -2.8f, new FabricItemSettings().fireproof(), Formatting.RED, "tooltip.lumite_pickaxe_1", "tooltip.lumite_pickaxe_2"));
+    public static final Item LUMITE_SWORD = registerItem("lumite_sword",
+            new SwordTooltipItem(CoreAscensionToolMaterials.LUMITE, 6, -2.4f, new FabricItemSettings().fireproof(), Formatting.RED, "tooltip.lumite_sword"));
+    public static final Item LUMITE_AXE = registerItem("lumite_axe",
+            new AxeItem(CoreAscensionToolMaterials.LUMITE, 9, -3.1f, new FabricItemSettings().fireproof()));
+    public static final Item LUMITE_SHOVEL = registerItem("lumite_shovel",
+            new ShovelItem(CoreAscensionToolMaterials.LUMITE, 3, -3f, new FabricItemSettings().fireproof()));
+    public static final Item LUMITE_HOE = registerItem("lumite_hoe",
+            new HoeItem(CoreAscensionToolMaterials.LUMITE, -1, -3f, new FabricItemSettings().fireproof()));
+
 
     public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet",
             new ArmorItem(CoreAscensionArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -334,6 +358,16 @@ public class CoreAscensionItems {
     public static final Item COOKED_CALAMARI = registerItem("cooked_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COOKED_CALAMARI)));
     public static final Item MEGA_BERRY = registerItem("mega_berry", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.MEGA_BERRY)));
     public static final Item NETHER_MUSHROOM_STEW = registerItem("nether_mushroom_stew", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.NETHER_MUSHROOM_STEW)));
+
+    public static final Item DAWN_ESSENCE = registerItem("dawn_essence", new Item(new FabricItemSettings().fireproof()));
+    public static final Item VOLCANO = registerItem("volcano",
+            new SwordTooltipItem(CoreAscensionToolMaterials.VOLCANO, 2, -2.4f, new FabricItemSettings().rarity(Rarity.EPIC), Formatting.GRAY, "tooltip.volcano"));
+    public static final Item NIGHTS_EDGE = registerItem("nights_edge",
+            new SwordItem(CoreAscensionToolMaterials.DUSK, 3, -2.4f, new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
+    public static final Item DUSK_PICKAXE = registerItem("dusk_pickaxe",
+            new SwordItem(CoreAscensionToolMaterials.DUSK, -2, -2.8f, new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
+    public static final Item TWILIGHT_AXE = registerItem("twilight_axe",
+            new AxeItem(CoreAscensionToolMaterials.DUSK, 5, -3.1f, new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
 
 
     public static Item registerItem(String name, Item item)

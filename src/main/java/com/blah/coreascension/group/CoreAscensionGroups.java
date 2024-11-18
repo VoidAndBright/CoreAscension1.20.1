@@ -473,6 +473,10 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.CRYSTAL_CHESTPLATE);
             entries.add(CoreAscensionItems.CRYSTAL_LEGGINGS);
             entries.add(CoreAscensionItems.CRYSTAL_BOOTS);
+            entries.add(CoreAscensionItems.LUMITE_HELMET);
+            entries.add(CoreAscensionItems.LUMITE_CHESTPLATE);
+            entries.add(CoreAscensionItems.LUMITE_LEGGINGS);
+            entries.add(CoreAscensionItems.LUMITE_BOOTS);
             // -- END ARMOR --
 
             // -- TOOLS --
@@ -500,9 +504,6 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.TADANITE_HAMMER);
             entries.add(CoreAscensionItems.TADANITE_EXCAVATOR);
             entries.add(CoreAscensionItems.TADANITE_SCYTHE);
-            entries.add(CoreAscensionItems.LUMITE_HAMMER);
-            entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
-            entries.add(CoreAscensionItems.LUMITE_SCYTHE);
             entries.add(CoreAscensionItems.URANIUM_SWORD);
             entries.add(CoreAscensionItems.URANIUM_PICKAXE);
             entries.add(CoreAscensionItems.URANIUM_AXE);
@@ -510,6 +511,21 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.URANIUM_HOE);
 
             entries.add(CoreAscensionItems.BEDROCK_PICKAXE);
+
+            entries.add(CoreAscensionItems.LUMITE_SWORD);
+            entries.add(CoreAscensionItems.LUMITE_PICKAXE);
+            entries.add(CoreAscensionItems.LUMITE_AXE);
+            entries.add(CoreAscensionItems.LUMITE_SHOVEL);
+            entries.add(CoreAscensionItems.LUMITE_HOE);
+            entries.add(CoreAscensionItems.LUMITE_HAMMER);
+            entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
+            entries.add(CoreAscensionItems.LUMITE_SCYTHE);
+
+            entries.add(CoreAscensionItems.VOLCANO);
+            entries.add(CoreAscensionItems.NIGHTS_EDGE);
+            entries.add(CoreAscensionItems.DUSK_PICKAXE);
+            entries.add(CoreAscensionItems.TWILIGHT_AXE);
+            entries.add(CoreAscensionItems.BLAHS_ENERGY_BLADE);
             // -- END TOOLS --
 
             entries.add(CoreAscensionItems.PRISMAERO_SHARD);

@@ -17,7 +17,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
     public void generate()
     {
         addDrop(CoreAscensionBlocks.BEDROCK, Blocks.BEDROCK.asItem());
-        addDrop(CoreAscensionBlocks.AMETHYST_SLAB, slabDrops(CoreAscensionBlocks.TITANIUM_SLAB));
+        addDrop(CoreAscensionBlocks.AMETHYST_SLAB, slabDrops(CoreAscensionBlocks.AMETHYST_SLAB));
         addDrop(CoreAscensionBlocks.ACACIA_POST);
         addDrop(CoreAscensionBlocks.ACACIA_SECRET_DOOR);
         addDrop(CoreAscensionBlocks.AERO_LANTERN);
@@ -26,6 +26,20 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.ANDESITE_TILE);
         addDrop(CoreAscensionBlocks.DIORITE_TILE);
         addDrop(CoreAscensionBlocks.GRANITE_TILE);
+
+        addDrop(CoreAscensionBlocks.RUBY_GEM_LOG);
+        addDrop(CoreAscensionBlocks.CITRINE_GEM_LOG);
+        addDrop(CoreAscensionBlocks.TOPAZ_GEM_LOG);
+        addDrop(CoreAscensionBlocks.EMERALD_GEM_LOG);
+        addDrop(CoreAscensionBlocks.DIAMOND_GEM_LOG);
+        addDrop(CoreAscensionBlocks.SAPPHIRE_GEM_LOG);
+        addDrop(CoreAscensionBlocks.AMETHYST_GEM_LOG);
+        addDropWithSilkTouch(CoreAscensionBlocks.RUBY_GEM_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.CITRINE_GEM_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.TOPAZ_GEM_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.EMERALD_GEM_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.DIAMOND_GEM_LEAVES);
+        addDropWithSilkTouch(CoreAscensionBlocks.SAPPHIRE_GEM_LEAVES);
         addDropWithSilkTouch(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS);
         addDrop(CoreAscensionBlocks.BORDERLESS_GLASS_PANE);
@@ -292,6 +306,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CORELIGHT);
         addDrop(CoreAscensionBlocks.PERMA_ICE);
         addDrop(CoreAscensionBlocks.NETHER_ICE);
+        addDrop(CoreAscensionBlocks.SOUL_SNOW);
 
         addDrop(CoreAscensionBlocks.FROST_STEM);
         addDrop(CoreAscensionBlocks.FROST_HYPHAE);

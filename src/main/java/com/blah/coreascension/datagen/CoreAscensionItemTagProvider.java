@@ -26,12 +26,32 @@ public class CoreAscensionItemTagProvider extends FabricTagProvider.ItemTagProvi
                 .add(CoreAscensionBlocks.ETHEREAL_PLANKS.asItem())
                 .add(CoreAscensionBlocks.DARK_MATTER_PLANKS.asItem())
                 .add(CoreAscensionBlocks.CAKEWOOD_PLANKS.asItem())
+                .add(CoreAscensionBlocks.ENTROPY_PLANKS.asItem())
+                .add(CoreAscensionBlocks.FROST_PLANKS.asItem())
                 .add(CoreAscensionBlocks.WHITEWOOD_PLANKS.asItem());
 
         getOrCreateTagBuilder(ItemTags.PICKAXES)
                 .add(CoreAscensionItems.BEDROCK_PICKAXE)
+                .add(CoreAscensionItems.LUMITE_PICKAXE)
+                .add(CoreAscensionItems.DUSK_PICKAXE)
                 .add(CoreAscensionItems.TADANITE_PICKAXE)
+                .add(CoreAscensionItems.POTATO_PICKAXE)
                 .add(CoreAscensionItems.SAPPHIRE_PICKAXE);
+
+        getOrCreateTagBuilder(ItemTags.AXES)
+                .add(CoreAscensionItems.LUMITE_AXE)
+                .add(CoreAscensionItems.TWILIGHT_AXE)
+                .add(CoreAscensionItems.POTATO_AXE)
+                .add(CoreAscensionItems.SAPPHIRE_AXE)
+                .add(CoreAscensionItems.TADANITE_AXE)
+                .add(CoreAscensionItems.URANIUM_AXE);
+
+        getOrCreateTagBuilder(ItemTags.SHOVELS)
+                .add(CoreAscensionItems.LUMITE_SHOVEL)
+                .add(CoreAscensionItems.POTATO_SHOVEL)
+                .add(CoreAscensionItems.SAPPHIRE_SHOVEL)
+                .add(CoreAscensionItems.TADANITE_SHOVEL)
+                .add(CoreAscensionItems.URANIUM_SHOVEL);
 
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
                 .add(CoreAscensionBlocks.TROPICS_LOG.asItem())

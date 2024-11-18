@@ -24,6 +24,10 @@ import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -41,12 +45,35 @@ import net.minecraft.world.World;
 
 public class CoreAscensionBlocks
 {
+
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
-    public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE)));
-    public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.LANTERN).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
+    public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK))
+    {
+        @Override
+        public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
+        {
+            super.onSteppedOn(world, pos, state, entity);
+        }
+    });
+
+
     public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.BRIGHT_RED)));
     public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block RUBY_GEM_LOG = RegisterBlockItem("ruby_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.RED)));
+    public static final Block RUBY_GEM_LEAVES = RegisterBlockItem("ruby_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
+    public static final Block CITRINE_GEM_LOG = RegisterBlockItem("citrine_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.ORANGE)));
+    public static final Block CITRINE_GEM_LEAVES = RegisterBlockItem("citrine_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
+    public static final Block TOPAZ_GEM_LOG = RegisterBlockItem("topaz_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.YELLOW)));
+    public static final Block TOPAZ_GEM_LEAVES = RegisterBlockItem("topaz_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
+    public static final Block EMERALD_GEM_LOG = RegisterBlockItem("emerald_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.EMERALD_GREEN)));
+    public static final Block EMERALD_GEM_LEAVES = RegisterBlockItem("emerald_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
+    public static final Block DIAMOND_GEM_LOG = RegisterBlockItem("diamond_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.DIAMOND_BLUE)));
+    public static final Block DIAMOND_GEM_LEAVES = RegisterBlockItem("diamond_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
+    public static final Block SAPPHIRE_GEM_LOG = RegisterBlockItem("sapphire_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.BLUE)));
+    public static final Block SAPPHIRE_GEM_LEAVES = RegisterBlockItem("sapphire_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
     public static final Block AMETHYST_GEM_LOG = RegisterBlockItem("amethyst_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.PURPLE)));
     public static final Block AMETHYST_GEM_LEAVES = RegisterBlockItem("amethyst_gem_leaves", new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).mapColor(MapColor.STONE_GRAY)));
     public static final Block AMETHYST_SLAB = RegisterBlockItem("amethyst_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).mapColor(MapColor.PURPLE)));
@@ -481,6 +508,17 @@ public class CoreAscensionBlocks
     public static final Block CORELIGHT = RegisterBlockItem("corelight", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.BLUE)));
     public static final Block PERMA_ICE = RegisterBlockItem("perma_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block NETHER_ICE = RegisterBlockItem("nether_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block SOUL_SNOW = RegisterBlockItem("soul_snow", new Block(FabricBlockSettings.copyOf(Blocks.SAND).sounds(BlockSoundGroup.SOUL_SAND).mapColor(MapColor.LIGHT_BLUE).velocityMultiplier(1.3f))
+    {
+        @Override
+        public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
+        {
+            if (!(entity instanceof PlayerEntity) && entity instanceof LivingEntity)
+            {
+                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20));
+            }
+        }
+    });
 
     public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
     public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
@@ -572,10 +610,10 @@ public class CoreAscensionBlocks
     public static final Block CUT_FROST_SANDSTONE_STAIRS = RegisterBlockItem("cut_frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block FROSTED_GLASS = RegisterBlockItem("frosted_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
     public static final Block FROSTED_GLASS_PANE = RegisterBlockItem("frosted_glass_pane", new PaneBlock(FabricBlockSettings.copyOf(FROSTED_GLASS)));
-    public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(10).mapColor(MapColor.STONE_GRAY)));
     // end desert
     // end nether core
 
+    public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
 
