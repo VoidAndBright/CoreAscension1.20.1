@@ -2,6 +2,7 @@ package com.blah.coreascension.mixin;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;
@@ -30,50 +31,65 @@ public abstract class FluidRendererMixin
     @Shadow protected abstract void vertex(VertexConsumer vertexConsumer, double x, double y, double z, float red, float green, float blue, float u, float v, int light);
     @Shadow protected abstract int getLight(BlockRenderView world, BlockPos pos);
     @Shadow
-    private static boolean isSideCovered(BlockView world, Direction direction, float height, BlockPos pos, BlockState state) {
-        if (state.isOpaque()) {
+    private static boolean isSideCovered(BlockView world, Direction direction, float height, BlockPos pos, BlockState state)
+    {
+        if (state.isOpaque())
+        {
             VoxelShape voxelShape = VoxelShapes.cuboid(0.0, 0, 0.0, 1.0, height, 1.0);
             VoxelShape voxelShape2 = state.getCullingShape(world, pos);
             return VoxelShapes.isSideCovered(voxelShape, voxelShape2, direction);
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
-    @Shadow private float getFluidHeight(BlockRenderView world, Fluid fluid, BlockPos pos, BlockState blockState, FluidState fluidState) {
-        if (fluid.matchesType(fluidState.getFluid())) {
-            BlockState blockState2 = world.getBlockState(pos.up());
-            return fluid.matchesType(blockState2.getFluidState().getFluid()) ? 1.0F : -fluidState.getHeight();
-        } else {
+    @Shadow private float getFluidHeight(BlockRenderView world, Fluid fluid, BlockPos pos, BlockState blockState, FluidState fluidState)
+    {
+        if (fluid.matchesType(fluidState.getFluid()))
+        {
+            BlockState blockState2 = world.getBlockState(pos.down());
+            return fluid.matchesType(blockState2.getFluidState().getFluid()) ? 1.0F : fluidState.getHeight();
+        }
+        else
+        {
             return !blockState.isSolid() ? 0.0F : -1.0F;
         }
     }
     @Shadow protected abstract float calculateFluidHeight(BlockRenderView world, Fluid fluid, float originHeight, float northSouthHeight, float eastWestHeight, BlockPos pos);
 
     @Shadow
-    public static boolean shouldRenderSide(BlockRenderView world, BlockPos pos, FluidState fluidState, BlockState blockState, Direction direction, FluidState neighborFluidState) {
+    public static boolean shouldRenderSide(BlockRenderView world, BlockPos pos, FluidState fluidState, BlockState blockState, Direction direction, FluidState neighborFluidState)
+    {
         return !isOppositeSideCovered(world, pos, blockState, direction) && !isSameFluid(fluidState, neighborFluidState);
     }
 
     @Shadow
-    private static boolean isSameFluid(FluidState a, FluidState b) {
-        return b.getFluid().matchesType(a.getFluid());
+    private static boolean isSameFluid(FluidState a, FluidState b)
+    {
+        return b.getFluid().matchesType(a.getFluid()) ||
+                (a.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS && b.getFluid() == CoreAscensionBlocks.STILL_END_GAS) ||
+                (b.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS && a.getFluid() == CoreAscensionBlocks.STILL_END_GAS);
     }
 
     @Shadow
-    private static boolean isSideCovered(BlockView world, BlockPos pos, Direction direction, float maxDeviation, BlockState state) {
+    private static boolean isSideCovered(BlockView world, BlockPos pos, Direction direction, float maxDeviation, BlockState state)
+    {
         return isSideCovered(world, direction, maxDeviation, pos.offset(direction), state);
     }
 
     @Shadow
-    private static boolean isOppositeSideCovered(BlockView world, BlockPos pos, BlockState state, Direction direction) {
+    private static boolean isOppositeSideCovered(BlockView world, BlockPos pos, BlockState state, Direction direction)
+    {
         return isSideCovered(world, direction.getOpposite(), 1.0F, pos, state);
     }
 
     @Inject(at = @At(value = "HEAD"), method = "render", cancellable = true)
     private void onRenderFluid(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState, FluidState fluidState, CallbackInfo ci)
     {
-        if (fluidState.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS)
+        if (fluidState.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS ||
+            fluidState.getFluid() == CoreAscensionBlocks.STILL_END_GAS)
         {
             Sprite[] sprites = new Sprite[2];
             sprites[0] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionBlocks.STILL_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
@@ -94,7 +110,8 @@ public abstract class FluidRendererMixin
             FluidState westFS = westBS.getFluidState();
             BlockState eastBS = world.getBlockState(pos.offset(Direction.EAST));
             FluidState eastFS = eastBS.getFluidState();
-            boolean isTheSameFluid = !isSameFluid(fluidState, downFS);
+            boolean isNotTheSameFluidDown = !isSameFluid(fluidState, downFS);
+            boolean isTheSameFluidUp = isSameFluid(fluidState, upFS);
             boolean shouldUpRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.UP, upFS)
                     && !isSideCovered(world, pos, Direction.UP, 0.8888889F, upBS);
 
@@ -105,12 +122,12 @@ public abstract class FluidRendererMixin
             boolean shouldSouthRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.SOUTH, southFS);
             boolean shouldWestRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.WEST, westFS);
             boolean shouldEastRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.EAST, eastFS);
-            if (isTheSameFluid || shouldDownRender || shouldWestRender || shouldNorthRender || shouldSouthRender)
+            if (shouldDownRender || shouldWestRender || shouldNorthRender || shouldSouthRender || shouldEastRender)
             {
-                float j = world.getBrightness(Direction.UP, true);
-                float k = world.getBrightness(Direction.DOWN, true);
-                float l = world.getBrightness(Direction.NORTH, true);
-                float m = world.getBrightness(Direction.WEST, true);
+                float brightnessUp = world.getBrightness(Direction.UP, true);
+                float brightnessDown = world.getBrightness(Direction.DOWN, true);
+                float brightnessZ = world.getBrightness(Direction.NORTH, true);
+                float brightnessX = world.getBrightness(Direction.WEST, true);
                 Fluid fluid = fluidState.getFluid();
                 float fluidHeight = this.getFluidHeight(world, fluid, pos, blockState, fluidState);
                 float fluidHeightNE;
@@ -126,22 +143,22 @@ public abstract class FluidRendererMixin
                 }
                 else
                 {
-                    float s = this.getFluidHeight(world, fluid, pos.north(), northBS, northFS);
-                    float t = this.getFluidHeight(world, fluid, pos.south(), southBS, southFS);
-                    float u = this.getFluidHeight(world, fluid, pos.east(), eastBS, eastFS);
-                    float v = this.getFluidHeight(world, fluid, pos.west(), westBS, westFS);
-                    fluidHeightNE = this.calculateFluidHeight(world, fluid, fluidHeight, s, u, pos.offset(Direction.NORTH).offset(Direction.EAST));
-                    fluidHeightNW = this.calculateFluidHeight(world, fluid, fluidHeight, s, v, pos.offset(Direction.NORTH).offset(Direction.WEST));
-                    fluidHeightSE = this.calculateFluidHeight(world, fluid, fluidHeight, t, u, pos.offset(Direction.SOUTH).offset(Direction.EAST));
-                    fluidHeightSW = this.calculateFluidHeight(world, fluid, fluidHeight, t, v, pos.offset(Direction.SOUTH).offset(Direction.WEST));
+                    float fluidHeightNorth = this.getFluidHeight(world, fluid, pos.north(), northBS, northFS);
+                    float fluidHeightSouth = this.getFluidHeight(world, fluid, pos.south(), southBS, southFS);
+                    float fluidHeightEast = this.getFluidHeight(world, fluid, pos.east(), eastBS, eastFS);
+                    float fluidHeightWest = this.getFluidHeight(world, fluid, pos.west(), westBS, westFS);
+                    fluidHeightNE = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightNorth, fluidHeightEast, pos.offset(Direction.NORTH).offset(Direction.EAST));
+                    fluidHeightNW = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightNorth, fluidHeightWest, pos.offset(Direction.NORTH).offset(Direction.WEST));
+                    fluidHeightSE = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightSouth, fluidHeightEast, pos.offset(Direction.SOUTH).offset(Direction.EAST));
+                    fluidHeightSW = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightSouth, fluidHeightWest, pos.offset(Direction.SOUTH).offset(Direction.WEST));
                 }
 
-                double posX = pos.getX() & 15;
+                double posX = (pos.getX() & 15);
                 double posY = pos.getY() & 15;
-                double posZ = pos.getZ() & 15;
+                double posZ = (pos.getZ() & 15);
                 float x = 0.001F;
-                float y = shouldUpRender ? 0.001F : 0.0F;
-                if (isTheSameFluid && !isSideCovered(world, pos, Direction.DOWN, Math.min(Math.min(fluidHeightNW, fluidHeightSW), Math.min(fluidHeightSE, fluidHeightNE)), downBS))
+                float y = 0f; //shouldUpRender ? 0.001F : 0.0F;
+                if (isNotTheSameFluidDown && !isSideCovered(world, pos, Direction.DOWN, Math.max(Math.max(fluidHeightNW, fluidHeightSW), Math.max(fluidHeightSE, fluidHeightNE)), downBS))
                 {
                     fluidHeightNW -= 0.001F;
                     fluidHeightSW -= 0.001F;
@@ -158,6 +175,7 @@ public abstract class FluidRendererMixin
                     float ag;
                     if (vec3d.x == 0.0 && vec3d.z == 0.0)
                     {
+                        // still gas
                         Sprite sprite = sprites[0];
                         z = sprite.getFrameU(0.0);
                         aa = sprite.getFrameV(0.0);
@@ -198,37 +216,51 @@ public abstract class FluidRendererMixin
                     ae = MathHelper.lerp(ai, ae, ah);
                     ag = MathHelper.lerp(ai, ag, ah);
                     int am = this.getLight(world, pos);
-                    float ak = k * f;
-                    float an = k * g;
-                    float ao = k * h;
-                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + 1, posZ + 0.0, ak, an, ao, z, aa, am);
-                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + 1, posZ + 1.0, ak, an, ao, ab, ac, am);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + 1, posZ + 1.0, ak, an, ao, ad, ae, am);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + 1, posZ + 0.0, ak, an, ao, af, ag, am);
+                    float ak = brightnessDown * f;
+                    float an = brightnessDown * g;
+                    float ao = brightnessDown * h;
+
+                    float val = 1;
+
+//                    if (isSameFluid(fluidState, upFS) && fluidState.getFluid() == CoreAscensionBlocks.STILL_END_GAS)
+//                    {
+//                        CoreAscension.LOGGER.info("test");
+//                        val = 0.86666666666f;
+//                    }
+                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, ak, an, ao, z, aa, am);
+                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, ak, an, ao, ab, ac, am);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, ak, an, ao, ad, ae, am);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, ak, an, ao, af, ag, am);
                     if (fluidState.canFlowTo(world, pos.down()))
                     {
-                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + 1, posZ + 0.0, ak, an, ao, z, aa, am);
-                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + 1, posZ + 0.0, ak, an, ao, af, ag, am);
-                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + 1, posZ + 1.0, ak, an, ao, ad, ae, am);
-                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + 1, posZ + 1.0, ak, an, ao, ab, ac, am);
+                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, ak, an, ao, z, aa, am);
+                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, ak, an, ao, af, ag, am);
+                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, ak, an, ao, ad, ae, am);
+                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, ak, an, ao, ab, ac, am);
                     }
                 }
 
-                if (false)
+                if (isTheSameFluidUp)
                 {
-                    float zx = sprites[0].getMinU();
-                    float abx = sprites[0].getMaxU();
-                    float adx = sprites[0].getMinV();
-                    float afx = sprites[0].getMaxV();
-                    int ap = this.getLight(world, pos.up());
-                    float acx = j * f;
-                    float aex = j * g;
-                    float agx = j * h;
-                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, zx, afx, ap);
-                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, acx, aex, agx, zx, adx, ap);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, acx, aex, agx, abx, adx, ap);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, abx, afx, ap);
+                    shouldDownRender = false;
                 }
+
+                // ignore this - leaving it here in case I need it in the future
+//                if (shouldUpRender)
+//                {
+//                    float zx = sprites[0].getMinU();
+//                    float abx = sprites[0].getMaxU();
+//                    float adx = sprites[0].getMinV();
+//                    float afx = sprites[0].getMaxV();
+//                    int ap = this.getLight(world, pos.up());
+//                    float acx = j * f;
+//                    float aex = j * g;
+//                    float agx = j * h;
+//                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, zx, afx, ap);
+//                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, acx, aex, agx, zx, adx, ap);
+//                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, acx, aex, agx, abx, adx, ap);
+//                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, abx, afx, ap);
+//                }
 
                 if (shouldDownRender)
                 {
@@ -238,15 +270,15 @@ public abstract class FluidRendererMixin
                     float adx = sprites[1].getMinV();
                     float afx = sprites[1].getMaxV();
                     int ap = this.getLight(world, pos.down());
-                    float acx = j * f;
-                    float aex = j * g;
-                    float agx = j * h;
+                    float acx = brightnessUp * f;
+                    float aex = brightnessUp * g;
+                    float agx = brightnessUp * h;
                     this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, zx, afx, ap);
                     this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, acx, aex, agx, zx, adx, ap);
                     this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, acx, aex, agx, abx, adx, ap);
                     this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, abx, afx, ap);
                 }
-                y = shouldUpRender ? 0.001F : 0.0F;
+                //y = shouldUpRender ? 0.001F : 0.0F;
                 int aq = this.getLight(world, pos);
 
                 for (Direction direction : Direction.Type.HORIZONTAL)
@@ -297,7 +329,7 @@ public abstract class FluidRendererMixin
                             bl8 = shouldEastRender;
                     }
 
-                    if (bl8 && !isSideCovered(world, pos, direction, Math.min(afx, aax), world.getBlockState(pos.offset(direction))))
+                    if (bl8 && !isSideCovered(world, pos, direction, Math.max(afx, aax), world.getBlockState(pos.offset(direction))))
                     {
                         BlockPos blockPos = pos.offset(direction);
                         Sprite sprite2 = sprites[1];
@@ -307,23 +339,22 @@ public abstract class FluidRendererMixin
                         float ax = sprite2.getFrameV((1.0F - afx) * 16.0F * 0.5F);
                         float ay = sprite2.getFrameV((1.0F - aax) * 16.0F * 0.5F);
                         float az = sprite2.getFrameV(8.0);
-                        float ba = direction.getAxis() == Direction.Axis.Z ? l : m;
-                        float bb = k * ba * f;
-                        float bc = k * ba * g;
-                        float bd = k * ba * h;
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1, at, bb, bc, bd, av, ax, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1, au, bb, bc, bd, aw, ay, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1, au, bb, bc, bd, aw, az, aq);
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1, at, bb, bc, bd, av, az, aq);
+                        float ba = direction.getAxis() == Direction.Axis.Z ? brightnessZ : brightnessX;
+                        float bb = brightnessDown * ba * f;
+                        float bc = brightnessDown * ba * g;
+                        float bd = brightnessDown * ba * h;
+                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, aq);
+                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, aq);
+                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, aq);
+                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, aq);
 
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1, at, bb, bc, bd, av, az, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1, au, bb, bc, bd, aw, az, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1, au, bb, bc, bd, aw, ay, aq);
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1, at, bb, bc, bd, av, ax, aq);
+                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, aq);
+                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, aq);
+                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, aq);
+                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, aq);
                     }
                 }
             }
-            //this.render(world, pos, vertexConsumer, blockState, fluidState);
             ci.cancel();
         }
     }

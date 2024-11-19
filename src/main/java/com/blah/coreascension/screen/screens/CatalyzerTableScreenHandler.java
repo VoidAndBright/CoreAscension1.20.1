@@ -59,7 +59,9 @@ public class CatalyzerTableScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 3, 124, 35) {
             public boolean canInsert(ItemStack stack)
             {
+                this.inventory.removeStack(0, 1);
                 this.inventory.removeStack(1, 1);
+                this.inventory.removeStack(2, 1);
                 return true;
             }
 

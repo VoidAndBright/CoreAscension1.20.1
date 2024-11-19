@@ -12,6 +12,8 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -25,15 +27,17 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
 import java.util.Map;
+import java.util.Optional;
 
 public abstract class EndGasFluid extends CoreAscensionFluid
 {
     public static final BooleanProperty RISING = BooleanProperty.of("rising");
-    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.NeighborGroup>> field_15901 = ThreadLocal.withInitial(() -> {
-        Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<Block.NeighborGroup>(200) {
+    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.NeighborGroup>> field_15901 = ThreadLocal.withInitial(() ->
+    {
+        Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<Block.NeighborGroup>(200)
+        {
             @Override
-            protected void rehash(int i) {
-            }
+            protected void rehash(int i) { }
         };
         object2ByteLinkedOpenHashMap.defaultReturnValue((byte)127);
         return object2ByteLinkedOpenHashMap;
@@ -61,7 +65,6 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         {
             i = 7;
         }
-
         if (i > 0)
         {
             Map<Direction, FluidState> map = this.getSpread(world, pos, blockState);
@@ -82,24 +85,33 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     protected static int getBlockStateLevel(FluidState state) {
         return state.isStill() ? 0 : 8 - Math.min(state.getLevel(), 8) + (state.get(RISING) ? 8 : 0);
     }
-    private boolean canFlowDownTo(BlockView world, Fluid fluid, BlockPos pos, BlockState state, BlockPos fromPos, BlockState fromState) {
-        if (!this.receivesFlow(Direction.UP, world, pos, state, fromPos, fromState)) {
+    private boolean canFlowUpTo(BlockView world, Fluid fluid, BlockPos pos, BlockState state, BlockPos fromPos, BlockState fromState)
+    {
+        if (!this.receivesFlow(Direction.UP, world, pos, state, fromPos, fromState))
+        {
             return false;
-        } else {
+        }
+        else
+        {
             return fromState.getFluidState().getFluid().matchesType(this) || this.canFill(world, fromPos, fromState, fluid);
         }
     }
-    private boolean canFill(BlockView world, BlockPos pos, BlockState state, Fluid fluid) {
+    private boolean canFill(BlockView world, BlockPos pos, BlockState state, Fluid fluid)
+    {
         Block block = state.getBlock();
-        if (block instanceof FluidFillable) {
+        if (block instanceof FluidFillable)
+        {
             return ((FluidFillable)block).canFillWithFluid(world, pos, state, fluid);
         } else if (block instanceof DoorBlock
                 || state.isIn(BlockTags.SIGNS)
                 || state.isOf(Blocks.LADDER)
                 || state.isOf(Blocks.SUGAR_CANE)
-                || state.isOf(Blocks.BUBBLE_COLUMN)) {
+                || state.isOf(Blocks.BUBBLE_COLUMN))
+        {
             return false;
-        } else {
+        }
+        else
+        {
             return !state.isOf(Blocks.NETHER_PORTAL) && !state.isOf(Blocks.END_PORTAL) && !state.isOf(Blocks.END_GATEWAY) && !state.isOf(Blocks.STRUCTURE_VOID) && !state.blocksMovement();
         }
     }
@@ -135,14 +147,14 @@ public abstract class EndGasFluid extends CoreAscensionFluid
 
         return bl;
     }
-    private static short packXZOffset(BlockPos from, BlockPos to) {
+    private static short packXZOffset(BlockPos from, BlockPos to)
+    {
         int i = to.getX() - from.getX();
         int j = to.getZ() - from.getZ();
         return (short)((i + 128 & 0xFF) << 8 | j + 128 & 0xFF);
     }
-    private boolean canFlowThrough(
-            BlockView world, Fluid fluid, BlockPos pos, BlockState state, Direction face, BlockPos fromPos, BlockState fromState, FluidState fluidState
-    ) {
+    private boolean canFlowThrough(BlockView world, Fluid fluid, BlockPos pos, BlockState state, Direction face, BlockPos fromPos, BlockState fromState, FluidState fluidState)
+    {
         return !this.isMatchingAndStill(fluidState)
                 && this.receivesFlow(face, world, pos, state, fromPos, fromState)
                 && this.canFill(world, fromPos, fromState, fluid);
@@ -168,7 +180,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
                 BlockPos blockPos2 = blockPos.up();
                 boolean bl = short2BooleanMap.computeIfAbsent(s, (Short2BooleanFunction)(sx -> {
                     BlockState blockState2 = world.getBlockState(blockPos2);
-                    return this.canFlowDownTo(world, this.getFlowing(), blockPos, blockState, blockPos2, blockState2);
+                    return this.canFlowUpTo(world, this.getFlowing(), blockPos, blockState, blockPos2, blockState2);
                 }));
                 int j;
                 if (bl) {
@@ -192,16 +204,25 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     }
 
     @Override
-    protected FluidState getUpdatedState(World world, BlockPos pos, BlockState state) {
+    public Optional<SoundEvent> getBucketFillSound() {
+        return Optional.of(SoundEvents.ITEM_BUCKET_FILL);
+    }
+
+    @Override
+    protected FluidState getUpdatedState(World world, BlockPos pos, BlockState state)
+    {
         int i = 0;
         int j = 0;
 
-        for (Direction direction : Direction.Type.HORIZONTAL) {
+        for (Direction direction : Direction.Type.HORIZONTAL)
+        {
             BlockPos blockPos = pos.offset(direction);
             BlockState blockState = world.getBlockState(blockPos);
             FluidState fluidState = blockState.getFluidState();
-            if (fluidState.getFluid().matchesType(this) && this.receivesFlow(direction, world, pos, state, blockPos, blockState)) {
-                if (fluidState.isStill()) {
+            if (fluidState.getFluid().matchesType(this) && this.receivesFlow(direction, world, pos, state, blockPos, blockState))
+            {
+                if (fluidState.isStill())
+                {
                     j++;
                 }
 
@@ -209,10 +230,12 @@ public abstract class EndGasFluid extends CoreAscensionFluid
             }
         }
 
-        if (this.isInfinite(world) && j >= 2) {
+        if (this.isInfinite(world) && j >= 2)
+        {
             BlockState blockState2 = world.getBlockState(pos.up());
             FluidState fluidState2 = blockState2.getFluidState();
-            if (blockState2.isSolid() || this.isMatchingAndStill(fluidState2)) {
+            if (blockState2.isSolid() || this.isMatchingAndStill(fluidState2))
+            {
                 return this.getStill(false);
             }
         }
@@ -220,9 +243,12 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         BlockPos blockPos2 = pos.down();
         BlockState blockState3 = world.getBlockState(blockPos2);
         FluidState fluidState3 = blockState3.getFluidState();
-        if (!fluidState3.isEmpty() && fluidState3.getFluid().matchesType(this) && this.receivesFlow(Direction.DOWN, world, pos, state, blockPos2, blockState3)) {
+        if (!fluidState3.isEmpty() && fluidState3.getFluid().matchesType(this) && this.receivesFlow(Direction.DOWN, world, pos, state, blockPos2, blockState3))
+        {
             return this.getFlowing(8, true);
-        } else {
+        }
+        else
+        {
             int k = i - this.getLevelDecreasePerBlock(world);
             return k <= 0 ? Fluids.EMPTY.getDefaultState() : this.getFlowing(k, false);
         }
@@ -245,22 +271,26 @@ public abstract class EndGasFluid extends CoreAscensionFluid
                     this.flowToSides(world, fluidPos, state, blockState);
                 }
             }
-            else if (state.isStill() || !this.canFlowDownTo(world, fluidState.getFluid(), fluidPos, blockState, blockPos, blockState2))
+            else if (state.isStill() || !this.canFlowUpTo(world, fluidState.getFluid(), fluidPos, blockState, blockPos, blockState2))
             {
                 this.flowToSides(world, fluidPos, state, blockState);
             }
         }
     }
-    private boolean isMatchingAndStill(FluidState state) {
+    private boolean isMatchingAndStill(FluidState state)
+    {
         return state.getFluid().matchesType(this) && state.isStill();
     }
-    private int countNeighboringSources(WorldView world, BlockPos pos) {
+    private int countNeighboringSources(WorldView world, BlockPos pos)
+    {
         int i = 0;
 
-        for (Direction direction : Direction.Type.HORIZONTAL) {
+        for (Direction direction : Direction.Type.HORIZONTAL)
+        {
             BlockPos blockPos = pos.offset(direction);
             FluidState fluidState = world.getFluidState(blockPos);
-            if (this.isMatchingAndStill(fluidState)) {
+            if (this.isMatchingAndStill(fluidState))
+            {
                 i++;
             }
         }
