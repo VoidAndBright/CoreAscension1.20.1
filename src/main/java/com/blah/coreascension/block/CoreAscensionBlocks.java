@@ -3,6 +3,7 @@ package com.blah.coreascension.block;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
+import com.blah.coreascension.block.fluid.EndGasFluid;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
@@ -13,6 +14,8 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
+import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -28,6 +31,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -45,7 +49,9 @@ import net.minecraft.world.World;
 
 public class CoreAscensionBlocks
 {
-
+    public static final FlowableFluid STILL_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "end_gas"), new EndGasFluid.Still());
+    public static final FlowableFluid FLOWING_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "flowing_end_gas"), new EndGasFluid.Flowing());
+    public static final Block END_GAS = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "end_gas"), new FluidBlock(STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)){});
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
@@ -133,7 +139,7 @@ public class CoreAscensionBlocks
     public static final Block URANIUM_BLOCK = RegisterBlockItem("uranium_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.LIME)), new FabricItemSettings().fireproof());
 
     public static final Block RAW_LUMITE_BLOCK = RegisterBlockItem("raw_lumite_block", new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.PURPLE)), new FabricItemSettings().fireproof());
-    public static final Block LUMITE_BLOCK = RegisterBlockItem("lumite_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.PURPLE)), new FabricItemSettings().fireproof());
+    public static final Block LUMITE_BLOCK = RegisterBlockItem("lumite_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.PURPLE).hardness(5).resistance(1000)), new FabricItemSettings().fireproof());
 
     // cedar grove stuff
     public static final Block CEDAR_LOG = RegisterBlockItem("cedar_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.DULL_RED)));
@@ -522,8 +528,8 @@ public class CoreAscensionBlocks
 
     public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
     public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
+    public static final Block TADANITE_BLOCK = RegisterBlockItem("tadanite", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).sounds(BlockSoundGroup.STONE).mapColor(MapColor.PALE_GREEN).hardness(20).resistance(2000)));
     public static final Block LUMITE_ORE = RegisterBlockItem("lumite_ore", new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_DIAMOND_ORE).sounds(BlockSoundGroup.NETHER_ORE).mapColor(MapColor.LIGHT_BLUE)));
-
 
     // core grove
     public static final Block FROST_STEM = RegisterBlockItem("frost_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_STEM).mapColor(MapColor.PALE_PURPLE)));
@@ -776,6 +782,12 @@ public class CoreAscensionBlocks
     {
         ClientRegisterRenderLayeredBlocks();
         ClientRegisterColouredBlocks();
+
+        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionBlocks.STILL_END_GAS, CoreAscensionBlocks.FLOWING_END_GAS, new SimpleFluidRenderHandler(
+                new Identifier("coreascension:block/end_gas_still"),
+                new Identifier("coreascension:block/end_gas_flowing"),
+                0xFFFFFF
+        ));
     }
 
     public static void ClientRegisterRenderLayeredBlocks()
@@ -818,6 +830,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CoreAscensionBlocks.STILL_END_GAS, CoreAscensionBlocks.FLOWING_END_GAS);
     }
 
     public static void ClientRegisterColouredBlocks()

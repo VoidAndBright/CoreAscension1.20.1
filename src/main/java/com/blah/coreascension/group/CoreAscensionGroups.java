@@ -12,7 +12,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class CoreAscensionGroups {
+public class CoreAscensionGroups
+{
     public static void RegisterGroups()
     {
         registerItemGroup("block_item", CoreAscensionBlocks.BLAZE_BRICK.asItem(), (displayContext, entries) ->
@@ -31,7 +32,10 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionBlocks.AMETHYST_WALL);
             entries.add(CoreAscensionBlocks.CORE_SULPHUR_ORE);
             entries.add(CoreAscensionBlocks.TADANITE_ORE);
+            entries.add(CoreAscensionBlocks.TADANITE_BLOCK);
             entries.add(CoreAscensionBlocks.LUMITE_ORE);
+            entries.add(CoreAscensionBlocks.RAW_LUMITE_BLOCK);
+            entries.add(CoreAscensionBlocks.LUMITE_BLOCK);
 
             entries.add(CoreAscensionBlocks.ANDESITE_TILE);
             entries.add(CoreAscensionBlocks.DIORITE_TILE);
@@ -528,6 +532,7 @@ public class CoreAscensionGroups {
             entries.add(CoreAscensionItems.BLAHS_ENERGY_BLADE);
             // -- END TOOLS --
 
+            entries.add(CoreAscensionItems.END_GAS_BUCKET);
             entries.add(CoreAscensionItems.PRISMAERO_SHARD);
             entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
             entries.add(CoreAscensionItems.AERO_FUEL);

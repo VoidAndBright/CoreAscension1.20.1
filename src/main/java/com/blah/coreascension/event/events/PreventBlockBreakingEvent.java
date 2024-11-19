@@ -1,6 +1,7 @@
 package com.blah.coreascension.event.events;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,6 +17,10 @@ public class PreventBlockBreakingEvent implements AttackBlockCallback {
     {
         if (!playerEntity.getStackInHand(hand).isIn(CoreAscensionTags.MINES_BEDROCK)
             && world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.BEDROCK)
+            return ActionResult.SUCCESS;
+        if (playerEntity.getStackInHand(hand).getItem() != CoreAscensionItems.BEDROCK_PICKAXE &&
+            playerEntity.getStackInHand(hand).getItem() != CoreAscensionItems.LUMITE_PICKAXE &&
+            world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.LUMITE_ORE)
             return ActionResult.SUCCESS;
         return ActionResult.PASS;
     }

@@ -48,5 +48,6 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         itemModelGenerator.register(CoreAscensionItems.CAKEWOOD_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.DREAD_BOAT, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.DREAD_CHEST_BOAT, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.END_GAS_BUCKET, Models.GENERATED);
     }
 }

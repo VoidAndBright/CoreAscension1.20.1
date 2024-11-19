@@ -4,15 +4,18 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "ArrowHitMixin",
+    "AttackedEntityMixin",
     "BlockBreakMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
     "LivingDropsMixin",
-    "AttackedEntityMixin",
     "PiglinBrainMixin",
     "TrunkPlacerTypeInvoker"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "FluidRendererMixin"
+  ]
 }
