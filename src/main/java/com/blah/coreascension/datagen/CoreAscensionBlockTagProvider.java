@@ -17,7 +17,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
         super(output, registriesFuture);
     }
 
-    @Override
+    
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
         getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)

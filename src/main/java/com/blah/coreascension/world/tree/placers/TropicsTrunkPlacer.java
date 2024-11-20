@@ -28,13 +28,13 @@ public class TropicsTrunkPlacer extends TrunkPlacer {
         super(baseHeight, firstRandomHeight, secondRandomHeight);
     }
 
-    @Override
+    
     protected TrunkPlacerType<?> getType()
     {
         return CoreAscensionTrunkPlacerTypes.TROPICS_TRUNK_PLACER;
     }
 
-    @Override
+    
     public List<FoliagePlacer.TreeNode> generate(TestableWorld world, BiConsumer<BlockPos, BlockState> replacer, Random random, int height, BlockPos startPos, TreeFeatureConfig config)
     {
         setToDirt(world, replacer, random, startPos.down(), config);

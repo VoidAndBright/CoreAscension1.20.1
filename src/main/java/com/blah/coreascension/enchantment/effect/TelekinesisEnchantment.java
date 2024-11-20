@@ -14,19 +14,19 @@ public class TelekinesisEnchantment extends Enchantment {
         super(Rarity.COMMON, EnchantmentTarget.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
-    @Override
+    
     public int getMaxLevel()
     {
         return 1;
     }
 
-    @Override
+    
     public int getMinPower(int level)
     {
         return 1;
     }
 
-    @Override
+    
     public boolean isAcceptableItem(ItemStack stack)
     {
         return stack.getItem() instanceof SwordItem || stack.getItem() instanceof TridentItem || stack.getItem() instanceof RangedWeaponItem;

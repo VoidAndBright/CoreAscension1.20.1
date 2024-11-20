@@ -1,7 +1,8 @@
-package com.blah.coreascension.entity.entities;
+package com.blah.coreascension.entity.entities.projectiles;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -25,10 +26,11 @@ public class BlahBoltEntity extends ThrownItemEntity
         super(CoreAscensionEntities.BLAH_BOLT, livingEntity, world);
     }
 
-    @Override
+    
     protected void onEntityHit(EntityHitResult entityHitResult)
     {
-        if (entityHitResult.getEntity() instanceof LivingEntity entity)
+        Entity hitEntity = entityHitResult.getEntity();
+        if (hitEntity instanceof LivingEntity entity && this.getOwner() != hitEntity)
         {
             entity.damage(entity.getDamageSources().magic(), 18);
             double random = Math.random();
@@ -59,13 +61,13 @@ public class BlahBoltEntity extends ThrownItemEntity
         }
     }
 
-    @Override
+    
     public Packet<ClientPlayPacketListener> createSpawnPacket()
     {
         return new EntitySpawnS2CPacket(this);
     }
 
-    @Override
+    
     protected Item getDefaultItem()
     {
         return CoreAscensionItems.BLAH_BOLT;

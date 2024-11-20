@@ -15,7 +15,7 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         super(output);
     }
 
-    @Override
+    
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DIAMOND_DOOR);
@@ -29,7 +29,7 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerLog(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM).log(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM).wood(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
     }
 
-    @Override
+    
     public void generateItemModels(ItemModelGenerator itemModelGenerator)
     {
         itemModelGenerator.register(CoreAscensionItems.TROPICS_BOAT, Models.GENERATED);

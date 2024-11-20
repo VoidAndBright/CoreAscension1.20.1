@@ -1,6 +1,6 @@
 package com.blah.coreascension.entity.model;
 
-import com.blah.coreascension.entity.entities.SkyderEntity;
+import com.blah.coreascension.entity.entities.mobs.SkyderEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;

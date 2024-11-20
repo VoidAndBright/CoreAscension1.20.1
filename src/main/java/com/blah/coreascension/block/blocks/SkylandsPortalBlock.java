@@ -14,7 +14,7 @@ public class SkylandsPortalBlock extends CustomPortalBlock {
         super(settings);
     }
 
-    @Override
+    
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random)
     {
         for (int i = 0; i < 4; ++i)

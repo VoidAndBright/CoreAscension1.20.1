@@ -4,7 +4,7 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
-import com.blah.coreascension.entity.entities.BlahBoltEntity;
+import com.blah.coreascension.entity.entities.projectiles.BlahBoltEntity;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.AdvancedArmorItem;
 import com.blah.coreascension.item.items.GemStaffItem;
@@ -318,13 +318,13 @@ public class CoreAscensionItems {
     public static final Item BLAH_BOLT = registerItem("blah_beam_blast", new Item(new FabricItemSettings()));
     public static final Item BLAHS_ENERGY_BLADE = registerItem("blahs_energy_blade", new SwordTooltipItem(CoreAscensionToolMaterials.BLAH, 2, -2.4f, new FabricItemSettings().fireproof(), Formatting.BLUE, "tooltip.unbreakable")
     {
-        @Override
+        
         public UseAction getUseAction(ItemStack stack)
         {
             return UseAction.BOW;
         }
 
-        @Override
+        
         public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
         {
             if (!world.isClient())

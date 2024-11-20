@@ -12,7 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 
 public class StepUpEvent implements ClientTickEvents.EndTick {
-    @Override
+    
     public void onEndTick(MinecraftClient minecraftClient)
     {
         ClientPlayerEntity player;

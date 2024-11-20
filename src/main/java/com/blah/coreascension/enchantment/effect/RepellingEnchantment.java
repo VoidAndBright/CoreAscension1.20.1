@@ -10,13 +10,13 @@ public class RepellingEnchantment extends Enchantment {
         super(Rarity.COMMON, EnchantmentTarget.ARMOR_CHEST, new EquipmentSlot[]{EquipmentSlot.CHEST});
     }
 
-    @Override
+    
     public int getMaxLevel()
     {
         return 2;
     }
 
-    @Override
+    
     public int getMinPower(int level)
     {
         return 1;

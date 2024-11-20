@@ -10,7 +10,7 @@ public class TerrestrialPotionEffect extends StatusEffect {
                 0xCCCCCC); // color in RGB
     }
 
-    @Override
+    
     public boolean canApplyUpdateEffect(int duration, int amplifier)
     {
         return true;

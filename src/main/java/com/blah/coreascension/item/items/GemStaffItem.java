@@ -1,7 +1,7 @@
 package com.blah.coreascension.item.items;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.entity.entities.*;
+import com.blah.coreascension.entity.entities.projectiles.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
@@ -30,7 +30,7 @@ public class GemStaffItem extends Item
         this.tooltip = tooltip;
     }
 
-    @Override
+    
     public UseAction getUseAction(ItemStack stack)
     {
         return UseAction.BOW;
@@ -41,7 +41,7 @@ public class GemStaffItem extends Item
         tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, this.tooltip))).formatted(Formatting.GRAY));
     }
 
-    @Override
+    
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
     {
         if (!world.isClient())

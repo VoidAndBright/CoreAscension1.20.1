@@ -27,10 +27,6 @@ import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -51,14 +47,14 @@ public class CoreAscensionBlocks
 {
     public static final FlowableFluid STILL_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "end_gas"), new EndGasFluid.Still());
     public static final FlowableFluid FLOWING_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "flowing_end_gas"), new EndGasFluid.Flowing());
-    public static final Block END_GAS = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "end_gas"), new FluidBlock(STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)){});
+    public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)){});
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
     public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK))
     {
-        @Override
+        
         public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
         {
             super.onSteppedOn(world, pos, state, entity);
@@ -160,13 +156,13 @@ public class CoreAscensionBlocks
     public static final Identifier CEDAR_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/cedar");
     public static final Identifier CEDAR_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/cedar");
     public static final Identifier CEDAR_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/cedar");
-    public static final Block STANDING_CEDAR_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cedar_sign"),
+    public static final Block STANDING_CEDAR_SIGN = RegisterBlock("cedar_sign",
             new TerraformSignBlock(CEDAR_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_CEDAR_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cedar_wall_sign"),
+    public static final Block WALL_CEDAR_SIGN = RegisterBlock("cedar_wall_sign",
             new TerraformWallSignBlock(CEDAR_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_CEDAR_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cedar_hanging_sign"),
+    public static final Block HANGING_CEDAR_SIGN = RegisterBlock("cedar_hanging_sign",
             new TerraformHangingSignBlock(CEDAR_HANGING_SIGN_TEXTURE, CEDAR_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_CEDAR_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cedar_wall_hanging_sign"),
+    public static final Block WALL_HANGING_CEDAR_SIGN = RegisterBlock("cedar_wall_hanging_sign",
             new TerraformWallHangingSignBlock(CEDAR_HANGING_SIGN_TEXTURE, CEDAR_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     // end cedar grove stuff
     // tropics stuff
@@ -198,22 +194,19 @@ public class CoreAscensionBlocks
     public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque().mapColor(MapColor.TERRACOTTA_ORANGE), BlockSetType.OAK));
     public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque().mapColor(MapColor.TERRACOTTA_ORANGE), BlockSetType.OAK));
     public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling", new SaplingBlock(new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.TROPICS_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)) {
-        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
-        {
-            return floor.isIn(BlockTags.SAND);
-        }
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {return floor.isIn(BlockTags.SAND);}
     });
     public static final Block TROPICAL_GRASS = RegisterBlockItem("tropical_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).mapColor(MapColor.LIME).ticksRandomly(), LOAM));
     public static final Identifier TROPICS_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/tropics");
     public static final Identifier TROPICS_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/tropics");
     public static final Identifier TROPICS_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/tropics");
-    public static final Block STANDING_TROPICS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "tropics_sign"),
+    public static final Block STANDING_TROPICS_SIGN = RegisterBlock("tropics_sign",
             new TerraformSignBlock(TROPICS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_TROPICS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "tropics_wall_sign"),
+    public static final Block WALL_TROPICS_SIGN = RegisterBlock("tropics_wall_sign",
             new TerraformWallSignBlock(TROPICS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_TROPICS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "tropics_hanging_sign"),
+    public static final Block HANGING_TROPICS_SIGN = RegisterBlock("tropics_hanging_sign",
             new TerraformHangingSignBlock(TROPICS_HANGING_SIGN_TEXTURE, TROPICS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_TROPICS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "tropics_wall_hanging_sign"),
+    public static final Block WALL_HANGING_TROPICS_SIGN = RegisterBlock("tropics_wall_hanging_sign",
             new TerraformWallHangingSignBlock(TROPICS_HANGING_SIGN_TEXTURE, TROPICS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     // whitewood
     public static final Block WHITEWOOD_LOG = RegisterBlockItem("whitewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.OFF_WHITE)));
@@ -232,13 +225,13 @@ public class CoreAscensionBlocks
     public static final Identifier WHITEWOOD_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/whitewood");
     public static final Identifier WHITEWOOD_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/whitewood");
     public static final Identifier WHITEWOOD_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/whitewood");
-    public static final Block STANDING_WHITEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "whitewood_sign"),
+    public static final Block STANDING_WHITEWOOD_SIGN = RegisterBlock("whitewood_sign",
             new TerraformSignBlock(WHITEWOOD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_WHITEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "whitewood_wall_sign"),
+    public static final Block WALL_WHITEWOOD_SIGN = RegisterBlock("whitewood_wall_sign",
             new TerraformWallSignBlock(WHITEWOOD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_WHITEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "whitewood_hanging_sign"),
+    public static final Block HANGING_WHITEWOOD_SIGN = RegisterBlock("whitewood_hanging_sign",
             new TerraformHangingSignBlock(WHITEWOOD_HANGING_SIGN_TEXTURE, WHITEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_WHITEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "whitewood_wall_hanging_sign"),
+    public static final Block WALL_HANGING_WHITEWOOD_SIGN = RegisterBlock("whitewood_wall_hanging_sign",
             new TerraformWallHangingSignBlock(WHITEWOOD_HANGING_SIGN_TEXTURE, WHITEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque().mapColor(MapColor.PALE_YELLOW)));
     // end whitewood
@@ -256,13 +249,13 @@ public class CoreAscensionBlocks
     public static final Identifier CACTUS_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/cactus");
     public static final Identifier CACTUS_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/cactus");
     public static final Identifier CACTUS_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/cactus");
-    public static final Block STANDING_CACTUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cactus_sign"),
+    public static final Block STANDING_CACTUS_SIGN = RegisterBlock("cactus_sign",
             new TerraformSignBlock(CACTUS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_CACTUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cactus_wall_sign"),
+    public static final Block WALL_CACTUS_SIGN = RegisterBlock("cactus_wall_sign",
             new TerraformWallSignBlock(CACTUS_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_CACTUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cactus_hanging_sign"),
+    public static final Block HANGING_CACTUS_SIGN = RegisterBlock("cactus_hanging_sign",
             new TerraformHangingSignBlock(CACTUS_HANGING_SIGN_TEXTURE, CACTUS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_CACTUS_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cactus_wall_hanging_sign"),
+    public static final Block WALL_HANGING_CACTUS_SIGN = RegisterBlock("cactus_wall_hanging_sign",
             new TerraformWallHangingSignBlock(CACTUS_HANGING_SIGN_TEXTURE, CACTUS_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     // dread stuff
     public static final Block DREAD_LOG = RegisterBlockItem("dread_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.LICHEN_GREEN)));
@@ -293,13 +286,13 @@ public class CoreAscensionBlocks
     public static final Identifier DREAD_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/dread");
     public static final Identifier DREAD_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/dread");
     public static final Identifier DREAD_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/dread");
-    public static final Block STANDING_DREAD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dread_sign"),
+    public static final Block STANDING_DREAD_SIGN = RegisterBlock("dread_sign",
             new TerraformSignBlock(DREAD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_DREAD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dread_wall_sign"),
+    public static final Block WALL_DREAD_SIGN = RegisterBlock("dread_wall_sign",
             new TerraformWallSignBlock(DREAD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_DREAD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dread_hanging_sign"),
+    public static final Block HANGING_DREAD_SIGN = RegisterBlock("dread_hanging_sign",
             new TerraformHangingSignBlock(DREAD_HANGING_SIGN_TEXTURE, DREAD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_DREAD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dread_wall_hanging_sign"),
+    public static final Block WALL_HANGING_DREAD_SIGN = RegisterBlock("dread_wall_hanging_sign",
             new TerraformWallHangingSignBlock(DREAD_HANGING_SIGN_TEXTURE, DREAD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     // skylands
     // ancient biome
@@ -333,13 +326,13 @@ public class CoreAscensionBlocks
     public static final Identifier ETHEREAL_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/ethereal");
     public static final Identifier ETHEREAL_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/ethereal");
     public static final Identifier ETHEREAL_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/ethereal");
-    public static final Block STANDING_ETHEREAL_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "ethereal_sign"),
+    public static final Block STANDING_ETHEREAL_SIGN = RegisterBlock("ethereal_sign",
             new TerraformSignBlock(ETHEREAL_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_ETHEREAL_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "ethereal_wall_sign"),
+    public static final Block WALL_ETHEREAL_SIGN = RegisterBlock("ethereal_wall_sign",
             new TerraformWallSignBlock(ETHEREAL_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_ETHEREAL_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "ethereal_hanging_sign"),
+    public static final Block HANGING_ETHEREAL_SIGN = RegisterBlock("ethereal_hanging_sign",
             new TerraformHangingSignBlock(ETHEREAL_HANGING_SIGN_TEXTURE, ETHEREAL_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_ETHEREAL_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "ethereal_wall_hanging_sign"),
+    public static final Block WALL_HANGING_ETHEREAL_SIGN = RegisterBlock("ethereal_wall_hanging_sign",
             new TerraformWallHangingSignBlock(ETHEREAL_HANGING_SIGN_TEXTURE, ETHEREAL_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final Block RAINBOW_MUSHROOM = RegisterBlockItem("rainbow_mushroom", new MushroomPlantBlock(FabricBlockSettings.copyOf(Blocks.BROWN_MUSHROOM).mapColor(MapColor.WHITE), null));
     // end ethereal glade
@@ -365,13 +358,13 @@ public class CoreAscensionBlocks
     public static final Identifier CAKEWOOD_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/cakewood");
     public static final Identifier CAKEWOOD_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/cakewood");
     public static final Identifier CAKEWOOD_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/cakewood");
-    public static final Block STANDING_CAKEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cakewood_sign"),
+    public static final Block STANDING_CAKEWOOD_SIGN = RegisterBlock("cakewood_sign",
             new TerraformSignBlock(CAKEWOOD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_CAKEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cakewood_wall_sign"),
+    public static final Block WALL_CAKEWOOD_SIGN = RegisterBlock("cakewood_wall_sign",
             new TerraformWallSignBlock(CAKEWOOD_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_CAKEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cakewood_hanging_sign"),
+    public static final Block HANGING_CAKEWOOD_SIGN = RegisterBlock("cakewood_hanging_sign",
             new TerraformHangingSignBlock(CAKEWOOD_HANGING_SIGN_TEXTURE, CAKEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_CAKEWOOD_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "cakewood_wall_hanging_sign"),
+    public static final Block WALL_HANGING_CAKEWOOD_SIGN = RegisterBlock("cakewood_wall_hanging_sign",
             new TerraformWallHangingSignBlock(CAKEWOOD_HANGING_SIGN_TEXTURE, CAKEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.RED)));
     public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.YELLOW)));
@@ -397,13 +390,13 @@ public class CoreAscensionBlocks
     public static final Identifier DARK_MATTER_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/dark_matter");
     public static final Identifier DARK_MATTER_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/dark_matter");
     public static final Identifier DARK_MATTER_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/dark_matter");
-    public static final Block STANDING_DARK_MATTER_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dark_matter_sign"),
+    public static final Block STANDING_DARK_MATTER_SIGN = RegisterBlock("dark_matter_sign",
             new TerraformSignBlock(DARK_MATTER_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_DARK_MATTER_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dark_matter_wall_sign"),
+    public static final Block WALL_DARK_MATTER_SIGN = RegisterBlock("dark_matter_wall_sign",
             new TerraformWallSignBlock(DARK_MATTER_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_DARK_MATTER_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dark_matter_hanging_sign"),
+    public static final Block HANGING_DARK_MATTER_SIGN = RegisterBlock("dark_matter_hanging_sign",
             new TerraformHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_DARK_MATTER_SIGN = Registry.register(Registries.BLOCK, new Identifier(CoreAscension.MOD_ID, "dark_matter_wall_hanging_sign"),
+    public static final Block WALL_HANGING_DARK_MATTER_SIGN = RegisterBlock("dark_matter_wall_hanging_sign",
             new TerraformWallHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
     // end dark matter
 
@@ -514,17 +507,7 @@ public class CoreAscensionBlocks
     public static final Block CORELIGHT = RegisterBlockItem("corelight", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.BLUE)));
     public static final Block PERMA_ICE = RegisterBlockItem("perma_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block NETHER_ICE = RegisterBlockItem("nether_ice", new Block(FabricBlockSettings.copyOf(Blocks.BLUE_ICE).mapColor(MapColor.LIGHT_BLUE)));
-    public static final Block SOUL_SNOW = RegisterBlockItem("soul_snow", new Block(FabricBlockSettings.copyOf(Blocks.SAND).sounds(BlockSoundGroup.SOUL_SAND).mapColor(MapColor.LIGHT_BLUE).velocityMultiplier(1.3f))
-    {
-        @Override
-        public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
-        {
-            if (!(entity instanceof PlayerEntity) && entity instanceof LivingEntity)
-            {
-                ((LivingEntity) entity).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20));
-            }
-        }
-    });
+    public static final Block SOUL_SNOW = RegisterBlockItem("soul_snow", new SoulSandBlock(FabricBlockSettings.copyOf(Blocks.SAND).sounds(BlockSoundGroup.SOUL_SAND).mapColor(MapColor.LIGHT_BLUE).velocityMultiplier(1.3f)));
 
     public static final Block CORE_SULPHUR_ORE = RegisterBlockItem("core_sulphur_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(17, 23)));
     public static final Block TADANITE_ORE = RegisterBlockItem("tadanite_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.NETHER_QUARTZ_ORE).mapColor(MapColor.PALE_GREEN), UniformIntProvider.create(8, 10)));
@@ -548,7 +531,6 @@ public class CoreAscensionBlocks
     public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CORE_VINES = RegisterBlockItem("core_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE)) {
-        @Override
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
             return floor.isOf(CORE_NYLIUM);
@@ -559,8 +541,6 @@ public class CoreAscensionBlocks
         {
             return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
         }
-
-        @Override
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
             return floor.isOf(CORE_NYLIUM);
@@ -590,7 +570,6 @@ public class CoreAscensionBlocks
             return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
         }
 
-        @Override
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
             return floor.isOf(ENTROPIC_CORE_NYLIUM);

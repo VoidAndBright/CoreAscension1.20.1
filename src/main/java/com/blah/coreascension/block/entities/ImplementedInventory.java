@@ -55,7 +55,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param side the side
      * @return the available slots
      */
-    @Override
+    
     default int[] getAvailableSlots(Direction side)
     {
         int[] result = new int[getItems().size()];
@@ -87,7 +87,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param side  the side
      * @return true if the stack can be inserted
      */
-    @Override
+    
     default boolean canInsert(int slot, ItemStack stack, @Nullable Direction side)
     {
         return true;
@@ -103,7 +103,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param side  the side
      * @return true if the stack can be extracted
      */
-    @Override
+    
     default boolean canExtract(int slot, ItemStack stack, Direction side)
     {
         return true;
@@ -114,7 +114,7 @@ public interface ImplementedInventory extends SidedInventory {
     /**
      * Clears {@linkplain #getItems() the item list}}.
      */
-    @Override
+    
     default void clear()
     {
         getItems().clear();
@@ -127,7 +127,7 @@ public interface ImplementedInventory extends SidedInventory {
      *
      * @return the inventory size
      */
-    @Override
+    
     default int size()
     {
         return getItems().size();
@@ -136,7 +136,7 @@ public interface ImplementedInventory extends SidedInventory {
     /**
      * @return true if this inventory has only empty stacks, false otherwise
      */
-    @Override
+    
     default boolean isEmpty()
     {
         for (int i = 0; i < size(); i++)
@@ -157,7 +157,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param slot the slot
      * @return the item in the slot
      */
-    @Override
+    
     default ItemStack getStack(int slot)
     {
         return getItems().get(slot);
@@ -173,7 +173,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param count the item count
      * @return a stack
      */
-    @Override
+    
     default ItemStack removeStack(int slot, int count)
     {
         ItemStack result = Inventories.splitStack(getItems(), slot, count);
@@ -193,7 +193,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param slot the slot
      * @return the removed stack
      */
-    @Override
+    
     default ItemStack removeStack(int slot)
     {
         return Inventories.removeStack(getItems(), slot);
@@ -208,7 +208,7 @@ public interface ImplementedInventory extends SidedInventory {
      * @param slot  the slot
      * @param stack the stack
      */
-    @Override
+    
     default void setStack(int slot, ItemStack stack)
     {
         getItems().set(slot, stack);
@@ -220,13 +220,13 @@ public interface ImplementedInventory extends SidedInventory {
     }
 
 
-    @Override
+    
     default void markDirty()
     {
         // Override if you want behavior.
     }
 
-    @Override
+    
     default boolean canPlayerUse(PlayerEntity player)
     {
         return true;

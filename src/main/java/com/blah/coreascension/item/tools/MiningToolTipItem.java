@@ -37,7 +37,7 @@ public class MiningToolTipItem extends MiningToolItem {
             tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, tooltipLine))).formatted(Formatting.GRAY));
     }
 
-    @Override
+    
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner)
     {
         if (miner instanceof PlayerEntity player)

@@ -32,7 +32,7 @@ public class UraniumSwordItem extends SwordItem {
         tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.uranium_sword"))).formatted(Formatting.GRAY));
     }
 
-    @Override
+    
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)
     {
         Box box = target.getBoundingBox().expand(8, 3, 8);

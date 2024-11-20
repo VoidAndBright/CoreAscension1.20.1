@@ -74,7 +74,7 @@ public class AdvancedArmorItem extends ArmorItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    @Override
+    
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
     {
         if (this.tooltip != null)

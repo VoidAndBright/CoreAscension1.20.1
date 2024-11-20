@@ -10,13 +10,13 @@ public class SteppingEnchantment extends Enchantment {
         super(Rarity.COMMON, EnchantmentTarget.ARMOR_FEET, new EquipmentSlot[]{EquipmentSlot.FEET});
     }
 
-    @Override
+    
     public int getMaxLevel()
     {
         return 2;
     }
 
-    @Override
+    
     public int getMinPower(int level)
     {
         return 1;

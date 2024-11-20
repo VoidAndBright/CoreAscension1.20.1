@@ -36,19 +36,18 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     {
         Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<Block.NeighborGroup>(200)
         {
-            @Override
             protected void rehash(int i) { }
         };
         object2ByteLinkedOpenHashMap.defaultReturnValue((byte)127);
         return object2ByteLinkedOpenHashMap;
     });
-    @Override
+    
     public Fluid getStill()
     {
         return CoreAscensionBlocks.STILL_END_GAS;
     }
 
-    @Override
+    
     public Fluid getFlowing()
     {
         return CoreAscensionBlocks.FLOWING_END_GAS;
@@ -159,7 +158,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
                 && this.receivesFlow(face, world, pos, state, fromPos, fromState)
                 && this.canFill(world, fromPos, fromState, fluid);
     }
-    @Override
+    
     protected Map<Direction, FluidState> getSpread(World world, BlockPos pos, BlockState state) {
         int i = 1000;
         Map<Direction, FluidState> map = Maps.newEnumMap(Direction.class);
@@ -203,12 +202,12 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         return map;
     }
 
-    @Override
+    
     public Optional<SoundEvent> getBucketFillSound() {
         return Optional.of(SoundEvents.ITEM_BUCKET_FILL);
     }
 
-    @Override
+    
     protected FluidState getUpdatedState(World world, BlockPos pos, BlockState state)
     {
         int i = 0;
@@ -254,7 +253,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         }
     }
 
-    @Override
+    
     protected void tryFlow(World world, BlockPos fluidPos, FluidState state)
     {
         if (!state.isEmpty())
@@ -297,21 +296,21 @@ public abstract class EndGasFluid extends CoreAscensionFluid
 
         return i;
     }
-    @Override
+    
     public FluidState getStill(boolean falling)
     {
         return this.getStill().getDefaultState().with(RISING, falling);
     }
-    @Override
+    
     public FluidState getFlowing(int level, boolean falling)
     {
         return this.getFlowing().getDefaultState().with(LEVEL, level).with(RISING, falling);
     }
-    @Override
+    
     protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
         builder.add(RISING);
     }
-    @Override
+    
     public Vec3d getVelocity(BlockView world, BlockPos pos, FluidState state)
     {
         double d = 0.0;
@@ -375,7 +374,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         return vec3d.normalize();
     }
 
-    @Override
+    
     protected boolean isFlowBlocked(BlockView world, BlockPos pos, Direction direction)
     {
         BlockState blockState = world.getBlockState(pos);
@@ -394,13 +393,13 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         }
     }
 
-    @Override
+    
     public Item getBucketItem()
     {
         return CoreAscensionItems.END_GAS_BUCKET;
     }
 
-    @Override
+    
     protected BlockState toBlockState(FluidState fluidState)
     {
         return CoreAscensionBlocks.END_GAS.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(fluidState));
@@ -408,20 +407,20 @@ public abstract class EndGasFluid extends CoreAscensionFluid
 
     public static class Flowing extends EndGasFluid
     {
-        @Override
+        
         protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder)
         {
             super.appendProperties(builder);
             builder.add(LEVEL);
         }
 
-        @Override
+        
         public int getLevel(FluidState fluidState)
         {
             return fluidState.get(LEVEL);
         }
 
-        @Override
+        
         public boolean isStill(FluidState fluidState)
         {
             return false;
@@ -430,13 +429,13 @@ public abstract class EndGasFluid extends CoreAscensionFluid
 
     public static class Still extends EndGasFluid
     {
-        @Override
+        
         public int getLevel(FluidState fluidState)
         {
             return 8;
         }
 
-        @Override
+        
         public boolean isStill(FluidState fluidState)
         {
             return true;

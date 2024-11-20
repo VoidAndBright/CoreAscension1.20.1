@@ -112,10 +112,10 @@ public abstract class FluidRendererMixin
             FluidState eastFS = eastBS.getFluidState();
             boolean isNotTheSameFluidDown = !isSameFluid(fluidState, downFS);
             boolean isTheSameFluidUp = isSameFluid(fluidState, upFS);
-            boolean shouldUpRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.UP, upFS)
+            boolean shouldDownRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.UP, upFS)
                     && !isSideCovered(world, pos, Direction.UP, 0.8888889F, upBS);
 
-            boolean shouldDownRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.DOWN, downFS)
+            boolean shouldUpRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.DOWN, downFS)
                     && !isSideCovered(world, pos, Direction.DOWN, 0.8888889F, downBS);
 
             boolean shouldNorthRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.NORTH, northFS);
@@ -279,7 +279,7 @@ public abstract class FluidRendererMixin
                     this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, abx, afx, ap);
                 }
                 //y = shouldUpRender ? 0.001F : 0.0F;
-                int aq = this.getLight(world, pos);
+                int light = this.getLight(world, pos);
 
                 for (Direction direction : Direction.Type.HORIZONTAL)
                 {
@@ -343,15 +343,15 @@ public abstract class FluidRendererMixin
                         float bb = brightnessDown * ba * f;
                         float bc = brightnessDown * ba * g;
                         float bd = brightnessDown * ba * h;
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, aq);
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, aq);
+                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, light);
+                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, light);
+                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, light);
+                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, light);
 
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, aq);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, aq);
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, aq);
+                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, light);
+                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, light);
+                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, light);
+                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, light);
                     }
                 }
             }

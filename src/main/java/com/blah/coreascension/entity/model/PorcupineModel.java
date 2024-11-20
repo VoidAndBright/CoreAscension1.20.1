@@ -1,7 +1,7 @@
 package com.blah.coreascension.entity.model;
 
 import com.blah.coreascension.entity.animation.CoreAscensionAnimations;
-import com.blah.coreascension.entity.entities.PorcupineEntity;
+import com.blah.coreascension.entity.entities.mobs.PorcupineEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
@@ -159,7 +159,7 @@ public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityM
         return TexturedModelData.of(modelData, 32, 32);
     }
 
-    @Override
+    
     public void setAngles(PorcupineEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
     {
         this.getPart().traverse().forEach(ModelPart::resetTransform);
@@ -178,13 +178,13 @@ public class PorcupineModel<T extends PorcupineEntity> extends SinglePartEntityM
         this.head.pitch = headPitch * 0.017453292F;
     }
 
-    @Override
+    
     public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha)
     {
         porcupine.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
     }
 
-    @Override
+    
     public ModelPart getPart()
     {
         return porcupine;

@@ -13,7 +13,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         super(dataOutput);
     }
 
-    @Override
+    
     public void generate()
     {
         addDrop(CoreAscensionBlocks.BEDROCK, Blocks.BEDROCK.asItem());

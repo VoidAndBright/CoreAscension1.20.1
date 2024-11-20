@@ -1,8 +1,8 @@
 package com.blah.coreascension.entity;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.entity.entities.CitrineBoltEntity;
-import com.blah.coreascension.entity.entities.*;
+import com.blah.coreascension.entity.entities.mobs.PorcupineEntity;
+import com.blah.coreascension.entity.entities.projectiles.*;
 import com.blah.coreascension.entity.model.PorcupineModel;
 import com.blah.coreascension.entity.renderers.PorcupineRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;

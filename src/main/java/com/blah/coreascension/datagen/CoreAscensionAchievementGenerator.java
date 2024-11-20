@@ -38,7 +38,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         );
     }
 
-    @Override
+    
     public void generateAdvancement(Consumer<Advancement> consumer)
     {
         Advancement needForSpeed = Advancement.Builder.create()

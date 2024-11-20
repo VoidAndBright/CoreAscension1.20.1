@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class PlayerLauncherEvent implements ClientTickEvents.EndTick
 {
-    @Override
+    
     public void onEndTick(MinecraftClient minecraftClient)
     {
         ClientPlayerEntity player;

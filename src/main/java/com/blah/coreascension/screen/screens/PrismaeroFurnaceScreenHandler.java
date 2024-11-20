@@ -100,7 +100,7 @@ public class PrismaeroFurnaceScreenHandler extends ScreenHandler {
         return newStack;
     }
 
-    @Override
+    
     public boolean canUse(PlayerEntity player)
     {
         return this.inventory.canPlayerUse(player);

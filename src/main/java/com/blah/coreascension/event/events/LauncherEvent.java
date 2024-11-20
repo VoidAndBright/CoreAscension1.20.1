@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 
 public class LauncherEvent implements ServerTickEvents.EndTick
 {
-    @Override
+    
     public void onEndTick(MinecraftServer minecraftServer)
     {
         for (ServerWorld world : minecraftServer.getWorlds())

@@ -1,7 +1,8 @@
-package com.blah.coreascension.entity.entities;
+package com.blah.coreascension.entity.entities.projectiles;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
@@ -12,35 +13,36 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
-public class CitrineBoltEntity extends ThrownItemEntity
+public class DiamondBoltEntity extends ThrownItemEntity
 {
-    public CitrineBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
+    public DiamondBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
         super(entityType, world);
     }
 
-    public CitrineBoltEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.CITRINE_BOLT, livingEntity, world);
+    public DiamondBoltEntity(LivingEntity livingEntity, World world) {
+        super(CoreAscensionEntities.DIAMOND_BOLT, livingEntity, world);
     }
 
-    @Override
+    
     protected void onEntityHit(EntityHitResult entityHitResult)
     {
-        if (entityHitResult.getEntity() instanceof LivingEntity entity)
+        Entity hitEntity = entityHitResult.getEntity();
+        if (hitEntity instanceof LivingEntity entity && this.getOwner() != hitEntity)
         {
-            entity.damage(entity.getDamageSources().magic(), 5);
+            entity.damage(entity.getDamageSources().magic(), 10);
         }
     }
 
-    @Override
+    
     public Packet<ClientPlayPacketListener> createSpawnPacket()
     {
         return new EntitySpawnS2CPacket(this);
     }
 
-    @Override
+    
     protected Item getDefaultItem()
     {
-        return CoreAscensionItems.CITRINE_BOLT;
+        return CoreAscensionItems.DIAMOND_BOLT;
     }
 }

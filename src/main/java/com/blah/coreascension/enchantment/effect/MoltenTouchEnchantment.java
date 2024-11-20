@@ -15,19 +15,19 @@ public class MoltenTouchEnchantment extends Enchantment {
         super(Rarity.COMMON, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
-    @Override
+    
     public int getMaxLevel()
     {
         return 1;
     }
 
-    @Override
+    
     public int getMinPower(int level)
     {
         return 1;
     }
 
-    @Override
+    
     protected boolean canAccept(Enchantment other)
     {
         return other == Enchantments.EFFICIENCY ||
@@ -35,7 +35,7 @@ public class MoltenTouchEnchantment extends Enchantment {
                 other == Enchantments.UNBREAKING;
     }
 
-    @Override
+    
     public boolean isAcceptableItem(ItemStack stack)
     {
         return stack.getItem() instanceof PickaxeItem ||

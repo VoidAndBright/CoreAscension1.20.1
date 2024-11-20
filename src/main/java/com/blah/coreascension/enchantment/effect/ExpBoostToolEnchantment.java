@@ -14,19 +14,19 @@ public class ExpBoostToolEnchantment extends Enchantment {
         super(Rarity.COMMON, EnchantmentTarget.DIGGER, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
-    @Override
+    
     public int getMaxLevel()
     {
         return 3;
     }
 
-    @Override
+    
     public int getMinPower(int level)
     {
         return 1;
     }
 
-    @Override
+    
     protected boolean canAccept(Enchantment other)
     {
         return other == Enchantments.EFFICIENCY ||
@@ -35,7 +35,7 @@ public class ExpBoostToolEnchantment extends Enchantment {
                 other == CoreAscensionEnchantments.MOLTEN_TOUCH;
     }
 
-    @Override
+    
     public boolean isAcceptableItem(ItemStack stack)
     {
         return stack.getItem() instanceof PickaxeItem;

@@ -35,7 +35,7 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
         this.inventory = DefaultedList.ofSize(78, ItemStack.EMPTY);
     }
 
-    @Override
+    
     public DefaultedList<ItemStack> getItems()
     {
         return inventory;
@@ -92,7 +92,7 @@ public class ReinforcedChestBlockEntity extends BlockEntity implements ExtendedS
         return new ReinforcedChestScreenHandler(syncId, playerInventory, this);
     }
 
-    @Override
+    
     public float getAnimationProgress(float tickDelta)
     {
         return 0;

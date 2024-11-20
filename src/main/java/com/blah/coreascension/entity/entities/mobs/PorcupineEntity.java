@@ -1,4 +1,4 @@
-package com.blah.coreascension.entity.entities;
+package com.blah.coreascension.entity.entities.mobs;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import net.minecraft.entity.AnimationState;
@@ -44,7 +44,7 @@ public class PorcupineEntity extends AnimalEntity {
         return EntityDimensions.fixed(1f, 1f);
     }
 
-    @Override
+    
     protected void initGoals()
     {
         this.goalSelector.add(0, new SwimGoal(this));
@@ -59,7 +59,7 @@ public class PorcupineEntity extends AnimalEntity {
         this.goalSelector.add(6, new LookAroundGoal(this));
     }
 
-    @Override
+    
     public void tick()
     {
         super.tick();
@@ -106,7 +106,7 @@ public class PorcupineEntity extends AnimalEntity {
         return SoundEvents.ENTITY_DOLPHIN_DEATH;
     }
 
-    @Override
+    
     protected void updateLimbs(float posDelta)
     {
         float f = this.getPose() == EntityPose.STANDING ? Math.min(posDelta * 6.0f, 1.0f) : 0.0f;

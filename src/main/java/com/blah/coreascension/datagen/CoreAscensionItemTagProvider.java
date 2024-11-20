@@ -15,7 +15,7 @@ public class CoreAscensionItemTagProvider extends FabricTagProvider.ItemTagProvi
         super(output, completableFuture);
     }
 
-    @Override
+    
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
         getOrCreateTagBuilder(ItemTags.PLANKS)

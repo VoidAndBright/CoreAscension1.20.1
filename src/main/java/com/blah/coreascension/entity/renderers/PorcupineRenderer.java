@@ -2,7 +2,7 @@ package com.blah.coreascension.entity.renderers;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.entity.CoreAscensionModelLayers;
-import com.blah.coreascension.entity.entities.PorcupineEntity;
+import com.blah.coreascension.entity.entities.mobs.PorcupineEntity;
 import com.blah.coreascension.entity.model.PorcupineModel;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRendererFactory;
@@ -18,13 +18,13 @@ public class PorcupineRenderer extends MobEntityRenderer<PorcupineEntity, Porcup
         super(context, new PorcupineModel<>(context.getPart(CoreAscensionModelLayers.PORCUPINE)), 0.6f);
     }
 
-    @Override
+    
     public Identifier getTexture(PorcupineEntity entity)
     {
         return TEXTURE;
     }
 
-    @Override
+    
     public void render(PorcupineEntity mobEntity, float f, float g, MatrixStack matrixStack,
                        VertexConsumerProvider vertexConsumerProvider, int i)
     {

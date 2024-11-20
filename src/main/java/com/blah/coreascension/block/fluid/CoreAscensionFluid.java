@@ -17,13 +17,13 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
      * @return whether the given fluid an instance of this fluid
      */
-    @Override
+    
     public boolean matchesType(Fluid fluid)
     {
         return fluid == getStill() || fluid == getFlowing();
     }
 
-    @Override
+    
     protected boolean isFlowBlocked(BlockView world, BlockPos pos, Direction direction)
     {
         return super.isFlowBlocked(world, pos, direction);
@@ -32,7 +32,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
      * @return whether the fluid is infinite (which means can be infinitely created like water). In vanilla, it depends on the game rule.
      */
-    @Override
+    
     protected boolean isInfinite(World world)
     {
         return false;
@@ -42,7 +42,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
      * Perform actions when the fluid flows into a replaceable block. Water drops
      * the block's loot table. Lava plays the "block.lava.extinguish" sound.
      */
-    @Override
+    
     protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
         final BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
         Block.dropStacks(state, world, pos, blockEntity);
@@ -54,7 +54,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
      *
      * @return whether the given Fluid can flow into this FluidState
      */
-    @Override
+    
     protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
         return false;
     }
@@ -63,7 +63,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
      * Possibly related to the distance checks for flowing into nearby holes?
      * Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
      */
-    @Override
+    
     protected int getFlowSpeed(WorldView worldView) {
         return 4;
     }
@@ -71,7 +71,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
      * Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
      */
-    @Override
+    
     protected int getLevelDecreasePerBlock(WorldView worldView) {
         return 1;
     }
@@ -79,7 +79,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
      * Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
      */
-    @Override
+    
     public int getTickRate(WorldView worldView) {
         return 5;
     }
@@ -87,7 +87,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
      * Water and Lava both return 100.0F.
      */
-    @Override
+    
     protected float getBlastResistance() {
         return 100.0F;
     }
