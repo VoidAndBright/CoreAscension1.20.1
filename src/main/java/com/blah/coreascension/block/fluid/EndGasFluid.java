@@ -44,13 +44,13 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     
     public Fluid getStill()
     {
-        return CoreAscensionBlocks.STILL_END_GAS;
+        return CoreAscensionFluids.STILL_END_GAS;
     }
 
     
     public Fluid getFlowing()
     {
-        return CoreAscensionBlocks.FLOWING_END_GAS;
+        return CoreAscensionFluids.FLOWING_END_GAS;
     }
 
     private boolean isEmptyOrThis(FluidState state)

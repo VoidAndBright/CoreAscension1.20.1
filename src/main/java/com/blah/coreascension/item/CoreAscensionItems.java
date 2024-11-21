@@ -2,6 +2,7 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.block.fluid.CoreAscensionFluids;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.entity.entities.projectiles.BlahBoltEntity;
@@ -369,7 +370,7 @@ public class CoreAscensionItems {
     public static final Item TWILIGHT_AXE = registerItem("twilight_axe",
             new AxeItem(CoreAscensionToolMaterials.DUSK, 5, -3.1f, new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
 
-    public static final Item END_GAS_BUCKET = registerItem("end_gas_bucket", new BucketItem(CoreAscensionBlocks.STILL_END_GAS, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+    public static final Item END_GAS_BUCKET = registerItem("end_gas_bucket", new BucketItem(CoreAscensionFluids.STILL_END_GAS, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
 
     public static Item registerItem(String name, Item item)

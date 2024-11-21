@@ -3,6 +3,7 @@ package com.blah.coreascension.block;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
+import com.blah.coreascension.block.fluid.CoreAscensionFluids;
 import com.blah.coreascension.block.fluid.EndGasFluid;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
@@ -45,9 +46,7 @@ import net.minecraft.world.World;
 
 public class CoreAscensionBlocks
 {
-    public static final FlowableFluid STILL_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "end_gas"), new EndGasFluid.Still());
-    public static final FlowableFluid FLOWING_END_GAS = Registry.register(Registries.FLUID, new Identifier("coreascension", "flowing_end_gas"), new EndGasFluid.Flowing());
-    public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)){});
+    public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)){});
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
@@ -644,9 +643,10 @@ public class CoreAscensionBlocks
     {
         return Registry.register(Registries.BLOCK, Registries.BLOCK.getRawId(OverriddenBlock), Registries.BLOCK.getId(OverriddenBlock).getPath(), NewBlock);
     }
-    private static void NaturalTab(FabricItemGroupEntries entries){
-        entries.addAfter(Items.BEDROCK,BEDROCK);
-        entries.addAfter(Items.BEDROCK,CoreAscensionBlocks.BEDROCK);
+    private static void NaturalTab(FabricItemGroupEntries entries)
+    {
+        entries.addAfter(Items.BEDROCK, BEDROCK);
+        entries.addAfter(Items.BEDROCK, CoreAscensionBlocks.BEDROCK);
     }
     public static void RegisterBlocks()
     {
@@ -762,7 +762,7 @@ public class CoreAscensionBlocks
         ClientRegisterRenderLayeredBlocks();
         ClientRegisterColouredBlocks();
 
-        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionBlocks.STILL_END_GAS, CoreAscensionBlocks.FLOWING_END_GAS, new SimpleFluidRenderHandler(
+        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_END_GAS, CoreAscensionFluids.FLOWING_END_GAS, new SimpleFluidRenderHandler(
                 new Identifier("coreascension:block/end_gas_still"),
                 new Identifier("coreascension:block/end_gas_flowing"),
                 0xFFFFFF
@@ -809,7 +809,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());
-        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CoreAscensionBlocks.STILL_END_GAS, CoreAscensionBlocks.FLOWING_END_GAS);
+        BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CoreAscensionFluids.STILL_END_GAS, CoreAscensionFluids.FLOWING_END_GAS);
     }
 
     public static void ClientRegisterColouredBlocks()

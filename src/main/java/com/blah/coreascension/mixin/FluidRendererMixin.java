@@ -1,8 +1,6 @@
 package com.blah.coreascension.mixin;
 
-import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.blah.coreascension.block.fluid.CoreAscensionFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;
@@ -69,8 +67,8 @@ public abstract class FluidRendererMixin
     private static boolean isSameFluid(FluidState a, FluidState b)
     {
         return b.getFluid().matchesType(a.getFluid()) ||
-                (a.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS && b.getFluid() == CoreAscensionBlocks.STILL_END_GAS) ||
-                (b.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS && a.getFluid() == CoreAscensionBlocks.STILL_END_GAS);
+                (a.getFluid() == CoreAscensionFluids.FLOWING_END_GAS && b.getFluid() == CoreAscensionFluids.STILL_END_GAS) ||
+                (b.getFluid() == CoreAscensionFluids.FLOWING_END_GAS && a.getFluid() == CoreAscensionFluids.STILL_END_GAS);
     }
 
     @Shadow
@@ -88,12 +86,12 @@ public abstract class FluidRendererMixin
     @Inject(at = @At(value = "HEAD"), method = "render", cancellable = true)
     private void onRenderFluid(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState, FluidState fluidState, CallbackInfo ci)
     {
-        if (fluidState.getFluid() == CoreAscensionBlocks.FLOWING_END_GAS ||
-            fluidState.getFluid() == CoreAscensionBlocks.STILL_END_GAS)
+        if (fluidState.getFluid() == CoreAscensionFluids.FLOWING_END_GAS ||
+            fluidState.getFluid() == CoreAscensionFluids.STILL_END_GAS)
         {
             Sprite[] sprites = new Sprite[2];
-            sprites[0] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionBlocks.STILL_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
-            sprites[1] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionBlocks.FLOWING_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
+            sprites[0] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionFluids.STILL_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
+            sprites[1] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionFluids.FLOWING_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
             int i = 16777215;
             float f = (float)(i >> 16 & 0xFF) / 255.0F;
             float g = (float)(i >> 8 & 0xFF) / 255.0F;
