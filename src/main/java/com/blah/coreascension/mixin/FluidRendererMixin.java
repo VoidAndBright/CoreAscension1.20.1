@@ -93,9 +93,9 @@ public abstract class FluidRendererMixin
             sprites[0] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionFluids.STILL_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
             sprites[1] = MinecraftClient.getInstance().getBakedModelManager().getBlockModels().getModel(CoreAscensionFluids.FLOWING_END_GAS.getDefaultState().getBlockState()).getParticleSprite();
             int i = 16777215;
-            float f = (float)(i >> 16 & 0xFF) / 255.0F;
-            float g = (float)(i >> 8 & 0xFF) / 255.0F;
-            float h = (float)(i & 0xFF) / 255.0F;
+            float red = (float)(i >> 16 & 0xFF) / 255.0F;
+            float green = (float)(i >> 8 & 0xFF) / 255.0F;
+            float blue = (float)(i & 0xFF) / 255.0F;
             BlockState upBS = world.getBlockState(pos.offset(Direction.UP));
             FluidState upFS = upBS.getFluidState();
             BlockState downBS = world.getBlockState(pos.offset(Direction.DOWN));
@@ -214,9 +214,9 @@ public abstract class FluidRendererMixin
                     ae = MathHelper.lerp(ai, ae, ah);
                     ag = MathHelper.lerp(ai, ag, ah);
                     int am = this.getLight(world, pos);
-                    float ak = brightnessDown * f;
-                    float an = brightnessDown * g;
-                    float ao = brightnessDown * h;
+                    float ak = brightnessDown * red;
+                    float an = brightnessDown * green;
+                    float ao = brightnessDown * blue;
 
                     float val = 1;
 
@@ -268,9 +268,9 @@ public abstract class FluidRendererMixin
                     float adx = sprites[1].getMinV();
                     float afx = sprites[1].getMaxV();
                     int ap = this.getLight(world, pos.down());
-                    float acx = brightnessUp * f;
-                    float aex = brightnessUp * g;
-                    float agx = brightnessUp * h;
+                    float acx = brightnessUp * red;
+                    float aex = brightnessUp * green;
+                    float agx = brightnessUp * blue;
                     this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, zx, afx, ap);
                     this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, acx, aex, agx, zx, adx, ap);
                     this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, acx, aex, agx, abx, adx, ap);
@@ -338,9 +338,9 @@ public abstract class FluidRendererMixin
                         float ay = sprite2.getFrameV((1.0F - aax) * 16.0F * 0.5F);
                         float az = sprite2.getFrameV(8.0);
                         float ba = direction.getAxis() == Direction.Axis.Z ? brightnessZ : brightnessX;
-                        float bb = brightnessDown * ba * f;
-                        float bc = brightnessDown * ba * g;
-                        float bd = brightnessDown * ba * h;
+                        float bb = brightnessDown * ba * red;
+                        float bc = brightnessDown * ba * green;
+                        float bd = brightnessDown * ba * blue;
                         this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, light);
                         this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, light);
                         this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, light);
