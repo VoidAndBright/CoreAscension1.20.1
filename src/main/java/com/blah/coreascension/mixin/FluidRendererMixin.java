@@ -47,12 +47,12 @@ public abstract class FluidRendererMixin
     {
         if (fluid.matchesType(fluidState.getFluid()))
         {
-            BlockState blockState2 = world.getBlockState(pos.down());
-            return fluid.matchesType(blockState2.getFluidState().getFluid()) ? 1.0F : fluidState.getHeight();
+            BlockState blockStateDown = world.getBlockState(pos.down());
+            return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ?  fluidState.getHeight(): 1.0F;
         }
         else
         {
-            return !blockState.isSolid() ? 0.0F : -1.0F;
+            return !blockState.isSolid() ? -1.0F : 0.0F;
         }
     }
     @Shadow protected abstract float calculateFluidHeight(BlockRenderView world, Fluid fluid, float originHeight, float northSouthHeight, float eastWestHeight, BlockPos pos);
@@ -110,10 +110,10 @@ public abstract class FluidRendererMixin
             FluidState eastFS = eastBS.getFluidState();
             boolean isNotTheSameFluidDown = !isSameFluid(fluidState, downFS);
             boolean isTheSameFluidUp = isSameFluid(fluidState, upFS);
-            boolean shouldDownRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.UP, upFS)
+            boolean shouldUpRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.UP, upFS)
                     && !isSideCovered(world, pos, Direction.UP, 0.8888889F, upBS);
 
-            boolean shouldUpRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.DOWN, downFS)
+            boolean shouldDownRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.DOWN, downFS)
                     && !isSideCovered(world, pos, Direction.DOWN, 0.8888889F, downBS);
 
             boolean shouldNorthRender = shouldRenderSide(world, pos, fluidState, blockState, Direction.NORTH, northFS);
@@ -154,7 +154,6 @@ public abstract class FluidRendererMixin
                 double posX = (pos.getX() & 15);
                 double posY = pos.getY() & 15;
                 double posZ = (pos.getZ() & 15);
-                float x = 0.001F;
                 float y = 0f; //shouldUpRender ? 0.001F : 0.0F;
                 if (isNotTheSameFluidDown && !isSideCovered(world, pos, Direction.DOWN, Math.max(Math.max(fluidHeightNW, fluidHeightSW), Math.max(fluidHeightSE, fluidHeightNE)), downBS))
                 {
@@ -188,18 +187,18 @@ public abstract class FluidRendererMixin
                     {
                         // flowing gas
                         Sprite sprite = sprites[1];
-                        float ah = (float) MathHelper.atan2(vec3d.z, vec3d.x) - (float) (Math.PI / 2);
-                        float ai = MathHelper.sin(ah) * 0.25F;
-                        float aj = MathHelper.cos(ah) * 0.25F;
-                        float ak = 8.0F;
-                        z = sprite.getFrameU(ak + (-aj - ai) * 16.0F);
-                        aa = sprite.getFrameV(ak + (-aj + ai) * 16.0F);
-                        ab = sprite.getFrameU(ak + (-aj + ai) * 16.0F);
-                        ac = sprite.getFrameV(ak + (aj + ai) * 16.0F);
-                        ad = sprite.getFrameU(ak + (aj + ai) * 16.0F);
-                        ae = sprite.getFrameV(ak + (aj - ai) * 16.0F);
-                        af = sprite.getFrameU(ak + (aj - ai) * 16.0F);
-                        ag = sprite.getFrameV(ak + (-aj - ai) * 16.0F);
+                        float atan = (float)( MathHelper.atan2(vec3d.z, vec3d.x) - Math.PI / 2 );
+                        float sin = MathHelper.sin(atan) * 0.25F;
+                        float cos = MathHelper.cos(atan) * 0.25F;
+                        float eight = 8.0F;
+                        z = sprite.getFrameU(eight + (-cos - sin) * 16.0F);
+                        aa = sprite.getFrameV(eight + (-cos + sin) * 16.0F);
+                        ab = sprite.getFrameU(eight + (-cos + sin) * 16.0F);
+                        ac = sprite.getFrameV(eight + (cos + sin) * 16.0F);
+                        ad = sprite.getFrameU(eight + (cos + sin) * 16.0F);
+                        ae = sprite.getFrameV(eight + (cos - sin) * 16.0F);
+                        af = sprite.getFrameU(eight + (cos - sin) * 16.0F);
+                        ag = sprite.getFrameV(eight + (-cos - sin) * 16.0F);
                     }
 
                     float al = (z + ab + ad + af) / 4.0F;
@@ -213,10 +212,10 @@ public abstract class FluidRendererMixin
                     ac = MathHelper.lerp(ai, ac, ah);
                     ae = MathHelper.lerp(ai, ae, ah);
                     ag = MathHelper.lerp(ai, ag, ah);
-                    int am = this.getLight(world, pos);
-                    float ak = brightnessDown * red;
-                    float an = brightnessDown * green;
-                    float ao = brightnessDown * blue;
+                    int light = this.getLight(world, pos);
+                    float brightnessDownRed = brightnessDown * red;
+                    float brightnessDownGreen = brightnessDown * green;
+                    float brightnessDownBlue = brightnessDown * blue;
 
                     float val = 1;
 
@@ -225,16 +224,16 @@ public abstract class FluidRendererMixin
 //                        CoreAscension.LOGGER.info("test");
 //                        val = 0.86666666666f;
 //                    }
-                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, ak, an, ao, z, aa, am);
-                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, ak, an, ao, ab, ac, am);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, ak, an, ao, ad, ae, am);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, ak, an, ao, af, ag, am);
+                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, z, aa, light);
+                    this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, ab, ac, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, ad, ae, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, af, ag, light);
                     if (fluidState.canFlowTo(world, pos.down()))
                     {
-                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, ak, an, ao, z, aa, am);
-                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, ak, an, ao, af, ag, am);
-                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, ak, an, ao, ad, ae, am);
-                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, ak, an, ao, ab, ac, am);
+                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightNW + val, posZ + 0.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, z, aa, light);
+                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightNE + val, posZ + 0.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, af, ag, light);
+                        this.vertex(vertexConsumer, posX + 1.0, posY - (double)fluidHeightSE + val, posZ + 1.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, ad, ae, light);
+                        this.vertex(vertexConsumer, posX + 0.0, posY - (double)fluidHeightSW + val, posZ + 1.0, brightnessDownRed, brightnessDownGreen, brightnessDownBlue, ab, ac, light);
                     }
                 }
 
@@ -263,93 +262,92 @@ public abstract class FluidRendererMixin
                 if (shouldDownRender)
                 {
                     y = -0.001f;
-                    float zx = sprites[1].getMinU();
-                    float abx = sprites[1].getMaxU();
-                    float adx = sprites[1].getMinV();
-                    float afx = sprites[1].getMaxV();
-                    int ap = this.getLight(world, pos.down());
-                    float acx = brightnessUp * red;
-                    float aex = brightnessUp * green;
-                    float agx = brightnessUp * blue;
-                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, zx, afx, ap);
-                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, acx, aex, agx, zx, adx, ap);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, acx, aex, agx, abx, adx, ap);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, acx, aex, agx, abx, afx, ap);
+                    float minU = sprites[1].getMinU();
+                    float maxU = sprites[1].getMaxU();
+                    float minV = sprites[1].getMinV();
+                    float maxV = sprites[1].getMaxV();
+                    int light = this.getLight(world, pos.down());
+                    float brightnessUpRed = brightnessUp * red;
+                    float brightnessUpGreen = brightnessUp * green;
+                    float brightnessUpBlue = brightnessUp * blue;
+                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ + 1.0, brightnessUpRed, brightnessUpGreen, brightnessUpBlue, minU, maxV, light);
+                    this.vertex(vertexConsumer, posX, posY - (double)y + 1, posZ, brightnessUpRed, brightnessUpGreen, brightnessUpBlue, minU, minV, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ, brightnessUpRed, brightnessUpGreen, brightnessUpBlue, maxU, minV, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY - (double)y + 1, posZ + 1.0, brightnessUpRed, brightnessUpGreen, brightnessUpBlue, maxU, maxV, light);
                 }
                 //y = shouldUpRender ? 0.001F : 0.0F;
                 int light = this.getLight(world, pos);
 
                 for (Direction direction : Direction.Type.HORIZONTAL)
                 {
-                    float afx;
-                    float aax;
-                    double ar;
-                    double at;
-                    double as;
-                    double au;
-                    boolean bl8;
+                    float fluidCorner;
+                    float fluidOppsiteCorner;
+                    double posMinX;
+                    double posMinZ;
+                    double posMaxX;
+                    double posMaxZ;
+                    boolean shouldRender;
                     switch (direction)
                     {
                         case NORTH:
-                            afx = fluidHeightNW;
-                            aax = fluidHeightNE;
-                            ar = posX;
-                            as = posX + 1.0;
-                            at = posZ + 0.001F;
-                            au = posZ + 0.001F;
-                            bl8 = shouldNorthRender;
+                            fluidCorner = fluidHeightNW;
+                            fluidOppsiteCorner = fluidHeightNE;
+                            posMinX = posX;
+                            posMaxX = posX + 1.0;
+                            posMinZ = posZ + 0.001F;
+                            posMaxZ = posZ + 0.001F;
+                            shouldRender = shouldNorthRender;
                             break;
                         case SOUTH:
-                            afx = fluidHeightSE;
-                            aax = fluidHeightSW;
-                            ar = posX + 1.0;
-                            as = posX;
-                            at = posZ + 1.0 - 0.001F;
-                            au = posZ + 1.0 - 0.001F;
-                            bl8 = shouldSouthRender;
+                            fluidCorner = fluidHeightSE;
+                            fluidOppsiteCorner = fluidHeightSW;
+                            posMinX = posX + 1.0;
+                            posMaxX = posX;
+                            posMinZ = posZ + 1.0 - 0.001F;
+                            posMaxZ = posZ + 1.0 - 0.001F;
+                            shouldRender = shouldSouthRender;
                             break;
                         case WEST:
-                            afx = fluidHeightSW;
-                            aax = fluidHeightNW;
-                            ar = posX + 0.001F;
-                            as = posX + 0.001F;
-                            at = posZ + 1.0;
-                            au = posZ;
-                            bl8 = shouldWestRender;
+                            fluidCorner = fluidHeightSW;
+                            fluidOppsiteCorner = fluidHeightNW;
+                            posMinX = posX + 0.001F;
+                            posMaxX = posX + 0.001F;
+                            posMinZ = posZ + 1.0;
+                            posMaxZ = posZ;
+                            shouldRender = shouldWestRender;
                             break;
                         default:
-                            afx = fluidHeightNE;
-                            aax = fluidHeightSE;
-                            ar = posX + 1.0 - 0.001F;
-                            as = posX + 1.0 - 0.001F;
-                            at = posZ;
-                            au = posZ + 1.0;
-                            bl8 = shouldEastRender;
+                            fluidCorner = fluidHeightNE;
+                            fluidOppsiteCorner = fluidHeightSE;
+                            posMinX = posX + 1.0 - 0.001F;
+                            posMaxX = posX + 1.0 - 0.001F;
+                            posMinZ = posZ;
+                            posMaxZ = posZ + 1.0;
+                            shouldRender = shouldEastRender;
                     }
 
-                    if (bl8 && !isSideCovered(world, pos, direction, Math.max(afx, aax), world.getBlockState(pos.offset(direction))))
+                    if (shouldRender && !isSideCovered(world, pos, direction, Math.max(fluidCorner, fluidOppsiteCorner), world.getBlockState(pos.offset(direction))))
                     {
-                        BlockPos blockPos = pos.offset(direction);
-                        Sprite sprite2 = sprites[1];
+                        Sprite spriteFlowing = sprites[1];
 
-                        float av = sprite2.getFrameU(0.0);
-                        float aw = sprite2.getFrameU(8.0);
-                        float ax = sprite2.getFrameV((1.0F - afx) * 16.0F * 0.5F);
-                        float ay = sprite2.getFrameV((1.0F - aax) * 16.0F * 0.5F);
-                        float az = sprite2.getFrameV(8.0);
-                        float ba = direction.getAxis() == Direction.Axis.Z ? brightnessZ : brightnessX;
-                        float bb = brightnessDown * ba * red;
-                        float bc = brightnessDown * ba * green;
-                        float bd = brightnessDown * ba * blue;
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, light);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, light);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, light);
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, light);
+                        float minU = spriteFlowing.getFrameU(0.0);
+                        float maxU = spriteFlowing.getFrameU(8.0);
+                        float maxVX = spriteFlowing.getFrameV((1.0F - fluidCorner) * 16.0F * 0.5F);
+                        float maxVZ = spriteFlowing.getFrameV((1.0F - fluidOppsiteCorner) * 16.0F * 0.5F);
+                        float maxV = spriteFlowing.getFrameV(8.0);
+                        float brightness = direction.getAxis() == Direction.Axis.Z ? brightnessZ : brightnessX;
+                        float brightnessRed = brightnessDown * brightness * red;
+                        float brightnessGreen = brightnessDown * brightness * green;
+                        float brightnessBlue = brightnessDown * brightness * blue;
+                        this.vertex(vertexConsumer, posMinX, posY - (double)fluidCorner + 1.1333333f, posMinZ, brightnessRed, brightnessGreen, brightnessBlue, minU, maxVX, light);
+                        this.vertex(vertexConsumer, posMaxX, posY - (double)fluidOppsiteCorner + 1.1333333f, posMaxZ, brightnessRed, brightnessGreen, brightnessBlue, maxU, maxVZ, light);
+                        this.vertex(vertexConsumer, posMaxX, posY - (double)y + 1.1333333f, posMaxZ, brightnessRed, brightnessGreen, brightnessBlue, maxU, maxV, light);
+                        this.vertex(vertexConsumer, posMinX, posY - (double)y + 1.1333333f, posMinZ, brightnessRed, brightnessGreen, brightnessBlue, minU, maxV, light);
 
-                        this.vertex(vertexConsumer, ar, posY - (double)y + 1.1333333f, at, bb, bc, bd, av, az, light);
-                        this.vertex(vertexConsumer, as, posY - (double)y + 1.1333333f, au, bb, bc, bd, aw, az, light);
-                        this.vertex(vertexConsumer, as, posY - (double)aax + 1.1333333f, au, bb, bc, bd, aw, ay, light);
-                        this.vertex(vertexConsumer, ar, posY - (double)afx + 1.1333333f, at, bb, bc, bd, av, ax, light);
+                        this.vertex(vertexConsumer, posMinX, posY - (double)y + 1.1333333f, posMinZ, brightnessRed, brightnessGreen, brightnessBlue, minU, maxV, light);
+                        this.vertex(vertexConsumer, posMaxX, posY - (double)y + 1.1333333f, posMaxZ, brightnessRed, brightnessGreen, brightnessBlue, maxU, maxV, light);
+                        this.vertex(vertexConsumer, posMaxX, posY - (double)fluidOppsiteCorner + 1.1333333f, posMaxZ, brightnessRed, brightnessGreen, brightnessBlue, maxU, maxVZ, light);
+                        this.vertex(vertexConsumer, posMinX, posY - (double)fluidCorner + 1.1333333f, posMinZ, brightnessRed, brightnessGreen, brightnessBlue, minU, maxVX, light);
                     }
                 }
             }
