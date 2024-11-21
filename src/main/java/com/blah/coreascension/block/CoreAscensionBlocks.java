@@ -645,8 +645,7 @@ public class CoreAscensionBlocks
     }
     private static void NaturalTab(FabricItemGroupEntries entries)
     {
-        entries.addAfter(Items.BEDROCK, BEDROCK);
-        entries.addAfter(Items.BEDROCK, CoreAscensionBlocks.BEDROCK);
+        //entries.addAfter(Items.BEDROCK, BEDROCK);
     }
     public static void RegisterBlocks()
     {
