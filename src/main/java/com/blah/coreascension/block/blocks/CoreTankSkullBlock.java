@@ -25,8 +25,8 @@ import java.util.function.Predicate;
 public class CoreTankSkullBlock extends Block
 {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    private static BlockPattern coreBossPattern;
-
+    private static BlockPattern coreBossPatternX;
+    private static BlockPattern coreBossPatternZ;
     public CoreTankSkullBlock(Settings settings)
     {
         super(settings);
@@ -69,18 +69,23 @@ public class CoreTankSkullBlock extends Block
                     }
                 }*/
 
-                BlockPattern.Result result = getCoreBossPattern().searchAround(world, pos);
-                if (result != null)
+                BlockPattern.Result resultX = getCoreBossPatternX().searchAround(world, pos);
+                BlockPattern.Result resultZ = getCoreBossPatternZ().searchAround(world, pos);
+                if (resultX != null)
                 {
-                    CarvedPumpkinBlock.breakPatternBlocks(world, result);
+                    breakPatternBlocks(world, resultX);
+                }
+                if (resultZ != null)
+                {
+                    breakPatternBlocks(world, resultZ);
                 }
             }
         }
     }
 
-    private static BlockPattern getCoreBossPattern()
+    private static BlockPattern getCoreBossPatternX()
     {
-        if (coreBossPattern == null)
+        if (coreBossPatternX == null)
         {
             Predicate<CachedBlockPosition> thing =
                     CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.NORTH).getBlock())
@@ -89,13 +94,50 @@ public class CoreTankSkullBlock extends Block
                             .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.SOUTH).getBlock())))));
 
 
-            coreBossPattern = BlockPatternBuilder.start()
-                    //.aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
+            coreBossPatternX = BlockPatternBuilder.start()
+                    .aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
                     .aisle("~^~", "~#~", "###").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('^', thing).where('~', (pos) -> pos.getBlockState().isAir())
-                    //.aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
+                    .aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
                     .build();
         }
 
-        return coreBossPattern;
+        return coreBossPatternX;
+    }
+
+    private static BlockPattern getCoreBossPatternZ()
+    {
+        if (coreBossPatternZ == null)
+        {
+            Predicate<CachedBlockPosition> thing =
+                    CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.NORTH).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.EAST).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.WEST).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.SOUTH).getBlock())))));
+
+
+            coreBossPatternZ = BlockPatternBuilder.start()
+                    .aisle("~~~", "~~~", "###").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
+                    .aisle("~^~", "~#~", "~#~").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('^', thing).where('~', (pos) -> pos.getBlockState().isAir())
+                    .aisle("~~~", "~~~", "###").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
+                    .build();
+        }
+
+        return coreBossPatternZ;
+    }
+
+    public static void breakPatternBlocks(World world, BlockPattern.Result patternResult)
+    {
+        for (int i = 0; i < patternResult.getWidth(); ++i)
+        {
+            for (int j = 0; j < patternResult.getHeight(); ++j)
+            {
+                for (int k = 0; k < patternResult.getDepth(); ++k)
+                {
+                    CachedBlockPosition cachedBlockPosition = patternResult.translate(i, j, k);
+                    world.setBlockState(cachedBlockPosition.getBlockPos(), Blocks.AIR.getDefaultState(), 2);
+                    world.syncWorldEvent(2001, cachedBlockPosition.getBlockPos(), Block.getRawIdFromState(cachedBlockPosition.getBlockState()));
+                }
+            }
+        }
     }
 }
