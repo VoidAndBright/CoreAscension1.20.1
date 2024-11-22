@@ -342,6 +342,11 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.HANGING_CACTUS_SIGN);
             entries.add(CoreAscensionBlocks.RAINBOW_MUSHROOM);
             entries.add(CoreAscensionBlocks.NETHERFROST);
+            entries.add(CoreAscensionBlocks.NETHERFROST_BRICKS);
+            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_SLAB);
+            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_STAIRS);
+            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_WALL);
+            entries.add(CoreAscensionBlocks.CORE_TANK_SKULL);
             entries.add(CoreAscensionBlocks.CORELIGHT);
             entries.add(CoreAscensionBlocks.PERMA_ICE);
             entries.add(CoreAscensionBlocks.NETHER_ICE);
