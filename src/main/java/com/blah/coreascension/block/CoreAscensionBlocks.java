@@ -610,6 +610,8 @@ public class CoreAscensionBlocks
     // end desert
     // end nether core
 
+    public static final Block BEDROCK = RegisterBlockItem("bedrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
+
     //public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));

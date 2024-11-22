@@ -20,8 +20,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
-//        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
-//                .add(CoreAscensionBlocks.BEDROCK);
+        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
+                .add(CoreAscensionBlocks.BEDROCK);
 
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
                 //.addTag(BlockTags.LEAVES)
@@ -146,7 +146,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.SULPHUR_ORE);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(Blocks.BEDROCK)
+                .add(CoreAscensionBlocks.BEDROCK)
                 .add(CoreAscensionBlocks.DIAMOND_DOOR)
                 .add(CoreAscensionBlocks.DIAMOND_TRAPDOOR)
                 .add(CoreAscensionBlocks.AERO_LANTERN)

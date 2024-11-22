@@ -25,6 +25,7 @@ public class CoreAscensionEvents
         ItemEntityTickCallback.EVENT.register(new AerofuelFloatEvent());
         EntityItemDropCallback.EVENT.register(new TeleportDroppedItemsEvent());
         AttackBlockCallback.EVENT.register(new PreventBlockBreakingEvent());
+        AttackBlockCallback.EVENT.register(new BedrockBreakEvent());
         FlingShooterEvent.EVENT.register(new FlingShooterEvent());
     }
 }

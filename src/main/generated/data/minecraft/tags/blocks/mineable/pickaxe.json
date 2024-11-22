@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "minecraft:bedrock",
+    "coreascension:bedrock",
     "coreascension:diamond_door",
     "coreascension:diamond_trapdoor",
     "coreascension:aero_lantern",

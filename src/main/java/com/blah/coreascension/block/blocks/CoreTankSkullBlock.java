@@ -4,9 +4,11 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.block.pattern.BlockPatternBuilder;
+import net.minecraft.block.pattern.CachedBlockPosition;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.predicate.block.BlockStatePredicate;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
@@ -17,6 +19,8 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.function.Predicate;
 
 public class CoreTankSkullBlock extends Block
 {
@@ -40,7 +44,7 @@ public class CoreTankSkullBlock extends Block
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
     {
-        return Block.createCuboidShape(4, 0, 4, 12, 8, 12);
+        return Block.createCuboidShape(2, 0, 2, 14, 12, 14);
     }
 
     // more code to make it do the spawning of the boss with block patterns
@@ -52,8 +56,19 @@ public class CoreTankSkullBlock extends Block
         super.onPlaced(world, pos, state, placer, itemStack);
         if (!world.isClient)
         {
-            if (state == CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState() && pos.getY() >= world.getBottomY() && world.getDifficulty() != Difficulty.PEACEFUL)
+            if (state.getBlock() == CoreAscensionBlocks.CORE_TANK_SKULL && pos.getY() >= world.getBottomY() && world.getDifficulty() != Difficulty.PEACEFUL)
             {
+                /*if (world.getBlockState(pos.down()).getBlock() == CoreAscensionBlocks.SOUL_SNOW &&
+                    world.getBlockState(pos.down(2)).getBlock() == CoreAscensionBlocks.SOUL_SNOW)
+                {
+                    if (world.getBlockState(pos.down(2)).getBlock() == CoreAscensionBlocks.SOUL_SNOW &&
+                        world.getBlockState(pos.down(2).north()).getBlock() ==  CoreAscensionBlocks.SOUL_SNOW &&
+                        world.getBlockState(pos.down(2).south()).getBlock() ==  CoreAscensionBlocks.SOUL_SNOW)
+                    {
+
+                    }
+                }*/
+
                 BlockPattern.Result result = getCoreBossPattern().searchAround(world, pos);
                 if (result != null)
                 {
@@ -67,9 +82,16 @@ public class CoreTankSkullBlock extends Block
     {
         if (coreBossPattern == null)
         {
+            Predicate<CachedBlockPosition> thing =
+                    CachedBlockPosition.matchesBlockState(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.NORTH).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.EAST).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.WEST).getBlock())
+                            .or(BlockStatePredicate.forBlock(CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState().with(FACING, Direction.SOUTH).getBlock())))));
+
+
             coreBossPattern = BlockPatternBuilder.start()
                     //.aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
-                    .aisle("~^~", "~#~", "###").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('^', (pos) -> pos.getBlockState() == CoreAscensionBlocks.CORE_TANK_SKULL.getDefaultState()).where('~', (pos) -> pos.getBlockState().isAir())
+                    .aisle("~^~", "~#~", "###").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('^', thing).where('~', (pos) -> pos.getBlockState().isAir())
                     //.aisle("~~~", "~~~", "#~#").where('#', (pos) -> pos.getBlockState() == CoreAscensionBlocks.SOUL_SNOW.getDefaultState()).where('~', (pos) -> pos.getBlockState() == Blocks.AIR.getDefaultState())
                     .build();
         }
