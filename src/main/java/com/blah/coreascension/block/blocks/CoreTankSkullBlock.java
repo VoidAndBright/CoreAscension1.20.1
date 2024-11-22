@@ -56,19 +56,8 @@ public class CoreTankSkullBlock extends Block
         super.onPlaced(world, pos, state, placer, itemStack);
         if (!world.isClient)
         {
-            if (state.getBlock() == CoreAscensionBlocks.CORE_TANK_SKULL && pos.getY() >= world.getBottomY() && world.getDifficulty() != Difficulty.PEACEFUL)
+            if (pos.getY() >= world.getBottomY() && world.getDifficulty() != Difficulty.PEACEFUL)
             {
-                /*if (world.getBlockState(pos.down()).getBlock() == CoreAscensionBlocks.SOUL_SNOW &&
-                    world.getBlockState(pos.down(2)).getBlock() == CoreAscensionBlocks.SOUL_SNOW)
-                {
-                    if (world.getBlockState(pos.down(2)).getBlock() == CoreAscensionBlocks.SOUL_SNOW &&
-                        world.getBlockState(pos.down(2).north()).getBlock() ==  CoreAscensionBlocks.SOUL_SNOW &&
-                        world.getBlockState(pos.down(2).south()).getBlock() ==  CoreAscensionBlocks.SOUL_SNOW)
-                    {
-
-                    }
-                }*/
-
                 BlockPattern.Result resultX = getCoreBossPatternX().searchAround(world, pos);
                 BlockPattern.Result resultZ = getCoreBossPatternZ().searchAround(world, pos);
                 if (resultX != null)
