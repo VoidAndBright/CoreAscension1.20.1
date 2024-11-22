@@ -51,7 +51,14 @@ public class CoreAscension implements ModInitializer {
                 .lightWithItem(CoreAscensionItems.SKYLANDS_WAYNODE)
                 .customPortalBlock((CustomPortalBlock) CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK)
                 .destDimID(Identifier.of("coreascension", "skylands"))
-                .tintColor(192, 224, 60)
+                //.tintColor(192, 224, 60)
+                .registerPortal();
+
+        CustomPortalBuilder.beginPortal()
+                .frameBlock(CoreAscensionBlocks.NETHER_ICE)
+                .lightWithItem(CoreAscensionItems.NETHER_CORE_KEY)
+                .customPortalBlock((CustomPortalBlock) CoreAscensionBlocks.NETHER_CORE_PORTAL_BLOCK)
+                .destDimID(Identifier.of("coreascension", "nether_core"))
                 .registerPortal();
     }
 }

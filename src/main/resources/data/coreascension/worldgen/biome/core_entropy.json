@@ -1,7 +1,7 @@
 {
   "temperature": 0.5,
   "downfall": 0,
-  "has_precipitation": true,
+  "has_precipitation": false,
   "effects": {
     "sky_color": 403753,
     "fog_color": 403753,
@@ -56,7 +56,8 @@
     [
       "coreascension:ore_lumite",
       "coreascension:ore_tadanite",
-      "coreascension:ore_sulphur_core"
+      "coreascension:ore_sulphur_core",
+      "coreascension:entropy_tree_placed"
     ],
     [],
     [],
