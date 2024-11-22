@@ -16,7 +16,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
     
     public void generate()
     {
-        addDrop(CoreAscensionBlocks.BEDROCK, Blocks.BEDROCK.asItem());
+        //addDrop(CoreAscensionBlocks.BEDROCK, Blocks.BEDROCK.asItem());
         addDrop(CoreAscensionBlocks.AMETHYST_SLAB, slabDrops(CoreAscensionBlocks.AMETHYST_SLAB));
         addDrop(CoreAscensionBlocks.ACACIA_POST);
         addDrop(CoreAscensionBlocks.ACACIA_SECRET_DOOR);

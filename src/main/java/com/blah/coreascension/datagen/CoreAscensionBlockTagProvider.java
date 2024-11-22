@@ -20,8 +20,8 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
-        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
-                .add(CoreAscensionBlocks.BEDROCK);
+//        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
+//                .add(CoreAscensionBlocks.BEDROCK);
 
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
                 //.addTag(BlockTags.LEAVES)

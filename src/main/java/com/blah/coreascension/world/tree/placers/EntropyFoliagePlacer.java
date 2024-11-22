@@ -1,9 +1,11 @@
 package com.blah.coreascension.world.tree.placers;
 
+import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.random.Random;
@@ -35,22 +37,20 @@ public class EntropyFoliagePlacer extends FoliagePlacer
     {
         boolean placeCorelight = false;
         int leafStacks;
-        int subtractFromHeight;
-        if (trunkHeight == 9)
+        if (trunkHeight == 2)
         {
             leafStacks = 3;
-            subtractFromHeight = 9;
         }
-        else if (trunkHeight == 12)
+        else if (trunkHeight == 3 || trunkHeight == 4)
         {
             leafStacks = 4;
-            subtractFromHeight = 12;
         }
         else
         {
             leafStacks = 5;
-            subtractFromHeight = 15;
         }
+
+        int leafPlacement = 3 - 16;
 
         // place 5x5 entropic wart block things
         for (int i = 0; i < leafStacks; i++)
@@ -59,23 +59,32 @@ public class EntropyFoliagePlacer extends FoliagePlacer
             {
                 for (int z = -2; z <= 2; z++)
                 {
-                    if (x == 0 && z == 0) continue;
-                    placer.placeBlock(treeNode.getCenter().add(x, subtractFromHeight, z), CoreAscensionBlocks.ENTROPIC_WART_BLOCK.getDefaultState());
+                    if (x == 0 && z == 0 && i < leafStacks - 1) continue;
+                    placer.placeBlock(treeNode.getCenter().add(x, leafPlacement, z), CoreAscensionBlocks.ENTROPIC_WART_BLOCK.getDefaultState());
                     if (x == -2 || x == 2 || z == -2 || z == 2)
                     {
-                        generateVines(treeNode, placer, random, treeNode.getCenter().add(x, -subtractFromHeight, z));
+                        if (random.nextFloat() < 0.18f)
+                        {
+                            generateVines(placer, random, treeNode.getCenter().add(x, leafPlacement - 1, z));
+                        }
+                        else if (random.nextFloat() < 0.15f)
+                        {
+                            if (!((x == -2 && z == -2) || (x == -2 && z == 2) ||
+                                    (x == 2 && z == -2) || (x == 2 && z == 2)))
+                            {
+                                placer.placeBlock(treeNode.getCenter().add(x, leafPlacement, z), Blocks.AIR.getDefaultState());
+                            }
+                        }
                     }
                 }
             }
-            subtractFromHeight -= 3;
+            leafPlacement += 3;
         }
+        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 1, 0), Blocks.AIR.getDefaultState());
+        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 2, 0), Blocks.AIR.getDefaultState());
+        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 3, 0), Blocks.AIR.getDefaultState());
 
-        switch (leafStacks)
-        {
-            case 3 -> subtractFromHeight = 9;
-            case 4 -> subtractFromHeight = 12;
-            default -> subtractFromHeight = 15;
-        }
+        leafPlacement = 2 - 16;
 
         // place 3x3 entropic wart block things
         for (int i = 0; i < leafStacks; i++)
@@ -85,27 +94,39 @@ public class EntropyFoliagePlacer extends FoliagePlacer
                 for (int z = -1; z <= 1; z++)
                 {
                     if (x == 0 && z == 0) continue;
-                    placer.placeBlock(treeNode.getCenter().add(x, subtractFromHeight, z), CoreAscensionBlocks.ENTROPIC_WART_BLOCK.getDefaultState());
+                    placer.placeBlock(treeNode.getCenter().add(x, leafPlacement, z), CoreAscensionBlocks.ENTROPIC_WART_BLOCK.getDefaultState());
                     if (!placeCorelight && random.nextFloat() < 0.45f)
                     {
-                        placer.placeBlock(treeNode.getCenter().add(x, subtractFromHeight, z), CoreAscensionBlocks.CORELIGHT.getDefaultState());
+                        placer.placeBlock(treeNode.getCenter().add(x, leafPlacement, z), CoreAscensionBlocks.CORELIGHT.getDefaultState());
                         placeCorelight = true;
                     }
                 }
             }
-            subtractFromHeight -= 3;
+            leafPlacement += 3;
             placeCorelight = false;
         }
     }
 
-    private void generateVines(TreeNode tn, BlockPlacer placer, Random random, BlockPos pos)
+    private void generateVines(BlockPlacer placer, Random random, BlockPos pos)
     {
         int h = 0;
         int maxHeight = (int)(random.nextFloat() * 5);
 
         for (int i = 0; i < maxHeight; i++)
         {
-            placer.placeBlock(pos.add(0, -h, 0), CoreAscensionBlocks.ENTROPIC_VINES.getDefaultState());
+            if (maxHeight == 1)
+            {
+                placer.placeBlock(pos.add(0, -h, 0), CoreAscensionBlocks.ENTROPIC_VINES.getDefaultState());
+            }
+            else
+            {
+                if (i < maxHeight - 1)
+                {
+                    placer.placeBlock(pos.add(0, -h, 0), CoreAscensionBlocks.ENTROPIC_VINES_PLANT.getDefaultState());
+                }
+                else
+                    placer.placeBlock(pos.add(0, -h, 0), CoreAscensionBlocks.ENTROPIC_VINES.getDefaultState());
+            }
             h++;
         }
     }

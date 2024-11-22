@@ -36,15 +36,15 @@ public class CoreAscensionBiomes {
                         MultiNoiseUtil.ParameterRange.of(0.0f),
                         MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
-        BiomePlacement.addOverworld(VALLEY_OF_THE_DAMNED,
-                new MultiNoiseUtil.NoiseHypercube(
-                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
-                        MultiNoiseUtil.ParameterRange.of(0.1f, 0.3f),
-                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.03f),
-                        MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
-                        MultiNoiseUtil.ParameterRange.of(0.0f),
-                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
-                        0L));
+//        BiomePlacement.addOverworld(VALLEY_OF_THE_DAMNED,
+//                new MultiNoiseUtil.NoiseHypercube(
+//                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
+//                        MultiNoiseUtil.ParameterRange.of(0.1f, 0.3f),
+//                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.03f),
+//                        MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
+//                        MultiNoiseUtil.ParameterRange.of(0.0f),
+//                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
+//                        0L));
         BiomePlacement.addOverworld(CEDAR_GROVE,
                 new MultiNoiseUtil.NoiseHypercube(
                         MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),

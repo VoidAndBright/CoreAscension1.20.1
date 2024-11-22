@@ -572,7 +572,8 @@ public class CoreAscensionBlocks
 	public static final Block ENTROPY_TRAPDOOR = RegisterBlockItem("entropy_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
     public static final Block ENTROPIC_CORE_NYLIUM = RegisterBlockItem("entropic_core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.WHITE)));
     public static final Block ENTROPIC_WART_BLOCK = RegisterBlockItem("entropic_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.WHITE)));
-    public static final Block ENTROPIC_VINES = RegisterBlockItem("entropic_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPIC_VINES = RegisterBlockItem("entropic_vines", new EntropicVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPIC_VINES_PLANT = RegisterBlockItem("entropic_vines_plant", new EntropicVinesPlantBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
     public static final Block ENTROPY_WEEDS = RegisterBlockItem("entropy_weeds", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.WHITE))
     {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
@@ -609,7 +610,7 @@ public class CoreAscensionBlocks
     // end desert
     // end nether core
 
-    public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
+    //public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
 
@@ -817,6 +818,8 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES_PLANT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_TANK_SKULL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());
