@@ -15,33 +15,27 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class GemStaffItem extends Item
+public class ShurikenItem extends Item
 {
-    public enum GemType
+    public enum Type
     {
-        RUBY, CITRINE, TOPAZ, EMERALD, DIAMOND, SAPPHIRE, AMETHYST
+        IRON, GOLD, DIAMOND, URANIUM, TADANITE, LUMITE, FROST
     }
-    private final GemType toShoot;
+    private final Type toShoot;
     private final String tooltip;
-    public GemStaffItem(Settings settings, GemType toShoot, String tooltip)
+    public ShurikenItem(Settings settings, Type toShoot, String tooltip)
     {
         super(settings);
         this.toShoot = toShoot;
         this.tooltip = tooltip;
     }
 
-    
+
     public UseAction getUseAction(ItemStack stack)
     {
         return UseAction.BOW;
     }
 
-    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context)
-    {
-        tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, this.tooltip))).formatted(Formatting.GRAY));
-    }
-
-    
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
     {
         if (!world.isClient())
@@ -50,9 +44,10 @@ public class GemStaffItem extends Item
             proj.setVelocity(user, user.getPitch(), user.getYaw(), 0, 2.5f, 1.0f);
             world.spawnEntity(proj);
         }
-        world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 0.4f, 1f);
-        user.getItemCooldownManager().set(this, 10);
-        user.getStackInHand(hand).damage(1, user, p -> p.sendToolBreakStatus(user.getActiveHand()));
+        world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 0.4f, 1f);
+        if (!user.getAbilities().creativeMode) {
+            user.getStackInHand(hand).decrement(1);
+        }
         return TypedActionResult.success(user.getStackInHand(hand), world.isClient());
     }
 
@@ -61,13 +56,13 @@ public class GemStaffItem extends Item
         ThrownItemEntity proj;
         switch (this.toShoot)
         {
-            case RUBY -> proj = new RubyBoltEntity(user, world);
-            case CITRINE -> proj = new CitrineBoltEntity(user, world);
-            case TOPAZ -> proj = new TopazBoltEntity(user, world);
-            case EMERALD -> proj = new EmeraldBoltEntity(user, world);
-            case DIAMOND -> proj = new DiamondBoltEntity(user, world);
-            case SAPPHIRE -> proj = new SapphireBoltEntity(user, world);
-            default -> proj = new AmethystBoltEntity(user, world);
+            case IRON -> proj = new IronShurikenEntity(user, world);
+            case GOLD -> proj = new GoldShurikenEntity(user, world);
+            case FROST -> proj = new FrostShurikenEntity(user, world);
+            case TADANITE -> proj = new TadaniteShurikenEntity(user, world);
+            case URANIUM -> proj = new UraniumShurikenEntity(user, world);
+            case DIAMOND -> proj = new DiamondShurikenEntity(user, world);
+            default -> proj = new LumiteShurikenEntity(user, world);
         }
         return proj;
     }

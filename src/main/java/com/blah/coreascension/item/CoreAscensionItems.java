@@ -7,10 +7,7 @@ import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.entity.entities.projectiles.BlahBoltEntity;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
-import com.blah.coreascension.item.items.AdvancedArmorItem;
-import com.blah.coreascension.item.items.GemStaffItem;
-import com.blah.coreascension.item.items.LighterItem;
-import com.blah.coreascension.item.items.MagicMirrorItem;
+import com.blah.coreascension.item.items.*;
 import com.blah.coreascension.item.tools.*;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
@@ -319,13 +316,10 @@ public class CoreAscensionItems {
     public static final Item BLAH_BOLT = registerItem("blah_beam_blast", new Item(new FabricItemSettings()));
     public static final Item BLAHS_ENERGY_BLADE = registerItem("blahs_energy_blade", new SwordTooltipItem(CoreAscensionToolMaterials.BLAH, 2, -2.4f, new FabricItemSettings().fireproof(), Formatting.BLUE, "tooltip.unbreakable")
     {
-        
         public UseAction getUseAction(ItemStack stack)
         {
             return UseAction.BOW;
         }
-
-        
         public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
         {
             if (!world.isClient())
@@ -372,6 +366,22 @@ public class CoreAscensionItems {
 
     public static final Item END_GAS_BUCKET = registerItem("end_gas_bucket", new BucketItem(CoreAscensionFluids.STILL_END_GAS, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
     public static final Item MOLTEN_ICE_BUCKET = registerItem("molten_ice_bucket", new BucketItem(CoreAscensionFluids.STILL_MOLTEN_ICE, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+    public static final Item ENDER_WIRE = registerItem("ender_wire", new EnderWireItem(new FabricItemSettings()));
+
+    public static final Item IRON_SHURIKEN_PROJ = registerItem("iron_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item GOLD_SHURIKEN_PROJ = registerItem("gold_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item DIAMOND_SHURIKEN_PROJ = registerItem("diamond_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item URANIUM_SHURIKEN_PROJ = registerItem("uranium_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item TADANITE_SHURIKEN_PROJ = registerItem("tadanite_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item LUMITE_SHURIKEN_PROJ = registerItem("lumite_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item FROST_SHURIKEN_PROJ = registerItem("frost_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item IRON_SHURIKEN = registerItem("iron_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item GOLD_SHURIKEN = registerItem("gold_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item DIAMOND_SHURIKEN = registerItem("diamond_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item URANIUM_SHURIKEN = registerItem("uranium_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item TADANITE_SHURIKEN = registerItem("tadanite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item LUMITE_SHURIKEN = registerItem("lumite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item FROST_SHURIKEN = registerItem("frost_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
 
 
     public static Item registerItem(String name, Item item)

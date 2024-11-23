@@ -520,6 +520,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.URANIUM_HOE);
 
             entries.add(CoreAscensionItems.BEDROCK_PICKAXE);
+            entries.add(CoreAscensionItems.ENDER_WIRE);
 
             entries.add(CoreAscensionItems.LUMITE_SWORD);
             entries.add(CoreAscensionItems.LUMITE_PICKAXE);
@@ -536,6 +537,14 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.TWILIGHT_AXE);
             entries.add(CoreAscensionItems.BLAHS_ENERGY_BLADE);
             // -- END TOOLS --
+
+            entries.add(CoreAscensionItems.IRON_SHURIKEN);
+            entries.add(CoreAscensionItems.GOLD_SHURIKEN);
+            entries.add(CoreAscensionItems.DIAMOND_SHURIKEN);
+            entries.add(CoreAscensionItems.URANIUM_SHURIKEN);
+            entries.add(CoreAscensionItems.TADANITE_SHURIKEN);
+            entries.add(CoreAscensionItems.LUMITE_SHURIKEN);
+            entries.add(CoreAscensionItems.FROST_SHURIKEN);
 
             entries.add(CoreAscensionItems.END_GAS_BUCKET);
             entries.add(CoreAscensionItems.MOLTEN_ICE_BUCKET);
