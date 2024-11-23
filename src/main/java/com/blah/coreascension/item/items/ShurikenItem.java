@@ -22,12 +22,10 @@ public class ShurikenItem extends Item
         IRON, GOLD, DIAMOND, URANIUM, TADANITE, LUMITE, FROST
     }
     private final Type toShoot;
-    private final String tooltip;
-    public ShurikenItem(Settings settings, Type toShoot, String tooltip)
+    public ShurikenItem(Settings settings, Type toShoot)
     {
         super(settings);
         this.toShoot = toShoot;
-        this.tooltip = tooltip;
     }
 
 

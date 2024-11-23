@@ -369,19 +369,19 @@ public class CoreAscensionItems {
     public static final Item ENDER_WIRE = registerItem("ender_wire", new EnderWireItem(new FabricItemSettings()));
 
     public static final Item IRON_SHURIKEN_PROJ = registerItem("iron_shuriken_proj", new Item(new FabricItemSettings()));
-    public static final Item GOLD_SHURIKEN_PROJ = registerItem("gold_shuriken_proj", new Item(new FabricItemSettings()));
+    public static final Item GOLD_SHURIKEN_PROJ = registerItem("golden_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item DIAMOND_SHURIKEN_PROJ = registerItem("diamond_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item URANIUM_SHURIKEN_PROJ = registerItem("uranium_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item TADANITE_SHURIKEN_PROJ = registerItem("tadanite_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item LUMITE_SHURIKEN_PROJ = registerItem("lumite_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item FROST_SHURIKEN_PROJ = registerItem("frost_shuriken_proj", new Item(new FabricItemSettings()));
-    public static final Item IRON_SHURIKEN = registerItem("iron_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item GOLD_SHURIKEN = registerItem("gold_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item DIAMOND_SHURIKEN = registerItem("diamond_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item URANIUM_SHURIKEN = registerItem("uranium_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item TADANITE_SHURIKEN = registerItem("tadanite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item LUMITE_SHURIKEN = registerItem("lumite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
-    public static final Item FROST_SHURIKEN = registerItem("frost_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON, ""));
+    public static final Item IRON_SHURIKEN = registerItem("iron_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.IRON));
+    public static final Item GOLD_SHURIKEN = registerItem("golden_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.GOLD));
+    public static final Item DIAMOND_SHURIKEN = registerItem("diamond_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.DIAMOND));
+    public static final Item URANIUM_SHURIKEN = registerItem("uranium_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.URANIUM));
+    public static final Item TADANITE_SHURIKEN = registerItem("tadanite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.TADANITE));
+    public static final Item LUMITE_SHURIKEN = registerItem("lumite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.LUMITE));
+    public static final Item FROST_SHURIKEN = registerItem("frost_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.FROST));
 
 
     public static Item registerItem(String name, Item item)

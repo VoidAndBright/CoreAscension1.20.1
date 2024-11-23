@@ -400,42 +400,68 @@ public class CoreAscensionGroups
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {
-            entries.add(CoreAscensionItems.THE_TOOL);
-            entries.add(CoreAscensionItems.MAGIC_MIRROR);
-            entries.add(CoreAscensionItems.SKYLANDS_WAYNODE);
-            entries.add(CoreAscensionItems.NETHER_CORE_KEY);
-            entries.add(CoreAscensionItems.OSBORGNEN_FUEL);
-            entries.add(CoreAscensionItems.RUBY);
-            entries.add(CoreAscensionItems.CITRINE);
-            entries.add(CoreAscensionItems.TOPAZ);
-            entries.add(CoreAscensionItems.SAPPHIRE);
-            entries.add(CoreAscensionItems.AMETHYST);
-            entries.add(CoreAscensionItems.RUBY_STAFF);
-            entries.add(CoreAscensionItems.CITRINE_STAFF);
-            entries.add(CoreAscensionItems.TOPAZ_STAFF);
-            entries.add(CoreAscensionItems.EMERALD_STAFF);
-            entries.add(CoreAscensionItems.DIAMOND_STAFF);
-            entries.add(CoreAscensionItems.SAPPHIRE_STAFF);
-            entries.add(CoreAscensionItems.AMETHYST_STAFF);
-            entries.add(CoreAscensionItems.CRYSTALLINE_ARTIFACT);
-            entries.add(CoreAscensionItems.RUBY_SHARD);
-            entries.add(CoreAscensionItems.CITRINE_SHARD);
-            entries.add(CoreAscensionItems.TOPAZ_SHARD);
-            entries.add(CoreAscensionItems.EMERALD_SHARD);
-            entries.add(CoreAscensionItems.DIAMOND_SHARD);
-            entries.add(CoreAscensionItems.SAPPHIRE_SHARD);
-            entries.add(CoreAscensionItems.TADANITE_CRYSTAL);
-            entries.add(CoreAscensionItems.TADANITE_DIAMOND);
-            entries.add(CoreAscensionItems.ETHEREAL_TORCH);
-            entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
-            entries.add(CoreAscensionItems.RAW_TITANIUM);
-            entries.add(CoreAscensionItems.TITANIUM_INGOT);
-            entries.add(CoreAscensionItems.SPAWN_EGG);
 
+            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
+            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
+            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_LEGGINGS);
+            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_BOOTS);
+            entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
+            entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
+            entries.add(CoreAscensionItems.SAPPHIRE_AXE);
+            entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
+            entries.add(CoreAscensionItems.SAPPHIRE_HOE);
+            entries.add(CoreAscensionItems.SAPPHIRE_SCYTHE);
+            entries.add(CoreAscensionItems.SAPPHIRE_HAMMER);
+            entries.add(CoreAscensionItems.SAPPHIRE_EXCAVATOR);
+            entries.add(CoreAscensionItems.SAPPHIRE_HELMET);
+            entries.add(CoreAscensionItems.SAPPHIRE_CHESTPLATE);
+            entries.add(CoreAscensionItems.SAPPHIRE_LEGGINGS);
+            entries.add(CoreAscensionItems.SAPPHIRE_BOOTS);
+            entries.add(CoreAscensionItems.TADANITE_PICKAXE);
+            entries.add(CoreAscensionItems.TADANITE_SWORD);
+            entries.add(CoreAscensionItems.TADANITE_AXE);
+            entries.add(CoreAscensionItems.TADANITE_SHOVEL);
+            entries.add(CoreAscensionItems.TADANITE_HOE);
+            entries.add(CoreAscensionItems.TADANITE_SCYTHE);
+            entries.add(CoreAscensionItems.TADANITE_HAMMER);
+            entries.add(CoreAscensionItems.TADANITE_EXCAVATOR);
+            entries.add(CoreAscensionItems.TADANITE_HELMET);
+            entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
+            entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
+            entries.add(CoreAscensionItems.TADANITE_BOOTS);
+            entries.add(CoreAscensionItems.LUMITE_PICKAXE);
+            entries.add(CoreAscensionItems.LUMITE_SWORD);
+            entries.add(CoreAscensionItems.LUMITE_AXE);
+            entries.add(CoreAscensionItems.LUMITE_SHOVEL);
+            entries.add(CoreAscensionItems.LUMITE_HOE);
+            entries.add(CoreAscensionItems.LUMITE_SCYTHE);
+            entries.add(CoreAscensionItems.LUMITE_HAMMER);
+            entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
+            entries.add(CoreAscensionItems.LUMITE_HELMET);
+            entries.add(CoreAscensionItems.LUMITE_CHESTPLATE);
+            entries.add(CoreAscensionItems.LUMITE_LEGGINGS);
+            entries.add(CoreAscensionItems.LUMITE_BOOTS);
+            entries.add(CoreAscensionItems.URANIUM_PICKAXE);
+            entries.add(CoreAscensionItems.URANIUM_SWORD);
+            entries.add(CoreAscensionItems.URANIUM_AXE);
+            entries.add(CoreAscensionItems.URANIUM_SHOVEL);
+            entries.add(CoreAscensionItems.URANIUM_HOE);
+            entries.add(CoreAscensionItems.URANIUM_HELMET);
+            entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
+            entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
+            entries.add(CoreAscensionItems.URANIUM_BOOTS);
+
+            entries.add(CoreAscensionItems.THE_TOOL);
+            entries.add(CoreAscensionItems.BEDROCK_PICKAXE);
             entries.add(CoreAscensionItems.CRIMSON_EDGE);
             entries.add(CoreAscensionItems.TITAN_BLADE);
             entries.add(CoreAscensionItems.VERTEX);
-
+            entries.add(CoreAscensionItems.WOODEN_SCYTHE);
+            entries.add(CoreAscensionItems.STONE_SCYTHE);
+            entries.add(CoreAscensionItems.GOLDEN_SCYTHE);
+            entries.add(CoreAscensionItems.IRON_SCYTHE);
+            entries.add(CoreAscensionItems.DIAMOND_SCYTHE);
+            entries.add(CoreAscensionItems.NETHERITE_SCYTHE);
             entries.add(CoreAscensionItems.WOODEN_HAMMER);
             entries.add(CoreAscensionItems.STONE_HAMMER);
             entries.add(CoreAscensionItems.GOLDEN_HAMMER);
@@ -448,95 +474,84 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.IRON_EXCAVATOR);
             entries.add(CoreAscensionItems.DIAMOND_EXCAVATOR);
             entries.add(CoreAscensionItems.NETHERITE_EXCAVATOR);
-            entries.add(CoreAscensionItems.WOODEN_SCYTHE);
-            entries.add(CoreAscensionItems.STONE_SCYTHE);
-            entries.add(CoreAscensionItems.GOLDEN_SCYTHE);
-            entries.add(CoreAscensionItems.IRON_SCYTHE);
-            entries.add(CoreAscensionItems.DIAMOND_SCYTHE);
-            entries.add(CoreAscensionItems.NETHERITE_SCYTHE);
-
-            entries.add(CoreAscensionItems.SULPHUR);
-            entries.add(CoreAscensionItems.IRON_ROD);
-            entries.add(CoreAscensionItems.RAW_URANIUM);
-            entries.add(CoreAscensionItems.URANIUM_INGOT);
+            entries.add(CoreAscensionItems.RUBY_STAFF);
+            entries.add(CoreAscensionItems.CITRINE_STAFF);
+            entries.add(CoreAscensionItems.TOPAZ_STAFF);
+            entries.add(CoreAscensionItems.EMERALD_STAFF);
+            entries.add(CoreAscensionItems.DIAMOND_STAFF);
+            entries.add(CoreAscensionItems.SAPPHIRE_STAFF);
+            entries.add(CoreAscensionItems.AMETHYST_STAFF);
+            entries.add(CoreAscensionItems.TADANITE_CRYSTAL);
+            entries.add(CoreAscensionItems.TADANITE_DIAMOND);
             entries.add(CoreAscensionItems.LUMITE_INGOT);
+            //entries.add(CoreAscensionItems.SUNSTONE);
+            entries.add(CoreAscensionItems.URANIUM_INGOT);
+            entries.add(CoreAscensionItems.RUBY);
+            entries.add(CoreAscensionItems.CITRINE);
+            entries.add(CoreAscensionItems.TOPAZ);
+            entries.add(CoreAscensionItems.SAPPHIRE);
+            entries.add(CoreAscensionItems.AMETHYST);
+            entries.add(CoreAscensionItems.ZIRCON);
+            entries.add(CoreAscensionItems.SULPHUR);
+            entries.add(CoreAscensionItems.RUBY_SHARD);
+            entries.add(CoreAscensionItems.CITRINE_SHARD);
+            entries.add(CoreAscensionItems.TOPAZ_SHARD);
+            entries.add(CoreAscensionItems.EMERALD_SHARD);
+            entries.add(CoreAscensionItems.DIAMOND_SHARD);
+            entries.add(CoreAscensionItems.SAPPHIRE_SHARD);
+            //entries.add(CoreAscensionItems.OBSIDIAN_CONSTRUCT);
+            entries.add(CoreAscensionItems.OBSIDIFIED_BLAZE_ROD);
+            entries.add(CoreAscensionItems.AERO_FUEL);
+            entries.add(CoreAscensionItems.OSBORGNEN_FUEL);
+            //entries.add(CoreAscensionItems.CATALYTIC_INVERTER);
+            entries.add(CoreAscensionItems.IRON_ROD);
+            entries.add(CoreAscensionItems.FROZEN_ROD);
+            entries.add(CoreAscensionItems.NETHER_CORE_KEY);
+            entries.add(CoreAscensionItems.SKYLANDS_WAYNODE);
+            entries.add(CoreAscensionItems.MOLTEN_ICE_BUCKET);
+            entries.add(CoreAscensionItems.ICE_CREAM);
+            entries.add(CoreAscensionItems.DARK_MATTER_GEL);
 
-            // -- ARMOR --
-            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
-            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
-            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_LEGGINGS);
-            entries.add(CoreAscensionItems.GILDED_OBSIDIAN_BOOTS);
-            entries.add(CoreAscensionItems.SAPPHIRE_HELMET);
-            entries.add(CoreAscensionItems.SAPPHIRE_CHESTPLATE);
-            entries.add(CoreAscensionItems.SAPPHIRE_LEGGINGS);
-            entries.add(CoreAscensionItems.SAPPHIRE_BOOTS);
-            entries.add(CoreAscensionItems.TADANITE_HELMET);
-            entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
-            entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
-            entries.add(CoreAscensionItems.TADANITE_BOOTS);
-            entries.add(CoreAscensionItems.URANIUM_HELMET);
-            entries.add(CoreAscensionItems.URANIUM_CHESTPLATE);
-            entries.add(CoreAscensionItems.URANIUM_LEGGINGS);
-            entries.add(CoreAscensionItems.URANIUM_BOOTS);
+            // more stuff inserted here
+
+            entries.add(CoreAscensionItems.RAW_URANIUM);
+            entries.add(CoreAscensionItems.RAW_LUMITE);
+            entries.add(CoreAscensionItems.RAW_TITANIUM);
+            entries.add(CoreAscensionItems.TITANIUM_INGOT);
             entries.add(CoreAscensionItems.CRYSTAL_HELMET);
             entries.add(CoreAscensionItems.CRYSTAL_CHESTPLATE);
             entries.add(CoreAscensionItems.CRYSTAL_LEGGINGS);
             entries.add(CoreAscensionItems.CRYSTAL_BOOTS);
-            entries.add(CoreAscensionItems.LUMITE_HELMET);
-            entries.add(CoreAscensionItems.LUMITE_CHESTPLATE);
-            entries.add(CoreAscensionItems.LUMITE_LEGGINGS);
-            entries.add(CoreAscensionItems.LUMITE_BOOTS);
-            // -- END ARMOR --
+            entries.add(CoreAscensionItems.CRYSTALLINE_ARTIFACT);
+            entries.add(CoreAscensionItems.MAGIC_MIRROR);
+            entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
+            entries.add(CoreAscensionItems.PRISMAERO_SHARD);
+            entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
+            entries.add(CoreAscensionItems.OBSIDIAN_FABRIC);
+            entries.add(CoreAscensionItems.FOUR_LEAF_CLOVER);
 
-            // -- TOOLS --
-            entries.add(CoreAscensionItems.POTATO_SWORD);
             entries.add(CoreAscensionItems.POTATO_PICKAXE);
+            entries.add(CoreAscensionItems.POTATO_SWORD);
             entries.add(CoreAscensionItems.POTATO_AXE);
             entries.add(CoreAscensionItems.POTATO_SHOVEL);
             entries.add(CoreAscensionItems.POTATO_HOE);
+            entries.add(CoreAscensionItems.POTATO_SCYTHE);
             entries.add(CoreAscensionItems.POTATO_HAMMER);
             entries.add(CoreAscensionItems.POTATO_EXCAVATOR);
-            entries.add(CoreAscensionItems.POTATO_SCYTHE);
-            entries.add(CoreAscensionItems.SAPPHIRE_SWORD);
-            entries.add(CoreAscensionItems.SAPPHIRE_PICKAXE);
-            entries.add(CoreAscensionItems.SAPPHIRE_AXE);
-            entries.add(CoreAscensionItems.SAPPHIRE_SHOVEL);
-            entries.add(CoreAscensionItems.SAPPHIRE_HOE);
-            entries.add(CoreAscensionItems.SAPPHIRE_HAMMER);
-            entries.add(CoreAscensionItems.SAPPHIRE_EXCAVATOR);
-            entries.add(CoreAscensionItems.SAPPHIRE_SCYTHE);
-            entries.add(CoreAscensionItems.TADANITE_SWORD);
-            entries.add(CoreAscensionItems.TADANITE_PICKAXE);
-            entries.add(CoreAscensionItems.TADANITE_AXE);
-            entries.add(CoreAscensionItems.TADANITE_SHOVEL);
-            entries.add(CoreAscensionItems.TADANITE_HOE);
-            entries.add(CoreAscensionItems.TADANITE_HAMMER);
-            entries.add(CoreAscensionItems.TADANITE_EXCAVATOR);
-            entries.add(CoreAscensionItems.TADANITE_SCYTHE);
-            entries.add(CoreAscensionItems.URANIUM_SWORD);
-            entries.add(CoreAscensionItems.URANIUM_PICKAXE);
-            entries.add(CoreAscensionItems.URANIUM_AXE);
-            entries.add(CoreAscensionItems.URANIUM_SHOVEL);
-            entries.add(CoreAscensionItems.URANIUM_HOE);
 
-            entries.add(CoreAscensionItems.BEDROCK_PICKAXE);
-            entries.add(CoreAscensionItems.ENDER_WIRE);
-
-            entries.add(CoreAscensionItems.LUMITE_SWORD);
-            entries.add(CoreAscensionItems.LUMITE_PICKAXE);
-            entries.add(CoreAscensionItems.LUMITE_AXE);
-            entries.add(CoreAscensionItems.LUMITE_SHOVEL);
-            entries.add(CoreAscensionItems.LUMITE_HOE);
-            entries.add(CoreAscensionItems.LUMITE_HAMMER);
-            entries.add(CoreAscensionItems.LUMITE_EXCAVATOR);
-            entries.add(CoreAscensionItems.LUMITE_SCYTHE);
+            //entries.add(CoreAscensionItems.BLAHR);
+            entries.add(CoreAscensionItems.BLAHS_ENERGY_BLADE);
+            entries.add(CoreAscensionItems.COCONUT_FOOD);
+            entries.add(CoreAscensionItems.MEGA_BERRY);
+            entries.add(CoreAscensionItems.CALAMARI);
+            entries.add(CoreAscensionItems.COOKED_CALAMARI);
+            entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
 
             entries.add(CoreAscensionItems.VOLCANO);
-            entries.add(CoreAscensionItems.NIGHTS_EDGE);
+            entries.add(CoreAscensionItems.DAWN_ESSENCE);
             entries.add(CoreAscensionItems.DUSK_PICKAXE);
+            entries.add(CoreAscensionItems.NIGHTS_EDGE);
             entries.add(CoreAscensionItems.TWILIGHT_AXE);
-            entries.add(CoreAscensionItems.BLAHS_ENERGY_BLADE);
-            // -- END TOOLS --
 
             entries.add(CoreAscensionItems.IRON_SHURIKEN);
             entries.add(CoreAscensionItems.GOLD_SHURIKEN);
@@ -546,24 +561,27 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.LUMITE_SHURIKEN);
             entries.add(CoreAscensionItems.FROST_SHURIKEN);
 
+            entries.add(CoreAscensionItems.ETHEREAL_TORCH);
+
+
+
+
+
+            entries.add(CoreAscensionItems.SPAWN_EGG);
+            entries.add(CoreAscensionItems.ENDER_WIRE);
+
+
+
+
+            // -- END TOOLS --
+
+
+
             entries.add(CoreAscensionItems.END_GAS_BUCKET);
-            entries.add(CoreAscensionItems.MOLTEN_ICE_BUCKET);
-            entries.add(CoreAscensionItems.PRISMAERO_SHARD);
-            entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
-            entries.add(CoreAscensionItems.AERO_FUEL);
-            entries.add(CoreAscensionItems.ICE_CREAM);
-            entries.add(CoreAscensionItems.TERRESTRIAL_CONSTRUCT);
-            entries.add(CoreAscensionItems.FOUR_LEAF_CLOVER);
-            entries.add(CoreAscensionItems.DARK_MATTER_GEL);
-            entries.add(CoreAscensionItems.FROZEN_ROD);
             entries.add(CoreAscensionItems.FROZEN_ARTIFACT);
 
             // -- FOOD --
-            entries.add(CoreAscensionItems.CALAMARI);
-            entries.add(CoreAscensionItems.COOKED_CALAMARI);
-            entries.add(CoreAscensionItems.COCONUT_FOOD);
-            entries.add(CoreAscensionItems.MEGA_BERRY);
-            entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
+
             // -- END FOOD --
 
             // -- BOATS --
