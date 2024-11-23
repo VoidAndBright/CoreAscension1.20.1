@@ -2,7 +2,7 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.block.fluid.CoreAscensionFluids;
+import com.blah.coreascension.block.CoreAscensionFluids;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.entity.entities.projectiles.BlahBoltEntity;

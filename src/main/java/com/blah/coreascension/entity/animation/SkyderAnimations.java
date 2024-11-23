@@ -11,7 +11,7 @@ import net.minecraft.client.render.entity.animation.Transformation;
  * @author Author
  */
 public class SkyderAnimations {
-	public static final Animation idle = Animation.Builder.create(0.75F).looping()
+	public static final Animation IDLE = Animation.Builder.create(0.75F).looping()
 		.addBoneAnimation("Body", new Transformation(Transformation.Targets.ROTATE,
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(-12.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR)
 		))
@@ -89,7 +89,7 @@ public class SkyderAnimations {
 		))
 		.build();
 
-	public static final Animation shoot = Animation.Builder.create(0.75F).looping()
+	public static final Animation SHOOT = Animation.Builder.create(0.75F).looping()
 		.addBoneAnimation("Body", new Transformation(Transformation.Targets.ROTATE, 
 			new Keyframe(0.0F, AnimationHelper.createRotationalVector(-12.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),
 			new Keyframe(0.375F, AnimationHelper.createRotationalVector(-97.5F, 0.0F, 0.0F), Transformation.Interpolations.LINEAR),

@@ -3,8 +3,6 @@ package com.blah.coreascension.block;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
-import com.blah.coreascension.block.fluid.CoreAscensionFluids;
-import com.blah.coreascension.block.fluid.EndGasFluid;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
@@ -19,8 +17,6 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -28,11 +24,7 @@ import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
-import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
@@ -44,8 +36,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class CoreAscensionBlocks
-{
+public class CoreAscensionBlocks {
     public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)));
     public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15)));
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
@@ -53,8 +44,7 @@ public class CoreAscensionBlocks
     public static final Block NETHER_CORE_PORTAL_BLOCK = RegisterBlock("nether_core_portal", new NetherCorePortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.CYAN)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
-    public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK))
-    {
+    public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK)) {
         public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
         {
             super.onSteppedOn(world, pos, state, entity);
@@ -194,7 +184,10 @@ public class CoreAscensionBlocks
     public static final Block TROPICS_DOOR = RegisterBlockItem("tropics_door", new DoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque().mapColor(MapColor.TERRACOTTA_ORANGE), BlockSetType.OAK));
     public static final Block TROPICS_TRAPDOOR = RegisterBlockItem("tropics_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(TROPICS_PLANKS).nonOpaque().mapColor(MapColor.TERRACOTTA_ORANGE), BlockSetType.OAK));
     public static final Block TROPICS_SAPLING = RegisterBlockItem("tropics_sapling", new SaplingBlock(new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.TROPICS_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)) {
-        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {return floor.isIn(BlockTags.SAND);}
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.isIn(BlockTags.SAND);
+        }
     });
     public static final Block TROPICAL_GRASS = RegisterBlockItem("tropical_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).mapColor(MapColor.LIME).ticksRandomly(), LOAM));
     public static final Identifier TROPICS_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/tropics");
@@ -445,8 +438,7 @@ public class CoreAscensionBlocks
 
     public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
     public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
-    public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque())
-    {
+    public static final Block COCONUT = RegisterBlockItem("coconut", new Block(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_BROWN).nonOpaque()) {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
         {
             return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
@@ -536,19 +528,18 @@ public class CoreAscensionBlocks
     public static final Block CORE_NYLIUM = RegisterBlockItem("core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CORE_VINES = RegisterBlockItem("core_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.PALE_PURPLE)));
-    public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE))
-    {
+    public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE)) {
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
             return floor.isOf(CORE_NYLIUM);
         }
     });
-    public static final Block CORE_FUNGUS = RegisterBlockItem("core_fungus", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS).mapColor(MapColor.WHITE))
-    {
+    public static final Block CORE_FUNGUS = RegisterBlockItem("core_fungus", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_FUNGUS).mapColor(MapColor.WHITE)) {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
         {
             return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
         }
+
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
             return floor.isOf(CORE_NYLIUM);
@@ -568,27 +559,27 @@ public class CoreAscensionBlocks
     public static final Block ENTROPY_FENCE_GATE = RegisterBlockItem("entropy_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.BLACK), WoodType.OAK));
     public static final Block ENTROPY_BUTTON = RegisterBlockItem("entropy_button", Blocks.createWoodenButtonBlock(BlockSetType.OAK));
     public static final Block STRIPPED_ENTROPY_STEM = RegisterBlockItem("stripped_entropy_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_STEM).mapColor(MapColor.WHITE)));
-	public static final Block STRIPPED_ENTROPY_HYPHAE = RegisterBlockItem("stripped_entropy_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_HYPHAE).mapColor(MapColor.WHITE)));
-	public static final Block ENTROPY_DOOR = RegisterBlockItem("entropy_door", new DoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
-	public static final Block ENTROPY_TRAPDOOR = RegisterBlockItem("entropy_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
+    public static final Block STRIPPED_ENTROPY_HYPHAE = RegisterBlockItem("stripped_entropy_hyphae", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_CRIMSON_HYPHAE).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPY_DOOR = RegisterBlockItem("entropy_door", new DoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
+    public static final Block ENTROPY_TRAPDOOR = RegisterBlockItem("entropy_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
     public static final Block ENTROPIC_CORE_NYLIUM = RegisterBlockItem("entropic_core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.WHITE)));
     public static final Block ENTROPIC_WART_BLOCK = RegisterBlockItem("entropic_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.WHITE)));
     public static final Block ENTROPIC_VINES = RegisterBlockItem("entropic_vines", new EntropicVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
     public static final Block ENTROPIC_VINES_PLANT = RegisterBlockItem("entropic_vines_plant", new EntropicVinesPlantBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
-    public static final Block ENTROPY_WEEDS = RegisterBlockItem("entropy_weeds", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.WHITE))
-    {
-        public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
-        {
-            return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
-        }
+    public static final Block ENTROPY_WEEDS = RegisterBlockItem
+            ("entropy_weeds", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.WHITE)) {
+                        public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
+                        {
+                            return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
+                        }
 
-        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
-        {
-            return floor.isOf(ENTROPIC_CORE_NYLIUM);
-        }
-    });
-    public static final Block ENTROPIC_ICE = RegisterBlockItem("entropic_ice", new Block(FabricBlockSettings.copyOf(Blocks.POINTED_DRIPSTONE).mapColor(MapColor.WHITE))
-    {
+                        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+                        {
+                            return floor.isOf(ENTROPIC_CORE_NYLIUM);
+                        }
+                    }
+            );
+    public static final Block ENTROPIC_ICE = RegisterBlockItem("entropic_ice", new Block(FabricBlockSettings.copyOf(Blocks.POINTED_DRIPSTONE).mapColor(MapColor.WHITE)) {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
         {
             return Block.createCuboidShape(4, 0, 4, 12, 9, 12);
@@ -613,7 +604,6 @@ public class CoreAscensionBlocks
 
     public static final Block BEDROCK = RegisterBlockItem("bedrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
 
-    //public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
 
@@ -644,28 +634,8 @@ public class CoreAscensionBlocks
         Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, settings));
     }
 
-    private static Block OverrideBlockItem(Block OverriddenBlock, Block NewBlock)
-    {
-        OverrideItem((BlockItem) OverriddenBlock.asItem(), new BlockItem(NewBlock, new FabricItemSettings()));
-        return OverrideBlock(OverriddenBlock, NewBlock);
-    }
-
-    private static Item OverrideItem(BlockItem OverriddenItem, BlockItem NewItem)
-    {
-        return Registry.register(Registries.ITEM, Registries.ITEM.getRawId(OverriddenItem), Registries.ITEM.getId(OverriddenItem).getPath(), NewItem);
-    }
-
-    private static Block OverrideBlock(Block OverriddenBlock, Block NewBlock)
-    {
-        return Registry.register(Registries.BLOCK, Registries.BLOCK.getRawId(OverriddenBlock), Registries.BLOCK.getId(OverriddenBlock).getPath(), NewBlock);
-    }
-    private static void NaturalTab(FabricItemGroupEntries entries)
-    {
-        //entries.addAfter(Items.BEDROCK, BEDROCK);
-    }
     public static void RegisterBlocks()
     {
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(CoreAscensionBlocks::NaturalTab);
         RegisterFlammableBlocks();
         RegisterStrippableBlocks();
         CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);
