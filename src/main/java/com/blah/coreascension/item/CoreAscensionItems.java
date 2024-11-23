@@ -371,6 +371,7 @@ public class CoreAscensionItems {
             new AxeItem(CoreAscensionToolMaterials.DUSK, 5, -3.1f, new FabricItemSettings().rarity(Rarity.EPIC).fireproof()));
 
     public static final Item END_GAS_BUCKET = registerItem("end_gas_bucket", new BucketItem(CoreAscensionFluids.STILL_END_GAS, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
+    public static final Item MOLTEN_ICE_BUCKET = registerItem("molten_ice_bucket", new BucketItem(CoreAscensionFluids.STILL_MOLTEN_ICE, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
 
 
     public static Item registerItem(String name, Item item)

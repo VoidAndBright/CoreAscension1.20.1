@@ -538,6 +538,7 @@ public class CoreAscensionGroups
             // -- END TOOLS --
 
             entries.add(CoreAscensionItems.END_GAS_BUCKET);
+            entries.add(CoreAscensionItems.MOLTEN_ICE_BUCKET);
             entries.add(CoreAscensionItems.PRISMAERO_SHARD);
             entries.add(CoreAscensionItems.PRISMAERO_CRYSTALS);
             entries.add(CoreAscensionItems.AERO_FUEL);

@@ -88,7 +88,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
      * Water and Lava both return 100.0F.
      */
     
-    protected float getBlastResistance() {
+    public float getBlastResistance() {
         return 100.0F;
     }
 }

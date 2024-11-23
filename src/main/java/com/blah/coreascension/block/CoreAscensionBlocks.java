@@ -47,7 +47,7 @@ import net.minecraft.world.World;
 public class CoreAscensionBlocks
 {
     public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)));
-    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER)));
+    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15)));
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block NETHER_CORE_PORTAL_BLOCK = RegisterBlock("nether_core_portal", new NetherCorePortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.CYAN)));
@@ -55,7 +55,6 @@ public class CoreAscensionBlocks
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
     public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK))
     {
-        
         public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
         {
             super.onSteppedOn(world, pos, state, entity);
@@ -781,6 +780,12 @@ public class CoreAscensionBlocks
         FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_END_GAS, CoreAscensionFluids.FLOWING_END_GAS, new SimpleFluidRenderHandler(
                 new Identifier("coreascension:block/end_gas_still"),
                 new Identifier("coreascension:block/end_gas_flowing"),
+                0xFFFFFF
+        ));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_MOLTEN_ICE, CoreAscensionFluids.FLOWING_MOLTEN_ICE, new SimpleFluidRenderHandler(
+                new Identifier("coreascension:block/molten_ice_still"),
+                new Identifier("coreascension:block/molten_ice_flowing"),
                 0xFFFFFF
         ));
     }

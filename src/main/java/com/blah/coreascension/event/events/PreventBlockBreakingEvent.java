@@ -16,11 +16,11 @@ public class PreventBlockBreakingEvent implements AttackBlockCallback {
     public ActionResult interact(PlayerEntity playerEntity, World world, Hand hand, BlockPos blockPos, Direction direction)
     {
         if (!playerEntity.getStackInHand(hand).isIn(CoreAscensionTags.MINES_BEDROCK)
-            && world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.BEDROCK)
+            && world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.BEDROCK && !playerEntity.isCreative())
             return ActionResult.SUCCESS;
         if (playerEntity.getStackInHand(hand).getItem() != CoreAscensionItems.BEDROCK_PICKAXE &&
             playerEntity.getStackInHand(hand).getItem() != CoreAscensionItems.LUMITE_PICKAXE &&
-            world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.LUMITE_ORE)
+            world.getBlockState(blockPos).getBlock() == CoreAscensionBlocks.LUMITE_ORE && !playerEntity.isCreative())
             return ActionResult.SUCCESS;
         return ActionResult.PASS;
     }

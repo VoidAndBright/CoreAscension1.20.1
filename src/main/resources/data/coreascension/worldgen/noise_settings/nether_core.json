@@ -10,7 +10,7 @@
   "default_fluid": {
     "Name": "coreascension:molten_ice",
     "Properties": {
-      "level": "1"
+      "level": "8"
     }
   },
   "noise": {
@@ -86,7 +86,7 @@
                       "argument2": {
                         "type": "minecraft:add",
                         "argument1": -0.9375,
-                        "argument2": "minecraft:nether/base_3d_noise"
+                        "argument2": "minecraft:overworld/base_3d_noise"
                       }
                     }
                   }
