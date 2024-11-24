@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "coreascension:block/bedrock",
-    "particle": "coreascension:block/bedrock"
+    "wall": "minecraft:block/bedrock",
+    "particle": "minecraft:block/bedrock"
   }
 }

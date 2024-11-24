@@ -397,6 +397,12 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DARK_MATTER_GEL_BLOCK);
             entries.add(CoreAscensionBlocks.DIAMOND_DOOR);
             entries.add(CoreAscensionBlocks.DIAMOND_TRAPDOOR);
+            entries.add(CoreAscensionBlocks.ICE_CREAM_BLOCK);
+
+            entries.add(CoreAscensionBlocks.BEDROCK_SLAB);
+            entries.add(CoreAscensionBlocks.BEDROCK_STAIRS);
+            entries.add(CoreAscensionBlocks.BEDROCK_WALL);
+            entries.add(CoreAscensionBlocks.CHISELED_BEDROCK);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

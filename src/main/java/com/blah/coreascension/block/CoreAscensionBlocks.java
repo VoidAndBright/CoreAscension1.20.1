@@ -3,14 +3,9 @@ package com.blah.coreascension.block;
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
-import com.blah.coreascension.block.fluid.CoreAscensionFluids;
-import com.blah.coreascension.block.fluid.EndGasFluid;
 import com.blah.coreascension.damage.CoreAscensionDamageTypes;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
-import com.blah.coreascension.effects.FreezingEffect;
-import com.blah.coreascension.effects.WarmthPotionEffect;
 import com.blah.coreascension.particles.CoreAscensionParticles;
-import com.blah.coreascension.recipe.CoreAscensionPotionRecipes;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
 import com.blah.coreascension.world.tree.MegaTreeSaplingGenerator;
@@ -25,7 +20,6 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -37,18 +31,15 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.GhastEntity;
-import net.minecraft.fluid.FlowableFluid;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -479,6 +470,10 @@ public class CoreAscensionBlocks
             return Block.createCuboidShape(3, 3, 3, 13, 13, 13);
         }
     });
+
+    public static final Block ENCHANTMENT_RELOCATOR = RegisterBlockItem("enchantment_relocator", new EnchantmentRelocatorBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).nonOpaque().mapColor(MapColor.BRIGHT_RED)));
+
+
     public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.PALE_YELLOW)));
     public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
     public static final Block PETRIFIED_WOOD_WALL = RegisterBlockItem("petrified_wood_wall", new WallBlock(FabricBlockSettings.copyOf(PETRIFIED_WOOD).mapColor(MapColor.STONE_GRAY)));
@@ -639,10 +634,33 @@ public class CoreAscensionBlocks
     // end nether core
 
     public static final Block BEDROCK = RegisterBlockItem("bedrock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
+    public static final Block BEDROCK_SLAB = RegisterBlockItem("bedrock_slab", new SlabBlock(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
+    public static final Block BEDROCK_STAIRS = RegisterBlockItem("bedrock_stairs", new StairsBlock(BEDROCK.getDefaultState(), FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
+    public static final Block BEDROCK_WALL = RegisterBlockItem("bedrock_wall", new WallBlock(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
+    public static final Block CHISELED_BEDROCK = RegisterBlockItem("chiseled_bedrock", new Block(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
+    public static final Block BEDROCK_BRICKS = RegisterBlockItem("bedrock_bricks", new Block(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
 
-    //public static final Block BEDROCK = OverrideBlockItem(Blocks.BEDROCK, new Block(FabricBlockSettings.copyOf(Blocks.STONE).hardness(15).resistance(3600000).mapColor(MapColor.STONE_GRAY)));
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block ICE_CREAM_BLOCK = RegisterBlockItem("ice_cream_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(3).strength(0.5f).postProcess(Blocks::always).emissiveLighting(Blocks::always).mapColor(MapColor.CYAN))
+    {
+        @Override
+        public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
+        {
+            //if (entity instanceof GhastEntity) // add later the mobs that shouldn't be affected by this
+            {
+                if (entity instanceof PlayerEntity player)
+                {
+                    if (!player.isSneaking())
+                        player.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.ICE_CREAM_BLOCK), 1);
+                }
+                else
+                {
+                    entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.ICE_CREAM_BLOCK), 1);
+                }
+            }
+        }
+    });
 
     private static Block RegisterBlockItem(String name, Block block)
     {
@@ -856,6 +874,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES_PLANT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_TANK_SKULL, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());

@@ -845,6 +845,7 @@
   "block.coreascension.zircon_slab": "Zircon Slab",
   "block.coreascension.zircon_stairs": "Zircon Stairs",
   "block.coreascension.zircon_wall": "Zircon Wall",
+  "container.enchantment_relocator": "Transfer Enchantment",
   "container.catalyzer": "Catalyzer",
   "container.prismaero_furnace": "Prismaero Furnace",
   "container.reinforced_chest": "Reinforced Chest",

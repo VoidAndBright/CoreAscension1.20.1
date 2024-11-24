@@ -2,6 +2,11 @@
   "replace": false,
   "values": [
     "coreascension:bedrock",
+    "coreascension:bedrock_slab",
+    "coreascension:bedrock_stairs",
+    "coreascension:bedrock_wall",
+    "coreascension:chiseled_bedrock",
+    "coreascension:bedrock_bricks",
     "coreascension:diamond_door",
     "coreascension:diamond_trapdoor",
     "coreascension:aero_lantern",
@@ -166,6 +171,7 @@
     "coreascension:frosted_glass_pane",
     "coreascension:perma_ice",
     "coreascension:nether_ice",
+    "coreascension:ice_cream_block",
     "coreascension:sapphire_ore"
   ]
 }

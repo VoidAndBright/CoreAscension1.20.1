@@ -21,7 +21,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
         getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
-                .add(CoreAscensionBlocks.BEDROCK);
+                .add(CoreAscensionBlocks.BEDROCK)
+                .add(CoreAscensionBlocks.BEDROCK_SLAB)
+                .add(CoreAscensionBlocks.BEDROCK_STAIRS)
+                .add(CoreAscensionBlocks.BEDROCK_WALL)
+                .add(CoreAscensionBlocks.CHISELED_BEDROCK)
+                .add(CoreAscensionBlocks.BEDROCK_BRICKS);
 
         getOrCreateTagBuilder(CoreAscensionTags.SCYTHE_MINEABLE)
                 //.addTag(BlockTags.LEAVES)
@@ -147,6 +152,11 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(CoreAscensionBlocks.BEDROCK)
+                .add(CoreAscensionBlocks.BEDROCK_SLAB)
+                .add(CoreAscensionBlocks.BEDROCK_STAIRS)
+                .add(CoreAscensionBlocks.BEDROCK_WALL)
+                .add(CoreAscensionBlocks.CHISELED_BEDROCK)
+                .add(CoreAscensionBlocks.BEDROCK_BRICKS)
                 .add(CoreAscensionBlocks.DIAMOND_DOOR)
                 .add(CoreAscensionBlocks.DIAMOND_TRAPDOOR)
                 .add(CoreAscensionBlocks.AERO_LANTERN)
@@ -311,6 +321,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.FROSTED_GLASS_PANE)
                 .add(CoreAscensionBlocks.PERMA_ICE)
                 .add(CoreAscensionBlocks.NETHER_ICE)
+                .add(CoreAscensionBlocks.ICE_CREAM_BLOCK)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -475,6 +486,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.POLISHED_SALTROCK_WALL)
                 .add(CoreAscensionBlocks.SALTROCK_WALL)
                 .add(CoreAscensionBlocks.PRISMAERO_WALL)
+                .add(CoreAscensionBlocks.BEDROCK_WALL)
                 .add(CoreAscensionBlocks.POLISHED_MAGNETITE_WALL);
     }
 }

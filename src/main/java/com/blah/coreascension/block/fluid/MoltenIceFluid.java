@@ -2,14 +2,10 @@ package com.blah.coreascension.block.fluid;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.block.CoreAscensionFluids;
-import com.blah.coreascension.damage.CoreAscensionDamageTypes;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FluidBlock;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
@@ -17,12 +13,8 @@ import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
 
 public abstract class MoltenIceFluid extends CoreAscensionFluid
 {
@@ -50,45 +42,7 @@ public abstract class MoltenIceFluid extends CoreAscensionFluid
     {
         return CoreAscensionBlocks.MOLTEN_ICE.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
     }
-/*
-    public int getTickRate(WorldView world) {
-        return 1;
-    }
-    protected boolean hasRandomTicks() {
-        return true;
-    }
-    @Override
-    protected void onRandomTick(World world, BlockPos pos, FluidState state, Random random)
-    {
-        super.onRandomTick(world, pos, state, random);
-        for (Entity entity : world.getOtherEntities(null, new Box(pos)))
-        {
-            if (entity instanceof LivingEntity living)
-            {
-                if (!(living instanceof GhastEntity))
-                {
-                    // figure out how to increase the tick rate of randomly ticking blocks
-                    living.damage(CoreAscensionDamageTypes.of(living.getWorld(), CoreAscensionDamageTypes.FREEZING), 6);
-                }
-            }
-        }
-    }
 
-    @Override
-    public void onScheduledTick(World world, BlockPos pos, FluidState state)
-    {
-        super.onScheduledTick(world, pos, state);
-        for (Entity entity : world.getOtherEntities(null, new Box(pos)))
-        {
-            if (entity instanceof LivingEntity living)
-            {
-                if (!(living instanceof GhastEntity))
-                {
-                    living.damage(CoreAscensionDamageTypes.of(living.getWorld(), CoreAscensionDamageTypes.FREEZING), 2);
-                }
-            }
-        }
-    }*/
     @Override
     public int getLevel(FluidState state)
     {

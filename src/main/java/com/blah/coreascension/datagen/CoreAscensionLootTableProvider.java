@@ -359,5 +359,12 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.LUMITE_ORE, oreDrops(CoreAscensionBlocks.LUMITE_ORE, CoreAscensionItems.RAW_LUMITE));
         addDrop(CoreAscensionBlocks.LUMITE_BLOCK);
         addDrop(CoreAscensionBlocks.RAW_LUMITE_BLOCK);
+        addDrop(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR);
+        addDrop(CoreAscensionBlocks.ICE_CREAM_BLOCK);
+        addDrop(CoreAscensionBlocks.BEDROCK_SLAB, slabDrops(CoreAscensionBlocks.BEDROCK_SLAB));
+        addDrop(CoreAscensionBlocks.BEDROCK_STAIRS);
+        addDrop(CoreAscensionBlocks.BEDROCK_WALL);
+        addDrop(CoreAscensionBlocks.CHISELED_BEDROCK);
+        addDrop(CoreAscensionBlocks.BEDROCK_BRICKS);
     }
 }

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "coreascension:block/bedrock_bricks"
+    }
+  }
+}
