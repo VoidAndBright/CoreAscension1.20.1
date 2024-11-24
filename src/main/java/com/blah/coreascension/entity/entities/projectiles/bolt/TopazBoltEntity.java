@@ -1,4 +1,4 @@
-package com.blah.coreascension.entity.entities.projectiles;
+package com.blah.coreascension.entity.entities.projectiles.bolt;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
@@ -15,29 +15,27 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
-public class AmethystBoltEntity extends ThrownItemEntity
+public class TopazBoltEntity extends ThrownItemEntity
 {
-    public AmethystBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
+    public TopazBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
         super(entityType, world);
     }
 
-    public AmethystBoltEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.AMETHYST_BOLT, livingEntity, world);
+    public TopazBoltEntity(LivingEntity livingEntity, World world) {
+        super(CoreAscensionEntities.TOPAZ_BOLT, livingEntity, world);
     }
 
-    
     protected void onEntityHit(EntityHitResult entityHitResult)
     {
         Entity hitEntity = entityHitResult.getEntity();
         if (hitEntity instanceof LivingEntity entity && this.getOwner() != hitEntity)
         {
-            entity.damage(entity.getDamageSources().magic(), 5);
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WITHER, 240));
+            entity.damage(this.getDamageSources().magic(), 5);
+            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.WEAKNESS, 240));
         }
     }
 
-    
     public Packet<ClientPlayPacketListener> createSpawnPacket()
     {
         return new EntitySpawnS2CPacket(this);
@@ -46,6 +44,6 @@ public class AmethystBoltEntity extends ThrownItemEntity
     
     protected Item getDefaultItem()
     {
-        return CoreAscensionItems.AMETHYST_BOLT;
+        return CoreAscensionItems.TOPAZ_BOLT;
     }
 }

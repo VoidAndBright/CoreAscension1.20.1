@@ -1,7 +1,7 @@
 package com.blah.coreascension.item.items;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.entity.entities.projectiles.*;
+import com.blah.coreascension.entity.entities.projectiles.bolt.*;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public class GemStaffItem extends Item
+public class StaffItem extends Item
 {
     public enum GemType
     {
@@ -23,7 +23,7 @@ public class GemStaffItem extends Item
     }
     private final GemType toShoot;
     private final String tooltip;
-    public GemStaffItem(Settings settings, GemType toShoot, String tooltip)
+    public StaffItem(Settings settings, GemType toShoot, String tooltip)
     {
         super(settings);
         this.toShoot = toShoot;
@@ -50,7 +50,7 @@ public class GemStaffItem extends Item
             proj.setVelocity(user, user.getPitch(), user.getYaw(), 0, 2.5f, 1.0f);
             world.spawnEntity(proj);
         }
-        world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 0.4f, 1f);
+        world.playSound(null, user.getBlockPos(), SoundEvents.ENTITY_BLAZE_SHOOT, SoundCategory.PLAYERS, 1f, 1f);
         user.getItemCooldownManager().set(this, 10);
         user.getStackInHand(hand).damage(1, user, p -> p.sendToolBreakStatus(user.getActiveHand()));
         return TypedActionResult.success(user.getStackInHand(hand), world.isClient());

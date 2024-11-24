@@ -1,19 +1,14 @@
 package com.blah.coreascension.item.items;
 
-import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.entity.entities.projectiles.*;
-import net.minecraft.client.item.TooltipContext;
+import com.blah.coreascension.entity.entities.projectiles.shuriken.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class ShurikenItem extends Item
 {

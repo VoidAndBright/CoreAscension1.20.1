@@ -265,6 +265,7 @@ public class CoreAscensionGroups
             // -- END ETHEREAL --
 
             entries.add(CoreAscensionBlocks.HARDENED_LAVA);
+            entries.add(CoreAscensionBlocks.PIGNEOUS_ROCK);
             entries.add(CoreAscensionBlocks.CEMENT);
             entries.add(CoreAscensionBlocks.IMPERVIOUS_BRICK);
             entries.add(CoreAscensionBlocks.COCONUT);

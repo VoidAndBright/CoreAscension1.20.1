@@ -2,10 +2,10 @@ package com.blah.coreascension.item;
 
 import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.block.CoreAscensionFluids;
+import com.blah.coreascension.fluid.CoreAscensionFluids;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;
-import com.blah.coreascension.entity.entities.projectiles.BlahBoltEntity;
+import com.blah.coreascension.entity.entities.projectiles.bolt.BlahBoltEntity;
 import com.blah.coreascension.item.food.CoreAscensionFoodComponents;
 import com.blah.coreascension.item.items.*;
 import com.blah.coreascension.item.tools.*;
@@ -340,13 +340,13 @@ public class CoreAscensionItems {
     public static final Item DIAMOND_BOLT = registerItem("diamond_blast", new Item(new FabricItemSettings()));
     public static final Item SAPPHIRE_BOLT = registerItem("sapphire_blast", new Item(new FabricItemSettings()));
     public static final Item AMETHYST_BOLT = registerItem("amethyst_blast", new Item(new FabricItemSettings()));
-    public static final Item RUBY_STAFF = registerItem("ruby_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.RUBY, "tooltip.staff.ruby"));
-    public static final Item CITRINE_STAFF = registerItem("citrine_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.CITRINE, "tooltip.staff.citrine"));
-    public static final Item TOPAZ_STAFF = registerItem("topaz_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.TOPAZ, "tooltip.staff.topaz"));
-    public static final Item EMERALD_STAFF = registerItem("emerald_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.EMERALD, "tooltip.staff.emerald"));
-    public static final Item DIAMOND_STAFF = registerItem("diamond_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.DIAMOND, "tooltip.staff.diamond"));
-    public static final Item SAPPHIRE_STAFF = registerItem("sapphire_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.SAPPHIRE, "tooltip.staff.sapphire"));
-    public static final Item AMETHYST_STAFF = registerItem("amethyst_staff", new GemStaffItem(new FabricItemSettings().maxDamage(250), GemStaffItem.GemType.AMETHYST, "tooltip.staff.amethyst"));
+    public static final Item RUBY_STAFF = registerItem("ruby_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.RUBY, "tooltip.staff.ruby"));
+    public static final Item CITRINE_STAFF = registerItem("citrine_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.CITRINE, "tooltip.staff.citrine"));
+    public static final Item TOPAZ_STAFF = registerItem("topaz_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.TOPAZ, "tooltip.staff.topaz"));
+    public static final Item EMERALD_STAFF = registerItem("emerald_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.EMERALD, "tooltip.staff.emerald"));
+    public static final Item DIAMOND_STAFF = registerItem("diamond_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.DIAMOND, "tooltip.staff.diamond"));
+    public static final Item SAPPHIRE_STAFF = registerItem("sapphire_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.SAPPHIRE, "tooltip.staff.sapphire"));
+    public static final Item AMETHYST_STAFF = registerItem("amethyst_staff", new StaffItem(new FabricItemSettings().maxDamage(250), StaffItem.GemType.AMETHYST, "tooltip.staff.amethyst"));
 
     public static final Item COCONUT_FOOD = registerItem("coconut_food", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.COCONUT)));
     public static final Item CALAMARI = registerItem("raw_calamari", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.CALAMARI)));

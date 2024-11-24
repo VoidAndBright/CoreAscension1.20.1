@@ -1,12 +1,10 @@
-package com.blah.coreascension.entity.entities.projectiles;
+package com.blah.coreascension.entity.entities.projectiles.bolt;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.network.listener.ClientPlayPacketListener;
@@ -15,15 +13,15 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
 
-public class EmeraldBoltEntity extends ThrownItemEntity
+public class DiamondBoltEntity extends ThrownItemEntity
 {
-    public EmeraldBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
+    public DiamondBoltEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
         super(entityType, world);
     }
 
-    public EmeraldBoltEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.EMERALD_BOLT, livingEntity, world);
+    public DiamondBoltEntity(LivingEntity livingEntity, World world) {
+        super(CoreAscensionEntities.DIAMOND_BOLT, livingEntity, world);
     }
 
     
@@ -32,8 +30,7 @@ public class EmeraldBoltEntity extends ThrownItemEntity
         Entity hitEntity = entityHitResult.getEntity();
         if (hitEntity instanceof LivingEntity entity && this.getOwner() != hitEntity)
         {
-            entity.damage(entity.getDamageSources().magic(), 5);
-            entity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 240));
+            entity.damage(this.getDamageSources().magic(), 10);
         }
     }
 
@@ -46,6 +43,6 @@ public class EmeraldBoltEntity extends ThrownItemEntity
     
     protected Item getDefaultItem()
     {
-        return CoreAscensionItems.EMERALD_BOLT;
+        return CoreAscensionItems.DIAMOND_BOLT;
     }
 }
