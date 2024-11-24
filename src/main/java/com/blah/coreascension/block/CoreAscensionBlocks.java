@@ -5,7 +5,12 @@ import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.block.fluid.CoreAscensionFluids;
 import com.blah.coreascension.block.fluid.EndGasFluid;
+import com.blah.coreascension.damage.CoreAscensionDamageTypes;
+import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.effects.FreezingEffect;
+import com.blah.coreascension.effects.WarmthPotionEffect;
 import com.blah.coreascension.particles.CoreAscensionParticles;
+import com.blah.coreascension.recipe.CoreAscensionPotionRecipes;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
 import com.blah.coreascension.world.tree.MegaTreeSaplingGenerator;
@@ -28,6 +33,10 @@ import net.minecraft.block.*;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -39,6 +48,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -47,7 +57,24 @@ import net.minecraft.world.World;
 public class CoreAscensionBlocks
 {
     public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)));
-    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15)));
+    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15))
+    {
+        @Override
+        public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity)
+        {
+            super.onEntityCollision(state, world, pos, entity);
+            if (entity instanceof LivingEntity living)
+            {
+                if (living.hasStatusEffect(CoreAscensionStatusEffects.WARMTH))
+                    return;
+                if (!(living instanceof GhastEntity))
+                {
+                    living.addStatusEffect(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 120, 2));
+                    living.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 4));
+                }
+            }
+        }
+    });
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block NETHER_CORE_PORTAL_BLOCK = RegisterBlock("nether_core_portal", new NetherCorePortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.CYAN)));

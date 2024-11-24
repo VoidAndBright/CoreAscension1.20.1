@@ -6,7 +6,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
 public class FreezingEffect extends StatusEffect {
-    int everySecond = 0;
+    private int everySecond = 0;
 
     public FreezingEffect()
     {
@@ -19,9 +19,9 @@ public class FreezingEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier)
     {
         everySecond++;
-        if (everySecond % 10 == 0)
+        if (everySecond > 20)
         {
-            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * amplifier);
+            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * (amplifier + 1));
             everySecond = 0;
         }
     }

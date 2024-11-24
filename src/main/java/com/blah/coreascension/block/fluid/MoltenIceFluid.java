@@ -53,7 +53,7 @@ public abstract class MoltenIceFluid extends CoreAscensionFluid
     {
         return CoreAscensionBlocks.MOLTEN_ICE.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
     }
-
+/*
     public int getTickRate(WorldView world) {
         return 1;
     }
@@ -91,8 +91,7 @@ public abstract class MoltenIceFluid extends CoreAscensionFluid
                 }
             }
         }
-    }
-
+    }*/
     @Override
     public int getLevel(FluidState state)
     {

@@ -484,7 +484,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.TADANITE_CRYSTAL);
             entries.add(CoreAscensionItems.TADANITE_DIAMOND);
             entries.add(CoreAscensionItems.LUMITE_INGOT);
-            //entries.add(CoreAscensionItems.SUNSTONE);
+            entries.add(CoreAscensionItems.SUNSTONE);
             entries.add(CoreAscensionItems.URANIUM_INGOT);
             entries.add(CoreAscensionItems.RUBY);
             entries.add(CoreAscensionItems.CITRINE);

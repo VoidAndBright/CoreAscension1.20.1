@@ -368,6 +368,8 @@ public class CoreAscensionItems {
     public static final Item MOLTEN_ICE_BUCKET = registerItem("molten_ice_bucket", new BucketItem(CoreAscensionFluids.STILL_MOLTEN_ICE, new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(1)));
     public static final Item ENDER_WIRE = registerItem("ender_wire", new EnderWireItem(new FabricItemSettings()));
 
+    public static final Item SUNSTONE = registerItem("sunstone", new Item(new FabricItemSettings()));
+
     public static final Item IRON_SHURIKEN_PROJ = registerItem("iron_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item GOLD_SHURIKEN_PROJ = registerItem("golden_shuriken_proj", new Item(new FabricItemSettings()));
     public static final Item DIAMOND_SHURIKEN_PROJ = registerItem("diamond_shuriken_proj", new Item(new FabricItemSettings()));
