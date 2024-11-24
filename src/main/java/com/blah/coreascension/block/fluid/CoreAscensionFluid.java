@@ -15,7 +15,7 @@ import net.minecraft.world.WorldView;
 
 public abstract class CoreAscensionFluid extends FlowableFluid {
     /**
-     * @return whether the given fluid an instance of this fluid
+     @return whether the given fluid an instance of this fluid
      */
     
     public boolean matchesType(Fluid fluid)
@@ -30,7 +30,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * @return whether the fluid is infinite (which means can be infinitely created like water). In vanilla, it depends on the game rule.
+     @return whether the fluid is infinite (which means can be infinitely created like water). In vanilla, it depends on the game rule.
      */
     
     protected boolean isInfinite(World world)
@@ -39,8 +39,8 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Perform actions when the fluid flows into a replaceable block. Water drops
-     * the block's loot table. Lava plays the "block.lava.extinguish" sound.
+     Perform actions when the fluid flows into a replaceable block. Water drops
+     the block's loot table. Lava plays the "block.lava.extinguish" sound.
      */
     
     protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
@@ -49,10 +49,10 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Lava returns true if it's FluidState is above a certain height and the
-     * Fluid is Water.
-     *
-     * @return whether the given Fluid can flow into this FluidState
+     Lava returns true if it's FluidState is above a certain height and the
+     Fluid is Water.
+
+     @return whether the given Fluid can flow into this FluidState
      */
     
     protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
@@ -60,8 +60,8 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Possibly related to the distance checks for flowing into nearby holes?
-     * Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
+     Possibly related to the distance checks for flowing into nearby holes?
+     Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
      */
     
     protected int getFlowSpeed(WorldView worldView) {
@@ -69,7 +69,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
+     Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
      */
     
     protected int getLevelDecreasePerBlock(WorldView worldView) {
@@ -77,7 +77,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
+     Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
      */
     
     public int getTickRate(WorldView worldView) {
@@ -85,7 +85,7 @@ public abstract class CoreAscensionFluid extends FlowableFluid {
     }
 
     /**
-     * Water and Lava both return 100.0F.
+     Water and Lava both return 100.0F.
      */
     
     public float getBlastResistance() {
