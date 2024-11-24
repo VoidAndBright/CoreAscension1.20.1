@@ -17,7 +17,7 @@ public class CoreAscensionClient implements ClientModInitializer
         CoreAscensionBlocks.ClientRegisterBlocks();
         CoreAscensionScreenHandlers.ClientRegisterScreens();
         CoreAscensionBlockEntities.ClientRegisterBlockEntitiesRenderer();
-        CoreAscensionEvents.RegisterClientEvents();
+        CoreAscensionEvents.ClientRegisterEvents();
         CoreAscensionBoats.ClientRegisterBoats();
         CoreAscensionEntities.ClientRegisterEntities();
     }

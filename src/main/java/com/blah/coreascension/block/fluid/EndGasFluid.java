@@ -1,6 +1,7 @@
 package com.blah.coreascension.block.fluid;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.block.CoreAscensionFluids;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
@@ -15,7 +16,6 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -31,12 +31,10 @@ import java.util.Optional;
 
 public abstract class EndGasFluid extends CoreAscensionFluid
 {
-    public static final BooleanProperty RISING = BooleanProperty.of("rising");
-    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.NeighborGroup>> field_15901 = ThreadLocal.withInitial(() ->
+    private static final ThreadLocal<Object2ByteLinkedOpenHashMap<Block.NeighborGroup>> threadLocal = ThreadLocal.withInitial(() ->
     {
-        Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<Block.NeighborGroup>(200)
-        {
-            protected void rehash(int i) { }
+        Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap = new Object2ByteLinkedOpenHashMap<>(200) {
+            protected void rehash(int i) {}
         };
         object2ByteLinkedOpenHashMap.defaultReturnValue((byte)127);
         return object2ByteLinkedOpenHashMap;
@@ -60,7 +58,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     private void flowToSides(World world, BlockPos pos, FluidState fluidState, BlockState blockState)
     {
         int i = fluidState.getLevel() - this.getLevelDecreasePerBlock(world);
-        if (fluidState.get(RISING))
+        if (fluidState.get(FALLING))
         {
             i = 7;
         }
@@ -82,7 +80,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         }
     }
     protected static int getBlockStateLevel(FluidState state) {
-        return state.isStill() ? 0 : 8 - Math.min(state.getLevel(), 8) + (state.get(RISING) ? 8 : 0);
+        return state.isStill() ? 0 : 8 - Math.min(state.getLevel(), 8) + (state.get(FALLING) ? 8 : 0);
     }
     private boolean canFlowUpTo(BlockView world, Fluid fluid, BlockPos pos, BlockState state, BlockPos fromPos, BlockState fromState)
     {
@@ -117,7 +115,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     private boolean receivesFlow(Direction face, BlockView world, BlockPos pos, BlockState state, BlockPos fromPos, BlockState fromState) {
         Object2ByteLinkedOpenHashMap<Block.NeighborGroup> object2ByteLinkedOpenHashMap;
         if (!state.getBlock().hasDynamicBounds() && !fromState.getBlock().hasDynamicBounds()) {
-            object2ByteLinkedOpenHashMap = field_15901.get();
+            object2ByteLinkedOpenHashMap = threadLocal.get();
         } else {
             object2ByteLinkedOpenHashMap = null;
         }
@@ -169,18 +167,18 @@ public abstract class EndGasFluid extends CoreAscensionFluid
             BlockPos blockPos = pos.offset(direction);
             short s = packXZOffset(pos, blockPos);
             Pair<BlockState, FluidState> pair = short2ObjectMap.computeIfAbsent(s, (Short2ObjectFunction<? extends Pair<BlockState, FluidState>>)(sx -> {
-                BlockState blockStatex = world.getBlockState(blockPos);
-                return Pair.of(blockStatex, blockStatex.getFluidState());
+                BlockState blockState = world.getBlockState(blockPos);
+                return Pair.of(blockState, blockState.getFluidState());
             }));
             BlockState blockState = pair.getFirst();
             FluidState fluidState = pair.getSecond();
             FluidState fluidState2 = this.getUpdatedState(world, blockPos, blockState);
             if (this.canFlowThrough(world, fluidState2.getFluid(), pos, state, direction, blockPos, blockState, fluidState)) {
                 BlockPos blockPos2 = blockPos.up();
-                boolean bl = short2BooleanMap.computeIfAbsent(s, (Short2BooleanFunction)(sx -> {
+                boolean bl = short2BooleanMap.computeIfAbsent(s, sx -> {
                     BlockState blockState2 = world.getBlockState(blockPos2);
                     return this.canFlowUpTo(world, this.getFlowing(), blockPos, blockState, blockPos2, blockState2);
-                }));
+                });
                 int j;
                 if (bl) {
                     j = 0;
@@ -231,18 +229,17 @@ public abstract class EndGasFluid extends CoreAscensionFluid
 
         if (this.isInfinite(world) && j >= 2)
         {
-            BlockState blockState2 = world.getBlockState(pos.up());
-            FluidState fluidState2 = blockState2.getFluidState();
-            if (blockState2.isSolid() || this.isMatchingAndStill(fluidState2))
+            BlockState blockStateUp = world.getBlockState(pos.up());
+            FluidState fluidStateUp = blockStateUp.getFluidState();
+            if (blockStateUp.isSolid() || this.isMatchingAndStill(fluidStateUp))
             {
                 return this.getStill(false);
             }
         }
 
-        BlockPos blockPos2 = pos.down();
-        BlockState blockState3 = world.getBlockState(blockPos2);
-        FluidState fluidState3 = blockState3.getFluidState();
-        if (!fluidState3.isEmpty() && fluidState3.getFluid().matchesType(this) && this.receivesFlow(Direction.DOWN, world, pos, state, blockPos2, blockState3))
+        BlockState blockStateDown = world.getBlockState(pos.down());
+        FluidState fluidStateDown = blockStateDown.getFluidState();
+        if (!fluidStateDown.isEmpty() && fluidStateDown.getFluid().matchesType(this) && this.receivesFlow(Direction.DOWN, world, pos, state, pos.down(), blockStateDown))
         {
             return this.getFlowing(8, true);
         }
@@ -299,16 +296,12 @@ public abstract class EndGasFluid extends CoreAscensionFluid
     
     public FluidState getStill(boolean falling)
     {
-        return this.getStill().getDefaultState().with(RISING, falling);
+        return this.getStill().getDefaultState().with(FALLING, falling);
     }
     
     public FluidState getFlowing(int level, boolean falling)
     {
-        return this.getFlowing().getDefaultState().with(LEVEL, level).with(RISING, falling);
-    }
-    
-    protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
-        builder.add(RISING);
+        return this.getFlowing().getDefaultState().with(LEVEL, level).with(FALLING, falling);
     }
     
     public Vec3d getVelocity(BlockView world, BlockPos pos, FluidState state)
@@ -355,7 +348,7 @@ public abstract class EndGasFluid extends CoreAscensionFluid
         }
 
         Vec3d vec3d = new Vec3d(d, 0, e);
-        if (state.get(RISING))
+        if (state.get(FALLING))
         {
             for (Direction direction2 : Direction.Type.HORIZONTAL)
             {

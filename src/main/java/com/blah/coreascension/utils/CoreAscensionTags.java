@@ -2,6 +2,7 @@ package com.blah.coreascension.utils;
 
 import com.blah.coreascension.CoreAscension;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;

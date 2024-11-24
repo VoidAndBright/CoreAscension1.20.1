@@ -9,7 +9,7 @@ import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 
 public class CoreAscensionEvents
 {
-    public static void RegisterClientEvents()
+    public static void ClientRegisterEvents()
     {
         ClientTickEvents.END_CLIENT_TICK.register(new StepUpEvent());
         ClientTickEvents.END_CLIENT_TICK.register(new PlayerLauncherEvent());

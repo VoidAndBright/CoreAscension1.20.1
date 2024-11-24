@@ -1,5 +1,6 @@
 package com.blah.coreascension.entity.model;
 
+import com.blah.coreascension.entity.animation.SkyderAnimations;
 import com.blah.coreascension.entity.entities.mobs.SkyderEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
@@ -7,7 +8,7 @@ import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 
 public class SkyderModel <T extends SkyderEntity> extends SinglePartEntityModel<T> {
-	private final ModelPart Body;
+	private final ModelPart body;
 	private final ModelPart head;
 	private final ModelPart thorax;
 	private final ModelPart leftLegs;
@@ -24,9 +25,9 @@ public class SkyderModel <T extends SkyderEntity> extends SinglePartEntityModel<
 	private final ModelPart leftWing;
 	private final ModelPart abdomen;
 	public SkyderModel(ModelPart root) {
-		this.Body = root.getChild("Body");
-		this.head = this.Body.getChild("head");
-		this.thorax = this.Body.getChild("thorax");
+		this.body = root.getChild("Body");
+		this.head = this.body.getChild("head");
+		this.thorax = this.body.getChild("thorax");
 		this.leftLegs = this.thorax.getChild("leftLegs");
 		this.leftLeg1 = this.leftLegs.getChild("leftLeg1");
 		this.leftLeg2 = this.leftLegs.getChild("leftLeg2");
@@ -39,12 +40,12 @@ public class SkyderModel <T extends SkyderEntity> extends SinglePartEntityModel<
 		this.rightLeg4 = this.rightLegs.getChild("rightLeg4");
 		this.rightWing = this.thorax.getChild("rightWing");
 		this.leftWing = this.thorax.getChild("leftWing");
-		this.abdomen = this.Body.getChild("abdomen");
+		this.abdomen = this.body.getChild("abdomen");
 	}
 
     public SkyderModel(ModelPart body, ModelPart head, ModelPart thorax, ModelPart leftLegs, ModelPart leftLeg1, ModelPart leftLeg2, ModelPart leftLeg3, ModelPart leftLeg4, ModelPart rightLegs, ModelPart rightLeg1, ModelPart rightLeg2, ModelPart rightLegs3, ModelPart rightLeg4, ModelPart rightWing, ModelPart leftWing, ModelPart abdomen)
     {
-        Body = body;
+        this.body = body;
         this.head = head;
         this.thorax = thorax;
         this.leftLegs = leftLegs;
@@ -89,25 +90,27 @@ public class SkyderModel <T extends SkyderEntity> extends SinglePartEntityModel<
 
 		ModelPartData rightLegs3 = rightLegs.addChild("rightLegs3", ModelPartBuilder.create().uv(19, 0).cuboid(-15.0F, -1.0F, -1.0F, 16.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 0.0F, 0.0F, 0.0F, -0.2618F, -0.6109F));
 
-		ModelPartData rightLeg4 = rightLegs.addChild("rightLeg4", ModelPartBuilder.create().uv(19, 0).cuboid(-15.0F, -1.0F, -1.0F, 16.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 0.0F, -1.0F, 0.0F, -0.7854F, -0.7854F));
+		rightLegs.addChild("rightLeg4", ModelPartBuilder.create().uv(19, 0).cuboid(-15.0F, -1.0F, -1.0F, 16.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 0.0F, -1.0F, 0.0F, -0.7854F, -0.7854F));
 
-		ModelPartData rightWing = thorax.addChild("rightWing", ModelPartBuilder.create().uv(-6, 33).cuboid(-18.0F, 0.0F, -3.0F, 18.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -3.0F, -0.5F));
+		thorax.addChild("rightWing", ModelPartBuilder.create().uv(-6, 33).cuboid(-18.0F, 0.0F, -3.0F, 18.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(-2.0F, -3.0F, -0.5F));
 
-		ModelPartData leftWing = thorax.addChild("leftWing", ModelPartBuilder.create().uv(-6, 39).cuboid(0.0F, 0.0F, -3.0F, 18.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(2.0F, -3.0F, -0.5F));
+		thorax.addChild("leftWing", ModelPartBuilder.create().uv(-6, 39).cuboid(0.0F, 0.0F, -3.0F, 18.0F, 0.0F, 6.0F, new Dilation(0.0F)), ModelTransform.pivot(2.0F, -3.0F, -0.5F));
 
-		ModelPartData abdomen = Body.addChild("abdomen", ModelPartBuilder.create().uv(0, 13).cuboid(-5.0F, -3.5F, -1.0F, 10.0F, 8.0F, 12.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.5F, 4.5F));
+		Body.addChild("abdomen", ModelPartBuilder.create().uv(0, 13).cuboid(-5.0F, -3.5F, -1.0F, 10.0F, 8.0F, 12.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -0.5F, 4.5F));
 		return TexturedModelData.of(modelData, 64, 48);
 	}
 	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		Body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
-	}
-
-	public ModelPart getPart()
-	{
-		return null;
+		body.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
 	}
 	public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch)
 	{
+		this.getPart().traverse().forEach(ModelPart::resetTransform);
 
+		this.animateMovement(SkyderAnimations.SHOOT, limbAngle, limbDistance, 2f, 2.5f);
+		this.updateAnimation(entity.idleAnimationState, SkyderAnimations.IDLE, animationProgress, 1f);
+	}
+	public ModelPart getPart()
+	{
+		return body;
 	}
 }
