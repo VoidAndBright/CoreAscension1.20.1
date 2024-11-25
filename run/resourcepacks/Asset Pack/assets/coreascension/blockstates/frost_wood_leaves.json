@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "coreascension:block/frost_wood_leaves"
+      "model": "coreascension:block/frost_hyphae_leaves"
     }
   }
 }

@@ -6,20 +6,20 @@
   ],
   "key": {
     "0": {
-      "item": "coreascension:stripped_frost_log"
+      "item": "coreascension:stripped_frost_stem"
     },
     "1": {
-      "item": "coreascension:stripped_frost_log"
+      "item": "coreascension:stripped_frost_stem"
     },
     "2": {
-      "item": "coreascension:stripped_frost_log"
+      "item": "coreascension:stripped_frost_stem"
     },
     "3": {
-      "item": "coreascension:stripped_frost_log"
+      "item": "coreascension:stripped_frost_stem"
     }
   },
   "result": {
-    "item": "coreascension:stripped_frost_wood",
+    "item": "coreascension:stripped_frost_hyphae",
     "count": 3
   }
 }
