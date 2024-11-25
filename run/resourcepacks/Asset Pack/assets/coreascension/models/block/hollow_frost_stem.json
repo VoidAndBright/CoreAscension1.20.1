@@ -4,7 +4,7 @@
     "all": "coreascension:block/frostlog",
     "particle": "coreascension:block/frostlog",
     "0": "coreascension:block/frostlog",
-    "1": "coreascension:block/strippedfrostlog_side",
+    "1": "coreascension:block/stripped_frost_stem_side",
     "2": "coreascension:block/frostlog_top"
   }
 }

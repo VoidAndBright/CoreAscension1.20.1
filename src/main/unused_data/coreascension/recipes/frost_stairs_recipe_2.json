@@ -7,26 +7,26 @@
   ],
   "key": {
     "2": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     },
     "4": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     },
     "5": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     },
     "6": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     },
     "7": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     },
     "8": {
-      "item": "coreascension:frost_wood_planks"
+      "item": "coreascension:frost_hyphae_planks"
     }
   },
   "result": {
-    "item": "coreascension:frost_wood_stairs",
+    "item": "coreascension:frost_hyphae_stairs",
     "count": 4
   }
 }

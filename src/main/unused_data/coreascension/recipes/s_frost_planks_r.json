@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:stripped_frost_log"
+      "item": "coreascension:stripped_frost_stem"
     }
   ],
   "result": {
-    "item": "coreascension:frost_wood_planks",
+    "item": "coreascension:frost_hyphae_planks",
     "count": 4
   }
 }

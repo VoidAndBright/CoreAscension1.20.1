@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "coreascension:block/frost_wood_slab"
+      "model": "coreascension:block/frost_hyphae_slab"
     },
     "type=top": {
-      "model": "coreascension:block/frost_wood_slab_top"
+      "model": "coreascension:block/frost_hyphae_slab_top"
     },
     "type=double": {
-      "model": "coreascension:block/frost_wood_slab_full"
+      "model": "coreascension:block/frost_hyphae_slab_full"
     }
   }
 }
