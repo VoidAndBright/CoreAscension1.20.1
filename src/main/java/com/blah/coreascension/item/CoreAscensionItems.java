@@ -82,6 +82,15 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE_SCYTHE = registerItem("sapphire_scythe", new ScytheItem(CoreAscensionToolMaterials.SAPPHIRE, 0, -3f, new FabricItemSettings()));
     public static final Item POTATO_SCYTHE = registerItem("potato_scythe", new ScytheItem(CoreAscensionToolMaterials.POTATO, 0, -3f, new FabricItemSettings()));
 
+    public static final Item FROST_SIGN = registerItem("frost_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_FROST_SIGN, CoreAscensionBlocks.WALL_FROST_SIGN));
+    public static final Item HANGING_FROST_SIGN = registerItem("frost_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_FROST_SIGN, CoreAscensionBlocks.WALL_HANGING_FROST_SIGN, new FabricItemSettings().maxCount(16)));
+    public static final Item ENTROPY_SIGN = registerItem("entropy_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_ENTROPY_SIGN, CoreAscensionBlocks.WALL_ENTROPY_SIGN));
+    public static final Item HANGING_ENTROPY_SIGN = registerItem("entropy_hanging_sign",
+            new HangingSignItem(CoreAscensionBlocks.HANGING_ENTROPY_SIGN, CoreAscensionBlocks.WALL_HANGING_ENTROPY_SIGN, new FabricItemSettings().maxCount(16)));
+
     public static final Item CEDAR_SIGN = registerItem("cedar_sign",
             new SignItem(new FabricItemSettings().maxCount(16), CoreAscensionBlocks.STANDING_CEDAR_SIGN, CoreAscensionBlocks.WALL_CEDAR_SIGN));
     public static final Item HANGING_CEDAR_SIGN = registerItem("cedar_hanging_sign",
@@ -197,8 +206,11 @@ public class CoreAscensionItems {
     public static final Item CRYSTAL_BOOTS = registerItem("crystal_boots",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.BOOTS, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));
 
-
+    public static final Item DARK_MATTER_JELLY = registerItem("dark_matter_jelly", new Item(new FabricItemSettings().food(CoreAscensionFoodComponents.DARK_MATTER_JELLY)));
     public static final Item HEAVENLY_FRAGMENT = registerItem("heavenly_fragment", new Item(new FabricItemSettings().fireproof()));
+    public static final Item CATALYTIC_INVERTER = registerItem("catalytic_inverter", new Item(new FabricItemSettings().fireproof()));
+    public static final Item OBSIDIAN_CONSTRUCT = registerItem("obsidian_construct", new Item(new FabricItemSettings().fireproof()));
+    public static final Item BLAHR = registerItem("blahr", new Item(new FabricItemSettings().fireproof()));
 
     public static final Item CRIMSON_EDGE = registerItem("crimson_edge", new SwordTooltipItem(CoreAscensionToolMaterials.SKYLANDS_SWORD, 4, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), Formatting.GRAY, "tooltip.crimson_edge") {
         public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker)

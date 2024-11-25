@@ -251,6 +251,31 @@ public class CoreAscensionBlocks
             new TerraformHangingSignBlock(WHITEWOOD_HANGING_SIGN_TEXTURE, WHITEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
     public static final Block WALL_HANGING_WHITEWOOD_SIGN = RegisterBlock("whitewood_wall_hanging_sign",
             new TerraformWallHangingSignBlock(WHITEWOOD_HANGING_SIGN_TEXTURE, WHITEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+
+    public static final Identifier ENTROPY_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/entropy");
+    public static final Identifier ENTROPY_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/entropy");
+    public static final Identifier ENTROPY_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/entropy");
+    public static final Block STANDING_ENTROPY_SIGN = RegisterBlock("entropy_sign",
+            new TerraformSignBlock(ENTROPY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
+    public static final Block WALL_ENTROPY_SIGN = RegisterBlock("entropy_wall_sign",
+            new TerraformWallSignBlock(ENTROPY_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
+    public static final Block HANGING_ENTROPY_SIGN = RegisterBlock("entropy_hanging_sign",
+            new TerraformHangingSignBlock(ENTROPY_HANGING_SIGN_TEXTURE, ENTROPY_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
+    public static final Block WALL_HANGING_ENTROPY_SIGN = RegisterBlock("entropy_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(ENTROPY_HANGING_SIGN_TEXTURE, ENTROPY_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+
+    public static final Identifier FROST_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/frost");
+    public static final Identifier FROST_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/frost");
+    public static final Identifier FROST_HANGING_GUI_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "textures/gui/hanging_signs/frost");
+    public static final Block STANDING_FROST_SIGN = RegisterBlock("frost_sign",
+            new TerraformSignBlock(FROST_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
+    public static final Block WALL_FROST_SIGN = RegisterBlock("frost_wall_sign",
+            new TerraformWallSignBlock(FROST_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
+    public static final Block HANGING_FROST_SIGN = RegisterBlock("frost_hanging_sign",
+            new TerraformHangingSignBlock(FROST_HANGING_SIGN_TEXTURE, FROST_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
+    public static final Block WALL_HANGING_FROST_SIGN = RegisterBlock("frost_wall_hanging_sign",
+            new TerraformWallHangingSignBlock(FROST_HANGING_SIGN_TEXTURE, FROST_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+
     public static final Block SEASHELL = RegisterBlockItem("seashell", new SeashellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque().mapColor(MapColor.PALE_YELLOW)));
     // end whitewood
     public static final Block CONCH_SHELL = RegisterBlockItem("conch_shell", new ConchShellBlock(FabricBlockSettings.copyOf(Blocks.DRIPSTONE_BLOCK).nonOpaque().mapColor(MapColor.PALE_YELLOW)));
@@ -477,7 +502,7 @@ public class CoreAscensionBlocks
     public static final Block ENCHANTMENT_RELOCATOR = RegisterBlockItem("enchantment_relocator", new EnchantmentRelocatorBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).nonOpaque().mapColor(MapColor.BRIGHT_RED)));
 
     public static final Block MOSSY_END_STONE_BRICKS = RegisterBlockItem("mossy_end_stone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
-    public static final Block MAGMA_ROCK_BRICKS = RegisterBlockItem("magma_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block MAGMA_ROCK_BRICKS = RegisterBlockItem("magma_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_ORANGE)));
     public static final Block SUS_BRAIN_CORAL_BLOCK = RegisterBlockItem("sus_brain_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.TERRACOTTA_PINK)));
     public static final Block SUS_BUBBLE_CORAL_BLOCK = RegisterBlockItem("sus_bubble_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.PINK)));
     public static final Block SUS_FIRE_CORAL_BLOCK = RegisterBlockItem("sus_fire_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.BRIGHT_RED)));
@@ -659,7 +684,7 @@ public class CoreAscensionBlocks
 
     public static final Block FLINT_BLOCK = RegisterBlockItem("flint_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.GRAY)));
 
-    public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN), UniformIntProvider.create(8, 14)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ICE_CREAM_BLOCK = RegisterBlockItem("ice_cream_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).luminance(3).strength(0.5f).postProcess(Blocks::always).emissiveLighting(Blocks::always).mapColor(MapColor.CYAN))
     {
@@ -680,6 +705,65 @@ public class CoreAscensionBlocks
             }
         }
     });
+    public static final Block SMOOTH_NETHERRACK = RegisterBlockItem("smooth_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_RED)));
+    public static final Block POLISHED_NETHERRACK = RegisterBlockItem("polished_netherrack", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DARK_RED)));
+    public static final Block RUBY_ORE = RegisterBlockItem("ruby_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.RED), UniformIntProvider.create(3, 7)));
+    public static final Block CITRINE_ORE = RegisterBlockItem("citrine_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.ORANGE), UniformIntProvider.create(3, 7)));
+    public static final Block TOPAZ_ORE = RegisterBlockItem("topaz_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.YELLOW), UniformIntProvider.create(3, 7)));
+    public static final Block DARK_MATTER_JELLY_ORE = RegisterBlockItem("dark_matter_jelly_ore", new Block(FabricBlockSettings.copyOf(DARK_MATTER_STONE).mapColor(MapColor.CYAN)));
+    public static final Block TROPICS_PRESSURE_PLATE = RegisterBlockItem("tropics_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(TROPICS_PLANKS), BlockSetType.OAK));
+    public static final Block CEDAR_PRESSURE_PLATE = RegisterBlockItem("cedar_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(CEDAR_PLANKS), BlockSetType.OAK));
+    public static final Block CAKEWOOD_PRESSURE_PLATE = RegisterBlockItem("cakewood_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(CAKEWOOD_PLANKS), BlockSetType.OAK));
+    public static final Block DARK_MATTER_PRESSURE_PLATE = RegisterBlockItem("dark_matter_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(DARK_MATTER_PLANKS), BlockSetType.OAK));
+    public static final Block CACTUS_PRESSURE_PLATE = RegisterBlockItem("cactus_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(CACTUS_PLANKS), BlockSetType.OAK));
+    public static final Block ETHEREAL_PRESSURE_PLATE = RegisterBlockItem("ethereal_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(ETHEREAL_PLANKS), BlockSetType.OAK));
+    public static final Block DREAD_PRESSURE_PLATE = RegisterBlockItem("dread_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(DREAD_PLANKS), BlockSetType.OAK));
+    public static final Block WHITEWOOD_PRESSURE_PLATE = RegisterBlockItem("whitewood_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(WHITEWOOD_PLANKS), BlockSetType.OAK));
+    public static final Block FROST_PRESSURE_PLATE = RegisterBlockItem("frost_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(FROST_PLANKS), BlockSetType.OAK));
+    public static final Block ENTROPY_PRESSURE_PLATE = RegisterBlockItem("entropy_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING, FabricBlockSettings.copyOf(ENTROPY_PLANKS), BlockSetType.OAK));
+    public static final Block COBBLESTONE_DOOR = RegisterBlockItem("cobblestone_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).nonOpaque().mapColor(MapColor.STONE_GRAY), BlockSetType.STONE));
+    public static final Block COBBLESTONE_TRAPDOOR = RegisterBlockItem("cobblestone_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).nonOpaque().mapColor(MapColor.STONE_GRAY), BlockSetType.STONE));
+    public static final Block GOLD_DOOR = RegisterBlockItem("gold_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque().mapColor(MapColor.YELLOW), BlockSetType.STONE));
+    public static final Block GOLD_TRAPDOOR = RegisterBlockItem("gold_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque().mapColor(MapColor.YELLOW), BlockSetType.STONE));
+
+    public static final Block CARROT_BLOCK = RegisterBlockItem("carrot_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.ORANGE)));
+    public static final Block MASHED_POTATO_BLOCK = RegisterBlockItem("mashed_potato_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block COMPRESSED_OBSIDIAN = RegisterBlockItem("compressed_obsidian", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUBY_BLOCK = RegisterBlockItem("ruby_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.RED)));
+    public static final Block CITRINE_BLOCK = RegisterBlockItem("citrine_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.ORANGE)));
+    public static final Block TOPAZ_BLOCK = RegisterBlockItem("topaz_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.YELLOW)));
+    public static final Block LEATHER_BLOCK = RegisterBlockItem("leather_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final Block OBSIDIAN_BRICKS = RegisterBlockItem("obsidian_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
+    public static final Block CLOUD_STONE_BRICKS = RegisterBlockItem("cloud_stone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block NETHER_ICE_BRICKS = RegisterBlockItem("nether_ice_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.CYAN)));
+    public static final Block BLACK_SANDSTONE_STAIRS = RegisterBlockItem("black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(BLACK_SANDSTONE).mapColor(MapColor.BLACK)));
+    public static final Block DREAD_SANDSTONE_STAIRS = RegisterBlockItem("dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(DREAD_SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
+    public static final Block FROST_SANDSTONE_STAIRS = RegisterBlockItem("frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(FROST_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block BONESANDSTONE_STAIRS = RegisterBlockItem("bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(BONESANDSTONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block BLACK_SANDSTONE_WALL = RegisterBlockItem("black_sandstone_wall", new WallBlock(FabricBlockSettings.copyOf(BLACK_SANDSTONE).mapColor(MapColor.BLACK)));
+    public static final Block DREAD_SANDSTONE_WALL = RegisterBlockItem("dread_sandstone_wall", new WallBlock(FabricBlockSettings.copyOf(DREAD_SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
+    public static final Block FROST_SANDSTONE_WALL = RegisterBlockItem("frost_sandstone_wall", new WallBlock(FabricBlockSettings.copyOf(FROST_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block BONESANDSTONE_WALL = RegisterBlockItem("bonesandstone_wall", new WallBlock(FabricBlockSettings.copyOf(BONESANDSTONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block BLACK_SANDSTONE_SLAB = RegisterBlockItem("black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(BLACK_SANDSTONE).mapColor(MapColor.BLACK)));
+    public static final Block DREAD_SANDSTONE_SLAB = RegisterBlockItem("dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(DREAD_SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
+    public static final Block FROST_SANDSTONE_SLAB = RegisterBlockItem("frost_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(FROST_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block BONESANDSTONE_SLAB = RegisterBlockItem("bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(BONESANDSTONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MAGMA_ROCK_BRICK_SLAB = RegisterBlockItem("magma_rock_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(MAGMA_ROCK_BRICKS).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final Block MAGMA_ROCK_BRICK_STAIRS = RegisterBlockItem("magma_rock_brick_stairs", new StairsBlock(MAGMA_ROCK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(MAGMA_ROCK_BRICKS).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final Block CEMENT_STAIRS = RegisterBlockItem("cement_stairs", new StairsBlock(CEMENT.getDefaultState(), FabricBlockSettings.copyOf(CEMENT).mapColor(MapColor.STONE_GRAY)));
+    public static final Block OSBORGNEN_FUEL_BLOCK = RegisterBlockItem("osborgnen_fuel_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.DARK_GREEN)));
+    public static final Block MOSSY_END_STONE_BRICK_WALL = RegisterBlockItem("mossy_end_stone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(MOSSY_END_STONE_BRICKS).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CEMENT_WALL = RegisterBlockItem("cement_wall", new WallBlock(FabricBlockSettings.copyOf(CEMENT).mapColor(MapColor.STONE_GRAY)));
 
     private static Block RegisterBlockItem(String name, Block block)
     {
@@ -813,8 +897,9 @@ public class CoreAscensionBlocks
         StrippableBlockRegistry.register(CoreAscensionBlocks.ETHEREAL_WOOD, CoreAscensionBlocks.STRIPPED_ETHEREAL_WOOD);
         StrippableBlockRegistry.register(CoreAscensionBlocks.FROST_STEM, CoreAscensionBlocks.STRIPPED_FROST_STEM);
         StrippableBlockRegistry.register(CoreAscensionBlocks.FROST_HYPHAE, CoreAscensionBlocks.STRIPPED_FROST_HYPHAE);
+        StrippableBlockRegistry.register(CoreAscensionBlocks.ENTROPY_STEM, CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
+        StrippableBlockRegistry.register(CoreAscensionBlocks.ENTROPY_HYPHAE, CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
     }
-
 
     public static void ClientRegisterBlocks()
     {
@@ -826,7 +911,6 @@ public class CoreAscensionBlocks
                 new Identifier("coreascension:block/end_gas_flowing"),
                 0xFFFFFF
         ));
-
         FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_MOLTEN_ICE, CoreAscensionFluids.FLOWING_MOLTEN_ICE, new SimpleFluidRenderHandler(
                 new Identifier("coreascension:block/molten_ice_still"),
                 new Identifier("coreascension:block/molten_ice_flowing"),

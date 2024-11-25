@@ -1,6 +1,7 @@
 package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import com.blah.coreascension.utils.FabricTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -145,6 +146,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(CoreAscensionBlocks.URANIUM_ORE)
                 .add(CoreAscensionBlocks.TADANITE_BLOCK)
+                .add(CoreAscensionBlocks.COMPRESSED_OBSIDIAN)
                 .add(CoreAscensionBlocks.ZIRCON_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
@@ -337,6 +339,41 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.POLISHED_PRISMARINE)
                 .add(CoreAscensionBlocks.CHISELED_BRICKS)
                 .add(CoreAscensionBlocks.FLINT_BLOCK)
+                .add(CoreAscensionBlocks.SMOOTH_NETHERRACK)
+                .add(CoreAscensionBlocks.POLISHED_NETHERRACK)
+                .add(CoreAscensionBlocks.RUBY_ORE)
+                .add(CoreAscensionBlocks.CITRINE_ORE)
+                .add(CoreAscensionBlocks.TOPAZ_ORE)
+                .add(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE)
+                .add(CoreAscensionBlocks.COBBLESTONE_DOOR)
+                .add(CoreAscensionBlocks.GOLD_DOOR)
+                .add(CoreAscensionBlocks.COBBLESTONE_TRAPDOOR)
+                .add(CoreAscensionBlocks.GOLD_TRAPDOOR)
+                .add(CoreAscensionBlocks.COMPRESSED_OBSIDIAN)
+                .add(CoreAscensionBlocks.RUBY_BLOCK)
+                .add(CoreAscensionBlocks.CITRINE_BLOCK)
+                .add(CoreAscensionBlocks.TOPAZ_BLOCK)
+                .add(CoreAscensionBlocks.OBSIDIAN_BRICKS)
+                .add(CoreAscensionBlocks.CLOUD_STONE_BRICKS)
+                .add(CoreAscensionBlocks.NETHER_ICE_BRICKS)
+                .add(CoreAscensionBlocks.BLACK_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.DREAD_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.FROST_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.BONESANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_STAIRS)
+                .add(CoreAscensionBlocks.CEMENT_STAIRS)
+                .add(CoreAscensionBlocks.BLACK_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.DREAD_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.FROST_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.BONESANDSTONE_WALL)
+                .add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_SLAB)
+                .add(CoreAscensionBlocks.BLACK_SANDSTONE_SLAB)
+                .add(CoreAscensionBlocks.DREAD_SANDSTONE_SLAB)
+                .add(CoreAscensionBlocks.FROST_SANDSTONE_SLAB)
+                .add(CoreAscensionBlocks.BONESANDSTONE_SLAB)
+                .add(CoreAscensionBlocks.OSBORGNEN_FUEL_BLOCK)
+                .add(CoreAscensionBlocks.MOSSY_END_STONE_BRICK_WALL)
+                .add(CoreAscensionBlocks.CEMENT_WALL)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
@@ -492,6 +529,15 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.ENTROPY_FENCE_GATE);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(CoreAscensionBlocks.BLACK_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.BONESANDSTONE_WALL)
+                .add(CoreAscensionBlocks.FROST_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.NETHERFROST_BRICK_WALL)
+                .add(CoreAscensionBlocks.CEMENT_WALL)
+                .add(CoreAscensionBlocks.DREAD_SANDSTONE_WALL)
+                .add(CoreAscensionBlocks.MOSSY_END_STONE_BRICK_WALL)
+                .add(CoreAscensionBlocks.PETRIFIED_PLANKS_WALL)
+                .add(CoreAscensionBlocks.PETRIFIED_WOOD_WALL)
                 .add(CoreAscensionBlocks.AMETHYST_WALL)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK_WALL)
                 .add(CoreAscensionBlocks.LIMESTONE_WALL)
