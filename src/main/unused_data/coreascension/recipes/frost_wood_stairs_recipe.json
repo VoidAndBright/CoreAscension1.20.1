@@ -2,31 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "0  ",
-    "34 ",
-    "678"
+    "00 ",
+    "000"
   ],
   "key": {
     "0": {
-      "item": "coreascension:frost_hyphae_planks"
-    },
-    "3": {
-      "item": "coreascension:frost_hyphae_planks"
-    },
-    "4": {
-      "item": "coreascension:frost_hyphae_planks"
-    },
-    "6": {
-      "item": "coreascension:frost_hyphae_planks"
-    },
-    "7": {
-      "item": "coreascension:frost_hyphae_planks"
-    },
-    "8": {
-      "item": "coreascension:frost_hyphae_planks"
+      "item": "coreascension:frost_planks"
     }
   },
   "result": {
-    "item": "coreascension:frost_hyphae_stairs",
+    "item": "coreascension:frost_stairs",
     "count": 4
   }
 }

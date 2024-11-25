@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "coreascension:frost_hyphae_planks"
+      "item": "coreascension:frost_planks"
     }
   ],
   "result": {

@@ -9,7 +9,7 @@
       "item": "minecraft:stick"
     },
     "1": {
-      "item": "coreascension:frost_hyphae_planks"
+      "item": "coreascension:frost_planks"
     },
     "2": {
       "item": "minecraft:stick"
@@ -18,14 +18,14 @@
       "item": "minecraft:stick"
     },
     "4": {
-      "item": "coreascension:frost_hyphae_planks"
+      "item": "coreascension:frost_planks"
     },
     "5": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "coreascension:frost_hyphae_fence_gate",
+    "item": "coreascension:frost_fence_gate",
     "count": 1
   }
 }
