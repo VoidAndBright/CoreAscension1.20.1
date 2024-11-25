@@ -1,8 +1,7 @@
 package com.blah.coreascension.fluid.fluids;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.block.CoreAscensionFluids;
-import com.blah.coreascension.damage.CoreAscensionDamageTypes;
+
 import com.blah.coreascension.fluid.CoreAscensionFluids;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.block.BlockState;

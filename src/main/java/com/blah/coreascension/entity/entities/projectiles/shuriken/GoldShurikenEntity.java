@@ -11,10 +11,10 @@ public class GoldShurikenEntity extends ShurikenEntity
 {
     public GoldShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.GOLD_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.GOLD_SHURIKEN_PROJ);
     }
 
     public GoldShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.GOLD_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.GOLD_SHURIKEN, livingEntity, world,4);
     }
 }

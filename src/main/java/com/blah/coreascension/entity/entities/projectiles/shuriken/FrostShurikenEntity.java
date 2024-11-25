@@ -11,10 +11,10 @@ public class FrostShurikenEntity extends ShurikenEntity
 {
     public FrostShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.FROST_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.FROST_SHURIKEN_PROJ);
     }
 
     public FrostShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.FROST_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.FROST_SHURIKEN, livingEntity, world,5);
     }
 }

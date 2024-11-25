@@ -1,5 +1,5 @@
 {
-  "parent": "coreascension:custom/heldshuriken",
+  "parent": "coreascension:custom/projectile",
   "textures": {
     "layer0": "coreascension:item/diamond_shuriken"
   }

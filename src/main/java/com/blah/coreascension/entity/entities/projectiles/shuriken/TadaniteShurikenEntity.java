@@ -11,10 +11,10 @@ public class TadaniteShurikenEntity extends ShurikenEntity
 {
     public TadaniteShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.TADANITE_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.TADANITE_SHURIKEN_PROJ);
     }
 
     public TadaniteShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.TADANITE_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.TADANITE_SHURIKEN, livingEntity, world,4);
     }
 }

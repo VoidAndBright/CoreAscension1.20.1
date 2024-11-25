@@ -11,10 +11,10 @@ public class IronShurikenEntity extends ShurikenEntity
 {
     public IronShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.IRON_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.IRON_SHURIKEN_PROJ);
     }
 
     public IronShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.IRON_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.IRON_SHURIKEN, livingEntity, world,4);
     }
 }

@@ -11,10 +11,10 @@ public class LumiteShurikenEntity extends ShurikenEntity
 {
     public LumiteShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.LUMITE_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.LUMITE_SHURIKEN_PROJ);
     }
 
     public LumiteShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.LUMITE_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.LUMITE_SHURIKEN, livingEntity, world,4);
     }
 }

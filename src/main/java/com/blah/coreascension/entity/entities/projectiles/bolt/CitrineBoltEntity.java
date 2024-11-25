@@ -34,10 +34,10 @@ public class CitrineBoltEntity extends ThrownItemEntity
         {
             entity.damage(entity.getDamageSources().magic(), 5);
 
-            double d = Math.max(0.0, 1.0 - entity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
-            Vec3d vec3d = this.getVelocity().multiply(1.0, 0.0, 1.0).normalize().multiply(2 * 0.6 * d);
-            if (vec3d.lengthSquared() > 0.0) {
-                entity.addVelocity(vec3d.x, 0.1, vec3d.z);
+            double KnockBackResistance = Math.max(0.0, 1.0 - entity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
+            Vec3d Velocity = this.getVelocity().multiply(1.0, 0.0, 1.0).normalize().multiply(1.2 * KnockBackResistance);
+            if (Velocity.lengthSquared() > 0.0) {
+                entity.addVelocity(Velocity.x, 0.1, Velocity.z);
             }
         }
     }

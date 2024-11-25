@@ -11,10 +11,10 @@ public class DiamondShurikenEntity extends ShurikenEntity
 {
     public DiamondShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.DIAMOND_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.DIAMOND_SHURIKEN_PROJ);
     }
 
     public DiamondShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.DIAMOND_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.DIAMOND_SHURIKEN, livingEntity, world,40);
     }
 }

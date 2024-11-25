@@ -11,10 +11,10 @@ public class UraniumShurikenEntity extends ShurikenEntity
 {
     public UraniumShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world)
     {
-        super(entityType, world,5,CoreAscensionItems.URANIUM_SHURIKEN_PROJ);
+        super(entityType, world,CoreAscensionItems.URANIUM_SHURIKEN_PROJ);
     }
 
     public UraniumShurikenEntity(LivingEntity livingEntity, World world) {
-        super(CoreAscensionEntities.URANIUM_SHURIKEN, livingEntity, world);
+        super(CoreAscensionEntities.URANIUM_SHURIKEN, livingEntity, world,4);
     }
 }

@@ -1,4 +1,4 @@
-package com.blah.coreascension.entity.entities.projectiles.shuriken;
+package com.blah.coreascension.entity.entities.projectiles.bolt;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -8,47 +8,44 @@ import net.minecraft.item.Item;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class ShurikenEntity extends ThrownItemEntity
+class BlastEntity extends ThrownItemEntity
 {
     int dng;
     Item item;
-    public ShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world,int dng) {
+    BlastEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world,int dng) {
         super(entityType, livingEntity, world);
         this.dng=dng;
 
     }
-    public ShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world,Item item)
+    BlastEntity(EntityType<? extends ThrownItemEntity> entityType, World world,Item item)
     {
         super(entityType, world);
         this.item = item;
     }
+    
+    protected void onEntityHit(EntityHitResult entityHitResult)
+    {
+        if (entityHitResult.getEntity().canBeHitByProjectile())
+        {
+            Entity hitEntity = entityHitResult.getEntity();
 
+            hitEntity.damage(this.getDamageSources().magic(), dng);
+            if (hitEntity instanceof LivingEntity entity)
+                onEntityHit(entity);
+        }
+    }
+    void onEntityHit(LivingEntity entity){
+    }
+    
     public Packet<ClientPlayPacketListener> createSpawnPacket()
     {
         return new EntitySpawnS2CPacket(this);
     }
 
-    protected void onEntityHit(EntityHitResult entityHitResult)
-    {
-        if (entityHitResult.getEntity().canBeHitByProjectile())
-        {
-            Entity entity = entityHitResult.getEntity();
-            entity.damage(this.getDamageSources().mobProjectile(entity, (LivingEntity) this.getOwner()), dng);
-            this.discard();
-        }
-    }
-
-    protected void onBlockHit(BlockHitResult blockHitResult)
-    {
-        super.onBlockHit(blockHitResult);
-        this.discard();
-    }
-
+    
     protected Item getDefaultItem()
     {
         return item;

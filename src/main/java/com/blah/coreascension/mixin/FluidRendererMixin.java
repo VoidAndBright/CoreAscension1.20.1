@@ -294,8 +294,8 @@ public abstract class FluidRendererMixin {
     {
         if (fluid.matchesType(fluidState.getFluid()))
         {
-            BlockState blockStateDown = world.getBlockState(pos.up());
-            return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ? fluidState.getHeight() : 1.0F;
+            BlockState blockStateDown = world.getBlockState(pos.down());
+            return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ?  1.0F:fluidState.getHeight() ;
         } else
         {
             return !blockState.isSolid() ? -1.0F : 0.0F;
