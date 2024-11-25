@@ -88,8 +88,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DREAD_FENCE_GATE);
             entries.add(CoreAscensionBlocks.DREAD_DOOR);
             entries.add(CoreAscensionBlocks.DREAD_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.DREAD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.DREAD_BUTTON);
+            entries.add(CoreAscensionItems.DREAD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_DREAD_SIGN);
             entries.add(CoreAscensionBlocks.TROPICS_LOG);
             entries.add(CoreAscensionBlocks.TROPICS_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
@@ -101,8 +103,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.TROPICS_FENCE_GATE);
             entries.add(CoreAscensionBlocks.TROPICS_DOOR);
             entries.add(CoreAscensionBlocks.TROPICS_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.TROPICS_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.TROPICS_BUTTON);
+            entries.add(CoreAscensionItems.TROPICS_SIGN);
+            entries.add(CoreAscensionItems.HANGING_TROPICS_SIGN);
             entries.add(CoreAscensionBlocks.WHITEWOOD_LOG);
             entries.add(CoreAscensionBlocks.WHITEWOOD_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG);
@@ -114,8 +118,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.WHITEWOOD_FENCE_GATE);
             entries.add(CoreAscensionBlocks.WHITEWOOD_DOOR);
             entries.add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.WHITEWOOD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.WHITEWOOD_BUTTON);
+            entries.add(CoreAscensionItems.WHITEWOOD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_WHITEWOOD_SIGN);
             entries.add(CoreAscensionBlocks.CEDAR_LOG);
             entries.add(CoreAscensionBlocks.CEDAR_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
@@ -127,8 +133,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CEDAR_FENCE_GATE);
             entries.add(CoreAscensionBlocks.CEDAR_DOOR);
             entries.add(CoreAscensionBlocks.CEDAR_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.CEDAR_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CEDAR_BUTTON);
+            entries.add(CoreAscensionItems.CEDAR_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CEDAR_SIGN);
             entries.add(CoreAscensionBlocks.FROST_STEM);
             entries.add(CoreAscensionBlocks.FROST_HYPHAE);
             entries.add(CoreAscensionBlocks.STRIPPED_FROST_STEM);
@@ -140,8 +148,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROST_FENCE_GATE);
             entries.add(CoreAscensionBlocks.FROST_DOOR);
             entries.add(CoreAscensionBlocks.FROST_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.FROST_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.FROST_BUTTON);
+            entries.add(CoreAscensionItems.FROST_SIGN);
+            entries.add(CoreAscensionItems.HANGING_FROST_SIGN);
             entries.add(CoreAscensionBlocks.DARK_MATTER_LOG);
             entries.add(CoreAscensionBlocks.DARK_MATTER_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_LOG);
@@ -153,8 +163,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DARK_MATTER_FENCE_GATE);
             entries.add(CoreAscensionBlocks.DARK_MATTER_DOOR);
             entries.add(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.DARK_MATTER_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.DARK_MATTER_BUTTON);
+            entries.add(CoreAscensionItems.DARK_MATTER_SIGN);
+            entries.add(CoreAscensionItems.HANGING_DARK_MATTER_SIGN);
             entries.add(CoreAscensionBlocks.CAKEWOOD_LOG);
             entries.add(CoreAscensionBlocks.CAKEWOOD_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
@@ -166,8 +178,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CAKEWOOD_FENCE_GATE);
             entries.add(CoreAscensionBlocks.CAKEWOOD_DOOR);
             entries.add(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.CAKEWOOD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CAKEWOOD_BUTTON);
+            entries.add(CoreAscensionItems.CAKEWOOD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CAKEWOOD_SIGN);
             entries.add(CoreAscensionBlocks.ETHEREAL_LOG);
             entries.add(CoreAscensionBlocks.ETHEREAL_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
@@ -179,8 +193,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.ETHEREAL_FENCE_GATE);
             entries.add(CoreAscensionBlocks.ETHEREAL_DOOR);
             entries.add(CoreAscensionBlocks.ETHEREAL_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.ETHEREAL_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.ETHEREAL_BUTTON);
+            entries.add(CoreAscensionItems.ETHEREAL_SIGN);
+            entries.add(CoreAscensionItems.HANGING_ETHEREAL_SIGN);
             entries.add(CoreAscensionBlocks.ENTROPY_STEM);
             entries.add(CoreAscensionBlocks.ENTROPY_HYPHAE);
             entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
@@ -192,8 +208,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.ENTROPY_FENCE_GATE);
             entries.add(CoreAscensionBlocks.ENTROPY_DOOR);
             entries.add(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.ENTROPY_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.ENTROPY_BUTTON);
+            entries.add(CoreAscensionItems.ENTROPY_SIGN);
+            entries.add(CoreAscensionItems.HANGING_ENTROPY_SIGN);
             entries.add(CoreAscensionBlocks.CACTUS_PLANKS);
             entries.add(CoreAscensionBlocks.CACTUS_STAIRS);
             entries.add(CoreAscensionBlocks.CACTUS_SLAB);
@@ -201,8 +219,10 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CACTUS_FENCE_GATE);
             entries.add(CoreAscensionBlocks.CACTUS_DOOR);
             entries.add(CoreAscensionBlocks.CACTUS_TRAPDOOR);
-            // pressure plate
+            entries.add(CoreAscensionBlocks.CACTUS_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CACTUS_BUTTON);
+            entries.add(CoreAscensionItems.CACTUS_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CACTUS_SIGN);
             entries.add(CoreAscensionBlocks.GLASS_DOOR);
             entries.add(CoreAscensionBlocks.COBBLESTONE_DOOR);
             entries.add(CoreAscensionBlocks.GOLD_DOOR);
