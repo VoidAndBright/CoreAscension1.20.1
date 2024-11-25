@@ -1,4 +1,4 @@
-package com.blah.coreascension.entity.entities.projectiles;
+package com.blah.coreascension.entity.entities.projectiles.bolt;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
@@ -11,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.Vec3d;
@@ -29,7 +30,7 @@ public class CitrineBoltEntity extends ThrownItemEntity
 
     protected void onEntityHit(EntityHitResult entityHitResult)
     {
-        if (entityHitResult.getEntity() instanceof LivingEntity entity)
+        if (entityHitResult.getEntity() instanceof LivingEntity entity && this.getOwner() != entity && entity.canBeHitByProjectile())
         {
             entity.damage(entity.getDamageSources().magic(), 5);
 
@@ -41,7 +42,10 @@ public class CitrineBoltEntity extends ThrownItemEntity
         }
     }
 
-    
+    protected void onBlockHit(BlockHitResult blockHitResult) {
+        super.onBlockHit(blockHitResult);
+        this.discard();
+    }
     public Packet<ClientPlayPacketListener> createSpawnPacket()
     {
         return new EntitySpawnS2CPacket(this);

@@ -1,6 +1,6 @@
 package com.blah.coreascension.mixin;
 
-import com.blah.coreascension.block.CoreAscensionFluids;
+import com.blah.coreascension.fluid.CoreAscensionFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;
@@ -71,7 +71,7 @@ public abstract class FluidRendererMixin {
                 float brightnessZ = world.getBrightness(Direction.NORTH, true);
                 float brightnessX = world.getBrightness(Direction.WEST, true);
                 Fluid fluid = fluidState.getFluid();
-                float fluidHeight = this.getFluidHeight(world, fluid, pos, blockState, fluidState);
+                float fluidHeight = this.getUpsideDownFluidHeight(world, fluid, pos, blockState, fluidState);
                 float fluidHeightNE;
                 float fluidHeightNW;
                 float fluidHeightSE;
@@ -84,10 +84,10 @@ public abstract class FluidRendererMixin {
                     fluidHeightSW = 1.0F;
                 } else
                 {
-                    float fluidHeightNorth = this.getFluidHeight(world, fluid, pos.north(), northBlockstate, northFluidstate);
-                    float fluidHeightSouth = this.getFluidHeight(world, fluid, pos.south(), southBlockstate, southFluidstate);
-                    float fluidHeightEast = this.getFluidHeight(world, fluid, pos.east(), eastBlockstate, eastFluidstate);
-                    float fluidHeightWest = this.getFluidHeight(world, fluid, pos.west(), westBlockstate, westFluidstate);
+                    float fluidHeightNorth = this.getUpsideDownFluidHeight(world, fluid, pos.north(), northBlockstate, northFluidstate);
+                    float fluidHeightSouth = this.getUpsideDownFluidHeight(world, fluid, pos.south(), southBlockstate, southFluidstate);
+                    float fluidHeightEast = this.getUpsideDownFluidHeight(world, fluid, pos.east(), eastBlockstate, eastFluidstate);
+                    float fluidHeightWest = this.getUpsideDownFluidHeight(world, fluid, pos.west(), westBlockstate, westFluidstate);
                     fluidHeightNE = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightNorth, fluidHeightEast, pos.offset(Direction.NORTH).offset(Direction.EAST));
                     fluidHeightNW = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightNorth, fluidHeightWest, pos.offset(Direction.NORTH).offset(Direction.WEST));
                     fluidHeightSE = this.calculateFluidHeight(world, fluid, fluidHeight, fluidHeightSouth, fluidHeightEast, pos.offset(Direction.SOUTH).offset(Direction.EAST));
@@ -97,7 +97,7 @@ public abstract class FluidRendererMixin {
                 double posX = pos.getX() & 15;
                 double posY = pos.getY() & 15;
                 double posZ = pos.getZ() & 15;
-                float y = shouldUpRender ? 0.001F : 0.0F;
+                float y = shouldDownRender ? 0.001F : 0.0F;
                 if (isNotTheSameFluidDown && !isSideCovered(world, pos, Direction.DOWN, Math.max(Math.max(fluidHeightNW, fluidHeightSW), Math.max(fluidHeightSE, fluidHeightNE)), blockStateDown))
                 {
                     fluidHeightNW -= 0.001F;
@@ -189,10 +189,10 @@ public abstract class FluidRendererMixin {
                     float redBrightnessUp = brightnessUp * red;
                     float greenBrightnessUp = brightnessUp * green;
                     float blueBrightnessUp = brightnessUp * blue;
-                    this.vertex(vertexConsumer, posX, posY - y + 1, posZ + 1, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, minU, maxV, light);
-                    this.vertex(vertexConsumer, posX, posY - y + 1, posZ, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, minU, minV, light);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - y + 1, posZ, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, maxU, minV, light);
-                    this.vertex(vertexConsumer, posX + 1.0, posY - y + 1, posZ + 1, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, maxU, maxV, light);
+                    this.vertex(vertexConsumer, posX, posY  + 1, posZ, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, minU, minV, light);
+                    this.vertex(vertexConsumer, posX, posY  + 1, posZ + 1, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, minU, maxV, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY  + 1, posZ, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, maxU, minV, light);
+                    this.vertex(vertexConsumer, posX + 1.0, posY  + 1, posZ + 1, redBrightnessUp, greenBrightnessUp, blueBrightnessUp, maxU, maxV, light);
                 }
 
                 if (shouldDownRender)
@@ -290,7 +290,17 @@ public abstract class FluidRendererMixin {
             ci.cancel();
         }
     }
-
+    private float getUpsideDownFluidHeight(BlockRenderView world, Fluid fluid, BlockPos pos, BlockState blockState, FluidState fluidState)
+    {
+        if (fluid.matchesType(fluidState.getFluid()))
+        {
+            BlockState blockStateDown = world.getBlockState(pos.up());
+            return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ? fluidState.getHeight() : 1.0F;
+        } else
+        {
+            return !blockState.isSolid() ? -1.0F : 0.0F;
+        }
+    }
     @Shadow
     private static boolean isSameFluid(FluidState a, FluidState b)
     {
@@ -309,19 +319,6 @@ public abstract class FluidRendererMixin {
     private static boolean isSideCovered(BlockView world, BlockPos pos, Direction direction, float maxDeviation, BlockState state)
     {
         return isSideCovered(world, direction, maxDeviation, pos.offset(direction), state);
-    }
-
-    @Shadow
-    private float getFluidHeight(BlockRenderView world, Fluid fluid, BlockPos pos, BlockState blockState, FluidState fluidState)
-    {
-        if (fluid.matchesType(fluidState.getFluid()))
-        {
-            BlockState blockStateDown = world.getBlockState(pos.down());
-            return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ? fluidState.getHeight() : 1.0F;
-        } else
-        {
-            return !blockState.isSolid() ? -1.0F : 0.0F;
-        }
     }
 
     @Shadow

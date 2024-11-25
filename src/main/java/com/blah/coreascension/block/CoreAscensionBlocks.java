@@ -5,6 +5,8 @@ import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.damage.CoreAscensionDamageTypes;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.fluid.CoreAscensionFluids;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;

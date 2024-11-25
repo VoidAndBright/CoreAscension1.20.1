@@ -1,8 +1,7 @@
-package com.blah.coreascension.entity.entities.projectiles;
+package com.blah.coreascension.entity.entities.projectiles.bolt;
 
 import com.blah.coreascension.entity.CoreAscensionEntities;
 import com.blah.coreascension.item.CoreAscensionItems;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -29,10 +28,9 @@ public class BlahBoltEntity extends ThrownItemEntity
     
     protected void onEntityHit(EntityHitResult entityHitResult)
     {
-        Entity hitEntity = entityHitResult.getEntity();
-        if (hitEntity instanceof LivingEntity entity && this.getOwner() != hitEntity)
+        if (entityHitResult.getEntity() instanceof LivingEntity entity && this.getOwner() != entity)
         {
-            entity.damage(entity.getDamageSources().magic(), 18);
+            entity.damage(this.getDamageSources().magic(), 18);
             double random = Math.random();
             if (random < 0.16)
             {
