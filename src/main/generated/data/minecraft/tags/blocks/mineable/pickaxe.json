@@ -172,6 +172,17 @@
     "coreascension:perma_ice",
     "coreascension:nether_ice",
     "coreascension:ice_cream_block",
+    "coreascension:mossy_end_stone_bricks",
+    "coreascension:magma_rock_bricks",
+    "coreascension:sus_brain_coral_block",
+    "coreascension:sus_bubble_coral_block",
+    "coreascension:sus_fire_coral_block",
+    "coreascension:sus_horn_coral_block",
+    "coreascension:sus_tube_coral_block",
+    "coreascension:compact_stone",
+    "coreascension:polished_prismarine",
+    "coreascension:chiseled_brick",
+    "coreascension:flint_block",
     "coreascension:sapphire_ore"
   ]
 }

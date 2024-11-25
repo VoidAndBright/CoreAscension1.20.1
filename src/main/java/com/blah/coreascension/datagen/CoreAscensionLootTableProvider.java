@@ -366,5 +366,18 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.BEDROCK_WALL);
         addDrop(CoreAscensionBlocks.CHISELED_BEDROCK);
         addDrop(CoreAscensionBlocks.BEDROCK_BRICKS);
+        addDrop(CoreAscensionBlocks.MOSSY_END_STONE_BRICKS);
+        addDrop(CoreAscensionBlocks.SUS_BRAIN_CORAL_BLOCK);
+        addDrop(CoreAscensionBlocks.SUS_BUBBLE_CORAL_BLOCK);
+        addDrop(CoreAscensionBlocks.SUS_FIRE_CORAL_BLOCK);
+        addDrop(CoreAscensionBlocks.SUS_HORN_CORAL_BLOCK);
+        addDrop(CoreAscensionBlocks.SUS_TUBE_CORAL_BLOCK);
+        addDrop(CoreAscensionBlocks.MAGMA_ROCK_BRICKS);
+        addDrop(CoreAscensionBlocks.COMPACT_STONE);
+        addDrop(CoreAscensionBlocks.POLISHED_PRISMARINE);
+        addDrop(CoreAscensionBlocks.CHISELED_BRICKS);
+        addDrop(CoreAscensionBlocks.FLINT_BLOCK);
+        addDrop(CoreAscensionBlocks.GLASS_DOOR, doorDrops(CoreAscensionBlocks.GLASS_DOOR));
+        addDrop(CoreAscensionBlocks.GLASS_TRAPDOOR);
     }
 }

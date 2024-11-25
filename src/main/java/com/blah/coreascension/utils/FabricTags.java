@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 
 public class FabricTags {
     public static final TagKey<Block> NEEDS_TOOL_LEVEL_8 = RegisterBlockTag("needs_tool_level_8");
+    public static final TagKey<Block> NEEDS_TOOL_LEVEL_4 = RegisterBlockTag("needs_tool_level_4");
 
     private static TagKey<Block> RegisterBlockTag(String name)
     {

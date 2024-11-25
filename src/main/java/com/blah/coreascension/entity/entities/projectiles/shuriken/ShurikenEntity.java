@@ -10,16 +10,16 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
 public class ShurikenEntity extends ThrownItemEntity
 {
-    int dng;
+    int dmg;
     Item item;
-    public ShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world,int dng) {
+    public ShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world, int dmg)
+    {
         super(entityType, livingEntity, world);
-        this.dng=dng;
+        this.dmg = dmg;
 
     }
     public ShurikenEntity(EntityType<? extends ThrownItemEntity> entityType, World world,Item item)
@@ -38,7 +38,7 @@ public class ShurikenEntity extends ThrownItemEntity
         if (entityHitResult.getEntity().canBeHitByProjectile())
         {
             Entity entity = entityHitResult.getEntity();
-            entity.damage(this.getDamageSources().mobProjectile(entity, (LivingEntity) this.getOwner()), dng);
+            entity.damage(this.getDamageSources().mobProjectile(entity, (LivingEntity) this.getOwner()), dmg);
             this.discard();
         }
     }

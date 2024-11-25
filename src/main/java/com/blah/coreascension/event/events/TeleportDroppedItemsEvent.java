@@ -20,28 +20,30 @@ public class TeleportDroppedItemsEvent implements EntityItemDropCallback
         if (causedByPlayer)
         {
             Entity attacker = source.getAttacker();
-            assert attacker != null;
-            if (attacker instanceof Entity)
+            if (attacker != null)
             {
-                return true;
-            }
-            PlayerEntity player = world.getPlayerByUuid(attacker.getUuid());
-            if (player instanceof PlayerEntity)
-            {
-                return true;
-            }
-
-            ItemStack playerWeapon = player.getMainHandStack();
-            if (playerWeapon.hasEnchantments() && EnchantmentHelper.getLevel(CoreAscensionEnchantments.TELEKINESIS, playerWeapon) > 0)
-            {
-                lootTable.generateLoot(builder.build(LootContextTypes.ENTITY)).forEach(itemStack ->
+                if (attacker instanceof Entity)
                 {
-                    if (!player.getInventory().insertStack(itemStack))
+                    return true;
+                }
+                PlayerEntity player = world.getPlayerByUuid(attacker.getUuid());
+                if (player instanceof PlayerEntity)
+                {
+                    return true;
+                }
+
+                ItemStack playerWeapon = player.getMainHandStack();
+                if (playerWeapon.hasEnchantments() && EnchantmentHelper.getLevel(CoreAscensionEnchantments.TELEKINESIS, playerWeapon) > 0)
+                {
+                    lootTable.generateLoot(builder.build(LootContextTypes.ENTITY)).forEach(itemStack ->
                     {
-                        dropStack.dropStack(itemStack);
-                    }
-                });
-                return false;
+                        if (!player.getInventory().insertStack(itemStack))
+                        {
+                            dropStack.dropStack(itemStack);
+                        }
+                    });
+                    return false;
+                }
             }
         }
         return true;

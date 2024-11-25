@@ -82,7 +82,8 @@ public abstract class FluidRendererMixin {
                     fluidHeightNW = 1.0F;
                     fluidHeightSE = 1.0F;
                     fluidHeightSW = 1.0F;
-                } else
+                }
+                else
                 {
                     float fluidHeightNorth = this.getUpsideDownFluidHeight(world, fluid, pos.north(), northBlockstate, northFluidstate);
                     float fluidHeightSouth = this.getUpsideDownFluidHeight(world, fluid, pos.south(), southBlockstate, southFluidstate);
@@ -125,7 +126,8 @@ public abstract class FluidRendererMixin {
                         v3 = v2;
                         u4 = u3;
                         v4 = v1;
-                    } else
+                    }
+                    else
                     {
                         // flowing gas
                         Sprite sprite = sprites[1];
@@ -179,7 +181,7 @@ public abstract class FluidRendererMixin {
                     shouldDownRender = false;
                 }
 
-                if (shouldUpRender)
+                if (false)
                 {
                     float minU = sprites[0].getMinU();
                     float maxU = sprites[0].getMaxU();
@@ -296,7 +298,8 @@ public abstract class FluidRendererMixin {
         {
             BlockState blockStateDown = world.getBlockState(pos.down());
             return fluid.matchesType(blockStateDown.getFluidState().getFluid()) ?  1.0F:fluidState.getHeight() ;
-        } else
+        }
+        else
         {
             return !blockState.isSolid() ? -1.0F : 0.0F;
         }

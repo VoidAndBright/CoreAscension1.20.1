@@ -209,5 +209,22 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
                 .criterion("not_the_aether", ChangedDimensionCriterion.Conditions.to(RegistryKey.of(RegistryKeys.WORLD, new Identifier("coreascension", "skylands"))))
                 .build(consumer, "coreascension" + "/not_the_aether");
+
+        Advancement cheatTheVoid = Advancement.Builder.create()
+                .display(
+                        CoreAscensionItems.VOID_TOTEM, // The display icon
+                        Text.literal("Cheat the Void"), // The title
+                        Text.literal("Avoid death by using a Void Totem"), // The description
+                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(100))
+                .parent(notTheAether)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("cheat_the_void", UsedTotemCriterion.Conditions.create(CoreAscensionItems.VOID_TOTEM))
+                .build(consumer, "coreascension" + "/cheat_the_void");
     }
 }

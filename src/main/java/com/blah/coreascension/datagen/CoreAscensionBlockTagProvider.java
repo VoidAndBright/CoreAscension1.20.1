@@ -16,10 +16,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     {
         super(output, registriesFuture);
     }
-
     
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
+        getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_4)
+                .add(CoreAscensionBlocks.TADANITE_ORE);
+
         getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_8)
                 .add(CoreAscensionBlocks.BEDROCK)
                 .add(CoreAscensionBlocks.BEDROCK_SLAB)
@@ -137,10 +139,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB)
                 .add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS)
                 .add(CoreAscensionBlocks.ZIRCON_BLOCK)
+                .add(CoreAscensionBlocks.COMPACT_STONE)
                 .add(CoreAscensionBlocks.URANIUM_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(CoreAscensionBlocks.URANIUM_ORE)
+                .add(CoreAscensionBlocks.TADANITE_BLOCK)
                 .add(CoreAscensionBlocks.ZIRCON_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
@@ -322,6 +326,17 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.PERMA_ICE)
                 .add(CoreAscensionBlocks.NETHER_ICE)
                 .add(CoreAscensionBlocks.ICE_CREAM_BLOCK)
+                .add(CoreAscensionBlocks.MOSSY_END_STONE_BRICKS)
+                .add(CoreAscensionBlocks.MAGMA_ROCK_BRICKS)
+                .add(CoreAscensionBlocks.SUS_BRAIN_CORAL_BLOCK)
+                .add(CoreAscensionBlocks.SUS_BUBBLE_CORAL_BLOCK)
+                .add(CoreAscensionBlocks.SUS_FIRE_CORAL_BLOCK)
+                .add(CoreAscensionBlocks.SUS_HORN_CORAL_BLOCK)
+                .add(CoreAscensionBlocks.SUS_TUBE_CORAL_BLOCK)
+                .add(CoreAscensionBlocks.COMPACT_STONE)
+                .add(CoreAscensionBlocks.POLISHED_PRISMARINE)
+                .add(CoreAscensionBlocks.CHISELED_BRICKS)
+                .add(CoreAscensionBlocks.FLINT_BLOCK)
                 .add(CoreAscensionBlocks.SAPPHIRE_ORE);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)

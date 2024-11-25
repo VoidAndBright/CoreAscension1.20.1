@@ -13,11 +13,12 @@ import net.minecraft.world.World;
 
 class BlastEntity extends ThrownItemEntity
 {
-    int dng;
+    int dmg;
     Item item;
-    BlastEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world,int dng) {
+    BlastEntity(EntityType<? extends ThrownItemEntity> entityType, LivingEntity livingEntity, World world,int dmg)
+    {
         super(entityType, livingEntity, world);
-        this.dng=dng;
+        this.dmg = dmg;
 
     }
     BlastEntity(EntityType<? extends ThrownItemEntity> entityType, World world,Item item)
@@ -32,7 +33,7 @@ class BlastEntity extends ThrownItemEntity
         {
             Entity hitEntity = entityHitResult.getEntity();
 
-            hitEntity.damage(this.getDamageSources().magic(), dng);
+            hitEntity.damage(this.getDamageSources().magic(), dmg);
             if (hitEntity instanceof LivingEntity entity)
                 onEntityHit(entity);
         }

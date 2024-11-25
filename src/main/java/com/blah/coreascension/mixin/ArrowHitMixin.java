@@ -19,7 +19,7 @@ public abstract class ArrowHitMixin {
     @Inject(at = @At(value = "HEAD"), method = "onEntityHit", cancellable = true)
     private void onHit(EntityHitResult entityHitResult, CallbackInfo ci)
     {
-        ActionResult result = ArrowHitCallback.EVENT.invoker().interact((ProjectileEntity)(Object)this,entityHitResult);
+        ActionResult result = ArrowHitCallback.EVENT.invoker().interact((ProjectileEntity)(Object)this, entityHitResult);
         if (result == ActionResult.FAIL)
             ci.cancel();
 

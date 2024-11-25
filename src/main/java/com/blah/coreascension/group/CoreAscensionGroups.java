@@ -404,6 +404,18 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.BEDROCK_STAIRS);
             entries.add(CoreAscensionBlocks.BEDROCK_WALL);
             entries.add(CoreAscensionBlocks.CHISELED_BEDROCK);
+            entries.add(CoreAscensionBlocks.MOSSY_END_STONE_BRICKS);
+            entries.add(CoreAscensionBlocks.SUS_BRAIN_CORAL_BLOCK);
+            entries.add(CoreAscensionBlocks.SUS_BUBBLE_CORAL_BLOCK);
+            entries.add(CoreAscensionBlocks.SUS_FIRE_CORAL_BLOCK);
+            entries.add(CoreAscensionBlocks.SUS_HORN_CORAL_BLOCK);
+            entries.add(CoreAscensionBlocks.SUS_TUBE_CORAL_BLOCK);
+            entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICKS);
+            entries.add(CoreAscensionBlocks.COMPACT_STONE);
+            entries.add(CoreAscensionBlocks.POLISHED_PRISMARINE);
+            entries.add(CoreAscensionBlocks.CHISELED_BRICKS);
+            entries.add(CoreAscensionBlocks.GLASS_DOOR);
+            entries.add(CoreAscensionBlocks.GLASS_TRAPDOOR);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {
@@ -553,6 +565,8 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.CALAMARI);
             entries.add(CoreAscensionItems.COOKED_CALAMARI);
             entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
+
+            entries.add(CoreAscensionItems.VOID_TOTEM);
 
             entries.add(CoreAscensionItems.VOLCANO);
             entries.add(CoreAscensionItems.DAWN_ESSENCE);

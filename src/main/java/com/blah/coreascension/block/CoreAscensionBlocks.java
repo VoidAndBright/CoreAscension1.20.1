@@ -26,6 +26,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
@@ -475,6 +476,20 @@ public class CoreAscensionBlocks
 
     public static final Block ENCHANTMENT_RELOCATOR = RegisterBlockItem("enchantment_relocator", new EnchantmentRelocatorBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).nonOpaque().mapColor(MapColor.BRIGHT_RED)));
 
+    public static final Block MOSSY_END_STONE_BRICKS = RegisterBlockItem("mossy_end_stone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block MAGMA_ROCK_BRICKS = RegisterBlockItem("magma_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block SUS_BRAIN_CORAL_BLOCK = RegisterBlockItem("sus_brain_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.TERRACOTTA_PINK)));
+    public static final Block SUS_BUBBLE_CORAL_BLOCK = RegisterBlockItem("sus_bubble_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.PINK)));
+    public static final Block SUS_FIRE_CORAL_BLOCK = RegisterBlockItem("sus_fire_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block SUS_HORN_CORAL_BLOCK = RegisterBlockItem("sus_horn_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.YELLOW)));
+    public static final Block SUS_TUBE_CORAL_BLOCK = RegisterBlockItem("sus_tube_coral_block", new Block(FabricBlockSettings.copyOf(Blocks.STONE).instrument(Instrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F).mapColor(MapColor.BLUE)));
+    public static final Block COMPACT_STONE = RegisterBlockItem("compact_stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY).resistance(5)));
+    public static final Block POLISHED_PRISMARINE = RegisterBlockItem("polished_prismarine", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.DIAMOND_BLUE)));
+    public static final Block CHISELED_BRICKS = RegisterBlockItem("chiseled_brick", new Block(FabricBlockSettings.copyOf(Blocks.BRICKS)));
+    public static final Block GLASS_DOOR = RegisterBlockItem("glass_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.GLASS).nonOpaque().mapColor(MapColor.CLEAR), BlockSetType.STONE));
+    public static final Block GLASS_TRAPDOOR = RegisterBlockItem("glass_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.GLASS).nonOpaque().mapColor(MapColor.CLEAR), BlockSetType.STONE));
+
+
 
     public static final Block PRISMAERO_FURNACE = RegisterBlockItem("prismaero_furnace", new PrismaeroFurnaceBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.PALE_YELLOW)));
     public static final Block PETRIFIED_WOOD = RegisterBlockItem("petrified_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
@@ -641,6 +656,8 @@ public class CoreAscensionBlocks
     public static final Block BEDROCK_WALL = RegisterBlockItem("bedrock_wall", new WallBlock(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
     public static final Block CHISELED_BEDROCK = RegisterBlockItem("chiseled_bedrock", new Block(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
     public static final Block BEDROCK_BRICKS = RegisterBlockItem("bedrock_bricks", new Block(FabricBlockSettings.copyOf(BEDROCK).mapColor(MapColor.STONE_GRAY)));
+
+    public static final Block FLINT_BLOCK = RegisterBlockItem("flint_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.GRAY)));
 
     public static final Block ZIRCON_ORE = RegisterBlockItem("zircon_ore", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final Block ZIRCON_BLOCK = RegisterBlockItem("zircon_block", new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).mapColor(MapColor.TERRACOTTA_BROWN)));
@@ -853,6 +870,8 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GLASS_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GLASS_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_DOOR, RenderLayer.getCutout());

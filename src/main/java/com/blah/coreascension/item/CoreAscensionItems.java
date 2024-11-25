@@ -13,6 +13,7 @@ import com.blah.coreascension.utils.CoreAscensionTags;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -22,9 +23,13 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class CoreAscensionItems {
 
@@ -172,6 +177,16 @@ public class CoreAscensionItems {
             new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
     public static final Item GILDED_OBSIDIAN_BOOTS = registerItem("gilded_obsidian_boots",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+
+    public static final Item VOID_TOTEM = registerItem("void_totem", new Item(new FabricItemSettings().fireproof())
+    {
+        @Override
+        public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+        {
+            tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.void_totem"))).formatted(Formatting.GRAY));
+        }
+    });
+
 
     public static final Item CRYSTAL_HELMET = registerItem("crystal_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.CRYSTAL, ArmorItem.Type.HELMET, new FabricItemSettings(), 1, "tooltip.setbonus.crystal"));

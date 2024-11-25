@@ -9,6 +9,7 @@
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
     "LivingDropsMixin",
+    "LivingHurtMixin",
     "PiglinBrainMixin",
     "TrunkPlacerTypeInvoker"
   ],

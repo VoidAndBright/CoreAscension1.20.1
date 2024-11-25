@@ -2,6 +2,7 @@ package com.blah.coreascension.event;
 
 import com.blah.coreascension.event.callback.EntityItemDropCallback;
 import com.blah.coreascension.event.callback.ItemEntityTickCallback;
+import com.blah.coreascension.event.callback.LivingHurtCallback;
 import com.blah.coreascension.event.events.*;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -17,6 +18,7 @@ public class CoreAscensionEvents
 
     public static void RegisterEvents()
     {
+        LivingHurtCallback.EVENT.register(new VoidTotemUseEvent());
         ServerTickEvents.END_SERVER_TICK.register(new LauncherEvent());
         FlingPuncherEvent.EVENT.register(new FlingPuncherEvent());
         ItemEntityTickCallback.EVENT.register(new AerofuelFloatEvent());

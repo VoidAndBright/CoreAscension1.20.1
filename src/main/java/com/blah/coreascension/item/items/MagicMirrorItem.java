@@ -49,7 +49,8 @@ public class MagicMirrorItem extends Item {
                 {
                     TeleportTarget teleportTarget = new TeleportTarget(SpawnVec.get(), player.getVelocity(), player.getYaw(), player.getPitch());
                     FabricDimensions.teleport(user, TargetDimension, teleportTarget);
-                } else
+                }
+                else
                 {
                     TargetDimension = server.getWorld(World.OVERWORLD);
                     TeleportTarget teleportTarget = new TeleportTarget(TargetDimension.getSpawnPos().toCenterPos(), player.getVelocity(), player.getYaw(), player.getPitch());
