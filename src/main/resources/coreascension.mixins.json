@@ -8,6 +8,7 @@
     "BlockBreakMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
+    "ItemStackDecrementMixin",
     "LivingDropsMixin",
     "LivingHurtMixin",
     "PiglinBrainMixin",

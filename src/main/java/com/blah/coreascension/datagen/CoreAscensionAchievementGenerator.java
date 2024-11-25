@@ -1,6 +1,7 @@
 package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.criterion.UsedVoidTotemCriterion;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
@@ -224,7 +225,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .rewards(AdvancementRewards.Builder.experience(100))
                 .parent(notTheAether)
                 // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
-                .criterion("cheat_the_void", UsedTotemCriterion.Conditions.create(CoreAscensionItems.VOID_TOTEM))
+                .criterion("cheat_the_void", UsedVoidTotemCriterion.Conditions.create(CoreAscensionItems.VOID_TOTEM))
                 .build(consumer, "coreascension" + "/cheat_the_void");
     }
 }

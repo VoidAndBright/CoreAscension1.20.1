@@ -5,7 +5,6 @@ import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.damage.CoreAscensionDamageTypes;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
-import com.blah.coreascension.effects.CoreAscensionStatusEffects;
 import com.blah.coreascension.fluid.CoreAscensionFluids;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
@@ -21,7 +20,6 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -36,7 +34,6 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
@@ -666,7 +663,7 @@ public class CoreAscensionBlocks
         @Override
         public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
         {
-            //if (entity instanceof GhastEntity) // add later the mobs that shouldn't be affected by this
+            //if (!(entity instanceof GhastEntity)) // add later the mobs that shouldn't be affected by this
             {
                 if (entity instanceof PlayerEntity player)
                 {
@@ -708,28 +705,8 @@ public class CoreAscensionBlocks
         Registry.register(Registries.ITEM, new Identifier(CoreAscension.MOD_ID, name), new BlockItem(block, settings));
     }
 
-    private static Block OverrideBlockItem(Block OverriddenBlock, Block NewBlock)
-    {
-        OverrideItem((BlockItem) OverriddenBlock.asItem(), new BlockItem(NewBlock, new FabricItemSettings()));
-        return OverrideBlock(OverriddenBlock, NewBlock);
-    }
-
-    private static Item OverrideItem(BlockItem OverriddenItem, BlockItem NewItem)
-    {
-        return Registry.register(Registries.ITEM, Registries.ITEM.getRawId(OverriddenItem), Registries.ITEM.getId(OverriddenItem).getPath(), NewItem);
-    }
-
-    private static Block OverrideBlock(Block OverriddenBlock, Block NewBlock)
-    {
-        return Registry.register(Registries.BLOCK, Registries.BLOCK.getRawId(OverriddenBlock), Registries.BLOCK.getId(OverriddenBlock).getPath(), NewBlock);
-    }
-    private static void NaturalTab(FabricItemGroupEntries entries)
-    {
-        //entries.addAfter(Items.BEDROCK, BEDROCK);
-    }
     public static void RegisterBlocks()
     {
-        //ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(CoreAscensionBlocks::NaturalTab);
         RegisterFlammableBlocks();
         RegisterStrippableBlocks();
         CoreAscension.LOGGER.info("Registering Blocks for " + CoreAscension.MOD_ID);

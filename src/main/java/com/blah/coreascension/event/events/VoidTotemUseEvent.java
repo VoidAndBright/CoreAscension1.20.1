@@ -1,6 +1,6 @@
 package com.blah.coreascension.event.events;
 
-import com.blah.coreascension.CoreAscension;
+import com.blah.coreascension.event.callback.ItemStackDecrementCallback;
 import com.blah.coreascension.event.callback.LivingHurtCallback;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;

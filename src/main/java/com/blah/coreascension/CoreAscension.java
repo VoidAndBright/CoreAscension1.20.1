@@ -2,6 +2,7 @@ package com.blah.coreascension;
 
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.block.CoreAscensionBlocks;
+import com.blah.coreascension.criterion.UsedVoidTotemCriterion;
 import com.blah.coreascension.effects.CoreAscensionStatusEffects;
 import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.entity.CoreAscensionBoats;
@@ -18,6 +19,7 @@ import com.blah.coreascension.world.tree.CoreAscensionTrunkPlacerTypes;
 import net.fabricmc.api.ModInitializer;
 import net.kyrptonaught.customportalapi.CustomPortalBlock;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
@@ -26,6 +28,8 @@ import org.slf4j.LoggerFactory;
 public class CoreAscension implements ModInitializer {
     public static final String MOD_ID = "coreascension";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    public static final UsedVoidTotemCriterion USED_VOID_TOTEM_CRITERION = Criteria.register(new UsedVoidTotemCriterion());
 
     public void onInitialize()
     {
