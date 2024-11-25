@@ -420,6 +420,7 @@ public class CoreAscensionBlocks
 
     // ores and stone
     public static final Block CLOUD_STONE = RegisterBlockItem("cloud_stone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
+    public static final Block CLOUD_COBBLESTONE = RegisterBlockItem("cloud_cobblestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.LIGHT_GRAY)));
     public static final Block CLOUD_COAL_ORE = RegisterBlockItem("cloud_coal_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.COAL_ORE).mapColor(MapColor.BLACK), UniformIntProvider.create(0, 2)));
     public static final Block CLOUD_IRON_ORE = RegisterBlockItem("cloud_iron_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).mapColor(MapColor.RAW_IRON_PINK)));
     public static final Block CLOUD_GOLD_ORE = RegisterBlockItem("cloud_gold_ore", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.YELLOW)));
@@ -460,6 +461,8 @@ public class CoreAscensionBlocks
     public static final Block DARK_MATTER_GEL_BLOCK = RegisterBlockItem("dark_matter_gel_block", new Block(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).mapColor(MapColor.TERRACOTTA_PURPLE)));
     public static final Block DIAMOND_DOOR = RegisterBlockItem("diamond_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.STONE));
     public static final Block DIAMOND_TRAPDOOR = RegisterBlockItem("diamond_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_BLOCK).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.STONE));
+    public static final Block LUMITE_DOOR = RegisterBlockItem("lumite_door", new DoorBlock(FabricBlockSettings.copyOf(LUMITE_BLOCK).nonOpaque().mapColor(MapColor.PURPLE), BlockSetType.STONE));
+    public static final Block LUMITE_TRAPDOOR = RegisterBlockItem("lumite_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(LUMITE_BLOCK).nonOpaque().mapColor(MapColor.PURPLE), BlockSetType.STONE));
 
     public static final Block CEMENT = RegisterBlockItem("cement", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.STONE_GRAY)));
     public static final Block IMPERVIOUS_BRICK = RegisterBlockItem("impervious_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.BLACK)));
@@ -870,6 +873,8 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_MUSHROOM, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DIAMOND_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.LUMITE_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.LUMITE_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES_PLANT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_TANK_SKULL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR, RenderLayer.getCutout());

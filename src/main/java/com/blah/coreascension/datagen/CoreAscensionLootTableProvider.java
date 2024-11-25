@@ -296,7 +296,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, oreDrops(CoreAscensionBlocks.CLOUD_DIAMOND_ORE, Items.DIAMOND));
         addDrop(CoreAscensionBlocks.CLOUD_EMERALD_ORE, oreDrops(CoreAscensionBlocks.CLOUD_EMERALD_ORE, Items.EMERALD));
         addDrop(CoreAscensionBlocks.MOONSTONE);
-        addDrop(CoreAscensionBlocks.CLOUD_STONE);
+        //addDrop(CoreAscensionBlocks.CLOUD_STONE);
 
         addDrop(CoreAscensionBlocks.SULPHUR_ORE, oreDrops(CoreAscensionBlocks.SULPHUR_ORE, CoreAscensionItems.SULPHUR));
 

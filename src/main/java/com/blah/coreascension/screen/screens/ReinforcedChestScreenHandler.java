@@ -36,9 +36,9 @@ public class ReinforcedChestScreenHandler extends ScreenHandler {
 
     private void addChestInventory(Inventory Inventory)
     {
-        for (int iterate_x = 0; iterate_x < 13; ++iterate_x)
+        for (int iterate_y = 0; iterate_y < 6; ++iterate_y)
         {
-            for (int iterate_y = 0; iterate_y < 6; ++iterate_y)
+            for (int iterate_x = 0; iterate_x < 13; ++iterate_x)
             {
                 this.addSlot(new Slot(Inventory, iterate_y * 13 + iterate_x, iterate_x * 18 + 8, iterate_y * 18 + 18));
             }

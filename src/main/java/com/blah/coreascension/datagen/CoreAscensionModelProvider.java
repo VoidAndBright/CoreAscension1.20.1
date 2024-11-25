@@ -15,7 +15,6 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         super(output);
     }
 
-    
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DIAMOND_DOOR);
@@ -25,6 +24,7 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DARK_MATTER_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.ENTROPY_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.GLASS_DOOR);
+        blockStateModelGenerator.registerDoor(CoreAscensionBlocks.LUMITE_DOOR);
         blockStateModelGenerator.registerTrapdoor(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
         blockStateModelGenerator.registerLog(CoreAscensionBlocks.ENTROPY_STEM).log(CoreAscensionBlocks.ENTROPY_STEM).wood(CoreAscensionBlocks.ENTROPY_HYPHAE);
         blockStateModelGenerator.registerLog(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM).log(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM).wood(CoreAscensionBlocks.STRIPPED_ENTROPY_HYPHAE);
