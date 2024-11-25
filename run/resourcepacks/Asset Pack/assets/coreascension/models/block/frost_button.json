@@ -1,6 +1,6 @@
 {
   "parent": "block/button",
   "textures": {
-    "texture": "coreascension:block/frostplanks"
+    "texture": "coreascension:block/frost_planks"
   }
 }
