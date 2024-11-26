@@ -60,7 +60,7 @@ public class CoreAscensionItems {
     public static final Item RAW_URANIUM = registerItem("raw_uranium", new Item(new FabricItemSettings().fireproof()));
     public static final Item URANIUM_INGOT = registerItem("uranium_ingot", new Item(new FabricItemSettings().fireproof()));
     public static final Item SPAWN_EGG = registerItem("poor", new SpawnEggItem(CoreAscensionEntities.PORCUPINE, 894731, 0, new FabricItemSettings()));
-    public static final Item THE_TOOL = registerItem("the_tool", new MiningToolTipItem(CoreAscensionToolMaterials.TOOL, 0, 0, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
+    public static final Item THE_TOOL = registerItem("the_tool", new MiningToolTipItem(CoreAscensionToolMaterials.TOOL, -2, -2.8f, new FabricItemSettings().fireproof(), CoreAscensionTags.TOOL_MINEABLE));
     public static final Item OBSIDIAN_FABRIC = registerItem("obsidian_fabric", new Item(new FabricItemSettings()));
     public static final Item OBSIDIFIED_BLAZE_ROD = registerItem("obsidified_blaze_rod", new Item(new FabricItemSettings()));
     public static final Item RAW_LUMITE = registerItem("raw_lumite", new Item(new FabricItemSettings().fireproof()));
@@ -153,7 +153,7 @@ public class CoreAscensionItems {
     public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
             new HammerItem(CoreAscensionToolMaterials.NETHERITE_SPECIAL, 7, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item TADANITE_HAMMER = registerItem("tadanite_hammer",
-            new HammerItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), "tooltip.tadanite"));
+            new HammerItem(CoreAscensionToolMaterials.TADANITE_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item LUMITE_HAMMER = registerItem("lumite_hammer",
             new HammerItem(CoreAscensionToolMaterials.LUMITE_SPECIAL, 14, 0.4f, new FabricItemSettings().fireproof()));
     public static final Item SAPPHIRE_HAMMER = registerItem("sapphire_hammer",
@@ -231,7 +231,7 @@ public class CoreAscensionItems {
     public static final Item VERTEX = registerItem("vertex", new VertexSword(CoreAscensionToolMaterials.SKYLANDS_SWORD, 2, -2.4f, new FabricItemSettings().fireproof().rarity(Rarity.RARE), "tooltip.vertex"));
 
     public static final Item BEDROCK_PICKAXE = registerItem("bedrock_pickaxe",
-            new PickaxeToolTipItem(CoreAscensionToolMaterials.BEDROCK, 6, -2.8f, new FabricItemSettings().fireproof(), Formatting.RED, "tooltip.bedrock_pickaxe"));
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.BEDROCK, -3, -2.8f, new FabricItemSettings().fireproof(), Formatting.RED, "tooltip.bedrock_pickaxe"));
 
     public static final Item TADANITE_HELMET = registerItem("tadanite_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.TADANITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof(),
@@ -254,7 +254,7 @@ public class CoreAscensionItems {
     public static final Item TADANITE_SHOVEL = registerItem("tadanite_shovel",
             new ShovelToolTipItem(CoreAscensionToolMaterials.TADANITE, 0, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
     public static final Item TADANITE_HOE = registerItem("tadanite_hoe",
-            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, -2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite", "tooltip.tadanite"));
+            new HoeTooltipItem(CoreAscensionToolMaterials.TADANITE, -2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.tadanite"));
 
     public static final Item LUMITE_HELMET = registerItem("lumite_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.LUMITE, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof(),

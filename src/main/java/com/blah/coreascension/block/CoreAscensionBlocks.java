@@ -582,7 +582,7 @@ public class CoreAscensionBlocks
     {
         public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context)
         {
-            return Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
+            return Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 13.0, 13.0);
         }
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
         {
