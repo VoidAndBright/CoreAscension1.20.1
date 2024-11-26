@@ -1,0 +1,12 @@
+{
+  "type": "coreascension:catalyzer",
+  "ingredients": [
+    {"tag": "minecraft:logs"},
+    {},
+    {"item": "coreascension:sulphur"}
+  ],
+  "result": {
+    "item": "minecraft:mangrove_log",
+    "count": 1
+  }
+}

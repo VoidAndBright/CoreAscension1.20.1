@@ -280,6 +280,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.MASHED_POTATO_BLOCK);
             entries.add(CoreAscensionBlocks.TADANITE_BLOCK);
             entries.add(CoreAscensionBlocks.SULPHUR_BLOCK);
+            entries.add(CoreAscensionBlocks.COMPRESSED_SULPHUR_BLOCK);
             entries.add(CoreAscensionBlocks.FLINT_BLOCK);
             entries.add(CoreAscensionBlocks.LUMITE_BLOCK);
             entries.add(CoreAscensionBlocks.ZIRCON_BLOCK);
@@ -328,7 +329,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.OSBORGNEN_FUEL_BLOCK);
             //SECRET DOORS
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_STAIRS);
-
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.CEMENT_STAIRS);
@@ -399,6 +399,11 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.RAW_LUMITE_BLOCK);
+            entries.add(CoreAscensionBlocks.OBSIDIAN_SPONGE);
+            entries.add(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

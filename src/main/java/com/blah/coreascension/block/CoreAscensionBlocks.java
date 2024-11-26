@@ -737,6 +737,12 @@ public class CoreAscensionBlocks
     public static final Block MOSSY_END_STONE_BRICK_WALL = RegisterBlockItem("mossy_end_stone_brick_wall", new WallBlock(FabricBlockSettings.copyOf(MOSSY_END_STONE_BRICKS).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CEMENT_WALL = RegisterBlockItem("cement_wall", new WallBlock(FabricBlockSettings.copyOf(CEMENT).mapColor(MapColor.STONE_GRAY)));
 
+    public static final Block OBSIDIAN_SPONGE = RegisterBlockItem("obsidian_sponge", new LavaSpongeBlock(FabricBlockSettings.copyOf(Blocks.SPONGE).mapColor(MapColor.BLACK)));
+    public static final Block LAVAD_OBSIDIAN_SPONGE = RegisterBlockItem("lavad_obsidian_sponge", new Block(FabricBlockSettings.copyOf(Blocks.SPONGE).mapColor(MapColor.BLACK)));
+    public static final Block COMPRESSED_SULPHUR_BLOCK = RegisterBlockItem("compressed_sulphur_block", new Block(FabricBlockSettings.copyOf(SULPHUR_BLOCK).hardness(2.2f).mapColor(MapColor.YELLOW)));
+
+
+
     private static Block RegisterBlockItem(String name, Block block)
     {
         RegisterItem(name, block);

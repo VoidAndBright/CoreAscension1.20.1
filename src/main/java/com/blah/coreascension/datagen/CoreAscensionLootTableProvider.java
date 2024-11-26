@@ -472,5 +472,9 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.WALL_WHITEWOOD_SIGN, CoreAscensionItems.WHITEWOOD_SIGN);
         addDrop(CoreAscensionBlocks.WALL_FROST_SIGN, CoreAscensionItems.FROST_SIGN);
         addDrop(CoreAscensionBlocks.WALL_ENTROPY_SIGN, CoreAscensionItems.ENTROPY_SIGN);
+
+        addDrop(CoreAscensionBlocks.OBSIDIAN_SPONGE);
+        addDrop(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
+        addDrop(CoreAscensionBlocks.COMPRESSED_SULPHUR_BLOCK);
     }
 }

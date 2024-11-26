@@ -1,0 +1,12 @@
+{
+  "type": "coreascension:catalyzer",
+  "ingredients": [
+    {"tag": "minecraft:logs"},
+    {},
+    {"item": "coreascension:sulphur"}
+  ],
+  "result": {
+    "item": "coreascension:ethereal_log",
+    "count": 1
+  }
+}

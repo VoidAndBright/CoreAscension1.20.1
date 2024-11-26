@@ -1,0 +1,12 @@
+{
+  "type": "coreascension:catalyzer",
+  "ingredients": [
+    {"item": "minecraft:cobblestone"},
+    {},
+    {"item": "coreascension:sulphur"}
+  ],
+  "result": {
+    "item": "minecraft:end_stone",
+    "count": 1
+  }
+}
