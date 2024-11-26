@@ -471,6 +471,7 @@ public class CoreAscensionBlocks
     });
 
     public static final Block ENCHANTMENT_RELOCATOR = RegisterBlockItem("enchantment_relocator", new EnchantmentRelocatorBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).nonOpaque().mapColor(MapColor.BRIGHT_RED)));
+    public static final Block ENDER_TELEPORTER = RegisterBlockItem("ender_teleporter", new EnderTeleporterBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).sounds(BlockSoundGroup.GLASS).nonOpaque().mapColor(MapColor.TEAL)));
 
     public static final Block MOSSY_END_STONE_BRICKS = RegisterBlockItem("mossy_end_stone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
     public static final Block MAGMA_ROCK_BRICKS = RegisterBlockItem("magma_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_ORANGE)));

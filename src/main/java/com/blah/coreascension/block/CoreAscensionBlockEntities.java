@@ -1,10 +1,7 @@
 package com.blah.coreascension.block;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.block.entities.CatalyzerTableBlockEntity;
-import com.blah.coreascension.block.entities.EnchantRelocatorBlockEntity;
-import com.blah.coreascension.block.entities.PrismaeroFurnaceBlockEntity;
-import com.blah.coreascension.block.entities.ReinforcedChestBlockEntity;
+import com.blah.coreascension.block.entities.*;
 import com.blah.coreascension.block.entities.renderer.ReinforcedChest;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntity;
@@ -21,6 +18,7 @@ public class CoreAscensionBlockEntities
     public static final BlockEntityType<PrismaeroFurnaceBlockEntity> PRISMAERO_FURNACE_BLOCK_ENTITY = registerBlockEntity("prismaero_furnace", FabricBlockEntityTypeBuilder.create(PrismaeroFurnaceBlockEntity::new, CoreAscensionBlocks.PRISMAERO_FURNACE));
     public static final BlockEntityType<CatalyzerTableBlockEntity> CATALYZER_TABLE_BLOCK_ENTITY = registerBlockEntity("catalyzer_table", FabricBlockEntityTypeBuilder.create(CatalyzerTableBlockEntity::new, CoreAscensionBlocks.CATALYZER_TABLE));
     public static final BlockEntityType<EnchantRelocatorBlockEntity> ENCHANTMENT_RELOCATOR_BLOCK_ENTITY = registerBlockEntity("enchantment_relocator", FabricBlockEntityTypeBuilder.create(EnchantRelocatorBlockEntity::new, CoreAscensionBlocks.ENCHANTMENT_RELOCATOR));
+    public static final BlockEntityType<EnderTeleporterBlockEntity> ENDER_TELEPORTER_BLOCK_ENTITY = registerBlockEntity("ender_teleporter", FabricBlockEntityTypeBuilder.create(EnderTeleporterBlockEntity::new, CoreAscensionBlocks.ENDER_TELEPORTER));
 
 
     public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntity(String name, FabricBlockEntityTypeBuilder<T> blockEntityType)

@@ -24,10 +24,8 @@ import net.minecraft.world.World;
 import java.util.Optional;
 
 
-public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private static final int INPUT_SLOT = 0;
-    private static final int CATALYST_SLOT = 1;
-    private static final int SULPHUR_SLOT = 2;
+public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory
+{
     private static final int OUTPUT_SLOT = 3;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 

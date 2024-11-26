@@ -16,6 +16,7 @@ public class CoreAscensionScreenHandlers
     public static final ScreenHandlerType<PrismaeroFurnaceScreenHandler> PRISMAERION_FURNACE_SCREEN_HANDLER = RegisterScreenHandler("prismaerion_furnace", PrismaeroFurnaceScreenHandler::new);
     public static final ScreenHandlerType<CatalyzerTableScreenHandler> CATALYZER_TABLE_SCREEN_HANDLER = RegisterScreenHandler("catalyzer", CatalyzerTableScreenHandler::new);
     public static final ScreenHandlerType<EnchantmentRelocatorScreenHandler> ENCHANTMENT_RELOCATOR_SCREEN_HANDLER = RegisterScreenHandler("enchantment_relocator", EnchantmentRelocatorScreenHandler::new);
+    public static final ScreenHandlerType<EnderTeleporterScreenHandler> ENDER_TELEPORTER_SCREEN_HANDLER = RegisterScreenHandler("enchantment_relocator", EnderTeleporterScreenHandler::new);
 
     public static <T extends ScreenHandler> ScreenHandlerType<T> RegisterScreenHandler(String name, ExtendedScreenHandlerType.ExtendedFactory<T> extendedScreenHandlerType)
     {
@@ -33,5 +34,6 @@ public class CoreAscensionScreenHandlers
         HandledScreens.register(PRISMAERION_FURNACE_SCREEN_HANDLER, PrismaeroFurnaceScreen::new);
         HandledScreens.register(CATALYZER_TABLE_SCREEN_HANDLER, CatalyzerTableScreen::new);
         HandledScreens.register(ENCHANTMENT_RELOCATOR_SCREEN_HANDLER, EnchantmentRelocatorScreen::new);
+        HandledScreens.register(ENDER_TELEPORTER_SCREEN_HANDLER, EnderTeleporterScreen::new);
     }
 }
