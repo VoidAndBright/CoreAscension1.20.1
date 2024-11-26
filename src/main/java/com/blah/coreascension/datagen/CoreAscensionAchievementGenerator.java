@@ -45,9 +45,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement needForSpeed = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.THE_TOOL, // The display icon
-                        Text.literal("Need For Speed"), // The title
-                        Text.literal("Craft The Tool™"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.need_for_speed.title"), // The title
+                        Text.translatable("advancements.need_for_speed.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -62,12 +62,28 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                                         Blocks.LAPIS_BLOCK.asItem(), Blocks.LAPIS_BLOCK.asItem()).build())))
                 .build(consumer, "coreascension" + "/the_tool");
 
+        Advancement pigneous = Advancement.Builder.create()
+                .display(
+                        CoreAscensionBlocks.PIGNEOUS_ROCK.asItem(), // The display icon
+                        Text.translatable("advancements.pigneous_rock.title"), // The title
+                        Text.translatable("advancements.pigneous_rock.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .parent(needForSpeed)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("pigneous", InventoryChangedCriterion.Conditions.items(CoreAscensionBlocks.PIGNEOUS_ROCK.asItem()))
+                .build(consumer, "coreascension" + "/pigneous");
+
         Advancement catalyzer = Advancement.Builder.create()
                 .display(
                         CoreAscensionBlocks.CATALYZER_TABLE.asItem(), // The display icon
-                        Text.literal("Catalyzer"), // The title
-                        Text.literal("Craft the Catalyzer"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.catalyzer.title"), // The title
+                        Text.translatable("advancements.catalyzer.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -87,9 +103,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement tasteTheRainbow = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.CRYSTALLINE_ARTIFACT, // The display icon
-                        Text.literal("Taste the Rainbow"), // The title
-                        Text.literal("Obtain all gems"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.taste_the_rainbow.title"), // The title
+                        Text.translatable("advancements.taste_the_rainbow.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -104,9 +120,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement magicMirror = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.MAGIC_MIRROR, // The display icon
-                        Text.literal("Gaze In The Mirror"), // The title
-                        Text.literal("Use a Magic Mirror"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.gaze_in_the_mirror.title"), // The title
+                        Text.translatable("advancements.gaze_in_the_mirror.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -121,9 +137,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement hammerTime = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.IRON_HAMMER, // The display icon
-                        Text.literal("Stop! Hammer Time"), // The title
-                        Text.literal("Obtain a mining hammer"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.stop_hammer_time.title"), // The title
+                        Text.translatable("advancements.stop_hammer_time.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -137,9 +153,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement gettingADowngrade = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.POTATO_PICKAXE, // The display icon
-                        Text.literal("Getting a Downgrade"), // The title
-                        Text.literal("Craft a Potato Pickaxe"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.getting_a_downgrade.title"), // The title
+                        Text.translatable("advancements.getting_a_downgrade.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -158,9 +174,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement why = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.POTATO_HAMMER, // The display icon
-                        Text.literal("Why?"), // The title
-                        Text.literal("Obtain all the Potato tools"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.why.title"), // The title
+                        Text.translatable("advancements.why.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.CHALLENGE, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -174,10 +190,10 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
 
         Advancement iCanMineTHAT = Advancement.Builder.create()
                 .display(
-                        CoreAscensionItems.POTATO_HAMMER, // The display icon
-                        Text.literal("I can mine THAT!"), // The title
-                        Text.literal("Craft a Bedrock Pickaxe"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        CoreAscensionItems.BEDROCK_PICKAXE, // The display icon
+                        Text.translatable("advancements.bedrock_pick.title"), // The title
+                        Text.translatable("advancements.bedrock_pick.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -197,9 +213,9 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
         Advancement notTheAether = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.SKYLANDS_WAYNODE, // The display icon
-                        Text.literal("Not the Aether!"), // The title
-                        Text.literal("Enter the Skylands"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.enter_skylands.title"), // The title
+                        Text.translatable("advancements.enter_skylands.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat
@@ -211,12 +227,80 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("not_the_aether", ChangedDimensionCriterion.Conditions.to(RegistryKey.of(RegistryKeys.WORLD, new Identifier("coreascension", "skylands"))))
                 .build(consumer, "coreascension" + "/not_the_aether");
 
+        Advancement chilly = Advancement.Builder.create()
+                .display(
+                        CoreAscensionItems.NETHER_CORE_KEY, // The display icon
+                        Text.translatable("advancements.nether_core.title"), // The title
+                        Text.translatable("advancements.nether_core.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(30))
+                .parent(catalyzer)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("chilly", ChangedDimensionCriterion.Conditions.to(RegistryKey.of(RegistryKeys.WORLD, new Identifier("coreascension", "nether_core"))))
+                .build(consumer, "coreascension" + "/chilly");
+
+        Advancement tadaniteArmor = Advancement.Builder.create()
+                .display(
+                        CoreAscensionItems.TADANITE_HELMET, // The display icon
+                        Text.translatable("advancements.tadanite_armor.title"), // The title
+                        Text.translatable("advancements.tadanite_armor.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.CHALLENGE, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(20))
+                .parent(chilly)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("cover_me_with_tadanite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.TADANITE_HELMET, CoreAscensionItems.TADANITE_CHESTPLATE, CoreAscensionItems.TADANITE_LEGGINGS, CoreAscensionItems.TADANITE_BOOTS))
+                .build(consumer, "coreascension" + "/cover_me_with_tadanite");
+
+        Advancement lumiteArmor = Advancement.Builder.create()
+                .display(
+                        CoreAscensionItems.LUMITE_HELMET, // The display icon
+                        Text.translatable("advancements.lumite_armor.title"), // The title
+                        Text.translatable("advancements.lumite_armor.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(25))
+                .parent(chilly)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("cover_me_with_lumite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.LUMITE_HELMET, CoreAscensionItems.LUMITE_CHESTPLATE, CoreAscensionItems.LUMITE_LEGGINGS, CoreAscensionItems.LUMITE_BOOTS))
+                .build(consumer, "coreascension" + "/cover_me_with_lumite");
+
+        Advancement inverterFactor9 = Advancement.Builder.create()
+                .display(
+                        CoreAscensionItems.CATALYTIC_INVERTER, // The display icon
+                        Text.translatable("advancements.catalytic_inverter.title"), // The title
+                        Text.translatable("advancements.catalytic_inverter.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.TASK, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(15))
+                .parent(catalyzer)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("inverter_factor_nine", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.CATALYTIC_INVERTER))
+                .build(consumer, "coreascension" + "/inverter_factor_nine");
+
         Advancement cheatTheVoid = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.VOID_TOTEM, // The display icon
-                        Text.literal("Cheat the Void"), // The title
-                        Text.literal("Avoid death by using a Void Totem"), // The description
-                        new Identifier("textures/gui/advancements/backgrounds/adventure.png"), // Background image used
+                        Text.translatable("advancements.void_totem.title"), // The title
+                        Text.translatable("advancements.void_totem.desc"), // The description
+                        new Identifier("coreascension", "textures/gui/ethereal_dirt.png"), // Background image used
                         AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
                         true, // Show toast top right
                         true, // Announce to chat

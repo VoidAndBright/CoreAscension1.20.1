@@ -65,14 +65,14 @@
     "coreascension:cut_dread_sandstone",
     "coreascension:smooth_dread_sandstone",
     "coreascension:cut_black_sandstone_slab",
-    "coreascension:cut_black_sandstone_stairs",
+    "coreascension:smooth_black_sandstone_stairs",
     "coreascension:tropics_mud_bricks",
     "coreascension:tropics_mud_brick_slab",
     "coreascension:tropics_mud_brick_stairs",
     "coreascension:dread_rock",
     "coreascension:dread_rock_bricks",
     "coreascension:cut_dread_sandstone_slab",
-    "coreascension:cut_dread_sandstone_stairs",
+    "coreascension:smooth_dread_sandstone_stairs",
     "coreascension:hardened_lava",
     "coreascension:titanium_ore",
     "coreascension:uranium_ore",
@@ -120,7 +120,7 @@
     "coreascension:chiseled_bonesandstone",
     "coreascension:smooth_bonesandstone",
     "coreascension:cut_bonesandstone",
-    "coreascension:cut_bonesandstone_stairs",
+    "coreascension:smooth_bonesandstone_stairs",
     "coreascension:cut_bonesandstone_slab",
     "coreascension:catalyzer",
     "coreascension:sulphur_block",
@@ -218,6 +218,7 @@
     "coreascension:osborgnen_fuel_block",
     "coreascension:mossy_end_stone_brick_wall",
     "coreascension:cement_wall",
+    "coreascension:compressed_sulphur_block",
     "coreascension:sapphire_ore"
   ]
 }
