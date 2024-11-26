@@ -46,9 +46,8 @@ public class CoreAscensionBlocks
     public static final Block NETHER_CORE_PORTAL_BLOCK = RegisterBlock("nether_core_portal", new NetherCorePortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.CYAN)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
+    // reminder for later, make this work when you kill a pig type mob on igneous rock
     public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK)));
-
-
     public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.BRIGHT_RED)));
     public static final Block AMANITA_STEM = RegisterBlockItem("amanita_stem", new PillarBlock(FabricBlockSettings.copyOf(Blocks.MUSHROOM_STEM).mapColor(MapColor.PALE_YELLOW)));
     public static final Block RUBY_GEM_LOG = RegisterBlockItem("ruby_gem_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.RED)));
@@ -174,7 +173,8 @@ public class CoreAscensionBlocks
     public static final Block CUT_BLACK_SANDSTONE = RegisterBlockItem("cut_black_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).mapColor(MapColor.BLACK)));
     public static final Block LOAM = RegisterBlockItem("loam", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.ORANGE)));
     public static final Block CUT_BLACK_SANDSTONE_SLAB = RegisterBlockItem("cut_black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.BLACK)));
-    public static final Block CUT_BLACK_SANDSTONE_STAIRS = RegisterBlockItem("cut_black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.BLACK)));
+    public static final Block SMOOTH_BLACK_SANDSTONE_STAIRS = RegisterBlockItem("smooth_black_sandstone_stairs", new StairsBlock(BLACK_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.BLACK)));
+    public static final Block SMOOTH_BLACK_SANDSTONE_SLAB = RegisterBlockItem("smooth_black_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.BLACK)));
     public static final Block TROPICS_MUD_BRICKS = RegisterBlockItem("tropics_mud_bricks", new Block(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS).mapColor(MapColor.ORANGE)));
     public static final Block TROPICS_MUD_BRICK_SLAB = RegisterBlockItem("tropics_mud_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.MUD_BRICKS).mapColor(MapColor.ORANGE)));
     public static final Block TROPICS_MUD_BRICK_STAIRS = RegisterBlockItem("tropics_mud_brick_stairs", new StairsBlock(TROPICS_MUD_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.MUD_BRICKS).mapColor(MapColor.ORANGE)));
@@ -290,7 +290,8 @@ public class CoreAscensionBlocks
     public static final Block SMOOTH_DREAD_SANDSTONE = RegisterBlockItem("smooth_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
     public static final Block CUT_DREAD_SANDSTONE = RegisterBlockItem("cut_dread_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
     public static final Block CUT_DREAD_SANDSTONE_SLAB = RegisterBlockItem("cut_dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LICHEN_GREEN)));
-    public static final Block CUT_DREAD_SANDSTONE_STAIRS = RegisterBlockItem("cut_dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
+    public static final Block SMOOTH_DREAD_SANDSTONE_STAIRS = RegisterBlockItem("smooth_dread_sandstone_stairs", new StairsBlock(DREAD_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LICHEN_GREEN)));
+    public static final Block SMOOTH_DREAD_SANDSTONE_SLAB = RegisterBlockItem("smooth_dread_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LICHEN_GREEN)));
     public static final Block DREAD_ROCK_BRICKS = RegisterBlockItem("dread_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).mapColor(MapColor.DARK_GREEN)));
     public static final Block DREAD_DOOR = RegisterBlockItem("dread_door", new DoorBlock(FabricBlockSettings.copyOf(DREAD_PLANKS).nonOpaque().mapColor(MapColor.LICHEN_GREEN), BlockSetType.OAK));
     public static final Block DREAD_TRAPDOOR = RegisterBlockItem("dread_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(DREAD_PLANKS).nonOpaque().mapColor(MapColor.LICHEN_GREEN), BlockSetType.OAK));
@@ -314,7 +315,8 @@ public class CoreAscensionBlocks
     public static final Block SMOOTH_BONESANDSTONE = RegisterBlockItem("smooth_bonesandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).mapColor(MapColor.PALE_YELLOW)));
     public static final Block CUT_BONESANDSTONE = RegisterBlockItem("cut_bonesandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).mapColor(MapColor.PALE_YELLOW)));
     public static final Block CUT_BONESANDSTONE_SLAB = RegisterBlockItem("cut_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.PALE_YELLOW)));
-    public static final Block CUT_BONESANDSTONE_STAIRS = RegisterBlockItem("cut_bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block SMOOTH_BONESANDSTONE_STAIRS = RegisterBlockItem("smooth_bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block SMOOTH_BONESANDSTONE_SLAB = RegisterBlockItem("smooth_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.PALE_YELLOW)));
     // ethereal glade
     public static final Block ETHEREAL_TORCH = RegisterBlock("ethereal_torch", new UnderwaterTorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
     // end ancient
@@ -638,7 +640,8 @@ public class CoreAscensionBlocks
     public static final Block SMOOTH_FROST_SANDSTONE = RegisterBlockItem("smooth_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block CUT_FROST_SANDSTONE = RegisterBlockItem("cut_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block CUT_FROST_SANDSTONE_SLAB = RegisterBlockItem("cut_frost_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LIGHT_BLUE)));
-    public static final Block CUT_FROST_SANDSTONE_STAIRS = RegisterBlockItem("cut_frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block SMOOTH_FROST_SANDSTONE_STAIRS = RegisterBlockItem("cut_frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block SMOOTH_FROST_SANDSTONE_SLAB = RegisterBlockItem("smooth_frost_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block FROSTED_GLASS = RegisterBlockItem("frosted_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
     public static final Block FROSTED_GLASS_PANE = RegisterBlockItem("frosted_glass_pane", new PaneBlock(FabricBlockSettings.copyOf(FROSTED_GLASS)));
     // end desert

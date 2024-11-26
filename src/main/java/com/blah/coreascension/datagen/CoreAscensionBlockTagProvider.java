@@ -1,7 +1,6 @@
 package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.item.CoreAscensionItems;
 import com.blah.coreascension.utils.CoreAscensionTags;
 import com.blah.coreascension.utils.FabricTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -221,14 +220,14 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE)
                 .add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE)
                 .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB)
-                .add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.TROPICS_MUD_BRICKS)
                 .add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB)
                 .add(CoreAscensionBlocks.TROPICS_MUD_BRICK_STAIRS)
                 .add(CoreAscensionBlocks.DREAD_ROCK)
                 .add(CoreAscensionBlocks.DREAD_ROCK_BRICKS)
                 .add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB)
-                .add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.HARDENED_LAVA)
                 .add(CoreAscensionBlocks.TITANIUM_ORE)
                 .add(CoreAscensionBlocks.URANIUM_ORE)
@@ -276,7 +275,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CHISELED_BONESANDSTONE)
                 .add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE)
                 .add(CoreAscensionBlocks.CUT_BONESANDSTONE)
-                .add(CoreAscensionBlocks.CUT_BONESANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB)
                 .add(CoreAscensionBlocks.CATALYZER_TABLE)
                 .add(CoreAscensionBlocks.SULPHUR_BLOCK)
@@ -321,7 +320,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.CHISELED_FROST_SANDSTONE)
                 .add(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE)
                 .add(CoreAscensionBlocks.CUT_FROST_SANDSTONE)
-                .add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_STAIRS)
+                .add(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE_STAIRS)
                 .add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB)
                 .add(CoreAscensionBlocks.FROSTED_GLASS)
                 .add(CoreAscensionBlocks.FROSTED_GLASS_PANE)

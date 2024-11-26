@@ -24,7 +24,7 @@ public class FreezingEffect extends StatusEffect {
         everySecond++;
         if (everySecond > 20)
         {
-            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), DamageTypes.FREEZE), 2 * (amplifier + 1));
+            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * (amplifier + 1));
             everySecond = 0;
         }
     }

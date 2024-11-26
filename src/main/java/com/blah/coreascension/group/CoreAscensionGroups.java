@@ -27,13 +27,31 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DIORITE_TILE);
             entries.add(CoreAscensionBlocks.GRANITE_TILE);
             entries.add(CoreAscensionBlocks.SALTROCK);
+            entries.add(CoreAscensionBlocks.SALTROCK_STAIRS);
+            entries.add(CoreAscensionBlocks.SALTROCK_SLAB);
+            entries.add(CoreAscensionBlocks.SALTROCK_WALL);
             entries.add(CoreAscensionBlocks.POLISHED_SALTROCK);
+            entries.add(CoreAscensionBlocks.POLISHED_SALTROCK_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_SALTROCK_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_SALTROCK_WALL);
             entries.add(CoreAscensionBlocks.SALTROCK_TILES);
             entries.add(CoreAscensionBlocks.MAGNETITE);
+            entries.add(CoreAscensionBlocks.MAGNETITE_STAIRS);
+            entries.add(CoreAscensionBlocks.MAGNETITE_SLAB);
+            entries.add(CoreAscensionBlocks.MAGNETITE_WALL);
             entries.add(CoreAscensionBlocks.POLISHED_MAGNETITE);
+            entries.add(CoreAscensionBlocks.POLISHED_MAGNETITE_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_MAGNETITE_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_MAGNETITE_WALL);
             entries.add(CoreAscensionBlocks.MAGNETITE_TILES);
             entries.add(CoreAscensionBlocks.IGNEOUS_ROCK);
+            entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_STAIRS);
+            entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_SLAB);
+            entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_WALL);
             entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK);
+            entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_WALL);
             entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_TILES);
             entries.add(CoreAscensionBlocks.SMOOTH_NETHERRACK);
             entries.add(CoreAscensionBlocks.POLISHED_NETHERRACK);
@@ -41,24 +59,48 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CLOUD_COBBLESTONE);
             entries.add(CoreAscensionBlocks.BLACK_SAND);
             entries.add(CoreAscensionBlocks.BLACK_SANDSTONE);
-            entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE);
+            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_WALL);
             entries.add(CoreAscensionBlocks.CHISELED_BLACK_SANDSTONE);
             entries.add(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE);
+            entries.add(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE);
+            entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.DREAD_SAND);
             entries.add(CoreAscensionBlocks.DREAD_SANDSTONE);
-            entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE);
+            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_WALL);
             entries.add(CoreAscensionBlocks.CHISELED_DREAD_SANDSTONE);
             entries.add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE);
+            entries.add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE);
+            entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.FROST_SAND);
             entries.add(CoreAscensionBlocks.FROST_SANDSTONE);
-            entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE);
+            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_WALL);
             entries.add(CoreAscensionBlocks.CHISELED_FROST_SANDSTONE);
             entries.add(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE);
+            entries.add(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE);
+            entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.BONESAND);
             entries.add(CoreAscensionBlocks.BONESANDSTONE);
-            entries.add(CoreAscensionBlocks.CUT_BONESANDSTONE);
+            entries.add(CoreAscensionBlocks.BONESANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.BONESANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.BONESANDSTONE_WALL);
             entries.add(CoreAscensionBlocks.CHISELED_BONESANDSTONE);
             entries.add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE);
+            entries.add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE_STAIRS);
+            entries.add(CoreAscensionBlocks.SMOOTH_BONESANDSTONE_SLAB);
+            entries.add(CoreAscensionBlocks.CUT_BONESANDSTONE);
+            entries.add(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.LIMESTONE);
             entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE);
             entries.add(CoreAscensionBlocks.LIMESTONE_TILES);
@@ -66,6 +108,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CITRINE_ORE);
             entries.add(CoreAscensionBlocks.TOPAZ_ORE);
             entries.add(CoreAscensionBlocks.SULPHUR_ORE);
+            entries.add(CoreAscensionBlocks.URANIUM_ORE);
             entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
             entries.add(CoreAscensionBlocks.CLOUD_IRON_ORE);
             entries.add(CoreAscensionBlocks.CLOUD_GOLD_ORE);
@@ -247,6 +290,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.TOPAZ_BLOCK);
             entries.add(CoreAscensionBlocks.SAPPHIRE_BLOCK);
             entries.add(CoreAscensionBlocks.AMETHYST_TILES);
+            entries.add(CoreAscensionBlocks.URANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.LEATHER_BLOCK);
             entries.add(CoreAscensionBlocks.OBSIDIAN_BRICKS);
             entries.add(CoreAscensionBlocks.TROPICS_MUD);
@@ -271,23 +315,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.MOSSY_END_STONE_BRICKS);
             entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
 
-            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.BONESANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_WALL);
-            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_WALL);
-            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_WALL);
-            entries.add(CoreAscensionBlocks.BONESANDSTONE_WALL);
 
-            entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.DREAD_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.FROST_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.BONESANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB);
-            entries.add(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB);
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB);
@@ -300,10 +328,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.OSBORGNEN_FUEL_BLOCK);
             //SECRET DOORS
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_STAIRS);
-            entries.add(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.CUT_FROST_SANDSTONE_STAIRS);
-            entries.add(CoreAscensionBlocks.CUT_BONESANDSTONE_STAIRS);
+
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.CEMENT_STAIRS);
@@ -344,9 +369,36 @@ public class CoreAscensionGroups
             // scoria shit goes here
             entries.add(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
             // glowing mushroom biome
-            entries.add(CoreAscensionBlocks.URANIUM_ORE);
-
-
+            entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.SEARED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.SEARED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.SEARED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.SINGED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.SINGED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.SINGED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.SCORCHED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.BURNT_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.BURNT_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.BURNT_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.FROZEN_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.FROZEN_SEARED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.FROZEN_SINGED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.FROZEN_SCORCHED_TITANIUM_SLAB);
+            entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
+            entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
+            entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

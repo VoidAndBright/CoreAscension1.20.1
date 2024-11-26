@@ -127,7 +127,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CHISELED_BLACK_SANDSTONE);
         addDrop(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE);
         addDrop(CoreAscensionBlocks.CUT_BLACK_SANDSTONE);
-        addDrop(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.SMOOTH_BLACK_SANDSTONE_STAIRS);
         addDrop(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB, slabDrops(CoreAscensionBlocks.CUT_BLACK_SANDSTONE_SLAB));
         addDrop(CoreAscensionBlocks.LOAM);
         addDrop(CoreAscensionBlocks.TROPICS_MUD);
@@ -140,7 +140,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE);
         addDrop(CoreAscensionBlocks.CUT_DREAD_SANDSTONE);
         addDrop(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB, slabDrops(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_SLAB));
-        addDrop(CoreAscensionBlocks.CUT_DREAD_SANDSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.SMOOTH_DREAD_SANDSTONE_STAIRS);
         addDrop(CoreAscensionBlocks.DREAD_ROCK_BRICKS);
         addDrop(CoreAscensionBlocks.HARDENED_LAVA);
         addDrop(CoreAscensionBlocks.CEMENT);
@@ -190,7 +190,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CHISELED_BONESANDSTONE);
         addDrop(CoreAscensionBlocks.SMOOTH_BONESANDSTONE);
         addDrop(CoreAscensionBlocks.CUT_BONESANDSTONE);
-        addDrop(CoreAscensionBlocks.CUT_BONESANDSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.SMOOTH_BONESANDSTONE_STAIRS);
         addDrop(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB, slabDrops(CoreAscensionBlocks.CUT_BONESANDSTONE_SLAB));
         addDrop(CoreAscensionBlocks.ETHEREAL_LOG);
         addDrop(CoreAscensionBlocks.ETHEREAL_WOOD);
@@ -348,7 +348,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.CHISELED_FROST_SANDSTONE);
         addDrop(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE);
         addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE);
-        addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.SMOOTH_FROST_SANDSTONE_STAIRS);
         addDrop(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB, slabDrops(CoreAscensionBlocks.CUT_FROST_SANDSTONE_SLAB));
         addDrop(CoreAscensionBlocks.FROSTED_GLASS);
         addDrop(CoreAscensionBlocks.FROSTED_GLASS_PANE);
