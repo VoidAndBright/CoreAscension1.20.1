@@ -10,8 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
@@ -63,18 +61,5 @@ public class EnderWireItem extends Item
         }
 
         return super.useOnBlock(context);
-    }
-
-    @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand)
-    {
-        super.use(world, user, hand);
-
-        if (user.getStackInHand(hand).getItem() == CoreAscensionItems.ENDER_WIRE)
-        {
-
-        }
-
-        return TypedActionResult.success(user.getStackInHand(hand));
     }
 }
