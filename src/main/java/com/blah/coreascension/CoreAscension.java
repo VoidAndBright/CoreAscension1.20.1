@@ -3,7 +3,7 @@ package com.blah.coreascension;
 import com.blah.coreascension.block.CoreAscensionBlockEntities;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.criterion.UsedVoidTotemCriterion;
-import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.effect.CoreAscensionStatusEffects;
 import com.blah.coreascension.enchantment.CoreAscensionEnchantments;
 import com.blah.coreascension.entity.CoreAscensionBoats;
 import com.blah.coreascension.entity.CoreAscensionEntities;

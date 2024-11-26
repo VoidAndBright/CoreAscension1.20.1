@@ -1,7 +1,7 @@
-package com.blah.coreascension.fluid.fluids;
+package com.blah.coreascension.block.fluids;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.fluid.CoreAscensionFluids;
+import com.blah.coreascension.block.CoreAscensionFluids;
 import com.blah.coreascension.item.CoreAscensionItems;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;

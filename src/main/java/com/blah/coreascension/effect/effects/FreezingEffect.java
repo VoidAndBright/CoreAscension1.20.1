@@ -1,7 +1,9 @@
-package com.blah.coreascension.effects;
+package com.blah.coreascension.effect.effects;
 
 import com.blah.coreascension.damage.CoreAscensionDamageTypes;
+import net.minecraft.entity.DamageUtil;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 
@@ -18,10 +20,11 @@ public class FreezingEffect extends StatusEffect {
     
     public void applyUpdateEffect(LivingEntity entity, int amplifier)
     {
+        entity.inPowderSnow = true;
         everySecond++;
         if (everySecond > 20)
         {
-            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), CoreAscensionDamageTypes.FREEZING), 2 * (amplifier + 1));
+            entity.damage(CoreAscensionDamageTypes.of(entity.getWorld(), DamageTypes.FREEZE), 2 * (amplifier + 1));
             everySecond = 0;
         }
     }

@@ -1,6 +1,6 @@
 package com.blah.coreascension.mixin;
 
-import com.blah.coreascension.fluid.CoreAscensionFluids;
+import com.blah.coreascension.block.CoreAscensionFluids;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.VertexConsumer;

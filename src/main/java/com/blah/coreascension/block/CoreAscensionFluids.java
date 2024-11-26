@@ -1,9 +1,9 @@
-package com.blah.coreascension.fluid;
+package com.blah.coreascension.block;
 
 import com.blah.coreascension.CoreAscension;
-import com.blah.coreascension.fluid.fluids.CoreAscensionFluid;
-import com.blah.coreascension.fluid.fluids.EndGasFluid;
-import com.blah.coreascension.fluid.fluids.MoltenIceFluid;
+import com.blah.coreascension.block.fluids.CoreAscensionFluid;
+import com.blah.coreascension.block.fluids.EndGasFluid;
+import com.blah.coreascension.block.fluids.MoltenIceFluid;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

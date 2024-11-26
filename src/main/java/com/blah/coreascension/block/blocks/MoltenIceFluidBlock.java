@@ -1,8 +1,10 @@
 package com.blah.coreascension.block.blocks;
 
-import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.effect.CoreAscensionStatusEffects;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.Entity;
@@ -22,12 +24,13 @@ public class MoltenIceFluidBlock extends FluidBlock {
         super.onEntityCollision(state, world, pos, entity);
         if (entity instanceof LivingEntity living)
         {
-            if (living.hasStatusEffect(CoreAscensionStatusEffects.WARMTH))
+            if (living.hasStatusEffect(CoreAscensionStatusEffects.ICE_RESISTANCE))
                 return;
             if (!(living instanceof GhastEntity))
             {
-                living.addStatusEffect(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 120, 2));
-                living.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 4));
+                living.addStatusEffect(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING.addAttributeModifier(
+                        EntityAttributes.GENERIC_MOVEMENT_SPEED, "7107DE5E-7CE8-4030-940E-514C1F160890", -0.15F, EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                ), 120, 2));
             }
         }
     }

@@ -1,7 +1,7 @@
 {
   "parent": "block/template_wall_side_tall",
   "textures": {
-    "wall": "coreascension:block/tropiccobblestone",
-    "particle": "coreascension:block/tropiccobblestone"
+    "wall": "coreascension:block/cloud_cobblestone",
+    "particle": "coreascension:block/cloud_cobblestone"
   }
 }

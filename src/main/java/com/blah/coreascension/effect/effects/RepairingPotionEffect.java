@@ -1,14 +1,14 @@
-package com.blah.coreascension.effects;
+package com.blah.coreascension.effect.effects;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
 
-public class LongRepairingPotionEffect extends StatusEffect {
+public class RepairingPotionEffect extends StatusEffect {
     int everySecond = 0;
 
-    public LongRepairingPotionEffect()
+    public RepairingPotionEffect()
     {
         super(StatusEffectCategory.BENEFICIAL, // whether beneficial or harmful for entities
                 0xCC00CC); // color in RGB

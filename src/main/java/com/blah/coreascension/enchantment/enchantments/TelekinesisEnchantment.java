@@ -1,4 +1,4 @@
-package com.blah.coreascension.enchantment.effect;
+package com.blah.coreascension.enchantment.enchantments;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;

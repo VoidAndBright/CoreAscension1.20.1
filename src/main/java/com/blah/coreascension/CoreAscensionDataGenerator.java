@@ -9,8 +9,9 @@ public class CoreAscensionDataGenerator implements DataGeneratorEntrypoint {
     {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(CoreAscensionBlockTagProvider::new);
-        pack.addProvider(CoreAscensionLootTableProvider::new);
         pack.addProvider(CoreAscensionItemTagProvider::new);
+        pack.addProvider(CoreAscensionFluidTagProvider::new);
+        pack.addProvider(CoreAscensionLootTableProvider::new);
         pack.addProvider(CoreAscensionModelProvider::new);
         pack.addProvider(CoreAscensionAchievementGenerator::new);
     }

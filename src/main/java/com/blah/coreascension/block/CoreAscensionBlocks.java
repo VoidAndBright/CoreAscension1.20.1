@@ -4,8 +4,6 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.blocks.Anodizable.AnodizationLevel;
 import com.blah.coreascension.block.blocks.*;
 import com.blah.coreascension.damage.CoreAscensionDamageTypes;
-import com.blah.coreascension.effects.CoreAscensionStatusEffects;
-import com.blah.coreascension.fluid.CoreAscensionFluids;
 import com.blah.coreascension.particles.CoreAscensionParticles;
 import com.blah.coreascension.sound.CoreAscensionSounds;
 import com.blah.coreascension.world.feature.CoreAscensionConfiguredFeatureKeys;
@@ -16,8 +14,6 @@ import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformWallSignBlock;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -28,10 +24,6 @@ import net.minecraft.block.enums.Instrument;
 import net.minecraft.client.color.world.BiomeColors;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.GhastEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
@@ -48,36 +40,13 @@ import net.minecraft.world.World;
 public class CoreAscensionBlocks
 {
     public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)));
-    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new FluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15))
-    {
-        @Override
-        public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity)
-        {
-            super.onEntityCollision(state, world, pos, entity);
-            if (entity instanceof LivingEntity living)
-            {
-                if (living.hasStatusEffect(CoreAscensionStatusEffects.WARMTH))
-                    return;
-                if (!(living instanceof GhastEntity))
-                {
-                    living.addStatusEffect(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 120, 2));
-                    living.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 60, 4));
-                }
-            }
-        }
-    });
+    public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new MoltenIceFluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15)));
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
     public static final Block SKYLANDS_PORTAL_BLOCK = RegisterBlock("skylands_portal", new SkylandsPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.YELLOW)));
     public static final Block NETHER_CORE_PORTAL_BLOCK = RegisterBlock("nether_core_portal", new NetherCorePortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL).mapColor(MapColor.CYAN)));
     public static final Block ACACIA_SECRET_DOOR = RegisterBlockItem("acacia_secret_door", new Block(FabricBlockSettings.copyOf(Blocks.ACACIA_PLANKS).mapColor(MapColor.ORANGE).noCollision()));
     public static final Block AERO_LANTERN = RegisterBlockItem("aero_lantern", new Block(FabricBlockSettings.copyOf(Blocks.SEA_LANTERN).mapColor(MapColor.PALE_YELLOW)));
-    public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK))
-    {
-        public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
-        {
-            super.onSteppedOn(world, pos, state, entity);
-        }
-    });
+    public static final Block PIGNEOUS_ROCK = RegisterBlockItem("pigneous_rock", new Block(FabricBlockSettings.copyOf(Blocks.STONE).mapColor(MapColor.PINK)));
 
 
     public static final Block AMANITA_CAP = RegisterBlockItem("amanita_cap", new Block(FabricBlockSettings.copyOf(Blocks.RED_MUSHROOM_BLOCK).mapColor(MapColor.BRIGHT_RED)));
@@ -906,16 +875,7 @@ public class CoreAscensionBlocks
         ClientRegisterRenderLayeredBlocks();
         ClientRegisterColouredBlocks();
 
-        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_END_GAS, CoreAscensionFluids.FLOWING_END_GAS, new SimpleFluidRenderHandler(
-                new Identifier("coreascension:block/end_gas_still"),
-                new Identifier("coreascension:block/end_gas_flowing"),
-                0xFFFFFF
-        ));
-        FluidRenderHandlerRegistry.INSTANCE.register(CoreAscensionFluids.STILL_MOLTEN_ICE, CoreAscensionFluids.FLOWING_MOLTEN_ICE, new SimpleFluidRenderHandler(
-                new Identifier("coreascension:block/molten_ice_still"),
-                new Identifier("coreascension:block/molten_ice_flowing"),
-                0xFFFFFF
-        ));
+
     }
 
     public static void ClientRegisterRenderLayeredBlocks()

@@ -1,4 +1,4 @@
-package com.blah.coreascension.fluid.fluids;
+package com.blah.coreascension.block.fluids;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

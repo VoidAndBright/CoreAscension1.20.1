@@ -1,7 +1,7 @@
 package com.blah.coreascension.recipe;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
-import com.blah.coreascension.effects.CoreAscensionStatusEffects;
+import com.blah.coreascension.effect.CoreAscensionStatusEffects;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -16,7 +16,7 @@ import net.minecraft.util.Identifier;
 public class CoreAscensionPotionRecipes {
     public static final Potion WARMTH_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "warmth_potion"),
-                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.WARMTH, 3600, 0)));
+                    new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.ICE_RESISTANCE, 3600, 0)));
     public static final Potion BUILDERS_CURSE_POTION =
             Registry.register(Registries.POTION, new Identifier("coreascension", "builders_curse_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.BUILDERS_CURSE, 3600, 0)));
