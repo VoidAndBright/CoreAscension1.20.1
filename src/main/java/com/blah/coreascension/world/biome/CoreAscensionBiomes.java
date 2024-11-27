@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import terrablender.api.RegionType;
 
 public class CoreAscensionBiomes {
     public static final RegistryKey<Biome> TROPICS = RegisterKey("tropics");
@@ -18,11 +19,14 @@ public class CoreAscensionBiomes {
     public static final RegistryKey<Biome> CANDYLAND = RegisterKey("candyland");
     public static final RegistryKey<Biome> CLOUD_MOUNTAINS = RegisterKey("cloud_mountains");
     public static final RegistryKey<Biome> PSYCHEDELIC_FIELDS = RegisterKey("psychedelic_fields");
+    public static final RegistryKey<Biome> SCORIA_CAVE = RegisterKey("scoria_cave");
 
     public static RegistryKey<Biome> RegisterKey(String name)
     {
         return RegistryKey.of(RegistryKeys.BIOME, new Identifier(CoreAscension.MOD_ID, name));
     }
+
+
 
     public static void GenerateBiomes()
     {

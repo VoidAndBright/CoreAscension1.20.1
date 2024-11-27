@@ -53,6 +53,30 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_SLAB);
             entries.add(CoreAscensionBlocks.POLISHED_IGNEOUS_ROCK_WALL);
             entries.add(CoreAscensionBlocks.IGNEOUS_ROCK_TILES);
+            entries.add(CoreAscensionBlocks.SCORIA);
+            entries.add(CoreAscensionBlocks.SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.SCORIA_WALL);
+            entries.add(CoreAscensionBlocks.POLISHED_SCORIA);
+            entries.add(CoreAscensionBlocks.POLISHED_SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_SCORIA_WALL);
+            entries.add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA);
+            entries.add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_WALL);
+            entries.add(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA);
+            entries.add(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_WALL);
+            entries.add(CoreAscensionBlocks.CHARRED_SCORIA);
+            entries.add(CoreAscensionBlocks.CHARRED_SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.CHARRED_SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.CHARRED_SCORIA_WALL);
+            entries.add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA);
+            entries.add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_STAIRS);
+            entries.add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB);
+            entries.add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL);
             entries.add(CoreAscensionBlocks.SMOOTH_NETHERRACK);
             entries.add(CoreAscensionBlocks.POLISHED_NETHERRACK);
             entries.add(CoreAscensionBlocks.CLOUD_STONE);
@@ -107,6 +131,14 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.RUBY_ORE);
             entries.add(CoreAscensionBlocks.CITRINE_ORE);
             entries.add(CoreAscensionBlocks.TOPAZ_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_COAL_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_IRON_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_LAPIS_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_GOLD_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_REDSTONE_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_EMERALD_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_DIAMOND_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE);
             entries.add(CoreAscensionBlocks.SULPHUR_ORE);
             entries.add(CoreAscensionBlocks.URANIUM_ORE);
             entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
@@ -399,6 +431,9 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
+
+
+
             entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_LUMITE_BLOCK);

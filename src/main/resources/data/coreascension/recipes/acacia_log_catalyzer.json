@@ -1,8 +1,8 @@
 {
   "type": "coreascension:catalyzer",
   "ingredients": [
-    {"tag": "minecraft:logs"},
-    {},
+    {"item": "minecraft:dark_oak_log"},
+    {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
   "result": {

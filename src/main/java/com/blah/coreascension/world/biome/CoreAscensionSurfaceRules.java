@@ -23,6 +23,14 @@ public class CoreAscensionSurfaceRules {
                     )
             );
 
+    public static MaterialRules.MaterialRule SCORIA_SURFACE =
+            MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomes.SCORIA_CAVE),
+                    MaterialRules.sequence(
+                            MaterialRules.condition(MaterialRules.stoneDepth(2, true, VerticalSurfaceType.FLOOR), MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())),
+                            MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())
+                    )
+            );
+
     public static void GenerateSurfaceRules()
     {
         SurfaceGeneration.addOverworldSurfaceRules(Identifier.of(CoreAscension.MOD_ID, "rules/overworld"),

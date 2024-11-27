@@ -12,6 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
@@ -23,13 +24,20 @@ import net.minecraft.world.World;
 
 public class EnderTeleporterBlock extends Block
 {
-    public static IntProperty X = IntProperty.of("x",0,3300000);
-    public static IntProperty Y = IntProperty.of("y",0,3300000);
-    public static IntProperty Z = IntProperty.of("z",0,3300000);
-    public static BooleanProperty LINKED = BooleanProperty.of("linked");
+    public static final IntProperty X = IntProperty.of("x",0,3300000);
+    public static final IntProperty Y = IntProperty.of("y",0,3300000);
+    public static final IntProperty Z = IntProperty.of("z",0,3300000);
+    public static final BooleanProperty LINKED = BooleanProperty.of("linked");
     public EnderTeleporterBlock(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder)
+    {
+        super.appendProperties(builder);
+        builder.add(X).add(Y).add(Z).add(LINKED);
     }
 
     @Override

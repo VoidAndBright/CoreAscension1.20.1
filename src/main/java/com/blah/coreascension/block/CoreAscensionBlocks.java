@@ -471,7 +471,7 @@ public class CoreAscensionBlocks
     });
 
     public static final Block ENCHANTMENT_RELOCATOR = RegisterBlockItem("enchantment_relocator", new EnchantmentRelocatorBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).nonOpaque().mapColor(MapColor.BRIGHT_RED)));
-    public static final Block ENDER_TELEPORTER = RegisterBlockItem("ender_teleporter", new EnderTeleporterBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).sounds(BlockSoundGroup.GLASS).nonOpaque().mapColor(MapColor.TEAL)));
+    public static final Block ENDER_TELEPORTER = RegisterBlockItem("ender_teleporter", new Block(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE).sounds(BlockSoundGroup.GLASS).nonOpaque().mapColor(MapColor.TEAL)));
 
     public static final Block MOSSY_END_STONE_BRICKS = RegisterBlockItem("mossy_end_stone_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PALE_PURPLE)));
     public static final Block MAGMA_ROCK_BRICKS = RegisterBlockItem("magma_rock_bricks", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.TERRACOTTA_ORANGE)));
@@ -630,12 +630,14 @@ public class CoreAscensionBlocks
             return Block.createCuboidShape(4, 0, 4, 12, 9, 12);
         }
     });
+    // end entropy
+
     // salt terraces
     public static final Block ROCK_SALT = RegisterBlockItem("rock_salt", new PillarBlock(FabricBlockSettings.copyOf(Blocks.BASALT).mapColor(MapColor.TERRACOTTA_PINK)));
-    // end entropy
+    // end salt terraces
+
     // desert
     public static final Block FROST_SAND = RegisterBlockItem("frost_sand", new FallingBlock(FabricBlockSettings.copyOf(Blocks.SAND).mapColor(MapColor.LIGHT_BLUE)));
-    // end salt terraces
     public static final Block FROST_SANDSTONE = RegisterBlockItem("frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block CHISELED_FROST_SANDSTONE = RegisterBlockItem("chiseled_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CHISELED_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block SMOOTH_FROST_SANDSTONE = RegisterBlockItem("smooth_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
@@ -741,6 +743,41 @@ public class CoreAscensionBlocks
     public static final Block OBSIDIAN_SPONGE = RegisterBlockItem("obsidian_sponge", new LavaSpongeBlock(FabricBlockSettings.copyOf(Blocks.SPONGE).mapColor(MapColor.BLACK)));
     public static final Block LAVAD_OBSIDIAN_SPONGE = RegisterBlockItem("lavad_obsidian_sponge", new Block(FabricBlockSettings.copyOf(Blocks.SPONGE).mapColor(MapColor.BLACK)));
     public static final Block COMPRESSED_SULPHUR_BLOCK = RegisterBlockItem("compressed_sulphur_block", new Block(FabricBlockSettings.copyOf(SULPHUR_BLOCK).hardness(2.2f).mapColor(MapColor.YELLOW)));
+
+    public static final Block SCORIA = RegisterBlockItem("scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.RED)));
+    public static final Block LIGHTLY_CHARRED_SCORIA = RegisterBlockItem("lightly_charred_scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.DULL_RED)));
+    public static final Block CHARRED_SCORIA = RegisterBlockItem("charred_scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.DARK_RED)));
+    public static final Block POLISHED_SCORIA = RegisterBlockItem("polished_scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.RED)));
+    public static final Block POLISHED_LIGHTLY_CHARRED_SCORIA = RegisterBlockItem("polished_lightly_charred_scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.DULL_RED)));
+    public static final Block POLISHED_CHARRED_SCORIA = RegisterBlockItem("polished_charred_scoria", new Block(FabricBlockSettings.copyOf(Blocks.STONE).sounds(BlockSoundGroup.NETHERRACK).mapColor(MapColor.DARK_RED)));
+    public static final Block SCORIA_STAIRS = RegisterBlockItem("scoria_stairs", new StairsBlock(SCORIA.getDefaultState(), FabricBlockSettings.copyOf(SCORIA).mapColor(MapColor.RED)));
+    public static final Block LIGHTLY_CHARRED_SCORIA_STAIRS = RegisterBlockItem("lightly_charred_scoria_stairs", new StairsBlock(LIGHTLY_CHARRED_SCORIA.getDefaultState(), FabricBlockSettings.copyOf(LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block CHARRED_SCORIA_STAIRS = RegisterBlockItem("charred_scoria_stairs", new StairsBlock(CHARRED_SCORIA.getDefaultState(), FabricBlockSettings.copyOf(CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block POLISHED_SCORIA_STAIRS = RegisterBlockItem("polished_scoria_stairs", new StairsBlock(POLISHED_SCORIA.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_SCORIA).mapColor(MapColor.RED)));
+    public static final Block POLISHED_LIGHTLY_CHARRED_SCORIA_STAIRS = RegisterBlockItem("polished_lightly_charred_scoria_stairs", new StairsBlock(POLISHED_LIGHTLY_CHARRED_SCORIA.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block POLISHED_CHARRED_SCORIA_STAIRS = RegisterBlockItem("polished_charred_scoria_stairs", new StairsBlock(POLISHED_CHARRED_SCORIA.getDefaultState(), FabricBlockSettings.copyOf(POLISHED_CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block SCORIA_SLAB = RegisterBlockItem("scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(SCORIA).mapColor(MapColor.RED)));
+    public static final Block LIGHTLY_CHARRED_SCORIA_SLAB = RegisterBlockItem("lightly_charred_scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block CHARRED_SCORIA_SLAB = RegisterBlockItem("charred_scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block POLISHED_SCORIA_SLAB = RegisterBlockItem("polished_scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(POLISHED_SCORIA).mapColor(MapColor.RED)));
+    public static final Block POLISHED_LIGHTLY_CHARRED_SCORIA_SLAB = RegisterBlockItem("polished_lightly_charred_scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(POLISHED_LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block POLISHED_CHARRED_SCORIA_SLAB = RegisterBlockItem("polished_charred_scoria_slab", new SlabBlock(FabricBlockSettings.copyOf(POLISHED_CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block SCORIA_WALL = RegisterBlockItem("scoria_wall", new WallBlock(FabricBlockSettings.copyOf(SCORIA).mapColor(MapColor.RED)));
+    public static final Block LIGHTLY_CHARRED_SCORIA_WALL = RegisterBlockItem("lightly_charred_scoria_wall", new WallBlock(FabricBlockSettings.copyOf(LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block CHARRED_SCORIA_WALL = RegisterBlockItem("charred_scoria_wall", new WallBlock(FabricBlockSettings.copyOf(CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block POLISHED_SCORIA_WALL = RegisterBlockItem("polished_scoria_wall", new WallBlock(FabricBlockSettings.copyOf(POLISHED_SCORIA).mapColor(MapColor.RED)));
+    public static final Block POLISHED_LIGHTLY_CHARRED_SCORIA_WALL = RegisterBlockItem("polished_lightly_charred_scoria_wall", new WallBlock(FabricBlockSettings.copyOf(POLISHED_LIGHTLY_CHARRED_SCORIA).mapColor(MapColor.DULL_RED)));
+    public static final Block POLISHED_CHARRED_SCORIA_WALL = RegisterBlockItem("polished_charred_scoria_wall", new WallBlock(FabricBlockSettings.copyOf(POLISHED_CHARRED_SCORIA).mapColor(MapColor.DARK_RED)));
+    public static final Block SCORIA_COAL_ORE = RegisterBlockItem("scoria_coal_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.COAL_ORE).mapColor(MapColor.BLACK), UniformIntProvider.create(0, 2)));
+    public static final Block SCORIA_LAPIS_ORE = RegisterBlockItem("scoria_lapis_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.LAPIS_ORE).mapColor(MapColor.LAPIS_BLUE), UniformIntProvider.create(2, 5)));
+    public static final Block SCORIA_COPPER_ORE = RegisterBlockItem("scoria_copper_ore", new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE).mapColor(MapColor.ORANGE)));
+    public static final Block SCORIA_IRON_ORE = RegisterBlockItem("scoria_iron_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).mapColor(MapColor.RAW_IRON_PINK)));
+    public static final Block SCORIA_GOLD_ORE = RegisterBlockItem("scoria_gold_ore", new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE).mapColor(MapColor.YELLOW)));
+    public static final Block SCORIA_EMERALD_ORE = RegisterBlockItem("scoria_emerald_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE).mapColor(MapColor.EMERALD_GREEN), UniformIntProvider.create(3, 7)));
+    public static final Block SCORIA_DIAMOND_ORE = RegisterBlockItem("scoria_diamond_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).mapColor(MapColor.DIAMOND_BLUE), UniformIntProvider.create(3, 7)));
+    public static final Block SCORIA_REDSTONE_ORE = RegisterBlockItem("scoria_redstone_ore", new RedstoneOreBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_ORE).mapColor(MapColor.RED)));
+    public static final Block SCORIA_SUNSTONE_ORE = RegisterBlockItem("scoria_sunstone_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(SCORIA).mapColor(MapColor.ORANGE), UniformIntProvider.create(4, 6)));
+
 
 
 

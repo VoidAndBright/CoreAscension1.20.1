@@ -76,7 +76,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
         addDrop(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB, slabDrops(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB));
         addDrop(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
-        //addDrop(CoreAscensionBlocks.ETHEREAL_TORCH);
+        addDrop(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionItems.ETHEREAL_TORCH);
+        addDrop(CoreAscensionBlocks.ETHEREAL_WALL_TORCH, CoreAscensionItems.ETHEREAL_TORCH);
         addDrop(CoreAscensionBlocks.BLAZE_BRICK);
         addDrop(CoreAscensionBlocks.REINFORCED_CHEST);
         addDrop(CoreAscensionBlocks.REINFORCED_GLASS);
@@ -391,7 +392,6 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.RUBY_ORE, oreDrops(CoreAscensionBlocks.RUBY_ORE, CoreAscensionItems.RUBY));
         addDrop(CoreAscensionBlocks.CITRINE_ORE, oreDrops(CoreAscensionBlocks.CITRINE_ORE, CoreAscensionItems.CITRINE));
         addDrop(CoreAscensionBlocks.TOPAZ_ORE, oreDrops(CoreAscensionBlocks.TOPAZ_ORE, CoreAscensionItems.TOPAZ));
-        addDrop(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, oreDrops(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, CoreAscensionItems.DARK_MATTER_JELLY));
         addDrop(CoreAscensionBlocks.CACTUS_PRESSURE_PLATE);
         addDrop(CoreAscensionBlocks.CAKEWOOD_PRESSURE_PLATE);
         addDrop(CoreAscensionBlocks.CEDAR_PRESSURE_PLATE);
@@ -476,5 +476,41 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.OBSIDIAN_SPONGE);
         addDrop(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
         addDrop(CoreAscensionBlocks.COMPRESSED_SULPHUR_BLOCK);
+
+        addDrop(CoreAscensionBlocks.SCORIA_COAL_ORE, oreDrops(CoreAscensionBlocks.SCORIA_COAL_ORE, Items.COAL));
+        addDrop(CoreAscensionBlocks.SCORIA_IRON_ORE, oreDrops(CoreAscensionBlocks.SCORIA_IRON_ORE, Items.RAW_IRON));
+        addDrop(CoreAscensionBlocks.SCORIA_LAPIS_ORE, lapisOreDrops(CoreAscensionBlocks.SCORIA_LAPIS_ORE));
+        addDrop(CoreAscensionBlocks.SCORIA_GOLD_ORE, oreDrops(CoreAscensionBlocks.SCORIA_GOLD_ORE, Items.RAW_GOLD));
+        addDrop(CoreAscensionBlocks.SCORIA_REDSTONE_ORE, redstoneOreDrops(CoreAscensionBlocks.SCORIA_REDSTONE_ORE));
+        addDrop(CoreAscensionBlocks.SCORIA_EMERALD_ORE, oreDrops(CoreAscensionBlocks.SCORIA_EMERALD_ORE, Items.EMERALD));
+        addDrop(CoreAscensionBlocks.SCORIA_DIAMOND_ORE, oreDrops(CoreAscensionBlocks.SCORIA_DIAMOND_ORE, Items.DIAMOND));
+        addDrop(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE, oreDrops(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE, CoreAscensionItems.SUNSTONE));
+        addDrop(CoreAscensionBlocks.SCORIA_COPPER_ORE, copperOreDrops(CoreAscensionBlocks.SCORIA_COPPER_ORE));
+
+        addDrop(CoreAscensionBlocks.SCORIA);
+        addDrop(CoreAscensionBlocks.SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.SCORIA_SLAB, slabDrops(CoreAscensionBlocks.SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.SCORIA_WALL);
+        addDrop(CoreAscensionBlocks.POLISHED_SCORIA);
+        addDrop(CoreAscensionBlocks.POLISHED_SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.POLISHED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.POLISHED_SCORIA_WALL);
+        addDrop(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA);
+        addDrop(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_WALL);
+        addDrop(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA);
+        addDrop(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_WALL);
+        addDrop(CoreAscensionBlocks.CHARRED_SCORIA);
+        addDrop(CoreAscensionBlocks.CHARRED_SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.CHARRED_SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.CHARRED_SCORIA_WALL);
+        addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA);
+        addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_STAIRS);
+        addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB));
+        addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL);
+
     }
 }

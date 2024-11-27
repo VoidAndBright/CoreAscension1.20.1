@@ -62,7 +62,7 @@ public class CatalyzerTableScreenHandler extends ScreenHandler {
                 this.inventory.removeStack(0, 1);
                 this.inventory.removeStack(1, 1);
                 this.inventory.removeStack(2, 1);
-                return true;
+                return false;
             }
 
         });

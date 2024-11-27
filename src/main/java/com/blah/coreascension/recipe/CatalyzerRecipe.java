@@ -1,5 +1,6 @@
 package com.blah.coreascension.recipe;
 
+import com.blah.coreascension.item.CoreAscensionItems;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.SimpleInventory;
@@ -32,9 +33,20 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         {
             return false;
         }
-        return ingredients.get(0).test(inventory.getStack(0)) &&
+        boolean retval = false;
+        if (ingredients.get(0).test(inventory.getStack(0)) &&
                 ingredients.get(1).test(inventory.getStack(1)) &&
-                ingredients.get(2).test(inventory.getStack(2));
+                ingredients.get(2).test(inventory.getStack(2)))
+        {
+            retval = true;
+        }
+        if (ingredients.get(0).test(inventory.getStack(0)) &&
+                ingredients.get(1).test(ItemStack.EMPTY) &&
+                ingredients.get(2).test(inventory.getStack(2)))
+        {
+            retval = true;
+        }
+        return retval;
     }
 
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager)
@@ -84,6 +96,10 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
             for (int i = 0; i < inputs.size(); i++)
             {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+                if (inputs.get(i).test(new ItemStack(CoreAscensionItems.EMPTY)))
+                {
+                    inputs.set(i, Ingredient.EMPTY);
+                }
             }
 
             return new CatalyzerRecipe(id, result, inputs);

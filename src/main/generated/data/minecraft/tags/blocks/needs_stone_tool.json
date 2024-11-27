@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "coreascension:scoria_iron_ore",
+    "coreascension:scoria_lapis_ore",
     "coreascension:hardened_lava",
     "coreascension:sapphire_block",
     "coreascension:titanium_block",

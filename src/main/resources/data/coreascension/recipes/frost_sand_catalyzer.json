@@ -1,0 +1,12 @@
+{
+  "type": "coreascension:catalyzer",
+  "ingredients": [
+    {"item": "coreascension:dread_sand"},
+    {"item": "coreascension:empty"},
+    {"item": "coreascension:sulphur"}
+  ],
+  "result": {
+    "item": "coreascension:frost_sand",
+    "count": 1
+  }
+}

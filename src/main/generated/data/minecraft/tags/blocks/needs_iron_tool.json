@@ -5,6 +5,11 @@
     "coreascension:sapphire_ore",
     "coreascension:diamond_door",
     "coreascension:diamond_trapdoor",
+    "coreascension:scoria_gold_ore",
+    "coreascension:scoria_redstone_ore",
+    "coreascension:scoria_emerald_ore",
+    "coreascension:scoria_diamond_ore",
+    "coreascension:scoria_sunstone_ore",
     "coreascension:sulphur_ore"
   ]
 }

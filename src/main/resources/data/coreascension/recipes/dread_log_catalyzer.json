@@ -1,8 +1,8 @@
 {
   "type": "coreascension:catalyzer",
   "ingredients": [
-    {"tag": "minecraft:logs"},
-    {},
+    {"item": "coreascension:dark_matter_log"},
+    {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
   "result": {

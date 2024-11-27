@@ -12,7 +12,8 @@
     "LivingDropsMixin",
     "LivingHurtMixin",
     "PiglinBrainMixin",
-    "TrunkPlacerTypeInvoker"
+    "TrunkPlacerTypeInvoker",
+    "UndergroundBiomeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

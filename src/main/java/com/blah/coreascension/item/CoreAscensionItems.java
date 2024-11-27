@@ -34,7 +34,14 @@ import java.util.List;
 public class CoreAscensionItems {
 
     public static final Item ETHEREAL_TORCH = registerItem("ethereal_torch",
-            new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN));
+            new VerticallyAttachableBlockItem(CoreAscensionBlocks.ETHEREAL_TORCH, CoreAscensionBlocks.ETHEREAL_WALL_TORCH, new FabricItemSettings(), Direction.DOWN)
+            {
+                @Override
+                public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context)
+                {
+                    tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.ethereal_torch"))).formatted(Formatting.GRAY));
+                }
+            });
     public static final Item ICE_CREAM = registerItem("ice_cream", new Item(new FabricItemSettings()));
     public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode", new LighterItem(new FabricItemSettings().maxDamage(5)));
     public static final Item NETHER_CORE_KEY = registerItem("nether_core_key", new LighterItem(new FabricItemSettings().maxDamage(5)));
@@ -412,6 +419,7 @@ public class CoreAscensionItems {
     public static final Item LUMITE_SHURIKEN = registerItem("lumite_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.LUMITE));
     public static final Item FROST_SHURIKEN = registerItem("frost_shuriken", new ShurikenItem(new FabricItemSettings(), ShurikenItem.Type.FROST));
 
+    public static final Item EMPTY = registerItem("empty", new Item(new FabricItemSettings()));
 
     public static Item registerItem(String name, Item item)
     {

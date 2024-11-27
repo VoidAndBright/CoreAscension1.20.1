@@ -14,7 +14,8 @@ import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class MoltenIceFluidBlock extends FluidBlock {
+public class MoltenIceFluidBlock extends FluidBlock
+{
     public MoltenIceFluidBlock(FlowableFluid fluid, Settings settings)
     {
         super(fluid, settings);
@@ -26,6 +27,7 @@ public class MoltenIceFluidBlock extends FluidBlock {
         {
             if (living.hasStatusEffect(CoreAscensionStatusEffects.ICE_RESISTANCE))
                 return;
+            // add other mobs that are immune to this later (core tank, flakeling, ice golem, frostfox, etc)
             if (!(living instanceof GhastEntity))
             {
                 living.addStatusEffect(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING.addAttributeModifier(
