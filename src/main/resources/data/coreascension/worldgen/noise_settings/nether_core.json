@@ -5,7 +5,7 @@
   "ore_veins_enabled": true,
   "legacy_random_source": true,
   "default_block": {
-    "Name": "coreascension:netherfrost"
+    "Name": "coreascension:blizzarack"
   },
   "default_fluid": {
     "Name": "coreascension:molten_ice",

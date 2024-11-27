@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "down": "coreascension:block/netherfrost",
+    "down": "coreascension:block/blizzarack",
     "up": "coreascension:block/entropic_core_nylium_top",
     "north": "coreascension:block/entropic_core_nylium",
     "east": "coreascension:block/entropic_core_nylium",
     "south": "coreascension:block/entropic_core_nylium",
     "west": "coreascension:block/entropic_core_nylium",
-    "particle": "coreascension:block/netherfrost"
+    "particle": "coreascension:block/blizzarack"
   }
 }

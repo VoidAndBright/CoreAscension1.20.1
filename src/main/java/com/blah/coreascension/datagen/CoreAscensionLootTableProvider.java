@@ -302,7 +302,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
 
 
         // nether core
-        addDrop(CoreAscensionBlocks.NETHERFROST);
+        addDrop(CoreAscensionBlocks.BLIZZARACK);
         addDrop(CoreAscensionBlocks.CORELIGHT);
         addDrop(CoreAscensionBlocks.PERMA_ICE);
         addDrop(CoreAscensionBlocks.NETHER_ICE);
@@ -383,8 +383,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.FROSTING_GRASS, oreDrops(CoreAscensionBlocks.FROSTING_GRASS, CoreAscensionBlocks.CAKESOIL.asItem()));
         addDrop(CoreAscensionBlocks.CLOUD_STONE, oreDrops(CoreAscensionBlocks.CLOUD_STONE, CoreAscensionBlocks.CLOUD_COBBLESTONE.asItem()));
         addDrop(CoreAscensionBlocks.ETHEREAL_GRASS, oreDrops(CoreAscensionBlocks.ETHEREAL_GRASS, CoreAscensionBlocks.ETHEREAL_DIRT.asItem()));
-        addDrop(CoreAscensionBlocks.CORE_NYLIUM, oreDrops(CoreAscensionBlocks.CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST.asItem()));
-        addDrop(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, oreDrops(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, CoreAscensionBlocks.NETHERFROST.asItem()));
+        addDrop(CoreAscensionBlocks.CORE_NYLIUM, oreDrops(CoreAscensionBlocks.CORE_NYLIUM, CoreAscensionBlocks.BLIZZARACK.asItem()));
+        addDrop(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, oreDrops(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM, CoreAscensionBlocks.BLIZZARACK.asItem()));
 
         addDrop(CoreAscensionBlocks.SMOOTH_NETHERRACK);
         addDrop(CoreAscensionBlocks.POLISHED_NETHERRACK);

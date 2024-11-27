@@ -22,7 +22,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE);
             entries.add(CoreAscensionBlocks.HARDENED_LAVA);
             entries.add(CoreAscensionBlocks.DREAD_ROCK);
-            entries.add(CoreAscensionBlocks.NETHERFROST);
+            entries.add(CoreAscensionBlocks.BLIZZARACK);
             entries.add(CoreAscensionBlocks.ANDESITE_TILE);
             entries.add(CoreAscensionBlocks.DIORITE_TILE);
             entries.add(CoreAscensionBlocks.GRANITE_TILE);
@@ -308,7 +308,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.PETRIFIED_WOOD);
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS);
             entries.add(CoreAscensionBlocks.CEMENT);
-            entries.add(CoreAscensionBlocks.NETHERFROST_BRICKS);
+            entries.add(CoreAscensionBlocks.BLIZZARACK_BRICKS);
             entries.add(CoreAscensionBlocks.SOUL_SNOW);
             entries.add(CoreAscensionBlocks.SEASHELL);
             entries.add(CoreAscensionBlocks.CONCH_SHELL);
@@ -318,7 +318,7 @@ public class CoreAscensionGroups
 
 
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_SLAB);
-            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_SLAB);
+            entries.add(CoreAscensionBlocks.BLIZZARACK_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.SUS_BRAIN_CORAL_BLOCK);
             entries.add(CoreAscensionBlocks.SUS_BUBBLE_CORAL_BLOCK);
@@ -330,7 +330,7 @@ public class CoreAscensionGroups
             //SECRET DOORS
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_STAIRS);
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_STAIRS);
-            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_STAIRS);
+            entries.add(CoreAscensionBlocks.BLIZZARACK_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.CEMENT_STAIRS);
             entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_STAIRS);
             entries.add(CoreAscensionBlocks.REINFORCED_GLASS_PANE);
@@ -339,7 +339,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CORELIGHT);
             entries.add(CoreAscensionBlocks.PETRIFIED_WOOD_WALL);
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS_WALL);
-            entries.add(CoreAscensionBlocks.NETHERFROST_BRICK_WALL);
+            entries.add(CoreAscensionBlocks.BLIZZARACK_BRICK_WALL);
             entries.add(CoreAscensionBlocks.CEMENT_WALL);
             entries.add(CoreAscensionBlocks.MOSSY_END_STONE_BRICK_WALL);
             entries.add(CoreAscensionBlocks.PLAYER_LAUNCHER);

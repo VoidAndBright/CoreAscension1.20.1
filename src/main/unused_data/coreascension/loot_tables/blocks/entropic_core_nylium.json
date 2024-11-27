@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "coreascension:netherfrost",
+          "name": "coreascension:blizzarack",
           "weight": 1,
           "conditions": [
             {

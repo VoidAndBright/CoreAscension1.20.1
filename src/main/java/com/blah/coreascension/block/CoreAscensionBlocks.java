@@ -539,11 +539,11 @@ public class CoreAscensionBlocks
     // end stone variants
 
     // nether core
-    public static final Block NETHERFROST = RegisterBlockItem("netherfrost", new Block(FabricBlockSettings.copyOf(Blocks.NETHERRACK).mapColor(MapColor.CYAN)));
-    public static final Block NETHERFROST_BRICKS = RegisterBlockItem("netherfrost_bricks", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_BRICKS).mapColor(MapColor.DARK_AQUA)));
-    public static final Block NETHERFROST_BRICK_SLAB = RegisterBlockItem("netherfrost_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHER_BRICK_SLAB).mapColor(MapColor.DARK_AQUA)));
-    public static final Block NETHERFROST_BRICK_STAIRS = RegisterBlockItem("netherfrost_brick_stairs", new StairsBlock(NETHERFROST_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.NETHER_BRICK_STAIRS).mapColor(MapColor.DARK_AQUA)));
-    public static final Block NETHERFROST_BRICK_WALL = RegisterBlockItem("netherfrost_brick_wall", new WallBlock(FabricBlockSettings.copyOf(NETHERFROST_BRICKS).mapColor(MapColor.DARK_AQUA)));
+    public static final Block BLIZZARACK = RegisterBlockItem("blizzarack", new Block(FabricBlockSettings.copyOf(Blocks.NETHERRACK).mapColor(MapColor.CYAN)));
+    public static final Block BLIZZARACK_BRICKS = RegisterBlockItem("blizzarack_bricks", new Block(FabricBlockSettings.copyOf(Blocks.NETHER_BRICKS).mapColor(MapColor.DARK_AQUA)));
+    public static final Block BLIZZARACK_BRICK_SLAB = RegisterBlockItem("blizzarack_brick_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.NETHER_BRICK_SLAB).mapColor(MapColor.DARK_AQUA)));
+    public static final Block BLIZZARACK_BRICK_STAIRS = RegisterBlockItem("blizzarack_brick_stairs", new StairsBlock(BLIZZARACK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.NETHER_BRICK_STAIRS).mapColor(MapColor.DARK_AQUA)));
+    public static final Block BLIZZARACK_BRICK_WALL = RegisterBlockItem("blizzarack_brick_wall", new WallBlock(FabricBlockSettings.copyOf(BLIZZARACK_BRICKS).mapColor(MapColor.DARK_AQUA)));
 
 
     public static final Block CORELIGHT = RegisterBlockItem("corelight", new Block(FabricBlockSettings.copyOf(Blocks.SHROOMLIGHT).mapColor(MapColor.BLUE)));

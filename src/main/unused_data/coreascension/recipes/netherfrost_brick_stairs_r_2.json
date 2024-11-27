@@ -7,26 +7,26 @@
   ],
   "key": {
     "2": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "4": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "5": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "6": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "7": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "8": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     }
   },
   "result": {
-    "item": "coreascension:netherfrost_brick_stairs",
+    "item": "coreascension:blizzarack_brick_stairs",
     "count": 4
   }
 }

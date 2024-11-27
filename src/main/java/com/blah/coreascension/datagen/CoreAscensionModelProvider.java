@@ -18,6 +18,12 @@ public class CoreAscensionModelProvider extends FabricModelProvider
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator)
     {
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DIAMOND_DOOR);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.BLIZZARACK);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.OBSIDIAN_BRICKS);
+        BlockStateModelGenerator.BlockTexturePool BLIZZARACK_POOL = blockStateModelGenerator.registerCubeAllModelTexturePool(CoreAscensionBlocks.BLIZZARACK_BRICKS);
+        BLIZZARACK_POOL.stairs(CoreAscensionBlocks.BLIZZARACK_BRICK_STAIRS);
+        BLIZZARACK_POOL.slab(CoreAscensionBlocks.BLIZZARACK_BRICK_SLAB);
+        BLIZZARACK_POOL.wall(CoreAscensionBlocks.BLIZZARACK_BRICK_WALL);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.FROST_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.CAKEWOOD_DOOR);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.CACTUS_DOOR);

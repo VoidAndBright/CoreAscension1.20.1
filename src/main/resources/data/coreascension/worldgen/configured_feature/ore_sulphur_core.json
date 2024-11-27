@@ -7,7 +7,7 @@
       {
         "target": {
           "predicate_type": "minecraft:block_match",
-          "block": "coreascension:netherfrost"
+          "block": "coreascension:blizzarack"
         },
         "state": {
           "Name": "coreascension:core_sulphur_ore"

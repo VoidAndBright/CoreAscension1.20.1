@@ -5,17 +5,17 @@
   ],
   "key": {
     "0": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "1": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     },
     "2": {
-      "item": "coreascension:netherfrost_brick"
+      "item": "coreascension:blizzarack_brick"
     }
   },
   "result": {
-    "item": "coreascension:netherfrost_brick_slab",
+    "item": "coreascension:blizzarack_brick_slab",
     "count": 6
   }
 }

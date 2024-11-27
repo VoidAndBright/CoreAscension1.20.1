@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "coreascension:block/frostbrick",
-    "top": "coreascension:block/frostbrick",
-    "side": "coreascension:block/frostbrick"
-  }
-}
