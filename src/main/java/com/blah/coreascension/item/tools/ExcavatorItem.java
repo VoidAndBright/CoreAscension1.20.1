@@ -1,6 +1,7 @@
 package com.blah.coreascension.item.tools;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -49,6 +50,9 @@ public class ExcavatorItem extends ShovelToolTipItem {
     {
         BlockState Block = world.getBlockState(blockPos);
         if (Block.isIn(BlockTags.SHOVEL_MINEABLE) && this.canMine(Block, world, blockPos, player))
+        {
             world.breakBlock(blockPos, true);
+            player.getMainHandStack().damage(1, player, targetEntity -> player.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        }
     }
 }
