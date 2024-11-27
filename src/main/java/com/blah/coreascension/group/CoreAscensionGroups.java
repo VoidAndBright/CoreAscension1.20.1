@@ -398,6 +398,12 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CORE_NYLIUM);
             entries.add(CoreAscensionBlocks.CORE_ROOTS);
             entries.add(CoreAscensionBlocks.ICE_CREAM_BLOCK);
+
+            entries.add(CoreAscensionBlocks.ENTROPIC_VINES);
+            entries.add(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
+            entries.add(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM);
+            entries.add(CoreAscensionBlocks.ENTROPY_WEEDS);
+            entries.add(CoreAscensionBlocks.ENTROPIC_ICE);
             // scoria shit goes here
             entries.add(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
             // glowing mushroom biome
@@ -431,8 +437,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
-
-
 
             entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);

@@ -4,8 +4,19 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.entry.LeafEntry;
+import net.minecraft.loot.entry.LootPoolEntry;
+import net.minecraft.loot.function.ApplyBonusLootFunction;
+import net.minecraft.loot.function.SetCountLootFunction;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
 public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider {
     public CoreAscensionLootTableProvider(FabricDataOutput dataOutput)
@@ -322,6 +333,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.FROST_DOOR, doorDrops(CoreAscensionBlocks.FROST_DOOR));
         addDrop(CoreAscensionBlocks.FROST_TRAPDOOR);
         addDrop(CoreAscensionBlocks.CORE_VINES);
+        addDrop(CoreAscensionBlocks.CORE_VINES_PLANT, CoreAscensionBlocks.CORE_VINES.asItem());
         addDrop(CoreAscensionBlocks.CORE_ROOTS);
         addDrop(CoreAscensionBlocks.CORE_FUNGUS);
         addDrop(CoreAscensionBlocks.CORE_WART_BLOCK);
@@ -338,6 +350,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.ENTROPY_DOOR, doorDrops(CoreAscensionBlocks.ENTROPY_DOOR));
         addDrop(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
         addDrop(CoreAscensionBlocks.ENTROPIC_VINES);
+        addDrop(CoreAscensionBlocks.ENTROPIC_VINES_PLANT, CoreAscensionBlocks.ENTROPIC_VINES.asItem());
         addDrop(CoreAscensionBlocks.ENTROPIC_ICE);
         addDrop(CoreAscensionBlocks.ENTROPY_WEEDS);
         addDrop(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
@@ -512,5 +525,17 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB));
         addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL);
 
+        addDrop(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, multiItemOreDrops(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, CoreAscensionItems.DARK_MATTER_JELLY, 2, 3));
+        addDrop(CoreAscensionBlocks.TADANITE_ORE, multiItemOreDrops(CoreAscensionBlocks.TADANITE_ORE, CoreAscensionItems.TADANITE_CRYSTAL, 2, 3));
+    }
+
+    public LootTable.Builder multiItemOreDrops(Block drop, Item item, float min, float max) {
+        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
+                ((LeafEntry.Builder)
+                        ItemEntry.builder(item)
+                                .apply(SetCountLootFunction
+                                        .builder(UniformLootNumberProvider
+                                                .create(min, max))))
+                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
     }
 }

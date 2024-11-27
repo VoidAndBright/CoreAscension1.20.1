@@ -34,10 +34,10 @@
       "upper_size": 2
     },
     "trunk_placer": {
-      "type": "minecraft:entropy_trunk_placer",
-      "base_height": 2,
-      "height_rand_a": 2,
-      "height_rand_b": 1
+      "type": "minecraft:straight_trunk_placer",
+      "base_height": 12,
+      "height_rand_a": 6,
+      "height_rand_b": 0
     },
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",

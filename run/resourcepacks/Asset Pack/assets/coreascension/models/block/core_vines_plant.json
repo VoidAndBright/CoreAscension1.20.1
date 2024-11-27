@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "coreascension:block/core_vines_plant",
+    "particle": "coreascension:block/core_vines_plant"
+  }
+}

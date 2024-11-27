@@ -22,7 +22,8 @@ public class EntropyFoliagePlacer extends FoliagePlacer
 
     private final int height;
 
-    public EntropyFoliagePlacer(IntProvider radius, IntProvider offset, int height) {
+    public EntropyFoliagePlacer(IntProvider radius, IntProvider offset, int height)
+    {
         super(radius, offset);
         this.height = height;
     }
@@ -35,22 +36,28 @@ public class EntropyFoliagePlacer extends FoliagePlacer
     @Override
     protected void generate(TestableWorld world, BlockPlacer placer, Random random, TreeFeatureConfig config, int trunkHeight, TreeNode treeNode, int foliageHeight, int radius, int offset)
     {
+        //whether the 3x3 area of wart blocks has placed a corelight or not yet
         boolean placeCorelight = false;
+        // the number of stacks of entropic wart blocks to place
         int leafStacks;
-        if (trunkHeight == 2)
+        // the height to offset the leaf placement down by
+        int subtractFromHeight = 16;
+        if (trunkHeight == 12 || trunkHeight == 13)
         {
             leafStacks = 3;
+            subtractFromHeight = 10;
         }
-        else if (trunkHeight == 3 || trunkHeight == 4)
+        else if (trunkHeight == 14 || trunkHeight == 15)
         {
             leafStacks = 4;
+            subtractFromHeight = 13;
         }
         else
         {
             leafStacks = 5;
         }
 
-        int leafPlacement = 3 - 16;
+        int leafPlacement = 3 - subtractFromHeight;
 
         // place 5x5 entropic wart block things
         for (int i = 0; i < leafStacks; i++)
@@ -80,11 +87,8 @@ public class EntropyFoliagePlacer extends FoliagePlacer
             }
             leafPlacement += 3;
         }
-        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 1, 0), Blocks.AIR.getDefaultState());
-        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 2, 0), Blocks.AIR.getDefaultState());
-        placer.placeBlock(treeNode.getCenter().add(0, leafPlacement + 3, 0), Blocks.AIR.getDefaultState());
 
-        leafPlacement = 2 - 16;
+        leafPlacement = 2 - subtractFromHeight;
 
         // place 3x3 entropic wart block things
         for (int i = 0; i < leafStacks; i++)

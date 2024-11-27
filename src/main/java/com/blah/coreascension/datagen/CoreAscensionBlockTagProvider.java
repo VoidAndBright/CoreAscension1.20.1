@@ -66,6 +66,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.ARGON_CRYSTAL_ORE);
 
 
+        getOrCreateTagBuilder(BlockTags.CLIMBABLE)
+                .add(CoreAscensionBlocks.CORE_VINES)
+                .add(CoreAscensionBlocks.CORE_VINES_PLANT)
+                .add(CoreAscensionBlocks.ENTROPIC_VINES)
+                .add(CoreAscensionBlocks.ENTROPIC_VINES_PLANT);
+
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(CoreAscensionBlocks.TROPICS_LOG)
                 .add(CoreAscensionBlocks.TROPICS_WOOD)

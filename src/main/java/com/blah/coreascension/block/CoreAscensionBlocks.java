@@ -570,8 +570,9 @@ public class CoreAscensionBlocks
     public static final Block FROST_DOOR = RegisterBlockItem("frost_door", new DoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
     public static final Block FROST_TRAPDOOR = RegisterBlockItem("frost_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(FROST_PLANKS).nonOpaque().mapColor(MapColor.CYAN), BlockSetType.OAK));
     public static final Block CORE_NYLIUM = RegisterBlockItem("core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.PALE_PURPLE)));
-    public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE)));
-    public static final Block CORE_VINES = RegisterBlockItem("core_vines", new WeepingVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CORE_WART_BLOCK = RegisterBlockItem("core_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.PALE_PURPLE).sounds(BlockSoundGroup.WART_BLOCK)));
+    public static final Block CORE_VINES = RegisterBlockItem("core_vines", new CoreVinesBlock(FabricBlockSettings.copyOf(Blocks.TWISTING_VINES).mapColor(MapColor.PALE_PURPLE)));
+    public static final Block CORE_VINES_PLANT = RegisterBlockItem("core_vines_plant", new CoreVinesPlantBlock(FabricBlockSettings.copyOf(Blocks.TWISTING_VINES).mapColor(MapColor.PALE_PURPLE)));
     public static final Block CORE_ROOTS = RegisterBlockItem("core_roots", new RootsBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.PALE_PURPLE))
     {
         protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
@@ -608,7 +609,7 @@ public class CoreAscensionBlocks
 	public static final Block ENTROPY_DOOR = RegisterBlockItem("entropy_door", new DoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
 	public static final Block ENTROPY_TRAPDOOR = RegisterBlockItem("entropy_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ENTROPY_PLANKS).nonOpaque().mapColor(MapColor.BLACK), BlockSetType.OAK));
     public static final Block ENTROPIC_CORE_NYLIUM = RegisterBlockItem("entropic_core_nylium", new Block(FabricBlockSettings.copyOf(Blocks.CRIMSON_NYLIUM).mapColor(MapColor.WHITE)));
-    public static final Block ENTROPIC_WART_BLOCK = RegisterBlockItem("entropic_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.WHITE)));
+    public static final Block ENTROPIC_WART_BLOCK = RegisterBlockItem("entropic_wart_block", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.WHITE).sounds(BlockSoundGroup.WART_BLOCK)));
     public static final Block ENTROPIC_VINES = RegisterBlockItem("entropic_vines", new EntropicVinesBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
     public static final Block ENTROPIC_VINES_PLANT = RegisterBlockItem("entropic_vines_plant", new EntropicVinesPlantBlock(FabricBlockSettings.copyOf(Blocks.WEEPING_VINES).mapColor(MapColor.WHITE)));
     public static final Block ENTROPY_WEEDS = RegisterBlockItem("entropy_weeds", new PlantBlock(FabricBlockSettings.copyOf(Blocks.CRIMSON_ROOTS).mapColor(MapColor.WHITE))
