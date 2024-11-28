@@ -33,20 +33,10 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         {
             return false;
         }
-        boolean retval = false;
-        if (ingredients.get(0).test(inventory.getStack(0)) &&
-                ingredients.get(1).test(inventory.getStack(1)) &&
-                ingredients.get(2).test(inventory.getStack(2)))
-        {
-            retval = true;
-        }
-        if (ingredients.get(0).test(inventory.getStack(0)) &&
-                ingredients.get(1).test(ItemStack.EMPTY) &&
-                ingredients.get(2).test(inventory.getStack(2)))
-        {
-            retval = true;
-        }
-        return retval;
+        return
+        (ingredients.get(0).test(inventory.getStack(0)) &&
+        ingredients.get(1).test(inventory.getStack(1)) &&
+        ingredients.get(2).test(inventory.getStack(2)));
     }
 
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager)
@@ -69,12 +59,12 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         return id;
     }
 
-    public RecipeSerializer<?> getSerializer()
+    public RecipeSerializer<CatalyzerRecipe> getSerializer()
     {
         return Serializer.INSTANCE;
     }
 
-    public RecipeType<?> getType()
+    public RecipeType<CatalyzerRecipe> getType()
     {
         return Type.INSTANCE;
     }

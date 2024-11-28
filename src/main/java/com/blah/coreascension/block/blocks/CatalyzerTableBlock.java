@@ -53,10 +53,10 @@ public class CatalyzerTableBlock extends BlockWithEntity implements BlockEntityP
         return new CatalyzerTableBlockEntity(pos, state);
     }
 
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
-    {
-        return checkType(type, CoreAscensionBlockEntities.CATALYZER_TABLE_BLOCK_ENTITY, (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
-    }
+    //public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type)
+    //{
+    //    return checkType(type, CoreAscensionBlockEntities.CATALYZER_TABLE_BLOCK_ENTITY, (world1, pos, state1, blockEntity) -> blockEntity.onContentChanged(world1, pos, state1));
+    //}
 
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved)
     {

@@ -611,4 +611,13 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
                                                 .create(min, max))))
                         .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
     }
+    public LootTable.Builder MultiOreDrops(Block drop, Item item) {
+        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
+                ((LeafEntry.Builder)
+                        ItemEntry.builder(item)
+                                .apply(SetCountLootFunction
+                                        .builder(UniformLootNumberProvider
+                                                .create(2.0f, 5.0f))))
+                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
+    }
 }

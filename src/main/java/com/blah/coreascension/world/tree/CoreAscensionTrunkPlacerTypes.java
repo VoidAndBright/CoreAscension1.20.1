@@ -7,7 +7,6 @@ import net.minecraft.world.gen.trunk.TrunkPlacerType;
 
 public class CoreAscensionTrunkPlacerTypes {
     public static final TrunkPlacerType<?> TROPICS_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("tropics_trunk_placer", TropicsTrunkPlacer.CODEC);
-    //public static final TrunkPlacerType<?> ENTROPY_TRUNK_PLACER = TrunkPlacerTypeInvoker.callRegister("entropy_trunk_placer", EntropyTrunkPlacer.CODEC);
 
     public static void RegisterTrunkPlacers()
     {

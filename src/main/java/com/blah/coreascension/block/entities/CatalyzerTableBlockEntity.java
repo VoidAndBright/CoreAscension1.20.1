@@ -49,17 +49,31 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
         return inventory;
     }
 
-    public void tick(World world, BlockPos pos, BlockState state)
+    @Override
+    public void setStack(int slot, ItemStack stack)
     {
-        if (world.isClient()) return;
-        if (isOutputSlotReceivable())
-            if (hasRecipe()) craftItem();
-            else markDirty(world, pos, state);
+        ImplementedInventory.super.setStack(slot, stack);
+        onContentChanged(this.world, this.pos, this.getCachedState(),slot);
     }
 
-    private boolean isOutputSlotReceivable()
+    public void onContentChanged(World world, BlockPos pos, BlockState state,int slot)
     {
-        return getStack(OUTPUT_SLOT).getCount() < getStack(OUTPUT_SLOT).getMaxCount();
+        if (world.isClient()) return;
+        if (hasRecipe())
+        {
+            craftItem();
+            markDirty(world, pos, state);
+        }
+        else {
+            this.inventory.set(3,ItemStack.EMPTY);
+            markDirty(world, pos, state);
+        }
+    }
+
+    @Override
+    public void markDirty()
+    {
+        onContentChanged(this.getWorld(),this.pos,this.getCachedState(),1);
     }
 
     public boolean hasRecipe()
@@ -72,7 +86,7 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
     private void craftItem()
     {
         Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
-        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), recipe.get().getOutput(null).getCount()));
+        this.inventory.set(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), recipe.get().getOutput(null).getCount()));
     }
 
     public Optional<CatalyzerRecipe> getCurrentRecipe()
