@@ -1,7 +1,12 @@
 {
-  "parent": "block/cube_all",
+  "parent": "block/cube",
   "textures": {
-    "all": "coreascension:block/obsidian_sponge_wet",
-    "particle": "coreascension:block/obsidian_sponge_wet"
+    "down": "coreascension:block/lavad_obsidian_sponge_top",
+    "up": "coreascension:block/lavad_obsidian_sponge_top",
+    "north": "coreascension:block/lavad_obsidian_sponge",
+    "east": "coreascension:block/lavad_obsidian_sponge",
+    "south": "coreascension:block/lavad_obsidian_sponge",
+    "west": "coreascension:block/lavad_obsidian_sponge",
+    "particle": "coreascension:block/lavad_obsidian_sponge"
   }
 }

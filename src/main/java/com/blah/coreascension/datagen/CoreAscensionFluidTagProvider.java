@@ -25,5 +25,9 @@ public class CoreAscensionFluidTagProvider extends FabricTagProvider.FluidTagPro
         getOrCreateTagBuilder(FluidTags.WATER)
                 .add(CoreAscensionFluids.STILL_MOLTEN_ICE)
                 .add(CoreAscensionFluids.FLOWING_MOLTEN_ICE);
+
+        getOrCreateTagBuilder(CoreAscensionTags.END_GAS)
+                .add(CoreAscensionFluids.STILL_END_GAS)
+                .add(CoreAscensionFluids.FLOWING_END_GAS);
     }
 }

@@ -2,7 +2,7 @@
   "type": "coreascension:catalyzer",
   "ingredients": [
     {"item": "minecraft:cobblestone"},
-    {},
+    {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
   "result": {

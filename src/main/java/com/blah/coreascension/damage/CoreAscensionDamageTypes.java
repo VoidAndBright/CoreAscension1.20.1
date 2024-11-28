@@ -14,6 +14,8 @@ import net.minecraft.world.World;
 public class CoreAscensionDamageTypes {
     public static final RegistryKey<DamageType> FREEZING = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(CoreAscension.MOD_ID, "freezing"));
     public static final RegistryKey<DamageType> ICE_CREAM_BLOCK = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(CoreAscension.MOD_ID, "ice_cream_block"));
+    public static final RegistryKey<DamageType> END_GAS_SUFFOCATION = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(CoreAscension.MOD_ID, "end_gas_suffocation"));
+
 
     public static DamageSource of(World world, RegistryKey<DamageType> key)
     {

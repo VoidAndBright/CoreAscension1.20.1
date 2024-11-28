@@ -2,7 +2,7 @@
   "type": "coreascension:catalyzer",
   "ingredients": [
     {"item": "minecraft:end_stone"},
-    {},
+    {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
   "result": {

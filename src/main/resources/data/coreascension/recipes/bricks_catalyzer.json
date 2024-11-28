@@ -2,7 +2,7 @@
   "type": "coreascension:catalyzer",
   "ingredients": [
     {"item": "minecraft:clay"},
-    {},
+    {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
   "result": {

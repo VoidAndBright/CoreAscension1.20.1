@@ -30,6 +30,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
@@ -779,7 +780,96 @@ public class CoreAscensionBlocks
     public static final Block SCORIA_REDSTONE_ORE = RegisterBlockItem("scoria_redstone_ore", new RedstoneOreBlock(FabricBlockSettings.copyOf(Blocks.REDSTONE_ORE).mapColor(MapColor.RED)));
     public static final Block SCORIA_SUNSTONE_ORE = RegisterBlockItem("scoria_sunstone_ore", new ExperienceDroppingBlock(FabricBlockSettings.copyOf(SCORIA).mapColor(MapColor.ORANGE), UniformIntProvider.create(4, 6)));
 
+    // oblivion biomes and stuff
+    public static final Block EBONSTONE = RegisterBlockItem("ebonstone", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.PURPLE)));
+    public static final Block UMBRASTONE = RegisterBlockItem("umbrastone", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.BLACK)));
+    public static final Block POLISHED_UMBRASTONE = RegisterBlockItem("polished_umbrastone", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.BLACK)));
+    public static final Block UMBRASTONE_COLUMN = RegisterBlockItem("umbrastone_column", new PillarBlock(FabricBlockSettings.copyOf(Blocks.END_STONE).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_M = RegisterBlockItem("runic_obsidian_m", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_O = RegisterBlockItem("runic_obsidian_o", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_J = RegisterBlockItem("runic_obsidian_j", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_A = RegisterBlockItem("runic_obsidian_a", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_N = RegisterBlockItem("runic_obsidian_n", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block RUNIC_OBSIDIAN_G = RegisterBlockItem("runic_obsidian_g", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
+    public static final Block DOOMSTONE = RegisterBlockItem("doomstone", new Block(FabricBlockSettings.copyOf(Blocks.END_STONE).hardness(4f).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block FYRENDIUM_CRYSTAL = RegisterBlockItem("fyrendium_crystal", new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS).mapColor(MapColor.DARK_RED)));
+    public static final Block FYRENDIUM_BLOCK = RegisterBlockItem("fyrendium_block", new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK).mapColor(MapColor.DARK_RED)));
+    public static final Block EBONSTONE_SLAB = RegisterBlockItem("ebonstone_slab", new SlabBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_STAIRS = RegisterBlockItem("ebonstone_stairs", new StairsBlock(EBONSTONE.getDefaultState(), FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_WALL = RegisterBlockItem("ebonstone_wall", new WallBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
 
+    public static final Block BRIGHT_CYAN_WOOL = RegisterBlockItem("bright_cyan_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL)));
+    public static final Block BRIGHT_RED_WOOL = RegisterBlockItem("bright_red_wool", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block BRIGHT_YELLOW_WOOL = RegisterBlockItem("bright_yellow_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block DARK_ORANGE_WOOL = RegisterBlockItem("dark_orange_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final Block DARK_RED_WOOL = RegisterBlockItem("dark_red_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.DARK_RED)));
+    public static final Block DARK_YELLOW_WOOL = RegisterBlockItem("dark_yellow_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.TERRACOTTA_YELLOW)));
+    public static final Block LIGHT_BROWN_WOOL = RegisterBlockItem("light_brown_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.BROWN)));
+    public static final Block PALE_YELLOW_WOOL = RegisterBlockItem("pale_yellow_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block TURQUOISE_WOOL = RegisterBlockItem("turquoise_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.BRIGHT_TEAL)));
+    public static final Block YELLOW_GREEN_WOOL = RegisterBlockItem("yellow_green_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.LIME)));
+    public static final Block INDIGO_WOOL = RegisterBlockItem("indigo_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.TERRACOTTA_PURPLE)));
+    public static final Block RAINBOW_WOOL = RegisterBlockItem("rainbow_wool", new Block(FabricBlockSettings.copyOf(Blocks.CYAN_WOOL).mapColor(MapColor.WHITE)));
+
+    public static final Block BRIGHT_CYAN_CARPET = RegisterBlockItem("bright_cyan_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET)));
+    public static final Block BRIGHT_RED_CARPET = RegisterBlockItem("bright_red_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.WHITE_CARPET).mapColor(MapColor.BRIGHT_RED)));
+    public static final Block BRIGHT_YELLOW_CARPET = RegisterBlockItem("bright_yellow_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block DARK_ORANGE_CARPET = RegisterBlockItem("dark_orange_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.TERRACOTTA_ORANGE)));
+    public static final Block DARK_RED_CARPET = RegisterBlockItem("dark_red_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.DARK_RED)));
+    public static final Block DARK_YELLOW_CARPET = RegisterBlockItem("dark_yellow_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.TERRACOTTA_YELLOW)));
+    public static final Block LIGHT_BROWN_CARPET = RegisterBlockItem("light_brown_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.BROWN)));
+    public static final Block PALE_YELLOW_CARPET = RegisterBlockItem("pale_yellow_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block TURQUOISE_CARPET = RegisterBlockItem("turquoise_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.BRIGHT_TEAL)));
+    public static final Block YELLOW_GREEN_CARPET = RegisterBlockItem("yellow_green_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.LIME)));
+    public static final Block INDIGO_CARPET = RegisterBlockItem("indigo_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.TERRACOTTA_PURPLE)));
+    public static final Block RAINBOW_CARPET = RegisterBlockItem("rainbow_carpet", new CarpetBlock(FabricBlockSettings.copyOf(Blocks.CYAN_CARPET).mapColor(MapColor.WHITE)));
+
+
+    public static final Block BRIGHT_CYAN_STAINED_GLASS = RegisterBlockItem("bright_cyan_stained_glass", new StainedGlassBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block BRIGHT_RED_STAINED_GLASS = RegisterBlockItem("bright_red_stained_glass", new StainedGlassBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block BRIGHT_YELLOW_STAINED_GLASS = RegisterBlockItem("bright_yellow_stained_glass", new StainedGlassBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block DARK_ORANGE_STAINED_GLASS = RegisterBlockItem("dark_orange_stained_glass", new StainedGlassBlock(DyeColor.ORANGE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block DARK_RED_STAINED_GLASS = RegisterBlockItem("dark_red_stained_glass", new StainedGlassBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block DARK_YELLOW_STAINED_GLASS = RegisterBlockItem("dark_yellow_stained_glass", new StainedGlassBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block LIGHT_BROWN_STAINED_GLASS = RegisterBlockItem("light_brown_stained_glass", new StainedGlassBlock(DyeColor.BROWN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block PALE_YELLOW_STAINED_GLASS = RegisterBlockItem("pale_yellow_stained_glass", new StainedGlassBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block TURQUOISE_STAINED_GLASS = RegisterBlockItem("turquoise_stained_glass", new StainedGlassBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block YELLOW_GREEN_STAINED_GLASS = RegisterBlockItem("yellow_green_stained_glass", new StainedGlassBlock(DyeColor.LIME, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block INDIGO_STAINED_GLASS = RegisterBlockItem("indigo_stained_glass", new StainedGlassBlock(DyeColor.PURPLE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+    public static final Block RAINBOW_STAINED_GLASS = RegisterBlockItem("rainbow_stained_glass", new StainedGlassBlock(DyeColor.WHITE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS)));
+
+    public static final Block BRIGHT_CYAN_STAINED_GLASS_PANE = RegisterBlockItem("bright_cyan_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block BRIGHT_RED_STAINED_GLASS_PANE = RegisterBlockItem("bright_red_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block BRIGHT_YELLOW_STAINED_GLASS_PANE = RegisterBlockItem("bright_yellow_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block DARK_ORANGE_STAINED_GLASS_PANE = RegisterBlockItem("dark_orange_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.ORANGE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block DARK_RED_STAINED_GLASS_PANE = RegisterBlockItem("dark_red_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block DARK_YELLOW_STAINED_GLASS_PANE = RegisterBlockItem("dark_yellow_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block LIGHT_BROWN_STAINED_GLASS_PANE = RegisterBlockItem("light_brown_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.BROWN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block PALE_YELLOW_STAINED_GLASS_PANE = RegisterBlockItem("pale_yellow_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block TURQUOISE_STAINED_GLASS_PANE = RegisterBlockItem("turquoise_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block YELLOW_GREEN_STAINED_GLASS_PANE = RegisterBlockItem("yellow_green_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.LIME, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block INDIGO_STAINED_GLASS_PANE = RegisterBlockItem("indigo_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.PURPLE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+    public static final Block RAINBOW_STAINED_GLASS_PANE = RegisterBlockItem("rainbow_stained_glass_pane", new StainedGlassPaneBlock(DyeColor.WHITE, FabricBlockSettings.copyOf(Blocks.CYAN_STAINED_GLASS_PANE)));
+
+    public static final Block BRIGHT_CYAN_BED = RegisterBlockItem("bright_cyan_bed", new CoreAscensionBedBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block BRIGHT_RED_BED = RegisterBlockItem("bright_red_bed", new CoreAscensionBedBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block BRIGHT_YELLOW_BED = RegisterBlockItem("bright_yellow_bed", new CoreAscensionBedBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block DARK_ORANGE_BED = RegisterBlockItem("dark_orange_bed", new CoreAscensionBedBlock(DyeColor.ORANGE, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block DARK_RED_BED = RegisterBlockItem("dark_red_bed", new CoreAscensionBedBlock(DyeColor.RED, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block DARK_YELLOW_BED = RegisterBlockItem("dark_yellow_bed", new CoreAscensionBedBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block LIGHT_BROWN_BED = RegisterBlockItem("light_brown_bed", new CoreAscensionBedBlock(DyeColor.BROWN, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block PALE_YELLOW_BED = RegisterBlockItem("pale_yellow_bed", new CoreAscensionBedBlock(DyeColor.YELLOW, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block TURQUOISE_BED = RegisterBlockItem("turquoise_bed", new CoreAscensionBedBlock(DyeColor.CYAN, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block YELLOW_GREEN_BED = RegisterBlockItem("yellow_green_bed", new CoreAscensionBedBlock(DyeColor.LIME, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block INDIGO_BED = RegisterBlockItem("indigo_bed", new CoreAscensionBedBlock(DyeColor.PURPLE, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+    public static final Block RAINBOW_BED = RegisterBlockItem("rainbow_bed", new CoreAscensionBedBlock(DyeColor.WHITE, FabricBlockSettings.copyOf(Blocks.CYAN_BED)));
+
+
+    public static final Block POLISHED_EBONSTONE = RegisterBlockItem("polished_ebonstone", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_BRICKS = RegisterBlockItem("ebonstone_bricks", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_LAMP = RegisterBlockItem("ebonstone_lamp", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block CHISELED_EBONSTONE = RegisterBlockItem("chiseled_ebonstone", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_PILLAR = RegisterBlockItem("ebonstone_pillar", new EbonstonePillarBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
 
 
     private static Block RegisterBlockItem(String name, Block block)
@@ -972,6 +1062,31 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_RED_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.INDIGO_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_STAINED_GLASS, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_RED_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.INDIGO_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RAINBOW_STAINED_GLASS_PANE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BORDERLESS_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.SKYLANDS_PORTAL_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), CoreAscensionFluids.STILL_END_GAS, CoreAscensionFluids.FLOWING_END_GAS);
     }

@@ -525,6 +525,79 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB, slabDrops(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_SLAB));
         addDrop(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL);
 
+        addDrop(CoreAscensionBlocks.EBONSTONE);
+        addDrop(CoreAscensionBlocks.EBONSTONE_STAIRS);
+        addDrop(CoreAscensionBlocks.EBONSTONE_SLAB, slabDrops(CoreAscensionBlocks.EBONSTONE_SLAB));
+        addDrop(CoreAscensionBlocks.EBONSTONE_WALL);
+        addDrop(CoreAscensionBlocks.POLISHED_EBONSTONE);
+        addDrop(CoreAscensionBlocks.EBONSTONE_BRICKS);
+        addDrop(CoreAscensionBlocks.EBONSTONE_LAMP);
+        addDrop(CoreAscensionBlocks.EBONSTONE_PILLAR);
+        addDrop(CoreAscensionBlocks.CHISELED_EBONSTONE);
+
+        addDrop(CoreAscensionBlocks.UMBRASTONE);
+        addDrop(CoreAscensionBlocks.POLISHED_UMBRASTONE);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_M);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_O);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_J);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_A);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_N);
+        addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_G);
+        addDrop(CoreAscensionBlocks.FYRENDIUM_BLOCK);
+        addDrop(CoreAscensionBlocks.FYRENDIUM_CRYSTAL);
+        addDrop(CoreAscensionBlocks.DOOMSTONE);
+
+        addDrop(CoreAscensionBlocks.BRIGHT_CYAN_WOOL);
+        addDrop(CoreAscensionBlocks.BRIGHT_RED_WOOL);
+        addDrop(CoreAscensionBlocks.BRIGHT_YELLOW_WOOL);
+        addDrop(CoreAscensionBlocks.DARK_ORANGE_WOOL);
+        addDrop(CoreAscensionBlocks.DARK_RED_WOOL);
+        addDrop(CoreAscensionBlocks.DARK_YELLOW_WOOL);
+        addDrop(CoreAscensionBlocks.INDIGO_WOOL);
+        addDrop(CoreAscensionBlocks.PALE_YELLOW_WOOL);
+        addDrop(CoreAscensionBlocks.LIGHT_BROWN_WOOL);
+        addDrop(CoreAscensionBlocks.TURQUOISE_WOOL);
+        addDrop(CoreAscensionBlocks.YELLOW_GREEN_WOOL);
+        addDrop(CoreAscensionBlocks.RAINBOW_WOOL);
+
+        addDrop(CoreAscensionBlocks.BRIGHT_CYAN_CARPET);
+        addDrop(CoreAscensionBlocks.BRIGHT_RED_CARPET);
+        addDrop(CoreAscensionBlocks.BRIGHT_YELLOW_CARPET);
+        addDrop(CoreAscensionBlocks.DARK_ORANGE_CARPET);
+        addDrop(CoreAscensionBlocks.DARK_RED_CARPET);
+        addDrop(CoreAscensionBlocks.DARK_YELLOW_CARPET);
+        addDrop(CoreAscensionBlocks.INDIGO_CARPET);
+        addDrop(CoreAscensionBlocks.PALE_YELLOW_CARPET);
+        addDrop(CoreAscensionBlocks.LIGHT_BROWN_CARPET);
+        addDrop(CoreAscensionBlocks.TURQUOISE_CARPET);
+        addDrop(CoreAscensionBlocks.YELLOW_GREEN_CARPET);
+        addDrop(CoreAscensionBlocks.RAINBOW_CARPET);
+
+        addDrop(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.DARK_RED_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.INDIGO_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.RAINBOW_STAINED_GLASS);
+        addDrop(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.DARK_RED_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.INDIGO_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS_PANE);
+        addDrop(CoreAscensionBlocks.RAINBOW_STAINED_GLASS_PANE);
+
         addDrop(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, multiItemOreDrops(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, CoreAscensionItems.DARK_MATTER_JELLY, 2, 3));
         addDrop(CoreAscensionBlocks.TADANITE_ORE, multiItemOreDrops(CoreAscensionBlocks.TADANITE_ORE, CoreAscensionItems.TADANITE_CRYSTAL, 2, 3));
     }

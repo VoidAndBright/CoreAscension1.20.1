@@ -421,6 +421,19 @@ public class CoreAscensionItems {
 
     public static final Item EMPTY = registerItem("empty", new Item(new FabricItemSettings()));
 
+    public static final Item BRIGHT_CYAN_DYE = registerItem("bright_cyan_dye", new Item(new FabricItemSettings()));
+    public static final Item BRIGHT_RED_DYE = registerItem("bright_red_dye", new Item(new FabricItemSettings()));
+    public static final Item BRIGHT_YELLOW_DYE = registerItem("bright_yellow_dye", new Item(new FabricItemSettings()));
+    public static final Item DARK_ORANGE_DYE = registerItem("dark_orange_dye", new Item(new FabricItemSettings()));
+    public static final Item DARK_RED_DYE = registerItem("dark_red_dye", new Item(new FabricItemSettings()));
+    public static final Item DARK_YELLOW_DYE = registerItem("dark_yellow_dye", new Item(new FabricItemSettings()));
+    public static final Item LIGHT_BROWN_DYE = registerItem("light_brown_dye", new Item(new FabricItemSettings()));
+    public static final Item PALE_YELLOW_DYE = registerItem("pale_yellow_dye", new Item(new FabricItemSettings()));
+    public static final Item TURQUOISE_DYE = registerItem("turquoise_dye", new Item(new FabricItemSettings()));
+    public static final Item YELLOW_GREEN_DYE = registerItem("yellow_green_dye", new Item(new FabricItemSettings()));
+    public static final Item INDIGO_DYE = registerItem("indigo_dye", new Item(new FabricItemSettings()));
+    public static final Item RAINBOW_DYE = registerItem("rainbow_dye", new Item(new FabricItemSettings()));
+
     public static final Item ONYX = registerItem("onyx", new Item(new FabricItemSettings()));
 
     public static final Item FYRENDIUM_ROCK = registerItem("fyrendium_rock", new Item(new FabricItemSettings().fireproof()));

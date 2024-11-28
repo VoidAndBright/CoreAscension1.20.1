@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inactive=true": {
+      "model": "coreascension:block/chiseled_ebonstone"
+    },
+    "inactive=false": {
+      "model": "coreascension:block/activated_chiseled_ebonstone"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "inactive=true": {
+      "model": "coreascension:block/polished_ebonstone"
+    },
+    "inactive=false": {
+      "model": "coreascension:block/activated_polished_ebonstone"
+    }
+  }
+}

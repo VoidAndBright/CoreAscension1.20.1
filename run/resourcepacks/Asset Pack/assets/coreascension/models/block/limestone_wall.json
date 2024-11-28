@@ -1,8 +1,8 @@
 {
   "parent": "block/template_wall_side",
   "textures": {
-    "wall": "coreascension:blocks/limestone",
-    "particle": "coreascension:blocks/limestone"
+    "wall": "coreascension:block/limestone",
+    "particle": "coreascension:block/limestone"
   },
   "render_type": "solid"
 }

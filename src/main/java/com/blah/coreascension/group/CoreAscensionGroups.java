@@ -438,11 +438,67 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
 
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_WOOL);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_WOOL);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_WOOL);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_WOOL);
+            entries.add(CoreAscensionBlocks.DARK_RED_WOOL);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_WOOL);
+            entries.add(CoreAscensionBlocks.INDIGO_WOOL);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_WOOL);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_WOOL);
+            entries.add(CoreAscensionBlocks.TURQUOISE_WOOL);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_WOOL);
+            entries.add(CoreAscensionBlocks.RAINBOW_WOOL);
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_CARPET);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_CARPET);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_CARPET);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_CARPET);
+            entries.add(CoreAscensionBlocks.DARK_RED_CARPET);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_CARPET);
+            entries.add(CoreAscensionBlocks.INDIGO_CARPET);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_CARPET);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_CARPET);
+            entries.add(CoreAscensionBlocks.TURQUOISE_CARPET);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_CARPET);
+            entries.add(CoreAscensionBlocks.RAINBOW_CARPET);
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.DARK_RED_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.INDIGO_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.RAINBOW_STAINED_GLASS);
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.DARK_RED_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.INDIGO_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS_PANE);
+            entries.add(CoreAscensionBlocks.RAINBOW_STAINED_GLASS_PANE);
+
             entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_LUMITE_BLOCK);
             entries.add(CoreAscensionBlocks.OBSIDIAN_SPONGE);
             entries.add(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
+
+            entries.add(CoreAscensionBlocks.EBONSTONE);
+            entries.add(CoreAscensionBlocks.POLISHED_EBONSTONE);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICKS);
+            entries.add(CoreAscensionBlocks.EBONSTONE_LAMP);
+            entries.add(CoreAscensionBlocks.EBONSTONE_PILLAR);
+            entries.add(CoreAscensionBlocks.CHISELED_EBONSTONE);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {
@@ -475,6 +531,18 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.TADANITE_CHESTPLATE);
             entries.add(CoreAscensionItems.TADANITE_LEGGINGS);
             entries.add(CoreAscensionItems.TADANITE_BOOTS);
+            entries.add(CoreAscensionItems.SOLARIUM_PICKAXE);
+            entries.add(CoreAscensionItems.SOLARIUM_SWORD);
+            entries.add(CoreAscensionItems.SOLARIUM_AXE);
+            entries.add(CoreAscensionItems.SOLARIUM_SHOVEL);
+            entries.add(CoreAscensionItems.SOLARIUM_HOE);
+            entries.add(CoreAscensionItems.SOLARIUM_SCYTHE);
+            entries.add(CoreAscensionItems.SOLARIUM_HAMMER);
+            entries.add(CoreAscensionItems.SOLARIUM_EXCAVATOR);
+            entries.add(CoreAscensionItems.SOLARIUM_HELMET);
+            entries.add(CoreAscensionItems.SOLARIUM_CHESTPLATE);
+            entries.add(CoreAscensionItems.SOLARIUM_LEGGINGS);
+            entries.add(CoreAscensionItems.SOLARIUM_BOOTS);
             entries.add(CoreAscensionItems.LUMITE_PICKAXE);
             entries.add(CoreAscensionItems.LUMITE_SWORD);
             entries.add(CoreAscensionItems.LUMITE_AXE);
@@ -529,6 +597,8 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.AMETHYST_STAFF);
             entries.add(CoreAscensionItems.TADANITE_CRYSTAL);
             entries.add(CoreAscensionItems.TADANITE_DIAMOND);
+            entries.add(CoreAscensionItems.FYRENDIUM_ROCK);
+            entries.add(CoreAscensionItems.SOLARIUM_INGOT);
             entries.add(CoreAscensionItems.LUMITE_INGOT);
             entries.add(CoreAscensionItems.SUNSTONE);
             entries.add(CoreAscensionItems.URANIUM_INGOT);
@@ -538,6 +608,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.SAPPHIRE);
             entries.add(CoreAscensionItems.AMETHYST);
             entries.add(CoreAscensionItems.ZIRCON);
+            entries.add(CoreAscensionItems.ONYX);
             entries.add(CoreAscensionItems.SULPHUR);
             entries.add(CoreAscensionItems.RUBY_SHARD);
             entries.add(CoreAscensionItems.CITRINE_SHARD);
@@ -592,6 +663,31 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.CALAMARI);
             entries.add(CoreAscensionItems.COOKED_CALAMARI);
             entries.add(CoreAscensionItems.NETHER_MUSHROOM_STEW);
+
+            entries.add(CoreAscensionItems.BRIGHT_CYAN_DYE);
+            entries.add(CoreAscensionItems.BRIGHT_RED_DYE);
+            entries.add(CoreAscensionItems.BRIGHT_YELLOW_DYE);
+            entries.add(CoreAscensionItems.DARK_ORANGE_DYE);
+            entries.add(CoreAscensionItems.DARK_RED_DYE);
+            entries.add(CoreAscensionItems.DARK_YELLOW_DYE);
+            entries.add(CoreAscensionItems.INDIGO_DYE);
+            entries.add(CoreAscensionItems.LIGHT_BROWN_DYE);
+            entries.add(CoreAscensionItems.PALE_YELLOW_DYE);
+            entries.add(CoreAscensionItems.TURQUOISE_DYE);
+            entries.add(CoreAscensionItems.YELLOW_GREEN_DYE);
+            entries.add(CoreAscensionItems.RAINBOW_DYE);
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_BED);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_BED);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_BED);
+            entries.add(CoreAscensionBlocks.DARK_RED_BED);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.INDIGO_BED);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_BED);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.TURQUOISE_BED);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_BED);
+            entries.add(CoreAscensionBlocks.RAINBOW_BED);
 
             entries.add(CoreAscensionItems.VOID_TOTEM);
 

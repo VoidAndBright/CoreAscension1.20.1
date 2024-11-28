@@ -1,7 +1,7 @@
 {
   "type": "coreascension:catalyzer",
   "ingredients": [
-    {"item": "coreascension:entropy_log"},
+    {"item": "coreascension:entropy_stem"},
     {"item": "coreascension:empty"},
     {"item": "coreascension:sulphur"}
   ],
