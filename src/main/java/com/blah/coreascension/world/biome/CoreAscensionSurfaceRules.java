@@ -24,21 +24,11 @@ public class CoreAscensionSurfaceRules {
                     )
             );
 
-    public static MaterialRules.MaterialRule SCORIA_SURFACE =
-            MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomes.SCORIA_CAVE),
-                    MaterialRules.sequence(
-                            MaterialRules.condition(MaterialRules.aboveY(YOffset.fixed(-56), 1), MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())),
-                            MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())
-                    )
-            );
-
     public static void GenerateSurfaceRules()
     {
         SurfaceGeneration.addOverworldSurfaceRules(Identifier.of(CoreAscension.MOD_ID, "rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(TROPICS_SURFACE)));
         SurfaceGeneration.addOverworldSurfaceRules(new Identifier(CoreAscension.MOD_ID, "rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(DREAD_SURFACE)));
-        SurfaceGeneration.addOverworldSurfaceRules(new Identifier(CoreAscension.MOD_ID, "rules/overworld"),
-                MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(SCORIA_SURFACE)));
     }
 }

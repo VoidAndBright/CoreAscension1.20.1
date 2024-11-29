@@ -26,6 +26,8 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_REDSTONE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_EMERALD_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_DIAMOND_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_LAPIS_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE);
         BlockStateModelGenerator.BlockTexturePool EBONSTONE_POOL = blockStateModelGenerator.registerCubeAllModelTexturePool(CoreAscensionBlocks.EBONSTONE);
         EBONSTONE_POOL.stairs(CoreAscensionBlocks.EBONSTONE_STAIRS);
         EBONSTONE_POOL.slab(CoreAscensionBlocks.EBONSTONE_SLAB);
@@ -66,6 +68,7 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_HELMET, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_CHESTPLATE, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_BOOTS, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_PICKAXE, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_SWORD, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.SOLARIUM_AXE, Models.GENERATED);

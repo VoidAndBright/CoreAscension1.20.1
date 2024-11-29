@@ -143,8 +143,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_sugar_cane",
-      "coreascension:entropy_tree_placed"
+      "minecraft:patch_sugar_cane"
     ],
     []
   ]

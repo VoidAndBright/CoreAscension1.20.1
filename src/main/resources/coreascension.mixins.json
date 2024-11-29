@@ -10,6 +10,7 @@
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
     "ItemStackDecrementMixin",
+    "LavaStriderMixin",
     "LivingDropsMixin",
     "LivingHurtMixin",
     "PiglinBrainMixin",

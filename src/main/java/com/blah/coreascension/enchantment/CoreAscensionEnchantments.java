@@ -8,12 +8,15 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class CoreAscensionEnchantments {
-    public static Enchantment TELEKINESIS = RegisterEnchantment("telekinesis",new TelekinesisEnchantment());
-    public static Enchantment MOLTEN_TOUCH = RegisterEnchantment("molten_touch",new MoltenTouchEnchantment());
-    public static Enchantment STEPPING = RegisterEnchantment("stepping",new SteppingEnchantment());
-    public static Enchantment EXPERIENCE_BOOST_TOOL= RegisterEnchantment("exp_boost_tool",new ExpBoostToolEnchantment());
-    public static Enchantment REPELLING = RegisterEnchantment("repelling",new RepellingEnchantment());
-    public static Enchantment RegisterEnchantment(String name,Enchantment enchantment){
+    public static Enchantment TELEKINESIS = RegisterEnchantment("telekinesis", new TelekinesisEnchantment());
+    public static Enchantment MOLTEN_TOUCH = RegisterEnchantment("molten_touch", new MoltenTouchEnchantment());
+    public static Enchantment STEPPING = RegisterEnchantment("stepping", new SteppingEnchantment());
+    public static Enchantment EXPERIENCE_BOOST_TOOL= RegisterEnchantment("exp_boost_tool", new ExpBoostToolEnchantment());
+    public static Enchantment REPELLING = RegisterEnchantment("repelling", new RepellingEnchantment());
+    public static Enchantment MAGMA_STRIDER = RegisterEnchantment("lava_strider", new LavaStriderEnchantment());
+
+    public static Enchantment RegisterEnchantment(String name,Enchantment enchantment)
+    {
         return Registry.register(Registries.ENCHANTMENT, new Identifier(CoreAscension.MOD_ID, name), enchantment);
     }
     public static void RegisterEnchantments()

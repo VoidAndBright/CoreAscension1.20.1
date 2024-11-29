@@ -496,6 +496,8 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.EBONSTONE);
             entries.add(CoreAscensionBlocks.POLISHED_EBONSTONE);
             entries.add(CoreAscensionBlocks.EBONSTONE_BRICKS);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_STAIRS);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.EBONSTONE_LAMP);
             entries.add(CoreAscensionBlocks.EBONSTONE_PILLAR);
             entries.add(CoreAscensionBlocks.CHISELED_EBONSTONE);

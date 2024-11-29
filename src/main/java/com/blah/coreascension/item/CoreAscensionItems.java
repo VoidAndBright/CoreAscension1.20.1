@@ -455,15 +455,15 @@ public class CoreAscensionItems {
     public static final Item SOLARIUM_SWORD = registerItem("solarium_sword",
             new SwordItem(CoreAscensionToolMaterials.SOLARIUM, 4, -2.4f, new FabricItemSettings().fireproof()));
     public static final Item SOLARIUM_AXE = registerItem("solarium_axe",
-            new AxeToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 7, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new AxeToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 7, -3.1f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_SHOVEL = registerItem("solarium_shovel",
-            new ShovelToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 0, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new ShovelToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 0, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_HOE = registerItem("solarium_hoe",
-            new HoeTooltipItem(CoreAscensionToolMaterials.SOLARIUM, -2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new HoeTooltipItem(CoreAscensionToolMaterials.SOLARIUM, -2, -3f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_EXCAVATOR = registerItem("solarium_excavator",
-            new ExcavatorItem(CoreAscensionToolMaterials.SOLARIUM_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new ExcavatorItem(CoreAscensionToolMaterials.SOLARIUM_SPECIAL, 5f, 1f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_HAMMER = registerItem("solarium_hammer",
-            new HammerItem(CoreAscensionToolMaterials.SOLARIUM_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new HammerItem(CoreAscensionToolMaterials.SOLARIUM_SPECIAL, 11, 0.4f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_SCYTHE = registerItem("solarium_scythe", new ScytheItem(CoreAscensionToolMaterials.SOLARIUM, 0, -3f, new FabricItemSettings().fireproof()));
 
 
