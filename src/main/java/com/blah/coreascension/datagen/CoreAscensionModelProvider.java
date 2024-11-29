@@ -32,7 +32,6 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.FYRENDIUM_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.FYRENDIUM_CRYSTAL);// change to column when the top texture is finished
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.DOOMSTONE);
-        blockStateModelGenerator.registerLog(CoreAscensionBlocks.UMBRASTONE_COLUMN);
         blockStateModelGenerator.registerDoor(CoreAscensionBlocks.DIAMOND_DOOR);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.BLIZZARACK);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.OBSIDIAN_BRICKS);
@@ -54,6 +53,20 @@ public class CoreAscensionModelProvider extends FabricModelProvider
 
     public void generateItemModels(ItemModelGenerator itemModelGenerator)
     {
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_INGOT, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_HELMET, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_CHESTPLATE, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_LEGGINGS, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_PICKAXE, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_SWORD, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_AXE, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_SHOVEL, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_HOE, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_SCYTHE, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_EXCAVATOR, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.SOLARIUM_HAMMER, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.FYRENDIUM_ROCK, Models.GENERATED);
+        itemModelGenerator.register(CoreAscensionItems.ONYX, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.TROPICS_BOAT, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.TROPICS_CHEST_BOAT, Models.GENERATED);
         itemModelGenerator.register(CoreAscensionItems.CEDAR_BOAT, Models.GENERATED);

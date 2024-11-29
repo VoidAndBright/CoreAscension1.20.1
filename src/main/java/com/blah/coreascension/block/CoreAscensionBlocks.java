@@ -870,6 +870,8 @@ public class CoreAscensionBlocks
     public static final Block EBONSTONE_LAMP = RegisterBlockItem("ebonstone_lamp", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
     public static final Block CHISELED_EBONSTONE = RegisterBlockItem("chiseled_ebonstone", new EbonstoneBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
     public static final Block EBONSTONE_PILLAR = RegisterBlockItem("ebonstone_pillar", new EbonstonePillarBlock(FabricBlockSettings.copyOf(EBONSTONE).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_BRICK_STAIRS = RegisterBlockItem("ebonstone_brick_stairs", new EbonstoneStairsBlock(EBONSTONE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(EBONSTONE_BRICKS).mapColor(MapColor.PURPLE)));
+    public static final Block EBONSTONE_BRICK_SLAB = RegisterBlockItem("ebonstone_brick_slab", new EbonstoneSlabBlock(FabricBlockSettings.copyOf(EBONSTONE_BRICKS).mapColor(MapColor.PURPLE)));
 
 
     private static Block RegisterBlockItem(String name, Block block)

@@ -499,6 +499,17 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.EBONSTONE_LAMP);
             entries.add(CoreAscensionBlocks.EBONSTONE_PILLAR);
             entries.add(CoreAscensionBlocks.CHISELED_EBONSTONE);
+
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_A);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_G);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_J);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_M);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_N);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_O);
+
+            entries.add(CoreAscensionBlocks.UMBRASTONE);
+            entries.add(CoreAscensionBlocks.POLISHED_UMBRASTONE);
+            entries.add(CoreAscensionBlocks.UMBRASTONE_COLUMN);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

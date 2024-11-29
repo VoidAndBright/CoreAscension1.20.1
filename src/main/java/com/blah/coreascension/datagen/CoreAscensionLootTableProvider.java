@@ -528,6 +528,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.EBONSTONE);
         addDrop(CoreAscensionBlocks.EBONSTONE_STAIRS);
         addDrop(CoreAscensionBlocks.EBONSTONE_SLAB, slabDrops(CoreAscensionBlocks.EBONSTONE_SLAB));
+        addDrop(CoreAscensionBlocks.EBONSTONE_BRICK_SLAB, slabDrops(CoreAscensionBlocks.EBONSTONE_BRICK_SLAB));
+        addDrop(CoreAscensionBlocks.EBONSTONE_BRICK_STAIRS);
         addDrop(CoreAscensionBlocks.EBONSTONE_WALL);
         addDrop(CoreAscensionBlocks.POLISHED_EBONSTONE);
         addDrop(CoreAscensionBlocks.EBONSTONE_BRICKS);
@@ -535,6 +537,7 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.EBONSTONE_PILLAR);
         addDrop(CoreAscensionBlocks.CHISELED_EBONSTONE);
 
+        addDrop(CoreAscensionBlocks.UMBRASTONE_COLUMN);
         addDrop(CoreAscensionBlocks.UMBRASTONE);
         addDrop(CoreAscensionBlocks.POLISHED_UMBRASTONE);
         addDrop(CoreAscensionBlocks.RUNIC_OBSIDIAN_M);
@@ -597,6 +600,8 @@ public class CoreAscensionLootTableProvider extends FabricBlockLootTableProvider
         addDrop(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS_PANE);
         addDrop(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS_PANE);
         addDrop(CoreAscensionBlocks.RAINBOW_STAINED_GLASS_PANE);
+
+
 
         addDrop(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, multiItemOreDrops(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE, CoreAscensionItems.DARK_MATTER_JELLY, 2, 3));
         addDrop(CoreAscensionBlocks.TADANITE_ORE, multiItemOreDrops(CoreAscensionBlocks.TADANITE_ORE, CoreAscensionItems.TADANITE_CRYSTAL, 2, 3));
