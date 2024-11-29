@@ -19,6 +19,17 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
     
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup)
     {
+        getOrCreateTagBuilder(BlockTags.INFINIBURN_OVERWORLD)
+                .add(CoreAscensionBlocks.SCORIA)
+                .add(CoreAscensionBlocks.CHARRED_SCORIA)
+                .add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA);
+
+        getOrCreateTagBuilder(BlockTags.BASE_STONE_OVERWORLD)
+                .add(CoreAscensionBlocks.IGNEOUS_ROCK)
+                .add(CoreAscensionBlocks.MAGNETITE)
+                .add(CoreAscensionBlocks.SALTROCK)
+                .add(CoreAscensionBlocks.LIMESTONE);
+
         getOrCreateTagBuilder(FabricTags.NEEDS_TOOL_LEVEL_4)
                 .add(CoreAscensionBlocks.TADANITE_ORE);
 

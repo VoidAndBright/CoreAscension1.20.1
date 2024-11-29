@@ -19,6 +19,13 @@ public class CoreAscensionModelProvider extends FabricModelProvider
     {
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.UMBRASTONE);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.POLISHED_UMBRASTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_COAL_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_IRON_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_COPPER_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_GOLD_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_REDSTONE_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_EMERALD_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.SCORIA_DIAMOND_ORE);
         BlockStateModelGenerator.BlockTexturePool EBONSTONE_POOL = blockStateModelGenerator.registerCubeAllModelTexturePool(CoreAscensionBlocks.EBONSTONE);
         EBONSTONE_POOL.stairs(CoreAscensionBlocks.EBONSTONE_STAIRS);
         EBONSTONE_POOL.slab(CoreAscensionBlocks.EBONSTONE_SLAB);

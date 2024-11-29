@@ -5,6 +5,7 @@ import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.terraformersmc.biolith.api.surface.SurfaceGeneration;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.VerticalSurfaceType;
+import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 public class CoreAscensionSurfaceRules {
@@ -26,7 +27,7 @@ public class CoreAscensionSurfaceRules {
     public static MaterialRules.MaterialRule SCORIA_SURFACE =
             MaterialRules.condition(MaterialRules.biome(CoreAscensionBiomes.SCORIA_CAVE),
                     MaterialRules.sequence(
-                            MaterialRules.condition(MaterialRules.stoneDepth(2, true, VerticalSurfaceType.FLOOR), MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())),
+                            MaterialRules.condition(MaterialRules.aboveY(YOffset.fixed(-56), 1), MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())),
                             MaterialRules.block(CoreAscensionBlocks.SCORIA.getDefaultState())
                     )
             );
@@ -37,5 +38,7 @@ public class CoreAscensionSurfaceRules {
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(TROPICS_SURFACE)));
         SurfaceGeneration.addOverworldSurfaceRules(new Identifier(CoreAscension.MOD_ID, "rules/overworld"),
                 MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(DREAD_SURFACE)));
+        SurfaceGeneration.addOverworldSurfaceRules(new Identifier(CoreAscension.MOD_ID, "rules/overworld"),
+                MaterialRules.condition(MaterialRules.surface(), MaterialRules.sequence(SCORIA_SURFACE)));
     }
 }

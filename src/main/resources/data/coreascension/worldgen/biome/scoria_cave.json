@@ -35,15 +35,27 @@
     [],
     [],
     [
+      "coreascension:ore_scoria_placed",
       "coreascension:ore_lightly_charred_scoria",
-      "coreascension:ore_charred_scoria"
+      "coreascension:ore_charred_scoria",
+      "coreascension:ore_red_sand_placed",
+      "coreascension:ore_scoria_coal_placed",
+      "coreascension:ore_scoria_iron_placed",
+      "coreascension:ore_scoria_copper_placed",
+      "coreascension:ore_scoria_gold_placed",
+      "coreascension:ore_scoria_redstone_placed",
+      "coreascension:ore_scoria_emerald_placed",
+      "coreascension:ore_scoria_diamond_placed"
     ],
     [],
     [
       "minecraft:spring_lava"
     ],
     [
-
+      "coreascension:patch_fire_scoria_placed",
+      "coreascension:patch_fire_charred_scoria_placed",
+      "coreascension:patch_fire_lightly_charred_scoria_placed",
+      "coreascension:patch_lava_scoria_placed"
     ],
     []
   ],
