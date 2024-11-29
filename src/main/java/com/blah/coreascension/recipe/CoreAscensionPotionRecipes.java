@@ -1,5 +1,6 @@
 package com.blah.coreascension.recipe;
 
+import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.effect.CoreAscensionStatusEffects;
 import com.blah.coreascension.item.CoreAscensionItems;
@@ -15,31 +16,31 @@ import net.minecraft.util.Identifier;
 
 public class CoreAscensionPotionRecipes {
     public static final Potion WARMTH_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "warmth_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "warmth_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.ICE_RESISTANCE, 3600, 0)));
     public static final Potion BUILDERS_CURSE_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "builders_curse_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "builders_curse_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.BUILDERS_CURSE, 3600, 0)));
     public static final Potion TERRESTRIAL_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "terrestrial_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "terrestrial_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.TERRESTRIAL, 3600, 0)));
     public static final Potion REPAIRING_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "repairing_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "repairing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.REPAIRING, 3600, 0)));
     public static final Potion LONG_REPAIRING_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "long_repairing_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "long_repairing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.LONG_REPAIRING, 9600, 0)));
     public static final Potion JUMP_BOOST_3_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "jump_boost_3_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "jump_boost_3_potion"),
                     new Potion(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 3600, 2)));
     public static final Potion FREEZING_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "freezing_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "freezing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 0)));
     public static final Potion STRONG_FREEZING_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "strong_freezing_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "strong_freezing_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.FREEZING, 3600, 2)));
     public static final Potion ICY_POTION =
-            Registry.register(Registries.POTION, new Identifier("coreascension", "icy_potion"),
+            Registry.register(Registries.POTION, new Identifier(CoreAscension.MOD_ID, "icy_potion"),
                     new Potion(new StatusEffectInstance(CoreAscensionStatusEffects.ICY, 3600, 0)));
 
     public static void registerPotionRecipes()

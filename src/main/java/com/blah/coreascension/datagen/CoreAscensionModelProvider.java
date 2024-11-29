@@ -36,6 +36,8 @@ public class CoreAscensionModelProvider extends FabricModelProvider
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.BLIZZARACK);
         blockStateModelGenerator.registerSimpleCubeAll(CoreAscensionBlocks.OBSIDIAN_BRICKS);
         BlockStateModelGenerator.BlockTexturePool BLIZZARACK_POOL = blockStateModelGenerator.registerCubeAllModelTexturePool(CoreAscensionBlocks.BLIZZARACK_BRICKS);
+        BlockStateModelGenerator.BlockTexturePool PETRIFIED_POOL = blockStateModelGenerator.registerCubeAllModelTexturePool(CoreAscensionBlocks.PETRIFIED_WOOD);
+        PETRIFIED_POOL.wall(CoreAscensionBlocks.PETRIFIED_WOOD_WALL);
         BLIZZARACK_POOL.stairs(CoreAscensionBlocks.BLIZZARACK_BRICK_STAIRS);
         BLIZZARACK_POOL.slab(CoreAscensionBlocks.BLIZZARACK_BRICK_SLAB);
         BLIZZARACK_POOL.wall(CoreAscensionBlocks.BLIZZARACK_BRICK_WALL);
