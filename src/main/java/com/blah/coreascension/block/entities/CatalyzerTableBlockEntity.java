@@ -26,6 +26,9 @@ import java.util.Optional;
 
 public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory
 {
+    private static final int INPUT_SLOT = 0;
+    private static final int CATALYZIST_SLOT = 1;
+    private static final int SULPHUR_SLOT = 2;
     private static final int OUTPUT_SLOT = 3;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(4, ItemStack.EMPTY);
 
@@ -64,7 +67,7 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
             markDirty(world, pos, state);
         }
         else {
-            this.inventory.set(3,ItemStack.EMPTY);
+            this.removeStack(3);
             markDirty(world, pos, state);
         }
     }
@@ -74,10 +77,26 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null)) && canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem());
     }
+
+    @Override
+    public ItemStack removeStack(int slot, int count)
+    {
+        ItemStack result = Inventories.splitStack(getItems(), slot, count);
+        if (!result.isEmpty())
+        {
+            markDirty();
+            if (slot==3)
+            {
+                onCraftItem();
+            }
+        }
+        return result;
+    }
+
     public void onCraftItem(){
-        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
-        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
-        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
+        this.removeStack(INPUT_SLOT,1);
+        this.removeStack(CATALYZIST_SLOT,1);
+        this.removeStack(SULPHUR_SLOT,1);
     }
     private void showItem()
     {

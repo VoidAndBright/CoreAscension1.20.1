@@ -33,10 +33,14 @@ public class CatalyzerRecipe implements Recipe<SimpleInventory> {
         {
             return false;
         }
-        return (ingredients.get(0).test(inventory.getStack(0)) &&
-                (ingredients.get(1).test(inventory.getStack(1)) ||
-                 ingredients.get(1).test(ItemStack.EMPTY)) &&
-                ingredients.get(2).test(inventory.getStack(2)));
+        return
+              (ingredients.get(0).test(inventory.getStack(0))
+            && ingredients.get(1).test(inventory.getStack(1))
+            && ingredients.get(2).test(inventory.getStack(1)))
+            ||
+              (ingredients.get(0).test(inventory.getStack(0))
+            && ingredients.get(1).test(inventory.getStack(1))
+            && ingredients.get(2).test(inventory.getStack(1)));
     }
 
     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager)
