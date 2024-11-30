@@ -50,18 +50,17 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
     }
 
     @Override
-    public void setStack(int slot, ItemStack stack)
+    public void markDirty()
     {
-        ImplementedInventory.super.setStack(slot, stack);
-        onContentChanged(this.world, this.pos, this.getCachedState(),slot);
+        onContentChanged(this.world,this.pos,this.getCachedState());
     }
 
-    public void onContentChanged(World world, BlockPos pos, BlockState state,int slot)
+    public void onContentChanged(World world, BlockPos pos, BlockState state)
     {
         if (world.isClient()) return;
         if (hasRecipe())
         {
-            craftItem();
+            showItem();
             markDirty(world, pos, state);
         }
         else {
@@ -69,21 +68,18 @@ public class CatalyzerTableBlockEntity extends BlockEntity implements ExtendedSc
             markDirty(world, pos, state);
         }
     }
-
-    @Override
-    public void markDirty()
-    {
-        onContentChanged(this.getWorld(),this.pos,this.getCachedState(),1);
-    }
-
     public boolean hasRecipe()
     {
         Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
 
         return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getOutput(null)) && canInsertItemIntoOutputSlot(recipe.get().getOutput(null).getItem());
     }
-
-    private void craftItem()
+    public void onCraftItem(){
+        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
+        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
+        this.inventory.set(1,new ItemStack(this.getStack(1).getItem(),this.getStack(1).getCount()-1));
+    }
+    private void showItem()
     {
         Optional<CatalyzerRecipe> recipe = getCurrentRecipe();
         this.inventory.set(OUTPUT_SLOT, new ItemStack(recipe.get().getOutput(null).getItem(), recipe.get().getOutput(null).getCount()));

@@ -63,7 +63,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                                         Blocks.LAPIS_BLOCK.asItem(), Blocks.LAPIS_BLOCK.asItem()).build())))
                 .build(consumer, CoreAscension.MOD_ID + "/the_tool");
 
-        Advancement pigneous = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionBlocks.PIGNEOUS_ROCK.asItem(), // The display icon
                         Text.translatable("advancements.pigneous_rock.title"), // The title
@@ -118,7 +118,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("taste_the_rainbow", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.RUBY, CoreAscensionItems.CITRINE, CoreAscensionItems.TOPAZ, CoreAscensionItems.SAPPHIRE, CoreAscensionItems.AMETHYST, CoreAscensionItems.ZIRCON, Items.EMERALD, Items.DIAMOND))
                 .build(consumer, CoreAscension.MOD_ID + "/taste_the_rainbow");
 
-        Advancement magicMirror = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.MAGIC_MIRROR, // The display icon
                         Text.translatable("advancements.gaze_in_the_mirror.title"), // The title
@@ -135,7 +135,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("magic_mirror", usingItem(EntityType.PLAYER, CoreAscensionItems.MAGIC_MIRROR))
                 .build(consumer, CoreAscension.MOD_ID + "/magic_mirror");
 
-        Advancement hammerTime = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.IRON_HAMMER, // The display icon
                         Text.translatable("advancements.stop_hammer_time.title"), // The title
@@ -172,7 +172,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                         ).build())))
                 .build(consumer, CoreAscension.MOD_ID + "/getting_a_downgrade");
 
-        Advancement why = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.POTATO_HAMMER, // The display icon
                         Text.translatable("advancements.why.title"), // The title
@@ -189,7 +189,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("why", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.POTATO_PICKAXE, CoreAscensionItems.POTATO_SWORD, CoreAscensionItems.POTATO_AXE, CoreAscensionItems.POTATO_SHOVEL, CoreAscensionItems.POTATO_HOE, CoreAscensionItems.POTATO_HAMMER, CoreAscensionItems.POTATO_EXCAVATOR, CoreAscensionItems.POTATO_SCYTHE))
                 .build(consumer, CoreAscension.MOD_ID + "/why");
 
-        Advancement iCanMineTHAT = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.BEDROCK_PICKAXE, // The display icon
                         Text.translatable("advancements.bedrock_pick.title"), // The title
@@ -245,7 +245,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("chilly", ChangedDimensionCriterion.Conditions.to(RegistryKey.of(RegistryKeys.WORLD, new Identifier(CoreAscension.MOD_ID, "nether_core"))))
                 .build(consumer, CoreAscension.MOD_ID + "/chilly");
 
-        Advancement tadaniteArmor = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.TADANITE_HELMET, // The display icon
                         Text.translatable("advancements.tadanite_armor.title"), // The title
@@ -262,7 +262,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("cover_me_with_tadanite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.TADANITE_HELMET, CoreAscensionItems.TADANITE_CHESTPLATE, CoreAscensionItems.TADANITE_LEGGINGS, CoreAscensionItems.TADANITE_BOOTS))
                 .build(consumer, CoreAscension.MOD_ID + "/cover_me_with_tadanite");
 
-        Advancement lumiteArmor = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.LUMITE_HELMET, // The display icon
                         Text.translatable("advancements.lumite_armor.title"), // The title
@@ -279,7 +279,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("cover_me_with_lumite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.LUMITE_HELMET, CoreAscensionItems.LUMITE_CHESTPLATE, CoreAscensionItems.LUMITE_LEGGINGS, CoreAscensionItems.LUMITE_BOOTS))
                 .build(consumer, CoreAscension.MOD_ID + "/cover_me_with_lumite");
 
-        Advancement inverterFactor9 = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.CATALYTIC_INVERTER, // The display icon
                         Text.translatable("advancements.catalytic_inverter.title"), // The title
@@ -296,7 +296,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("inverter_factor_nine", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.CATALYTIC_INVERTER))
                 .build(consumer, CoreAscension.MOD_ID + "/inverter_factor_nine");
 
-        Advancement cheatTheVoid = Advancement.Builder.create()
+        Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.VOID_TOTEM, // The display icon
                         Text.translatable("advancements.void_totem.title"), // The title
