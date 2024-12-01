@@ -455,7 +455,7 @@ public class CoreAscensionItems {
             new AdvancedArmorItem(CoreAscensionArmorMaterials.SOLARIUM, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof(),
                     0, "tooltip.setbonus.tadanite_1", "tooltip.setbonus.tadanite_2", "tooltip.setbonus.tadanite_3", "tooltip.setbonus.tadanite_4", "tooltip.setbonus.tadanite_5"));
     public static final Item SOLARIUM_PICKAXE = registerItem("solarium_pickaxe",
-            new PickaxeToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 2, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW, "tooltip.solarium"));
+            new PickaxeToolTipItem(CoreAscensionToolMaterials.SOLARIUM, 2, -2.8f, new FabricItemSettings().fireproof(), Formatting.YELLOW));
     public static final Item SOLARIUM_SWORD = registerItem("solarium_sword",
             new SwordItem(CoreAscensionToolMaterials.SOLARIUM, 4, -2.4f, new FabricItemSettings().fireproof()));
     public static final Item SOLARIUM_AXE = registerItem("solarium_axe",
