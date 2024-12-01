@@ -720,6 +720,8 @@ public class CoreAscensionGroups
 
             entries.add(CoreAscensionItems.ETHEREAL_TORCH);
 
+            entries.add(CoreAscensionItems.NETHER_ICE_BUCKET);
+            entries.add(CoreAscensionItems.FILLED_NETHER_ICE_BUCKET);
 
 
 

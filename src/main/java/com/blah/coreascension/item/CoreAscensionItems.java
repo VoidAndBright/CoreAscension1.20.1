@@ -18,6 +18,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -42,6 +43,9 @@ public class CoreAscensionItems {
                     tooltip.add(Text.translatable(Util.createTranslationKey("item", new Identifier(CoreAscension.MOD_ID, "tooltip.ethereal_torch"))).formatted(Formatting.GRAY));
                 }
             });
+
+    public static final Item NETHER_ICE_BUCKET = registerItem("nether_ice_bucket", new NetherIceBucketItem(new FabricItemSettings(), Fluids.EMPTY));
+    public static final Item FILLED_NETHER_ICE_BUCKET = registerItem("filled_nether_ice_bucket", new NetherIceBucketItem(new FabricItemSettings(), Fluids.WATER));
     public static final Item ICE_CREAM = registerItem("ice_cream", new Item(new FabricItemSettings()));
     public static final Item SKYLANDS_WAYNODE = registerItem("skylands_waynode", new LighterItem(new FabricItemSettings().maxDamage(5)));
     public static final Item NETHER_CORE_KEY = registerItem("nether_core_key", new LighterItem(new FabricItemSettings().maxDamage(5)));
