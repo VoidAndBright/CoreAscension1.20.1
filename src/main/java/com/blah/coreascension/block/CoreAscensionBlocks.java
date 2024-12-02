@@ -446,7 +446,6 @@ public class CoreAscensionBlocks
         public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity)
         {
             // ADD PROTECTOR SPAWNING (for later)
-            super.onSteppedOn(world, pos, state, entity);
         }
     });
     // end prismaero
