@@ -1,6 +1,5 @@
 package com.blah.coreascension.mixin;
 
-import com.blah.coreascension.event.callback.ItemStackDecrementCallback;
 import com.blah.coreascension.event.callback.LivingHurtCallback;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

@@ -1,9 +1,9 @@
 package com.blah.coreascension.event.events;
 
-import com.blah.coreascension.event.callback.ItemStackDecrementCallback;
 import com.blah.coreascension.event.callback.LivingHurtCallback;
 import com.blah.coreascension.item.CoreAscensionItems;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -67,6 +67,7 @@ public class VoidTotemUseEvent implements LivingHurtCallback
                         TeleportTarget teleportTarget = new TeleportTarget(TargetDimension.getSpawnPos().toCenterPos(), player.getVelocity(), player.getYaw(), player.getPitch());
                         FabricDimensions.teleport(entity, TargetDimension, teleportTarget);
                     }
+                    Criteria.USED_TOTEM.trigger(serverPlayer, totem);
                     return ActionResult.SUCCESS;
                 }
             }

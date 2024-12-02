@@ -2,6 +2,7 @@ package com.blah.coreascension.datagen;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.item.CoreAscensionItems;
+import com.blah.coreascension.utils.CoreAscensionTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -18,6 +19,20 @@ public class CoreAscensionItemTagProvider extends FabricTagProvider.ItemTagProvi
     
     protected void configure(RegistryWrapper.WrapperLookup arg)
     {
+        getOrCreateTagBuilder(CoreAscensionTags.MINING_HAMMERS)
+                .add(CoreAscensionItems.WOODEN_HAMMER)
+                .add(CoreAscensionItems.STONE_HAMMER)
+                .add(CoreAscensionItems.GOLDEN_HAMMER)
+                .add(CoreAscensionItems.IRON_HAMMER)
+                .add(CoreAscensionItems.POTATO_HAMMER)
+                .add(CoreAscensionItems.DIAMOND_HAMMER)
+                .add(CoreAscensionItems.NETHERITE_HAMMER)
+                .add(CoreAscensionItems.TADANITE_HAMMER)
+                .add(CoreAscensionItems.SOLARIUM_HAMMER)
+                .add(CoreAscensionItems.LUMITE_HAMMER)
+                .add(CoreAscensionItems.SAPPHIRE_HAMMER);
+
+
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(CoreAscensionBlocks.CEDAR_PLANKS.asItem())
                 .add(CoreAscensionBlocks.CACTUS_PLANKS.asItem())

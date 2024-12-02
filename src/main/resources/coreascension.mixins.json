@@ -9,7 +9,6 @@
     "BreathingMixin",
     "FoliagePlacerTypeInvoker",
     "ItemEntityTickMixin",
-    "ItemStackDecrementMixin",
     "LavaStriderMixin",
     "LivingDropsMixin",
     "LivingHurtMixin",

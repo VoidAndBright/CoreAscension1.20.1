@@ -4,6 +4,7 @@ import com.blah.coreascension.CoreAscension;
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.criterion.UsedVoidTotemCriterion;
 import com.blah.coreascension.item.CoreAscensionItems;
+import com.blah.coreascension.utils.CoreAscensionTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.Advancement;
@@ -148,7 +149,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 )
                 .parent(needForSpeed)
                 // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
-                .criterion("hammer_time", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.IRON_HAMMER))
+                .criterion("hammer_time", InventoryChangedCriterion.Conditions.items(ItemPredicate.Builder.create().tag(CoreAscensionTags.MINING_HAMMERS).build()))
                 .build(consumer, CoreAscension.MOD_ID + "/hammer_time");
 
         Advancement gettingADowngrade = Advancement.Builder.create()
@@ -262,24 +263,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .criterion("cover_me_with_tadanite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.TADANITE_HELMET, CoreAscensionItems.TADANITE_CHESTPLATE, CoreAscensionItems.TADANITE_LEGGINGS, CoreAscensionItems.TADANITE_BOOTS))
                 .build(consumer, CoreAscension.MOD_ID + "/cover_me_with_tadanite");
 
-        Advancement.Builder.create()
-                .display(
-                        CoreAscensionItems.LUMITE_HELMET, // The display icon
-                        Text.translatable("advancements.lumite_armor.title"), // The title
-                        Text.translatable("advancements.lumite_armor.desc"), // The description
-                        new Identifier(CoreAscension.MOD_ID, "textures/gui/ethereal_dirt.png"), // Background image used
-                        AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
-                        true, // Show toast top right
-                        true, // Announce to chat
-                        false // Hidden in the advancement tab
-                )
-                .rewards(AdvancementRewards.Builder.experience(25))
-                .parent(chilly)
-                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
-                .criterion("cover_me_with_lumite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.LUMITE_HELMET, CoreAscensionItems.LUMITE_CHESTPLATE, CoreAscensionItems.LUMITE_LEGGINGS, CoreAscensionItems.LUMITE_BOOTS))
-                .build(consumer, CoreAscension.MOD_ID + "/cover_me_with_lumite");
-
-        Advancement.Builder.create()
+        Advancement catalyticInverter = Advancement.Builder.create()
                 .display(
                         CoreAscensionItems.CATALYTIC_INVERTER, // The display icon
                         Text.translatable("advancements.catalytic_inverter.title"), // The title
@@ -298,6 +282,23 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
 
         Advancement.Builder.create()
                 .display(
+                        CoreAscensionItems.LUMITE_HELMET, // The display icon
+                        Text.translatable("advancements.lumite_armor.title"), // The title
+                        Text.translatable("advancements.lumite_armor.desc"), // The description
+                        new Identifier(CoreAscension.MOD_ID, "textures/gui/ethereal_dirt.png"), // Background image used
+                        AdvancementFrame.GOAL, // Options: TASK, CHALLENGE, GOAL
+                        true, // Show toast top right
+                        true, // Announce to chat
+                        false // Hidden in the advancement tab
+                )
+                .rewards(AdvancementRewards.Builder.experience(25))
+                .parent(catalyticInverter)
+                // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
+                .criterion("cover_me_with_lumite", InventoryChangedCriterion.Conditions.items(CoreAscensionItems.LUMITE_HELMET, CoreAscensionItems.LUMITE_CHESTPLATE, CoreAscensionItems.LUMITE_LEGGINGS, CoreAscensionItems.LUMITE_BOOTS))
+                .build(consumer, CoreAscension.MOD_ID + "/cover_me_with_lumite");
+
+        Advancement.Builder.create()
+                .display(
                         CoreAscensionItems.VOID_TOTEM, // The display icon
                         Text.translatable("advancements.void_totem.title"), // The title
                         Text.translatable("advancements.void_totem.desc"), // The description
@@ -310,7 +311,7 @@ public class CoreAscensionAchievementGenerator extends FabricAdvancementProvider
                 .rewards(AdvancementRewards.Builder.experience(100))
                 .parent(notTheAether)
                 // The first string used in criterion is the name referenced by other advancements when they want to have 'requirements'
-                .criterion("cheat_the_void", UsedVoidTotemCriterion.Conditions.create(CoreAscensionItems.VOID_TOTEM))
+                .criterion("cheat_the_void", UsedTotemCriterion.Conditions.create(CoreAscensionItems.VOID_TOTEM))
                 .build(consumer, CoreAscension.MOD_ID + "/cheat_the_void");
     }
 }
