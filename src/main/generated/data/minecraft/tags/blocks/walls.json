@@ -20,6 +20,12 @@
     "coreascension:saltrock_wall",
     "coreascension:prismaero_wall",
     "coreascension:bedrock_wall",
+    "coreascension:scoria_wall",
+    "coreascension:polished_scoria_wall",
+    "coreascension:lightly_charred_scoria_wall",
+    "coreascension:polished_lightly_charred_scoria_wall",
+    "coreascension:charred_scoria_wall",
+    "coreascension:polished_charred_scoria_wall",
     "coreascension:polished_magnetite_wall"
   ]
 }

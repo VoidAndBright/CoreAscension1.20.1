@@ -16,6 +16,7 @@ public class CoreAscensionEvents
 
     public static void RegisterEvents()
     {
+        LivingDeathCallback.EVENT.register(new PigneousEvent());
         LivingHurtCallback.EVENT.register(new VoidTotemUseEvent());
         ServerTickEvents.END_SERVER_TICK.register(new LauncherEvent());
         FlingPuncherEvent.EVENT.register(new FlingPuncherEvent());

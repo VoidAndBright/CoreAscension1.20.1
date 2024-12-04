@@ -1,10 +1,7 @@
 {
   "variants": {
-    "half=upper": {
+    "": {
       "model": "coreascension:block/dark_matter_bush"
-    },
-    "half=lower": {
-      "model": "coreascension:block/dark_matter_bush_bottom"
     }
   }
 }

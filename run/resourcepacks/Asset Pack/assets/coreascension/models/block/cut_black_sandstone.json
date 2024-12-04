@@ -3,10 +3,10 @@
   "textures": {
     "down": "coreascension:block/blacksandstone_top",
     "up": "coreascension:block/blacksandstone_top",
-    "north": "coreascension:block/blacksandstone_top",
-    "east": "coreascension:block/blacksandstone_top",
-    "south": "coreascension:block/blacksandstone_top",
-    "west": "coreascension:block/blacksandstone_top",
+    "north": "coreascension:block/cut_black_sandstone",
+    "east": "coreascension:block/cut_black_sandstone",
+    "south": "coreascension:block/cut_black_sandstone",
+    "west": "coreascension:block/cut_black_sandstone",
     "particle": "coreascension:block/blacksandstone_top"
   }
 }

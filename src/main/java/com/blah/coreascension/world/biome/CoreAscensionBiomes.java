@@ -7,6 +7,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.source.util.MultiNoiseUtil;
+import terrablender.api.ParameterUtils;
 import terrablender.api.RegionType;
 
 public class CoreAscensionBiomes {
@@ -40,15 +41,15 @@ public class CoreAscensionBiomes {
                         MultiNoiseUtil.ParameterRange.of(0.0f),
                         MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
-//        BiomePlacement.addOverworld(VALLEY_OF_THE_DAMNED,
-//                new MultiNoiseUtil.NoiseHypercube(
-//                        MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),
-//                        MultiNoiseUtil.ParameterRange.of(0.1f, 0.3f),
-//                        MultiNoiseUtil.ParameterRange.of(-0.19f, 0.03f),
-//                        MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
-//                        MultiNoiseUtil.ParameterRange.of(0.0f),
-//                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
-//                        0L));
+        BiomePlacement.addOverworld(VALLEY_OF_THE_DAMNED,
+                new MultiNoiseUtil.NoiseHypercube(
+                        MultiNoiseUtil.ParameterRange.of(0.35f, 0.62f),
+                        MultiNoiseUtil.ParameterRange.of(-0.8f, -0.4f),
+                        ParameterUtils.Continentalness.INLAND.parameter(),
+                        MultiNoiseUtil.ParameterRange.of(-0.375f, 0.05f),
+                        MultiNoiseUtil.ParameterRange.of(0.0f),
+                        MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
+                        0L));
         BiomePlacement.addOverworld(CEDAR_GROVE,
                 new MultiNoiseUtil.NoiseHypercube(
                         MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f), // temperature
@@ -58,7 +59,6 @@ public class CoreAscensionBiomes {
                         MultiNoiseUtil.ParameterRange.of(0.0f),
                         MultiNoiseUtil.ParameterRange.of(-1.0f, 1.0f),
                         0L));
-
         BiomePlacement.addOverworld(SCORIA_CAVE,
                 new MultiNoiseUtil.NoiseHypercube(
                         MultiNoiseUtil.ParameterRange.of(0.2f, 0.55f),    // temperature

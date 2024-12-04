@@ -377,7 +377,8 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.PLAYER_LAUNCHER);
             entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
             entries.add(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR);
-            // dark matter bushes
+            entries.add(CoreAscensionBlocks.DARK_MATTER_BUSH);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_TALL_GRASS);
             entries.add(CoreAscensionBlocks.RUBY_GEM_LOG);
             entries.add(CoreAscensionBlocks.CITRINE_GEM_LOG);
             entries.add(CoreAscensionBlocks.TOPAZ_GEM_LOG);
@@ -397,6 +398,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CORE_WART_BLOCK);
             entries.add(CoreAscensionBlocks.CORE_NYLIUM);
             entries.add(CoreAscensionBlocks.CORE_ROOTS);
+            entries.add(CoreAscensionBlocks.CORE_FUNGUS);
             entries.add(CoreAscensionBlocks.ICE_CREAM_BLOCK);
 
             entries.add(CoreAscensionBlocks.ENTROPIC_VINES);
@@ -404,7 +406,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM);
             entries.add(CoreAscensionBlocks.ENTROPY_WEEDS);
             entries.add(CoreAscensionBlocks.ENTROPIC_ICE);
-            // scoria shit goes here
             entries.add(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
             // glowing mushroom biome
             entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
@@ -512,6 +513,27 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.UMBRASTONE);
             entries.add(CoreAscensionBlocks.POLISHED_UMBRASTONE);
             entries.add(CoreAscensionBlocks.UMBRASTONE_COLUMN);
+
+            entries.add(CoreAscensionBlocks.CEDAR_LEAVES);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_LEAVES);
+            entries.add(CoreAscensionBlocks.WHITEWOOD_LEAVES);
+            entries.add(CoreAscensionBlocks.TROPICS_LEAVES);
+            entries.add(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
+            entries.add(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
+            entries.add(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
+
+            entries.add(CoreAscensionBlocks.CEDAR_SAPLING);
+            entries.add(CoreAscensionBlocks.TROPICS_SAPLING);
+            entries.add(CoreAscensionBlocks.CAKEWOOD_SAPLING);
+
+            entries.add(CoreAscensionBlocks.RED_GUMDROP);
+            entries.add(CoreAscensionBlocks.YELLOW_GUMDROP);
+            entries.add(CoreAscensionBlocks.GREEN_GUMDROP);
+
+            entries.add(CoreAscensionBlocks.CAKESOIL);
+            entries.add(CoreAscensionBlocks.FROSTING_GRASS);
+            entries.add(CoreAscensionBlocks.FROSTING);
+            entries.add(CoreAscensionBlocks.FROSTING_BLOCK);
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {

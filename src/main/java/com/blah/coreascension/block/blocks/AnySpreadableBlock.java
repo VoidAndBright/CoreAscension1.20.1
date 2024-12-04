@@ -1,5 +1,6 @@
 package com.blah.coreascension.block.blocks;
 
+import com.blah.coreascension.block.CoreAscensionBlocks;
 import net.minecraft.block.*;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.server.world.ServerWorld;
@@ -49,10 +50,16 @@ public class AnySpreadableBlock extends SpreadableBlock {
         if (blockState.isOf(Blocks.SNOW) && blockState.get(SnowBlock.LAYERS) == 1)
         {
             return true;
-        } else if (blockState.getFluidState().getLevel() == 8)
+        }
+        else if (blockState.isOf(CoreAscensionBlocks.FROSTING))
+        {
+            return true;
+        }
+        else if (blockState.getFluidState().getLevel() == 8)
         {
             return false;
-        } else
+        }
+        else
         {
             int light = ChunkLightProvider.getRealisticOpacity(world, state, pos, blockState, blockPos, Direction.UP, blockState.getOpacity(world, blockPos));
             return light < world.getMaxLightLevel();

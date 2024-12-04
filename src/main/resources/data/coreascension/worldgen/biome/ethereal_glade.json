@@ -63,11 +63,15 @@
       "coreascension:ore_cloud_iron_upper",
       "coreascension:ore_cloud_gold",
       "coreascension:ore_cloud_gold_lower",
-      "coreascension:ore_cloud_sapphire"
+      "coreascension:ore_cloud_sapphire",
+      "coreascension:ore_cloud_titanium"
     ],
     [],
     [],
-    [],
+    [
+      "coreascension:patch_ethereal_tall_grass_normal",
+      "coreascension:patch_ethereal_double_tall_grass"
+    ],
     []
   ]
 }

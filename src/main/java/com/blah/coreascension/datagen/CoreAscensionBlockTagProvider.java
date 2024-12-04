@@ -11,7 +11,8 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import java.util.concurrent.CompletableFuture;
 
-public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagProvider
+{
     public CoreAscensionBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture)
     {
         super(output, registriesFuture);
@@ -298,6 +299,7 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.URANIUM_ORE)
                 .add(CoreAscensionBlocks.URANIUM_BLOCK)
                 .add(CoreAscensionBlocks.CEMENT)
+                .add(CoreAscensionBlocks.PIGNEOUS_ROCK)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK_STAIRS)
                 .add(CoreAscensionBlocks.IGNEOUS_ROCK_SLAB)
@@ -665,6 +667,12 @@ public class CoreAscensionBlockTagProvider extends FabricTagProvider.BlockTagPro
                 .add(CoreAscensionBlocks.SALTROCK_WALL)
                 .add(CoreAscensionBlocks.PRISMAERO_WALL)
                 .add(CoreAscensionBlocks.BEDROCK_WALL)
+                .add(CoreAscensionBlocks.SCORIA_WALL)
+                .add(CoreAscensionBlocks.POLISHED_SCORIA_WALL)
+                .add(CoreAscensionBlocks.LIGHTLY_CHARRED_SCORIA_WALL)
+                .add(CoreAscensionBlocks.POLISHED_LIGHTLY_CHARRED_SCORIA_WALL)
+                .add(CoreAscensionBlocks.CHARRED_SCORIA_WALL)
+                .add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL)
                 .add(CoreAscensionBlocks.POLISHED_MAGNETITE_WALL);
     }
 }

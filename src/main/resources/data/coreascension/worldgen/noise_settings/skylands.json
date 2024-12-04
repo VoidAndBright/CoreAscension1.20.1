@@ -326,7 +326,7 @@
           "if_true": {
             "type": "minecraft:biome",
             "biome_is": [
-              "coreascension:ancient"
+              "coreascension:psychedelic_fields"
             ]
           },
           "then_run": {
@@ -351,7 +351,7 @@
           "if_true": {
             "type": "minecraft:biome",
             "biome_is": [
-              "coreascension:ancient"
+              "coreascension:psychedelic_fields"
             ]
           },
           "then_run": {

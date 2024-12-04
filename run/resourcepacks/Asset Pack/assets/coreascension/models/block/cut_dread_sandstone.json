@@ -3,10 +3,10 @@
   "textures": {
     "down": "coreascension:block/dreadsandstone_top",
     "up": "coreascension:block/dreadsandstone_top",
-    "north": "coreascension:block/dreadsandstone_top",
-    "east": "coreascension:block/dreadsandstone_top",
-    "south": "coreascension:block/dreadsandstone_top",
-    "west": "coreascension:block/dreadsandstone_top",
+    "north": "coreascension:block/cut_dread_sandstone",
+    "east": "coreascension:block/cut_dread_sandstone",
+    "south": "coreascension:block/cut_dread_sandstone",
+    "west": "coreascension:block/cut_dread_sandstone",
     "particle": "coreascension:block/dreadsandstone_top"
   }
 }

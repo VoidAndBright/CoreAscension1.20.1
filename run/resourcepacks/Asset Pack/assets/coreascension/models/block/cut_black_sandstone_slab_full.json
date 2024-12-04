@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "coreascension:block/blacksandstone_top",
     "top": "coreascension:block/blacksandstone_top",
-    "side": "coreascension:block/blacksandstone_smooth"
+    "side": "coreascension:block/cut_black_sandstone"
   }
 }

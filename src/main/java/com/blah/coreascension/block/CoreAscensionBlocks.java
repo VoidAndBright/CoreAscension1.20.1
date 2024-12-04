@@ -40,6 +40,14 @@ import net.minecraft.world.World;
 
 public class CoreAscensionBlocks
 {
+    public static final Block MUSHROOM_MUD = RegisterBlockItem("mushroom_mud", new Block(FabricBlockSettings.copyOf(Blocks.MUD).mapColor(MapColor.TERRACOTTA_BROWN)));
+    public static final Block MUSHROOM_GRASS = RegisterBlockItem("mushroom_grass", new Block(FabricBlockSettings.copyOf(Blocks.MUD).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block MUSHROOM_TALL_GRASS = RegisterBlockItem("mushroom_tall_grass", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS).mapColor(MapColor.LIGHT_BLUE)));
+
+    public static final Block FROSTING = RegisterBlockItem("frosting", new FrostingBlock(FabricBlockSettings.copyOf(Blocks.SNOW_BLOCK).mapColor(MapColor.TERRACOTTA_PINK).blockVision((state, world, pos) -> state.get(FrostingBlock.LAYERS) >= 8)));
+    public static final Block FROSTING_BLOCK = RegisterBlockItem("frosting_block", new Block(FabricBlockSettings.copyOf(Blocks.SNOW_BLOCK).mapColor(MapColor.TERRACOTTA_PINK)));
+
+
     public static final Block END_GAS = RegisterBlock("end_gas", new FluidBlock(CoreAscensionFluids.STILL_END_GAS, FabricBlockSettings.copy(Blocks.WATER)));
     public static final Block MOLTEN_ICE = RegisterBlock("molten_ice", new MoltenIceFluidBlock(CoreAscensionFluids.STILL_MOLTEN_ICE, FabricBlockSettings.copy(Blocks.WATER).ticksRandomly().luminance((state) -> 15)));
     public static final Block ACACIA_POST = RegisterBlockItem("acacia_post", new PostBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_FENCE).mapColor(MapColor.STONE_GRAY)));
@@ -131,7 +139,7 @@ public class CoreAscensionBlocks
     public static final Block CEDAR_WOOD = RegisterBlockItem("cedar_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.DULL_RED)));
     public static final Block CEDAR_PLANKS = RegisterBlockItem("cedar_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Block CEDAR_SLAB = RegisterBlockItem("cedar_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).mapColor(MapColor.TERRACOTTA_RED)));
-    public static final Block CEDAR_STAIRS = RegisterBlockItem("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(TITANIUM_BLOCK).mapColor(MapColor.TERRACOTTA_RED)));
+    public static final Block CEDAR_STAIRS = RegisterBlockItem("cedar_stairs", new StairsBlock(CEDAR_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Block CEDAR_FENCE = RegisterBlockItem("cedar_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).mapColor(MapColor.TERRACOTTA_RED)));
     public static final Block CEDAR_FENCE_GATE = RegisterBlockItem("cedar_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE).mapColor(MapColor.TERRACOTTA_RED), WoodType.OAK));
     public static final Block CEDAR_BUTTON = RegisterBlockItem("cedar_button", new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_BUTTON).mapColor(MapColor.TERRACOTTA_RED), BlockSetType.OAK, 30, true));
@@ -318,11 +326,29 @@ public class CoreAscensionBlocks
     public static final Block CUT_BONESANDSTONE_SLAB = RegisterBlockItem("cut_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.PALE_YELLOW)));
     public static final Block SMOOTH_BONESANDSTONE_STAIRS = RegisterBlockItem("smooth_bonesandstone_stairs", new StairsBlock(BONESANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.PALE_YELLOW)));
     public static final Block SMOOTH_BONESANDSTONE_SLAB = RegisterBlockItem("smooth_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.PALE_YELLOW)));
+    // end ancient
     // ethereal glade
     public static final Block ETHEREAL_TORCH = RegisterBlock("ethereal_torch", new UnderwaterTorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
-    // end ancient
     public static final Block ETHEREAL_WALL_TORCH = RegisterBlock("ethereal_wall_torch", new UnderwaterWallTorchBlock(FabricBlockSettings.copyOf(ETHEREAL_TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
     public static final Block ETHEREAL_DIRT = RegisterBlockItem("ethereal_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.BLUE)));
+    public static final Block ETHEREAL_DOUBLE_TALL_GRASS = RegisterBlockItem("ethereal_double_tall_grass", new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).mapColor(MapColor.CYAN))
+    {
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == ETHEREAL_GRASS;
+        }
+    });
+    public static final Block ETHEREAL_TALL_GRASS = RegisterBlockItem("ethereal_tall_grass", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS).mapColor(MapColor.CYAN))
+    {
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == ETHEREAL_GRASS;
+        }
+    });
+
+
     public static final Block ETHEREAL_LOG = RegisterBlockItem("ethereal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.STONE_GRAY)));
     public static final Block ETHEREAL_WOOD = RegisterBlockItem("ethereal_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.STONE_GRAY)));
     public static final Block ETHEREAL_PLANKS = RegisterBlockItem("ethereal_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLUE)));
@@ -353,6 +379,14 @@ public class CoreAscensionBlocks
     // end ethereal glade
 
     // cakewood
+
+    public static final Block CAKEWOOD_SAPLING = RegisterBlockItem("cakewood_sapling", new SaplingBlock(new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.POPSICLE_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING))
+    {
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == CAKESOIL || floor.getBlock() == FROSTING_GRASS;
+        }
+    });
     public static final Block CAKESOIL = RegisterBlockItem("cakesoil", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.ORANGE)));
     public static final Block CAKEWOOD_LOG = RegisterBlockItem("cakewood_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.WHITE)));
     public static final Block CAKEWOOD_WOOD = RegisterBlockItem("cakewood_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.WHITE)));
@@ -381,9 +415,9 @@ public class CoreAscensionBlocks
             new TerraformHangingSignBlock(CAKEWOOD_HANGING_SIGN_TEXTURE, CAKEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
     public static final Block WALL_HANGING_CAKEWOOD_SIGN = RegisterBlock("cakewood_wall_hanging_sign",
             new TerraformWallHangingSignBlock(CAKEWOOD_HANGING_SIGN_TEXTURE, CAKEWOOD_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
-    public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.RED)));
-    public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.YELLOW)));
-    public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).mapColor(MapColor.GREEN)));
+    public static final Block RED_GUMDROP = RegisterBlockItem("red_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).velocityMultiplier(1F).jumpVelocityMultiplier(1F).mapColor(MapColor.RED)));
+    public static final Block YELLOW_GUMDROP = RegisterBlockItem("yellow_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).velocityMultiplier(1F).jumpVelocityMultiplier(1F).mapColor(MapColor.YELLOW)));
+    public static final Block GREEN_GUMDROP = RegisterBlockItem("green_gumdrop", new GlassBlock(FabricBlockSettings.copyOf(Blocks.HONEY_BLOCK).velocityMultiplier(1F).jumpVelocityMultiplier(1F).mapColor(MapColor.GREEN)));
     // end cakewood
 
     // dark matter
@@ -413,6 +447,23 @@ public class CoreAscensionBlocks
             new TerraformHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
     public static final Block WALL_HANGING_DARK_MATTER_SIGN = RegisterBlock("dark_matter_wall_hanging_sign",
             new TerraformWallHangingSignBlock(DARK_MATTER_HANGING_SIGN_TEXTURE, DARK_MATTER_HANGING_GUI_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+    public static final Block DARK_MATTER_TALL_GRASS = RegisterBlockItem("dark_matter_tall_grass", new TallPlantBlock(FabricBlockSettings.copyOf(Blocks.TALL_GRASS).mapColor(MapColor.PALE_PURPLE))
+    {
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == MOSSY_DARK_MATTER_STONE;
+        }
+    });
+    public static final Block DARK_MATTER_BUSH = RegisterBlockItem("dark_matter_bush", new PlantBlock(FabricBlockSettings.copyOf(Blocks.GRASS).mapColor(MapColor.PALE_PURPLE))
+    {
+        @Override
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == MOSSY_DARK_MATTER_STONE;
+        }
+    });
+
     // end dark matter
 
     // ores and stone
@@ -645,7 +696,7 @@ public class CoreAscensionBlocks
     public static final Block SMOOTH_FROST_SANDSTONE = RegisterBlockItem("smooth_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block CUT_FROST_SANDSTONE = RegisterBlockItem("cut_frost_sandstone", new Block(FabricBlockSettings.copyOf(Blocks.CUT_SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block CUT_FROST_SANDSTONE_SLAB = RegisterBlockItem("cut_frost_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LIGHT_BLUE)));
-    public static final Block SMOOTH_FROST_SANDSTONE_STAIRS = RegisterBlockItem("cut_frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
+    public static final Block SMOOTH_FROST_SANDSTONE_STAIRS = RegisterBlockItem("smooth_frost_sandstone_stairs", new StairsBlock(FROST_SANDSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.SANDSTONE).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block SMOOTH_FROST_SANDSTONE_SLAB = RegisterBlockItem("smooth_frost_sandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.LIGHT_BLUE)));
     public static final Block FROSTED_GLASS = RegisterBlockItem("frosted_glass", new GlassBlock(FabricBlockSettings.copyOf(Blocks.GLASS)));
     public static final Block FROSTED_GLASS_PANE = RegisterBlockItem("frosted_glass_pane", new PaneBlock(FabricBlockSettings.copyOf(FROSTED_GLASS)));
@@ -1014,12 +1065,12 @@ public class CoreAscensionBlocks
     {
         ClientRegisterRenderLayeredBlocks();
         ClientRegisterColouredBlocks();
-
-
     }
 
     public static void ClientRegisterRenderLayeredBlocks()
     {
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CAKEWOOD_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_LEAVES, RenderLayer.getCutout());
@@ -1029,14 +1080,21 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.YELLOW_GUMDROP, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GREEN_GUMDROP, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_CHEST, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS_PANE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.COCONUT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GLASS_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPY_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GOLD_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.COBBLESTONE_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROST_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GLASS_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.COBBLESTONE_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.GOLD_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DREAD_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_DOOR, RenderLayer.getCutout());
@@ -1047,7 +1105,6 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTING_GRASS, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, RenderLayer.getCutoutMipped());
-        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_VINES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_FUNGUS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_ROOTS, RenderLayer.getCutout());
@@ -1062,6 +1119,10 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENTROPIC_VINES_PLANT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_TANK_SKULL, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_DOUBLE_TALL_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_TALL_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_MATTER_TALL_GRASS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_MATTER_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS, RenderLayer.getTranslucent());

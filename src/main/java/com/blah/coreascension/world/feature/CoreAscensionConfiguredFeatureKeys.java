@@ -10,6 +10,7 @@ public class CoreAscensionConfiguredFeatureKeys {
     public static final RegistryKey<ConfiguredFeature<?, ?>> UNIQUE_FEATURE_KEY = RegisterConfiguredKey("unique");
     public static final RegistryKey<ConfiguredFeature<?, ?>> TROPICS_TREE_KEY = RegisterConfiguredKey("tropics_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR_TREE_KEY = RegisterConfiguredKey("cedar_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> POPSICLE_TREE_KEY = RegisterConfiguredKey("popsicle_tree");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> RegisterConfiguredKey(String name)
     {

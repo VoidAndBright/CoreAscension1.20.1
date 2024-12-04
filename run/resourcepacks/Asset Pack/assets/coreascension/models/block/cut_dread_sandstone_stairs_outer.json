@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "coreascension:block/dreadsandstone_top",
     "top": "coreascension:block/dreadsandstone_top",
-    "side": "coreascension:block/dreadsandstone_smooth"
+    "side": "coreascension:block/cut_dread_sandstone"
   }
 }
