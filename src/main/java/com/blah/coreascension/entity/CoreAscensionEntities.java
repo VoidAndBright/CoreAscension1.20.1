@@ -5,6 +5,7 @@ import com.blah.coreascension.entity.entities.mobs.PorcupineEntity;
 import com.blah.coreascension.entity.entities.projectiles.bolt.*;
 import com.blah.coreascension.entity.entities.projectiles.shuriken.*;
 import com.blah.coreascension.entity.model.PorcupineModel;
+import com.blah.coreascension.entity.model.SkyderModel;
 import com.blah.coreascension.entity.renderers.PorcupineRenderer;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -121,6 +122,7 @@ public class CoreAscensionEntities {
         EntityRendererRegistry.register(LUMITE_SHURIKEN, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(PORCUPINE, PorcupineRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(CoreAscensionModelLayers.PORCUPINE, PorcupineModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(CoreAscensionModelLayers.SKYDER, SkyderModel::getTexturedModelData);
     }
 
     public static void RegisterEntities()

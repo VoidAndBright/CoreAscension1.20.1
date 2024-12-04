@@ -6,4 +6,5 @@ import net.minecraft.util.Identifier;
 
 public class CoreAscensionModelLayers {
     public static final EntityModelLayer PORCUPINE = new EntityModelLayer(new Identifier(CoreAscension.MOD_ID, "porcupine"), "main");
+    public static final EntityModelLayer SKYDER = new EntityModelLayer(new Identifier(CoreAscension.MOD_ID, "skyder"), "main");
 }
