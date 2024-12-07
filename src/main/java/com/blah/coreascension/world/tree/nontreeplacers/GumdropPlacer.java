@@ -1,4 +1,4 @@
-package com.blah.coreascension.world.tree.placers;
+package com.blah.coreascension.world.tree.nontreeplacers;
 
 import com.blah.coreascension.block.CoreAscensionBlocks;
 import com.blah.coreascension.world.tree.CoreAscensionFoliagePlacerTypes;

@@ -33,6 +33,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -328,6 +329,13 @@ public class CoreAscensionBlocks
     public static final Block SMOOTH_BONESANDSTONE_SLAB = RegisterBlockItem("smooth_bonesandstone_slab", new SlabBlock(FabricBlockSettings.copyOf(Blocks.SANDSTONE_SLAB).mapColor(MapColor.PALE_YELLOW)));
     // end ancient
     // ethereal glade
+    public static final Block ETHEREAL_SAPLING = RegisterBlockItem("ethereal_sapling", new SaplingBlock(new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.ETHEREAL_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING))
+    {
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == ETHEREAL_DIRT || floor.getBlock() == ETHEREAL_GRASS;
+        }
+    });
     public static final Block ETHEREAL_TORCH = RegisterBlock("ethereal_torch", new UnderwaterTorchBlock(FabricBlockSettings.copyOf(Blocks.TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
     public static final Block ETHEREAL_WALL_TORCH = RegisterBlock("ethereal_wall_torch", new UnderwaterWallTorchBlock(FabricBlockSettings.copyOf(ETHEREAL_TORCH), CoreAscensionParticles.ETHEREAL_FLAME));
     public static final Block ETHEREAL_DIRT = RegisterBlockItem("ethereal_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.BLUE)));
@@ -347,8 +355,6 @@ public class CoreAscensionBlocks
             return floor.getBlock() == ETHEREAL_GRASS;
         }
     });
-
-
     public static final Block ETHEREAL_LOG = RegisterBlockItem("ethereal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.STONE_GRAY)));
     public static final Block ETHEREAL_WOOD = RegisterBlockItem("ethereal_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.STONE_GRAY)));
     public static final Block ETHEREAL_PLANKS = RegisterBlockItem("ethereal_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).mapColor(MapColor.BLUE)));
@@ -362,7 +368,7 @@ public class CoreAscensionBlocks
     public static final Block STRIPPED_ETHEREAL_WOOD = RegisterBlockItem("stripped_ethereal_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.BLUE)));
     public static final Block ETHEREAL_DOOR = RegisterBlockItem("ethereal_door", new DoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque().mapColor(MapColor.BLUE), BlockSetType.OAK));
     public static final Block ETHEREAL_TRAPDOOR = RegisterBlockItem("ethereal_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(ETHEREAL_PLANKS).nonOpaque().mapColor(MapColor.BLUE), BlockSetType.OAK));
-    public static final Block ETHEREAL_MEMBRANE = RegisterBlockItem("ethereal_membrane", new SlimeBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).mapColor(MapColor.BLUE)));
+    public static final Block ETHEREAL_MEMBRANE = RegisterBlockItem("ethereal_membrane", new EtherealMembraneBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).jumpVelocityMultiplier(3).slipperiness(0.6f).mapColor(MapColor.BLUE)));
     public static final Block ETHEREAL_GRASS = RegisterBlockItem("ethereal_grass", new AnySpreadableBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).mapColor(MapColor.CYAN).ticksRandomly(), ETHEREAL_DIRT));
     public static final Identifier ETHEREAL_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/ethereal");
     public static final Identifier ETHEREAL_HANGING_SIGN_TEXTURE = new Identifier(CoreAscension.MOD_ID, "entity/signs/hanging/ethereal");
@@ -421,6 +427,14 @@ public class CoreAscensionBlocks
     // end cakewood
 
     // dark matter
+    public static final Block DARK_MATTER_SAPLING = RegisterBlockItem("dark_matter_sapling", new SaplingBlock(new TreeSaplingGenerator(CoreAscensionConfiguredFeatureKeys.DARK_MATTER_TREE_KEY), FabricBlockSettings.copyOf(Blocks.OAK_SAPLING))
+    {
+        protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos)
+        {
+            return floor.getBlock() == DARK_MATTER_STONE || floor.getBlock() == MOSSY_DARK_MATTER_STONE;
+        }
+    });
+
     public static final Block DARK_MATTER_STONE = RegisterBlockItem("dark_matter_stone", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).mapColor(MapColor.BLACK).sounds(CoreAscensionSounds.DARK_MATTER_STONE_SOUNDS)));
     public static final Block DARK_MATTER_LOG = RegisterBlockItem("dark_matter_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_PURPLE).sounds(CoreAscensionSounds.DARK_MATTER_WOOD_SOUNDS)));
     public static final Block DARK_MATTER_WOOD = RegisterBlockItem("dark_matter_wood", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).mapColor(MapColor.TERRACOTTA_PURPLE).sounds(CoreAscensionSounds.DARK_MATTER_WOOD_SOUNDS)));
@@ -764,7 +778,13 @@ public class CoreAscensionBlocks
     public static final Block GOLD_TRAPDOOR = RegisterBlockItem("gold_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).nonOpaque().mapColor(MapColor.YELLOW), BlockSetType.STONE));
 
     public static final Block CARROT_BLOCK = RegisterBlockItem("carrot_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.ORANGE)));
-    public static final Block MASHED_POTATO_BLOCK = RegisterBlockItem("mashed_potato_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).mapColor(MapColor.PALE_YELLOW)));
+    public static final Block MASHED_POTATO_BLOCK = RegisterBlockItem("mashed_potato_block", new Block(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).noCollision().mapColor(MapColor.PALE_YELLOW))
+    {
+        @Override
+        public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+            entity.slowMovement(state, new Vec3d(0.35, 0.15F, 0.35));
+        }
+    });
     public static final Block COMPRESSED_OBSIDIAN = RegisterBlockItem("compressed_obsidian", new Block(FabricBlockSettings.copyOf(Blocks.OBSIDIAN).mapColor(MapColor.BLACK)));
     public static final Block RUBY_BLOCK = RegisterBlockItem("ruby_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.RED)));
     public static final Block CITRINE_BLOCK = RegisterBlockItem("citrine_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.ORANGE)));
@@ -1073,6 +1093,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ARGON_CRYSTAL_CLUSTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.AMETHYST_GEM_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CEDAR_LEAVES, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.REINFORCED_GLASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BORDERLESS_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.RED_GUMDROP, RenderLayer.getTranslucent());
@@ -1102,6 +1123,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_GRASS, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICAL_GRASS, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.TROPICS_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTING_GRASS, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE, RenderLayer.getCutoutMipped());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.CORE_VINES, RenderLayer.getCutout());
@@ -1122,6 +1144,7 @@ public class CoreAscensionBlocks
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_TALL_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_MATTER_TALL_GRASS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.DARK_MATTER_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.ETHEREAL_MEMBRANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.FROSTED_GLASS_PANE, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(CoreAscensionBlocks.BRIGHT_CYAN_STAINED_GLASS, RenderLayer.getTranslucent());

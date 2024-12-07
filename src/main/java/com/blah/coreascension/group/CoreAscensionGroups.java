@@ -18,11 +18,6 @@ public class CoreAscensionGroups
     {
         registerItemGroup("block_item", CoreAscensionBlocks.BLAZE_BRICK.asItem(), (displayContext, entries) ->
         {
-            entries.add(CoreAscensionBlocks.DARK_MATTER_STONE);
-            entries.add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE);
-            entries.add(CoreAscensionBlocks.HARDENED_LAVA);
-            entries.add(CoreAscensionBlocks.DREAD_ROCK);
-            entries.add(CoreAscensionBlocks.BLIZZARACK);
             entries.add(CoreAscensionBlocks.ANDESITE_TILE);
             entries.add(CoreAscensionBlocks.DIORITE_TILE);
             entries.add(CoreAscensionBlocks.GRANITE_TILE);
@@ -79,8 +74,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.POLISHED_CHARRED_SCORIA_WALL);
             entries.add(CoreAscensionBlocks.SMOOTH_NETHERRACK);
             entries.add(CoreAscensionBlocks.POLISHED_NETHERRACK);
-            entries.add(CoreAscensionBlocks.CLOUD_STONE);
-            entries.add(CoreAscensionBlocks.CLOUD_COBBLESTONE);
             entries.add(CoreAscensionBlocks.BLACK_SAND);
             entries.add(CoreAscensionBlocks.BLACK_SANDSTONE);
             entries.add(CoreAscensionBlocks.BLACK_SANDSTONE_STAIRS);
@@ -128,30 +121,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.LIMESTONE);
             entries.add(CoreAscensionBlocks.POLISHED_LIMESTONE);
             entries.add(CoreAscensionBlocks.LIMESTONE_TILES);
-            entries.add(CoreAscensionBlocks.RUBY_ORE);
-            entries.add(CoreAscensionBlocks.CITRINE_ORE);
-            entries.add(CoreAscensionBlocks.TOPAZ_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_COAL_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_IRON_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_LAPIS_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_GOLD_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_REDSTONE_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_EMERALD_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_DIAMOND_ORE);
-            entries.add(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE);
-            entries.add(CoreAscensionBlocks.SULPHUR_ORE);
-            entries.add(CoreAscensionBlocks.URANIUM_ORE);
-            entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
-            entries.add(CoreAscensionBlocks.CLOUD_IRON_ORE);
-            entries.add(CoreAscensionBlocks.CLOUD_GOLD_ORE);
-            entries.add(CoreAscensionBlocks.SAPPHIRE_ORE);
-            entries.add(CoreAscensionBlocks.CLOUD_EMERALD_ORE);
-            entries.add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE);
-            entries.add(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE);
-            entries.add(CoreAscensionBlocks.ZIRCON_ORE);
-            entries.add(CoreAscensionBlocks.CORE_SULPHUR_ORE);
-            entries.add(CoreAscensionBlocks.TADANITE_ORE);
-            entries.add(CoreAscensionBlocks.LUMITE_ORE);
             entries.add(CoreAscensionBlocks.DREAD_LOG);
             entries.add(CoreAscensionBlocks.DREAD_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_DREAD_LOG);
@@ -165,8 +134,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DREAD_TRAPDOOR);
             entries.add(CoreAscensionBlocks.DREAD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.DREAD_BUTTON);
-            entries.add(CoreAscensionItems.DREAD_SIGN);
-            entries.add(CoreAscensionItems.HANGING_DREAD_SIGN);
             entries.add(CoreAscensionBlocks.TROPICS_LOG);
             entries.add(CoreAscensionBlocks.TROPICS_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_TROPICS_LOG);
@@ -180,8 +147,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.TROPICS_TRAPDOOR);
             entries.add(CoreAscensionBlocks.TROPICS_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.TROPICS_BUTTON);
-            entries.add(CoreAscensionItems.TROPICS_SIGN);
-            entries.add(CoreAscensionItems.HANGING_TROPICS_SIGN);
             entries.add(CoreAscensionBlocks.WHITEWOOD_LOG);
             entries.add(CoreAscensionBlocks.WHITEWOOD_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_WHITEWOOD_LOG);
@@ -195,8 +160,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.WHITEWOOD_TRAPDOOR);
             entries.add(CoreAscensionBlocks.WHITEWOOD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.WHITEWOOD_BUTTON);
-            entries.add(CoreAscensionItems.WHITEWOOD_SIGN);
-            entries.add(CoreAscensionItems.HANGING_WHITEWOOD_SIGN);
             entries.add(CoreAscensionBlocks.CEDAR_LOG);
             entries.add(CoreAscensionBlocks.CEDAR_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_CEDAR_LOG);
@@ -210,8 +173,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CEDAR_TRAPDOOR);
             entries.add(CoreAscensionBlocks.CEDAR_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CEDAR_BUTTON);
-            entries.add(CoreAscensionItems.CEDAR_SIGN);
-            entries.add(CoreAscensionItems.HANGING_CEDAR_SIGN);
             entries.add(CoreAscensionBlocks.FROST_STEM);
             entries.add(CoreAscensionBlocks.FROST_HYPHAE);
             entries.add(CoreAscensionBlocks.STRIPPED_FROST_STEM);
@@ -225,8 +186,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROST_TRAPDOOR);
             entries.add(CoreAscensionBlocks.FROST_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.FROST_BUTTON);
-            entries.add(CoreAscensionItems.FROST_SIGN);
-            entries.add(CoreAscensionItems.HANGING_FROST_SIGN);
             entries.add(CoreAscensionBlocks.DARK_MATTER_LOG);
             entries.add(CoreAscensionBlocks.DARK_MATTER_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_DARK_MATTER_LOG);
@@ -240,8 +199,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.DARK_MATTER_TRAPDOOR);
             entries.add(CoreAscensionBlocks.DARK_MATTER_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.DARK_MATTER_BUTTON);
-            entries.add(CoreAscensionItems.DARK_MATTER_SIGN);
-            entries.add(CoreAscensionItems.HANGING_DARK_MATTER_SIGN);
             entries.add(CoreAscensionBlocks.CAKEWOOD_LOG);
             entries.add(CoreAscensionBlocks.CAKEWOOD_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_CAKEWOOD_LOG);
@@ -255,8 +212,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CAKEWOOD_TRAPDOOR);
             entries.add(CoreAscensionBlocks.CAKEWOOD_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CAKEWOOD_BUTTON);
-            entries.add(CoreAscensionItems.CAKEWOOD_SIGN);
-            entries.add(CoreAscensionItems.HANGING_CAKEWOOD_SIGN);
             entries.add(CoreAscensionBlocks.ETHEREAL_LOG);
             entries.add(CoreAscensionBlocks.ETHEREAL_WOOD);
             entries.add(CoreAscensionBlocks.STRIPPED_ETHEREAL_LOG);
@@ -270,8 +225,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.ETHEREAL_TRAPDOOR);
             entries.add(CoreAscensionBlocks.ETHEREAL_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.ETHEREAL_BUTTON);
-            entries.add(CoreAscensionItems.ETHEREAL_SIGN);
-            entries.add(CoreAscensionItems.HANGING_ETHEREAL_SIGN);
             entries.add(CoreAscensionBlocks.ENTROPY_STEM);
             entries.add(CoreAscensionBlocks.ENTROPY_HYPHAE);
             entries.add(CoreAscensionBlocks.STRIPPED_ENTROPY_STEM);
@@ -285,8 +238,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.ENTROPY_TRAPDOOR);
             entries.add(CoreAscensionBlocks.ENTROPY_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.ENTROPY_BUTTON);
-            entries.add(CoreAscensionItems.ENTROPY_SIGN);
-            entries.add(CoreAscensionItems.HANGING_ENTROPY_SIGN);
             entries.add(CoreAscensionBlocks.CACTUS_PLANKS);
             entries.add(CoreAscensionBlocks.CACTUS_STAIRS);
             entries.add(CoreAscensionBlocks.CACTUS_SLAB);
@@ -296,8 +247,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.CACTUS_TRAPDOOR);
             entries.add(CoreAscensionBlocks.CACTUS_PRESSURE_PLATE);
             entries.add(CoreAscensionBlocks.CACTUS_BUTTON);
-            entries.add(CoreAscensionItems.CACTUS_SIGN);
-            entries.add(CoreAscensionItems.HANGING_CACTUS_SIGN);
             entries.add(CoreAscensionBlocks.GLASS_DOOR);
             entries.add(CoreAscensionBlocks.COBBLESTONE_DOOR);
             entries.add(CoreAscensionBlocks.GOLD_DOOR);
@@ -341,14 +290,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.PETRIFIED_PLANKS);
             entries.add(CoreAscensionBlocks.CEMENT);
             entries.add(CoreAscensionBlocks.BLIZZARACK_BRICKS);
-            entries.add(CoreAscensionBlocks.SOUL_SNOW);
-            entries.add(CoreAscensionBlocks.SEASHELL);
-            entries.add(CoreAscensionBlocks.CONCH_SHELL);
-            entries.add(CoreAscensionBlocks.COCONUT);
             entries.add(CoreAscensionBlocks.MOSSY_END_STONE_BRICKS);
-            entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
-
-
             entries.add(CoreAscensionBlocks.MAGMA_ROCK_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.BLIZZARACK_BRICK_SLAB);
             entries.add(CoreAscensionBlocks.TROPICS_MUD_BRICK_SLAB);
@@ -374,38 +316,7 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.BLIZZARACK_BRICK_WALL);
             entries.add(CoreAscensionBlocks.CEMENT_WALL);
             entries.add(CoreAscensionBlocks.MOSSY_END_STONE_BRICK_WALL);
-            entries.add(CoreAscensionBlocks.PLAYER_LAUNCHER);
-            entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
-            entries.add(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR);
-            entries.add(CoreAscensionBlocks.DARK_MATTER_BUSH);
-            entries.add(CoreAscensionBlocks.DARK_MATTER_TALL_GRASS);
-            entries.add(CoreAscensionBlocks.RUBY_GEM_LOG);
-            entries.add(CoreAscensionBlocks.CITRINE_GEM_LOG);
-            entries.add(CoreAscensionBlocks.TOPAZ_GEM_LOG);
-            entries.add(CoreAscensionBlocks.EMERALD_GEM_LOG);
-            entries.add(CoreAscensionBlocks.DIAMOND_GEM_LOG);
-            entries.add(CoreAscensionBlocks.SAPPHIRE_GEM_LOG);
-            entries.add(CoreAscensionBlocks.AMETHYST_GEM_LOG);
-            entries.add(CoreAscensionBlocks.RUBY_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.CITRINE_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.TOPAZ_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.EMERALD_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.DIAMOND_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.SAPPHIRE_GEM_LEAVES);
-            entries.add(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
-
-            entries.add(CoreAscensionBlocks.CORE_VINES);
-            entries.add(CoreAscensionBlocks.CORE_WART_BLOCK);
-            entries.add(CoreAscensionBlocks.CORE_NYLIUM);
-            entries.add(CoreAscensionBlocks.CORE_ROOTS);
-            entries.add(CoreAscensionBlocks.CORE_FUNGUS);
             entries.add(CoreAscensionBlocks.ICE_CREAM_BLOCK);
-
-            entries.add(CoreAscensionBlocks.ENTROPIC_VINES);
-            entries.add(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
-            entries.add(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM);
-            entries.add(CoreAscensionBlocks.ENTROPY_WEEDS);
-            entries.add(CoreAscensionBlocks.ENTROPIC_ICE);
             entries.add(CoreAscensionBlocks.ENDER_PEARL_BRICKS);
             // glowing mushroom biome
             entries.add(CoreAscensionBlocks.TITANIUM_BLOCK);
@@ -438,7 +349,25 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_STAIRS);
             entries.add(CoreAscensionBlocks.FROZEN_BURNT_TITANIUM_SLAB);
-
+            entries.add(CoreAscensionBlocks.EBONSTONE);
+            entries.add(CoreAscensionBlocks.POLISHED_EBONSTONE);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICKS);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_STAIRS);
+            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_SLAB);
+            entries.add(CoreAscensionBlocks.EBONSTONE_LAMP);
+            entries.add(CoreAscensionBlocks.EBONSTONE_PILLAR);
+            entries.add(CoreAscensionBlocks.CHISELED_EBONSTONE);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_A);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_G);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_J);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_M);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_N);
+            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_O);
+            entries.add(CoreAscensionBlocks.UMBRASTONE);
+            entries.add(CoreAscensionBlocks.POLISHED_UMBRASTONE);
+            entries.add(CoreAscensionBlocks.UMBRASTONE_COLUMN);
+            // end building blocks
+            // colored blocks
             entries.add(CoreAscensionBlocks.BRIGHT_CYAN_WOOL);
             entries.add(CoreAscensionBlocks.BRIGHT_RED_WOOL);
             entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_WOOL);
@@ -487,57 +416,146 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionBlocks.TURQUOISE_STAINED_GLASS_PANE);
             entries.add(CoreAscensionBlocks.YELLOW_GREEN_STAINED_GLASS_PANE);
             entries.add(CoreAscensionBlocks.RAINBOW_STAINED_GLASS_PANE);
-
+            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_BED);
+            entries.add(CoreAscensionBlocks.BRIGHT_RED_BED);
+            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.DARK_ORANGE_BED);
+            entries.add(CoreAscensionBlocks.DARK_RED_BED);
+            entries.add(CoreAscensionBlocks.DARK_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.INDIGO_BED);
+            entries.add(CoreAscensionBlocks.LIGHT_BROWN_BED);
+            entries.add(CoreAscensionBlocks.PALE_YELLOW_BED);
+            entries.add(CoreAscensionBlocks.TURQUOISE_BED);
+            entries.add(CoreAscensionBlocks.YELLOW_GREEN_BED);
+            entries.add(CoreAscensionBlocks.RAINBOW_BED);
+            // end colored blocks
+            // natural blocks
+            entries.add(CoreAscensionBlocks.HARDENED_LAVA);
+            entries.add(CoreAscensionBlocks.DREAD_ROCK);
+            entries.add(CoreAscensionBlocks.SEASHELL);
+            entries.add(CoreAscensionBlocks.CONCH_SHELL);
+            entries.add(CoreAscensionBlocks.COCONUT);
+            entries.add(CoreAscensionBlocks.LOAM);
+            entries.add(CoreAscensionBlocks.TROPICAL_GRASS);
+            entries.add(CoreAscensionBlocks.CLOUD_STONE);
+            entries.add(CoreAscensionBlocks.CLOUD_COBBLESTONE);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_STONE);
+            entries.add(CoreAscensionBlocks.MOSSY_DARK_MATTER_STONE);
+            entries.add(CoreAscensionBlocks.CAKESOIL);
+            entries.add(CoreAscensionBlocks.FROSTING_GRASS);
+            entries.add(CoreAscensionBlocks.ETHEREAL_DIRT);
+            entries.add(CoreAscensionBlocks.ETHEREAL_GRASS);
+            entries.add(CoreAscensionBlocks.BLIZZARACK);
+            entries.add(CoreAscensionBlocks.SOUL_SNOW);
+            entries.add(CoreAscensionBlocks.CORE_NYLIUM);
+            entries.add(CoreAscensionBlocks.ENTROPIC_CORE_NYLIUM);
+            entries.add(CoreAscensionBlocks.RUBY_ORE);
+            entries.add(CoreAscensionBlocks.CITRINE_ORE);
+            entries.add(CoreAscensionBlocks.TOPAZ_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_COAL_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_IRON_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_LAPIS_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_GOLD_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_REDSTONE_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_EMERALD_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_DIAMOND_ORE);
+            entries.add(CoreAscensionBlocks.SCORIA_SUNSTONE_ORE);
+            entries.add(CoreAscensionBlocks.SULPHUR_ORE);
+            entries.add(CoreAscensionBlocks.URANIUM_ORE);
+            entries.add(CoreAscensionBlocks.CLOUD_COAL_ORE);
+            entries.add(CoreAscensionBlocks.CLOUD_IRON_ORE);
+            entries.add(CoreAscensionBlocks.CLOUD_GOLD_ORE);
+            entries.add(CoreAscensionBlocks.SAPPHIRE_ORE);
+            entries.add(CoreAscensionBlocks.CLOUD_EMERALD_ORE);
+            entries.add(CoreAscensionBlocks.CLOUD_DIAMOND_ORE);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_JELLY_ORE);
+            entries.add(CoreAscensionBlocks.ZIRCON_ORE);
+            entries.add(CoreAscensionBlocks.CORE_SULPHUR_ORE);
+            entries.add(CoreAscensionBlocks.TADANITE_ORE);
+            entries.add(CoreAscensionBlocks.LUMITE_ORE);
             entries.add(CoreAscensionBlocks.RAW_URANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_TITANIUM_BLOCK);
             entries.add(CoreAscensionBlocks.RAW_LUMITE_BLOCK);
-            entries.add(CoreAscensionBlocks.OBSIDIAN_SPONGE);
-            entries.add(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
-
-            entries.add(CoreAscensionBlocks.EBONSTONE);
-            entries.add(CoreAscensionBlocks.POLISHED_EBONSTONE);
-            entries.add(CoreAscensionBlocks.EBONSTONE_BRICKS);
-            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_STAIRS);
-            entries.add(CoreAscensionBlocks.EBONSTONE_BRICK_SLAB);
-            entries.add(CoreAscensionBlocks.EBONSTONE_LAMP);
-            entries.add(CoreAscensionBlocks.EBONSTONE_PILLAR);
-            entries.add(CoreAscensionBlocks.CHISELED_EBONSTONE);
-
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_A);
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_G);
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_J);
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_M);
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_N);
-            entries.add(CoreAscensionBlocks.RUNIC_OBSIDIAN_O);
-
-            entries.add(CoreAscensionBlocks.UMBRASTONE);
-            entries.add(CoreAscensionBlocks.POLISHED_UMBRASTONE);
-            entries.add(CoreAscensionBlocks.UMBRASTONE_COLUMN);
-
+            entries.add(CoreAscensionBlocks.RUBY_GEM_LOG);
+            entries.add(CoreAscensionBlocks.CITRINE_GEM_LOG);
+            entries.add(CoreAscensionBlocks.TOPAZ_GEM_LOG);
+            entries.add(CoreAscensionBlocks.EMERALD_GEM_LOG);
+            entries.add(CoreAscensionBlocks.DIAMOND_GEM_LOG);
+            entries.add(CoreAscensionBlocks.SAPPHIRE_GEM_LOG);
+            entries.add(CoreAscensionBlocks.AMETHYST_GEM_LOG);
+            entries.add(CoreAscensionBlocks.RUBY_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.CITRINE_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.TOPAZ_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.EMERALD_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.DIAMOND_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.SAPPHIRE_GEM_LEAVES);
+            entries.add(CoreAscensionBlocks.AMETHYST_GEM_LEAVES);
             entries.add(CoreAscensionBlocks.CEDAR_LEAVES);
             entries.add(CoreAscensionBlocks.DARK_MATTER_LEAVES);
             entries.add(CoreAscensionBlocks.WHITEWOOD_LEAVES);
             entries.add(CoreAscensionBlocks.TROPICS_LEAVES);
+            entries.add(CoreAscensionBlocks.ETHEREAL_LEAVES);
             entries.add(CoreAscensionBlocks.BLUE_POPSICLE_LEAVES);
             entries.add(CoreAscensionBlocks.WHITE_POPSICLE_LEAVES);
             entries.add(CoreAscensionBlocks.RED_POPSICLE_LEAVES);
-
+            entries.add(CoreAscensionBlocks.CORE_WART_BLOCK);
+            entries.add(CoreAscensionBlocks.ENTROPIC_WART_BLOCK);
             entries.add(CoreAscensionBlocks.CEDAR_SAPLING);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_SAPLING);
             entries.add(CoreAscensionBlocks.TROPICS_SAPLING);
+            entries.add(CoreAscensionBlocks.ETHEREAL_SAPLING);
             entries.add(CoreAscensionBlocks.CAKEWOOD_SAPLING);
-
+            entries.add(CoreAscensionBlocks.DARK_MATTER_BUSH);
+            entries.add(CoreAscensionBlocks.DARK_MATTER_TALL_GRASS);
+            entries.add(CoreAscensionBlocks.ETHEREAL_TALL_GRASS);
+            entries.add(CoreAscensionBlocks.ETHEREAL_DOUBLE_TALL_GRASS);
+            entries.add(CoreAscensionBlocks.CORE_VINES);
+            entries.add(CoreAscensionBlocks.CORE_ROOTS);
+            entries.add(CoreAscensionBlocks.CORE_FUNGUS);
+            entries.add(CoreAscensionBlocks.ENTROPIC_VINES);
+            entries.add(CoreAscensionBlocks.ENTROPY_WEEDS);
+            entries.add(CoreAscensionBlocks.ENTROPIC_ICE);
             entries.add(CoreAscensionBlocks.RED_GUMDROP);
             entries.add(CoreAscensionBlocks.YELLOW_GUMDROP);
             entries.add(CoreAscensionBlocks.GREEN_GUMDROP);
-
-            entries.add(CoreAscensionBlocks.CAKESOIL);
-            entries.add(CoreAscensionBlocks.FROSTING_GRASS);
             entries.add(CoreAscensionBlocks.FROSTING);
             entries.add(CoreAscensionBlocks.FROSTING_BLOCK);
+            // end natural blocks
+            // functional blocks
+            entries.add(CoreAscensionBlocks.PLAYER_LAUNCHER);
+            entries.add(CoreAscensionBlocks.CATALYZER_TABLE);
+            entries.add(CoreAscensionBlocks.ENCHANTMENT_RELOCATOR);
+            entries.add(CoreAscensionItems.DREAD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_DREAD_SIGN);
+            entries.add(CoreAscensionItems.TROPICS_SIGN);
+            entries.add(CoreAscensionItems.HANGING_TROPICS_SIGN);
+            entries.add(CoreAscensionItems.WHITEWOOD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_WHITEWOOD_SIGN);
+            entries.add(CoreAscensionItems.CEDAR_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CEDAR_SIGN);
+            entries.add(CoreAscensionItems.FROST_SIGN);
+            entries.add(CoreAscensionItems.HANGING_FROST_SIGN);
+            entries.add(CoreAscensionItems.DARK_MATTER_SIGN);
+            entries.add(CoreAscensionItems.HANGING_DARK_MATTER_SIGN);
+            entries.add(CoreAscensionItems.CAKEWOOD_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CAKEWOOD_SIGN);
+            entries.add(CoreAscensionItems.ETHEREAL_SIGN);
+            entries.add(CoreAscensionItems.HANGING_ETHEREAL_SIGN);
+            entries.add(CoreAscensionItems.ENTROPY_SIGN);
+            entries.add(CoreAscensionItems.HANGING_ENTROPY_SIGN);
+            entries.add(CoreAscensionItems.CACTUS_SIGN);
+            entries.add(CoreAscensionItems.HANGING_CACTUS_SIGN);
+            entries.add(CoreAscensionBlocks.REINFORCED_CHEST);
+            entries.add(CoreAscensionBlocks.OBSIDIAN_SPONGE);
+            entries.add(CoreAscensionBlocks.LAVAD_OBSIDIAN_SPONGE);
+            // end functional blocks
         });
         registerItemGroup("item", CoreAscensionItems.RUBY, (displayContext, entries) ->
         {
-
+            entries.add(CoreAscensionItems.OBSIDIAN_HELMET);
+            entries.add(CoreAscensionItems.OBSIDIAN_CHESTPLATE);
+            entries.add(CoreAscensionItems.OBSIDIAN_LEGGINGS);
+            entries.add(CoreAscensionItems.OBSIDIAN_BOOTS);
             entries.add(CoreAscensionItems.GILDED_OBSIDIAN_HELMET);
             entries.add(CoreAscensionItems.GILDED_OBSIDIAN_CHESTPLATE);
             entries.add(CoreAscensionItems.GILDED_OBSIDIAN_LEGGINGS);
@@ -711,18 +729,6 @@ public class CoreAscensionGroups
             entries.add(CoreAscensionItems.TURQUOISE_DYE);
             entries.add(CoreAscensionItems.YELLOW_GREEN_DYE);
             entries.add(CoreAscensionItems.RAINBOW_DYE);
-            entries.add(CoreAscensionBlocks.BRIGHT_CYAN_BED);
-            entries.add(CoreAscensionBlocks.BRIGHT_RED_BED);
-            entries.add(CoreAscensionBlocks.BRIGHT_YELLOW_BED);
-            entries.add(CoreAscensionBlocks.DARK_ORANGE_BED);
-            entries.add(CoreAscensionBlocks.DARK_RED_BED);
-            entries.add(CoreAscensionBlocks.DARK_YELLOW_BED);
-            entries.add(CoreAscensionBlocks.INDIGO_BED);
-            entries.add(CoreAscensionBlocks.LIGHT_BROWN_BED);
-            entries.add(CoreAscensionBlocks.PALE_YELLOW_BED);
-            entries.add(CoreAscensionBlocks.TURQUOISE_BED);
-            entries.add(CoreAscensionBlocks.YELLOW_GREEN_BED);
-            entries.add(CoreAscensionBlocks.RAINBOW_BED);
 
             entries.add(CoreAscensionItems.VOID_TOTEM);
 

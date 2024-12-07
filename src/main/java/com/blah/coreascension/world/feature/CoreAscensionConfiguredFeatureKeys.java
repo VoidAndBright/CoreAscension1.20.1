@@ -11,6 +11,8 @@ public class CoreAscensionConfiguredFeatureKeys {
     public static final RegistryKey<ConfiguredFeature<?, ?>> TROPICS_TREE_KEY = RegisterConfiguredKey("tropics_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> CEDAR_TREE_KEY = RegisterConfiguredKey("cedar_tree");
     public static final RegistryKey<ConfiguredFeature<?, ?>> POPSICLE_TREE_KEY = RegisterConfiguredKey("popsicle_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ETHEREAL_TREE_KEY = RegisterConfiguredKey("ethereal_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DARK_MATTER_TREE_KEY = RegisterConfiguredKey("dark_matter_tree");
 
     public static RegistryKey<ConfiguredFeature<?, ?>> RegisterConfiguredKey(String name)
     {

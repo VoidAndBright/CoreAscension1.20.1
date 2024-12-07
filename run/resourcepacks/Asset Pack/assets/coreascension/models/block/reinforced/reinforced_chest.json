@@ -1,13 +1,14 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"particle": "coreascension:block/reinforced/reinforced_lock",
 		"chest_frame_side": "coreascension:block/reinforced/reinforced_chest_frame_side",
 		"chest_frame": "coreascension:block/reinforced/reinforced_chest_frame",
 		"chest": "coreascension:block/reinforced/reinforced_chest",
 		"chest_side": "coreascension:block/reinforced/reinforced_chest_side",
 		"chest_inside_base": "coreascension:block/reinforced/reinforced_chest_inside_base",
 		"chest_inside_lid": "coreascension:block/reinforced/reinforced_chest_inside_lid",
+		"particle": "coreascension:block/reinforced/reinforced_lock",
 		"lock": "coreascension:block/reinforced/reinforced_lock"
 	},
 	"elements": [
@@ -71,73 +72,73 @@
 		},
 		{
 			"name": "lid_frame",
-			"from": [0, 10, 15],
-			"to": [16, 26, 21],
+			"from": [0, 10, 0],
+			"to": [16, 16, 16],
 			"faces": {
-				"north": {"uv": [16, 0, 0, 16], "rotation": 270, "texture": "#chest_inside_lid"},
-				"east": {"uv": [0, 0, 16, 6], "rotation": 270, "texture": "#chest_frame_side"},
-				"south": {"uv": [16, 16, 0, 0], "rotation": 270, "texture": "#chest_frame"},
-				"west": {"uv": [0, 0, 16, 6], "rotation": 90, "texture": "#chest_frame_side"},
-				"up": {"uv": [0, 0, 16, 6], "rotation": 180, "texture": "#chest_frame_side"},
-				"down": {"uv": [0, 0, 16, 6], "texture": "#chest_frame_side"}
+				"north": {"uv": [0, 0, 16, 6], "texture": "#chest_frame_side"},
+				"east": {"uv": [0, 0, 16, 6], "texture": "#chest_frame_side"},
+				"south": {"uv": [0, 0, 16, 6], "texture": "#chest_frame_side"},
+				"west": {"uv": [0, 0, 16, 6], "texture": "#chest_frame_side"},
+				"up": {"uv": [16, 16, 0, 0], "rotation": 180, "texture": "#chest_frame"},
+				"down": {"uv": [16, 0, 0, 16], "rotation": 180, "texture": "#chest_inside_lid"}
 			}
 		},
 		{
 			"name": "lid_container",
-			"from": [1, 11, 15],
-			"to": [15, 25, 20],
+			"from": [1, 10, 1],
+			"to": [15, 15, 15],
 			"faces": {
-				"east": {"uv": [1, 1, 15, 6], "rotation": 270, "texture": "#chest_side"},
-				"south": {"uv": [1, 1, 15, 15], "rotation": 270, "texture": "#chest"},
-				"west": {"uv": [1, 1, 15, 6], "rotation": 90, "texture": "#chest_side"},
-				"up": {"uv": [1, 1, 15, 6], "rotation": 180, "texture": "#chest_side"},
-				"down": {"uv": [1, 1, 15, 6], "texture": "#chest_side"}
+				"north": {"uv": [1, 1, 15, 6], "texture": "#chest_side"},
+				"east": {"uv": [1, 1, 15, 6], "texture": "#chest_side"},
+				"south": {"uv": [1, 1, 15, 6], "texture": "#chest_side"},
+				"west": {"uv": [1, 1, 15, 6], "texture": "#chest_side"},
+				"up": {"uv": [1, 1, 15, 15], "rotation": 180, "texture": "#chest"}
 			}
 		},
 		{
 			"name": "lid_interior_x",
-			"from": [14, 26, 19],
-			"to": [2, 10, 17],
+			"from": [16, 14, 14],
+			"to": [0, 12, 2],
 			"faces": {
-				"north": {"uv": [0, 2, 16, 14], "rotation": 270, "texture": "#chest_frame"},
-				"east": {"uv": [0, 7, 16, 9], "rotation": 270, "texture": "#chest_frame"},
-				"south": {"uv": [0, 2, 16, 14], "rotation": 270, "texture": "#chest_frame"},
-				"west": {"uv": [0, 7, 16, 9], "rotation": 90, "texture": "#chest_frame"}
+				"north": {"uv": [0, 7, 16, 9], "texture": "#chest_frame"},
+				"south": {"uv": [0, 7, 16, 9], "texture": "#chest_frame"},
+				"up": {"uv": [0, 2, 16, 14], "rotation": 180, "texture": "#chest_frame"},
+				"down": {"uv": [0, 2, 16, 14], "rotation": 180, "texture": "#chest_frame"}
 			}
 		},
 		{
 			"name": "lid_interior_y",
-			"from": [14, 24, 21],
-			"to": [2, 12, 17],
+			"from": [14, 16, 14],
+			"to": [2, 12, 2],
 			"faces": {
-				"east": {"uv": [2, 11, 14, 16], "rotation": 270, "texture": "#chest_frame"},
-				"west": {"uv": [2, 11, 14, 16], "rotation": 90, "texture": "#chest_frame"},
-				"up": {"uv": [2, 16, 14, 10], "texture": "#chest_frame"},
-				"down": {"uv": [2, 11, 14, 16], "texture": "#chest_frame"}
+				"north": {"uv": [2, 11, 14, 16], "texture": "#chest_frame"},
+				"east": {"uv": [2, 11, 14, 16], "texture": "#chest_frame"},
+				"south": {"uv": [2, 11, 14, 16], "texture": "#chest_frame"},
+				"west": {"uv": [2, 16, 14, 10], "rotation": 180, "texture": "#chest_frame"}
 			}
 		},
 		{
 			"name": "lid_interior_z",
-			"from": [16, 24, 19],
-			"to": [0, 12, 17],
+			"from": [14, 14, 16],
+			"to": [2, 12, 0],
 			"faces": {
-				"north": {"uv": [2, 0, 14, 16], "rotation": 270, "texture": "#chest_frame"},
-				"south": {"uv": [2, 0, 14, 16], "rotation": 270, "texture": "#chest_frame"},
-				"up": {"uv": [0, 7, 16, 9], "rotation": 180, "texture": "#chest_frame"},
-				"down": {"uv": [0, 7, 16, 9], "texture": "#chest_frame"}
+				"east": {"uv": [0, 7, 16, 9], "texture": "#chest_frame"},
+				"west": {"uv": [0, 7, 16, 9], "texture": "#chest_frame"},
+				"up": {"uv": [2, 0, 14, 16], "rotation": 180, "texture": "#chest_frame"},
+				"down": {"uv": [2, 0, 14, 16], "rotation": 180, "texture": "#chest_frame"}
 			}
 		},
 		{
 			"name": "lock",
-			"from": [7, 26, 13],
-			"to": [9, 27, 17],
+			"from": [7, 8, -1],
+			"to": [9, 12, 0],
 			"faces": {
-				"north": {"uv": [12, 12, 4, 16], "rotation": 180, "texture": "#lock"},
-				"east": {"uv": [4, 0, 8, 16], "rotation": 270, "texture": "#lock"},
-				"south": {"uv": [12, 0, 4, 4], "texture": "#lock"},
-				"west": {"uv": [8, 0, 12, 16], "rotation": 90, "texture": "#lock"},
-				"up": {"uv": [4, 0, 12, 16], "rotation": 180, "texture": "#lock"},
-				"down": {"uv": [12, 0, 4, 16], "texture": "#lock"}
+				"north": {"uv": [12, 0, 4, 16], "texture": "#lock"},
+				"east": {"uv": [8, 0, 12, 16], "texture": "#lock"},
+				"south": {"uv": [4, 0, 12, 16], "texture": "#lock"},
+				"west": {"uv": [4, 0, 8, 16], "texture": "#lock"},
+				"up": {"uv": [12, 0, 4, 4], "rotation": 180, "texture": "#lock"},
+				"down": {"uv": [12, 12, 4, 16], "rotation": 180, "texture": "#lock"}
 			}
 		}
 	]

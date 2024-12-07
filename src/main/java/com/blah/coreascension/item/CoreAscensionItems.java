@@ -189,6 +189,16 @@ public class CoreAscensionItems {
     public static final Item SAPPHIRE_EXCAVATOR = registerItem("sapphire_excavator",
             new ExcavatorItem(CoreAscensionToolMaterials.SAPPHIRE_SPECIAL, 7, 1f, new FabricItemSettings()));
 
+    public static final Item OBSIDIAN_HELMET = registerItem("obsidian_helmet",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+    public static final Item OBSIDIAN_CHESTPLATE = registerItem("obsidian_chestplate",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.OBSIDIAN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+    public static final Item OBSIDIAN_LEGGINGS = registerItem("obsidian_leggings",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.OBSIDIAN, ArmorItem.Type.LEGGINGS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+    public static final Item OBSIDIAN_BOOTS = registerItem("obsidian_boots",
+            new AdvancedArmorItem(CoreAscensionArmorMaterials.OBSIDIAN, ArmorItem.Type.BOOTS, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
+
+
     public static final Item GILDED_OBSIDIAN_HELMET = registerItem("gilded_obsidian_helmet",
             new AdvancedArmorItem(CoreAscensionArmorMaterials.GILDED_OBSIDIAN, ArmorItem.Type.HELMET, new FabricItemSettings(), 0, "tooltip.setbonus.gilded_obsidian"));
     public static final Item GILDED_OBSIDIAN_CHESTPLATE = registerItem("gilded_obsidian_chestplate",

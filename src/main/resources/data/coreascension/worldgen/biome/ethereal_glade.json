@@ -69,6 +69,7 @@
     [],
     [],
     [
+      "coreascension:ethereal_tree_placed",
       "coreascension:patch_ethereal_tall_grass_normal",
       "coreascension:patch_ethereal_double_tall_grass"
     ],

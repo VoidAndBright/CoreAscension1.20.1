@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum CoreAscensionArmorMaterials implements ArmorMaterial {
+    OBSIDIAN("obsidian", 25, new int[] { 2, 5, 4, 2 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.OBSIDIAN_FABRIC)),
     GILDED_OBSIDIAN("gilded_obsidian", 25, new int[] { 2, 5, 4, 2 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE }, 10, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0f, 0f, () -> Ingredient.ofItems(CoreAscensionItems.OBSIDIAN_FABRIC)),
     TADANITE("tadanite", 200, new int[] { 6, 11, 10, 6 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE, StatusEffects.SPEED, StatusEffects.RESISTANCE, StatusEffects.JUMP_BOOST, CoreAscensionStatusEffects.ICE_RESISTANCE}, 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.2f, 0.115f, () -> Ingredient.ofItems(CoreAscensionItems.TADANITE_DIAMOND)),
     SOLARIUM("solarium", 210, new int[] { 6, 11, 10, 6 }, new StatusEffect[] { StatusEffects.FIRE_RESISTANCE, StatusEffects.SPEED, StatusEffects.RESISTANCE, StatusEffects.JUMP_BOOST, CoreAscensionStatusEffects.ICE_RESISTANCE}, 9, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 1.2f, 0.115f, () -> Ingredient.ofItems(CoreAscensionItems.SOLARIUM_INGOT)),
