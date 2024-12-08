@@ -1,12 +1,7 @@
 {
-  "parent": "block/cube",
+  "parent": "block/cube_all",
   "textures": {
-    "down": "coreascension:block/entropy_log",
-    "up": "coreascension:block/entropy_log",
-    "north": "coreascension:block/entropy_log",
-    "east": "coreascension:block/entropy_log",
-    "south": "coreascension:block/entropy_log",
-    "west": "coreascension:block/entropy_log",
+    "all": "coreascension:block/entropy_log",
     "particle": "coreascension:block/entropy_log"
   }
 }

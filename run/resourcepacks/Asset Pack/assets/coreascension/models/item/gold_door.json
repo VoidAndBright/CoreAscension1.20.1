@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascension:item/golddooritem"
+    "layer0": "coreascension:item/gold_door"
   }
 }

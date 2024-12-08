@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascension:item/cobbledoor_item"
+    "layer0": "coreascension:item/cobblestone_door"
   }
 }

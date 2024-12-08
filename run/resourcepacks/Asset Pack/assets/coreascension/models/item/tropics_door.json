@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coreascension:item/tropicsdoor_item"
+    "layer0": "coreascension:item/tropics_door"
   }
 }

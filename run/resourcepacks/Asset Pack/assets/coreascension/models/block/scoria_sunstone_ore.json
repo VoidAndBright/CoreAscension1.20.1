@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "coreascension:block/sunstone_ore",
-    "particle": "coreascension:block/sunstone_ore"
+    "all": "coreascension:block/scoria_sunstone_ore",
+    "particle": "coreascension:block/scoria_sunstone_ore"
   }
 }

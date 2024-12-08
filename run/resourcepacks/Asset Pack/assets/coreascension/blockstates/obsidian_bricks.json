@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "coreascension:block/obsidian_brick"
+      "model": "coreascension:block/obsidian_bricks"
     }
   }
 }
